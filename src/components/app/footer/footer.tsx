@@ -12,7 +12,11 @@ type Info = {
   linkedinUrl: string
 }
 
-export function Footer() {
+type FooterProps = {
+  onManagePrivacy: (value: boolean) => void
+}
+
+export function Footer({ onManagePrivacy }: FooterProps) {
   const navigate = useNavigate()
   const footer: Info = parse(footerFile)
   const year: number = new Date().getFullYear()
@@ -24,6 +28,12 @@ export function Footer() {
         © {footer.dob} - {year}. {footer.company} | Coc {footer.cocNumber} -
         All rights reserved. (
         <BuildNumber />)
+      </div>
+      <div
+        className="text-sm text-black/50 hover:text-black cursor-pointer"
+        onClick={() => onManagePrivacy(true)}
+      >
+        Manage Privacy Preferences
       </div>
       <div className="flex flex-row items-center-safe justify-center-safe gap-4 text-amber-500">
         <button className="cursor-pointer" onClick={() => navigate('/contact')}>

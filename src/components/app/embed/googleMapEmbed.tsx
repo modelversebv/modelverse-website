@@ -29,7 +29,9 @@ export function GoogleMapEmbed() {
       const newConsent = readConsent()
       setHasConsent(newConsent)
     }
+    handleConsentUpdate()
     window.addEventListener(CONSENT_UPDATE_EVENT, handleConsentUpdate)
+
     return () => {
       window.removeEventListener(CONSENT_UPDATE_EVENT, handleConsentUpdate)
     }

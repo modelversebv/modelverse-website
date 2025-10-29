@@ -49,10 +49,14 @@ type Cookie = {
 }
 
 type CookieBannerProps = {
-  preferences?: boolean
+  preferences: boolean
+  setPreferences: (value: boolean) => void
 }
 
-export function CookieBanner({ preferences = false }: CookieBannerProps) {
+export function CookieBanner({
+  preferences,
+  setPreferences,
+}: CookieBannerProps) {
   const info = parse(infoFile)
   const COOKIE_CONSENT = 'user-preferences'
   const CONSENT_UPDATE_EVENT = 'consentUpdate'
@@ -60,7 +64,7 @@ export function CookieBanner({ preferences = false }: CookieBannerProps) {
   // Banner and Animation states
   const [showBanner, setShowBanner] = useState(() => {
     const consentCookie = getCookie(COOKIE_CONSENT)
-    if (!consentCookie || preferences) return true
+    if (!consentCookie) return true
     return false
   })
   const [animateBanner, setanimateBanner] = useState(false)
@@ -90,6 +94,7 @@ export function CookieBanner({ preferences = false }: CookieBannerProps) {
     setCookie(COOKIE_CONSENT, JSON.stringify(consent), { expires: 365 })
     setShowBanner(false)
     window.dispatchEvent(new CustomEvent(CONSENT_UPDATE_EVENT))
+    setPreferences(false)
   }
 
   const handleAccept = () => {
@@ -130,6 +135,28 @@ export function CookieBanner({ preferences = false }: CookieBannerProps) {
   useEffect(() => {
     requestAnimationFrame(() => setanimateBanner(true))
   }, [])
+
+  useEffect(() => {
+    const handlePreferencesChange = () => {
+      console.log('preferences')
+      if (preferences) {
+        const consentCookie = getCookie(COOKIE_CONSENT)
+        if (!consentCookie) return
+        const userPreferences = JSON.parse(consentCookie)
+
+        const newChoices = info.map((cookie: Cookie) => {
+          const key = cookie.title.toLowerCase().replace(' ', '-')
+          return userPreferences[key] ?? false
+        })
+        setChoices(newChoices)
+
+        setShowBanner(true)
+        setShowPreferences(true)
+        requestAnimationFrame(() => setAnimatePreferences(true))
+      }
+    }
+    handlePreferencesChange()
+  }, [preferences])
 
   return (
     <div

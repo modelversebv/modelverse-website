@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 
 import { throttle } from 'lodash'
 
+import { CookieBanner } from './app/cookies/cookieBanner'
 import { Footer } from './app/footer/footer'
 import { NavBar } from './app/navigation/navbar'
 
@@ -25,6 +26,9 @@ export function Layout({
   contact = false,
 }: LayoutProps) {
   const scrollRef = useRef<HTMLDivElement>(null)
+
+  // Cookie consent
+  const [showConsentPreferences, setShowConsentPreferences] = useState(false)
 
   // Scrolling behaviour
   const HEIGHT_THRESHOLD = 0
@@ -60,30 +64,36 @@ export function Layout({
   }, [])
 
   return (
-    <div
-      className="scrollbar-hide flex h-screen w-screen flex-col overflow-auto bg-gradient-to-br from-green-500 to-teal-500"
-      ref={scrollRef}
-    >
-      <header
-        className={`md:sticky md:top-0 shadow-md z-10 shrink-0 bg-white transition duration-300 ${!isVisible ? 'md:-translate-y-full' : 'md:translate-y-0'}`}
+    <>
+      <CookieBanner
+        preferences={showConsentPreferences}
+        setPreferences={setShowConsentPreferences}
+      ></CookieBanner>
+      <div
+        className="scrollbar-hide flex h-screen w-screen flex-col overflow-auto bg-gradient-to-br from-green-500 to-teal-500"
+        ref={scrollRef}
       >
-        <NavBar
-          home={home}
-          about={about}
-          cases={cases}
-          team={team}
-          contact={contact}
-        />
-      </header>
+        <header
+          className={`md:sticky md:top-0 shadow-md z-10 shrink-0 bg-white transition duration-300 ${!isVisible ? 'md:-translate-y-full' : 'md:translate-y-0'}`}
+        >
+          <NavBar
+            home={home}
+            about={about}
+            cases={cases}
+            team={team}
+            contact={contact}
+          />
+        </header>
 
-      {banner}
-      <div className="container mx-auto flex grow flex-col justify-around gap-16 bg-gray-50 py-16 xl:rounded-t-lg">
-        {children}
+        {banner}
+        <div className="container mx-auto flex grow flex-col justify-around gap-16 bg-gray-50 py-16 xl:rounded-t-lg">
+          {children}
+        </div>
+
+        <footer className="shrink-0 bg-white">
+          <Footer onManagePrivacy={setShowConsentPreferences} />
+        </footer>
       </div>
-
-      <footer className="shrink-0 bg-white">
-        <Footer />
-      </footer>
-    </div>
+    </>
   )
 }

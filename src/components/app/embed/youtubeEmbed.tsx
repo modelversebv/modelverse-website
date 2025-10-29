@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react'
 
 import { getCookie, setCookie } from 'typescript-cookie'
 
-interface YouTubeEmbedProps {
+type YouTubeEmbedProps = {
   videoId: string
   title?: string
 }
 
-const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({ videoId, title }) => {
+export function YouTubeEmbed({ videoId, title }: YouTubeEmbedProps) {
   const COOKIE_CONSENT = 'user-preferences'
   const CONSENT_UPDATE_EVENT = 'consentUpdate'
 
@@ -34,7 +34,9 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({ videoId, title }) => {
       const newConsent = readConsent()
       setHasConsent(newConsent)
     }
+    handleConsentUpdate()
     window.addEventListener(CONSENT_UPDATE_EVENT, handleConsentUpdate)
+
     return () => {
       window.removeEventListener(CONSENT_UPDATE_EVENT, handleConsentUpdate)
     }
