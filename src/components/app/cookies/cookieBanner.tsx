@@ -110,6 +110,7 @@ export function CookieBanner({
     setCookie(COOKIE_CONSENT, JSON.stringify(consent), { expires: 365 })
     setShowBanner(false)
     window.dispatchEvent(new CustomEvent(CONSENT_UPDATE_EVENT))
+    setPreferences(false)
   }
 
   const handleReject = () => {
@@ -125,6 +126,7 @@ export function CookieBanner({
     setCookie(COOKIE_CONSENT, JSON.stringify(consent), { expires: 365 })
     setShowBanner(false)
     window.dispatchEvent(new CustomEvent(CONSENT_UPDATE_EVENT))
+    setPreferences(false)
   }
 
   const handleManage = () => {
