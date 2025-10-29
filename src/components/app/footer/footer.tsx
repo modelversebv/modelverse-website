@@ -25,7 +25,7 @@ export function Footer({ onManagePrivacy }: FooterProps) {
     <div className="flex h-fit flex-col items-center-safe justify-center-safe gap-4 bg-white p-4 text-center">
       {/* Footer */}
       <div className="text-sm text-black/50">
-        © {footer.dob} - {year}. {footer.company} | Coc {footer.cocNumber} -
+        © {footer.dob} - {year}. {footer.company} | CoC {footer.cocNumber} -
         All rights reserved. (
         <BuildNumber />)
       </div>
