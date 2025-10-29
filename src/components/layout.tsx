@@ -1,0 +1,89 @@
+import { useEffect, useRef, useState } from 'react'
+
+import { throttle } from 'lodash'
+
+import { Footer } from './app/footer/footer'
+import { NavBar } from './app/navigation/navbar'
+
+type LayoutProps = {
+  banner?: React.ReactNode
+  children?: React.ReactNode
+  home?: boolean
+  about?: boolean
+  cases?: boolean
+  team?: boolean
+  contact?: boolean
+}
+
+export function Layout({
+  banner,
+  children,
+  home = false,
+  about = false,
+  cases = false,
+  team = false,
+  contact = false,
+}: LayoutProps) {
+  const scrollRef = useRef<HTMLDivElement>(null)
+
+  // Scrolling behaviour
+  const HEIGHT_THRESHOLD = 0
+  const lastScrollY = useRef(0)
+  const [isVisible, setIsVisible] = useState(true)
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return
+
+    const currentScrollY = scrollRef.current.scrollTop
+
+    if (currentScrollY > HEIGHT_THRESHOLD) {
+      if (lastScrollY.current < currentScrollY) {
+        // console.log('down')
+        setIsVisible(false)
+      } else if (lastScrollY.current > currentScrollY) {
+        // console.log('up')
+        setIsVisible(true)
+      }
+    } else {
+      setIsVisible(true)
+    }
+
+    lastScrollY.current = currentScrollY
+  }
+  useEffect(() => {
+    const currentElement = scrollRef.current
+    if (!currentElement) return
+
+    currentElement.addEventListener('scroll', throttle(handleScroll, 150))
+    return () =>
+      currentElement.removeEventListener('scroll', throttle(handleScroll, 150))
+  }, [])
+
+  return (
+    <div
+      className="scrollbar-hide flex h-screen w-screen flex-col overflow-auto bg-gradient-to-br from-green-500 to-teal-500"
+      ref={scrollRef}
+    >
+      <header
+        className={`md:sticky md:top-0 shadow-md z-10 shrink-0 bg-white transition duration-300 ${!isVisible ? 'md:-translate-y-full' : 'md:translate-y-0'}`}
+      >
+        <NavBar
+          home={home}
+          about={about}
+          cases={cases}
+          team={team}
+          contact={contact}
+        />
+      </header>
+
+      {banner}
+      <div className="container mx-auto flex grow flex-col justify-around gap-16 bg-gray-50 py-16 xl:rounded-t-lg">
+        {children}
+      </div>
+
+      <footer className="shrink-0 bg-white">
+        <Footer />
+      </footer>
+    </div>
+  )
+}
