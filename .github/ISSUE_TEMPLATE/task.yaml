@@ -7,7 +7,6 @@ body:
     id: description
     attributes:
       label: Description
-      placeholder: Set up GitHub Actions cache for Node modules...
     validations:
       required: true
 
@@ -17,9 +16,9 @@ body:
       label: Checklist
       description: Break work into steps.
       placeholder: |
-        - [ ] Implement
-        - [ ] Tests
-        - [ ] Update docs
+        - [ ] Task 1
+        - [ ] Task 2
+        - [ ] Task 3
     validations:
       required: false
 
@@ -27,4 +26,4 @@ body:
     id: depends_on
     attributes:
       label: Depends on
-      description: Link any blocking issues (e.g., #123, #124).
+      description: 'Link any issues (e.g., #123, #124).'

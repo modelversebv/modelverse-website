@@ -8,7 +8,6 @@ body:
     attributes:
       label: Summary
       description: What problem does this feature solve?
-      placeholder: As a visitor, I want faster page loads on mobile...
     validations:
       required: true
 
@@ -18,9 +17,9 @@ body:
       label: Acceptance Criteria
       description: Define what "done" looks like.
       placeholder: |
-        - [ ] Lighthouse mobile score ≥ 90
-        - [ ] Images lazy-loaded
-        - [ ] Deployment notes updated
+        - [ ] Criteria 1
+        - [ ] Criteria 2
+        - [ ] Criteria 3
     validations:
       required: true
 
@@ -28,7 +27,6 @@ body:
     id: approach
     attributes:
       label: Proposed Approach (optional)
-      placeholder: Consider responsive images, preloading critical CSS, caching headers...
     validations:
       required: false
 
