@@ -1,4 +1,5 @@
 # Contributing Guide
+
 To ensure a smooth and consistent development process, please follow the guidelines below.
 
 ### Github Workflows & Contribution Guidelines

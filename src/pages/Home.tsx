@@ -47,15 +47,15 @@ export function Home() {
 
   return (
     <Layout home={true} banner={homeBanner}>
-      <div className="flex flex-col items-center-safe justify-center-safe gap-8 mx-4 md:mx-32">
+      <div className="mx-4 flex flex-col items-center-safe justify-center-safe gap-8 md:mx-32">
         <h1 className="text-center text-4xl font-bold">Why Modelverse?</h1>
         <div className="flex flex-col gap-8 lg:flex-row">
           {info.map((item: Info, index: number) => (
             <div
               key={index}
-              className="group flex w-full flex-col items-center-safe gap-8 rounded-lg bg-gradient-to-br from-green-500/10 to-teal-500/10 p-8 basis-1/3"
+              className="group flex w-full basis-1/3 flex-col items-center-safe gap-8 rounded-lg bg-gradient-to-br from-green-500/10 to-teal-500/10 p-8"
             >
-              <h1 className="font-bold text-center text-2xl text-amber-500">
+              <h1 className="text-center text-2xl font-bold text-amber-500">
                 {item.title}
               </h1>
               {item.message && <p className="text-sm">{item.message}</p>}
@@ -64,7 +64,7 @@ export function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center-safe justify-center-safe gap-8 mx-4 md:mx-32 xl:mx-64 text-center">
+      <div className="mx-4 flex flex-col items-center-safe justify-center-safe gap-8 text-center md:mx-32 xl:mx-64">
         <h1 className="text-center text-4xl font-bold">Testimonial</h1>
         <p className="italic">
           Modelverse has transformed our approach to cybersecurity risk

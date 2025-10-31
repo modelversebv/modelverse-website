@@ -32,17 +32,17 @@ export function Team() {
     <Layout team={true} banner={teamBanner}>
       {info.map((team: Team, teamNumber: number) => (
         <div
-          className="flex flex-col items-center-safe justify-center-safe gap-8 mx-4 md:mx-32"
+          className="mx-4 flex flex-col items-center-safe justify-center-safe gap-8 md:mx-32"
           key={teamNumber}
         >
           <h1 className="text-center text-4xl font-bold">{team.name}</h1>
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 w-full gap-8">
+          <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-4">
             {team.members.map((member: Member, memberNumber: number) => (
               <div
-                className="rounded-lg bg-gradient-to-br from-green-500/10 to-teal-500/10 flex flex-col gap-8 w-full p-8 transition duration-300 hover:-translate-y-3"
+                className="flex w-full flex-col gap-8 rounded-lg bg-gradient-to-br from-green-500/10 to-teal-500/10 p-8 transition duration-300 hover:-translate-y-3"
                 key={memberNumber}
               >
-                <div className="flex flex-row justify-start items-center gap-4 xl:flex-col xl:items-start">
+                <div className="flex flex-row items-center justify-start gap-4 xl:flex-col xl:items-start">
                   <Avatar className="size-24">
                     <AvatarImage
                       src={`${member.img}`}
@@ -51,10 +51,10 @@ export function Team() {
                     <AvatarFallback>{member.name}</AvatarFallback>
                   </Avatar>
                   <div className="flex flex-col">
-                    <h1 className="text-amber-500 text-2xl font-bold">
+                    <h1 className="text-2xl font-bold text-amber-500">
                       {member.name}
                     </h1>
-                    <h1 className="italic inline-flex flex-wrap">
+                    <h1 className="inline-flex flex-wrap italic">
                       {member.role}
                     </h1>
                   </div>

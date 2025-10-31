@@ -1,0 +1,41 @@
+name: 'Feature request'
+description: Propose a new feature or enhancement
+labels: ['enhancement']
+title: '[Feature]: '
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What problem does this feature solve?
+      placeholder: As a visitor, I want faster page loads on mobile...
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: Define what "done" looks like.
+      placeholder: |
+        - [ ] Lighthouse mobile score ≥ 90
+        - [ ] Images lazy-loaded
+        - [ ] Deployment notes updated
+    validations:
+      required: true
+
+  - type: textarea
+    id: approach
+    attributes:
+      label: Proposed Approach (optional)
+      placeholder: Consider responsive images, preloading critical CSS, caching headers...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options: ['P0', 'P1', 'P2', 'P3']
+    validations:
+      required: true
