@@ -8,7 +8,6 @@ body:
     attributes:
       label: Description
       description: What happened? A clear, concise description of the bug.
-      placeholder: The contact form returns 500 when submitting...
     validations:
       required: true
 
@@ -17,11 +16,6 @@ body:
     attributes:
       label: Steps to Reproduce
       description: List the steps to reproduce the issue.
-      placeholder: |
-        1. Go to /contact
-        2. Fill out the form
-        3. Click Submit
-        4. Observe error
     validations:
       required: true
 
@@ -29,7 +23,6 @@ body:
     id: expected
     attributes:
       label: Expected Behavior
-      placeholder: e.g., Form submits and shows success message
     validations:
       required: true
 
@@ -37,7 +30,6 @@ body:
     id: actual
     attributes:
       label: Actual Behavior
-      placeholder: e.g., 500 error with stack trace
     validations:
       required: true
 
@@ -54,4 +46,3 @@ body:
     attributes:
       label: Logs / Screenshots
       description: Paste relevant logs, screenshots, or links.
-      placeholder: Drag and drop images, paste stack traces, or link to Sentry/Application Insights.
