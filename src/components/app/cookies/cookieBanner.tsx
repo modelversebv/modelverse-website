@@ -26,7 +26,7 @@ const PurposeCard = ({
   onToggle,
 }: PurposeCardProps) => {
   return (
-    <div className="py-2 border-t-2 flex flex-col gap-2">
+    <div className="flex flex-col gap-2 border-t-2 py-2">
       <div className="flex flex-row justify-between">
         <div>
           {title}{' '}
@@ -162,7 +162,7 @@ export function CookieBanner({
 
   return (
     <div
-      className={`fixed top-0 z-999 h-full w-full bg-black/50 flex justify-center-safe items-center-safe ${showBanner ? 'block' : 'hidden'}`}
+      className={`fixed top-0 z-999 flex h-full w-full items-center-safe justify-center-safe bg-black/50 ${showBanner ? 'block' : 'hidden'}`}
     >
       {!showPreferences ? (
         <div
@@ -210,12 +210,12 @@ export function CookieBanner({
         </div>
       ) : (
         <div
-          className={`flex flex-col bg-white max-w-2xl mx-auto md:rounded-md transition-transform duration-1000 ${animatePreferences ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}
+          className={`mx-auto flex max-w-2xl flex-col bg-white transition-transform duration-1000 md:rounded-md ${animatePreferences ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}
         >
-          <div className="flex flex-row px-8 py-4 border-b-2">
+          <div className="flex flex-row border-b-2 px-8 py-4">
             <img src="icon.png" alt="Modelverse" className="h-8" />
           </div>
-          <ScrollArea className="max-h-96 h-96 px-8 py-4">
+          <ScrollArea className="h-96 max-h-96 px-8 py-4">
             <div className="flex flex-col gap-4 overflow-hidden">
               <h1 className="text-xl font-bold text-amber-500">
                 Manage your cookie preferences
@@ -250,7 +250,7 @@ export function CookieBanner({
               ))}
             </div>
           </ScrollArea>
-          <div className="px-8 py-4 flex flex-row gap-4 border-t-2 justify-between">
+          <div className="flex flex-row justify-between gap-4 border-t-2 px-8 py-4">
             <div className="flex flex-row gap-4 md:w-66/100 lg:w-fit">
               <button
                 className="cursor-pointer rounded-full bg-gradient-to-br from-green-500 to-teal-500 px-4 py-2 font-bold text-white transition duration-300 outline-none hover:-translate-y-1 hover:shadow-md hover:shadow-green-500/50 md:w-50/100 lg:w-fit"

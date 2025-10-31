@@ -26,7 +26,7 @@ export function NavBar({ home, about, cases, team, contact }: NavProps) {
   }
 
   return (
-    <div className="md:container md:mx-auto bg-white flex flex-col md:flex-row md:items-center-safe md:justify-between">
+    <div className="flex flex-col bg-white md:container md:mx-auto md:flex-row md:items-center-safe md:justify-between">
       <div className="relative flex flex-row px-6 py-4 shadow-md md:shadow-none">
         <img
           src={logo}

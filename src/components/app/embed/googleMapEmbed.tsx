@@ -46,7 +46,7 @@ export function GoogleMapEmbed() {
           loading="lazy"
         ></iframe>
       ) : (
-        <div className="absolute top-0 left-0 bg-gray-100 h-full w-full flex flex-col justify-center-safe items-center-safe gap-2 p-8">
+        <div className="absolute top-0 left-0 flex h-full w-full flex-col items-center-safe justify-center-safe gap-2 bg-gray-100 p-8">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -61,11 +61,11 @@ export function GoogleMapEmbed() {
             />
           </svg>
           <h1 className="text-lg">GoogleMaps content blocked</h1>
-          <p className="text-black/70 text-sm text-center">
+          <p className="text-center text-sm text-black/70">
             This content is provided by GoogleMaps and requires your consent
           </p>
           <button
-            className="rounded-full py-2 px-4  transition duration-300  hover:-translate-y-1 bg-gradient-to-br from-green-500 to-teal-500 hover:shadow-md hover:shadow-green-500/50 cursor-pointer text-white font-bold"
+            className="cursor-pointer rounded-full bg-gradient-to-br from-green-500 to-teal-500 px-4 py-2 font-bold text-white transition duration-300 hover:-translate-y-1 hover:shadow-md hover:shadow-green-500/50"
             onClick={grantConsent}
           >
             Accept

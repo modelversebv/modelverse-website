@@ -30,7 +30,7 @@ export function Footer({ onManagePrivacy }: FooterProps) {
         <BuildNumber />)
       </div>
       <div
-        className="text-sm text-black/50 hover:text-black cursor-pointer"
+        className="cursor-pointer text-sm text-black/50 hover:text-black"
         onClick={() => onManagePrivacy(true)}
       >
         Manage Privacy Preferences
