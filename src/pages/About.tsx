@@ -66,7 +66,7 @@ export function About() {
                 <ul className="list-disc pl-5 text-sm">
                   {item.list.map((listItem: Message, index: number) => (
                     <li key={index}>
-                      <span className="font-bold">{listItem.caption}</span>{' '}
+                      <span className="font-bold">{listItem.caption}:</span>{' '}
                       {listItem.message}
                     </li>
                   ))}
