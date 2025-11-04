@@ -86,7 +86,7 @@ export function Layout({
         </header>
 
         {banner}
-        <div className="container mx-auto flex grow flex-col justify-around gap-16 bg-gray-50 py-16 xl:rounded-t-lg">
+        <div className="container mx-auto flex grow flex-col justify-around gap-16 bg-gray-50 py-16 sm:rounded-t-lg">
           {children}
         </div>
 
