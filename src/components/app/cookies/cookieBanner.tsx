@@ -140,7 +140,6 @@ export function CookieBanner({
 
   useEffect(() => {
     const handlePreferencesChange = () => {
-      console.log('preferences')
       if (preferences) {
         const consentCookie = getCookie(COOKIE_CONSENT)
         if (!consentCookie) return

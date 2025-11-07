@@ -11,6 +11,7 @@ type LayoutProps = {
   children?: React.ReactNode
   home?: boolean
   about?: boolean
+  news?: boolean
   cases?: boolean
   team?: boolean
   contact?: boolean
@@ -21,6 +22,7 @@ export function Layout({
   children,
   home = false,
   about = false,
+  news = false,
   cases = false,
   team = false,
   contact = false,
@@ -79,6 +81,7 @@ export function Layout({
           <NavBar
             home={home}
             about={about}
+            news={news}
             cases={cases}
             team={team}
             contact={contact}
@@ -86,7 +89,7 @@ export function Layout({
         </header>
 
         {banner}
-        <div className="container mx-auto flex grow flex-col justify-around gap-16 bg-gray-50 py-16 sm:rounded-t-lg">
+        <div className="container mx-auto flex grow flex-col justify-center-safe gap-16 bg-gray-50 py-16 sm:rounded-t-lg">
           {children}
         </div>
 

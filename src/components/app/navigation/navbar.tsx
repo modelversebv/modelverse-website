@@ -8,12 +8,13 @@ import { NavLink } from './navlink'
 type NavProps = {
   home: boolean
   about: boolean
+  news: boolean
   cases: boolean
   team: boolean
   contact: boolean
 }
 
-export function NavBar({ home, about, cases, team, contact }: NavProps) {
+export function NavBar({ home, about, news, cases, team, contact }: NavProps) {
   const navigate = useNavigate()
 
   const [extendedMenu, setExtenedMenu] = useState(false)
@@ -31,7 +32,7 @@ export function NavBar({ home, about, cases, team, contact }: NavProps) {
         <img
           src={logo}
           alt="Modelverse"
-          className="mr-auto block h-12 w-auto cursor-pointer self-center object-contain md:h-24"
+          className="mr-auto block h-12 w-auto cursor-pointer self-center object-contain lg:h-24"
           onClick={() => navigate('/')}
         />
         <svg
@@ -52,7 +53,7 @@ export function NavBar({ home, about, cases, team, contact }: NavProps) {
       </div>
       <div
         className={`transition-nav-height overflow-hidden bg-white md:h-fit ${
-          !extendedMenu ? 'h-0' : 'h-58'
+          !extendedMenu ? 'h-0' : 'h-68'
         }`}
       >
         <div className="m-4 flex flex-col md:flex-row">
@@ -87,6 +88,22 @@ export function NavBar({ home, about, cases, team, contact }: NavProps) {
               />
             </svg>
             About
+          </NavLink>
+          <NavLink url="/news" active={news}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              className="mr-2 size-6 stroke-amber-500"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z"
+              />
+            </svg>
+            News
           </NavLink>
           <NavLink url="/cases" active={cases}>
             <svg
