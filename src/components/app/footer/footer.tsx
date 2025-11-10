@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 // Data
@@ -17,17 +18,31 @@ type FooterProps = {
 }
 
 export function Footer({ onManagePrivacy }: FooterProps) {
+  const [count, setCount] = useState(0)
+
   const navigate = useNavigate()
   const footer: Info = parse(footerFile)
   const year: number = new Date().getFullYear()
 
+  useEffect(() => {
+    if (count === 5) {
+      window.open(
+        'https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1',
+        '_blank'
+      )
+    }
+  }, [count])
+
   return (
-    <div className="flex h-fit flex-col items-center-safe justify-center-safe gap-4 bg-white p-4 text-center">
+    <div className="flex h-fit flex-col items-center-safe justify-center-safe gap-4 bg-white p-4 text-center select-none">
       {/* Footer */}
       <div className="text-sm text-black/50">
         © {footer.dob} - {year}. {footer.company} | CoC {footer.cocNumber} -
         All rights reserved. (
-        <BuildNumber />)
+        <span onClick={() => setCount((prev) => prev + 1)}>
+          <BuildNumber />
+        </span>
+        )
       </div>
       <div
         className="cursor-pointer text-sm text-black/50 hover:text-black"

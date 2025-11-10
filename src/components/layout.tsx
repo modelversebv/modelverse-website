@@ -33,7 +33,7 @@ export function Layout({
   const [showConsentPreferences, setShowConsentPreferences] = useState(false)
 
   // Scrolling behaviour
-  const HEIGHT_THRESHOLD = 0
+  const HEIGHT_THRESHOLD = 100
   const lastScrollY = useRef(0)
   const [isVisible, setIsVisible] = useState(true)
 
