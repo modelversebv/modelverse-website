@@ -33,7 +33,7 @@ type MetaData = {
 export function News() {
   return (
     <Layout news={true} banner={newsBanner}>
-      <div className="mx-4 flex h-full flex-col items-center-safe gap-16 md:mx-64">
+      <div className="mx-4 flex h-full flex-col items-center-safe gap-16 md:mx-32 xl:mx-64">
         {Object.keys(markdownFiles).length === 0 ? (
           <div className="flex h-full flex-col items-center-safe justify-center-safe gap-8">
             <h1 className="text-center text-4xl font-bold">Nothing new!</h1>
