@@ -5,15 +5,15 @@ import { Banner } from '@/components/app/misc/banner'
 import { Layout } from '@/components/layout'
 import { Separator } from '@/components/ui/separator'
 
-// // For testing
-// const markdownFiles = import.meta.glob('@/blogs/*.mdx', {
-//   eager: true,
-// })
-
-// For production
-const markdownFiles = import.meta.glob('@/blogs/!(*test*).mdx', {
+// For testing
+const markdownFiles = import.meta.glob('@/blogs/*.mdx', {
   eager: true,
 })
+
+// // For production
+// const markdownFiles = import.meta.glob('@/blogs/!(*test*).mdx', {
+//   eager: true,
+// })
 
 const newsBanner = (
   <Banner>
@@ -53,12 +53,9 @@ export function News() {
 
             return (
               <React.Fragment key={postId}>
-                <div className="flex w-full flex-col justify-center-safe gap-8">
-                  <article className="prose prose-img:rounded-2xl prose-img:mx-auto prose-img:max-w-2xl prose-img:w-full prose-img:object-cover w-full max-w-none">
-                    <h1>{metadata.title}</h1>
-                    <MDXComponent components={{ YouTubeEmbed }} />
-                  </article>
-                  <div className="flex flex-row justify-between">
+                <article className="prose prose-img:rounded-2xl prose-img:mx-auto prose-img:max-w-2xl prose-img:w-full prose-img:object-cover w-full max-w-none">
+                  <h1>{metadata.title}</h1>
+                  <div className="not-prose flex flex-col">
                     <h1>
                       <span className="font-bold">Author:</span>{' '}
                       {metadata.author}
@@ -67,7 +64,8 @@ export function News() {
                       <span className="font-bold">Date:</span> {metadata.date}
                     </h1>
                   </div>
-                </div>
+                  <MDXComponent components={{ YouTubeEmbed }} />
+                </article>
 
                 {index !== Object.entries(markdownFiles).length - 1 && (
                   <Separator className="rounded-full data-[orientation=horizontal]:h-1" />

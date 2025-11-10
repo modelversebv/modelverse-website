@@ -93,7 +93,7 @@ const Carousel = () => {
           {cases.map((item: Case, index: number) => {
             return (
               <div
-                className="flex w-48 shrink-0 snap-center snap-always flex-col gap-2 from-green-500/10 to-teal-500/10 p-2 transition-transform duration-300 md:rounded-lg md:bg-gradient-to-br"
+                className="flex w-48 shrink-0 snap-center snap-always flex-col gap-2 from-green-500/10 to-teal-500/10 p-2 transition-transform duration-300 md:rounded-lg md:bg-linear-to-tl"
                 key={index}
               >
                 <img

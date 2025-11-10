@@ -72,7 +72,7 @@ export function Layout({
         setPreferences={setShowConsentPreferences}
       ></CookieBanner>
       <div
-        className="scrollbar-hide flex h-screen w-screen flex-col overflow-auto bg-gradient-to-br from-green-500 to-teal-500"
+        className="scrollbar-hide flex h-screen w-screen flex-col overflow-auto bg-gradient-to-tl from-green-500 to-teal-500"
         ref={scrollRef}
       >
         <header

@@ -18,7 +18,7 @@ export function Contact() {
   return (
     <Layout contact={true} banner={contactBanner}>
       <div className="mx-4 grid grid-cols-1 gap-8 md:mx-32 lg:grid-cols-2">
-        <div className="flex flex-col gap-8 rounded-lg bg-gradient-to-br from-green-500/10 to-teal-500/10 p-8">
+        <div className="flex flex-col gap-8 rounded-lg bg-linear-to-tl from-green-500/10 to-teal-500/10 p-8">
           <h1 className="text-2xl font-bold text-amber-500">Get in Touch</h1>
           <div>
             Email:{' '}
@@ -43,7 +43,7 @@ export function Contact() {
             short tram ride via line 2.
           </p>
         </div>
-        <div className="flex flex-col gap-8 rounded-lg bg-gradient-to-br from-green-500/10 to-teal-500/10 p-8">
+        <div className="flex flex-col gap-8 rounded-lg bg-linear-to-tl from-green-500/10 to-teal-500/10 p-8">
           <h1 className="text-2xl font-bold text-amber-500">Directions</h1>
           <GoogleMapEmbed></GoogleMapEmbed>
           <div>

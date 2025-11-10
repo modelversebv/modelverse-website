@@ -39,7 +39,7 @@ export function Team() {
           <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-4">
             {team.members.map((member: Member, memberNumber: number) => (
               <div
-                className="flex w-full flex-col gap-8 rounded-lg bg-gradient-to-br from-green-500/10 to-teal-500/10 p-8 transition duration-300 hover:-translate-y-3"
+                className="flex w-full flex-col gap-8 rounded-lg bg-linear-to-tl from-green-500/10 to-teal-500/10 p-8 transition duration-300 hover:-translate-y-3"
                 key={memberNumber}
               >
                 <div className="flex flex-row items-center justify-start gap-4 xl:flex-col xl:items-start">

@@ -30,13 +30,13 @@ const aboutBanner = (
       risks with confidence and clarity.
     </p>
     <button
-      className="cursor-pointer rounded-full bg-white px-4 py-2 font-bold transition duration-300 hover:-translate-y-1 hover:shadow-md hover:shadow-white/50"
+      className="cursor-pointer rounded-full bg-white px-4 py-2 font-bold transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-white/50"
       onClick={() =>
         (window.location.href =
           'https://outlook.office.com/bookwithme/user/d81d78745f8047d1a0ec05a07d8d40d6@modelverse.online/meetingtype/HEkH_Hmwx06JvFc-tP4ZJw2?anonymous')
       }
     >
-      <span className="bg-gradient-to-br from-green-500 to-teal-500 bg-clip-text text-transparent">
+      <span className="bg-linear-to-tl from-green-500 to-teal-500 bg-clip-text text-transparent">
         Talk to us
       </span>
     </button>
@@ -56,7 +56,7 @@ export function About() {
           {info.map((item: Info, index: number) => (
             <div
               key={index}
-              className="group flex w-full basis-1/3 flex-col items-center-safe gap-8 rounded-lg bg-gradient-to-br from-green-500/10 to-teal-500/10 p-8"
+              className="group flex w-full basis-1/3 flex-col items-center-safe gap-8 rounded-lg bg-linear-to-tl from-green-500/10 to-teal-500/10 p-8"
             >
               <h1 className="text-center text-2xl font-bold text-amber-500">
                 {item.title}
@@ -74,7 +74,7 @@ export function About() {
               )}
               {item.button && (
                 <button
-                  className="transtion cursor-pointer rounded-full bg-gradient-to-br from-green-500 to-teal-500 px-4 py-2 font-bold text-white duration-300 hover:-translate-y-1 hover:shadow-md hover:shadow-green-500/50"
+                  className="transtion cursor-pointer rounded-full bg-linear-to-tl from-green-500 to-teal-500 px-4 py-2 font-bold text-white duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50"
                   onClick={() => navigate(item.button.url)}
                 >
                   {item.button.text}
