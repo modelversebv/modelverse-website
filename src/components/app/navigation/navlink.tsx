@@ -11,7 +11,7 @@ export function NavLink({ url, children, active }: NavLinkProps) {
     <Link
       to={url}
       className={`text-md rounded-full bg-white px-4 py-2 ${
-        active ? 'bg-gradient-to-br from-green-500/30 to-teal-500/30' : ''
+        active ? 'bg-linear-to-tl from-green-500/30 to-teal-500/30' : ''
       }`}
     >
       <span

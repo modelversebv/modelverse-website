@@ -31,7 +31,7 @@ const PurposeCard = ({
         <div>
           {title}{' '}
           {necessary && (
-            <Badge className="ml-2 bg-gradient-to-br from-green-500 to-teal-500 font-bold">
+            <Badge className="ml-2 bg-linear-to-tl from-green-500 to-teal-500 font-bold">
               Necessary
             </Badge>
           )}
@@ -140,7 +140,6 @@ export function CookieBanner({
 
   useEffect(() => {
     const handlePreferencesChange = () => {
-      console.log('preferences')
       if (preferences) {
         const consentCookie = getCookie(COOKIE_CONSENT)
         if (!consentCookie) return
@@ -184,23 +183,23 @@ export function CookieBanner({
             </div>
             <div className="flex flex-col gap-4 md:basis-1/3 lg:basis-1/4 xl:basis-1/5 2xl:basis-1/6">
               <button
-                className="cursor-pointer rounded-full bg-gradient-to-br from-green-500 to-teal-500 px-4 py-2 font-bold text-white transition duration-300 outline-none hover:-translate-y-1 hover:shadow-md hover:shadow-green-500/50"
+                className="cursor-pointer rounded-full bg-linear-to-tl from-green-500 to-teal-500 px-4 py-2 font-bold text-white transition duration-300 outline-none hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50"
                 onClick={handleAccept}
               >
                 Accept all
               </button>
               <button
-                className="cursor-pointer rounded-full bg-gradient-to-br from-green-500 to-teal-500 px-4 py-2 font-bold text-white transition duration-300 outline-none hover:-translate-y-1 hover:shadow-md hover:shadow-green-500/50"
+                className="cursor-pointer rounded-full bg-linear-to-tl from-green-500 to-teal-500 px-4 py-2 font-bold text-white transition duration-300 outline-none hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50"
                 onClick={handleReject}
               >
                 Reject non-essential
               </button>
               <button
-                className="cursor-pointer rounded-full bg-gradient-to-br from-green-500 to-teal-500 p-1 font-bold text-white transition duration-300 outline-none hover:-translate-y-1 hover:shadow-md hover:shadow-green-500/50"
+                className="cursor-pointer rounded-full bg-linear-to-tl from-green-500 to-teal-500 p-1 font-bold text-white transition duration-300 outline-none hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50"
                 onClick={handleManage}
               >
                 <div className="w-full rounded-full bg-white px-3 py-1">
-                  <span className="bg-gradient-to-br from-green-500 to-teal-500 bg-clip-text font-bold text-transparent">
+                  <span className="bg-linear-to-tl from-green-500 to-teal-500 bg-clip-text font-bold text-transparent">
                     Manage preferences
                   </span>
                 </div>
@@ -253,13 +252,13 @@ export function CookieBanner({
           <div className="flex flex-row justify-between gap-4 border-t-2 px-8 py-4">
             <div className="flex flex-row gap-4 md:w-66/100 lg:w-fit">
               <button
-                className="cursor-pointer rounded-full bg-gradient-to-br from-green-500 to-teal-500 px-4 py-2 font-bold text-white transition duration-300 outline-none hover:-translate-y-1 hover:shadow-md hover:shadow-green-500/50 md:w-50/100 lg:w-fit"
+                className="cursor-pointer rounded-full bg-linear-to-tl from-green-500 to-teal-500 px-4 py-2 font-bold text-white transition duration-300 outline-none hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 md:w-50/100 lg:w-fit"
                 onClick={handleAccept}
               >
                 Accept all
               </button>
               <button
-                className="cursor-pointer rounded-full bg-gradient-to-br from-green-500 to-teal-500 px-4 py-2 font-bold text-white transition duration-300 outline-none hover:-translate-y-1 hover:shadow-md hover:shadow-green-500/50 md:w-50/100 lg:w-fit"
+                className="cursor-pointer rounded-full bg-linear-to-tl from-green-500 to-teal-500 px-4 py-2 font-bold text-white transition duration-300 outline-none hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 md:w-50/100 lg:w-fit"
                 onClick={handleReject}
               >
                 Reject all
@@ -267,11 +266,11 @@ export function CookieBanner({
             </div>
 
             <button
-              className="cursor-pointer rounded-full bg-gradient-to-br from-green-500 to-teal-500 p-1 font-bold text-white transition duration-300 outline-none hover:-translate-y-1 hover:shadow-md hover:shadow-green-500/50 md:w-33/100 lg:w-fit"
+              className="cursor-pointer rounded-full bg-linear-to-tl from-green-500 to-teal-500 p-1 font-bold text-white transition duration-300 outline-none hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 md:w-33/100 lg:w-fit"
               onClick={handleSave}
             >
               <div className="w-full rounded-full bg-white px-3 py-1">
-                <span className="bg-gradient-to-br from-green-500 to-teal-500 bg-clip-text font-bold text-transparent">
+                <span className="bg-linear-to-tl from-green-500 to-teal-500 bg-clip-text font-bold text-transparent">
                   Save
                 </span>
               </div>
