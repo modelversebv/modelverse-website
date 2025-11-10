@@ -5,15 +5,15 @@ import { Banner } from '@/components/app/misc/banner'
 import { Layout } from '@/components/layout'
 import { Separator } from '@/components/ui/separator'
 
-// For testing
-const markdownFiles = import.meta.glob('@/blogs/*.mdx', {
-  eager: true,
-})
-
-// // For production
-// const markdownFiles = import.meta.glob('@/blogs/!(*test*).mdx', {
+// // For testing
+// const markdownFiles = import.meta.glob('@/blogs/*.mdx', {
 //   eager: true,
 // })
+
+// For production
+const markdownFiles = import.meta.glob('@/blogs/!(*test*).mdx', {
+  eager: true,
+})
 
 const newsBanner = (
   <Banner>
