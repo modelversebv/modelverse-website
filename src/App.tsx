@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
+import { Toaster } from 'sonner'
+
 import './App.css'
 import { About } from './pages/About'
 import { Cases } from './pages/Cases'
@@ -19,6 +21,7 @@ function App() {
         <Route path="/team" element={<Team />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Toaster position="top-center" />
     </BrowserRouter>
   )
 }
