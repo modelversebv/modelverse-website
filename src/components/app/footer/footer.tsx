@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 // Data
 import { BuildNumber } from '@/components/buildNumber'
 import footerFile from '@/data/footer.yaml?raw'
+import { toast } from 'sonner'
 import { parse } from 'yaml'
 
 type Info = {
@@ -26,9 +27,20 @@ export function Footer({ onManagePrivacy }: FooterProps) {
 
   useEffect(() => {
     if (count === 5) {
-      window.open(
-        'https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1',
-        '_blank'
+      // window.open(
+      //   'https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1',
+      //   '_blank'
+      // )
+      toast.custom(
+        () => (
+          <div className="w-full rounded-full bg-linear-to-tl from-green-500 to-teal-500 p-1">
+            <div className="h-full w-full rounded-full bg-white px-7 py-3">
+              <div className="font-bold">🎉 Congrats!</div>
+              <div className="text-sm">You found a secret Easter egg!</div>
+            </div>
+          </div>
+        ),
+        { duration: 3000, className: 'w-full' }
       )
     }
   }, [count])
