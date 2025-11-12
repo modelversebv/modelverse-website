@@ -39,8 +39,7 @@ export function Contact() {
           </ul>
           <p>
             The HSD Campus is easily accessible by car and public transport.
-            From Den Haag Laan van NOI train station, it’s a 10-minute walk or a
-            short tram ride via line 2.
+            It’s a 3-minute walk from the Den Haag Laan van NOI train station.
           </p>
         </div>
         <div className="flex flex-col gap-8 rounded-lg bg-linear-to-tl from-green-500/10 to-teal-500/10 p-8">
