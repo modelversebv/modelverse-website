@@ -2,6 +2,8 @@
   "name": "React + TypeScript + MDX Dev",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:22",
 
+  "workspaceFolder": "/workspace/modelverse-website/src/blogs",
+
   "customizations": {
     "vscode": {
       "extensions": ["esbenp.prettier-vscode", "SanaAjani.taskrunnercode"],
@@ -21,9 +23,6 @@
 
   // Install dependencies after the container builds
   "postCreateCommand": "npm ci",
-
-  // Start Vite automatically (optional)
-  "postStartCommand": "npm run dev",
 
   "forwardPorts": [5173],
   "portsAttributes": {

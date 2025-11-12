@@ -6,14 +6,30 @@
       "type": "shell",
       "command": "npm run dev",
       "problemMatcher": [],
-      "group": "build"
+      "group": "build",
+      "options": {
+        "cwd": "${workspaceFolder}/../.."
+      }
+    },
+    {
+      "label": "Stop Preview",
+      "type": "shell",
+      "command": "pkill -f 'vite'",
+      "problemMatcher": [],
+      "group": "build",
+      "options": {
+        "cwd": "${workspaceFolder}/../.."
+      }
     },
     {
       "label": "Push Changes",
       "type": "shell",
       "command": "./.vscode/push-changes.sh \"${input:commitMessage}\"",
       "problemMatcher": [],
-      "group": "build"
+      "group": "build",
+      "options": {
+        "cwd": "${workspaceFolder}/../.."
+      }
     }
   ],
   "inputs": [
