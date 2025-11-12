@@ -2,26 +2,25 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "🟢 Preview Changes",
+      "label": "Preview Changes",
       "type": "shell",
       "command": "npm run dev",
-      "presentation": {
-        "reveal": "always",
-        "panel": "dedicated"
-      },
-      "isBackground": true,
-      "problemMatcher": []
+      "problemMatcher": [],
+      "group": "build"
     },
     {
-      "label": "📤 Commit & Push Changes",
+      "label": "Push Changes",
       "type": "shell",
-      "command": "bash .vscode/push-changes.sh",
+      "command": "./.vscode/push-changes.sh \"${input:commitMessage}\"",
       "problemMatcher": [],
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": true
-      }
+      "group": "build"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "commitMessage",
+      "type": "promptString",
+      "description": "Enter a short commit message"
     }
   ]
 }

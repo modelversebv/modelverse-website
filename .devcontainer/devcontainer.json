@@ -2,13 +2,16 @@
   "name": "React + TypeScript + MDX Dev",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:22",
 
-  // Start the workspace inside the blogs folder
-  // "workspaceFolder": "/workspaces/modelverse-website/src/blogs",
-
   "customizations": {
     "vscode": {
-      "extensions": ["esbenp.prettier-vscode"],
+      "extensions": ["esbenp.prettier-vscode", "SanaAjani.taskrunnercode"],
+
       "settings": {
+        "files.exclude": {
+          "**/*": true,
+          "src/blogs": false
+        },
+        "task.autoDetect": "off",
         "workbench.startupEditor": "none",
         "editor.wordWrap": "on",
         "terminal.integrated.defaultProfile.linux": "bash"

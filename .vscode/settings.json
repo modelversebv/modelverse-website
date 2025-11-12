@@ -1,6 +1,0 @@
-{
-  "command-runner.commands": {
-    "Start Preview": "npm run dev",
-    "Commit & Push": "bash .vscode/push-changes.sh"
-  }
-}

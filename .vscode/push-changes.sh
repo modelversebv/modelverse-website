@@ -5,14 +5,22 @@ set -e
 cd "$(git rev-parse --show-toplevel)"
 
 # Add all changes
-git add .
+git add src/blogs
 
-# Ask for a commit message
-echo "Enter a short commit message:"
-read commit_message
+# Checking for changes
+if git diff-index --quiet HEAD --; then
+  echo "No changes to commit."
+  exit 0
+fi
 
-# Commit and push to the current branch
+# Getting the commit message and commiting changes
+commit_message="$1"
 git commit -m "$commit_message"
-git push
 
-echo "✅ Changes committed and pushed!"
+# Get current branch
+branch=$(git rev-parse --abbrev-ref HEAD)
+
+# Push
+git push --set-upstream origin "$branch"
+
+echo "Changes pushed successfuly!"
