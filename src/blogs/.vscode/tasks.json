@@ -4,19 +4,16 @@
     {
       "label": "Preview Changes",
       "type": "shell",
-      "command": "./.vscode/start-dev.sh",
+      "command": "./.vscode/start-server.sh",
       "problemMatcher": [],
       "group": "build"
     },
     {
       "label": "Stop Preview",
       "type": "shell",
-      "command": "pkill -f 'vite'",
+      "command": "./.vscode/stop-server.sh",
       "problemMatcher": [],
-      "group": "build",
-      "options": {
-        "cwd": "${workspaceFolder}/../../.."
-      }
+      "group": "build"
     },
     {
       "label": "Push Changes",
