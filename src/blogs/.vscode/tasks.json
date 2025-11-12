@@ -20,10 +20,7 @@
       "type": "shell",
       "command": "bash ./.vscode/push-changes.sh \"${input:commitMessage}\"",
       "problemMatcher": [],
-      "group": "build",
-      "options": {
-        "cwd": "${workspaceFolder}/../../.."
-      }
+      "group": "build"
     }
   ],
   "inputs": [
