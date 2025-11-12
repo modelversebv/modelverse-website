@@ -4,12 +4,9 @@
     {
       "label": "Preview Changes",
       "type": "shell",
-      "command": "npm run dev",
+      "command": "./.vscode/start-dev.sh",
       "problemMatcher": [],
-      "group": "build",
-      "options": {
-        "cwd": "${workspaceFolder}/../../.."
-      }
+      "group": "build"
     },
     {
       "label": "Stop Preview",
