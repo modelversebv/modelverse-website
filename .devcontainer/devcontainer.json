@@ -3,17 +3,12 @@
   "image": "mcr.microsoft.com/devcontainers/typescript-node:22",
 
   // Start the workspace inside the blogs folder
-  "workspaceFolder": "/workspaces/modelverse-website/src/blogs",
+  // "workspaceFolder": "/workspaces/modelverse-website/src/blogs",
 
   "customizations": {
     "vscode": {
       "extensions": ["esbenp.prettier-vscode"],
       "settings": {
-        // Hide everything except /src/blogs in the Explorer
-        "files.exclude": {
-          "**/*": true,
-          "src/blogs/**": false
-        },
         "workbench.startupEditor": "none",
         "editor.wordWrap": "on",
         "terminal.integrated.defaultProfile.linux": "bash"
