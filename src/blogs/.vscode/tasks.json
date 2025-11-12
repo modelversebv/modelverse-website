@@ -4,21 +4,21 @@
     {
       "label": "Preview Changes",
       "type": "shell",
-      "command": "./.vscode/start-server.sh",
+      "command": "bash ./.vscode/start-server.sh",
       "problemMatcher": [],
       "group": "build"
     },
     {
       "label": "Stop Preview",
       "type": "shell",
-      "command": "./.vscode/stop-server.sh",
+      "command": "bash ./.vscode/stop-server.sh",
       "problemMatcher": [],
       "group": "build"
     },
     {
       "label": "Push Changes",
       "type": "shell",
-      "command": "./.vscode/push-changes.sh \"${input:commitMessage}\"",
+      "command": "bash ./.vscode/push-changes.sh \"${input:commitMessage}\"",
       "problemMatcher": [],
       "group": "build",
       "options": {
