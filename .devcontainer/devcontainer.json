@@ -2,17 +2,13 @@
   "name": "React + TypeScript + MDX Dev",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:22",
 
-  "workspaceFolder": "/workspace/modelverse-website/src/blogs",
+  "workspaceFolder": "/workspaces/modelverse-website/src/blogs",
 
   "customizations": {
     "vscode": {
       "extensions": ["esbenp.prettier-vscode", "SanaAjani.taskrunnercode"],
 
       "settings": {
-        "files.exclude": {
-          "**/*": true,
-          "src/blogs": false
-        },
         "task.autoDetect": "off",
         "workbench.startupEditor": "none",
         "editor.wordWrap": "on",
