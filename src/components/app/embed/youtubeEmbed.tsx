@@ -1,14 +1,21 @@
 import { useEffect, useState } from 'react'
 
+import { cn } from '@/lib/utils'
 import { getCookie, setCookie } from 'typescript-cookie'
 
 type YouTubeEmbedProps = {
   videoId: string
   title?: string
+  className?: string
   blog?: boolean
 }
 
-export function YouTubeEmbed({ videoId, title, blog }: YouTubeEmbedProps) {
+export function YouTubeEmbed({
+  videoId,
+  title,
+  className,
+  blog,
+}: YouTubeEmbedProps) {
   const COOKIE_CONSENT = 'user-preferences'
   const CONSENT_UPDATE_EVENT = 'consentUpdate'
 
@@ -44,8 +51,14 @@ export function YouTubeEmbed({ videoId, title, blog }: YouTubeEmbedProps) {
   }, [])
 
   return (
-    <div className={`w-full ${blog && 'mx-auto max-w-2xl'} not-prose`}>
-      <div className="relative w-full overflow-hidden rounded-2xl pt-[56.25%] shadow-md select-none">
+    <div
+      className={cn(
+        'not-prose w-full',
+        className,
+        `${blog && 'mx-auto max-w-2xl'}`
+      )}
+    >
+      <div className="relative aspect-video w-full overflow-hidden rounded-2xl shadow-md select-none">
         {hasConsent ? (
           <iframe
             className="absolute top-0 left-0 h-full w-full"

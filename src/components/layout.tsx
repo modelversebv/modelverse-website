@@ -33,9 +33,10 @@ export function Layout({
   const [showConsentPreferences, setShowConsentPreferences] = useState(false)
 
   // Scrolling behaviour
-  const HEIGHT_THRESHOLD = 100
+  const HEIGHT_THRESHOLD = 0
   const lastScrollY = useRef(0)
-  const [isVisible, setIsVisible] = useState(true)
+  const [isNavVisible, setIsNavVisible] = useState(true)
+  const [expandedMenu, setExpandedMenu] = useState(false)
 
   const handleScroll = () => {
     if (!scrollRef.current) return
@@ -44,14 +45,12 @@ export function Layout({
 
     if (currentScrollY > HEIGHT_THRESHOLD) {
       if (lastScrollY.current < currentScrollY) {
-        // console.log('down')
-        setIsVisible(false)
+        setIsNavVisible(false)
       } else if (lastScrollY.current > currentScrollY) {
-        // console.log('up')
-        setIsVisible(true)
+        setIsNavVisible(true)
       }
     } else {
-      setIsVisible(true)
+      setIsNavVisible(true)
     }
 
     lastScrollY.current = currentScrollY
@@ -72,30 +71,37 @@ export function Layout({
         setPreferences={setShowConsentPreferences}
       ></CookieBanner>
       <div
-        className="scrollbar-hide flex h-screen w-screen flex-col overflow-auto bg-gradient-to-tl from-green-500 to-teal-500"
+        className="scrollbar-hide md:bg-container flex h-screen w-screen flex-col justify-center-safe overflow-auto bg-[url(/background.jpg)] bg-cover bg-bottom-right md:bg-center"
         ref={scrollRef}
       >
-        <header
-          className={`z-10 shrink-0 bg-white shadow-md transition duration-300 md:sticky md:top-0 ${!isVisible ? 'md:-translate-y-full' : 'md:translate-y-0'}`}
-        >
-          <NavBar
-            home={home}
-            about={about}
-            news={news}
-            cases={cases}
-            team={team}
-            contact={contact}
-          />
-        </header>
+        <NavBar
+          home={home}
+          about={about}
+          news={news}
+          cases={cases}
+          team={team}
+          contact={contact}
+          isNavVisible={isNavVisible}
+          expandedMenu={expandedMenu}
+          setExpandedMenu={setExpandedMenu}
+        />
+
+        {/* <div className="mt-20 md:mt-26">{banner}</div> */}
 
         {banner}
-        <div className="container mx-auto flex grow flex-col justify-center-safe gap-16 bg-gray-50 py-16 sm:rounded-t-lg">
-          {children}
-        </div>
+        <div className="flex grow flex-col">{children}</div>
 
-        <footer className="shrink-0 bg-white">
-          <Footer onManagePrivacy={setShowConsentPreferences} />
-        </footer>
+        {/* <div className="w-full bg-white">
+          <div className="container mx-auto mt-20 flex grow flex-col justify-center-safe gap-16 pb-16 md:mt-26">
+            {children}
+          </div>
+        </div> */}
+
+        {/* <div className="container mx-auto flex grow flex-col justify-center-safe gap-16 bg-gray-50 py-16 sm:rounded-t-lg">
+          {children}
+        </div> */}
+
+        <Footer onManagePrivacy={setShowConsentPreferences} />
       </div>
     </>
   )

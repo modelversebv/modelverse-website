@@ -8,19 +8,24 @@ type NavLinkProps = {
 
 export function NavLink({ url, children, active }: NavLinkProps) {
   return (
-    <Link
-      to={url}
-      className={`text-md rounded-full bg-white px-4 py-2 ${
-        active ? 'bg-linear-to-tl from-green-500/30 to-teal-500/30' : ''
-      }`}
+    <div
+      className={`rounded-full md:size-fit ${active && 'bg-black shadow-lg'}`}
     >
-      <span
-        className={`flex flex-row items-center-safe ${
-          active ? 'opacity-100' : 'opacity-70 hover:opacity-100'
+      <Link
+        to={url}
+        className={`flex size-full flex-row rounded-full px-3 py-1 font-semibold text-white ${
+          active &&
+          'bg-gradient-to-r from-green-500/60 to-teal-500/60 shadow-lg'
         }`}
       >
-        {children}
-      </span>
-    </Link>
+        <span
+          className={`flex flex-row items-center-safe ${
+            active ? 'opacity-100' : 'opacity-80 hover:opacity-100'
+          }`}
+        >
+          {children}
+        </span>
+      </Link>
+    </div>
   )
 }

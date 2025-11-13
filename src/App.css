@@ -10,18 +10,11 @@
   transition: height 0.5s ease-in-out;
 }
 
-.transition-nav-height {
-  transition: height 0.5s ease-in-out;
-}
-
 .transition-card-height {
   transition: height 0.5s ease-in-out;
 }
 
-button {
-  user-select: none;
-}
-
+button,
 img {
   user-select: none;
 }
