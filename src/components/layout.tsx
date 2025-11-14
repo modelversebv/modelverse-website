@@ -71,7 +71,7 @@ export function Layout({
         setPreferences={setShowConsentPreferences}
       ></CookieBanner>
       <div
-        className="scrollbar-hide md:bg-container flex h-screen w-screen flex-col justify-center-safe overflow-auto bg-[url(/background.jpg)] bg-cover bg-bottom-right md:bg-center"
+        className="scrollbar-hide h-screen w-screen overflow-auto bg-[url(/background.jpg)] bg-cover bg-right"
         ref={scrollRef}
       >
         <NavBar
@@ -86,20 +86,7 @@ export function Layout({
           setExpandedMenu={setExpandedMenu}
         />
 
-        {/* <div className="mt-20 md:mt-26">{banner}</div> */}
-
-        {banner}
-        <div className="flex grow flex-col">{children}</div>
-
-        {/* <div className="w-full bg-white">
-          <div className="container mx-auto mt-20 flex grow flex-col justify-center-safe gap-16 pb-16 md:mt-26">
-            {children}
-          </div>
-        </div> */}
-
-        {/* <div className="container mx-auto flex grow flex-col justify-center-safe gap-16 bg-gray-50 py-16 sm:rounded-t-lg">
-          {children}
-        </div> */}
+        <div className="flex grow flex-col sm:mt-20 md:mt-26">{children}</div>
 
         <Footer onManagePrivacy={setShowConsentPreferences} />
       </div>

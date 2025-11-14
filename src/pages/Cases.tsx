@@ -1,12 +1,22 @@
 import { useRef, useState } from 'react'
 
-import YouTubeEmbed from '@/components/app/embed/youtubeEmbed'
 import { Banner } from '@/components/app/misc/banner'
-import { Layout } from '@/components/layout'
+import { Card } from '@/components/app/misc/card'
+import { ContentSection } from '@/components/app/misc/contentSection'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Separator } from '@/components/ui/separator'
 import infoFile from '@/data/cases.yaml?raw'
 import { parse } from 'yaml'
+
+const casesBanner = (
+  <Banner>
+    <h1 className="text-4xl font-bold">Our Customers</h1>
+    <p className="text-lg">
+      Discover how we've helped our clients grow and innovate their approaches
+      to (cyber) security
+    </p>
+  </Banner>
+)
 
 type Case = {
   name: string
@@ -16,22 +26,13 @@ type Case = {
   url: string
 }
 
-const casesBanner = (
-  <Banner>
-    <h1 className="text-4xl font-bold">Our Customers</h1>
-    <p className="text-lg">
-      Discover how we've helped our clients innovate and grow.
-    </p>
-  </Banner>
-)
-
 const Carousel = () => {
   // const { ref, inView } = useInView({
   //   threshold: 0.9,
   // })
 
   const cases = parse(infoFile)
-  const [extendedCard, setExtenedCard] = useState(false)
+  const [extendedCard, setExtenedCard] = useState(true)
 
   const handleCardBtn = () => {
     if (extendedCard) {
@@ -87,33 +88,31 @@ const Carousel = () => {
 
       <div className="flex w-full flex-col items-center gap-4 lg:w-8/10">
         <div
-          className="scrollbar-hide flex w-full snap-x snap-mandatory flex-row gap-4 overflow-x-scroll scroll-smooth px-32 md:px-48 lg:overflow-x-hidden lg:px-0 xl:px-24 2xl:px-0"
+          className="scrollbar-hide flex w-full snap-x snap-mandatory flex-row overflow-x-scroll scroll-smooth"
           ref={scrollerRef}
         >
-          {cases.map((item: Case, index: number) => {
-            return (
-              <div
-                className="flex w-48 shrink-0 snap-center snap-always flex-col gap-2 from-green-500/10 to-teal-500/10 p-2 transition-transform duration-300 md:rounded-lg md:bg-linear-to-tl"
-                key={index}
+          {cases.map((item: Case, index: number) => (
+            <Card
+              className="m-4 w-48 shrink-0 snap-center snap-always"
+              key={index}
+            >
+              <img
+                src={`${item.logo}`}
+                alt={item.name}
+                className="h-16 object-scale-down md:rounded-t-lg md:p-2"
+                onClick={() => (window.location.href = item.url)}
+              />
+              <Separator className="hidden md:block" />
+              <ScrollArea
+                className={`transition-card-height px-4 ${!extendedCard ? 'h-0' : 'h-64'} md:h-64`}
               >
-                <img
-                  src={`${item.logo}`}
-                  alt={item.name}
-                  className="h-16 object-scale-down md:rounded-t-lg md:p-2"
-                  onClick={() => (window.location.href = item.url)}
-                />
-                <Separator className="hidden md:block" />
-                <ScrollArea
-                  className={`transition-card-height px-4 text-sm ${!extendedCard ? 'h-0' : 'h-48'} md:h-48`}
-                >
-                  {item.about}
-                  <br />
-                  <br />
-                  {item.case}
-                </ScrollArea>
-              </div>
-            )
-          })}
+                {item.about}
+                <br />
+                <br />
+                {item.case}
+              </ScrollArea>
+            </Card>
+          ))}
         </div>
         <button
           onClick={handleCardBtn}
@@ -184,25 +183,13 @@ const Carousel = () => {
 
 export function Cases() {
   return (
-    <Layout cases={true} banner={casesBanner}>
-      <div className="mx-4 flex flex-col items-center-safe justify-center-safe gap-8 md:mx-32">
-        <h1 className="text-center text-4xl font-bold">Our Clients</h1>
-        <Carousel />
-      </div>
-
-      <div className="mx-4 flex flex-col items-center-safe justify-center-safe gap-8 text-center md:mx-32 xl:mx-64">
-        <h1 className="text-center text-4xl font-bold">Testimonial</h1>
-        <p className="italic">
-          Reshma and the Team has helped us close our security gaps.
-        </p>
-        <p className="text-lg font-bold italic">
-          –Christiaan Rood, CEO, LeydenJar Technologies
-        </p>
-        <YouTubeEmbed
-          videoId="KO0yNnQ8zbQ"
-          title="​LeydenJar protects IP with help of Modelverse"
-        />
-      </div>
-    </Layout>
+    <div className="relative mb-12">
+      {casesBanner}
+      <ContentSection>
+        <div className="flex flex-col items-center-safe justify-center-safe gap-8">
+          <Carousel />
+        </div>
+      </ContentSection>
+    </div>
   )
 }

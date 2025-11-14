@@ -58,7 +58,7 @@ export function YouTubeEmbed({
         `${blog && 'mx-auto max-w-2xl'}`
       )}
     >
-      <div className="relative aspect-video w-full overflow-hidden rounded-2xl shadow-md select-none">
+      <div className="relative aspect-video w-full overflow-hidden rounded-md border select-none">
         {hasConsent ? (
           <iframe
             className="absolute top-0 left-0 h-full w-full"

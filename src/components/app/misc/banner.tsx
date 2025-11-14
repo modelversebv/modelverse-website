@@ -4,8 +4,10 @@ type BannerProps = {
 
 export function Banner({ children }: BannerProps) {
   return (
-    <div className="container mx-auto flex h-screen shrink-0 flex-col items-center-safe justify-center-safe gap-8 p-4 text-center text-white select-none">
-      {children}
+    <div className="flex h-screen grow items-center-safe justify-center-safe">
+      <div className="mx-4 flex flex-col gap-8 text-center text-white">
+        {children}
+      </div>
     </div>
   )
 }

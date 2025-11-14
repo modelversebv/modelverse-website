@@ -1,100 +1,74 @@
-import { useNavigate } from 'react-router-dom'
-
 import { Banner } from '@/components/app/misc/banner'
-import { Layout } from '@/components/layout'
-import infoFile from '@/data/about.yaml?raw'
-import { parse } from 'yaml'
-
-type Message = {
-  caption: string
-  message: string
-}
-
-type Button = {
-  text: string
-  url: string
-}
-
-type Info = {
-  title: string
-  message: string
-  button: Button
-  list: Message[]
-}
+import { Card } from '@/components/app/misc/card'
+import { ContentSection } from '@/components/app/misc/contentSection'
 
 const aboutBanner = (
   <Banner>
-    <h1 className="text-4xl font-bold">About Modelverse</h1>
+    <h1 className="text-4xl font-bold">About Us</h1>
     <p className="text-lg">
-      Empowering organizations to navigate (cyber) security and sustainability
-      risks with confidence and clarity.
+      We aim to empower organizations to navigate (cyber) security and
+      sustainability risks with confidence and clarity.
     </p>
-    <button
-      className="cursor-pointer rounded-full bg-white px-4 py-2 font-bold transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-white/50"
-      onClick={() =>
-        (window.location.href =
-          'https://outlook.office.com/bookwithme/user/d81d78745f8047d1a0ec05a07d8d40d6@modelverse.online/meetingtype/HEkH_Hmwx06JvFc-tP4ZJw2?anonymous')
-      }
-    >
-      <span className="bg-linear-to-tl from-green-500 to-teal-500 bg-clip-text text-transparent">
-        Talk to us
-      </span>
-    </button>
   </Banner>
 )
 
 export function About() {
-  const navigate = useNavigate()
-  const info = parse(infoFile)
   return (
-    <Layout about={true} banner={aboutBanner}>
-      <div className="mx-4 flex flex-col items-center-safe justify-center-safe gap-8 md:mx-32">
-        <h1 className="text-center text-4xl font-bold">
-          We secure - you succeed!
-        </h1>
-        <div className="flex flex-col gap-8 lg:flex-row">
-          {info.map((item: Info, index: number) => (
-            <div
-              key={index}
-              className="group flex w-full basis-1/3 flex-col items-center-safe gap-8 rounded-lg bg-linear-to-tl from-green-500/10 to-teal-500/10 p-8"
-            >
-              <h1 className="text-center text-2xl font-bold text-amber-500">
-                {item.title}
+    <div className="relative mb-12">
+      {aboutBanner}
+      <ContentSection>
+        <div className="flex flex-col items-center-safe justify-center-safe gap-8">
+          <h1 className="text-center text-4xl font-bold">
+            Secure Your Future!
+          </h1>
+          <div className="flex flex-col gap-4 md:flex-row">
+            <Card className="basis-1/3">
+              <h1 className="text-center text-2xl font-semibold text-amber-500">
+                Our Mission
               </h1>
-              {item.message && <p className="text-sm">{item.message}</p>}
-              {item.list && (
-                <ul className="list-disc pl-5 text-sm">
-                  {item.list.map((listItem: Message, index: number) => (
-                    <li key={index}>
-                      <span className="font-bold">{listItem.caption}:</span>{' '}
-                      {listItem.message}
-                    </li>
-                  ))}
-                </ul>
-              )}
-              {item.button && (
-                <button
-                  className="transtion cursor-pointer rounded-full bg-linear-to-tl from-green-500 to-teal-500 px-4 py-2 font-bold text-white duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50"
-                  onClick={() => navigate(item.button.url)}
-                >
-                  {item.button.text}
-                </button>
-              )}
-            </div>
-          ))}
+              <p>
+                At Modelverse, our mission is to make organisations more secure.
+                We strive to deliver an efficient and effective platform that is
+                both powerful and user-friendly, enabling organizations to
+                protect their (digital) assets and maintain trust with their
+                stakeholders.
+              </p>
+            </Card>
+            <Card className="basis-1/3">
+              <h1 className="text-center text-2xl font-semibold text-amber-500">
+                Our Team
+              </h1>
+              <p>
+                We are experienced professionals from diverse backgrounds,
+                including cybersecurity, software development, and business
+                strategy. Together, we are dedicated to create Modelverse that
+                addresses the evolving challenges of the digital landscape.
+              </p>
+              <button>More..</button>
+            </Card>
+            <Card className="basis-1/3">
+              <h1 className="text-center text-2xl font-semibold text-amber-500">
+                Why Choose Us
+              </h1>
+              <ul className="list-disc pl-5">
+                <li>
+                  <span className="font-bold">Expertise:</span> Deep knowledge
+                  in cybersecurity, IT, AI, risk management and business
+                  sectors.
+                </li>
+                <li>
+                  <span className="font-bold">Innovation:</span> Cutting-edge
+                  platform tailored to modern business needs.
+                </li>
+                <li>
+                  <span className="font-bold">Customer Focus:</span> Commitment
+                  to exceptional service and support.
+                </li>
+              </ul>
+            </Card>
+          </div>
         </div>
-      </div>
-
-      <div className="mx-4 flex flex-col items-center-safe justify-center-safe gap-8 text-center md:mx-32 xl:mx-64">
-        <h1 className="text-center text-4xl font-bold">Testimonial</h1>
-        <p className="italic">
-          Modelverse is truly a gamechanger. It is a robust platform supporting
-          my clients.
-        </p>
-        <p className="text-lg font-bold italic">
-          –Chris Hazewinkel, Certified Information Security Manager
-        </p>
-      </div>
-    </Layout>
+      </ContentSection>
+    </div>
   )
 }

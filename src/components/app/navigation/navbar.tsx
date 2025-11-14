@@ -1,7 +1,4 @@
 import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-
-// import logo from '@/assets/logo.png'
 
 import { NavLink } from './navlink'
 
@@ -28,8 +25,6 @@ export function NavBar({
   expandedMenu,
   setExpandedMenu,
 }: NavProps) {
-  const navigate = useNavigate()
-
   // const [animateMenu, setAnimateMenu] = useState(false)
 
   const handleMenuBtn = () => {
@@ -51,17 +46,16 @@ export function NavBar({
 
   return (
     <div
-      className={`absolute top-0 left-0 z-50 w-full bg-black/70 transition duration-300 md:h-26 ${expandedMenu ? 'h-screen' : 'h-20'} ${isNavVisible ? 'translate-y-0' : '-translate-y-full'}`}
+      className={`absolute top-0 left-0 z-50 w-full bg-black/70 transition duration-300 md:h-26 ${expandedMenu ? 'h-screen' : 'h-20'}`}
     >
       <div className="size-full shadow-lg md:border-b md:bg-white/10 md:backdrop-blur-md">
-        <div className="mx-auto flex h-full flex-col overflow-hidden md:container md:flex-row">
-          <div className="flex h-20 shrink-0 flex-row items-center-safe border-b bg-white/10 px-4 backdrop-blur-md md:mr-auto md:h-26 md:border-b-0 md:bg-transparent md:backdrop-blur-none">
+        <div className="mx-auto flex h-full flex-col overflow-hidden md:container md:flex-row md:px-4">
+          <div className="flex h-20 shrink-0 flex-row items-center-safe border-b bg-white/10 px-4 backdrop-blur-md md:mr-auto md:h-26 md:border-b-0 md:bg-transparent md:p-0 md:backdrop-blur-none">
             <img
               // src={logo}
               src="/icon.png"
               alt="Modelverse"
               className="mr-auto size-10 md:size-14"
-              onClick={() => navigate('/')}
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +72,7 @@ export function NavBar({
               />
             </svg>
           </div>
-          <div className="flex grow flex-col gap-2 bg-white/5 p-4 shadow-inner backdrop-blur-md md:flex-row md:items-center-safe md:justify-end-safe md:gap-1 md:bg-transparent md:shadow-none md:backdrop-blur-none">
+          <div className="flex grow flex-col gap-2 bg-white/5 p-4 shadow-inner backdrop-blur-md md:flex-row md:items-center-safe md:justify-end-safe md:gap-1 md:bg-transparent md:p-0 md:shadow-none md:backdrop-blur-none">
             <NavLink url="/" active={home}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
