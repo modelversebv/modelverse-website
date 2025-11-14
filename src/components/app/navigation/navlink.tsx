@@ -4,7 +4,7 @@ type NavLinkProps = {
   active: boolean
 }
 
-export function NavLink({ url, children, active }: NavLinkProps) {
+export function NavLink({ children, active }: NavLinkProps) {
   return (
     <div
       className={`rounded-full md:size-fit ${active && 'bg-black shadow-lg'}`}

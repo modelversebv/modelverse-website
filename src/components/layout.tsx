@@ -18,7 +18,6 @@ type LayoutProps = {
 }
 
 export function Layout({
-  banner,
   children,
   home = false,
   about = false,
