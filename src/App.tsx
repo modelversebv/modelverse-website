@@ -1,25 +1,14 @@
 import { Toaster } from 'sonner'
 
 import './App.css'
-import { Layout } from './components/layout'
-import { About } from './pages/About'
-import { Cases } from './pages/Cases'
-import { Contact } from './pages/Contact'
-import { Home } from './pages/Home'
-// import { News } from './pages/News'
-import { Team } from './pages/Team'
+import { HomePage } from './pages/Home'
 
 function App() {
   return (
-    <Layout>
-      <Home />
-      <About />
-      <Cases />
-      <Team />
-      <Contact />
-      {/* <News /> */}
+    <>
+      <HomePage />
       <Toaster position="top-center" />
-    </Layout>
+    </>
   )
 }
 

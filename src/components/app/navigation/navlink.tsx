@@ -1,28 +1,14 @@
 type NavLinkProps = {
-  url: string
-  children: React.ReactNode
-  active: boolean
+  active?: boolean
+  children?: React.ReactNode
 }
 
-export function NavLink({ children, active }: NavLinkProps) {
+export function NavLink({ active = false, children }: NavLinkProps) {
   return (
     <div
-      className={`rounded-full md:size-fit ${active && 'bg-black shadow-lg'}`}
+      className={`flex flex-row items-center-safe gap-2 rounded-full px-4 py-2 ${active ? 'bg-gradient-to-r from-green-500/30 to-teal-500/30 opacity-100' : 'cursor-pointer md:opacity-70 md:hover:opacity-100'}`}
     >
-      <div
-        className={`flex size-full flex-row rounded-full px-4 py-2 font-semibold text-white ${
-          active &&
-          'bg-gradient-to-r from-green-500/60 to-teal-500/60 shadow-lg'
-        }`}
-      >
-        <span
-          className={`flex flex-row items-center-safe ${
-            active ? 'opacity-100' : 'opacity-70 hover:opacity-100'
-          }`}
-        >
-          {children}
-        </span>
-      </div>
+      {children}
     </div>
   )
 }
