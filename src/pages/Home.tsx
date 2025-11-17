@@ -162,17 +162,17 @@ export function HomePage() {
                 Request a Demo
               </button>
               <div className="flex items-center justify-center gap-4 sm:justify-start">
-                <div className="flex basis-1/5 flex-col items-center-safe justify-center-safe">
+                <div className="flex w-fit flex-col items-center-safe justify-center-safe text-center">
                   <h1 className="text-3xl">10K+</h1>
                   <p className="text-sm text-wrap">Employees Supported</p>
                 </div>
                 <div className="h-12 w-px shrink-0 bg-gray-300" />
-                <div className="flex basis-1/5 flex-col items-center-safe justify-center-safe">
+                <div className="flex w-fit flex-col items-center-safe justify-center-safe text-center">
                   <h1 className="text-3xl">99.9%+</h1>
                   <p className="text-sm text-wrap">Uptime SLA</p>
                 </div>
                 <div className="h-12 w-px shrink-0 bg-gray-300" />
-                <div className="flex basis-1/5 flex-col items-center-safe justify-center-safe">
+                <div className="flex w-fit flex-col items-center-safe justify-center-safe text-center">
                   <h1 className="text-3xl">24/7</h1>
                   <p className="text-sm text-wrap">Support</p>
                 </div>
