@@ -161,19 +161,19 @@ export function HomePage() {
               <button className="rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white sm:w-fit">
                 Request a Demo
               </button>
-              <div className="flex items-center justify-center gap-4 sm:justify-start">
+              <div className="flex items-center-safe justify-center-safe gap-4 sm:justify-start">
                 <div className="flex basis-1/5 flex-col items-center-safe justify-center-safe">
-                  <h1 className="text-2xl">10K+</h1>
+                  <h1 className="text-3xl whitespace-nowrap">10K+</h1>
                   <p className="text-sm text-wrap">Employees Supported</p>
                 </div>
                 <div className="h-12 w-px shrink-0 bg-gray-300" />
                 <div className="flex basis-1/5 flex-col items-center-safe justify-center-safe">
-                  <h1 className="text-2xl">99.9%+</h1>
+                  <h1 className="text-3xl whitespace-nowrap">99.9%+</h1>
                   <p className="text-sm text-wrap">Uptime SLA</p>
                 </div>
                 <div className="h-12 w-px shrink-0 bg-gray-300" />
                 <div className="flex basis-1/5 flex-col items-center-safe justify-center-safe">
-                  <h1 className="text-2xl">24/7</h1>
+                  <h1 className="text-3xl whitespace-nowrap">24/7</h1>
                   <p className="text-sm text-wrap">Support</p>
                 </div>
               </div>
