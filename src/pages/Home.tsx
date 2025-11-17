@@ -100,9 +100,9 @@ export function HomePage() {
   return (
     <Layout>
       <div className="sticky top-0 z-50 w-full border-b bg-white py-4">
-        <div className="mx-4 flex flex-col gap-4">
+        <div className="mx-4 flex flex-col gap-4 md:container md:mx-auto md:flex-row md:items-center-safe md:justify-between md:px-4">
           <div className="flex flex-row items-center-safe justify-between">
-            <img src="/icon.png" className="size-12" />
+            <img src="/icon.png" className="size-12 md:size-16" />
             <button
               className="cursor-pointer p-2 md:hidden"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -111,10 +111,10 @@ export function HomePage() {
             </button>
           </div>
           <div
-            className={`flex-col gap-4 ${mobileMenuOpen ? 'flex' : 'hidden'}`}
+            className={`flex-col gap-4 ${mobileMenuOpen ? 'flex' : 'hidden'} md:flex md:flex-row md:items-center-safe md:justify-end-safe`}
           >
-            <div className="h-px w-full bg-gray-300" />
-            <div className="flex flex-col gap-2">
+            <div className="h-px w-full bg-gray-300 md:hidden" />
+            <div className="flex flex-col gap-2 md:mr-auto md:flex-row">
               <NavLink active>
                 <Home className="size-6 text-amber-500" />
                 <p>Home</p>
@@ -132,10 +132,10 @@ export function HomePage() {
                 <p>Link</p>
               </NavLink>
             </div>
-            <div className="h-px w-full bg-gray-300" />
+            <div className="h-px w-full bg-gray-300 md:h-12 md:w-px" />
             <div className="flex flex-col gap-2">
               <button className="rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white">
-                Request a Demo
+                Book a meeting
               </button>
             </div>
           </div>
@@ -144,44 +144,49 @@ export function HomePage() {
 
       <div className="bg-gradient-to-r from-green-500/10 to-teal-500/10">
         <div className="bg-gradient-to-b from-transparent to-white">
-          <div className="flex flex-col gap-8 px-4 py-16">
-            <div className="flex flex-col gap-4">
-              <div className="flex w-fit flex-row items-center-safe justify-center-safe gap-2 rounded-full bg-gradient-to-r from-green-500/20 to-teal-500/20 px-4 py-2 font-semibold text-amber-500">
-                <Shield className="size-4" />
-                <p className="text-sm">Enterprise-Grade Security</p>
+          <div className="flex flex-col gap-8 px-4 py-16 md:container md:mx-auto lg:flex-row">
+            <div className="flex flex-col gap-8 lg:basis-1/2 lg:justify-center-safe">
+              <div className="flex flex-col gap-4">
+                <div className="flex w-fit flex-row items-center-safe justify-center-safe gap-2 rounded-full bg-gradient-to-r from-green-500/20 to-teal-500/20 px-4 py-2 font-semibold text-amber-500">
+                  <Shield className="size-4" />
+                  <p className="text-sm">Enterprise-Grade Security</p>
+                </div>
+                <h1 className="text-4xl">Modelverse</h1>
+                <p className="text-lg">
+                  Empowering organizations with up to 10,000 employees to
+                  effectively manage cyber risks and regulatory compliance
+                  through intelligent automation.
+                </p>
               </div>
-              <h1 className="text-4xl">Modelverse</h1>
-              <p className="text-lg">
-                Empowering organizations with up to 10,000 employees to
-                effectively manage cyber risks and regulatory compliance through
-                intelligent automation.
-              </p>
+              <button className="rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white sm:w-fit">
+                Request a Demo
+              </button>
+              <div className="flex items-center justify-center gap-4 sm:justify-start">
+                <div className="flex basis-1/5 flex-col items-center-safe justify-center-safe">
+                  <h1 className="text-3xl">10K+</h1>
+                  <p className="text-sm text-wrap">Employees Supported</p>
+                </div>
+                <div className="h-12 w-px shrink-0 bg-gray-300" />
+                <div className="flex basis-1/5 flex-col items-center-safe justify-center-safe">
+                  <h1 className="text-3xl">99.9%+</h1>
+                  <p className="text-sm text-wrap">Uptime SLA</p>
+                </div>
+                <div className="h-12 w-px shrink-0 bg-gray-300" />
+                <div className="flex basis-1/5 flex-col items-center-safe justify-center-safe">
+                  <h1 className="text-3xl">24/7</h1>
+                  <p className="text-sm text-wrap">Support</p>
+                </div>
+              </div>
             </div>
-            <button className="rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white">
-              Request a Demo
-            </button>
-            <div className="flex items-center justify-center gap-4">
-              <div className="flex basis-1/5 flex-col items-center-safe justify-center-safe">
-                <h1 className="text-3xl">10K+</h1>
-                <p className="text-sm text-wrap">Employees Supported</p>
-              </div>
-              <div className="h-12 w-px shrink-0 bg-gray-300" />
-              <div className="flex basis-1/5 flex-col items-center-safe justify-center-safe">
-                <h1 className="text-3xl">99.9%+</h1>
-                <p className="text-sm text-wrap">Uptime SLA</p>
-              </div>
-              <div className="h-12 w-px shrink-0 bg-gray-300" />
-              <div className="flex basis-1/5 flex-col items-center-safe justify-center-safe">
-                <h1 className="text-3xl">24/7</h1>
-                <p className="text-sm text-wrap">Support</p>
-              </div>
+
+            <div className="flex items-center-safe justify-center-safe lg:basis-1/2">
+              <div className="aspect-video w-full rounded-lg bg-black" />
             </div>
-            <div className="aspect-video rounded-lg bg-black"></div>
           </div>
         </div>
       </div>
 
-      <div className="flex flex-col gap-8 px-4 py-16">
+      <div className="flex flex-col gap-8 px-4 py-16 md:container md:mx-auto">
         <div className="flex flex-col gap-4 text-center">
           <h1 className="text-4xl">
             Everything You Need to Manage Cyber Security Risks
@@ -191,7 +196,7 @@ export function HomePage() {
             to take control of their information security.
           </p>
         </div>
-        <div className="grid grid-cols-1 gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
             <Card key={index}>
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r from-green-500/10 to-teal-500/10">
@@ -204,92 +209,106 @@ export function HomePage() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-8 bg-gray-50 px-4 py-16">
-        <div className="aspect-video rounded-lg bg-black"></div>
-        <div className="flex flex-col gap-4">
-          <h1 className="text-4xl">We Secure. You Succeed!</h1>
-          <p className="text-lg">
-            Whether you're a 100-person startup or a 10,000-employee enterprise,
-            Modelverse scales with your needs.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4">
-          {benefits.map((benefit, index) => (
-            <div key={index} className="flex items-start gap-2">
-              <CheckCircle2 className="size-6 text-green-500" />
-              <p>{benefit}</p>
+      <div className="bg-gray-50">
+        <div className="flex flex-col gap-8 px-4 py-16 md:container md:mx-auto lg:flex-row">
+          <div className="flex items-center-safe justify-center-safe lg:basis-1/2">
+            <div className="aspect-video w-full rounded-lg bg-black" />
+          </div>
+          <div className="flex flex-col gap-8 lg:basis-1/2 lg:justify-center-safe">
+            <div className="flex flex-col gap-4">
+              <h1 className="text-4xl">We Secure. You Succeed!</h1>
+              <p className="text-lg">
+                Whether you're a 100-person startup or a 10,000-employee
+                enterprise, Modelverse scales with your needs.
+              </p>
             </div>
-          ))}
+            <div className="flex flex-col gap-4">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="flex items-start gap-2">
+                  <CheckCircle2 className="size-6 text-green-500" />
+                  <p>{benefit}</p>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col gap-4">
+              <h1 className="text-4xl">Testimonials</h1>
+              <p className="text-lg">TO-DO</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="flex flex-col gap-8 bg-gradient-to-r from-green-500 to-teal-500 px-4 py-16 text-white">
+      <div className="flex flex-col gap-8 bg-gradient-to-r from-green-500 to-teal-500 px-4 py-16 text-white sm:items-center-safe">
         <div className="flex flex-col gap-4 text-center">
           <h1 className="text-4xl">Ready to secure your future?</h1>
           <p className="text-lg">
             Join the many organizations that trust Modelverse to protect their
-            digital assets. Book a demo today.
+            digital assets today.
           </p>
         </div>
-        <button className="rounded-full bg-white px-4 py-2 font-semibold">
+        <button className="rounded-full bg-white px-4 py-2 font-semibold sm:w-fit">
           <div className="bg-gradient-to-r from-green-500 to-teal-500 bg-clip-text text-transparent">
             Request a Demo
           </div>
         </button>
       </div>
 
-      <div className="flex flex-col gap-8 bg-gray-900 px-4 py-16 text-white">
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-row items-center-safe gap-2 text-lg">
-            <Shield className="size-8 text-amber-500" />
-            <span>Modelverse B.V.</span>
+      <div className="bg-gray-900 text-white">
+        <div className="flex flex-col gap-8 px-4 py-16 md:container md:mx-auto">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-row items-center-safe gap-2 text-lg">
+                <Shield className="size-8 text-amber-500" />
+                <span>Modelverse B.V.</span>
+              </div>
+              <p className="text-sm">
+                Empowering organizations to manage cyber risks and regulatory
+                compliance with confidence.
+              </p>
+              <div className="flex flex-row gap-4 text-amber-500">
+                <a
+                  href="#"
+                  className="flex size-10 items-center justify-center rounded-lg bg-gray-800 transition-colors hover:bg-gray-700"
+                >
+                  <Linkedin className="size-6" />
+                </a>
+                <a
+                  href="#"
+                  className="flex size-10 items-center justify-center rounded-lg bg-gray-800 transition-colors hover:bg-gray-700"
+                >
+                  <Mail className="size-6" />
+                </a>
+              </div>
+            </div>
+
+            {Object.entries(footerLinks).map(([section, links]) => (
+              <div key={section} className="flex flex-col gap-2">
+                <h1 className="font-bold">{section}</h1>
+                <ul>
+                  {links.map((link, index) => (
+                    <li key={index}>{link.name}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-          <p className="text-sm">
-            Empowering organizations to manage cyber risks and regulatory
-            compliance with confidence.
-          </p>
+          <div className="h-px w-full shrink-0 bg-gray-300" />
+          <div className="flex flex-col gap-4 text-center">
+            <div className="flex flex-col gap-2 text-sm">
+              <p>
+                © 2023 - 2025. Modelverse B.V. CoC - 89447476. (<BuildNumber />
+                )
+              </p>
+              <p>All rights reserved.</p>
+            </div>
+            <div
+              className="cursor-pointer text-sm"
+              // onClick={() => onManagePrivacy(true)}
+            >
+              Manage Privacy Preferences
+            </div>
+          </div>
         </div>
-        <div className="flex flex-row gap-4 text-amber-500">
-          <a
-            href="#"
-            className="flex size-10 items-center justify-center rounded-lg bg-gray-800 transition-colors hover:bg-gray-700"
-          >
-            <Linkedin className="size-6" />
-          </a>
-          <a
-            href="#"
-            className="flex size-10 items-center justify-center rounded-lg bg-gray-800 transition-colors hover:bg-gray-700"
-          >
-            <Mail className="size-6" />
-          </a>
-        </div>
-        {Object.entries(footerLinks).map(([section, links]) => (
-          <div key={section} className="flex flex-col gap-2">
-            <h1 className="font-bold">{section}</h1>
-            <ul>
-              {links.map((link, index) => (
-                <li key={index}>{link.name}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
-        <div className="h-px w-full shrink-0 bg-gray-300" />
-        <div className="flex flex-col gap-4 text-center">
-          <div className="flex flex-col gap-2 text-sm">
-            <p>© 2023 - 2025. Modelverse B.V. CoC 89447476.</p>
-            <p>All rights reserved.</p>
-          </div>
-          <div
-            className="cursor-pointer text-sm"
-            // onClick={() => onManagePrivacy(true)}
-          >
-            Manage Privacy Preferences
-          </div>
-        </div>
-        <div className="h-px w-full shrink-0 bg-gray-300" />
-        <p className="text-center text-sm">
-          (<BuildNumber />)
-        </p>
       </div>
     </Layout>
   )
