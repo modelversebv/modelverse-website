@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { Card } from '@/components/app/misc/card'
-import { NavLink } from '@/components/app/navigation/navLink'
+import { NavLink } from '@/components/app/navigation/navlink'
 import { BuildNumber } from '@/components/buildNumber'
 import { Layout } from '@/components/layout'
 import {
