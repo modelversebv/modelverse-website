@@ -1,10 +1,13 @@
+import { cn } from '@/lib/utils'
+
 type CardProps = {
+  className?: string
   children?: React.ReactNode
 }
 
-export function Card({ children }: CardProps) {
+export function Card({ className, children }: CardProps) {
   return (
-    <div className="flex flex-col rounded-lg border p-8 transition-all duration-300 hover:border-green-500 hover:shadow-lg">
+    <div className={cn(className, 'flex flex-col rounded-lg border p-8')}>
       {children}
     </div>
   )
