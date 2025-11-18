@@ -1,5 +1,5 @@
 import { Card } from '@/components/app/misc/card'
-import { FormInput, FormTextArea } from '@/components/app/misc/forminput'
+import { FormInput, FormTextArea } from '@/components/app/misc/formInput'
 import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
 import { Clock, Mail, MapPin, MessageSquare, Send } from 'lucide-react'

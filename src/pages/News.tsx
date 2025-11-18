@@ -1,7 +1,7 @@
 import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
 import { Badge } from '@/components/ui/badge'
-import { ArrowRight, Search } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 const NewsHero = (
   <Hero>
