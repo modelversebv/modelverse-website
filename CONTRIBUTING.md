@@ -2,6 +2,65 @@
 
 To ensure a smooth and consistent development process, please follow the guidelines below.
 
+## Available Guides
+
+- [Blog Updates](#blog-updates)
+- [Development](#development)
+
+## Blog Updates
+
+To make adding blog posts easy, we have a simple process you can do entirely in GitHub.
+
+### Step 1: Create a Branch
+
+1. Go to the repository on GitHub.
+2. Under the repository name, next to the current branch name (i.e. **main**), click on **`Branches`**.
+3. In the top right corner, click **`New Branch`**.
+4. Type the **name of your new branch** using the following convention:
+
+   `blog/<blog-post-name>`
+
+5. From the **Source** dropdown, select the **`dev`** branch.
+6. Create the new branch by pressing **`Create new branch`**
+
+7. Once the branch is created you can go to the branch by selecting the correct branch in the **`Active branches`** section.
+
+### Step 2: Open a Codespace
+
+1. Click the **Code** button (green) at the top right.
+2. Select the **Codespaces** tab.
+3. Click **Create codespace**
+
+Your Codespace will open in the browser and will **start directly in the `src/blogs` folder**, so you only see the blog content. **This may take a while!**
+
+### Step 3: Start Editing
+
+- You can copy the `.mdx` file from your computer and paste it into the current opened folder.
+- Use the **provided functionality** in the Codespace to:
+  - **Preview Changes** (start the server and see how the blog looks)
+  - **Stop Preview:** (stop the server)
+  - **Push Changes:** (push your changes to your branch once you are happy with how it looks)
+- More details will be provided once in the **codespace** to access these functions.
+
+### Step 4: Create a Pull Request
+
+Once you are done with your changes.
+
+1. Go back to GitHub.
+2. You’ll see a prompt to **Compare & pull request** for your branch if not click on **`contribute`** under the green **`Code`** button in the top right corner and select **`Open pull request`** .
+3. In the top left corner under the **`Open a pull request`** section, select **`dev`** as the base branch.
+4. Fill in the details:
+   - **Title:** i.e `(feat): Added new blog post about AI`.
+   - **Description:** Explain the blog content briefly.
+   - **Assign:** On the left side of the screen asign the correct people to review your work and add the correct labels and projects.
+5. Once finished, click **Create pull request**.
+
+### Step 5: Close Codespace
+
+Once your PR is created, you can safely stop or close the Codespace. Go back go to where you opened the **Codespace** and click the `...` on the right side of the codespace and select **Delete`**
+
+## Development
+
 ### Github Workflows & Contribution Guidelines
 
 #### 1\. Environment Setup
@@ -17,15 +76,18 @@ To maintain code quality, consistency, and proper functionality across the proje
 
 #### 2\. Local Repository Setup
 
-1.  **Clone the Repository:** Clone the primary **`dev`** branch to your local machine or the parent branch your work will be added on:
-    ```bash
-    git clone -b dev git@github.com:modelversebv/modelverse-website.git
-    cd modelverse-website
-    ```
-2.  **Install Dependencies:**
-    ```bash
-    npm install
-    ```
+1. **Clone the Repository:** Clone the primary **`dev`** branch to your local machine or the parent branch your work will be added on:
+
+   ```bash
+   git clone -b dev git@github.com:modelversebv/modelverse-website.git
+   cd modelverse-website
+   ```
+
+2. **Install Dependencies:**
+
+   ```bash
+   npm install
+   ```
 
 #### 3\. Branching Strategy
 
@@ -54,9 +116,9 @@ Maintain clear, concise, and conventional commit messages. This helps in generat
 
 Before setting up a PR, ensure:
 
-1.  All code changes are complete.
-2.  Appropriate new tests have been written for your feature/fix.
-3.  All tests are passing (`npx playwright test`).
+1. All code changes are complete.
+2. Appropriate new tests have been written for your feature/fix.
+3. All tests are passing (`npx playwright test`).
 
 Once ready, push your branch and open a Pull Request on GitHub.
 
