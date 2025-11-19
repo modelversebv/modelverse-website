@@ -7,7 +7,7 @@ type CardProps = {
 
 export function Card({ className, children }: CardProps) {
   return (
-    <div className={cn(className, 'flex flex-col rounded-lg border p-8')}>
+    <div className={cn('flex flex-col rounded-lg border p-8', className)}>
       {children}
     </div>
   )

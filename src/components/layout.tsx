@@ -1,3 +1,6 @@
+import { useState } from 'react'
+
+import { CookieBanner } from './app/cookies/cookieBanner'
 import { Footer } from './app/footer/footer'
 import { NavBar } from './app/navigation/navbar'
 
@@ -20,18 +23,27 @@ export function Layout({
   hero,
   children,
 }: LayoutProps) {
+  // Cookie consent
+  const [showConsentPreferences, setShowConsentPreferences] = useState(false)
+
   return (
-    <div className="scrollbar-hide h-screen w-screen overflow-auto">
-      <NavBar
-        home={home}
-        news={news}
-        cases={cases}
-        about={about}
-        contact={contact}
+    <>
+      <CookieBanner
+        preferences={showConsentPreferences}
+        setPreferences={setShowConsentPreferences}
       />
-      {hero}
-      {children}
-      <Footer />
-    </div>
+      <div className="scrollbar-hide h-screen w-screen overflow-auto">
+        <NavBar
+          home={home}
+          news={news}
+          cases={cases}
+          about={about}
+          contact={contact}
+        />
+        {hero}
+        {children}
+        <Footer onManagePrivacy={setShowConsentPreferences} />
+      </div>
+    </>
   )
 }

@@ -1,75 +1,184 @@
+import { useNavigate } from 'react-router-dom'
+
+import { Card } from '@/components/app/misc/card'
 import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
 import { Badge } from '@/components/ui/badge'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Calendar, User } from 'lucide-react'
+
+// For testing
+const markdownFiles = import.meta.glob('@/blogs/(*test*).mdx', {
+  eager: true,
+})
+
+// // For production
+// const markdownFiles = import.meta.glob('@/blogs/!(*test*).mdx', {
+//   eager: true,
+// })
 
 const NewsHero = (
-  <Hero>
-    <div className="flex flex-col items-center-safe gap-8 lg:basis-1/2 lg:justify-center-safe">
-      <div className="flex flex-col items-center-safe gap-4 text-center">
-        <div className="flex w-fit flex-row items-center-safe justify-center-safe gap-2 rounded-full bg-gradient-to-r from-green-500/20 to-teal-500/20 px-3 py-1 font-semibold text-amber-500">
-          <p className="text-sm">Blog & News</p>
-        </div>
-        <h1 className="text-4xl">
-          Insights on Cybersecurity Risks & Compliance
-        </h1>
-        <p className="text-lg">
-          Expert advice, industry trends, and practical guides to help you
-          manage information risk.
-        </p>
-        {/* <div className="group flex w-full flex-row items-center-safe justify-center-safe gap-2 rounded-full bg-gray-100 p-2 ring-2 ring-transparent transition-all duration-300 focus-within:ring-gray-300">
-          <Search className="size-5 border-2 border-transparent text-gray-400" />
-          <input
-            type="search"
-            placeholder="Search articles..."
-            className="w-full focus:outline-none"
-          />
-        </div> */}
-      </div>
+  <Hero className="items-center-safe justify-center-safe text-center md:max-w-4xl">
+    <div className="flex w-fit flex-row items-center-safe justify-center-safe gap-2 rounded-full bg-gradient-to-r from-green-500/20 to-teal-500/20 px-3 py-1 font-semibold text-amber-500">
+      <p className="text-sm">Blog & News</p>
     </div>
+    <h1 className="text-5xl sm:text-6xl">
+      Insights on Cybersecurity Risks & Compliance
+    </h1>
+    <p className="text-xl text-gray-600">
+      Expert advice, industry trends, and practical guides to help you manage
+      information risk.
+    </p>
   </Hero>
 )
 
+type MetaData = {
+  featured: boolean
+  title: string
+  summary: string
+  image: string
+  date: string
+  author: string
+}
+
+type BlogPost = {
+  postId: string
+  metadata: MetaData
+}
+
 export function NewsPage() {
+  const navigate = useNavigate()
+
+  const blogPosts: BlogPost[] = []
+
+  Object.entries(markdownFiles).map(([path, file]) => {
+    const mod = file as any
+    const MDXComponent = mod.default
+
+    const metadata: MetaData = {
+      featured: mod.metadata.featured,
+      title: mod.metadata.title,
+      summary: mod.metadata.summary,
+      image: mod.metadata.image,
+      date: mod.metadata.date,
+      author: mod.metadata.author,
+    }
+
+    const postId = path.split('/').pop()?.replace('.mdx', '') || path
+
+    blogPosts.push({
+      postId,
+      metadata,
+    })
+
+    console.log(postId)
+    console.log(metadata)
+    console.log(MDXComponent)
+  })
+
   return (
     <Layout news={true} hero={NewsHero}>
       <div className="bg-gray-50">
-        <div className="flex flex-col justify-center-safe gap-8 px-4 py-16 md:container md:mx-auto">
-          <div className="grid grid-cols-1 rounded-lg border bg-white md:grid-cols-2">
-            <div className="size-full min-h-[400px] rounded-t-lg bg-black md:rounded-t-none md:rounded-l-lg" />
-            <div className="flex flex-col gap-4 px-4 py-8 md:justify-center-safe md:p-8">
-              <Badge className="bg-amber-200 text-amber-700">Featured</Badge>
-              <h1 className="text-2xl">Title</h1>
-              <p>
-                This is a summary of the article that is written as an example
-                to observe how well will the paragraph look as it grows.
+        <div className="flex flex-col justify-center-safe gap-8 px-4 py-16 sm:px-8 sm:py-32 md:container md:mx-auto">
+          {blogPosts.length != 0 ? (
+            blogPosts
+              .filter((post) => post.metadata.featured)
+              .map((post, index) => (
+                <Card
+                  className="min-h-[400px] bg-white p-0 lg:flex-row"
+                  key={index}
+                >
+                  <div className="flex h-[400px] items-center-safe justify-center-safe lg:basis-1/2">
+                    {post.metadata.image != '' ? (
+                      <img
+                        src={post.metadata.image}
+                        alt=""
+                        className="size-full rounded-t-lg object-cover lg:rounded-t-none lg:rounded-l-lg"
+                      />
+                    ) : (
+                      <div className="size-full rounded-t-lg bg-black lg:rounded-t-none lg:rounded-l-lg" />
+                    )}
+                  </div>
+                  <div className="flex flex-col gap-4 p-8 lg:basis-1/2 lg:justify-center-safe">
+                    <Badge className="bg-amber-200 text-amber-700">
+                      Featured
+                    </Badge>
+                    <h1 className="text-3xl">{post.metadata.title}</h1>
+                    <p className="text-lg text-gray-600">
+                      {post.metadata.summary}
+                    </p>
+                    <div className="flex flex-row flex-wrap items-center-safe gap-4 text-gray-500">
+                      <div className="flex shrink-0 flex-row items-center-safe gap-2">
+                        <User className="size-4 shrink-0" />
+                        {post.metadata.author}
+                      </div>
+                      <div className="flex shrink-0 flex-row items-center-safe gap-2">
+                        <Calendar className="size-4 shrink-0" />
+                        {post.metadata.date}
+                      </div>
+                    </div>
+                    <button
+                      className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-3 py-1 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 sm:w-fit"
+                      onClick={() => navigate(`/blog/${post.postId}`)}
+                    >
+                      Read Article
+                    </button>
+                  </div>
+                </Card>
+              ))
+          ) : (
+            <div className="flex flex-col items-center-safe justify-center-safe gap-4">
+              <h1 className="text-4xl sm:text-5xl">Nothing new!</h1>
+              <p className="text-xl text-gray-600">
+                Come back later for interesting updates!
               </p>
-              <button className="rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-3 py-1 font-semibold text-white">
-                Read Article
-              </button>
             </div>
-          </div>
+          )}
 
-          <div className="flex flex-col gap-4">
-            <h1 className="text-2xl">Recent Articles</h1>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              <div className="grid grid-cols-1 rounded-lg border bg-white">
-                <div className="h-48 rounded-t-lg bg-black" />
-                <div className="flex basis-1/2 flex-col gap-4 px-4 py-8">
-                  <h1 className="text-2xl">Title</h1>
-                  <p>
-                    This is a summary of the article that is written as an
-                    example to observe how well will the paragraph look as it
-                    grows.
-                  </p>
-                  <button className="group flex w-fit cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full bg-gradient-to-r text-amber-500/70 hover:text-amber-500">
-                    Read Article
-                    <ArrowRight className="size-5 transition duration-300 group-hover:translate-x-1" />
-                  </button>
-                </div>
+          {blogPosts.filter((post) => !post.metadata.featured).length != 0 && (
+            <div className="flex flex-col gap-4">
+              <h1 className="text-4xl sm:text-5xl">Recent Articles</h1>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {blogPosts
+                  .filter((post) => !post.metadata.featured)
+                  .map((post, index) => (
+                    <Card className="bg-white p-0" key={index}>
+                      <div className="flex h-[200px] items-center-safe justify-center-safe">
+                        {post.metadata.image != '' ? (
+                          <img
+                            src={post.metadata.image}
+                            alt=""
+                            className="size-full rounded-t-lg object-cover"
+                          />
+                        ) : (
+                          <div className="size-full rounded-t-lg bg-black" />
+                        )}
+                      </div>
+                      <div className="flex flex-col gap-4 p-8 md:justify-center-safe">
+                        <h1 className="text-xl">{post.metadata.title}</h1>
+                        <p className="text-gray-600">{post.metadata.summary}</p>
+                        <div className="flex flex-row flex-wrap items-center-safe gap-4 text-gray-500">
+                          <div className="flex shrink-0 flex-row items-center-safe gap-2">
+                            <User className="size-4 shrink-0" />
+                            {post.metadata.author}
+                          </div>
+                          <div className="flex shrink-0 flex-row items-center-safe gap-2">
+                            <Calendar className="size-4 shrink-0" />
+                            {post.metadata.date}
+                          </div>
+                        </div>
+                        <button
+                          className="group flex w-fit cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full bg-gradient-to-r text-amber-500/70 hover:text-amber-500"
+                          onClick={() => navigate(`/blog/${post.postId}`)}
+                        >
+                          Read Article
+                          <ArrowRight className="size-5 transition duration-300 group-hover:translate-x-1" />
+                        </button>
+                      </div>
+                    </Card>
+                  ))}
               </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </Layout>
