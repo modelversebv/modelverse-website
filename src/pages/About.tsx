@@ -149,7 +149,7 @@ export function AboutPage() {
   return (
     <Layout about={true} hero={AboutHero}>
       <div className="bg-gray-50">
-        <div className="flex flex-col justify-center-safe gap-8 px-4 py-16 sm:gap-16 sm:px-8 sm:py-32 md:container md:mx-auto">
+        <div className="flex flex-col justify-center-safe gap-8 px-4 py-16 sm:gap-16 md:container md:mx-auto">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="flex flex-col gap-4 md:justify-center-safe">
               <h1 className="text-4xl sm:text-5xl">Our Story</h1>

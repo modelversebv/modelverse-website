@@ -55,7 +55,7 @@ export function YouTubeEmbed({
       className={cn(
         className,
         'not-prose relative aspect-video w-full overflow-hidden select-none',
-        `${blog && 'mx-auto max-w-2xl'}`
+        `${blog && 'mx-auto max-w-2xl rounded-lg'}`
       )}
     >
       {hasConsent ? (

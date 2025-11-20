@@ -11,7 +11,7 @@ export function Hero({ className, children }: HeroProps) {
       <div className="bg-gradient-to-b from-transparent to-white">
         <div
           className={cn(
-            'flex flex-col gap-8 px-4 py-16 sm:px-8 sm:py-32 md:container md:mx-auto',
+            'flex flex-col gap-8 px-4 py-16 md:container md:mx-auto',
             className
           )}
         >

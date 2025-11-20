@@ -134,7 +134,7 @@ export function HomePage() {
   return (
     <Layout home={true} hero={HomeHero}>
       {/* Features */}
-      <div className="flex flex-col gap-8 px-4 py-16 sm:px-8 sm:py-32 md:container md:mx-auto">
+      <div className="flex flex-col gap-8 px-4 py-16 md:container md:mx-auto">
         <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
           <h1 className="text-4xl sm:text-5xl">
             Everything You Need to Manage Cybersecurity Risks
@@ -162,7 +162,7 @@ export function HomePage() {
 
       {/* Benefirts */}
       <div className="bg-gray-50">
-        <div className="flex flex-col gap-8 px-4 py-16 sm:px-8 sm:py-32 md:container md:mx-auto lg:flex-row">
+        <div className="flex flex-col gap-8 px-4 py-16 md:container md:mx-auto lg:flex-row">
           <div className="flex items-center-safe justify-center-safe lg:basis-1/2">
             <img
               src="/images/misc/organization-unsplash.jpg"
@@ -201,7 +201,7 @@ export function HomePage() {
       </div>
 
       {/* Testimonials */}
-      <div className="flex flex-col gap-8 px-4 py-16 sm:px-8 sm:py-32 md:container md:mx-auto">
+      <div className="flex flex-col gap-8 px-4 py-16 md:container md:mx-auto">
         <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
           <h1 className="text-4xl sm:text-5xl">Hear From Our Customers</h1>
           <p className="text-xl text-gray-600">
@@ -234,8 +234,8 @@ export function HomePage() {
       </div>
 
       {/* CTA (Call to action) */}
-      <div className="flex flex-col gap-8 bg-gradient-to-r from-green-500 to-teal-500 px-4 py-16 text-white sm:items-center-safe sm:px-8 sm:py-32">
-        <div className="flex flex-col gap-4 text-center">
+      <div className="flex flex-col gap-8 bg-gradient-to-r from-green-500 to-teal-500 px-4 py-16 text-white sm:items-center-safe md:py-32">
+        <div className="flex flex-col gap-4 text-center md:container md:mx-auto">
           <h1 className="text-4xl sm:text-5xl">Ready to secure your future?</h1>
           <p className="text-xl">
             Join the many organizations that trust Modelverse to protect their

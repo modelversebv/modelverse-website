@@ -20,7 +20,7 @@ export function NavBar({ home, news, cases, about, contact }: NavBarProps) {
 
   return (
     <div className="sticky top-0 z-50 w-full border-b bg-white">
-      <div className="flex flex-col gap-4 p-4 md:container md:mx-auto md:p-8 lg:flex-row lg:items-center-safe lg:justify-between">
+      <div className="flex flex-col gap-4 p-4 md:container md:mx-auto lg:flex-row lg:items-center-safe lg:justify-between">
         <div className="flex flex-row items-center-safe justify-between">
           <img
             src="/icon.png"

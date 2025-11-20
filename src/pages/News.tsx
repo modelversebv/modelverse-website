@@ -6,15 +6,15 @@ import { Layout } from '@/components/layout'
 import { Badge } from '@/components/ui/badge'
 import { ArrowRight, Calendar, User } from 'lucide-react'
 
-// For testing
-const markdownFiles = import.meta.glob('@/blogs/(*test*).mdx', {
-  eager: true,
-})
-
-// // For production
-// const markdownFiles = import.meta.glob('@/blogs/!(*test*).mdx', {
+// // For testing
+// export const markdownFiles = import.meta.glob('@/articles/(*test*).mdx', {
 //   eager: true,
 // })
+
+// For production
+export const markdownFiles = import.meta.glob('@/articles/!(*test*).mdx', {
+  eager: true,
+})
 
 const NewsHero = (
   <Hero className="items-center-safe justify-center-safe text-center md:max-w-4xl">
@@ -31,7 +31,7 @@ const NewsHero = (
   </Hero>
 )
 
-type MetaData = {
+export type MetaData = {
   featured: boolean
   title: string
   summary: string
@@ -40,7 +40,7 @@ type MetaData = {
   author: string
 }
 
-type BlogPost = {
+export type BlogPost = {
   postId: string
   metadata: MetaData
 }
@@ -52,7 +52,6 @@ export function NewsPage() {
 
   Object.entries(markdownFiles).map(([path, file]) => {
     const mod = file as any
-    const MDXComponent = mod.default
 
     const metadata: MetaData = {
       featured: mod.metadata.featured,
@@ -69,25 +68,21 @@ export function NewsPage() {
       postId,
       metadata,
     })
-
-    console.log(postId)
-    console.log(metadata)
-    console.log(MDXComponent)
   })
 
   return (
     <Layout news={true} hero={NewsHero}>
       <div className="bg-gray-50">
-        <div className="flex flex-col justify-center-safe gap-8 px-4 py-16 sm:px-8 sm:py-32 md:container md:mx-auto">
+        <div className="flex flex-col justify-center-safe gap-8 px-4 py-16 md:container md:mx-auto">
           {blogPosts.length != 0 ? (
             blogPosts
               .filter((post) => post.metadata.featured)
               .map((post, index) => (
                 <Card
-                  className="min-h-[400px] bg-white p-0 lg:flex-row"
+                  className="grid grid-cols-1 bg-white p-0 lg:grid-cols-2"
                   key={index}
                 >
-                  <div className="flex h-[400px] items-center-safe justify-center-safe lg:basis-1/2">
+                  <div className="flex items-center-safe justify-center-safe lg:h-full lg:basis-1/2">
                     {post.metadata.image != '' ? (
                       <img
                         src={post.metadata.image}
@@ -118,7 +113,7 @@ export function NewsPage() {
                     </div>
                     <button
                       className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-3 py-1 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 sm:w-fit"
-                      onClick={() => navigate(`/blog/${post.postId}`)}
+                      onClick={() => navigate(`/article/${post.postId}`)}
                     >
                       Read Article
                     </button>
@@ -142,7 +137,7 @@ export function NewsPage() {
                   .filter((post) => !post.metadata.featured)
                   .map((post, index) => (
                     <Card className="bg-white p-0" key={index}>
-                      <div className="flex h-[200px] items-center-safe justify-center-safe">
+                      <div className="flex min-h-[200px] items-center-safe justify-center-safe">
                         {post.metadata.image != '' ? (
                           <img
                             src={post.metadata.image}
@@ -168,10 +163,10 @@ export function NewsPage() {
                         </div>
                         <button
                           className="group flex w-fit cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full bg-gradient-to-r text-amber-500/70 hover:text-amber-500"
-                          onClick={() => navigate(`/blog/${post.postId}`)}
+                          onClick={() => navigate(`/article/${post.postId}`)}
                         >
                           Read Article
-                          <ArrowRight className="size-5 transition duration-300 group-hover:translate-x-1" />
+                          <ArrowRight className="size-5 transition-all duration-300 group-hover:translate-x-1" />
                         </button>
                       </div>
                     </Card>

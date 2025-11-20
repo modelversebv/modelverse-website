@@ -37,17 +37,19 @@ export function Footer({ onManagePrivacy }: FooterProps) {
 
   return (
     <div className="bg-gray-900 text-white">
-      <div className="flex flex-col gap-8 px-4 py-16 md:container md:mx-auto">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+      <div className="flex flex-col gap-8 px-4 py-8 md:container md:mx-auto md:px-8 md:py-16">
+        <div className="flex flex-col gap-8 md:flex-row">
           <div className="flex flex-col gap-4">
             <div className="flex flex-row items-center-safe gap-2 text-lg">
               <Shield className="size-8 text-amber-500" />
               <span>Modelverse B.V.</span>
             </div>
-            <p className="text-sm">
+
+            <p className="text-sm text-gray-400">
               Empowering organizations to manage cyber risks and regulatory
               compliance with confidence.
             </p>
+
             <div className="flex flex-row gap-4 text-amber-500">
               <a
                 href="https://www.linkedin.com/company/modelverse/"
@@ -64,31 +66,37 @@ export function Footer({ onManagePrivacy }: FooterProps) {
             </div>
           </div>
 
-          {Object.entries(footerLinks).map(([section, links]) => (
-            <div key={section} className="flex flex-col gap-2">
-              <h1 className="font-bold">{section}</h1>
-              <ul>
-                {links.map((link, index) => (
-                  <li key={index}>{link.name}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-        <div className="h-px w-full shrink-0 bg-gray-300" />
-        <div className="flex flex-col gap-4 text-center">
-          <div className="flex flex-col gap-2 text-sm">
-            <p>
-              © 2023 - 2025. Modelverse B.V. CoC - 89447476. (<BuildNumber />)
-            </p>
-            <p>All rights reserved.</p>
+          <div className="flex shrink-0 flex-col gap-8 md:ml-auto md:flex-row md:items-center-safe">
+            {Object.entries(footerLinks).map(([section, links]) => (
+              <div key={section} className="flex flex-col gap-2">
+                <h1 className="font-bold">{section}</h1>
+                <ul className="text-gray-300">
+                  {links.map((link, index) => (
+                    <li key={index}>
+                      <Link
+                        to={link.href}
+                        className="transition-all duration-300 hover:text-white"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-          <div
-            className="cursor-pointer text-sm"
+        </div>
+        <div className="h-px w-full shrink-0 bg-gray-800" />
+        <div className="flex flex-col justify-between gap-4 text-sm text-gray-400 md:flex-row">
+          <p>
+            © 2025. Modelverse B.V. All rights reserved. (<BuildNumber />)
+          </p>
+          <p
+            className="cursor-pointer hover:text-white"
             onClick={() => onManagePrivacy(true)}
           >
             Manage Privacy Preferences
-          </div>
+          </p>
         </div>
       </div>
     </div>

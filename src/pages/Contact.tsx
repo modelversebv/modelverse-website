@@ -2,7 +2,7 @@ import { GoogleMapEmbed } from '@/components/app/embed/googleMapEmbed'
 import { Card } from '@/components/app/misc/card'
 import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
-import { Clock, Mail, MapPin } from 'lucide-react'
+import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 
 const ContactHero = (
   <Hero className="items-center-safe justify-center-safe text-center md:max-w-4xl">
@@ -23,6 +23,12 @@ export function ContactPage() {
       secondary: 'support@modelverse.online',
     },
     {
+      icon: Phone,
+      title: 'Phone',
+      primary: '+31 6 27612498',
+      secondary: 'Mon-Fri, 9am-6pm CET+1',
+    },
+    {
       icon: MapPin,
       title: 'Office',
       primary: 'Wilhelmina van Pruisenweg 104',
@@ -39,8 +45,8 @@ export function ContactPage() {
   return (
     <Layout contact={true} hero={ContactHero}>
       <div className="bg-gray-50">
-        <div className="flex flex-col justify-center-safe gap-16 px-4 py-16 sm:px-8 sm:py-32 md:container md:mx-auto">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <div className="flex flex-col justify-center-safe gap-16 px-4 py-16 md:container md:mx-auto">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
             {contactInfo.map((contact, index) => (
               <Card key={index} className="bg-white">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r from-green-500/10 to-teal-500/10">

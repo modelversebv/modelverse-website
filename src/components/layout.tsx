@@ -27,23 +27,21 @@ export function Layout({
   const [showConsentPreferences, setShowConsentPreferences] = useState(false)
 
   return (
-    <>
+    <div className="scrollbar-hide h-screen w-screen overflow-auto font-sans">
       <CookieBanner
         preferences={showConsentPreferences}
         setPreferences={setShowConsentPreferences}
       />
-      <div className="scrollbar-hide h-screen w-screen overflow-auto">
-        <NavBar
-          home={home}
-          news={news}
-          cases={cases}
-          about={about}
-          contact={contact}
-        />
-        {hero}
-        {children}
-        <Footer onManagePrivacy={setShowConsentPreferences} />
-      </div>
-    </>
+      <NavBar
+        home={home}
+        news={news}
+        cases={cases}
+        about={about}
+        contact={contact}
+      />
+      {hero}
+      {children}
+      <Footer onManagePrivacy={setShowConsentPreferences} />
+    </div>
   )
 }

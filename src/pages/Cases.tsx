@@ -103,7 +103,7 @@ export function CasesPage() {
   return (
     <Layout cases={true} hero={CasesHero}>
       <div className="bg-gray-50">
-        <div className="flex flex-col gap-8 px-4 py-16 sm:px-8 sm:py-32 md:container md:mx-auto">
+        <div className="flex flex-col gap-8 px-4 py-16 md:container md:mx-auto">
           {caseStudies.map((study, index) => (
             <Card
               className={`min-h-[400px] bg-white p-0 lg:flex-row ${index % 2 != 0 && 'lg:flex-row-reverse'}`}
@@ -138,7 +138,7 @@ export function CasesPage() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-8 bg-gradient-to-r from-green-500 to-teal-500 px-4 py-16 text-white sm:items-center-safe sm:px-8 sm:py-32">
+      <div className="flex flex-col gap-8 bg-gradient-to-r from-green-500 to-teal-500 px-4 py-16 text-white sm:items-center-safe">
         <div className="flex flex-col gap-4 text-center">
           <h1 className="text-4xl">Ready to Write Your Success Story?</h1>
           <p className="text-lg">
