@@ -1,17 +1,7 @@
 import { Card } from '@/components/app/misc/card'
 import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import {
-  Book,
-  Briefcase,
-  Eye,
-  Linkedin,
-  Mail,
-  PencilLine,
-  Shield,
-  User,
-} from 'lucide-react'
+import { Book, Eye, Linkedin, Mail, Shield, User } from 'lucide-react'
 
 const AboutHero = (
   <Hero className="items-center-safe justify-center-safe text-center md:max-w-4xl">
@@ -156,29 +146,29 @@ export function AboutPage() {
   //   },
   // ]
 
-  const ambassadors = [
-    {
-      name: 'Ambassador Name',
-      role: 'Ambassador Role',
-      linkedin: '',
-      bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      image: '',
-    },
-    {
-      name: 'Ambassador Name',
-      role: 'Ambassador Role',
-      linkedin: '',
-      bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      image: '',
-    },
-    {
-      name: 'Ambassador Name',
-      role: 'Ambassador Role',
-      linkedin: '',
-      bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      image: '',
-    },
-  ]
+  // const ambassadors = [
+  //   {
+  //     name: 'Ambassador Name',
+  //     role: 'Ambassador Role',
+  //     linkedin: '',
+  //     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  //     image: '',
+  //   },
+  //   {
+  //     name: 'Ambassador Name',
+  //     role: 'Ambassador Role',
+  //     linkedin: '',
+  //     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  //     image: '',
+  //   },
+  //   {
+  //     name: 'Ambassador Name',
+  //     role: 'Ambassador Role',
+  //     linkedin: '',
+  //     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  //     image: '',
+  //   },
+  // ]
 
   return (
     <Layout about={true} hero={AboutHero}>
