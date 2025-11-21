@@ -3,13 +3,14 @@ import { Card } from '@/components/app/misc/card'
 import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
 import {
-  AlertTriangle,
-  BarChart3,
+  Brain,
+  Check,
   CheckCircle2,
-  FileCheck,
+  Compass,
   Lock,
+  Rocket,
+  Search,
   Shield,
-  Users,
 } from 'lucide-react'
 
 const HomeHero = (
@@ -66,48 +67,48 @@ const HomeHero = (
 export function HomePage() {
   const features = [
     {
-      icon: Shield,
-      title: 'Comprehensive Risk Assessment',
+      icon: Compass,
+      title: 'Strategic Risk Management',
       description:
-        'Identify, analyze, and prioritize risks across your entire organization with the use of AI and intelligent reporting.',
+        'We help you manage risks — and opportunities — across three levels: organization, assets, and findings. This layered approach brings clarity and efficiency. Say goodbye to bloated risk registers with hundreds of vague entries.',
     },
     {
-      icon: FileCheck,
-      title: 'Regulatory Compliance',
+      icon: Brain,
+      title: 'Real-World Capabilities',
       description:
-        'Stay compliant with ISO 27001 and other frameworks with automated tracking and evidence collection.',
+        'Our proprietary Capability Models reflect modern IT and business realities. They focus on what actually reduces risk, giving you a clear view of how well your organization is equipped to manage it.',
     },
     {
-      icon: AlertTriangle,
-      title: 'Real-Time Threat Monitoring',
+      icon: Rocket,
+      title: 'Actionable Roadmaps',
       description:
-        'Continuous monitoring of your security posture with instant alerts for emerging threats and vulnerabilities.',
-    },
-    {
-      icon: BarChart3,
-      title: 'Executive Dashboards',
-      description:
-        'Clear, actionable insights for leadership with customizable dashboards and automated reporting.',
+        'We generate prioritized backlogs based on Capability scores, so you know exactly where to invest in mitigation. Each item links directly to a Capability, enabling you to track progress and confidently plan ahead.',
     },
     {
       icon: Lock,
-      title: 'Policy Management',
+      title: 'Smart Compliance Automation',
       description:
-        'Centralized policy creation, distribution, and acknowledgment tracking to ensure organizational compliance.',
+        'We generate tailored Policies, Procedures, and Controls using curated libraries built on real-world experience. Many Controls are automated, and our platform manages the full plan-do-check-act cycle — keeping you continuously audit-ready.',
     },
     {
-      icon: Users,
-      title: 'Team Collaboration',
+      icon: Search,
+      title: 'Policy Management',
       description:
-        'Seamless collaboration tools for security teams, with role-based access and workflow automation.',
+        'Audits and pen tests are essential for ongoing risk mitigation. We capture findings and link them directly to your compliance framework, so they roll up into organization-level risks with full traceability.',
+    },
+    {
+      icon: Check,
+      title: 'Effortless Multi-Standard Assurance',
+      description:
+        "Whether you're navigating regulations or meeting client demands, we streamline compliance across multiple standards. Our automated mapping links your Policies, Procedures, and Controls to any framework — and generates the reports you need.",
     },
   ]
 
   const benefits = [
     'Scale your risk management team without hiring',
     'Reduce security incidents',
+    'Be continuously audit-ready',
     'Save time on compliance reporting',
-    'Be continously audit-ready',
     'Single pane of glass',
     'Control automation',
     'Interfacing to your systems',

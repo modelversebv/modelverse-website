@@ -19,9 +19,11 @@ export function NavBar({ home, news, cases, about, contact }: NavBarProps) {
   const navigate = useNavigate()
 
   return (
-    <div className="sticky top-0 z-50 w-full shrink-0 border-b bg-white">
-      <div className="flex flex-col gap-4 p-4 md:container md:mx-auto lg:flex-row lg:items-center-safe lg:justify-between">
-        <div className="flex flex-row items-center-safe justify-between">
+    <div className="fixed top-0 z-50 w-full shrink-0 border-b md:bg-white">
+      <div
+        className={`flex flex-col overflow-hidden md:container md:mx-auto lg:h-fit lg:flex-row lg:items-center-safe lg:justify-between ${mobileMenuOpen ? 'h-screen' : 'h-fit'}`}
+      >
+        <div className="flex flex-row items-center-safe justify-between bg-white p-4">
           <img
             src="/icon.png"
             className="size-12 cursor-pointer md:hidden"
@@ -41,7 +43,7 @@ export function NavBar({ home, news, cases, about, contact }: NavBarProps) {
           </button>
         </div>
         <div
-          className={`flex-col gap-4 ${mobileMenuOpen ? 'flex' : 'hidden'} lg:flex lg:flex-row lg:items-center-safe lg:justify-end-safe`}
+          className={`h-full flex-col gap-4 bg-black/50 backdrop-blur-sm lg:flex lg:bg-transparent lg:opacity-100 lg:backdrop-blur-none ${mobileMenuOpen ? 'flex opacity-100' : 'hidden opacity-0'} p-4 lg:flex lg:flex-row lg:items-center-safe lg:justify-end-safe`}
         >
           <div className="h-px w-full bg-gray-300 lg:hidden" />
           <div className="flex flex-col gap-2 lg:mr-auto lg:flex-row">
@@ -69,7 +71,7 @@ export function NavBar({ home, news, cases, about, contact }: NavBarProps) {
           <div className="h-px w-full bg-gray-300 lg:h-12 lg:w-px" />
           <div className="flex flex-col gap-2">
             <button
-              className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50"
+              className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 lg:shadow-none"
               onClick={() =>
                 (window.location.href =
                   'https://outlook.office.com/bookwithme/user/d81d78745f8047d1a0ec05a07d8d40d6@modelverse.online/meetingtype/HEkH_Hmwx06JvFc-tP4ZJw2?anonymous')

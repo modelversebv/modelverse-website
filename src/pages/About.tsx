@@ -1,7 +1,17 @@
 import { Card } from '@/components/app/misc/card'
 import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
-import { Book, Eye, Linkedin, Mail, Shield, User } from 'lucide-react'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import {
+  Book,
+  Briefcase,
+  Eye,
+  Linkedin,
+  Mail,
+  PencilLine,
+  Shield,
+  User,
+} from 'lucide-react'
 
 const AboutHero = (
   <Hero className="items-center-safe justify-center-safe text-center md:max-w-4xl">
@@ -146,6 +156,30 @@ export function AboutPage() {
   //   },
   // ]
 
+  const ambassadors = [
+    {
+      name: 'Ambassador Name',
+      role: 'Ambassador Role',
+      linkedin: '',
+      bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      image: '',
+    },
+    {
+      name: 'Ambassador Name',
+      role: 'Ambassador Role',
+      linkedin: '',
+      bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      image: '',
+    },
+    {
+      name: 'Ambassador Name',
+      role: 'Ambassador Role',
+      linkedin: '',
+      bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      image: '',
+    },
+  ]
+
   return (
     <Layout about={true} hero={AboutHero}>
       <div className="bg-gray-50">
@@ -249,6 +283,53 @@ export function AboutPage() {
               ))}
             </div>
           </div>
+
+          {/* <div className="flex flex-col gap-8 text-center">
+            <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
+              <h1 className="text-4xl sm:text-5xl">Our Ambassadors</h1>
+              <p className="text-xl text-gray-600">
+                Trusted voices in the risk and compliance management community
+                who believe in our mission.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              {ambassadors.map((ambassador, index) => (
+                <Card className="gap-8 bg-white p-0 py-8 text-left" key={index}>
+                  <div className="flex flex-col gap-4 px-8 sm:flex-row">
+                    <Avatar className="size-32 self-center">
+                      <AvatarImage
+                        src={ambassador.image}
+                        className="object-cover"
+                      />
+                      <AvatarFallback></AvatarFallback>
+                    </Avatar>
+                    <div className="flex flex-col gap-4">
+                      <div className="flex flex-col gap-2">
+                        <h1 className="text-xl">{ambassador.name}</h1>
+                        <h1 className="font-semibold text-amber-500">
+                          {ambassador.role}
+                        </h1>
+                      </div>
+
+                      <a
+                        href={ambassador.linkedin}
+                        className="flex size-10 items-center justify-center rounded-lg bg-gradient-to-r from-green-500/10 to-teal-500/10 text-amber-500 transition-colors hover:from-green-500/20 hover:to-teal-500/20"
+                      >
+                        <Linkedin className="size-6" />
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex flex-row gap-4 bg-gradient-to-r from-green-500/10 to-teal-500/10 p-8">
+                    <PencilLine className="size-8 shrink-0 text-amber-500 opacity-50" />
+                    <p className="mb-4 text-sm text-gray-600 italic">
+                      "{ambassador.bio}"
+                    </p>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div> */}
         </div>
       </div>
     </Layout>

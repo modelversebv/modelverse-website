@@ -45,7 +45,7 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
           about={about}
           contact={contact}
         />
-        <div className="flex grow flex-col">
+        <div className="mt-20 flex grow flex-col md:mt-28">
           {hero}
           {children}
         </div>
