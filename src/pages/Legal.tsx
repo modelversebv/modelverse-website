@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import React from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
 import { MDXRenderer } from '@/components/app/mdx/mdxRenderer'
+import { Card } from '@/components/app/misc/card'
 import { Layout } from '@/components/layout'
 import {
   Breadcrumb,
@@ -11,7 +12,7 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, FileText } from 'lucide-react'
 
 type MetaData = {
   title: string
@@ -19,7 +20,15 @@ type MetaData = {
   effective_date: string
 }
 
+type TocEntry = {
+  id: string
+  text: string
+  level: number
+}
+
 export function LegalPage() {
+  const layoutRef = useRef<HTMLDivElement>(null)
+
   const navigate = useNavigate()
 
   const { slug } = useParams<{ slug: string }>()
@@ -35,10 +44,14 @@ export function LegalPage() {
     last_updated: '',
     effective_date: '',
   })
+  const [toc, setToc] = useState<TocEntry[]>([])
   const [error, setError] = useState(false)
 
   useEffect(() => {
     if (!slug) return
+
+    setError(false)
+    setMDXComponent(null)
 
     import(`@/legal/${slug}.mdx`)
       .then((mod: any) => {
@@ -56,11 +69,39 @@ export function LegalPage() {
       })
   }, [slug])
 
+  useEffect(() => {
+    if (!MDXComponent) return
+
+    // Delay to ensure MDX renders into the DOM
+    const timeout = setTimeout(() => {
+      const article = document.querySelector('article')
+      if (!article) return
+
+      const headings = Array.from(
+        article.querySelectorAll('h2, h3, h4, h5, h6')
+      ) as HTMLElement[]
+
+      const newToc: TocEntry[] = headings.map((h) => ({
+        id: h.id,
+        text: h.innerText,
+        level: Number(h.tagName.replace('H', '')),
+      }))
+
+      setToc(newToc)
+
+      if (layoutRef.current) {
+        layoutRef.current.scrollTo({ top: 0, behavior: 'smooth' })
+      }
+    }, 0)
+
+    return () => clearTimeout(timeout)
+  }, [MDXComponent])
+
   return (
-    <Layout>
+    <Layout ref={layoutRef}>
       <div className="bg-gray-50">
-        <div className="px-4 py-4 md:container md:mx-auto md:px-8">
-          <div className="mx-auto max-w-4xl">
+        <div className="p-4 md:container md:mx-auto">
+          <div className="mx-auto max-w-6xl">
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem>
@@ -76,17 +117,17 @@ export function LegalPage() {
         </div>
       </div>
 
-      <div className="mx-auto p-4 md:container md:mx-auto md:p-8">
-        <div className="mx-auto flex max-w-4xl flex-col gap-4 md:gap-8">
+      <div className="mx-auto grow px-4 py-16 md:container md:mx-auto">
+        <div className="mx-auto flex h-full max-w-6xl flex-col gap-4 md:gap-8">
           {error ? (
-            <div className="mx-auto flex max-w-4xl flex-col gap-4 px-4 py-8 text-center sm:px-16 sm:py-32">
+            <div className="mx-auto flex h-full max-w-4xl flex-col items-center-safe justify-center-safe gap-4 px-4 py-16 text-center">
               <h1 className="text-4xl sm:text-5xl">Page Not Found</h1>
               <p className="text-xl text-gray-600">
                 Sorry, the page you’re looking for does not exist or has been
                 removed.
               </p>
               <button
-                className="cursor-pointer self-center rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-3 py-1 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 sm:w-fit"
+                className="cursor-pointer self-center rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 sm:w-fit"
                 onClick={() => navigate(`/`)}
               >
                 Back to Home
@@ -95,28 +136,53 @@ export function LegalPage() {
           ) : (
             <>
               <button
-                className="group flex w-fit cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full px-3 py-1 text-sm font-semibold text-amber-500 transition-all duration-300 hover:bg-gray-200"
+                className="group flex w-fit cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full px-4 py-2 text-sm font-semibold text-amber-500 transition-all duration-300 hover:bg-gray-200"
                 onClick={() => navigate('/')}
               >
                 <ArrowLeft className="size-5 transition-all duration-300 group-hover:-translate-x-1" />
                 Back to Home
               </button>
-              <article className="prose prose-img:rounded-lg prose-img:mx-auto prose-img:max-w-2xl prose-img:w-full prose-img:object-cover max-w-full">
-                <div className="not-prose mx-auto flex max-w-4xl flex-col gap-4">
-                  <h1 className="text-4xl sm:text-5xl">{metadata.title}</h1>
-                  <div className="flex flex-col">
-                    <p className="text-gray-600">
-                      <span className="font-bold">Last Updated: </span>
-                      {metadata.last_updated}
-                    </p>
-                    <p className="text-gray-600">
-                      <span className="font-bold">Effective Date: </span>
-                      {metadata.effective_date}
-                    </p>
+              <div className="relative flex flex-col gap-4 md:gap-8 lg:flex-row">
+                {toc.length > 0 && (
+                  <Card className="not-prose shrink-0 gap-4 p-4 lg:sticky lg:top-36 lg:size-fit">
+                    <div className="flex flex-row items-center-safe gap-2 text-xl font-semibold">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r from-green-500/10 to-teal-500/10">
+                        <FileText className="size-6 text-amber-500" />
+                      </div>
+                      Table of Contents
+                    </div>
+                    <ul className="pl-2">
+                      {toc.map((item) => (
+                        <li
+                          key={item.id}
+                          className="bg mb-2 cursor-pointer rounded-lg px-4 py-2 text-gray-600 hover:bg-gray-100"
+                        >
+                          <a href={`#${item.id}`}>{item.text}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+                )}
+
+                <article className="prose prose-img:rounded-lg prose-img:mx-auto prose-img:max-w-2xl prose-img:w-full prose-img:object-cover max-w-full">
+                  <div className="not-prose flex flex-col gap-4">
+                    <h1 className="text-4xl text-black sm:text-5xl">
+                      {metadata.title}
+                    </h1>
+                    <div className="flex flex-col">
+                      <p className="text-gray-600">
+                        <span className="font-bold">Last Updated: </span>
+                        {metadata.last_updated}
+                      </p>
+                      <p className="text-gray-600">
+                        <span className="font-bold">Effective Date: </span>
+                        {metadata.effective_date}
+                      </p>
+                    </div>
                   </div>
-                </div>
-                {MDXComponent && <MDXRenderer mdxContent={MDXComponent} />}
-              </article>
+                  {MDXComponent && <MDXRenderer mdxContent={MDXComponent} />}
+                </article>
+              </div>
             </>
           )}
         </div>

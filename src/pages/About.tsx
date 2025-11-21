@@ -175,7 +175,13 @@ export function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="size-full min-h-[400px] rounded-lg bg-black" />
+            <div className="relative flex items-center-safe justify-center-safe lg:basis-1/2">
+              <img
+                src="/images/new_pfps/Team - web.jpg"
+                alt=""
+                className="aspect-video rounded-lg border object-cover shadow-lg"
+              />
+            </div>
           </div>
 
           <div className="flex flex-col gap-8">

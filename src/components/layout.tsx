@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { forwardRef, useState } from 'react'
 
 import { CookieBanner } from './app/cookies/cookieBanner'
 import { Footer } from './app/footer/footer'
@@ -14,34 +14,46 @@ type LayoutProps = {
   children?: React.ReactNode
 }
 
-export function Layout({
-  home = false,
-  news = false,
-  cases = false,
-  about = false,
-  contact = false,
-  hero,
-  children,
-}: LayoutProps) {
-  // Cookie consent
-  const [showConsentPreferences, setShowConsentPreferences] = useState(false)
+export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
+  (
+    {
+      home = false,
+      news = false,
+      cases = false,
+      about = false,
+      contact = false,
+      hero,
+      children,
+    },
+    ref
+  ) => {
+    const [showConsentPreferences, setShowConsentPreferences] = useState(false)
 
-  return (
-    <div className="scrollbar-hide h-screen w-screen overflow-auto font-sans">
-      <CookieBanner
-        preferences={showConsentPreferences}
-        setPreferences={setShowConsentPreferences}
-      />
-      <NavBar
-        home={home}
-        news={news}
-        cases={cases}
-        about={about}
-        contact={contact}
-      />
-      {hero}
-      {children}
-      <Footer onManagePrivacy={setShowConsentPreferences} />
-    </div>
-  )
-}
+    return (
+      <div
+        ref={ref} // <- this is the key for parent to scroll
+        className="scrollbar-hide flex h-screen w-screen flex-col overflow-auto scroll-smooth font-sans"
+      >
+        <CookieBanner
+          preferences={showConsentPreferences}
+          setPreferences={setShowConsentPreferences}
+        />
+        <NavBar
+          home={home}
+          news={news}
+          cases={cases}
+          about={about}
+          contact={contact}
+        />
+        <div className="flex grow flex-col">
+          {hero}
+          {children}
+        </div>
+
+        <Footer onManagePrivacy={setShowConsentPreferences} />
+      </div>
+    )
+  }
+)
+
+Layout.displayName = 'Layout'

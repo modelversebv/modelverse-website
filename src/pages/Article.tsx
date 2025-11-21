@@ -79,7 +79,7 @@ export function ArticlePage() {
 
   return (
     <Layout>
-      <div className="bg-gray-50">
+      <div className="shrink-0 bg-gray-50">
         <div className="px-4 py-4 md:container md:mx-auto md:px-8">
           <div className="mx-auto max-w-4xl">
             <Breadcrumb>
@@ -103,10 +103,10 @@ export function ArticlePage() {
         </div>
       </div>
 
-      <div className="mx-auto p-4 md:container md:mx-auto md:p-8">
-        <div className="mx-auto flex max-w-4xl flex-col gap-4 md:gap-8">
+      <div className="mx-auto grow px-4 py-16 md:container md:mx-auto">
+        <div className="mx-auto flex h-full max-w-4xl flex-col gap-4 md:gap-8">
           {error ? (
-            <div className="mx-auto flex max-w-4xl flex-col gap-4 px-4 py-8 text-center sm:px-16 sm:py-32">
+            <div className="mx-auto flex h-full max-w-4xl flex-col items-center-safe justify-center-safe gap-4 px-4 py-16 text-center">
               <h1 className="text-4xl sm:text-5xl">Article Not Found</h1>
               <p className="text-xl text-gray-600">
                 Sorry, the article you’re looking for does not exist or has been

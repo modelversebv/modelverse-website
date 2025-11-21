@@ -234,7 +234,7 @@ export function HomePage() {
       </div>
 
       {/* CTA (Call to action) */}
-      <div className="flex flex-col gap-8 bg-gradient-to-r from-green-500 to-teal-500 px-4 py-16 text-white sm:items-center-safe md:py-32">
+      <div className="flex flex-col gap-8 bg-gradient-to-r from-green-500 to-teal-500 px-4 py-16 text-white sm:items-center-safe">
         <div className="flex flex-col gap-4 text-center md:container md:mx-auto">
           <h1 className="text-4xl sm:text-5xl">Ready to secure your future?</h1>
           <p className="text-xl">
