@@ -112,7 +112,7 @@ export function NewsPage() {
                       </div>
                     </div>
                     <button
-                      className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-3 py-1 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 sm:w-fit"
+                      className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 sm:w-fit"
                       onClick={() => navigate(`/article/${post.postId}`)}
                     >
                       Read Article

@@ -182,21 +182,21 @@ export function CookieBanner({
               </div>
               <div className="flex flex-col gap-2 md:flex-row md:gap-4">
                 <button
-                  className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-3 py-1 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 md:w-fit"
+                  className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 md:w-fit"
                   onClick={handleAccept}
                 >
                   Accept All
                 </button>
 
                 <button
-                  className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-3 py-1 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 md:w-fit"
+                  className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 md:w-fit"
                   onClick={handleAccept}
                 >
                   Reject All
                 </button>
 
                 <button
-                  className="group flex cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full border px-3 py-1 font-semibold transition-all duration-300 hover:bg-gray-200 md:w-fit"
+                  className="group flex cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full border px-4 py-2 font-semibold transition-all duration-300 hover:bg-gray-200 md:w-fit"
                   onClick={handleManage}
                 >
                   <Settings className="size-4 transition-all duration-300 group-hover:rotate-45" />
@@ -257,26 +257,26 @@ export function CookieBanner({
                 </div>
                 <div className="flex flex-col gap-2 md:flex-row md:gap-4">
                   <button
-                    className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-3 py-1 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 md:w-fit"
+                    className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 md:w-fit"
                     onClick={handleAccept}
                   >
                     Accept All
                   </button>
                   <button
-                    className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-3 py-1 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 md:w-fit"
+                    className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 md:w-fit"
                     onClick={handleReject}
                   >
                     Reject All
                   </button>
 
                   <button
-                    className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-3 py-1 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 md:ml-auto md:w-fit"
+                    className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 md:ml-auto md:w-fit"
                     onClick={handleSave}
                   >
                     Save
                   </button>
                   <button
-                    className="group flex cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full border px-3 py-1 font-semibold transition-all duration-300 hover:bg-gray-200 md:w-fit"
+                    className="group flex cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full border px-4 py-2 font-semibold transition-all duration-300 hover:bg-gray-200 md:w-fit"
                     onClick={() => setShowPreferences(false)}
                   >
                     Back
