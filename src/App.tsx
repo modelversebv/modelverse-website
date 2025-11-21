@@ -3,25 +3,27 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Toaster } from 'sonner'
 
 import './App.css'
-import { About } from './pages/About'
-import { Cases } from './pages/Cases'
-import { Contact } from './pages/Contact'
-import { Home } from './pages/Home'
-import { News } from './pages/News'
-import { Team } from './pages/Team'
+import { AboutPage } from './pages/About'
+import { ArticlePage } from './pages/Article'
+import { CasesPage } from './pages/Cases'
+import { ContactPage } from './pages/Contact'
+import { HomePage } from './pages/Home'
+import { LegalPage } from './pages/Legal'
+import { NewsPage } from './pages/News'
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/cases" element={<Cases />} />
-        <Route path="/team" element={<Team />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
       <Toaster position="top-center" />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/news" element={<NewsPage />} />
+        <Route path="/cases" element={<CasesPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/article/:slug" element={<ArticlePage />} />
+        <Route path="/:slug" element={<LegalPage />} />
+      </Routes>
     </BrowserRouter>
   )
 }
