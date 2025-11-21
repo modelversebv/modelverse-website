@@ -137,7 +137,7 @@ export function CookieBanner({
 
   return (
     <div
-      className={`fixed top-0 z-999 h-screen w-screen bg-black/30 p-4 backdrop-blur-sm ${showBanner ? 'block' : 'hidden'}`}
+      className={`fixed top-0 z-999 h-dvh w-dvw bg-black/30 p-4 backdrop-blur-sm ${showBanner ? 'block' : 'hidden'}`}
     >
       <div className="container mx-auto flex size-full items-end-safe justify-center-safe">
         <Card

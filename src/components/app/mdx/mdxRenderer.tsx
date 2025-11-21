@@ -22,7 +22,7 @@ const Heading =
     const text = typeof children === 'string' ? children : ''
     const id = slugify(text)
     return (
-      <Tag id={id} {...props} className="scroll-mt-36">
+      <Tag id={id} {...props} className="scroll-mt-26 md:scroll-mt-36">
         {children}
       </Tag>
     )
