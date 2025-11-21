@@ -26,6 +26,10 @@ type TocEntry = {
   level: number
 }
 
+export const legalPages = import.meta.glob('@/legal/*.mdx', {
+  eager: true,
+})
+
 export function LegalPage() {
   const layoutRef = useRef<HTMLDivElement>(null)
 
