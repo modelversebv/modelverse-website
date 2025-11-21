@@ -69,7 +69,7 @@ export function NavBar({ home, news, cases, about, contact }: NavBarProps) {
             </NavLink>
           </div>
           <div className="h-px w-full bg-gray-300 md:hidden lg:block lg:h-12 lg:w-px" />
-          <div className="flex flex-col gap-2 md:hidden">
+          <div className="flex flex-col gap-2 md:hidden lg:flex">
             <button
               className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 lg:shadow-none"
               onClick={() =>
