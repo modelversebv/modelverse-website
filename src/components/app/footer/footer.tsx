@@ -46,8 +46,8 @@ export function Footer({ onManagePrivacy }: FooterProps) {
             </div>
 
             <p className="text-sm text-gray-400">
-              Empowering organizations to manage cyber risks and regulatory
-              compliance with confidence.
+              Empowering organizations to manage risks and compliance with
+              confidence.
             </p>
 
             <div className="flex flex-row gap-4 text-amber-500">

@@ -9,7 +9,7 @@ const AboutHero = (
       <p className="text-sm">About Modelverse</p>
     </div>
     <h1 className="text-5xl sm:text-6xl">
-      We're on a Mission to Democratize Cybersecurity
+      We're on a Mission to Democratize Risk Management
     </h1>
     <p className="text-xl text-gray-600">
       Making enterprise-grade information risk management accessible to
@@ -155,23 +155,22 @@ export function AboutPage() {
               <h1 className="text-4xl sm:text-5xl">Our Story</h1>
               <div className="flex flex-col gap-4 text-lg text-gray-600">
                 <p>
-                  Modelverse was founded in 2023 by a team of cybersecurity
-                  veterans who witnessed firsthand the challenges small and
-                  medium-sized organizations face when trying to implement
-                  enterprise-grade security programs.
+                  Modelverse was founded in 2023 by a team of experienced risk
+                  managers who witnessed firsthand the challenges organizations
+                  face when trying to implement effective risk and compliance
+                  management programs.
                 </p>
                 <p>
                   We saw companies struggling with complex compliance
-                  requirements, limited resources, and a shortage of security
-                  talent. Meanwhile, enterprise security solutions were either
-                  too expensive, too complex, or simply not designed for
-                  organizations with fewer than 10,000 employees.
+                  requirements, limited resources, and a shortage of talent.
+                  Meanwhile, enterprise risk management solutions were either
+                  too expensive or too complex.
                 </p>
                 <p>
                   We knew there had to be a better way. That's why we built
-                  Modelverse—a platform that brings the power of enterprise
-                  security to organizations of all sizes, with the simplicity
-                  and affordability that growing businesses need.
+                  Modelverse — a platform that brings the power of enterprise
+                  risk and compliance management to organizations of all sizes,
+                  with the simplicity and affordability that organizations need.
                 </p>
               </div>
             </div>
@@ -227,7 +226,9 @@ export function AboutPage() {
                   <img src={member.image} className="rounded-t-lg" alt="" />
                   <div className="flex grow flex-col p-8">
                     <h1 className="mb-2 text-xl">{member.name}</h1>
-                    <h1 className="mb-4 text-amber-500">{member.role}</h1>
+                    <h1 className="mb-4 font-semibold text-amber-500">
+                      {member.role}
+                    </h1>
                     <p className="mb-4 text-gray-600">{member.bio}</p>
                     <div className="flex grow flex-row items-end gap-2 text-amber-500">
                       <a

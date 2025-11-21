@@ -8,10 +8,10 @@ const CasesHero = (
     <div className="flex w-fit flex-row items-center-safe justify-center-safe gap-2 rounded-full bg-gradient-to-r from-green-500/20 to-teal-500/20 px-3 py-1 font-semibold text-amber-500">
       <p className="text-sm">Success Stories</p>
     </div>
-    <h1 className="text-5xl sm:text-6xl">Real Results from Real Customers</h1>
+    <h1 className="text-5xl sm:text-6xl">Customers' Success</h1>
     <p className="text-xl text-gray-600">
-      See how organizations like yours are transforming their cybersecurity risk
-      management with Modelverse.
+      See how organizations like yours are transforming their risk and
+      compliance management with Modelverse.
     </p>
   </Hero>
 )
@@ -142,8 +142,8 @@ export function CasesPage() {
         <div className="flex flex-col gap-4 text-center">
           <h1 className="text-4xl">Ready to Write Your Success Story?</h1>
           <p className="text-lg">
-            Join these leading organizations in transforming your cyber risk
-            management.
+            Join these leading organizations in transforming your risk and
+            compliance management.
           </p>
         </div>
         <button

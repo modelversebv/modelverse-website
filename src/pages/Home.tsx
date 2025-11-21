@@ -22,9 +22,8 @@ const HomeHero = (
         </div>
         <h1 className="text-5xl sm:text-6xl lg:text-7xl">Modelverse</h1>
         <p className="max-w-xl text-xl text-gray-600">
-          Empowering organizations with up to 10,000 employees to effectively
-          manage cybersecurity risks and regulatory compliance through
-          intelligent automation.
+          Empowering organizations to effectively manage Risks and Compliance
+          through intelligent automation.
         </p>
       </div>
       <button
@@ -38,18 +37,18 @@ const HomeHero = (
       </button>
       <div className="flex items-center-safe justify-center-safe gap-4 sm:justify-start">
         <div className="flex basis-1/5 flex-col items-center-safe justify-center-safe">
-          <h1 className="text-3xl whitespace-nowrap">10K+</h1>
-          <p className="text-sm text-wrap text-gray-600">Employees Supported</p>
+          <h1 className="text-3xl whitespace-nowrap">6</h1>
+          <p className="text-sm text-wrap text-gray-600">Risk Domains</p>
         </div>
         <div className="h-12 w-px shrink-0 bg-gray-300" />
         <div className="flex basis-1/5 flex-col items-center-safe justify-center-safe">
-          <h1 className="text-3xl whitespace-nowrap">99.9%+</h1>
-          <p className="text-sm text-wrap text-gray-600">Uptime SLA</p>
+          <h1 className="text-3xl whitespace-nowrap">30+</h1>
+          <p className="text-sm text-wrap text-gray-600">Standards</p>
         </div>
         <div className="h-12 w-px shrink-0 bg-gray-300" />
         <div className="flex basis-1/5 flex-col items-center-safe justify-center-safe">
-          <h1 className="text-3xl whitespace-nowrap">24/7</h1>
-          <p className="text-sm text-wrap text-gray-600">Support</p>
+          <h1 className="text-3xl whitespace-nowrap">7</h1>
+          <p className="text-sm text-wrap text-gray-600">Country Footprints</p>
         </div>
       </div>
     </div>
@@ -70,7 +69,7 @@ export function HomePage() {
       icon: Shield,
       title: 'Comprehensive Risk Assessment',
       description:
-        'Identify, analyze, and prioritize cyber risks across your entire organization with automated scanning and intelligent reporting.',
+        'Identify, analyze, and prioritize risks across your entire organization with the use of AI and intelligent reporting.',
     },
     {
       icon: FileCheck,
@@ -105,12 +104,13 @@ export function HomePage() {
   ]
 
   const benefits = [
+    'Scale your risk management team without hiring',
     'Reduce security incidents',
     'Save time on compliance reporting',
-    'Get audit-ready in minutes, not weeks',
-    'Scale security operations without hiring',
-    'Unified view of all cyber risks',
-    'Automated evidence collection',
+    'Be continously audit-ready',
+    'Single pane of glass',
+    'Control automation',
+    'Interfacing to your systems',
   ]
 
   const testimonials = [
@@ -137,12 +137,12 @@ export function HomePage() {
       <div className="flex flex-col gap-8 px-4 py-16 md:container md:mx-auto">
         <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
           <h1 className="text-4xl sm:text-5xl">
-            Everything You Need to Manage Cybersecurity Risks
+            Everything You Need to Manage Risks and Compliance
           </h1>
-          <p className="text-xl text-gray-600">
+          {/* <p className="text-xl text-gray-600">
             A complete platform designed for small to medium-sized organizations
             to take control of their information security.
-          </p>
+          </p> */}
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
@@ -164,8 +164,13 @@ export function HomePage() {
       <div className="bg-gray-50">
         <div className="flex flex-col gap-8 px-4 py-16 md:container md:mx-auto lg:flex-row">
           <div className="flex items-center-safe justify-center-safe lg:basis-1/2">
-            <img
+            {/* <img
               src="/images/misc/organization-unsplash.jpg"
+              alt=""
+              className="aspect-video rounded-lg border object-cover shadow-lg"
+            /> */}
+            <img
+              src="/images/new_pfps/Team - web.jpg"
               alt=""
               className="aspect-video rounded-lg border object-cover shadow-lg"
             />
@@ -174,7 +179,7 @@ export function HomePage() {
             <div className="flex max-w-4xl flex-col gap-4">
               <h1 className="text-4xl sm:text-5xl">We Secure. You Succeed!</h1>
               <p className="text-xl text-gray-600">
-                Whether you're a 100-person startup or a 10,000-employee
+                Whether you're a 10-person startup or a 10,000-employee
                 enterprise, Modelverse scales with your needs.
               </p>
             </div>
@@ -186,7 +191,7 @@ export function HomePage() {
                 </div>
               ))}
             </div>
-            <div className="flex flex-col gap-2">
+            {/* <div className="flex flex-col gap-2">
               <p className="text-lg text-gray-600 italic">
                 "Modelverse is truly a gamechanger. It is a robust platform
                 supporting my clients."
@@ -195,7 +200,7 @@ export function HomePage() {
                 <p>Chris Hazewinkel</p>
                 <p className="text-gray-600">CIO, NewForrest BV</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -205,8 +210,7 @@ export function HomePage() {
         <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
           <h1 className="text-4xl sm:text-5xl">Hear From Our Customers</h1>
           <p className="text-xl text-gray-600">
-            See how security leaders are transforming their organizations with
-            Modelverse
+            See how leaders are transforming their organizations with Modelverse
           </p>
         </div>
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2">
@@ -238,8 +242,8 @@ export function HomePage() {
         <div className="flex flex-col gap-4 text-center md:container md:mx-auto">
           <h1 className="text-4xl sm:text-5xl">Ready to secure your future?</h1>
           <p className="text-xl">
-            Join the many organizations that trust Modelverse to protect their
-            digital assets today.
+            Join the organizations that trust Modelverse to manage their risks
+            today.
           </p>
         </div>
         <button

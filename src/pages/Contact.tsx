@@ -26,7 +26,7 @@ export function ContactPage() {
       icon: Phone,
       title: 'Phone',
       primary: '+31 6 27612498',
-      secondary: 'Mon-Fri, 9am-6pm CET+1',
+      secondary: 'Mon-Fri, 9:00-18:00 CET',
     },
     {
       icon: MapPin,
@@ -37,8 +37,8 @@ export function ContactPage() {
     {
       icon: Clock,
       title: 'Support Hours',
-      primary: '24/7 for Enterprise',
-      secondary: '9am-6pm EST for Standard',
+      primary: '24/7 for Enterprise Agreements',
+      secondary: 'Mon-Fri, 9:00-18:00 CET for Standard',
     },
   ]
 

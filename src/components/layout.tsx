@@ -32,7 +32,7 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
     return (
       <div
         ref={ref} // <- this is the key for parent to scroll
-        className="scrollbar-hide flex h-dvh w-dvw flex-col overflow-auto scroll-smooth font-sans"
+        className="scrollbar-hide flex h-screen w-screen flex-col overflow-auto scroll-smooth font-sans"
       >
         <CookieBanner
           preferences={showConsentPreferences}
