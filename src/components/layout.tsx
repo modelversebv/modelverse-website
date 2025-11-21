@@ -1,102 +1,59 @@
-import { useEffect, useRef, useState } from 'react'
-
-import { throttle } from 'lodash'
+import { forwardRef, useState } from 'react'
 
 import { CookieBanner } from './app/cookies/cookieBanner'
 import { Footer } from './app/footer/footer'
 import { NavBar } from './app/navigation/navbar'
 
 type LayoutProps = {
-  banner?: React.ReactNode
-  children?: React.ReactNode
   home?: boolean
-  about?: boolean
   news?: boolean
   cases?: boolean
-  team?: boolean
+  about?: boolean
   contact?: boolean
+  hero?: React.ReactNode
+  children?: React.ReactNode
 }
 
-export function Layout({
-  banner,
-  children,
-  home = false,
-  about = false,
-  news = false,
-  cases = false,
-  team = false,
-  contact = false,
-}: LayoutProps) {
-  const scrollRef = useRef<HTMLDivElement>(null)
+export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
+  (
+    {
+      home = false,
+      news = false,
+      cases = false,
+      about = false,
+      contact = false,
+      hero,
+      children,
+    },
+    ref
+  ) => {
+    const [showConsentPreferences, setShowConsentPreferences] = useState(false)
 
-  // Cookie consent
-  const [showConsentPreferences, setShowConsentPreferences] = useState(false)
-
-  // Scrolling behaviour
-  const HEIGHT_THRESHOLD = 100
-  const lastScrollY = useRef(0)
-  const [isVisible, setIsVisible] = useState(true)
-
-  const handleScroll = () => {
-    if (!scrollRef.current) return
-
-    const currentScrollY = scrollRef.current.scrollTop
-
-    if (currentScrollY > HEIGHT_THRESHOLD) {
-      if (lastScrollY.current < currentScrollY) {
-        // console.log('down')
-        setIsVisible(false)
-      } else if (lastScrollY.current > currentScrollY) {
-        // console.log('up')
-        setIsVisible(true)
-      }
-    } else {
-      setIsVisible(true)
-    }
-
-    lastScrollY.current = currentScrollY
-  }
-  useEffect(() => {
-    const currentElement = scrollRef.current
-    if (!currentElement) return
-
-    currentElement.addEventListener('scroll', throttle(handleScroll, 150))
-    return () =>
-      currentElement.removeEventListener('scroll', throttle(handleScroll, 150))
-  }, [])
-
-  return (
-    <>
-      <CookieBanner
-        preferences={showConsentPreferences}
-        setPreferences={setShowConsentPreferences}
-      ></CookieBanner>
+    return (
       <div
-        className="scrollbar-hide flex h-screen w-screen flex-col overflow-auto bg-gradient-to-tl from-green-500 to-teal-500"
-        ref={scrollRef}
+        ref={ref} // <- this is the key for parent to scroll
+        className="scrollbar-hide flex h-screen w-screen flex-col overflow-auto scroll-smooth font-sans"
       >
-        <header
-          className={`z-10 shrink-0 bg-white shadow-md transition duration-300 md:sticky md:top-0 ${!isVisible ? 'md:-translate-y-full' : 'md:translate-y-0'}`}
-        >
-          <NavBar
-            home={home}
-            about={about}
-            news={news}
-            cases={cases}
-            team={team}
-            contact={contact}
-          />
-        </header>
-
-        {banner}
-        <div className="container mx-auto flex grow flex-col justify-center-safe gap-16 bg-gray-50 py-16 sm:rounded-t-lg">
+        <CookieBanner
+          preferences={showConsentPreferences}
+          setPreferences={setShowConsentPreferences}
+        />
+        <NavBar
+          home={home}
+          news={news}
+          cases={cases}
+          about={about}
+          contact={contact}
+        />
+        <div className="mt-20 flex grow flex-col md:mt-28">
+          {hero}
           {children}
         </div>
 
-        <footer className="shrink-0 bg-white">
-          <Footer onManagePrivacy={setShowConsentPreferences} />
-        </footer>
+        <Footer onManagePrivacy={setShowConsentPreferences} />
       </div>
-    </>
-  )
-}
+    )
+  }
+)
+
+Layout.displayName = 'Layout'

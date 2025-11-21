@@ -1,26 +1,32 @@
 import { Link } from 'react-router-dom'
 
 type NavLinkProps = {
-  url: string
-  children: React.ReactNode
-  active: boolean
+  active?: boolean
+  to: string
+  children?: React.ReactNode
 }
 
-export function NavLink({ url, children, active }: NavLinkProps) {
+export function NavLink({ active = false, to, children }: NavLinkProps) {
   return (
     <Link
-      to={url}
-      className={`text-md rounded-full bg-white px-4 py-2 ${
-        active ? 'bg-linear-to-tl from-green-500/30 to-teal-500/30' : ''
-      }`}
+      to={to}
+      className={`rounded-full font-semibold text-white md:font-normal md:text-black`}
     >
-      <span
-        className={`flex flex-row items-center-safe ${
-          active ? 'opacity-100' : 'opacity-70 hover:opacity-100'
-        }`}
+      <div
+        className={`flex flex-row gap-2 rounded-full px-4 py-2 ${active ? 'bg-gradient-to-r from-green-500/70 to-teal-500/70 shadow-md backdrop-blur-md md:from-green-500/30 md:to-teal-500/30 md:shadow-none md:backdrop-blur-none' : 'opacity-90 md:opacity-70 md:hover:opacity-100'}`}
       >
         {children}
-      </span>
+      </div>
     </Link>
+    // <Link
+    //   to={to}
+    //   className={`flex flex-row items-center-safe gap-2 rounded-full px-4 py-2 ${active ? 'bg-black/10' : 'cursor-pointer md:opacity-70 md:hover:opacity-100'}`}
+    // >
+    //   <div
+    //     className={`flex flex-row gap-2${active ? 'bg-gradient-to-r from-green-500/30 to-teal-500/30' : ''}`}
+    //   >
+    //     {children}
+    //   </div>
+    // </Link>
   )
 }

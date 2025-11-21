@@ -1,99 +1,326 @@
-import { useNavigate } from 'react-router-dom'
-
-import { Banner } from '@/components/app/misc/banner'
+import { Card } from '@/components/app/misc/card'
+import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
-import infoFile from '@/data/about.yaml?raw'
-import { parse } from 'yaml'
+import { Book, Eye, Linkedin, Mail, Shield, User } from 'lucide-react'
 
-type Message = {
-  caption: string
-  message: string
-}
-
-type Button = {
-  text: string
-  url: string
-}
-
-type Info = {
-  title: string
-  message: string
-  button: Button
-  list: Message[]
-}
-
-const aboutBanner = (
-  <Banner>
-    <h1 className="text-4xl font-bold">About Modelverse</h1>
-    <p className="text-lg">
-      Empowering organizations to navigate (cyber) security and sustainability
-      risks with confidence and clarity.
+const AboutHero = (
+  <Hero className="items-center-safe justify-center-safe text-center md:max-w-4xl">
+    <div className="flex w-fit flex-row items-center-safe justify-center-safe gap-2 rounded-full bg-gradient-to-r from-green-500/20 to-teal-500/20 px-3 py-1 font-semibold text-amber-500">
+      <p className="text-sm">About Modelverse</p>
+    </div>
+    <h1 className="text-5xl sm:text-6xl">
+      We're on a Mission to Democratize Risk Management
+    </h1>
+    <p className="text-xl text-gray-600">
+      Making enterprise-grade information risk management accessible to
+      organizations of all sizes.
     </p>
-    <button
-      className="cursor-pointer rounded-full bg-white px-4 py-2 font-bold transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-white/50"
-      onClick={() =>
-        (window.location.href =
-          'https://outlook.office.com/bookwithme/user/d81d78745f8047d1a0ec05a07d8d40d6@modelverse.online/meetingtype/HEkH_Hmwx06JvFc-tP4ZJw2?anonymous')
-      }
-    >
-      <span className="bg-linear-to-tl from-green-500 to-teal-500 bg-clip-text text-transparent">
-        Talk to us
-      </span>
-    </button>
-  </Banner>
+  </Hero>
 )
 
-export function About() {
-  const navigate = useNavigate()
-  const info = parse(infoFile)
-  return (
-    <Layout about={true} banner={aboutBanner}>
-      <div className="mx-4 flex flex-col items-center-safe justify-center-safe gap-8 md:mx-32">
-        <h1 className="text-center text-4xl font-bold">
-          We secure - you succeed!
-        </h1>
-        <div className="flex flex-col gap-8 lg:flex-row">
-          {info.map((item: Info, index: number) => (
-            <div
-              key={index}
-              className="group flex w-full basis-1/3 flex-col items-center-safe gap-8 rounded-lg bg-linear-to-tl from-green-500/10 to-teal-500/10 p-8"
-            >
-              <h1 className="text-center text-2xl font-bold text-amber-500">
-                {item.title}
-              </h1>
-              {item.message && <p className="text-sm">{item.message}</p>}
-              {item.list && (
-                <ul className="list-disc pl-5 text-sm">
-                  {item.list.map((listItem: Message, index: number) => (
-                    <li key={index}>
-                      <span className="font-bold">{listItem.caption}:</span>{' '}
-                      {listItem.message}
-                    </li>
-                  ))}
-                </ul>
-              )}
-              {item.button && (
-                <button
-                  className="transtion cursor-pointer rounded-full bg-linear-to-tl from-green-500 to-teal-500 px-4 py-2 font-bold text-white duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50"
-                  onClick={() => navigate(item.button.url)}
-                >
-                  {item.button.text}
-                </button>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
+export function AboutPage() {
+  const teamMembers = [
+    {
+      name: 'Ben',
+      role: 'CEO & CTO | Co-Founder',
+      bio: 'Ben is the creator of Modelverse, driven by a passion for turning strategy into action. With over 25 years at Shell and later as a partner at KPMG, Ben helped organizations navigate complex challenges across transformation, risk, and technology. He holds a PhD in theoretical physics and once explored black holes at Imperial College London—before diving into the world of business.',
+      image: 'images/new_pfps/Ben - web.jpg',
+      linkedin: 'https://www.linkedin.com/in/benkrutzen/',
+      mail: 'mailto:ben@modelverse.online',
+    },
+    {
+      name: 'Reshma',
+      role: 'Partner | Co-Founder',
+      bio: 'Reshma brings deep expertise in strategic information management and cybersecurity, with a clear, structured approach to tackling complex challenges. Reshma held a variety of IT leadership an Security roles across international corporates and the energy sector. She holds an MSc in Applied Physics and an executive MSc in Cyber Security.',
+      image: 'images/new_pfps/Reshma - web.jpg',
+      linkedin: 'https://www.linkedin.com/in/reshmapandohi/',
+      mail: 'mailto:reshma@modelverse.online',
+    },
+    {
+      name: 'Daan',
+      role: 'CFO & COO | Co-Founder',
+      bio: 'Daan is an experienced entrepreneur and IT leader who’s passionate about using modern technology to help organizations tackle real-world challenges. Daan brings broad insight as a strategist, investor, and trusted cybersecurity advisor. He holds a PhD and MSc in Computing Science, along with an executive MSc in Cyber Security.',
+      image: 'images/new_pfps/Daan - web.jpg',
+      linkedin: 'https://www.linkedin.com/in/dl11235813213456/',
+      mail: 'mailto:daan@modelverse.online',
+    },
+    {
+      name: 'Lili',
+      role: 'Partner | CISO',
+      bio: 'Lili is a governance expert with deep experience in health, cybersecurity and patient safety. Before becoming a partner, Lili spent 12 years at the Dutch Ministry of Health, working on organ donation, e-health, and cybersecurity. She holds a Cum Laude BSc in Biomedical Science, a Cum Laude MSc in Neuroscience, and a Summa Cum Laude MSc in Cyber Security Governance.',
+      image: 'images/new_pfps/Lili - web.jpg',
+      linkedin: 'https://www.linkedin.com/in/lili-guo-3941b126/',
+      mail: 'mailto:Lili@modelverse.online',
+    },
+    {
+      name: 'Bozhena',
+      role: 'Office Manager',
+      bio: 'Bozhena smoothly runs the back-office, always friendly, accessible, and business-smart.',
+      image: 'images/new_pfps/Bozhena - web.jpg',
+      linkedin: 'https://www.linkedin.com/in/bozhena-kovtun-0a106619b/',
+      mail: 'mailto:bozhena@valuetracks.io',
+    },
+    {
+      name: 'Mariona',
+      role: 'Risk Consultant',
+      bio: 'Mariona researches, interprets, structures and creates cybersecurity risk models and ESG models for enterprise clients.',
+      image: 'images/new_pfps/Mariona - web.jpg',
+      linkedin: 'https://www.linkedin.com/in/mariona-fortuny-jan%C3%A9/',
+      mail: 'mailto:mariona@modelverse.online',
+    },
+    {
+      name: 'Sjors',
+      role: 'Risk Consultant & Security Engineer',
+      bio: 'Sjors is focused on risk management and platform improvements using cloud services and security infrastructure.',
+      image: 'images/new_pfps/Sjors - web.jpg',
+      linkedin: 'https://www.linkedin.com/in/sjors-de-natris-470a51198/',
+      mail: 'mailto:sjors@modelverse.online',
+    },
+    {
+      name: 'Matei',
+      role: 'Software Engineer',
+      bio: 'Matei develops and maintains the website, helps implement DevOps practices, and supports the development of the cybersecurity platform.',
+      image: 'images/new_pfps/Matei - web.jpg',
+      linkedin: 'https://www.linkedin.com/in/matei-avram-919771251/',
+      mail: 'mailto:matei@modelverse.online',
+    },
+  ]
 
-      <div className="mx-4 flex flex-col items-center-safe justify-center-safe gap-8 text-center md:mx-32 xl:mx-64">
-        <h1 className="text-center text-4xl font-bold">Testimonial</h1>
-        <p className="italic">
-          Modelverse is truly a gamechanger. It is a robust platform supporting
-          my clients.
-        </p>
-        <p className="text-lg font-bold italic">
-          –Chris Hazewinkel, Certified Information Security Manager
-        </p>
+  const values = [
+    {
+      icon: User,
+      title: 'Customer First',
+      description:
+        "We build products that solve real problems. Our customers' success is our success.",
+    },
+    {
+      icon: Shield,
+      title: 'Security by Design',
+      description:
+        "Security isn't an afterthought—it's built into everything we do, from code to culture.",
+    },
+    {
+      icon: Eye,
+      title: 'Transparency',
+      description:
+        'We believe in open communication with our customers, partners, and each other.',
+    },
+    {
+      icon: Book,
+      title: 'Continuous Learning',
+      description:
+        'The threat landscape evolves daily. We stay ahead through constant innovation and education.',
+    },
+  ]
+
+  // const milestones = [
+  //   {
+  //     year: '2021',
+  //     title: 'Company Founded',
+  //     description:
+  //       'Modelverse was born from a vision to make enterprise security accessible to all.',
+  //   },
+  //   {
+  //     year: '2022',
+  //     title: 'First 100 Customers',
+  //     description:
+  //       'Reached our first major milestone, helping organizations across diverse industries.',
+  //   },
+  //   {
+  //     year: '2023',
+  //     title: 'Series A Funding',
+  //     description:
+  //       'Raised $15M to accelerate product development and expand our team.',
+  //   },
+  //   {
+  //     year: '2024',
+  //     title: 'ISO 27001 Certified',
+  //     description:
+  //       'Achieved ISO 27001 certification, demonstrating our commitment to security excellence.',
+  //   },
+  //   {
+  //     year: '2025',
+  //     title: 'Global Expansion',
+  //     description:
+  //       'Opened offices in Europe and Asia, serving customers on three continents.',
+  //   },
+  // ]
+
+  // const ambassadors = [
+  //   {
+  //     name: 'Ambassador Name',
+  //     role: 'Ambassador Role',
+  //     linkedin: '',
+  //     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  //     image: '',
+  //   },
+  //   {
+  //     name: 'Ambassador Name',
+  //     role: 'Ambassador Role',
+  //     linkedin: '',
+  //     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  //     image: '',
+  //   },
+  //   {
+  //     name: 'Ambassador Name',
+  //     role: 'Ambassador Role',
+  //     linkedin: '',
+  //     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  //     image: '',
+  //   },
+  // ]
+
+  return (
+    <Layout about={true} hero={AboutHero}>
+      <div className="bg-gray-50">
+        <div className="flex flex-col justify-center-safe gap-8 px-4 py-16 sm:gap-16 md:container md:mx-auto">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            <div className="flex flex-col gap-4 md:justify-center-safe">
+              <h1 className="text-4xl sm:text-5xl">Our Story</h1>
+              <div className="flex flex-col gap-4 text-lg text-gray-600">
+                <p>
+                  Modelverse was founded in 2023 by a team of experienced risk
+                  managers who witnessed firsthand the challenges organizations
+                  face when trying to implement effective risk and compliance
+                  management programs.
+                </p>
+                <p>
+                  We saw companies struggling with complex compliance
+                  requirements, limited resources, and a shortage of talent.
+                  Meanwhile, enterprise risk management solutions were either
+                  too expensive or too complex.
+                </p>
+                <p>
+                  We knew there had to be a better way. That's why we built
+                  Modelverse — a platform that brings the power of enterprise
+                  risk and compliance management to organizations of all sizes,
+                  with the simplicity and affordability that organizations need.
+                </p>
+              </div>
+            </div>
+            <div className="relative flex items-center-safe justify-center-safe lg:basis-1/2">
+              <img
+                src="/images/new_pfps/Team - web.jpg"
+                alt=""
+                className="aspect-video rounded-lg border object-cover shadow-lg"
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-8">
+            <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
+              <h1 className="text-4xl sm:text-5xl">Our Values</h1>
+              <p className="text-xl text-gray-600">
+                The principles that guide everything we do at Modelverse.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {values.map((value, index) => (
+                <Card
+                  key={index}
+                  className="bg-white transition-all duration-300 hover:border-green-500 hover:shadow-lg"
+                >
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r from-green-500/10 to-teal-500/10">
+                    <value.icon className="size-6 text-amber-500" />
+                  </div>
+                  <h3 className="mb-2 text-xl text-gray-900">{value.title}</h3>
+                  <p className="text-gray-600">{value.description}</p>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Maybe add Milestones */}
+
+          <div className="flex flex-col gap-8 text-center">
+            <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
+              <h1 className="text-4xl sm:text-5xl">Meet the Team</h1>
+              <p className="text-xl text-gray-600">
+                The passionate people behind Modelverse.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {teamMembers.map((member, index) => (
+                <div
+                  className="flex flex-col rounded-lg border bg-white text-left"
+                  key={index}
+                >
+                  <img src={member.image} className="rounded-t-lg" alt="" />
+                  <div className="flex grow flex-col p-8">
+                    <h1 className="mb-2 text-xl">{member.name}</h1>
+                    <h1 className="mb-4 font-semibold text-amber-500">
+                      {member.role}
+                    </h1>
+                    <p className="mb-4 text-gray-600">{member.bio}</p>
+                    <div className="flex grow flex-row items-end gap-2 text-amber-500">
+                      <a
+                        href={member.linkedin}
+                        className="flex size-10 items-center justify-center rounded-lg bg-gradient-to-r from-green-500/10 to-teal-500/10 transition-colors hover:from-green-500/20 hover:to-teal-500/20"
+                      >
+                        <Linkedin className="size-6" />
+                      </a>
+                      <a
+                        href={member.mail}
+                        className="flex size-10 items-center justify-center rounded-lg bg-gradient-to-r from-green-500/10 to-teal-500/10 transition-colors hover:from-green-500/20 hover:to-teal-500/20"
+                      >
+                        <Mail className="size-6" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* <div className="flex flex-col gap-8 text-center">
+            <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
+              <h1 className="text-4xl sm:text-5xl">Our Ambassadors</h1>
+              <p className="text-xl text-gray-600">
+                Trusted voices in the risk and compliance management community
+                who believe in our mission.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              {ambassadors.map((ambassador, index) => (
+                <Card className="gap-8 bg-white p-0 py-8 text-left" key={index}>
+                  <div className="flex flex-col gap-4 px-8 sm:flex-row">
+                    <Avatar className="size-32 self-center">
+                      <AvatarImage
+                        src={ambassador.image}
+                        className="object-cover"
+                      />
+                      <AvatarFallback></AvatarFallback>
+                    </Avatar>
+                    <div className="flex flex-col gap-4">
+                      <div className="flex flex-col gap-2">
+                        <h1 className="text-xl">{ambassador.name}</h1>
+                        <h1 className="font-semibold text-amber-500">
+                          {ambassador.role}
+                        </h1>
+                      </div>
+
+                      <a
+                        href={ambassador.linkedin}
+                        className="flex size-10 items-center justify-center rounded-lg bg-gradient-to-r from-green-500/10 to-teal-500/10 text-amber-500 transition-colors hover:from-green-500/20 hover:to-teal-500/20"
+                      >
+                        <Linkedin className="size-6" />
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex flex-row gap-4 bg-gradient-to-r from-green-500/10 to-teal-500/10 p-8">
+                    <PencilLine className="size-8 shrink-0 text-amber-500 opacity-50" />
+                    <p className="mb-4 text-sm text-gray-600 italic">
+                      "{ambassador.bio}"
+                    </p>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div> */}
+        </div>
       </div>
     </Layout>
   )

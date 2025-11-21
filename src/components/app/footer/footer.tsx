@@ -1,98 +1,103 @@
-import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-// Data
 import { BuildNumber } from '@/components/buildNumber'
-import footerFile from '@/data/footer.yaml?raw'
-import { toast } from 'sonner'
-import { parse } from 'yaml'
-
-type Info = {
-  dob: string
-  company: string
-  cocNumber: string
-  linkedinUrl: string
-}
+import { Linkedin, Mail, Shield } from 'lucide-react'
 
 type FooterProps = {
   onManagePrivacy: (value: boolean) => void
 }
 
 export function Footer({ onManagePrivacy }: FooterProps) {
-  const [count, setCount] = useState(0)
-
-  const navigate = useNavigate()
-  const footer: Info = parse(footerFile)
-  const year: number = new Date().getFullYear()
-
-  useEffect(() => {
-    if (count === 5) {
-      // window.open(
-      //   'https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1',
-      //   '_blank'
-      // )
-      toast.custom(
-        () => (
-          <div className="w-full rounded-full bg-linear-to-tl from-green-500 to-teal-500 p-1">
-            <div className="h-full w-full rounded-full bg-white px-7 py-3">
-              <div className="font-bold">🎉 Congrats!</div>
-              <div className="text-sm">You found a secret Easter egg!</div>
-            </div>
-          </div>
-        ),
-        { duration: 3000, className: 'w-full' }
-      )
-    }
-  }, [count])
+  const footerLinks = {
+    // Product: [
+    //   { name: 'Features', href: '#' },
+    //   { name: 'Pricing', href: '#' },
+    //   { name: 'Security', href: '#' },
+    //   { name: 'Roadmap', href: '#' },
+    // ],
+    Company: [
+      { name: 'About', href: '/about' },
+      { name: 'Blog', href: '/news' },
+      // { name: 'Careers', href: '#' },
+      { name: 'Contact', href: '/contact' },
+    ],
+    // Resources: [
+    //   { name: 'Documentation', href: '#' },
+    //   { name: 'Help Center', href: '#' },
+    //   { name: 'API Reference', href: '#' },
+    //   { name: 'Compliance', href: '#' },
+    // ],
+    Legal: [
+      { name: 'Privacy Policy', href: '/privacy_policy' },
+      { name: 'Terms of Service', href: '/terms_of_service' },
+      { name: 'Cookie Policy', href: '/cookie_policy' },
+      // { name: 'GDPR', href: '' },
+    ],
+  }
 
   return (
-    <div className="flex h-fit flex-col items-center-safe justify-center-safe gap-4 bg-white p-4 text-center select-none">
-      {/* Footer */}
-      <div className="text-sm text-black/50">
-        © {footer.dob} - {year}. {footer.company} | CoC {footer.cocNumber} -
-        All rights reserved. (
-        <span onClick={() => setCount((prev) => prev + 1)}>
-          <BuildNumber />
-        </span>
-        )
-      </div>
-      <div
-        className="cursor-pointer text-sm text-black/50 hover:text-black"
-        onClick={() => onManagePrivacy(true)}
-      >
-        Manage Privacy Preferences
-      </div>
-      <div className="flex flex-row items-center-safe justify-center-safe gap-4 text-amber-500">
-        <button className="cursor-pointer" onClick={() => navigate('/contact')}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="size-7"
+    <div className="shrink-0 bg-gray-900 text-white">
+      <div className="flex flex-col gap-8 px-4 py-8 md:container md:mx-auto md:px-8 md:py-16">
+        <div className="flex flex-col gap-8 md:flex-row">
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-row items-center-safe gap-2 text-lg">
+              <Shield className="size-8 text-amber-500" />
+              <span>Modelverse B.V.</span>
+            </div>
+
+            <p className="text-sm text-gray-400">
+              Empowering organizations to manage risks and compliance with
+              confidence.
+            </p>
+
+            <div className="flex flex-row gap-4 text-amber-500">
+              <a
+                href="https://www.linkedin.com/company/modelverse/"
+                className="flex size-10 items-center justify-center rounded-lg bg-gray-800 transition-colors hover:bg-gray-700"
+              >
+                <Linkedin className="size-6" />
+              </a>
+              <Link
+                to="/contact"
+                className="flex size-10 items-center justify-center rounded-lg bg-gray-800 transition-colors hover:bg-gray-700"
+              >
+                <Mail className="size-6" />
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex shrink-0 flex-col gap-8 md:ml-auto md:flex-row md:items-center-safe">
+            {Object.entries(footerLinks).map(([section, links]) => (
+              <div key={section} className="flex flex-col gap-2">
+                <h1 className="font-bold">{section}</h1>
+                <ul className="text-gray-300">
+                  {links.map((link, index) => (
+                    <li key={index}>
+                      <Link
+                        to={link.href}
+                        className="transition-all duration-300 hover:text-white"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="h-px w-full shrink-0 bg-gray-800" />
+        <div className="flex flex-col justify-between gap-4 text-sm text-gray-400 md:flex-row">
+          <p>
+            © 2025. Modelverse B.V. All rights reserved. (<BuildNumber />)
+          </p>
+          <p
+            className="cursor-pointer hover:text-white"
+            onClick={() => onManagePrivacy(true)}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
-            />
-          </svg>
-        </button>
-        <button
-          className="cursor-pointer"
-          onClick={() => (window.location.href = footer.linkedinUrl)}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            strokeWidth={2}
-            className="size-6"
-            viewBox="0 0 50 50"
-          >
-            <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"></path>
-          </svg>
-        </button>
+            Manage Privacy Preferences
+          </p>
+        </div>
       </div>
     </div>
   )

@@ -2,157 +2,84 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import logo from '@/assets/logo.png'
+import { Folder, Home, Info, Mail, Menu, Newspaper } from 'lucide-react'
 
 import { NavLink } from './navlink'
 
-type NavProps = {
+type NavBarProps = {
   home: boolean
-  about: boolean
   news: boolean
   cases: boolean
-  team: boolean
+  about: boolean
   contact: boolean
 }
 
-export function NavBar({ home, about, news, cases, team, contact }: NavProps) {
+export function NavBar({ home, news, cases, about, contact }: NavBarProps) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const navigate = useNavigate()
 
-  const [extendedMenu, setExtenedMenu] = useState(false)
-  const handleMenuBtn = () => {
-    if (extendedMenu) {
-      setExtenedMenu(false)
-    } else {
-      setExtenedMenu(true)
-    }
-  }
-
   return (
-    <div className="flex flex-col bg-white select-none md:container md:mx-auto md:flex-row md:items-center-safe md:justify-between">
-      <div className="relative flex flex-row px-6 py-4 shadow-md md:shadow-none">
-        <img
-          src={logo}
-          alt="Modelverse"
-          className="mr-auto block h-12 w-auto cursor-pointer self-center object-contain lg:h-24"
-          onClick={() => navigate('/')}
-        />
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1}
-          stroke="currentColor"
-          className="h-12 self-center md:hidden"
-          onClick={handleMenuBtn}
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-          />
-        </svg>
-      </div>
+    <div className="fixed top-0 z-50 w-full shrink-0 border-b md:bg-white">
       <div
-        className={`transition-nav-height overflow-hidden bg-white md:h-fit ${
-          !extendedMenu ? 'h-0' : 'h-68'
-        }`}
+        className={`flex flex-col overflow-hidden md:container md:mx-auto md:h-fit md:flex-row md:items-center-safe md:justify-between ${mobileMenuOpen ? 'h-screen' : 'h-fit'}`}
       >
-        <div className="m-4 flex flex-col md:flex-row">
-          <NavLink url="/" active={home}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              className="mr-2 size-6 stroke-amber-500"
+        <div className="flex flex-row items-center-safe justify-between bg-white p-4">
+          <img
+            src="/icon.png"
+            className="size-12 cursor-pointer md:hidden"
+            alt=""
+            onClick={() => navigate('/')}
+          />
+          <img
+            src={logo}
+            className="hidden h-20 cursor-pointer md:block"
+            onClick={() => navigate('/')}
+          />
+          <button
+            className="cursor-pointer p-2 md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <Menu className="size-8 text-amber-500" />
+          </button>
+        </div>
+        <div
+          className={`h-full flex-col gap-4 bg-black/50 backdrop-blur-sm md:flex md:bg-transparent md:opacity-100 md:backdrop-blur-none ${mobileMenuOpen ? 'flex opacity-100' : 'hidden opacity-0'} p-4 md:flex md:flex-row md:items-center-safe md:justify-end-safe`}
+        >
+          <div className="h-px w-full bg-gray-300 md:hidden" />
+          <div className="flex flex-col gap-2 md:flex-row lg:mr-auto">
+            <NavLink to="/" active={home}>
+              <Home className="size-6 text-amber-500" />
+              <p>Home</p>
+            </NavLink>
+            <NavLink to="/news" active={news}>
+              <Newspaper className="size-6 text-amber-500" />
+              <p>News</p>
+            </NavLink>
+            <NavLink to="/cases" active={cases}>
+              <Folder className="size-6 text-amber-500" />
+              <p>Cases</p>
+            </NavLink>
+            <NavLink to="/about" active={about}>
+              <Info className="size-6 text-amber-500" />
+              <p>About</p>
+            </NavLink>
+            <NavLink to="/contact" active={contact}>
+              <Mail className="size-6 text-amber-500" />
+              <p>Contact</p>
+            </NavLink>
+          </div>
+          <div className="h-px w-full bg-gray-300 md:hidden lg:block lg:h-12 lg:w-px" />
+          <div className="flex flex-col gap-2 md:hidden lg:flex">
+            <button
+              className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 lg:shadow-none"
+              onClick={() =>
+                (window.location.href =
+                  'https://outlook.office.com/bookwithme/user/d81d78745f8047d1a0ec05a07d8d40d6@modelverse.online/meetingtype/HEkH_Hmwx06JvFc-tP4ZJw2?anonymous')
+              }
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-              />
-            </svg>
-            Home
-          </NavLink>
-          <NavLink url="/about" active={about}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              className="mr-2 size-6 stroke-amber-500"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
-              />
-            </svg>
-            About
-          </NavLink>
-          <NavLink url="/news" active={news}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              className="mr-2 size-6 stroke-amber-500"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z"
-              />
-            </svg>
-            News
-          </NavLink>
-          <NavLink url="/cases" active={cases}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              className="mr-2 size-6 stroke-amber-500"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
-              />
-            </svg>
-            Cases
-          </NavLink>
-          <NavLink url="/team" active={team}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              className="mr-2 size-6 stroke-amber-500"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z"
-              />
-            </svg>
-            Team
-          </NavLink>
-          <NavLink url="/contact" active={contact}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              className="mr-2 size-6 stroke-amber-500"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
-              />
-            </svg>
-            Contact
-          </NavLink>
+              Book a meeting
+            </button>
+          </div>
         </div>
       </div>
     </div>
