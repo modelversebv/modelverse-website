@@ -92,7 +92,7 @@ export function HomePage() {
     },
     {
       icon: Search,
-      title: 'Policy Management',
+      title: 'Integrated Audit Intelligence',
       description:
         'Audits and pen tests are essential for ongoing risk mitigation. We capture findings and link them directly to your compliance framework, so they roll up into organization-level risks with full traceability.',
     },
