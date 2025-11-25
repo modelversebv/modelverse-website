@@ -163,6 +163,27 @@ export function AboutPage() {
       bio: 'Jan-Willem Klerkx is a seasoned entrepreneur and business leader with a strong track record in technology, software quality, and strategic consulting. His career spans leadership positions in software improvement, AI-driven ventures, and digital health.\n As co-founder and CEO of BonCode, Jan-Willem has championed the importance of treating software as a core business asset. His approach combines deep technical insight with strategic thinking, helping organizations reduce risk, improve maintainability, and unlock innovation through objective source code and architecture analysis. Prior to BonCode, he contributed to the success of several tech firms, where he played pivotal roles in sales, business development, and most notably executive leadership.\n His passion for software quality and business agility continues to shape his mission: enabling companies to make informed decisions about their technology landscape and turn complex challenges into strategic opportunities.',
       image: 'images/ambassadors/jan-willem.jpg',
     },
+    {
+      name: 'Gordon Muehl',
+      role: 'Founder & Managing Director, MuehlCyberConsulting',
+      linkedin: 'https://www.linkedin.com/in/gordonmuehl/',
+      bio: 'Gordon Muehl is a CTO and cybersecurity leader with over 30 years of experience in global technology strategy, software architecture, secure software development, and enterprise transformation.\n He has led innovation for Fortune 500 companies, built high-performing international teams, and embedded security culture into a 100.000 employee R&D organization.\n Specializing in secure software development lifecycle, technical due diligence, and non-functional requirements governance, Gordon bridges business and technical domains—from CxOs to developers. He’s a recognised public speaker and has delivered training to over 20,000 developers worldwide.\n With deep cross-cultural leadership experience and significant legal and technical experience, Gordon continues to shape the future of secure software development.',
+      image: 'images/ambassadors/gordon.png',
+    },
+    {
+      name: 'Dennis Mulder',
+      role: 'Co-Founder & CTO, Full Circle IT NL',
+      linkedin: 'https://www.linkedin.com/in/dennismulder/',
+      bio: 'Dennis Mulder is an independent IT architect and advisor, focused on helping organizations make technology work for their business - securely, pragmatically, and with tangible results. As founder of Full Circle IT and CEO of WVE Business Technology Architecture, he draws on 25+ years’ experience, including as ex-CTO at Microsoft Netherlands.\n Dennis specializes in IT strategy, AI, and digital transformation, bridging business and tech from boardroom to execution. He is a Certified Distinguished IT Architect (CITA-D), president of Iasa Global NL, and chairs the Chief Architect Forum. Dennis is committed to developing talent and advancing the profession - always with an eye for practical impact.',
+      image: 'images/ambassadors/dennis.jpg',
+    },
+    {
+      name: 'Oskar Brink',
+      role: 'Independent Cyber Security and Risk Manager',
+      linkedin: 'https://www.linkedin.com/in/oskarbrink/',
+      bio: 'Oskar Brink is an experienced cybersecurity and risk management professional with a career spanning nearly four decades, including over 25 years at Shell. With a strong background in IT project and portfolio management, Oskar now serves as an all-round Cybersecurity and Risk Manager.\n He specialises in bringing clarity and structure to complex IT environments, enabling organizations to become more agile, secure, and resilient. Oskar has led large and diverse teams, and has international experience working in Malaysia and India.\n He excels at aligning security and risk strategies with business objectives, driving sustainable transformation, and fostering continuous improvement through coaching and collaboration.',
+      image: 'images/ambassadors/oskar.jpg',
+    },
   ]
 
   return (
