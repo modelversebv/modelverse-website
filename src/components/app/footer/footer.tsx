@@ -8,25 +8,14 @@ type FooterProps = {
 }
 
 export function Footer({ onManagePrivacy }: FooterProps) {
+  const currentDate = new Date()
+
   const footerLinks = {
-    // Product: [
-    //   { name: 'Features', href: '#' },
-    //   { name: 'Pricing', href: '#' },
-    //   { name: 'Security', href: '#' },
-    //   { name: 'Roadmap', href: '#' },
-    // ],
     Company: [
       { name: 'About', href: '/about' },
       { name: 'Blog', href: '/news' },
-      // { name: 'Careers', href: '#' },
       { name: 'Contact', href: '/contact' },
     ],
-    // Resources: [
-    //   { name: 'Documentation', href: '#' },
-    //   { name: 'Help Center', href: '#' },
-    //   { name: 'API Reference', href: '#' },
-    //   { name: 'Compliance', href: '#' },
-    // ],
     Legal: [
       { name: 'Privacy Policy', href: '/privacy_policy' },
       { name: 'Terms of Service', href: '/terms_of_service' },
@@ -93,14 +82,20 @@ export function Footer({ onManagePrivacy }: FooterProps) {
             <img
               src="/images/badges/email-test-badge.png"
               alt="Email Test: 100%"
-              className="w-32 opacity-90 hover:opacity-100"
+              className="w-32"
             />
           </div>
         </div>
         <div className="h-px w-full shrink-0 bg-gray-800" />
         <div className="flex flex-col justify-between gap-4 text-sm text-gray-400 md:flex-row">
           <p>
-            © 2025. Modelverse B.V. All rights reserved. (<BuildNumber />)
+            © {currentDate.getFullYear()}. Modelverse B.V. All rights reserved.
+            <br />
+            CoC - 89447476
+            <br />
+            VAT - NL864985800B01
+            <br />
+            build - (<BuildNumber />)
           </p>
           <p
             className="cursor-pointer hover:text-white"

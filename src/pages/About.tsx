@@ -122,39 +122,6 @@ export function AboutPage() {
     },
   ]
 
-  // const milestones = [
-  //   {
-  //     year: '2021',
-  //     title: 'Company Founded',
-  //     description:
-  //       'Modelverse was born from a vision to make enterprise security accessible to all.',
-  //   },
-  //   {
-  //     year: '2022',
-  //     title: 'First 100 Customers',
-  //     description:
-  //       'Reached our first major milestone, helping organizations across diverse industries.',
-  //   },
-  //   {
-  //     year: '2023',
-  //     title: 'Series A Funding',
-  //     description:
-  //       'Raised $15M to accelerate product development and expand our team.',
-  //   },
-  //   {
-  //     year: '2024',
-  //     title: 'ISO 27001 Certified',
-  //     description:
-  //       'Achieved ISO 27001 certification, demonstrating our commitment to security excellence.',
-  //   },
-  //   {
-  //     year: '2025',
-  //     title: 'Global Expansion',
-  //     description:
-  //       'Opened offices in Europe and Asia, serving customers on three continents.',
-  //   },
-  // ]
-
   const ambassadors = [
     {
       name: 'Jan-Willem Klerkx',
@@ -302,11 +269,8 @@ export function AboutPage() {
 
               <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
                 {ambassadors.map((ambassador, index) => (
-                  <Card
-                    className="gap-8 bg-white p-0 py-8 text-left"
-                    key={index}
-                  >
-                    <div className="flex flex-col gap-4 px-8 sm:flex-row">
+                  <Card className="gap-8 bg-white p-8 text-left" key={index}>
+                    <div className="flex flex-col gap-4 sm:flex-row">
                       <Avatar className="size-32 self-center">
                         <AvatarImage
                           src={ambassador.image}
@@ -330,14 +294,11 @@ export function AboutPage() {
                         </a>
                       </div>
                     </div>
-                    <div className="flex flex-col gap-4 bg-gradient-to-r from-green-500/10 to-teal-500/10 p-8 sm:flex-row">
+                    <div className="flex flex-col gap-4 sm:flex-row">
                       <PencilLine className="size-6 shrink-0 text-amber-500 opacity-50" />
                       <div>
                         {ambassador.bio.split('\n').map((paragraph, index) => (
-                          <p
-                            key={index}
-                            className="mb-4 text-sm text-gray-600 italic"
-                          >
+                          <p key={index} className="mb-4 text-sm text-gray-600">
                             {paragraph.trim()}
                           </p>
                         ))}
