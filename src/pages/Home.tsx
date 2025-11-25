@@ -171,7 +171,7 @@ export function HomePage() {
               className="aspect-video rounded-lg border object-cover shadow-lg"
             /> */}
             <img
-              src="/images/new_pfps/Team - web.jpg"
+              src="/images/team/Team minus Michel - web.jpg"
               alt=""
               className="aspect-video rounded-lg border object-cover shadow-lg"
             />

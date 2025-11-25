@@ -1,7 +1,16 @@
 import { Card } from '@/components/app/misc/card'
 import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
-import { Book, Eye, Linkedin, Mail, Shield, User } from 'lucide-react'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import {
+  Book,
+  Eye,
+  Linkedin,
+  Mail,
+  PencilLine,
+  Shield,
+  User,
+} from 'lucide-react'
 
 const AboutHero = (
   <Hero className="items-center-safe justify-center-safe text-center md:max-w-4xl">
@@ -24,7 +33,7 @@ export function AboutPage() {
       name: 'Ben',
       role: 'CEO & CTO | Co-Founder',
       bio: 'Ben is the creator of Modelverse, driven by a passion for turning strategy into action. With over 25 years at Shell and later as a partner at KPMG, Ben helped organizations navigate complex challenges across transformation, risk, and technology. He holds a PhD in theoretical physics and once explored black holes at Imperial College London—before diving into the world of business.',
-      image: 'images/new_pfps/Ben - web.jpg',
+      image: 'images/team/Ben - web.jpg',
       linkedin: 'https://www.linkedin.com/in/benkrutzen/',
       mail: 'mailto:ben@modelverse.online',
     },
@@ -32,7 +41,7 @@ export function AboutPage() {
       name: 'Reshma',
       role: 'Partner | Co-Founder',
       bio: 'Reshma brings deep expertise in strategic information management and cybersecurity, with a clear, structured approach to tackling complex challenges. Reshma held a variety of IT leadership an Security roles across international corporates and the energy sector. She holds an MSc in Applied Physics and an executive MSc in Cyber Security.',
-      image: 'images/new_pfps/Reshma - web.jpg',
+      image: 'images/team/Reshma - web.jpg',
       linkedin: 'https://www.linkedin.com/in/reshmapandohi/',
       mail: 'mailto:reshma@modelverse.online',
     },
@@ -40,7 +49,7 @@ export function AboutPage() {
       name: 'Daan',
       role: 'CFO & COO | Co-Founder',
       bio: 'Daan is an experienced entrepreneur and IT leader who’s passionate about using modern technology to help organizations tackle real-world challenges. Daan brings broad insight as a strategist, investor, and trusted cybersecurity advisor. He holds a PhD and MSc in Computing Science, along with an executive MSc in Cyber Security.',
-      image: 'images/new_pfps/Daan - web.jpg',
+      image: 'images/team/Daan - web.jpg',
       linkedin: 'https://www.linkedin.com/in/dl11235813213456/',
       mail: 'mailto:daan@modelverse.online',
     },
@@ -48,7 +57,7 @@ export function AboutPage() {
       name: 'Lili',
       role: 'Partner | CISO',
       bio: 'Lili is a governance expert with deep experience in health, cybersecurity and patient safety. Before becoming a partner, Lili spent 12 years at the Dutch Ministry of Health, working on organ donation, e-health, and cybersecurity. She holds a Cum Laude BSc in Biomedical Science, a Cum Laude MSc in Neuroscience, and a Summa Cum Laude MSc in Cyber Security Governance.',
-      image: 'images/new_pfps/Lili - web.jpg',
+      image: 'images/team/Lili - web.jpg',
       linkedin: 'https://www.linkedin.com/in/lili-guo-3941b126/',
       mail: 'mailto:Lili@modelverse.online',
     },
@@ -56,7 +65,7 @@ export function AboutPage() {
       name: 'Bozhena',
       role: 'Office Manager',
       bio: 'Bozhena smoothly runs the back-office, always friendly, accessible, and business-smart.',
-      image: 'images/new_pfps/Bozhena - web.jpg',
+      image: 'images/team/Bozhena - web.jpg',
       linkedin: 'https://www.linkedin.com/in/bozhena-kovtun-0a106619b/',
       mail: 'mailto:bozhena@valuetracks.io',
     },
@@ -64,7 +73,7 @@ export function AboutPage() {
       name: 'Mariona',
       role: 'Risk Consultant',
       bio: 'Mariona researches, interprets, structures and creates cybersecurity risk models and ESG models for enterprise clients.',
-      image: 'images/new_pfps/Mariona - web.jpg',
+      image: 'images/team/Mariona - web.jpg',
       linkedin: 'https://www.linkedin.com/in/mariona-fortuny-jan%C3%A9/',
       mail: 'mailto:mariona@modelverse.online',
     },
@@ -72,7 +81,7 @@ export function AboutPage() {
       name: 'Sjors',
       role: 'Risk Consultant & Security Engineer',
       bio: 'Sjors is focused on risk management and platform improvements using cloud services and security infrastructure.',
-      image: 'images/new_pfps/Sjors - web.jpg',
+      image: 'images/team/Sjors - web.jpg',
       linkedin: 'https://www.linkedin.com/in/sjors-de-natris-470a51198/',
       mail: 'mailto:sjors@modelverse.online',
     },
@@ -80,7 +89,7 @@ export function AboutPage() {
       name: 'Matei',
       role: 'Software Engineer',
       bio: 'Matei develops and maintains the website, helps implement DevOps practices, and supports the development of the cybersecurity platform.',
-      image: 'images/new_pfps/Matei - web.jpg',
+      image: 'images/team/Matei - web.jpg',
       linkedin: 'https://www.linkedin.com/in/matei-avram-919771251/',
       mail: 'mailto:matei@modelverse.online',
     },
@@ -113,62 +122,36 @@ export function AboutPage() {
     },
   ]
 
-  // const milestones = [
-  //   {
-  //     year: '2021',
-  //     title: 'Company Founded',
-  //     description:
-  //       'Modelverse was born from a vision to make enterprise security accessible to all.',
-  //   },
-  //   {
-  //     year: '2022',
-  //     title: 'First 100 Customers',
-  //     description:
-  //       'Reached our first major milestone, helping organizations across diverse industries.',
-  //   },
-  //   {
-  //     year: '2023',
-  //     title: 'Series A Funding',
-  //     description:
-  //       'Raised $15M to accelerate product development and expand our team.',
-  //   },
-  //   {
-  //     year: '2024',
-  //     title: 'ISO 27001 Certified',
-  //     description:
-  //       'Achieved ISO 27001 certification, demonstrating our commitment to security excellence.',
-  //   },
-  //   {
-  //     year: '2025',
-  //     title: 'Global Expansion',
-  //     description:
-  //       'Opened offices in Europe and Asia, serving customers on three continents.',
-  //   },
-  // ]
-
-  // const ambassadors = [
-  //   {
-  //     name: 'Ambassador Name',
-  //     role: 'Ambassador Role',
-  //     linkedin: '',
-  //     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  //     image: '',
-  //   },
-  //   {
-  //     name: 'Ambassador Name',
-  //     role: 'Ambassador Role',
-  //     linkedin: '',
-  //     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  //     image: '',
-  //   },
-  //   {
-  //     name: 'Ambassador Name',
-  //     role: 'Ambassador Role',
-  //     linkedin: '',
-  //     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  //     image: '',
-  //   },
-  // ]
+  const ambassadors = [
+    {
+      name: 'Jan-Willem Klerkx',
+      role: 'Co-Founder & CEO, BonCode',
+      linkedin: 'https://www.linkedin.com/in/jwklerkx/',
+      bio: 'Jan-Willem Klerkx is a seasoned entrepreneur and business leader with a strong track record in technology, software quality, and strategic consulting. His career spans leadership positions in software improvement, AI-driven ventures, and digital health.\n As co-founder and CEO of BonCode, Jan-Willem has championed the importance of treating software as a core business asset. His approach combines deep technical insight with strategic thinking, helping organizations reduce risk, improve maintainability, and unlock innovation through objective source code and architecture analysis. Prior to BonCode, he contributed to the success of several tech firms, where he played pivotal roles in sales, business development, and most notably executive leadership.\n His passion for software quality and business agility continues to shape his mission: enabling companies to make informed decisions about their technology landscape and turn complex challenges into strategic opportunities.',
+      image: 'images/ambassadors/jan-willem.jpg',
+    },
+    {
+      name: 'Gordon Muehl',
+      role: 'Founder & Managing Director, MuehlCyberConsulting',
+      linkedin: 'https://www.linkedin.com/in/gordonmuehl/',
+      bio: 'Gordon Muehl is a CTO and cybersecurity leader with over 30 years of experience in global technology strategy, software architecture, secure software development, and enterprise transformation.\n He has led innovation for Fortune 500 companies, built high-performing international teams, and embedded security culture into a 100.000 employee R&D organization.\n Specializing in secure software development lifecycle, technical due diligence, and non-functional requirements governance, Gordon bridges business and technical domains—from CxOs to developers. He’s a recognised public speaker and has delivered training to over 20,000 developers worldwide.\n With deep cross-cultural leadership experience and significant legal and technical experience, Gordon continues to shape the future of secure software development.',
+      image: 'images/ambassadors/gordon.png',
+    },
+    {
+      name: 'Dennis Mulder',
+      role: 'Co-Founder & CTO, Full Circle IT NL',
+      linkedin: 'https://www.linkedin.com/in/dennismulder/',
+      bio: 'Dennis Mulder is an independent IT architect and advisor, focused on helping organizations make technology work for their business - securely, pragmatically, and with tangible results. As founder of Full Circle IT and CEO of WVE Business Technology Architecture, he draws on 25+ years’ experience, including as ex-CTO at Microsoft Netherlands.\n Dennis specializes in IT strategy, AI, and digital transformation, bridging business and tech from boardroom to execution. He is a Certified Distinguished IT Architect (CITA-D), president of Iasa Global NL, and chairs the Chief Architect Forum. Dennis is committed to developing talent and advancing the profession - always with an eye for practical impact.',
+      image: 'images/ambassadors/dennis.jpg',
+    },
+    {
+      name: 'Oskar Brink',
+      role: 'Independent Cyber Security and Risk Manager',
+      linkedin: 'https://www.linkedin.com/in/oskarbrink/',
+      bio: 'Oskar Brink is an experienced cybersecurity and risk management professional with a career spanning nearly four decades, including over 25 years at Shell. With a strong background in IT project and portfolio management, Oskar now serves as an all-round Cybersecurity and Risk Manager.\n He specialises in bringing clarity and structure to complex IT environments, enabling organizations to become more agile, secure, and resilient. Oskar has led large and diverse teams, and has international experience working in Malaysia and India.\n He excels at aligning security and risk strategies with business objectives, driving sustainable transformation, and fostering continuous improvement through coaching and collaboration.',
+      image: 'images/ambassadors/oskar.jpg',
+    },
+  ]
 
   return (
     <Layout about={true} hero={AboutHero}>
@@ -200,7 +183,7 @@ export function AboutPage() {
             </div>
             <div className="relative flex items-center-safe justify-center-safe lg:basis-1/2">
               <img
-                src="/images/new_pfps/Team - web.jpg"
+                src="/images/team/Team minus Michel - web.jpg"
                 alt=""
                 className="aspect-video rounded-lg border object-cover shadow-lg"
               />
@@ -274,52 +257,58 @@ export function AboutPage() {
             </div>
           </div>
 
-          {/* <div className="flex flex-col gap-8 text-center">
-            <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
-              <h1 className="text-4xl sm:text-5xl">Our Ambassadors</h1>
-              <p className="text-xl text-gray-600">
-                Trusted voices in the risk and compliance management community
-                who believe in our mission.
-              </p>
-            </div>
+          {ambassadors.length != 0 && (
+            <div className="flex flex-col gap-8 text-center">
+              <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
+                <h1 className="text-4xl sm:text-5xl">Our Ambassadors</h1>
+                <p className="text-xl text-gray-600">
+                  Trusted voices in the risk and compliance management community
+                  who believe in our mission.
+                </p>
+              </div>
 
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-              {ambassadors.map((ambassador, index) => (
-                <Card className="gap-8 bg-white p-0 py-8 text-left" key={index}>
-                  <div className="flex flex-col gap-4 px-8 sm:flex-row">
-                    <Avatar className="size-32 self-center">
-                      <AvatarImage
-                        src={ambassador.image}
-                        className="object-cover"
-                      />
-                      <AvatarFallback></AvatarFallback>
-                    </Avatar>
-                    <div className="flex flex-col gap-4">
-                      <div className="flex flex-col gap-2">
-                        <h1 className="text-xl">{ambassador.name}</h1>
-                        <h1 className="font-semibold text-amber-500">
-                          {ambassador.role}
-                        </h1>
+              <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+                {ambassadors.map((ambassador, index) => (
+                  <Card className="gap-8 bg-white p-8 text-left" key={index}>
+                    <div className="flex flex-col gap-4 sm:flex-row">
+                      <Avatar className="size-32 self-center">
+                        <AvatarImage
+                          src={ambassador.image}
+                          className="object-cover object-center"
+                        />
+                        <AvatarFallback></AvatarFallback>
+                      </Avatar>
+                      <div className="flex flex-col gap-4">
+                        <div className="flex flex-col gap-2">
+                          <h1 className="text-xl">{ambassador.name}</h1>
+                          <h1 className="font-semibold text-amber-500">
+                            {ambassador.role}
+                          </h1>
+                        </div>
+
+                        <a
+                          href={ambassador.linkedin}
+                          className="flex size-10 items-center justify-center rounded-lg bg-gradient-to-r from-green-500/10 to-teal-500/10 text-amber-500 transition-colors hover:from-green-500/20 hover:to-teal-500/20"
+                        >
+                          <Linkedin className="size-6" />
+                        </a>
                       </div>
-
-                      <a
-                        href={ambassador.linkedin}
-                        className="flex size-10 items-center justify-center rounded-lg bg-gradient-to-r from-green-500/10 to-teal-500/10 text-amber-500 transition-colors hover:from-green-500/20 hover:to-teal-500/20"
-                      >
-                        <Linkedin className="size-6" />
-                      </a>
                     </div>
-                  </div>
-                  <div className="flex flex-row gap-4 bg-gradient-to-r from-green-500/10 to-teal-500/10 p-8">
-                    <PencilLine className="size-8 shrink-0 text-amber-500 opacity-50" />
-                    <p className="mb-4 text-sm text-gray-600 italic">
-                      "{ambassador.bio}"
-                    </p>
-                  </div>
-                </Card>
-              ))}
+                    <div className="flex flex-col gap-4 sm:flex-row">
+                      <PencilLine className="size-6 shrink-0 text-amber-500 opacity-50" />
+                      <div>
+                        {ambassador.bio.split('\n').map((paragraph, index) => (
+                          <p key={index} className="mb-4 text-sm text-gray-600">
+                            {paragraph.trim()}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  </Card>
+                ))}
+              </div>
             </div>
-          </div> */}
+          )}
         </div>
       </div>
     </Layout>
