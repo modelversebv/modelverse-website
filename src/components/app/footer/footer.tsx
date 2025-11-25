@@ -87,6 +87,17 @@ export function Footer({ onManagePrivacy }: FooterProps) {
           </div>
         </div>
         <div className="h-px w-full shrink-0 bg-gray-800" />
+        <div className="flex flex-col gap-4">
+          <h4 className="text-sm text-gray-400">Security & Compliance</h4>
+          <div className="flex flex-wrap gap-2">
+            <img
+              src="/images/badges/email-test-badge.png"
+              alt="Email Test: 100%"
+              className="w-32 opacity-90 hover:opacity-100"
+            />
+          </div>
+        </div>
+        <div className="h-px w-full shrink-0 bg-gray-800" />
         <div className="flex flex-col justify-between gap-4 text-sm text-gray-400 md:flex-row">
           <p>
             © 2025. Modelverse B.V. All rights reserved. (<BuildNumber />)
