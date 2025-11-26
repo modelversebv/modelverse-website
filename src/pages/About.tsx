@@ -36,6 +36,7 @@ export function AboutPage() {
       image: 'images/team/Ben - web.jpg',
       linkedin: 'https://www.linkedin.com/in/benkrutzen/',
       mail: 'mailto:ben@modelverse.online',
+      dob: '',
     },
     {
       name: 'Reshma',
@@ -44,6 +45,7 @@ export function AboutPage() {
       image: 'images/team/Reshma - web.jpg',
       linkedin: 'https://www.linkedin.com/in/reshmapandohi/',
       mail: 'mailto:reshma@modelverse.online',
+      dob: '',
     },
     {
       name: 'Daan',
@@ -52,6 +54,7 @@ export function AboutPage() {
       image: 'images/team/Daan - web.jpg',
       linkedin: 'https://www.linkedin.com/in/dl11235813213456/',
       mail: 'mailto:daan@modelverse.online',
+      dob: '',
     },
     {
       name: 'Lili',
@@ -60,6 +63,7 @@ export function AboutPage() {
       image: 'images/team/Lili - web.jpg',
       linkedin: 'https://www.linkedin.com/in/lili-guo-3941b126/',
       mail: 'mailto:Lili@modelverse.online',
+      dob: '',
     },
     {
       name: 'Bozhena',
@@ -68,6 +72,7 @@ export function AboutPage() {
       image: 'images/team/Bozhena - web.jpg',
       linkedin: 'https://www.linkedin.com/in/bozhena-kovtun-0a106619b/',
       mail: 'mailto:bozhena@valuetracks.io',
+      dob: '',
     },
     {
       name: 'Mariona',
@@ -76,6 +81,7 @@ export function AboutPage() {
       image: 'images/team/Mariona - web.jpg',
       linkedin: 'https://www.linkedin.com/in/mariona-fortuny-jan%C3%A9/',
       mail: 'mailto:mariona@modelverse.online',
+      dob: '',
     },
     {
       name: 'Sjors',
@@ -84,6 +90,7 @@ export function AboutPage() {
       image: 'images/team/Sjors - web.jpg',
       linkedin: 'https://www.linkedin.com/in/sjors-de-natris-470a51198/',
       mail: 'mailto:sjors@modelverse.online',
+      dob: '',
     },
     {
       name: 'Matei',
@@ -92,6 +99,7 @@ export function AboutPage() {
       image: 'images/team/Matei - web.jpg',
       linkedin: 'https://www.linkedin.com/in/matei-avram-919771251/',
       mail: 'mailto:matei@modelverse.online',
+      dob: '',
     },
   ]
 
