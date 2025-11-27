@@ -279,7 +279,7 @@ export function AboutPage() {
                 {ambassadors.map((ambassador, index) => (
                   <Card className="gap-8 bg-white p-8 text-left" key={index}>
                     <div className="flex flex-col gap-4 sm:flex-row">
-                      <Avatar className="size-32 self-center">
+                      <Avatar className="size-48 self-center md:size-38">
                         <AvatarImage
                           src={ambassador.image}
                           className="object-cover object-center"
@@ -303,7 +303,7 @@ export function AboutPage() {
                       </div>
                     </div>
                     <div className="flex flex-col gap-4 sm:flex-row">
-                      <PencilLine className="size-6 shrink-0 text-amber-500 opacity-50" />
+                      <PencilLine className="hidden size-6 shrink-0 text-amber-500 opacity-50 sm:block" />
                       <div>
                         {ambassador.bio.split('\n').map((paragraph, index) => (
                           <p key={index} className="mb-4 text-sm text-gray-600">
