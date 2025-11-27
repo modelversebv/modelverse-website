@@ -4,13 +4,13 @@ import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
 import {
   Brain,
+  ChartNoAxesCombined,
   Check,
   CheckCircle2,
   Compass,
   Lock,
   Rocket,
   Search,
-  Shield,
 } from 'lucide-react'
 
 const HomeHero = (
@@ -18,8 +18,8 @@ const HomeHero = (
     <div className="flex flex-col gap-8 lg:basis-1/2 lg:justify-center-safe">
       <div className="flex flex-col gap-4">
         <div className="flex w-fit flex-row items-center-safe justify-center-safe gap-2 rounded-full bg-gradient-to-r from-green-500/20 to-teal-500/20 px-4 py-2 font-semibold text-amber-500">
-          <Shield className="size-4" />
-          <p className="text-sm">Enterprise-Grade Security</p>
+          <ChartNoAxesCombined className="size-5" />
+          <p className="text-sm">Scalable Security</p>
         </div>
         <h1 className="text-5xl sm:text-6xl lg:text-7xl">Modelverse</h1>
         <p className="max-w-xl text-xl text-gray-600">

@@ -33,7 +33,7 @@ export function Footer({ onManagePrivacy }: FooterProps) {
               <Shield className="size-8 text-amber-500" />
               <span>Modelverse B.V.</span>
             </div>
-
+            <p className="text-amber-500 italic">We secure. You Succeed!</p>
             <p className="text-sm text-gray-400">
               Empowering organizations to manage risks and compliance with
               confidence.
