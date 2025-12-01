@@ -129,7 +129,7 @@ export function ArticlePage() {
         </div> */}
       </div>
 
-      <div className="mx-auto grow px-4 py-8 md:container md:mx-auto">
+      <div className="mx-auto grow px-4 pt-8 pb-16 md:container md:mx-auto">
         <div className="mx-auto flex h-full max-w-4xl flex-col gap-4 md:gap-8">
           {error ? (
             <div className="mx-auto flex h-full max-w-4xl flex-col items-center-safe justify-center-safe gap-4 px-4 py-16 text-center">
