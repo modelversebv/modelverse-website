@@ -169,6 +169,16 @@ export function CookieBanner({
                       >
                         Cookie Policy
                       </button>
+                      . For further reference, you can also consult our{' '}
+                      <button
+                        className="cursor-pointer font-semibold text-amber-500 hover:underline"
+                        onClick={() => {
+                          handleReject()
+                          navigate('/privacy_policy')
+                        }}
+                      >
+                        Privacy Policy
+                      </button>
                       .
                     </p>
                   </ScrollArea>

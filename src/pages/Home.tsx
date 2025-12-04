@@ -192,16 +192,6 @@ export function HomePage() {
                 </div>
               ))}
             </div>
-            {/* <div className="flex flex-col gap-2">
-              <p className="text-lg text-gray-600 italic">
-                "Modelverse is truly a gamechanger. It is a robust platform
-                supporting my clients."
-              </p>
-              <div className="flex flex-col">
-                <p>Chris Hazewinkel</p>
-                <p className="text-gray-600">CIO, NewForrest BV</p>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>
