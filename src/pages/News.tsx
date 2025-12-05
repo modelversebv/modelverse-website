@@ -146,26 +146,28 @@ export function NewsPage() {
                           <div className="size-full rounded-t-lg bg-black" />
                         )}
                       </div>
-                      <div className="flex flex-col gap-4 p-8 md:justify-center-safe">
+                      <div className="flex grow flex-col gap-4 p-8 md:justify-center-safe">
                         <h1 className="text-xl">{post.metadata.title}</h1>
                         <p className="text-gray-600">{post.metadata.summary}</p>
-                        <div className="flex flex-row flex-wrap items-center-safe gap-4 text-gray-500">
-                          <div className="flex shrink-0 flex-row items-center-safe gap-2">
-                            <User className="size-4 shrink-0" />
-                            {post.metadata.author}
+                        <div className="flex grow flex-col justify-end-safe gap-4">
+                          <div className="mt-auto flex flex-row flex-wrap items-center-safe gap-4 text-gray-500">
+                            <div className="flex shrink-0 flex-row items-center-safe gap-2">
+                              <User className="size-4 shrink-0" />
+                              {post.metadata.author}
+                            </div>
+                            <div className="flex shrink-0 flex-row items-center-safe gap-2">
+                              <Calendar className="size-4 shrink-0" />
+                              {post.metadata.date}
+                            </div>
                           </div>
-                          <div className="flex shrink-0 flex-row items-center-safe gap-2">
-                            <Calendar className="size-4 shrink-0" />
-                            {post.metadata.date}
-                          </div>
+                          <button
+                            className="group flex w-fit cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full bg-gradient-to-r text-amber-500/70 hover:text-amber-500"
+                            onClick={() => navigate(`/article/${post.postId}`)}
+                          >
+                            Read Article
+                            <ArrowRight className="size-5 transition-all duration-300 group-hover:translate-x-1" />
+                          </button>
                         </div>
-                        <button
-                          className="group flex w-fit cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full bg-gradient-to-r text-amber-500/70 hover:text-amber-500"
-                          onClick={() => navigate(`/article/${post.postId}`)}
-                        >
-                          Read Article
-                          <ArrowRight className="size-5 transition-all duration-300 group-hover:translate-x-1" />
-                        </button>
                       </div>
                     </Card>
                   ))}
