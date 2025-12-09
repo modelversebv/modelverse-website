@@ -159,6 +159,20 @@ export function AboutPage() {
       bio: 'Oskar Brink is an experienced cybersecurity and risk management professional with a career spanning nearly four decades, including over 25 years at Shell. With a strong background in IT project and portfolio management, Oskar now serves as an all-round Cybersecurity and Risk Manager.\n He specialises in bringing clarity and structure to complex IT environments, enabling organizations to become more agile, secure, and resilient. Oskar has led large and diverse teams, and has international experience working in Malaysia and India.\n He excels at aligning security and risk strategies with business objectives, driving sustainable transformation, and fostering continuous improvement through coaching and collaboration.',
       image: 'images/ambassadors/oskar.jpg',
     },
+    {
+      name: 'Robert Bals',
+      role: 'Lead Auditor ISO 27001 & Data Protection Officer, IsoSecure',
+      linkedin: 'https://www.linkedin.com/in/rbals/',
+      bio: 'Robert Bals is a certified ISO 27001 Lead Auditor and GDPR Data Protection Officer who helps ICT, software, and healthcare organizations strengthen information security and compliance without unnecessary bureaucracy.\n With over 10 years of experience at ISOSecure, he provides tailored ISMS implementations, audits for ISO 27001 and TUV Nord certification, and GDPR solutions.\n His practical, jargon-free approach focuses on solving complex security challenges and delivering scalable, client-focused results. Robert stands out for combining deep technical expertise with a pragmatic mindset, helping businesses—from startups to global enterprises—turn security into a competitive advantage.',
+      image: 'images/ambassadors/robert.jpg',
+    },
+    {
+      name: 'Alexandra Roger-Machart',
+      role: 'Independent Communications & Media Relations Advisor',
+      linkedin: 'https://www.linkedin.com/in/alexandra-roger-machart-senior-manager-corporate-communications/',
+      bio: 'Alexandra Roger-Machart is a forward-thinking senior professional with deep industry experience in the Renewable Energy and Consumer Goods sectors. Specializing in Communications and Corporate Disclosures, Alexandra helps companies strengthen their external profile, engage with stakeholders and enhance their corporate reporting through both strategic storytelling and regulatory expertise.\n Having worked across various organizational dynamics, from fast-growing startups to large blue-chip corporations such as Unilever, her background spans B2B, B2C and B2G environments. Her expertise covers Corporate and Financial Communications, Sustainability Reporting, Investor Relations, Crisis PR and Media Engagement.\n Passionate about Tech and AI-driven transformation, Alexandra advises startups and scaleups, bringing a customer-centric, interdisciplinary perspective and a global outlook with fluency in German, English, French and Dutch.',
+      image: 'images/ambassadors/alexandra.jpg',
+    }
   ]
 
   return (
