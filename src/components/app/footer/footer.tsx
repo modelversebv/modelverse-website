@@ -17,9 +17,9 @@ export function Footer({ onManagePrivacy }: FooterProps) {
       { name: 'Contact', href: '/contact' },
     ],
     Legal: [
-      { name: 'Privacy Policy', href: '/privacy_policy' },
-      { name: 'Terms of Service', href: '/terms_of_service' },
-      { name: 'Cookie Policy', href: '/cookie_policy' },
+      { name: 'Privacy Policy', href: '/legal/privacy_policy' },
+      { name: 'Terms of Service', href: '/legal/terms_of_service' },
+      { name: 'Cookie Policy', href: '/legal/cookie_policy' },
       // { name: 'GDPR', href: '' },
     ],
   }

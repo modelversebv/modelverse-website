@@ -102,6 +102,14 @@ export function CasesPage() {
 
   return (
     <Layout cases={true} hero={CasesHero}>
+      {/* Metadata */}
+      <title>Modelverse Cases | GRC & Compliance Success Stories</title>
+      <meta
+        name="description"
+        content="View how leading enterprises reduced audit time and achieved 100% compliance using the Modelverse Risk & Compliance SaaS platform."
+      />
+
+      {/* Content */}
       <div className="bg-gray-50">
         <div className="flex flex-col gap-8 px-4 py-16 md:container md:mx-auto">
           {caseStudies.map((study, index) => (

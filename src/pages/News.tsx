@@ -70,6 +70,16 @@ export function NewsPage() {
 
   return (
     <Layout news={true} hero={NewsHero}>
+      {/* Metadata */}
+      <title>
+        Modelverse Blog | GRC, Risk Compliance, and Security Insights
+      </title>
+      <meta
+        name="description"
+        content="Stay up-to-date with Modelverse's latest insights on GRC, compliance regulations, cybersecurity trends, and risk management best practices."
+      />
+
+      {/* Content */}
       <div className="bg-gray-50">
         <div className="flex flex-col justify-center-safe gap-8 px-4 py-16 md:container md:mx-auto">
           {blogPosts.length != 0 ? (

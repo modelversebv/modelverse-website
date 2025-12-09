@@ -27,11 +27,12 @@ export function NavBar({ home, news, cases, about, contact }: NavBarProps) {
           <img
             src="/icon.png"
             className="size-12 cursor-pointer md:hidden"
-            alt=""
+            alt="Modelverse"
             onClick={() => navigate('/')}
           />
           <img
             src={logo}
+            alt="Modelverse"
             className="hidden h-20 cursor-pointer md:block"
             onClick={() => navigate('/')}
           />

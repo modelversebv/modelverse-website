@@ -44,6 +44,14 @@ export function ContactPage() {
 
   return (
     <Layout contact={true} hero={ContactHero}>
+      {/* Metadata */}
+      <title>Contact Modelverse</title>
+      <meta
+        name="description"
+        content="Ready to simplify your GRC? Contact the Modelverse team to schedule a personalized demo, get pricing information, or request technical support."
+      />
+
+      {/* Content */}
       <div className="bg-gray-50">
         <div className="flex flex-col justify-center-safe gap-16 px-4 py-16 md:container md:mx-auto">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">

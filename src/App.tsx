@@ -22,7 +22,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/article/:slug" element={<ArticlePage />} />
-        <Route path="/:slug" element={<LegalPage />} />
+        <Route path="/legal/:slug" element={<LegalPage />} />
       </Routes>
     </BrowserRouter>
   )

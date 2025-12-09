@@ -57,7 +57,7 @@ const HomeHero = (
     <div className="relative flex items-center-safe justify-center-safe lg:basis-1/2">
       <img
         src="/images/misc/modelverse_platform.png"
-        alt=""
+        alt="Modelverse Information Risk dashboard overview illustrating the platform's GRC workflow, connecting Risks, Capabilities, and Applications to modules for Compliance, Privacy, Auditing, and Assurance."
         className="aspect-video rounded-lg border shadow-lg"
       />
     </div>
@@ -134,6 +134,13 @@ export function HomePage() {
 
   return (
     <Layout home={true} hero={HomeHero}>
+      {/* Metadata */}
+      <title>Modelverse | Risk & Compliance SaaS Platform</title>
+      <meta
+        name="description"
+        content="Modelverse automates GRC and risk scoring, providing real-time compliance intelligence for leading enterprises in various industries."
+      />
+
       {/* Features */}
       <div className="flex flex-col gap-8 px-4 py-16 md:container md:mx-auto">
         <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
@@ -172,7 +179,7 @@ export function HomePage() {
             /> */}
             <img
               src="/images/team/Team minus Michel - web.jpg"
-              alt=""
+              alt="Modelverse team of eight members, photographed together in their bright, modern office headquarters."
               className="aspect-video rounded-lg border object-cover shadow-lg"
             />
           </div>

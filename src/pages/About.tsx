@@ -95,7 +95,7 @@ export function AboutPage() {
     {
       name: 'Matei',
       role: 'Software Engineer',
-      bio: 'Matei develops and maintains the website, helps implement DevOps practices, and supports the development of the cybersecurity platform.',
+      bio: 'Matei develops and maintains the website, helps implement DevOps practices, and supports the development of the Modelverse platform.',
       image: 'images/team/Matei - web.jpg',
       linkedin: 'https://www.linkedin.com/in/matei-avram-919771251/',
       mail: 'mailto:matei@modelverse.online',
@@ -163,6 +163,14 @@ export function AboutPage() {
 
   return (
     <Layout about={true} hero={AboutHero}>
+      {/* Metadata */}
+      <title>About Modelverse</title>
+      <meta
+        name="description"
+        content="Learn about the Modelverse team, our mission to simplify GRC, and our commitment to building the future of enterprise risk management software."
+      />
+
+      {/* Content */}
       <div className="bg-gray-50">
         <div className="flex flex-col justify-center-safe gap-8 px-4 py-16 sm:gap-16 md:container md:mx-auto">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -192,7 +200,7 @@ export function AboutPage() {
             <div className="relative flex items-center-safe justify-center-safe lg:basis-1/2">
               <img
                 src="/images/team/Team minus Michel - web.jpg"
-                alt=""
+                alt="Modelverse team of eight members, photographed together in their bright, modern office headquarters."
                 className="aspect-video rounded-lg border object-cover shadow-lg"
               />
             </div>
