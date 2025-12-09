@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "sitemap": "node sitemap-generator.js",
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && npm run sitemap",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -32,6 +33,7 @@
     "react-dom": "^19.2.1",
     "react-markdown": "^10.1.0",
     "react-router-dom": "^7.9.6",
+    "sitemap": "^9.0.0",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.14",

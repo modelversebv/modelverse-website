@@ -13,7 +13,8 @@ import {
 } from '@/components/ui/breadcrumb'
 import { ArrowLeft, Calendar, User } from 'lucide-react'
 
-import { type BlogPost, type MetaData, markdownFiles } from './News'
+// import { type BlogPost, type MetaData, markdownFiles } from './News'
+import { type MetaData } from './News'
 
 export function ArticlePage() {
   const navigate = useNavigate()
@@ -37,7 +38,7 @@ export function ArticlePage() {
 
     import(`@/articles/${slug}.mdx`)
       .then((mod: any) => {
-        console.log('success')
+        // console.log('success')
         setMDXComponent(() => mod.default)
         setMetadata({
           featured: mod.metadata.featured,
@@ -49,36 +50,50 @@ export function ArticlePage() {
         })
       })
       .catch(() => {
-        console.log('error')
+        // console.log('error')
         setError(true)
       })
   }, [slug])
 
-  // Other Articles
-  const blogPosts: BlogPost[] = []
+  // // Other Articles
+  // const blogPosts: BlogPost[] = []
 
-  Object.entries(markdownFiles).map(([path, file]) => {
-    const mod = file as any
+  // Object.entries(markdownFiles).map(([path, file]) => {
+  //   const mod = file as any
 
-    const metadata: MetaData = {
-      featured: mod.metadata.featured,
-      title: mod.metadata.title,
-      summary: mod.metadata.summary,
-      image: mod.metadata.image,
-      date: mod.metadata.date,
-      author: mod.metadata.author,
-    }
+  //   const metadata: MetaData = {
+  //     featured: mod.metadata.featured,
+  //     title: mod.metadata.title,
+  //     summary: mod.metadata.summary,
+  //     image: mod.metadata.image,
+  //     date: mod.metadata.date,
+  //     author: mod.metadata.author,
+  //   }
 
-    const postId = path.split('/').pop()?.replace('.mdx', '') || path
+  //   const postId = path.split('/').pop()?.replace('.mdx', '') || path
 
-    blogPosts.push({
-      postId,
-      metadata,
-    })
-  })
+  //   blogPosts.push({
+  //     postId,
+  //     metadata,
+  //   })
+  // })
+
+  const pageTitle = metadata.title
+    ? `${metadata.title} | Modelverse Blog`
+    : 'Modelverse Blog Loading...'
+  const pageDescription = metadata.summary || 'Loading article summary...'
 
   return (
     <Layout>
+      {/* Metadata */}
+      <title>{pageTitle}</title>
+      <meta name="description" content={pageDescription} />
+      <link
+        rel="canonical"
+        href={`https://modelverse.online/article/${slug}`}
+      />
+
+      {/* Content */}
       <div className="shrink-0 bg-gray-50">
         <div className="px-4 py-4 md:container md:mx-auto md:px-8">
           <div className="mx-auto max-w-4xl">
