@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Switch } from '@/components/ui/switch'
+import { denyAnalyticsConsent, grantAnalyticsConsent } from '@/services/ga4'
 import { Cookie, Settings, Shield, X } from 'lucide-react'
 import { getCookie, setCookie } from 'typescript-cookie'
 
@@ -27,15 +28,16 @@ export function CookieBanner({
       title: 'Functional Cookies',
       desc: 'These cookies allow external content, such as YouTube and GoogleMaps, to be displayed on our website. Without them, certain components will not be available.',
     },
-    // {
-    //   title: 'Analytical Cookies',
-    //   desc: 'These cookies help us understand how visitors use the website. They collect anonymous data to improve site performance and content.',
-    // },
+    {
+      title: 'Analytical Cookies',
+      desc: 'These cookies help us understand how visitors use the website. They collect anonymous data to improve site performance and content.',
+    },
   ]
 
   const navigate = useNavigate()
 
   const COOKIE_CONSENT = 'user-preferences'
+  const ANALYTICAL_COOKIE_KEY = 'analytical-cookies'
   const CONSENT_UPDATE_EVENT = 'consentUpdate'
 
   // Banner and Animation states
@@ -73,6 +75,13 @@ export function CookieBanner({
     setShowBanner(false)
     window.dispatchEvent(new CustomEvent(CONSENT_UPDATE_EVENT))
     setPreferences(false)
+
+    // Manage GA4 cookies
+    if (consent[ANALYTICAL_COOKIE_KEY] === true) {
+      grantAnalyticsConsent()
+    } else {
+      denyAnalyticsConsent()
+    }
   }
 
   const handleAccept = () => {
@@ -89,6 +98,9 @@ export function CookieBanner({
     setShowBanner(false)
     window.dispatchEvent(new CustomEvent(CONSENT_UPDATE_EVENT))
     setPreferences(false)
+
+    // Manage GA4 cookies
+    grantAnalyticsConsent()
   }
 
   const handleReject = () => {
@@ -105,6 +117,9 @@ export function CookieBanner({
     setShowBanner(false)
     window.dispatchEvent(new CustomEvent(CONSENT_UPDATE_EVENT))
     setPreferences(false)
+
+    // Manage GA4 cookies
+    denyAnalyticsConsent()
   }
 
   const handleManage = () => {
