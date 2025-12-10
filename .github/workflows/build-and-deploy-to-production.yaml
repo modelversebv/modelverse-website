@@ -37,6 +37,9 @@ jobs:
       - name: Set Build ENV variable
         run: echo "VITE_BUILD_SHA=$(git rev-parse --short=7 HEAD)" >> $GITHUB_ENV
 
+      - name: Set GA4 Measurement ID
+        run: echo "VITE_GA4_MEASUREMENT_ID=${{ secrets.GA4_MEASUREMENT_ID }}" >> $GITHUB_ENV
+
       - name: Build
         run: npm run build
 
