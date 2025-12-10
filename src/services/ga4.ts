@@ -12,12 +12,15 @@ if (!isGa4Enabled) {
 }
 
 const deleteGaCookies = () => {
+  const domain = window.location.hostname
+
   const allCookies = document.cookie.split('; ')
 
   allCookies.forEach((cookie) => {
     const cookieName = cookie.split('=')[0]
     if (cookieName.startsWith('_ga')) {
-      removeCookie(cookieName)
+      removeCookie(cookieName, { domain: domain })
+      removeCookie(cookieName, { domain: '.' + domain })
     }
   })
 }
