@@ -1,48 +1,147 @@
-name: 'Bug report'
-description: Report a defect in the website or CI/CD
-labels: ['bug']
-title: '[Bug]: '
+name: Bug report
+description: Report a reproducible defect on the company website.
+title: '[Bug] <page-or-component>: <summary>'
+type: bug
+# labels: ["bug", "needs-triage"]
+# projects: ["<org-or-user>/<project-number>"]  # optional: auto-add to a Project
+
 body:
-  - type: textarea
-    id: description
+  - type: markdown
     attributes:
-      label: Description
-      description: What happened? A clear, concise description of the bug.
-    validations:
-      required: true
+      value: |
+        Thanks for taking the time to fill out this bug report!
+        Please include clear reproduction steps so we can fix it quickly.
 
-  - type: textarea
-    id: steps
+  - type: checkboxes
+    id: dupe_check
     attributes:
-      label: Steps to Reproduce
-      description: List the steps to reproduce the issue.
-    validations:
-      required: true
-
-  - type: input
-    id: expected
-    attributes:
-      label: Expected Behavior
-    validations:
-      required: true
+      label: Is there an existing issue?
+      description: Please search open issues before filing a new one.
+      options:
+        - label: I have searched existing issues
+          required: true
 
   - type: input
-    id: actual
+    id: affected_url
     attributes:
-      label: Actual Behavior
-    validations:
-      required: true
+      label: URL(s) affected
+      description: Full page URL(s) where the bug occurs.
+      placeholder: 'https://www.example.com/path'
+
+  - type: input
+    id: component
+    attributes:
+      label: Page / component
+      placeholder: 'e.g., Home hero, Navigation menu, Contact form'
 
   - type: dropdown
     id: severity
     attributes:
-      label: Severity
-      options: ['Critical', 'High', 'Medium', 'Low']
+      label: Severity (impact)
+      description: How disruptive is this issue?
+      options:
+        - Critical — crash/security/data loss
+        - High — page/functionality broken for many users
+        - Medium — degraded behavior/workaround exists
+        - Low — minor visual/content issue
+      default: 2
     validations:
       required: true
 
   - type: textarea
-    id: evidence
+    id: current_behavior
     attributes:
-      label: Logs / Screenshots
-      description: Paste relevant logs, screenshots, or links.
+      label: Current behavior
+      description: What happened?
+      placeholder: 'Describe the observed behavior.'
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected behavior
+      description: What should have happened?
+      placeholder: 'Describe the desired/expected behavior.'
+
+  - type: textarea
+    id: repro_steps
+    attributes:
+      label: Steps to reproduce
+      description: Walk us through the exact steps.
+      placeholder: |
+        1) Go to …
+        2) Click …
+        3) Observe …
+    validations:
+      required: true
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device type(s)
+      multiple: true
+      options:
+        - Desktop
+        - Laptop
+        - Tablet
+        - Mobile
+
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: Browser(s)
+      multiple: true
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Microsoft Edge
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system(s)
+      multiple: true
+      options:
+        - macOS
+        - Windows
+        - Linux
+        - iOS
+        - Android
+
+  - type: input
+    id: app_version
+    attributes:
+      label: Site/Build version (if applicable)
+      description: e.g., release tag, commit SHA, or build ID.
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / screen recordings
+      description: Drag and drop images or links to recordings.
+      render: markdown
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Console logs / network errors
+      description: Paste relevant output. This will be formatted as code.
+      render: shell
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      description: Any other details, related issues, or hypotheses.
+
+  - type: checkboxes
+    id: quality_gate
+    attributes:
+      label: Definition of done (for the fix)
+      description: Used by maintainers to confirm quality before closing.
+      options:
+        - label: Reproduction verified
+        - label: Fix implemented
+        - label: Tests added/updated
+        - label: Docs updated (if needed)
+        - label: Regression risk assessed
