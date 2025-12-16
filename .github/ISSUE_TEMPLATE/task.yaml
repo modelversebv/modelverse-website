@@ -36,17 +36,6 @@ body:
         - [ ] Step 2…
         - [ ] Verify…
 
-  - type: dropdown
-    id: priority
-    attributes:
-      label: Priority
-      options:
-        - P0 — urgent/critical
-        - P1 — high
-        - P2 — medium
-        - P3 — low
-      default: 2
-
   - type: input
     id: due_date
     attributes:
