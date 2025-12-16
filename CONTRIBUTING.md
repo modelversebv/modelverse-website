@@ -95,9 +95,9 @@ For all development tasks (new features, fixes, updates), you must create a new 
 
 - **Branch Naming Convention:** Use a prefix that describes the type of work:
   - **`feature/my-new-feature`** (for new functionalities)
-  - **`update/my-new-update`** (for updated code)
-  - **`fix/login-bug-patch`** (for bug fixes)
-  - **`chore/dependency-updates`** (for non-code changes like documentation or config)
+  - **`update/my-new-update`** (for updates)
+  - **`fix/my-new-fix`** (for bug fixes)
+  - **`blog/blog-name`** (for new blog posts or blog updates)
 
 #### 4\. Commit Messages
 
@@ -107,10 +107,7 @@ Maintain clear, concise, and conventional commit messages. This helps in generat
 - **Keywords (Type):**
   - **`(feat)`:** A new feature.
   - **`(fix)`:** A bug fix.
-  - **`(update)`:** An update or modification to existing functionality.
-  - **`(chore)`:** Non-code changes.
-  - **`(docs)`:** Documentation-only changes.
-  - **`(style)`:** Changes that do not affect the meaning of the code (whitespace, formatting, etc.).
+  - **`(update)`:** An update or modification.
 
 #### 5\. Creating a Pull Request (PR)
 

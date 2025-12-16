@@ -145,3 +145,11 @@ body:
         - label: Tests added/updated
         - label: Docs updated (if needed)
         - label: Regression risk assessed
+
+  - type: checkboxes
+    id: dod
+    attributes:
+      label: Definition of Done
+      options:
+        - label: Implementation complete
+        - label: Bug fixed

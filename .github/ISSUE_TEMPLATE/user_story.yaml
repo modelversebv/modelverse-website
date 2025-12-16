@@ -1,0 +1,88 @@
+name: User story
+description: Capture a product slice with clear acceptance criteria.
+title: '[Story] <persona|role> wants <capability> to <benefit>'
+type: story
+# labels: ["story", "needs-triage"]
+# projects: ["<org-or-user>/<project-number>"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Provide the story format, acceptance criteria, and constraints.
+
+  - type: textarea
+    id: story
+    attributes:
+      label: Story
+      description: Use the standard format.
+      placeholder: |
+        As a <role/persona>,
+        I want <capability>,
+        So that <benefit/outcome>.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance criteria
+      description: Prefer Given/When/Then where possible.
+      placeholder: |
+        Given …
+        When …
+        Then …
+
+  - type: textarea
+    id: non_functional
+    attributes:
+      label: Non-functional requirements
+      description: Accessibility, performance, security, SEO, etc.
+      placeholder: '- Performance: p95 < 200ms…'
+
+  - type: dropdown
+    id: story_points
+    attributes:
+      label: Story points
+      options:
+        - 1
+        - 2
+        - 3
+        - 5
+        - 8
+        - 13
+
+  # - type: dropdown
+  #   id: priority
+  #   attributes:
+  #     label: Priority
+  #     options:
+  #       - P0 — urgent/critical
+  #       - P1 — high
+  #       - P2 — medium
+  #       - P3 — low
+  #     default: 2
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      placeholder: '- Depends on: #789, API v2'
+
+  - type: checkboxes
+    id: dor
+    attributes:
+      label: Definition of Ready
+      options:
+        - label: Story is clear and testable
+        - label: Acceptance criteria defined
+        - label: No external blockers
+
+  - type: checkboxes
+    id: dod
+    attributes:
+      label: Definition of Done
+      options:
+        - label: Implementation complete
+        # - label: Unit/integration tests added
+        # - label: Accessibility checks passed
