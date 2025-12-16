@@ -74,17 +74,6 @@ body:
         - Low — minor enhancement
       default: 2
 
-  # - type: dropdown
-  #   id: effort
-  #   attributes:
-  #     label: Effort estimate (t-shirt size)
-  #     options:
-  #       - XS (≤ 0.5 day)
-  #       - S (1–2 days)
-  #       - M (3–5 days)
-  #       - L (1–2 weeks)
-  #       - XL (2+ weeks)
-
   - type: textarea
     id: dependencies
     attributes:
