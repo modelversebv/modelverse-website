@@ -1,0 +1,80 @@
+name: Epic
+description: A large body of work composed of multiple stories/tasks.
+title: '[Epic] <theme>: <summary>'
+type: epic
+# labels: ["epic", "needs-triage"]
+# projects: ["<org-or-user>/<project-number>"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this to define scope, goals, success metrics, and child issues.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: High-level overview of the epic.
+      placeholder: 'What is this epic about and why does it matter?'
+    validations:
+      required: true
+
+  - type: textarea
+    id: goals
+    attributes:
+      label: Goals & success metrics
+      description: KPIs and measurable outcomes.
+      placeholder: '- Increase conversion +15%, p95 latency <200ms, accessibility AA'
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: In scope
+      placeholder: '- Feature A\n- Page B\n- Integration with X'
+
+  - type: textarea
+    id: non_goals
+    attributes:
+      label: Out of scope (non-goals)
+      placeholder: '- Deprecated flow Y\n- Backoffice Z'
+
+  - type: textarea
+    id: timeline
+    attributes:
+      label: Timeline / milestones
+      description: Key dates or phases.
+      placeholder: |
+        - Milestone 1 — YYYY-MM-DD
+        - Milestone 2 — YYYY-MM-DD
+
+  - type: textarea
+    id: stakeholders
+    attributes:
+      label: Stakeholders
+      description: Teams/owners involved (product, design, eng, QA).
+      placeholder: '- Product: @handle\n- Design: @handle\n- Eng: @handle'
+
+  - type: textarea
+    id: child_issues
+    attributes:
+      label: Child issues (task list)
+      description: Link stories/tasks using a checklist.
+      placeholder: |
+        - [ ] #123 Story: …
+        - [ ] #124 Task: …
+        - [ ] #125 Story: …
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies / risks
+      placeholder: '- Risk: migration outage\n- Blocker: vendor SLA'
+
+  - type: checkboxes
+    id: dod
+    attributes:
+      label: Definition of Done
+      options:
+        - label: All child issues closed
+        - label: Post-epic retrospective completed

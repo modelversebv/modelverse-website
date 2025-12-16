@@ -4,19 +4,14 @@ on:
   push:
     branches:
       - test
-    paths-ignore:
-      # 1. Documentation
-      - '**.md'
-
-      # 2. Testing & CI/CD
-      - 'tests/**'
-      - 'playwright.config.ts'
-      - '.github/**'
-
-      # 3. Editor and General Configuration
-      - '.vscode/**'
-      - '.editorconfig'
-      - '.gitignore'
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'sitemap-generator.js'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'vite.config.*'
+      - 'tsconfig*.json'
 
 jobs:
   build-and-deploy:

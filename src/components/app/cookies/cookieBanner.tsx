@@ -179,7 +179,7 @@ export function CookieBanner({
                         className="cursor-pointer font-semibold text-amber-500 hover:underline"
                         onClick={() => {
                           handleReject()
-                          navigate('/cookie_policy')
+                          navigate('/legal/cookie_policy')
                         }}
                       >
                         Cookie Policy
@@ -189,7 +189,7 @@ export function CookieBanner({
                         className="cursor-pointer font-semibold text-amber-500 hover:underline"
                         onClick={() => {
                           handleReject()
-                          navigate('/privacy_policy')
+                          navigate('/legal/privacy_policy')
                         }}
                       >
                         Privacy Policy
