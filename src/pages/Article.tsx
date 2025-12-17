@@ -123,7 +123,7 @@ export function ArticlePage() {
           <img src={metadata.image} alt="" className="size-full object-cover" />
           <div className="absolute inset-0 size-full bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent">
             <div className="flex size-full items-end-safe justify-center-safe px-4 py-16 md:container md:mx-auto">
-              <div className="mx-auto flex max-w-4xl flex-col gap-4 md:gap-8">
+              <div className="mx-auto flex w-full max-w-4xl flex-col gap-4 md:gap-8">
                 <h1 className="text-4xl text-white drop-shadow-lg sm:text-5xl">
                   {metadata.title}
                 </h1>
