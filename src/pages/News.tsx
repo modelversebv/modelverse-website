@@ -32,6 +32,7 @@ const NewsHero = (
 export type MetaData = {
   featured: boolean
   title: string
+  subtitle: string
   summary: string
   image: string
   date: string
@@ -54,6 +55,7 @@ export function NewsPage() {
     const metadata: MetaData = {
       featured: mod.metadata.featured,
       title: mod.metadata.title,
+      subtitle: mod.metadata.subtitle,
       summary: mod.metadata.summary,
       image: mod.metadata.image,
       date: mod.metadata.date,

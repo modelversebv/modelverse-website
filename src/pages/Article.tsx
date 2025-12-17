@@ -26,6 +26,7 @@ export function ArticlePage() {
   const [metadata, setMetadata] = useState<MetaData>({
     featured: false,
     title: '',
+    subtitle: '',
     summary: '',
     image: '',
     date: '',
@@ -43,6 +44,7 @@ export function ArticlePage() {
         setMetadata({
           featured: mod.metadata.featured,
           title: mod.metadata.title,
+          subtitle: mod.metadata.subtitle,
           summary: mod.metadata.summary,
           image: mod.metadata.image,
           date: mod.metadata.date,
@@ -119,14 +121,19 @@ export function ArticlePage() {
       </div>
 
       {!error && (
-        <div className="relative h-[400px] w-full overflow-hidden bg-black sm:h-[500px]">
+        <div className="relative h-[500px] w-full overflow-hidden bg-black">
           <img src={metadata.image} alt="" className="size-full object-cover" />
-          <div className="absolute inset-0 size-full bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent">
+          <div className="absolute inset-0 size-full bg-gradient-to-t from-gray-900 via-gray-900/50 to-gray-900">
             <div className="flex size-full items-end-safe justify-center-safe px-4 py-16 md:container md:mx-auto">
               <div className="mx-auto flex w-full max-w-4xl flex-col gap-4 md:gap-8">
                 <h1 className="text-4xl text-white drop-shadow-lg sm:text-5xl">
                   {metadata.title}
                 </h1>
+                {metadata.subtitle != '' && (
+                  <h2 className="sm:text:xxl text-2xl text-white/95 drop-shadow-lg">
+                    {metadata.subtitle}
+                  </h2>
+                )}
                 <div className="flex flex-row flex-wrap items-center-safe gap-4 text-white/90">
                   <div className="flex shrink-0 flex-row items-center-safe gap-2">
                     <User className="size-4 shrink-0" />
