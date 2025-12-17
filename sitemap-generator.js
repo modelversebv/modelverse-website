@@ -1,16 +1,27 @@
 import fs from 'fs'
+import path from 'path'
 import { SitemapStream, streamToPromise } from 'sitemap'
 import { Readable } from 'stream'
 
 // --- Configuration ---
 const HOSTNAME = 'https://modelverse.online'
 const OUTPUT_FILE_PATH = './public/sitemap.xml'
+const ARTICLES_DIR = './src/articles'
 
-const ARTICLE_SLUGS = [
-  '11-2025_blog_digital_omnibus',
-  '11-2025_blog_interview_ben',
-  '12-25_blog_dnssec',
-]
+const getArticleSlugs = () => {
+  try {
+    const files = fs.readdirSync(ARTICLES_DIR)
+
+    return files
+      .filter((file) => path.extname(file).toLowerCase() === '.mdx')
+      .map((file) => path.basename(file, '.mdx'))
+  } catch (error) {
+    console.error(`Error reading articles directory: ${error.message}`)
+    return []
+  }
+}
+
+const ARTICLE_SLUGS = getArticleSlugs()
 
 const LEGAL_SLUGS = ['privacy_policy', 'terms_of_service', 'cookie-policy']
 
@@ -57,7 +68,7 @@ async function generateSitemap() {
 
   fs.writeFileSync(OUTPUT_FILE_PATH, xml)
 
-  console.log(`✅ Sitemap successfully generated at ${OUTPUT_FILE_PATH}`)
+  console.log(`Sitemap successfully generated at ${OUTPUT_FILE_PATH}`)
 }
 
 generateSitemap().catch(console.error)
