@@ -77,7 +77,7 @@ export function CasesPage() {
     {
       name: 'Nedato',
       about:
-        'Nedato is the largest Dutch coorperative of potato farmers. They act as a wholesaler connecting potato farmers with the fried potatoes processing industry.',
+        'Nedato is the largest Dutch cooperative of potato farmers. They act as a wholesaler connecting potato farmers with the fried potatoes processing industry.',
       case: 'Nedato is using the Digital Risk Management functionality of Modelverse.',
       logo: 'images/new_logos/nedato.jpg',
       url: 'https://nedato.nl/',
