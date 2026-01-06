@@ -54,7 +54,7 @@ export function ContactPage() {
       {/* Content */}
       <div className="bg-gray-50">
         <div className="flex flex-col justify-center-safe gap-16 px-4 py-16 md:container md:mx-auto">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-4">
             {contactInfo.map((contact, index) => (
               <Card key={index} className="bg-white">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r from-green-500/10 to-teal-500/10">
