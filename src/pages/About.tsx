@@ -30,7 +30,7 @@ const AboutHero = (
 export function AboutPage() {
   const teamMembers = [
     {
-      name: 'Ben',
+      name: 'Ben Krutzen',
       role: 'CEO & CTO | Co-Founder',
       bio: 'Ben is the creator of Modelverse, driven by a passion for turning strategy into action. With over 25 years at Shell and later as a partner at KPMG, Ben helped organizations navigate complex challenges across transformation, risk, and technology. He holds a PhD in theoretical physics and once explored black holes at Imperial College London—before diving into the world of business.',
       image: 'images/team/Ben - web.jpg',
@@ -39,7 +39,7 @@ export function AboutPage() {
       dob: '',
     },
     {
-      name: 'Reshma',
+      name: 'Reshma Pandohi Mishre',
       role: 'Partner | Co-Founder',
       bio: 'Reshma brings deep expertise in strategic information management and cybersecurity, with a clear, structured approach to tackling complex challenges. Reshma held a variety of IT leadership an Security roles across international corporates and the energy sector. She holds an MSc in Applied Physics and an executive MSc in Cyber Security.',
       image: 'images/team/Reshma - web.jpg',
@@ -48,7 +48,7 @@ export function AboutPage() {
       dob: '',
     },
     {
-      name: 'Daan',
+      name: 'Daan Loyens',
       role: 'CFO & COO | Co-Founder',
       bio: 'Daan is an experienced entrepreneur and IT leader who’s passionate about using modern technology to help organizations tackle real-world challenges. Daan brings broad insight as a strategist, investor, and trusted cybersecurity advisor. He holds a PhD and MSc in Computing Science, along with an executive MSc in Cyber Security.',
       image: 'images/team/Daan - web.jpg',
@@ -57,7 +57,7 @@ export function AboutPage() {
       dob: '',
     },
     {
-      name: 'Lili',
+      name: 'Lili Guo',
       role: 'Partner | CISO',
       bio: 'Lili is a governance expert with deep experience in health, cybersecurity and patient safety. Before becoming a partner, Lili spent 12 years at the Dutch Ministry of Health, working on organ donation, e-health, and cybersecurity. She holds a Cum Laude BSc in Biomedical Science, a Cum Laude MSc in Neuroscience, and a Summa Cum Laude MSc in Cyber Security Governance.',
       image: 'images/team/Lili - web.jpg',
@@ -66,7 +66,7 @@ export function AboutPage() {
       dob: '',
     },
     {
-      name: 'Bozhena',
+      name: 'Bozhena Kovtun',
       role: 'Office Manager',
       bio: 'Bozhena smoothly runs the back-office, always friendly, accessible, and business-smart.',
       image: 'images/team/Bozhena - web.jpg',
@@ -75,7 +75,7 @@ export function AboutPage() {
       dob: '',
     },
     {
-      name: 'Mariona',
+      name: 'Mariona Fortuny Jané',
       role: 'Risk Consultant',
       bio: 'Mariona researches, interprets, structures and creates cybersecurity risk models and ESG models for enterprise clients.',
       image: 'images/team/Mariona - web.jpg',
@@ -84,7 +84,7 @@ export function AboutPage() {
       dob: '',
     },
     {
-      name: 'Sjors',
+      name: 'Sjors de Natris',
       role: 'Risk Consultant & Security Engineer',
       bio: 'Sjors is focused on risk management and platform improvements using cloud services and security infrastructure.',
       image: 'images/team/Sjors - web.jpg',
@@ -93,7 +93,7 @@ export function AboutPage() {
       dob: '',
     },
     {
-      name: 'Matei',
+      name: 'Matei Avram',
       role: 'Software Engineer',
       bio: 'Matei develops and maintains the website, helps implement DevOps practices, and supports the development of the Modelverse platform.',
       image: 'images/team/Matei - web.jpg',
