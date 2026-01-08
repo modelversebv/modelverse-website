@@ -5,7 +5,7 @@ import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
 import { Badge } from '@/components/ui/badge'
 import { ArrowRight, Calendar, User } from 'lucide-react'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Avatar, AvatarImage } from '@/components/ui/avatar'
 
 // // For testing
 // export const markdownFiles = import.meta.glob('@/articles/(*test*).mdx', {
@@ -117,7 +117,7 @@ export function NewsPage() {
                     <div className="flex flex-row flex-wrap items-center-safe gap-4 text-gray-500">
                       <div className="flex shrink-0 flex-row items-center-safe gap-2">
                         {post.metadata.portrait ? (
-                          <Avatar className="size-12 self-center">
+                          <Avatar className="size-12 self-center mr-2">
                             <AvatarImage
                               src={post.metadata.portrait}
                               className="object-cover object-center"

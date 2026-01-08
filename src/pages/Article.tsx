@@ -15,7 +15,7 @@ import { ArrowLeft, Calendar, User } from 'lucide-react'
 
 // import { type BlogPost, type MetaData, markdownFiles } from './News'
 import { type MetaData } from './News'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Avatar, AvatarImage } from '@/components/ui/avatar'
 
 export function ArticlePage() {
   const navigate = useNavigate()
@@ -140,9 +140,9 @@ export function ArticlePage() {
                 <div className="flex flex-row flex-wrap items-center-safe gap-4 text-white/90">
                   <div className="flex shrink-0 flex-row items-center-safe gap-2">
                     {metadata.portrait ? (
-                      <Avatar className="size-12 self-center">
+                      <Avatar className="size-12 self-center mr-2">
                         <AvatarImage
-                          src="images/blog_authors/Sjors - web.jpg"
+                          src={metadata.portrait}
                           className="object-cover object-center"
                         />
                       </Avatar>) : (<User className="size-4 shrink-0" />)}
