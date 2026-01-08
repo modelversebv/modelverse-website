@@ -15,6 +15,7 @@ import { ArrowLeft, Calendar, User } from 'lucide-react'
 
 // import { type BlogPost, type MetaData, markdownFiles } from './News'
 import { type MetaData } from './News'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 export function ArticlePage() {
   const navigate = useNavigate()
@@ -31,6 +32,7 @@ export function ArticlePage() {
     image: '',
     date: '',
     author: '',
+    portrait: '',
   })
   const [error, setError] = useState(false)
 
@@ -49,6 +51,7 @@ export function ArticlePage() {
           image: mod.metadata.image,
           date: mod.metadata.date,
           author: mod.metadata.author,
+          portrait: mod.metadata.portrait,
         })
       })
       .catch(() => {
@@ -136,7 +139,13 @@ export function ArticlePage() {
                 )}
                 <div className="flex flex-row flex-wrap items-center-safe gap-4 text-white/90">
                   <div className="flex shrink-0 flex-row items-center-safe gap-2">
-                    <User className="size-4 shrink-0" />
+                    {metadata.portrait ? (
+                      <Avatar className="size-12 self-center">
+                        <AvatarImage
+                          src="images/blog_authors/Sjors - web.jpg"
+                          className="object-cover object-center"
+                        />
+                      </Avatar>) : (<User className="size-4 shrink-0" />)}
                     {metadata.author}
                   </div>
                   <div className="flex shrink-0 flex-row items-center-safe gap-2">

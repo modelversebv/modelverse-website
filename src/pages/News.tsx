@@ -5,6 +5,7 @@ import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
 import { Badge } from '@/components/ui/badge'
 import { ArrowRight, Calendar, User } from 'lucide-react'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 // // For testing
 // export const markdownFiles = import.meta.glob('@/articles/(*test*).mdx', {
@@ -37,6 +38,7 @@ export type MetaData = {
   image: string
   date: string
   author: string
+  portrait: string
 }
 
 export type BlogPost = {
@@ -60,6 +62,7 @@ export function NewsPage() {
       image: mod.metadata.image,
       date: mod.metadata.date,
       author: mod.metadata.author,
+      portrait: mod.metadata.portrait,
     }
 
     const postId = path.split('/').pop()?.replace('.mdx', '') || path
@@ -113,7 +116,13 @@ export function NewsPage() {
                     </p>
                     <div className="flex flex-row flex-wrap items-center-safe gap-4 text-gray-500">
                       <div className="flex shrink-0 flex-row items-center-safe gap-2">
-                        <User className="size-4 shrink-0" />
+                        {post.metadata.portrait ? (
+                          <Avatar className="size-12 self-center">
+                            <AvatarImage
+                              src={post.metadata.portrait}
+                              className="object-cover object-center"
+                            />
+                          </Avatar>) : (<User className="size-4 shrink-0" />)}
                         {post.metadata.author}
                       </div>
                       <div className="flex shrink-0 flex-row items-center-safe gap-2">
