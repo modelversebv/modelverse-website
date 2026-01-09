@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom'
 import { Card } from '@/components/app/misc/card'
 import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { ArrowRight, Calendar, User } from 'lucide-react'
-import { Avatar, AvatarImage } from '@/components/ui/avatar'
 
 // // For testing
 // export const markdownFiles = import.meta.glob('@/articles/(*test*).mdx', {
@@ -49,29 +49,34 @@ export type BlogPost = {
 export function NewsPage() {
   const navigate = useNavigate()
 
-  const blogPosts: BlogPost[] = []
+  function parseDate(dateString: string) {
+    const [day, month, year] = dateString.split('/').map(Number)
+    return new Date(year, month - 1, day)
+  }
 
-  Object.entries(markdownFiles).map(([path, file]) => {
-    const mod = file as any
+  const blogPosts: BlogPost[] = Object.entries(markdownFiles)
+    .map(([path, file]) => {
+      const mod = file as any
 
-    const metadata: MetaData = {
-      featured: mod.metadata.featured,
-      title: mod.metadata.title,
-      subtitle: mod.metadata.subtitle,
-      summary: mod.metadata.summary,
-      image: mod.metadata.image,
-      date: mod.metadata.date,
-      author: mod.metadata.author,
-      portrait: mod.metadata.portrait,
-    }
-
-    const postId = path.split('/').pop()?.replace('.mdx', '') || path
-
-    blogPosts.push({
-      postId,
-      metadata,
+      return {
+        postId: path.split('/').pop()?.replace('.mdx', '') || path,
+        metadata: {
+          featured: mod.metadata.featured,
+          title: mod.metadata.title,
+          subtitle: mod.metadata.subtitle,
+          summary: mod.metadata.summary,
+          image: mod.metadata.image,
+          date: mod.metadata.date,
+          author: mod.metadata.author,
+          portrait: mod.metadata.portrait,
+        },
+      }
     })
-  })
+    .sort(
+      (a, b) =>
+        parseDate(b.metadata.date).getTime() -
+        parseDate(a.metadata.date).getTime()
+    )
 
   return (
     <Layout news={true} hero={NewsHero}>
@@ -116,17 +121,24 @@ export function NewsPage() {
                     </p>
                     <div className="flex flex-row flex-wrap items-center-safe gap-4 text-gray-500">
                       <div className="flex shrink-0 flex-row items-center-safe gap-2">
-                        {post.metadata.portrait ? (
-                          <Avatar className="size-12 self-center mr-2">
-                            <AvatarImage
-                              src={post.metadata.portrait}
-                              className="object-cover object-center"
-                            />
-                          </Avatar>) : (<User className="size-4 shrink-0" />)}
+                        <Avatar className="size-8 self-center">
+                          <AvatarImage
+                            src={post.metadata.portrait}
+                            className="object-cover object-center"
+                          />
+                          <AvatarFallback>
+                            <User className="size-4 shrink-0" />
+                          </AvatarFallback>
+                        </Avatar>
                         {post.metadata.author}
                       </div>
                       <div className="flex shrink-0 flex-row items-center-safe gap-2">
-                        <Calendar className="size-4 shrink-0" />
+                        <Avatar>
+                          <AvatarImage></AvatarImage>
+                          <AvatarFallback className="bg-transparent">
+                            <Calendar className="size-4 shrink-0" />
+                          </AvatarFallback>
+                        </Avatar>
                         {post.metadata.date}
                       </div>
                     </div>
@@ -173,11 +185,24 @@ export function NewsPage() {
                         <div className="flex grow flex-col justify-end-safe gap-4">
                           <div className="mt-auto flex flex-row flex-wrap items-center-safe gap-4 text-gray-500">
                             <div className="flex shrink-0 flex-row items-center-safe gap-2">
-                              <User className="size-4 shrink-0" />
+                              <Avatar className="size-8 self-center">
+                                <AvatarImage
+                                  src={post.metadata.portrait}
+                                  className="object-cover object-center"
+                                />
+                                <AvatarFallback>
+                                  <User className="size-4 shrink-0" />
+                                </AvatarFallback>
+                              </Avatar>
                               {post.metadata.author}
                             </div>
                             <div className="flex shrink-0 flex-row items-center-safe gap-2">
-                              <Calendar className="size-4 shrink-0" />
+                              <Avatar>
+                                <AvatarImage></AvatarImage>
+                                <AvatarFallback className="bg-transparent">
+                                  <Calendar className="size-4 shrink-0" />
+                                </AvatarFallback>
+                              </Avatar>
                               {post.metadata.date}
                             </div>
                           </div>
