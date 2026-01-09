@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 
 import { MDXRenderer } from '@/components/app/mdx/mdxRenderer'
 import { Layout } from '@/components/layout'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -31,6 +32,7 @@ export function ArticlePage() {
     image: '',
     date: '',
     author: '',
+    portrait: '',
   })
   const [error, setError] = useState(false)
 
@@ -49,6 +51,7 @@ export function ArticlePage() {
           image: mod.metadata.image,
           date: mod.metadata.date,
           author: mod.metadata.author,
+          portrait: mod.metadata.portrait,
         })
       })
       .catch(() => {
@@ -136,11 +139,24 @@ export function ArticlePage() {
                 )}
                 <div className="flex flex-row flex-wrap items-center-safe gap-4 text-white/90">
                   <div className="flex shrink-0 flex-row items-center-safe gap-2">
-                    <User className="size-4 shrink-0" />
+                    <Avatar className="size-8 self-center">
+                      <AvatarImage
+                        src={metadata.portrait}
+                        className="object-cover object-center"
+                      />
+                      <AvatarFallback className="bg-transparent">
+                        <User className="size-4 shrink-0" />
+                      </AvatarFallback>
+                    </Avatar>
                     {metadata.author}
                   </div>
                   <div className="flex shrink-0 flex-row items-center-safe gap-2">
-                    <Calendar className="size-4 shrink-0" />
+                    <Avatar>
+                      <AvatarImage></AvatarImage>
+                      <AvatarFallback className="bg-transparent">
+                        <Calendar className="size-4 shrink-0" />
+                      </AvatarFallback>
+                    </Avatar>
                     {metadata.date}
                   </div>
                 </div>
