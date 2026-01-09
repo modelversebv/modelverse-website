@@ -29,72 +29,72 @@ export function CasesPage() {
     {
       name: 'Fellowmind',
       about:
-        'Fellowmind is one of the largest Microsoft integrators in western Europe active in the Netherlands, Poland, Denmark, Sweden and Finland.',
-      case: 'Modelverse is used to support the security strategy and manage all information risks across the regions. Additionally, data privacy processes are supported and a Continuous Improvement program is on its way to execute the security strategy.',
+        'Fellowmind is one of the largest Microsoft integrators in western Europe and is active in the Netherlands, Poland, Denmark, Sweden and Finland.',
+      case: 'Modelverse is used to support the security strategy and manage all information risks across Fellowmind’s different regions. Additionally, data privacy processes are supported, and a continuous improvement program is on its way to execute the security strategy.',
       logo: 'images/new_logos/fellowmind.jpg',
       url: 'https://www.fellowmind.com/',
     },
     {
-      name: 'Province Flevoland',
+      name: 'Provincie Flevoland',
       about:
         'The Province of Flevoland is the twelfth and newest province of the Netherlands, established in 1986, when the southern and eastern Flevopolders, together with the Noordoostpolder, were merged into one provincial entity.',
-      case: 'We are piloting Modelverse for Flevoland to improve risk management, increasing effectiveness of the implemented cybersecurity measures and to save time for the CISO team, the IT team, the OT team and the data privacy team.',
+      case: 'We are piloting Modelverse for Flevoland to improve their risk management, increasing the effectiveness of the implemented cybersecurity measures and saving time for the IT, OT and data privacy teams, as well as the CISO.',
       logo: 'images/new_logos/provincie-flevoland.jpg',
       url: 'https://www.flevoland.nl/',
     },
     {
       name: 'PharmaPartners',
       about:
-        'Pharmapartners is a leading provider of healthcare systems in the Netherlands. They provide during 40 years key IT systems for General Practitioners and public pharmacies.',
-      case: 'We are supporting PharmaPartners with a strategic cyber security plan and a plan for addressing patient safety.',
+        'Pharmapartners is a leading company in the provision of integrated healthcare systems in the Netherlands, ensuring healthcare providers have access to reliable, up-to-date and complete (patient) information.',
+      case: 'We are supporting PharmaPartners with a strategic cyber security plan and a plan ensuring patient safety.',
       logo: 'images/new_logos/pharma-partners.jpg',
       url: 'https://www.pharmapartners.nl/',
     },
     {
       name: 'Thebe',
       about:
-        'Thebe provides district nursing, specialist care, home support and day care in 19 municipalities in West and Central Brabant. They also provide care in 25 residential care centres in the region.',
-      case: 'Modelverse is being piloted for Digital Risk Management.',
+        'Thebe provides district nursing, specialist care, home support and day care in 19 municipalities in the Western and central parts of Brabant. They also provide care in 25 residential care centres in the region.',
+      case: 'Modelverse is being piloted for Thebe’s digital risk management.',
       logo: 'images/new_logos/thebe.jpg',
       url: 'https://www.thebe.nl/',
     },
     {
       name: '1801',
       about:
-        '1801 is dedicated to collaborate with education and youth care. They support pupils, students, educational professionals and schools in the Netherlands.',
-      case: 'Modelverse is used to manage Information Security and saving substantial team and effort of the CISO team.',
+        '1801 advises schools and ROCs on learning, teaching and organising education. They support education professionals with all the challenges that education entails, bringing stalled processes in motion and solving strategic issues',
+      case: 'Modelverse is used to manage information security and saves the CISO and IT team substantial time and effort.',
       logo: 'images/new_logos/1801.jpg',
       url: 'https://1801.nl/',
     },
     {
       name: 'NPI',
       about:
-        "The NPi is the Dutch training provider for physiotherapists. They support paramedical professionals in 'lifelong learning' with courses, training, webinars, e-learning and scientific information services.",
-      case: 'NPI are using Modelverse to manage all information. Compliance is managed using security policies functionality. This way policies are maintained and published to all staff.',
+        "The NPI is the Dutch training provider for physiotherapists. They support paramedical professionals in lifelong learning with courses, training, webinars, e-learning and scientific information services.",
+      case: 'NPI uses Modelverse to manage all their information. Compliance is also managed using the functionality for security policies. This way policies can be easily maintained and published to the entire staff.',
       logo: 'images/new_logos/npi.jpg',
       url: 'https://www.npi.nl/',
     },
     {
       name: 'Nedato',
       about:
-        'Nedato is the largest Dutch cooperative of potato farmers. They act as a wholesaler connecting potato farmers with the fried potatoes processing industry.',
-      case: 'Nedato is using the Digital Risk Management functionality of Modelverse.',
+        'Nedato is the largest Dutch cooperative of potato farmers. They act as a wholesaler connecting potato farmers with the fried potato processing industry.',
+      case: 'Nedato is using the digital risk management functionality of Modelverse.',
       logo: 'images/new_logos/nedato.jpg',
       url: 'https://nedato.nl/',
     },
     {
       name: 'NewForrest Fingerfood',
       about:
-        'NewForrest Fingerfood is a Dutch company that specializes in producing frozen finger foods, mini snacks, and appetizers for both retail and food service markets.',
-      case: 'NewForrest is using the Digital Risk Management functionality of Modelverse.',
+        'NewForrest Fingerfood is a Dutch company that specializes in producing frozen finger foods, mini snacks, and appetizers for both the retail and food service markets.',
+      case: 'NewForrest is using the digital risk management functionality of Modelverse.',
       logo: 'images/new_logos/newForrest.jpg',
       url: 'https://newforrest.nl/',
     },
     {
       name: 'LeydenJar Technology',
       about:
-        'LeydenJar Technology is a scale up that developed a high-performing pure Silicon anode for batteries, boosting the energy of batteries by 50%. They are developing their first production plant in the Eindhoven region.',
-      case: 'We helped LeydenJar to protect its Intellectual Property of their core technology using Modelverse.',
+        'LeydenJar Technology is a scale-up that developed a high-performing pure silicon anode for batteries, boosting the energy of batteries by 50%. They are developing their first production plant in the Eindhoven region.',
+      case: 'We helped LeydenJar to protect the intellectual property of their core technology using Modelverse.',
       logo: 'images/new_logos/leydan-jar.jpg',
       url: 'https://leyden-jar.com/',
     },
@@ -157,8 +157,8 @@ export function CasesPage() {
         <button
           className="cursor-pointer rounded-full bg-white px-4 py-2 font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-white/50 sm:w-fit"
           onClick={() =>
-            (window.location.href =
-              'https://outlook.office.com/bookwithme/user/d81d78745f8047d1a0ec05a07d8d40d6@modelverse.online/meetingtype/HEkH_Hmwx06JvFc-tP4ZJw2?anonymous')
+          (window.location.href =
+            'https://outlook.office.com/bookwithme/user/d81d78745f8047d1a0ec05a07d8d40d6@modelverse.online/meetingtype/HEkH_Hmwx06JvFc-tP4ZJw2?anonymous')
           }
         >
           <div className="bg-gradient-to-r from-green-500 to-teal-500 bg-clip-text text-transparent">
