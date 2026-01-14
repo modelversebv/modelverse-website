@@ -17,39 +17,41 @@ const HomeHero = (
   <Hero className="lg:flex-row">
     <div className="flex flex-col gap-8 lg:basis-1/2 lg:justify-center-safe">
       <div className="flex flex-col gap-4">
-        <div className="flex w-fit flex-row items-center-safe justify-center-safe gap-2 rounded-full bg-gradient-to-r from-green-500/20 to-teal-500/20 px-4 py-2 font-semibold text-amber-500">
+        {/* <div className="flex w-fit flex-row items-center-safe justify-center-safe gap-2 rounded-full bg-gradient-to-r from-green-500/20 to-teal-500/20 px-4 py-2 font-semibold text-amber-500">
           <ChartNoAxesCombined className="size-5" />
           <p className="text-sm">Scalable Security</p>
-        </div>
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl">Modelverse</h1>
-        <p className="max-w-xl text-xl text-gray-600">
+        </div> */}
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl text-white">Modelverse</h1>
+        <p className="max-w-xl text-xl text-gray-200">
           Empowering organizations to effectively manage Risks and Compliance
           through intelligent automation.
         </p>
       </div>
       <button
-        className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 sm:w-fit"
+        className="cursor-pointer rounded-full bg-white px-4 py-2 font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-white/50 sm:w-fit"
         onClick={() =>
-          (window.location.href =
-            'https://outlook.office.com/bookwithme/user/d81d78745f8047d1a0ec05a07d8d40d6@modelverse.online/meetingtype/HEkH_Hmwx06JvFc-tP4ZJw2?anonymous')
+        (window.location.href =
+          'https://outlook.office.com/bookwithme/user/d81d78745f8047d1a0ec05a07d8d40d6@modelverse.online/meetingtype/HEkH_Hmwx06JvFc-tP4ZJw2?anonymous')
         }
       >
-        Request a Demo
+        <div className="bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
+          Request a Demo
+        </div>
       </button>
       <div className="flex items-center-safe justify-center-safe gap-4 sm:justify-start">
         <div className="flex basis-1/5 flex-col items-center-safe justify-center-safe">
-          <h1 className="text-3xl whitespace-nowrap">6</h1>
-          <p className="text-sm text-wrap text-gray-600">Risk Domains</p>
+          <h1 className="text-3xl whitespace-nowrap text-white">6</h1>
+          <p className="text-sm text-wrap text-gray-200">Risk Domains</p>
         </div>
         <div className="h-12 w-px shrink-0 bg-gray-300" />
         <div className="flex basis-1/5 flex-col items-center-safe justify-center-safe">
-          <h1 className="text-3xl whitespace-nowrap">30+</h1>
-          <p className="text-sm text-wrap text-gray-600">Standards</p>
+          <h1 className="text-3xl whitespace-nowrap text-white">30+</h1>
+          <p className="text-sm text-wrap text-gray-200">Standards</p>
         </div>
         <div className="h-12 w-px shrink-0 bg-gray-300" />
         <div className="flex basis-1/5 flex-col items-center-safe justify-center-safe">
-          <h1 className="text-3xl whitespace-nowrap">7</h1>
-          <p className="text-sm text-wrap text-gray-600">Country Footprints</p>
+          <h1 className="text-3xl whitespace-nowrap text-white">7</h1>
+          <p className="text-sm text-wrap text-gray-200">Country Footprints</p>
         </div>
       </div>
     </div>
@@ -142,101 +144,108 @@ export function HomePage() {
       />
 
       {/* Features */}
-      <div className="flex flex-col gap-8 px-4 py-16 md:container md:mx-auto">
-        <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
-          <h1 className="text-4xl sm:text-5xl">
-            Everything You Need to Manage Risks and Compliance
-          </h1>
-          {/* <p className="text-xl text-gray-600">
+      <div className="bg-gray-200">
+        <div className="flex flex-col gap-8 px-4 py-8 md:container md:mx-auto">
+          <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
+            <h1 className="text-4xl sm:text-5xl">
+              Everything You Need to Manage Risks and Compliance
+            </h1>
+            {/* <p className="text-xl text-gray-700">
             A complete platform designed for small to medium-sized organizations
             to take control of their information security.
           </p> */}
+          </div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {features.map((feature, index) => (
+              <Card
+                key={index}
+                className="transition-all duration-300 hover:border-green-500 hover:shadow-lg bg-white"
+              >
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100">
+                  <feature.icon className="size-6 text-amber-500" />
+                </div>
+                <h3 className="mb-2 text-xl">{feature.title}</h3>
+                <p className="text-gray-700">{feature.description}</p>
+              </Card>
+            ))}
+          </div>
         </div>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature, index) => (
-            <Card
-              key={index}
-              className="transition-all duration-300 hover:border-green-500 hover:shadow-lg"
-            >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r from-green-500/10 to-teal-500/10">
-                <feature.icon className="size-6 text-amber-500" />
-              </div>
-              <h3 className="mb-2 text-xl">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
-            </Card>
-          ))}
-        </div>
-      </div>
 
-      {/* Benefirts */}
-      <div className="bg-gray-50">
-        <div className="flex flex-col gap-8 px-4 py-16 md:container md:mx-auto lg:flex-row">
-          <div className="flex items-center-safe justify-center-safe lg:basis-1/2">
-            {/* <img
+        {/* Benefirts */}
+        <div className="bg-white">
+          <div className="flex flex-col gap-8 px-4 py-16 md:container md:mx-auto lg:flex-row">
+            <div className="flex items-center-safe justify-center-safe lg:basis-1/2">
+              {/* <img
               src="/images/misc/organization-unsplash.jpg"
               alt=""
               className="aspect-video rounded-lg border object-cover shadow-lg"
             /> */}
-            <img
-              src="/images/team/Team minus Michel - web.jpg"
-              alt="Modelverse team of eight members, photographed together in their bright, modern office headquarters."
-              className="aspect-video rounded-lg border object-cover shadow-lg"
-            />
-          </div>
-          <div className="flex flex-col gap-8 lg:basis-1/2 lg:justify-center-safe">
-            <div className="flex max-w-4xl flex-col gap-4">
-              <h1 className="text-4xl sm:text-5xl">We Secure. You Succeed!</h1>
-              <p className="text-xl text-gray-600">
-                Whether you're a 10-person startup or a 10,000-employee
-                enterprise, Modelverse scales with your needs.
-              </p>
-            </div>
-            <div className="flex flex-col gap-4">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-2">
-                  <CheckCircle2 className="size-6 text-green-500" />
-                  <p>{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Testimonials */}
-      <div className="flex flex-col gap-8 px-4 py-16 md:container md:mx-auto">
-        <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
-          <h1 className="text-4xl sm:text-5xl">Hear From Our Customers</h1>
-          <p className="text-xl text-gray-600">
-            See how leaders are transforming their organizations with Modelverse
-          </p>
-        </div>
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2">
-          {testimonials.map((testimonial, index) => (
-            <div
-              className="flex flex-col rounded-lg border bg-white"
-              key={index}
-            >
-              <YoutubeEmbed
-                videoId={testimonial.video}
-                className="rounded-t-lg"
+              <img
+                src="/images/team/Team minus Michel - web.jpg"
+                alt="Modelverse team of eight members, photographed together in their bright, modern office headquarters."
+                className="aspect-video rounded-lg border object-cover shadow-lg"
               />
-              <div className="flex grow flex-col justify-between gap-4 p-4">
-                <p className="text-lg text-gray-600">"{testimonial.quote}"</p>
-                <div className="flex flex-col">
-                  <p>{testimonial.name}</p>
-                  <p className="text-gray-600">
-                    {testimonial.role}, {testimonial.company}
-                  </p>
-                </div>
+            </div>
+            <div className="flex flex-col gap-8 lg:basis-1/2 lg:justify-center-safe">
+              <div className="flex max-w-4xl flex-col gap-4">
+                <h1 className="text-4xl sm:text-5xl">We Secure, You Succeed!</h1>
+                <p className="text-xl text-gray-700">
+                  Whether you're a 10-person startup or a 10,000-employee
+                  enterprise, Modelverse scales with your needs.
+                </p>
+              </div>
+              <div className="flex flex-col gap-4">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-start gap-2">
+                    <CheckCircle2 className="size-6 text-green-500" />
+                    <p>{benefit}</p>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
+          </div>
+        </div>
+
+        {/* Testimonials */}
+        <div className="flex flex-col gap-8 px-4 pt-16 pb-8 md:container md:mx-auto">
+          <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
+            <h1 className="text-4xl sm:text-5xl">Hear From Our Customers</h1>
+            <p className="text-xl text-gray-700">
+              See how leaders are transforming their organizations with Modelverse
+            </p>
+          </div>
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2">
+            {testimonials.map((testimonial, index) => (
+              <div
+                className="flex flex-col rounded-lg border bg-white"
+                key={index}
+              >
+                <YoutubeEmbed
+                  videoId={testimonial.video}
+                  className="rounded-t-lg"
+                />
+                <div className="flex grow flex-col justify-between gap-4 p-4">
+                  <p className="text-lg text-gray-700">"{testimonial.quote}"</p>
+                  <div className="flex flex-col">
+                    <p>{testimonial.name}</p>
+                    <p className="text-gray-700">
+                      {testimonial.role}, {testimonial.company}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* CTA (Call to action) */}
-      <div className="flex flex-col gap-8 bg-gradient-to-r from-green-500 to-teal-500 px-4 py-16 text-white sm:items-center-safe">
+      <div className="bg-gradient-to-r from-green-600 to-teal-600 select-none">
+        <div className="py-16 bg-gradient-to-t from-transparent to-gray-200">
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-8 bg-gradient-to-r from-green-600 to-teal-600 px-4 py-8 text-white sm:items-center-safe">
         <div className="flex flex-col gap-4 text-center md:container md:mx-auto">
           <h1 className="text-4xl sm:text-5xl">Ready to secure your future?</h1>
           <p className="text-xl">
@@ -247,11 +256,11 @@ export function HomePage() {
         <button
           className="cursor-pointer rounded-full bg-white px-4 py-2 font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-white/50 sm:w-fit"
           onClick={() =>
-            (window.location.href =
-              'https://outlook.office.com/bookwithme/user/d81d78745f8047d1a0ec05a07d8d40d6@modelverse.online/meetingtype/HEkH_Hmwx06JvFc-tP4ZJw2?anonymous')
+          (window.location.href =
+            'https://outlook.office.com/bookwithme/user/d81d78745f8047d1a0ec05a07d8d40d6@modelverse.online/meetingtype/HEkH_Hmwx06JvFc-tP4ZJw2?anonymous')
           }
         >
-          <div className="bg-gradient-to-r from-green-500 to-teal-500 bg-clip-text text-transparent">
+          <div className="bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
             Request a Demo
           </div>
         </button>
