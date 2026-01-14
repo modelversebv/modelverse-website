@@ -4,13 +4,13 @@ import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
 import {
   Brain,
+  ChartNoAxesCombined,
   Check,
   CheckCircle2,
   Compass,
   Lock,
   Rocket,
   Search,
-  Shield,
 } from 'lucide-react'
 
 const HomeHero = (
@@ -18,8 +18,8 @@ const HomeHero = (
     <div className="flex flex-col gap-8 lg:basis-1/2 lg:justify-center-safe">
       <div className="flex flex-col gap-4">
         <div className="flex w-fit flex-row items-center-safe justify-center-safe gap-2 rounded-full bg-gradient-to-r from-green-500/20 to-teal-500/20 px-4 py-2 font-semibold text-amber-500">
-          <Shield className="size-4" />
-          <p className="text-sm">Enterprise-Grade Security</p>
+          <ChartNoAxesCombined className="size-5" />
+          <p className="text-sm">Scalable Security</p>
         </div>
         <h1 className="text-5xl sm:text-6xl lg:text-7xl">Modelverse</h1>
         <p className="max-w-xl text-xl text-gray-600">
@@ -57,7 +57,7 @@ const HomeHero = (
     <div className="relative flex items-center-safe justify-center-safe lg:basis-1/2">
       <img
         src="/images/misc/modelverse_platform.png"
-        alt=""
+        alt="Modelverse Information Risk dashboard overview illustrating the platform's GRC workflow, connecting Risks, Capabilities, and Applications to modules for Compliance, Privacy, Auditing, and Assurance."
         className="aspect-video rounded-lg border shadow-lg"
       />
     </div>
@@ -134,6 +134,13 @@ export function HomePage() {
 
   return (
     <Layout home={true} hero={HomeHero}>
+      {/* Metadata */}
+      <title>Modelverse | Risk & Compliance SaaS Platform</title>
+      <meta
+        name="description"
+        content="Modelverse automates GRC and risk scoring, providing real-time compliance intelligence for leading enterprises in various industries."
+      />
+
       {/* Features */}
       <div className="flex flex-col gap-8 px-4 py-16 md:container md:mx-auto">
         <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
@@ -171,8 +178,8 @@ export function HomePage() {
               className="aspect-video rounded-lg border object-cover shadow-lg"
             /> */}
             <img
-              src="/images/new_pfps/Team - web.jpg"
-              alt=""
+              src="/images/team/Team minus Michel - web.jpg"
+              alt="Modelverse team of eight members, photographed together in their bright, modern office headquarters."
               className="aspect-video rounded-lg border object-cover shadow-lg"
             />
           </div>
@@ -192,16 +199,6 @@ export function HomePage() {
                 </div>
               ))}
             </div>
-            {/* <div className="flex flex-col gap-2">
-              <p className="text-lg text-gray-600 italic">
-                "Modelverse is truly a gamechanger. It is a robust platform
-                supporting my clients."
-              </p>
-              <div className="flex flex-col">
-                <p>Chris Hazewinkel</p>
-                <p className="text-gray-600">CIO, NewForrest BV</p>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>

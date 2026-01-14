@@ -4,19 +4,14 @@ on:
   push:
     branches:
       - main
-    paths-ignore:
-      # 1. Documentation
-      - '**.md'
-
-      # 2. Testing & CI/CD
-      - 'tests/**'
-      - 'playwright.config.ts'
-      - '.github/'
-
-      # 3. Editor and General Configuration
-      - '.vscode/**'
-      - '.editorconfig'
-      - '.gitignore'
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'sitemap-generator.js'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'vite.config.*'
+      - 'tsconfig*.json'
 
 jobs:
   build-and-deploy:
@@ -28,7 +23,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: 22.x
+          node-version: 24.x
           cache: 'npm'
 
       - name: Install dependencies
@@ -36,6 +31,9 @@ jobs:
 
       - name: Set Build ENV variable
         run: echo "VITE_BUILD_SHA=$(git rev-parse --short=7 HEAD)" >> $GITHUB_ENV
+
+      - name: Set GA4 Measurement ID
+        run: echo "VITE_GA4_MEASUREMENT_ID=${{ secrets.GA4_MEASUREMENT_ID }}" >> $GITHUB_ENV
 
       - name: Build
         run: npm run build

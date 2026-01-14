@@ -1,0 +1,85 @@
+export const metadata = {
+  featured: false,
+  title: 'Why DNSSEC Matters',
+  subtitle: 'How to Make It Happen for Exchange?',
+  summary:
+    'DNSSEC is essential for securing DNS, the backbone of internet communication. Originally vulnerable to spoofing and phishing, DNS now relies on DNSSEC’s cryptographic signatures to ensure authenticity and integrity of data. By creating a chain of trust from root to domain, DNSSEC prevents tampering and redirects, safeguarding websites and email systems. While not encrypting data, it’s a cornerstone for a safer, trustworthy internet.',
+  image:
+    'https://images.unsplash.com/photo-1555680510-34daedadbdb1?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  date: '04/12/2025',
+  author: 'Mariona Fortuny Jane',
+  portrait: '/images/blog_authors/Mariona - web.jpg'
+}
+
+The Domain Name System (DNS) is one of core services of the Internet, and it is a name service that transforms domain names into machine-readable IP addresses, and vice versa. 
+
+It was originally designed without strong security, so it was vulnerable to attacks like spoofing or man-in-the-middle attacks where an attacker can redirect users to fraudulent websites or intercept email, and phishing attacks through DNS cache poisoning to steal sensitive data, among others.  
+
+## The Set of Protocols DNSSEC Protects DNS from Cyberattacks 
+
+To face this insecurity, a set of security extensions was created: The DNSSEC (Domain Name System Security Extensions). This system provides DNS data authentication 
+
+through a system of digital signatures, where the data itself gets cryptographically signed by its owner. The mechanisms double checks and ensures that users receive the original authentic information, and thus ultimately prevents users from being sent to the wrong website. Plus, DNSSEC also protects other types of DNS data, including information (TXT) and mail (MX) records. It is increasingly used to improve trust in Internet communication using additional cybersecurity mechanisms.  
+
+## Why is DNSSEC Important?
+
+DNSSEC is vital because it protects the integrity and guarantees authenticity of DNS data as defined and configured by the owner. Without it, attackers could manipulate DNS records (such MX records for email, A and AAAA records for IP addresses for websites, and TXT records). The consequences of misusing DNS are: 
+
+- Redirect traffic to phishing sites to steal sensitive data. 
+- Intercept email by spoofing mail server addresses, compromising confidentiality. 
+
+Misuse often goes unnoticed by the end user as DNS is used by browsers and other applications in time frames of milliseconds. 
+
+By providing a verifiable digital signature to DNS requestors, and authenticating it, DNSSEC assures both computers and applications that DNS information received is exactly what the domain owner published and has not been tampered with. 
+
+However, DNSSEC **does not provide confidentiality**. Unlike SSL, DNSSEC responses are authenticated but not encrypted. It also does not protect against attacks like DDoS or stop users from making false assumptions about domain names or typing similar but fraudulent domain names. 
+
+## How does DNSSEC work 
+
+DNSSEC utilizes public-key cryptography to establish a chain of trust and thus verify the authenticity of the DNS data. The process involves several key elements: 
+
+### 1. Zone Signing 
+
+Each DNS zone has a key pair: a **private ZSK (Zone Signing Key)** and its corresponding **public ZSK**. The domain owner's DNS server uses a private key (ZSK) to digitally sign all DNS data, called resource record sets (RRsets), in the zone. This key is secret. These signatures are stored as RRSIG records. 
+
+### 2. Key Publication  
+
+The corresponding public ZSK is published in the DNS zone as a DNSKEY record. This key is public, so resolvers can access and use it to prove data authenticity. 
+
+### 3. Trust Anchors  
+
+To ensure that this public key is authentic, a separate key, the Key Signing Key (KSK), signs the DNSKEY records. A hash of the KSK, called a Delegation Signer (DS) record, is requested to be uploaded to the parent zone (which is the immediately superior domain, for example, for our modelverse.online domain, the parent zone is .online) and thus it could be said that the public key gets signed by the parent’s zone private key. The key for each zone is validated by its parent zone, and so on until reaching the root, which has no parent. The trust anchor on the root zone is handled by a highly controlled and audited process called the [Root Signing Ceremony](https://www.cloudflare.com/en-gb/learning/dns/dnssec/root-signing-ceremony/). 
+
+### 4. Validation  
+
+DNSSEC is built on a chain of trust, and this chain always begins at the root zone, and its public key serves as the starting point for verifying all signed DNS data. The root zone’s public key is pre-installed in all DNS resolvers and operating systems, distributed securely by software developers. Because this key is already trusted, it acts as the **trust anchor** for the entire DNSSEC system. 
+
+From this root key, the resolver can validate keys in higher zones like .online or .com, which have been signed with the root's private key, and then keys in lower zones like modelverse.online, and so on. This creates a chain of trust where each key verifies the next. Thanks to this chain, the resolver can verify the authenticity of any DNSSEC data if all levels are signed.  
+
+When a validating recursive DNS server receives a query for a signed zone, it retrieves the Delegation Signer (DS) record from the parent zone, the DNSKEY from the child zone and the RRSIG signature attached to the data.  The DS links a child zone with its parent zone and plays a crucial role in maintaining the chain of trust. Once the resolver obtains the DS from the parent, the DNSKEY from the child and the RRSIG signature attached to the returned data, it can cryptographically verify that the information is legitimate and has not been modified. This creates the chain of trust continuing all the way up to the root zone.  
+
+### 5. Secure Resolution 
+
+If validation is successful, the user is directed to the correct IP address. If it fails, the server rejects the response, protecting the user from potential attacks. The protection the DNSSEC provides is twofold. First, it ensures the data truly comes from the correct domain, and second, it guarantees the data has not been altered in transit and matches the original signed information. Together, these security features prevent forged or manipulated DNS data, block cache poisoning attacks and create a trustworthy, verifiable DNS layer across the internet. 
+
+## Testing your DNSSEC Implementation 
+
+You can easily check the DNSSEC status of your domain using online tools. 
+
+1. [Internet.nl](http://internet.nl/): Enter your domain name under the "Test je website" or "Test je e-mail" section to receive a comprehensive report, including a specific check for DNSSEC implementation. 
+
+2. [Zonemaster](http://zonemaster.net/): This tool allows you to check your domain's configuration from the top to the bottom of the DNS tree, performing numerous tests to ensure everything is running smoothly.  
+
+3. [Verisign DNSSEC Debugger](https://dnssec-debugger.verisignlabs.com/): This tool provides a visual chain of trust and detailed results to help identify any configuration issues. 
+
+Our experience is that although DNSSEC is implemented by the owner, name servers in chain of DNSSEC trust relations may have issues with their records due to a variety of causes especially the record sets for mail. 
+
+Although DNSSEC is already widely deployed, it still needs broader adoption to fully realize its security benefits across the global DNS infrastructure. In fact, as deployment continues to grow, DNSSEC will also become a critical foundation for new protocols that require secure data storage within DNS. These advancements not only strengthen trust but also open pathways for enhancing privacy in DNS queries. 
+
+Ultimately, DNSSEC is evolving into more than a protective measure it is becoming a cornerstone for a more secure and trustworthy Internet ecosystem. 
+
+## Need Help on your DNSSEC Journey? How to become DNSSEC-Ready with Help from Modelverse
+
+If this blogpost has made you realise that your organization is not yet taking advantage of the protection offered by DNSSEC than don't worry. This is where we offer you help. Send us an email to [support@modelverse.online](mailto:support@modelverse.online) with the subject line of “Start my DNSSEC journey” and we will freely send you a small practical guide to set-up DNSSEC for Exchange/Office365.
+
+It's time to make the leap to a more secure DNS!

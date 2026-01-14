@@ -8,29 +8,18 @@ type FooterProps = {
 }
 
 export function Footer({ onManagePrivacy }: FooterProps) {
+  const currentDate = new Date()
+
   const footerLinks = {
-    // Product: [
-    //   { name: 'Features', href: '#' },
-    //   { name: 'Pricing', href: '#' },
-    //   { name: 'Security', href: '#' },
-    //   { name: 'Roadmap', href: '#' },
-    // ],
     Company: [
       { name: 'About', href: '/about' },
       { name: 'Blog', href: '/news' },
-      // { name: 'Careers', href: '#' },
       { name: 'Contact', href: '/contact' },
     ],
-    // Resources: [
-    //   { name: 'Documentation', href: '#' },
-    //   { name: 'Help Center', href: '#' },
-    //   { name: 'API Reference', href: '#' },
-    //   { name: 'Compliance', href: '#' },
-    // ],
     Legal: [
-      { name: 'Privacy Policy', href: '/privacy_policy' },
-      { name: 'Terms of Service', href: '/terms_of_service' },
-      { name: 'Cookie Policy', href: '/cookie_policy' },
+      { name: 'Privacy Policy', href: '/legal/privacy_policy' },
+      { name: 'Terms of Service', href: '/legal/terms_of_service' },
+      { name: 'Cookie Policy', href: '/legal/cookie_policy' },
       // { name: 'GDPR', href: '' },
     ],
   }
@@ -44,7 +33,7 @@ export function Footer({ onManagePrivacy }: FooterProps) {
               <Shield className="size-8 text-amber-500" />
               <span>Modelverse B.V.</span>
             </div>
-
+            <p className="text-amber-500 italic">We secure. You Succeed!</p>
             <p className="text-sm text-gray-400">
               Empowering organizations to manage risks and compliance with
               confidence.
@@ -87,9 +76,26 @@ export function Footer({ onManagePrivacy }: FooterProps) {
           </div>
         </div>
         <div className="h-px w-full shrink-0 bg-gray-800" />
+        <div className="flex flex-col gap-4">
+          <h4 className="text-sm text-gray-400">Security & Compliance</h4>
+          <div className="flex flex-wrap gap-2">
+            <img
+              src="/images/badges/email-test-badge.png"
+              alt="Email Test: 100%"
+              className="w-32"
+            />
+          </div>
+        </div>
+        <div className="h-px w-full shrink-0 bg-gray-800" />
         <div className="flex flex-col justify-between gap-4 text-sm text-gray-400 md:flex-row">
           <p>
-            © 2025. Modelverse B.V. All rights reserved. (<BuildNumber />)
+            © {currentDate.getFullYear()}. Modelverse B.V. All rights reserved.
+            <br />
+            CoC - 89447476
+            <br />
+            VAT - NL864985800B01
+            <br />
+            build - (<BuildNumber />)
           </p>
           <p
             className="cursor-pointer hover:text-white"

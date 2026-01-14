@@ -1,39 +1,103 @@
-name: 'Feature request'
-description: Propose a new feature or enhancement
-labels: ['enhancement']
-title: '[Feature]: '
+name: Feature request
+description: Propose a new capability or improvement for the website/platform.
+title: '[Feature] <area-or-component>: <summary>'
+type: feature
+# labels: ["enhancement", "needs-triage"]
+# projects: ["<org-or-user>/<project-number>"]
+
 body:
-  - type: textarea
-    id: summary
+  - type: markdown
     attributes:
-      label: Summary
-      description: What problem does this feature solve?
+      value: |
+        Thanks for proposing a feature! Help us understand the value, scope, and acceptance criteria.
+
+  - type: input
+    id: area
+    attributes:
+      label: Area / component
+      placeholder: 'e.g., Auth, Dashboard, Navigation, CMS'
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / pain
+      description: What user problem or gap does this feature address?
+      placeholder: 'Describe the problem and who is affected.'
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What do you suggest we build? Include scope and approach.
+      placeholder: 'Explain the functional behavior, constraints, and any design notes.'
     validations:
       required: true
 
   - type: textarea
-    id: acceptance
+    id: acceptance_criteria
     attributes:
-      label: Acceptance Criteria
-      description: Define what "done" looks like.
+      label: Acceptance criteria (functional)
+      description: Use bullet points or Gherkin (Given/When/Then).
       placeholder: |
-        - [ ] Criteria 1
-        - [ ] Criteria 2
-        - [ ] Criteria 3
-    validations:
-      required: true
+        - [ ] User can...
+        - [ ] System stores...
+        - [ ] Error state...
 
   - type: textarea
-    id: approach
+    id: non_functional
     attributes:
-      label: Proposed Approach (optional)
-    validations:
-      required: false
+      label: Non-functional requirements
+      description: Performance, security, accessibility, SEO, i18n, etc.
+      placeholder: '- Accessibility: WCAG 2.1 AA...'
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      placeholder: 'List other options and why this approach was chosen.'
+
+  - type: textarea
+    id: mockups
+    attributes:
+      label: Designs / mockups / references
+      description: Link Figma, screenshots, or docs.
+      render: markdown
 
   - type: dropdown
-    id: priority
+    id: impact
     attributes:
-      label: Priority
-      options: ['P0', 'P1', 'P2', 'P3']
-    validations:
-      required: true
+      label: Business impact
+      options:
+        - Critical — directly tied to revenue/compliance
+        - High — major UX/engagement improvement
+        - Medium — incremental value
+        - Low — minor enhancement
+      default: 2
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Link related issues, services, or external blockers.
+      placeholder: '- Depends on: #123, API v2, OAuth app config'
+
+  - type: checkboxes
+    id: dor
+    attributes:
+      label: Definition of Ready
+      description: Verify the item is ready to enter a sprint.
+      options:
+        - label: Clear problem statement
+        - label: Acceptance criteria defined
+        - label: Designs provided (if needed)
+        - label: No external blockers
+
+  - type: checkboxes
+    id: dod
+    attributes:
+      label: Definition of Done
+      options:
+        - label: Implementation complete
+        - label: Tests added/updated
+        # - label: Accessibility checks passed
+        - label: Docs updated (user/dev)

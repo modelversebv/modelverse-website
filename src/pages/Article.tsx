@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 
 import { MDXRenderer } from '@/components/app/mdx/mdxRenderer'
 import { Layout } from '@/components/layout'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -13,7 +14,8 @@ import {
 } from '@/components/ui/breadcrumb'
 import { ArrowLeft, Calendar, User } from 'lucide-react'
 
-import { type BlogPost, type MetaData, markdownFiles } from './News'
+// import { type BlogPost, type MetaData, markdownFiles } from './News'
+import { type MetaData } from './News'
 
 export function ArticlePage() {
   const navigate = useNavigate()
@@ -25,10 +27,12 @@ export function ArticlePage() {
   const [metadata, setMetadata] = useState<MetaData>({
     featured: false,
     title: '',
+    subtitle: '',
     summary: '',
     image: '',
     date: '',
     author: '',
+    portrait: '',
   })
   const [error, setError] = useState(false)
 
@@ -37,48 +41,64 @@ export function ArticlePage() {
 
     import(`@/articles/${slug}.mdx`)
       .then((mod: any) => {
-        console.log('success')
+        // console.log('success')
         setMDXComponent(() => mod.default)
         setMetadata({
           featured: mod.metadata.featured,
           title: mod.metadata.title,
+          subtitle: mod.metadata.subtitle,
           summary: mod.metadata.summary,
           image: mod.metadata.image,
           date: mod.metadata.date,
           author: mod.metadata.author,
+          portrait: mod.metadata.portrait,
         })
       })
       .catch(() => {
-        console.log('error')
+        // console.log('error')
         setError(true)
       })
   }, [slug])
 
-  // Other Articles
-  const blogPosts: BlogPost[] = []
+  // // Other Articles
+  // const blogPosts: BlogPost[] = []
 
-  Object.entries(markdownFiles).map(([path, file]) => {
-    const mod = file as any
+  // Object.entries(markdownFiles).map(([path, file]) => {
+  //   const mod = file as any
 
-    const metadata: MetaData = {
-      featured: mod.metadata.featured,
-      title: mod.metadata.title,
-      summary: mod.metadata.summary,
-      image: mod.metadata.image,
-      date: mod.metadata.date,
-      author: mod.metadata.author,
-    }
+  //   const metadata: MetaData = {
+  //     featured: mod.metadata.featured,
+  //     title: mod.metadata.title,
+  //     summary: mod.metadata.summary,
+  //     image: mod.metadata.image,
+  //     date: mod.metadata.date,
+  //     author: mod.metadata.author,
+  //   }
 
-    const postId = path.split('/').pop()?.replace('.mdx', '') || path
+  //   const postId = path.split('/').pop()?.replace('.mdx', '') || path
 
-    blogPosts.push({
-      postId,
-      metadata,
-    })
-  })
+  //   blogPosts.push({
+  //     postId,
+  //     metadata,
+  //   })
+  // })
+
+  const pageTitle = metadata.title
+    ? `${metadata.title} | Modelverse Blog`
+    : 'Modelverse Blog Loading...'
+  const pageDescription = metadata.summary || 'Loading article summary...'
 
   return (
     <Layout>
+      {/* Metadata */}
+      <title>{pageTitle}</title>
+      <meta name="description" content={pageDescription} />
+      <link
+        rel="canonical"
+        href={`https://modelverse.online/article/${slug}`}
+      />
+
+      {/* Content */}
       <div className="shrink-0 bg-gray-50">
         <div className="px-4 py-4 md:container md:mx-auto md:px-8">
           <div className="mx-auto max-w-4xl">
@@ -103,7 +123,53 @@ export function ArticlePage() {
         </div>
       </div>
 
-      <div className="mx-auto grow px-4 py-16 md:container md:mx-auto">
+      {!error && (
+        <div className="relative h-[500px] w-full overflow-hidden bg-black">
+          <img src={metadata.image} alt="" className="size-full object-cover" />
+          <div className="absolute inset-0 size-full bg-gradient-to-t from-gray-900 via-gray-900/50 to-gray-900">
+            <div className="flex size-full items-end-safe justify-center-safe px-4 py-16 md:container md:mx-auto">
+              <div className="mx-auto flex w-full max-w-4xl flex-col gap-4 md:gap-8">
+                <h1 className="text-4xl text-white drop-shadow-lg sm:text-5xl">
+                  {metadata.title}
+                </h1>
+                {metadata.subtitle != '' && (
+                  <h2 className="sm:text:xxl text-2xl text-white/95 drop-shadow-lg">
+                    {metadata.subtitle}
+                  </h2>
+                )}
+                <div className="flex flex-row flex-wrap items-center-safe gap-4 text-white/90">
+                  <div className="flex shrink-0 flex-row items-center-safe gap-2">
+                    <Avatar className="size-8 self-center">
+                      <AvatarImage
+                        src={metadata.portrait}
+                        className="object-cover object-center"
+                      />
+                      <AvatarFallback className="bg-transparent">
+                        <User className="size-4 shrink-0" />
+                      </AvatarFallback>
+                    </Avatar>
+                    {metadata.author}
+                  </div>
+                  <div className="flex shrink-0 flex-row items-center-safe gap-2">
+                    <Avatar>
+                      <AvatarImage></AvatarImage>
+                      <AvatarFallback className="bg-transparent">
+                        <Calendar className="size-4 shrink-0" />
+                      </AvatarFallback>
+                    </Avatar>
+                    {metadata.date}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* <div className="absolute bottom-0 w-full md:container md:mx-auto">
+          
+        </div> */}
+        </div>
+      )}
+
+      <div className="mx-auto grow px-4 pt-8 pb-16 md:container md:mx-auto">
         <div className="mx-auto flex h-full max-w-4xl flex-col gap-4 md:gap-8">
           {error ? (
             <div className="mx-auto flex h-full max-w-4xl flex-col items-center-safe justify-center-safe gap-4 px-4 py-16 text-center">
@@ -129,17 +195,6 @@ export function ArticlePage() {
                 Back to News
               </button>
               <article className="prose prose-img:rounded-lg prose-img:mx-auto prose-img:max-w-2xl prose-img:w-full prose-img:object-cover max-w-full">
-                <h1>{metadata.title}</h1>
-                <div className="not-prose flex flex-row flex-wrap items-center-safe gap-4 text-gray-500">
-                  <div className="flex shrink-0 flex-row items-center-safe gap-2">
-                    <User className="size-4 shrink-0" />
-                    {metadata.author}
-                  </div>
-                  <div className="flex shrink-0 flex-row items-center-safe gap-2">
-                    <Calendar className="size-4 shrink-0" />
-                    {metadata.date}
-                  </div>
-                </div>
                 {MDXComponent && <MDXRenderer mdxContent={MDXComponent} />}
               </article>
             </>

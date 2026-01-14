@@ -1,0 +1,34 @@
+export const metadata = {
+  featured: true,
+  title: 'The Millennium Bug',
+  subtitle: 'Looking Back at Y2K after 26 Years',
+  summary:
+    'Happy new year from all of us at Modelverse! For this week’s special edition blogpost we’ll be looking back over 26 years in the past, to the turn of the millennium, and re-discover what the Y2K problem was all about. Was it an overexaggerated scare, or a major disaster averted through an intensive international effort? What lessons can we learn from it after all this time? And what are the odds that something similar will happen again?',
+  image:
+    'https://images.unsplash.com/photo-1578307898411-f6930dadea39?q=80&w=1019&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  date: '05/01/2026',
+  author: 'Sjors de Natris',
+  portrait: '/images/blog_authors/Sjors - web.jpg',
+}
+
+## Let’s Refresh: What Was Y2K All About?
+
+Many of our readers probably remember the turn of the millennium, where they were, who they celebrated it with, and the associated excitement of entering a new era. But that’s not true for everyone. In fact, about a third of our current employees weren’t even born yet (myself included). And for some, the night wasn’t all champagne and fireworks—especially if you were working in cybersecurity.
+
+The reason? A very specific coding problem had been quietly building up for decades, and was allegedly about to cause mayhem. It all started back when digital storage was expensive and limited, urging programmers to save space wherever possible. For dates, the **DD/MM/YY** format was far more efficient than **DD/MM/YYYY**, and since applications were developed in the 1900s, for the 1900s, they simply prefixed years with “19" and though little more of it. It was a quick fix for temporary code—never meant to last. But as the industry and every developer in it has since learned, _nothing is more permanent than a temporary solution_.
+
+As the millennium approached, the risks of this shortcut became clear. A simple website showing “1900” instead of “2000” might be harmless, but for banks, hospitals, industrial control systems and OT systems, incorrect dates could break automated processes—potentially endangering lives. The possibility of widespread failures sparked global panic and massive remediation efforts.
+
+## An Overblown Threat?
+
+Though fixing it sounds simple enough, right? Just swap “19” for “20” or switch to a four-digit year format. The problem was that the scale was staggering—and the countdown clock was relentless. People caught on only a handful of years before, and societies at the time were already deeply dependent on real-time digital systems. How many of those could afford to fail?
+
+Y2K was as much a social phenomenon as a technical challenge. Media outlets hyped it as a **TEOTWAWKI** (the-end-of-the-world-as-we-know-it) scenario, leading to panic buying reminiscent of the recent pandemic years. To be fair, without remediation, the impact could have been catastrophic. But with hindsight, Y2K looks more like a public scare. The actual fallout? Minor glitches—like court summons dated for the early 1900s, or a newborn in South Korea registered as already having reached the ripe old age of 100 years. There were no fatalities, and the world didn’t end.
+
+What’s less known is why: a global investment of **$500 billion USD** (estimates vary) from both public and private sectors. In today’s money, that’s roughly **€800 billion Euro**—or about the GDP of Switzerland. Y2K was averted thanks to the efforts of countless professionals around the world, but the story doesn’t end there.
+
+## Y2K38: The Next Countdown
+
+Beyond date formats like DD/MM/YY (which would require fixing every century) or DD/MM/YYYY (which will be safe for another 7974 years), some other systems use **Unix time**—a signed 32-bit integer counting seconds since **01-01-1970, 00:00:00 UTC**. But 32 bits only allow so many values: from −(2³¹) to 2³¹−1. That means these clocks will overflow on **January 19th, 2038, 03:14:07 UTC**, and the next second will read **December 13th, 1901, 20:45:52 UTC**. In short, the doomsday clock is ticking again, and we only have 12 years to prevent another TEOTWAWKI scenario. The fix will be massive—possibly bigger than Y2K—but at least we’ve done it once before, and we can start earlier.
+
+So why not start today? Check out [The Epochalypse Project](https://epochalypse-project.org/), talk to your developers about adopting more robust time formats, audit your systems, and start future-proofing them. Or simply bring it up the next time you’re at the coffee machine, as long as you make sure to tell your colleagues where you got the advice from.

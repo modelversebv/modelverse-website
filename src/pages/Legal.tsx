@@ -101,8 +101,22 @@ export function LegalPage() {
     return () => clearTimeout(timeout)
   }, [MDXComponent])
 
+  const pageTitle = metadata.title
+    ? `${metadata.title}`
+    : 'Modelverse Legal Page Loading...'
+
+  const pageDescription = metadata.title
+    ? `The official ${metadata.title} document for the Modelverse GRC and Risk Compliance platform.`
+    : 'Loading essential legal and regulatory documentation...'
+
   return (
     <Layout ref={layoutRef}>
+      {/* Metadata */}
+      <title>{pageTitle}</title>
+      <meta name="description" content={pageDescription} />
+      <link rel="canonical" href={`https://modelverse.online/legal/${slug}`} />
+
+      {/* Content */}
       <div className="bg-gray-50">
         <div className="p-4 md:container md:mx-auto">
           <div className="mx-auto max-w-6xl">
