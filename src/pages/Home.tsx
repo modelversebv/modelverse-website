@@ -28,15 +28,13 @@ const HomeHero = (
         </p>
       </div>
       <button
-        className="cursor-pointer rounded-full bg-white px-4 py-2 font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-white/50 sm:w-fit"
+        className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 text-white font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 lg:shadow-none sm:w-fit"
         onClick={() =>
         (window.location.href =
           'https://outlook.office.com/bookwithme/user/d81d78745f8047d1a0ec05a07d8d40d6@modelverse.online/meetingtype/HEkH_Hmwx06JvFc-tP4ZJw2?anonymous')
         }
       >
-        <div className="bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
-          Request a Demo
-        </div>
+        Request a Demo 
       </button>
       <div className="flex items-center-safe justify-center-safe gap-4 sm:justify-start">
         <div className="flex basis-1/5 flex-col items-center-safe justify-center-safe">
@@ -56,13 +54,13 @@ const HomeHero = (
       </div>
     </div>
 
-    <div className="relative flex items-center-safe justify-center-safe lg:basis-1/2">
+    {/* <div className="relative flex items-center-safe justify-center-safe lg:basis-1/2">
       <img
         src="/images/misc/modelverse_platform.png"
         alt="Modelverse Information Risk dashboard overview illustrating the platform's GRC workflow, connecting Risks, Capabilities, and Applications to modules for Compliance, Privacy, Auditing, and Assurance."
         className="aspect-video rounded-lg border shadow-lg"
       />
-    </div>
+    </div> */}
   </Hero>
 )
 
@@ -143,9 +141,10 @@ export function HomePage() {
         content="Modelverse automates GRC and risk scoring, providing real-time compliance intelligence for leading enterprises in various industries."
       />
 
-      {/* Features */}
-      <div className="bg-gray-200">
+      <div className="bg-gray-50">
         <div className="flex flex-col gap-8 px-4 py-8 md:container md:mx-auto">
+
+          {/* Features */}
           <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
             <h1 className="text-4xl sm:text-5xl">
               Everything You Need to Manage Risks and Compliance
@@ -240,12 +239,7 @@ export function HomePage() {
       </div>
 
       {/* CTA (Call to action) */}
-      <div className="bg-gradient-to-r from-green-600 to-teal-600 select-none">
-        <div className="py-16 bg-gradient-to-t from-transparent to-gray-200">
-        </div>
-      </div>
-
-      <div className="flex flex-col gap-8 bg-gradient-to-r from-green-600 to-teal-600 px-4 py-8 text-white sm:items-center-safe">
+      <div className="flex flex-col gap-8 bg-gradient-to-r from-green-500 to-teal-500 px-4 py-8 text-white sm:items-center-safe">
         <div className="flex flex-col gap-4 text-center md:container md:mx-auto">
           <h1 className="text-4xl sm:text-5xl">Ready to secure your future?</h1>
           <p className="text-xl">
