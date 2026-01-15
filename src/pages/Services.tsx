@@ -34,9 +34,9 @@ export function ServicesPage() {
       title: 'Strategy',
       description: 'Build a solid foundation for your security program',
       points: [
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
+        'Know what assets to protect',
+        'Identify your current security posture',
+        'Define security objectives and policies',
       ],
     },
     {
@@ -45,9 +45,9 @@ export function ServicesPage() {
       title: 'Certification',
       description: 'Achieve and maintain compliance certifications',
       points: [
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
+        'Manage compliance requirements',
+        'Track certification progress',
+        'Maintain audit readiness',
       ],
     },
     {
@@ -56,9 +56,9 @@ export function ServicesPage() {
       title: 'Governance',
       description: 'Establish clear accountability and risk ownership',
       points: [
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
+        'Define roles and responsibilities',
+        'Create governance frameworks',
+        'Align security with business objectives',
       ],
     },
     {
@@ -67,9 +67,9 @@ export function ServicesPage() {
       title: 'Programme',
       description: 'Drive organization-wide security adoption',
       points: [
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
+        'Entrench executive support',
+        'Orchestrate change management',
+        'Establish security culture',
       ],
     },
     {
@@ -78,9 +78,9 @@ export function ServicesPage() {
       title: 'Operations',
       description: 'Prevent and detect security incidents proactively',
       points: [
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
+        'Monitor threats in real-time',
+        'Detect anomalies and potential breaches',
+        'Respond to incidents quickly and effectively',
       ],
     },
     {
@@ -89,9 +89,9 @@ export function ServicesPage() {
       title: 'Resilience',
       description: 'Prepare for and respond to security incidents',
       points: [
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
+        'Prepare for potential incidents',
+        'Define incident response procedures',
+        'Maintain business continuity',
       ],
     },
   ]
@@ -162,10 +162,10 @@ export function ServicesPage() {
                     </div>
                   </div>
                   <p className="text-gray-600">{value.description}</p>
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col  gap-2">
                     {value.points.map((point) => (
-                      <div className="flew-row flex gap-2">
-                        <Check className="size-8 text-green-500" />
+                      <div className="flex flex-row gap-2">
+                        <Check className="min-w-4 max-w-4 text-green-500" /> {/* I know I have max and min here but trust me it's needed */}
                         <p className="text-gray-700">{point}</p>
                       </div>
                     ))}
