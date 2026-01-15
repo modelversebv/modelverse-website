@@ -183,7 +183,7 @@ export function NewsPage() {
                         <h1 className="text-xl">{post.metadata.title}</h1>
                         <p className="text-gray-600">{post.metadata.summary}</p>
                         <div className="flex grow flex-col justify-end-safe gap-4">
-                          <div className="mt-auto flex flex-row flex-wrap items-center-safe gap-4 text-gray-500">
+                          <div className="mt-auto flex flex-col gap-4 text-gray-500">
                             <div className="flex shrink-0 flex-row items-center-safe gap-2">
                               <Avatar className="size-8 self-center">
                                 <AvatarImage
