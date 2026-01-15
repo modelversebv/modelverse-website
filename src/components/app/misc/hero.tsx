@@ -16,8 +16,6 @@ export function Hero({ className, children }: HeroProps) {
         >
           {children}
         </div>
-      <div className="bg-gradient-to-b from-transparent to-gray-50 h-32">
-      </div>
       </div>
     </div>
   )
