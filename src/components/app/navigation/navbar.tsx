@@ -1,8 +1,17 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import logo from '@/assets/logo.png'
-import { Folder, Home, Info, Mail, Menu, Newspaper } from 'lucide-react'
+import {
+  ChevronDown,
+  Folder,
+  Home,
+  Info,
+  Layers,
+  Mail,
+  Menu,
+  Newspaper,
+} from 'lucide-react'
 
 import { NavLink } from './navlink'
 
@@ -10,18 +19,26 @@ type NavBarProps = {
   home: boolean
   news: boolean
   cases: boolean
+  services: boolean
   about: boolean
   contact: boolean
 }
 
-export function NavBar({ home, news, cases, about, contact }: NavBarProps) {
+export function NavBar({
+  home,
+  news,
+  cases,
+  services,
+  about,
+  contact,
+}: NavBarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const navigate = useNavigate()
 
   return (
     <div className="fixed top-0 z-50 w-full shrink-0 border-b md:bg-white">
       <div
-        className={`flex flex-col overflow-hidden md:container md:mx-auto md:h-fit md:flex-row md:items-center-safe md:justify-between ${mobileMenuOpen ? 'h-screen' : 'h-fit'}`}
+        className={`flex flex-col overflow-hidden md:container md:mx-auto md:h-fit md:flex-row md:items-center-safe md:justify-between md:overflow-visible ${mobileMenuOpen ? 'h-screen' : 'h-fit'}`}
       >
         <div className="flex flex-row items-center-safe justify-between bg-white p-4">
           <img
@@ -52,6 +69,21 @@ export function NavBar({ home, news, cases, about, contact }: NavBarProps) {
               <Home className="size-6 text-amber-500" />
               <p>Home</p>
             </NavLink>
+            <NavLink
+              to="/"
+              active={services}
+              dropdown={[
+                {
+                  title: 'Services',
+                  description: 'some description',
+                  path: '/services',
+                },
+              ]}
+            >
+              <Layers className="size-6 text-amber-500" />
+              <p>Solutions</p>
+              <ChevronDown className="size-4 self-center transition duration-300 group-hover:rotate-180" />
+            </NavLink>
             <NavLink to="/news" active={news}>
               <Newspaper className="size-6 text-amber-500" />
               <p>News</p>
@@ -64,21 +96,18 @@ export function NavBar({ home, news, cases, about, contact }: NavBarProps) {
               <Info className="size-6 text-amber-500" />
               <p>About</p>
             </NavLink>
-            <NavLink to="/contact" active={contact}>
+            {/* <NavLink to="/contact" active={contact}>
               <Mail className="size-6 text-amber-500" />
               <p>Contact</p>
-            </NavLink>
+            </NavLink> */}
           </div>
           <div className="h-px w-full bg-gray-300 md:hidden lg:block lg:h-12 lg:w-px" />
           <div className="flex flex-col gap-2 md:hidden lg:flex">
             <button
-              className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 lg:shadow-none"
-              onClick={() =>
-                (window.location.href =
-                  'https://outlook.office.com/bookwithme/user/d81d78745f8047d1a0ec05a07d8d40d6@modelverse.online/meetingtype/HEkH_Hmwx06JvFc-tP4ZJw2?anonymous')
-              }
+              className="cursor-pointer rounded-full bg-linear-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 lg:shadow-none"
+              onClick={() => navigate('/contact')}
             >
-              Book a meeting
+              Contact Us
             </button>
           </div>
         </div>
