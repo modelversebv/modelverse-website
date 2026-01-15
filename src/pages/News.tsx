@@ -168,7 +168,7 @@ export function NewsPage() {
                   .filter((post) => !post.metadata.featured)
                   .map((post, index) => (
                     <Card className="bg-white p-0" key={index}>
-                      <div className="flex min-h-[200px] items-center-safe justify-center-safe">
+                      <div className="flex min-h-[200px] max-h-[200px] items-center-safe justify-center-safe">
                         {post.metadata.image != '' ? (
                           <img
                             src={post.metadata.image}
