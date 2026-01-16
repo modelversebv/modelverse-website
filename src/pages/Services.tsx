@@ -34,9 +34,9 @@ export function ServicesPage() {
       title: 'Strategy',
       description: 'Build a solid foundation for your security program',
       points: [
-        'Know what assets to protect',
-        'Identify your current security posture',
-        'Define security objectives and policies',
+        'Understanding your cyber risks',
+        'Assess your current security posture',
+        'Articulate your investment opportunities',
       ],
     },
     {
@@ -45,9 +45,9 @@ export function ServicesPage() {
       title: 'Certification',
       description: 'Achieve and maintain compliance certifications',
       points: [
-        'Manage compliance requirements',
-        'Track certification progress',
-        'Maintain audit readiness',
+        'Get a head start with our quality libraries',
+        'Supports for all certification frameworks',
+        'Benefit from innovative automation',
       ],
     },
     {
@@ -57,7 +57,7 @@ export function ServicesPage() {
       description: 'Establish clear accountability and risk ownership',
       points: [
         'Define roles and responsibilities',
-        'Implement governance frameworks',
+        'Implement effective decision-making processes',
         'Align security with business objectives',
       ],
     },
@@ -67,16 +67,16 @@ export function ServicesPage() {
       title: 'Programme',
       description: 'Drive organization-wide security adoptation',
       points: [
-        'Entrench executive support',
-        'Organise change management',
-        'Establish security culture',
+        'Leverage executive support',
+        'Embed security practices',
+        'Promote a strong security culture',
       ],
     },
     {
       icon: Eye,
       badge: 'SecOps',
       title: 'Operations',
-      description: 'Prevent and detect security incidents proactively',
+      description: 'Proactively prevent and detect security incidents',
       points: [
         'Monitor threats in real-time',
         'Detect anomalies and potential breaches',
