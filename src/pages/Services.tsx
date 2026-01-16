@@ -149,7 +149,7 @@ export function ServicesPage() {
                     />
                   )}
                 </div>
-                <Card className="w-full grow gap-4 bg-white p-4 transition-all duration-300 hover:-translate-y-2 hover:border-green-500 hover:shadow-lg/20">
+                <Card className="w-full grow gap-4 bg-white p-4 transition-all duration-300 lg:hover:-translate-y-2 lg:hover:border-green-500 lg:hover:shadow-lg/20">
                   <div className="flex flex-row gap-4 lg:flex-col lg:items-center-safe">
                     <div className="mb-4 flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-linear-to-r from-green-500/10 to-teal-500/10 lg:rounded-full">
                       <value.icon className="size-6 text-amber-500" />
@@ -162,7 +162,7 @@ export function ServicesPage() {
                     </div>
                   </div>
                   <p className="text-gray-600">{value.description}</p>
-                  <div className="flex flex-col  gap-2">
+                  <div className="flex flex-col gap-2">
                     {value.points.map((point) => (
                       <div className="flex flex-row gap-2">
                         <Check className="size-6 shrink-0 text-green-500" />
