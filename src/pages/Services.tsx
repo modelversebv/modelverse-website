@@ -57,7 +57,7 @@ export function ServicesPage() {
       description: 'Establish clear accountability and risk ownership',
       points: [
         'Define roles and responsibilities',
-        'Create governance frameworks',
+        'Implement governance frameworks',
         'Align security with business objectives',
       ],
     },
@@ -65,10 +65,10 @@ export function ServicesPage() {
       icon: Rocket,
       badge: 'SecProg',
       title: 'Programme',
-      description: 'Drive organization-wide security adoption',
+      description: 'Drive organization-wide security adoptation',
       points: [
         'Entrench executive support',
-        'Orchestrate change management',
+        'Organise change management',
         'Establish security culture',
       ],
     },
@@ -90,7 +90,7 @@ export function ServicesPage() {
       description: 'Prepare for and respond to security incidents',
       points: [
         'Prepare for potential incidents',
-        'Define incident response procedures',
+        'Minimise fallout from attacks',
         'Maintain business continuity',
       ],
     },
