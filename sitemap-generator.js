@@ -28,6 +28,12 @@ const LEGAL_SLUGS = ['privacy_policy', 'terms_of_service', 'cookie-policy']
 async function generateSitemap() {
   const staticLinks = [
     { url: '/', changefreq: 'weekly', priority: 1.0, lastmod: new Date() },
+    {
+      url: '/services',
+      changefreq: 'weekly',
+      priority: 0.8,
+      lastmod: new Date(),
+    },
     { url: '/news', changefreq: 'daily', priority: 0.8, lastmod: new Date() },
     { url: '/cases', changefreq: 'weekly', priority: 0.8, lastmod: new Date() },
     {
