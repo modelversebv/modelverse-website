@@ -165,7 +165,7 @@ export function ServicesPage() {
                   <div className="flex flex-col  gap-2">
                     {value.points.map((point) => (
                       <div className="flex flex-row gap-2">
-                        <Check className="min-w-4 max-w-4 text-green-500" /> {/* I know I have max and min here but trust me it's needed */}
+                        <Check className="size-6 shrink-0 text-green-500" />
                         <p className="text-gray-700">{point}</p>
                       </div>
                     ))}
