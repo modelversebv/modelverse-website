@@ -34,9 +34,9 @@ export function ServicesPage() {
       title: 'Strategy',
       description: 'Build a solid foundation for your security program',
       points: [
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
+        'Understanding your cyber risks',
+        'Assess your current security posture',
+        'Articulate your investment opportunities',
       ],
     },
     {
@@ -45,9 +45,9 @@ export function ServicesPage() {
       title: 'Certification',
       description: 'Achieve and maintain compliance certifications',
       points: [
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
+        'Get a head start with our quality libraries',
+        'Supports for all certification frameworks',
+        'Benefit from innovative automation',
       ],
     },
     {
@@ -56,31 +56,31 @@ export function ServicesPage() {
       title: 'Governance',
       description: 'Establish clear accountability and risk ownership',
       points: [
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
+        'Define roles and responsibilities',
+        'Implement effective decision-making processes',
+        'Align security with business objectives',
       ],
     },
     {
       icon: Rocket,
       badge: 'SecProg',
       title: 'Programme',
-      description: 'Drive organization-wide security adoption',
+      description: 'Drive organization-wide security adoptation',
       points: [
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
+        'Leverage executive support',
+        'Embed security practices',
+        'Promote a strong security culture',
       ],
     },
     {
       icon: Eye,
       badge: 'SecOps',
       title: 'Operations',
-      description: 'Prevent and detect security incidents proactively',
+      description: 'Proactively prevent and detect security incidents',
       points: [
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
+        'Monitor threats in real-time',
+        'Detect anomalies and potential breaches',
+        'Respond to incidents quickly and effectively',
       ],
     },
     {
@@ -89,9 +89,9 @@ export function ServicesPage() {
       title: 'Resilience',
       description: 'Prepare for and respond to security incidents',
       points: [
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
-        'Some text Some text Some text Some text Some text',
+        'Prepare for potential incidents',
+        'Minimise fallout from attacks',
+        'Maintain business continuity',
       ],
     },
   ]
@@ -162,10 +162,10 @@ export function ServicesPage() {
                     </div>
                   </div>
                   <p className="text-gray-600">{value.description}</p>
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col  gap-2">
                     {value.points.map((point) => (
-                      <div className="flew-row flex gap-2">
-                        <Check className="size-8 text-green-500" />
+                      <div className="flex flex-row gap-2">
+                        <Check className="size-6 shrink-0 text-green-500" />
                         <p className="text-gray-700">{point}</p>
                       </div>
                     ))}
