@@ -43,7 +43,7 @@ export function ContactPage() {
   ]
 
   return (
-    <Layout contact={true} hero={ContactHero}>
+    <Layout hero={ContactHero}>
       {/* Metadata */}
       <title>Contact Modelverse</title>
       <meta
@@ -57,7 +57,7 @@ export function ContactPage() {
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-4">
             {contactInfo.map((contact, index) => (
               <Card key={index} className="bg-white">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r from-green-500/10 to-teal-500/10">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-linear-to-r from-green-500/10 to-teal-500/10">
                   <contact.icon className="size-6 text-amber-500" />
                 </div>
                 <h3 className="mb-2 text-xl text-gray-900">{contact.title}</h3>
