@@ -1,26 +1,12 @@
 import { Link } from 'react-router-dom'
 
-import { Dropdown } from '../misc/dropdown'
-
-type DropdownLinks = {
-  title: string
-  description: string
-  path: string
-}
-
 type NavLinkProps = {
   active?: boolean
   to: string
-  dropdown?: DropdownLinks[]
   children?: React.ReactNode
 }
 
-export function NavLink({
-  active = false,
-  to,
-  dropdown = [],
-  children,
-}: NavLinkProps) {
+export function NavLink({ active = false, to, children }: NavLinkProps) {
   return (
     <div className="group relative">
       <Link
@@ -33,19 +19,6 @@ export function NavLink({
           {children}
         </div>
       </Link>
-      {dropdown.length != 0 && (
-        <Dropdown>
-          {dropdown.map((value) => (
-            <Link
-              to={value.path}
-              className="flex flex-col gap-2 rounded-md p-4 transition-all duration-300 hover:bg-gray-50"
-            >
-              {value.title}
-              <span className="text-xs">{value.description}</span>
-            </Link>
-          ))}
-        </Dropdown>
-      )}
     </div>
   )
 }

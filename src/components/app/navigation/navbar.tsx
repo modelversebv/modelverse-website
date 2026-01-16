@@ -21,17 +21,9 @@ type NavBarProps = {
   cases: boolean
   services: boolean
   about: boolean
-  contact: boolean
 }
 
-export function NavBar({
-  home,
-  news,
-  cases,
-  services,
-  about,
-  contact,
-}: NavBarProps) {
+export function NavBar({ home, news, cases, services, about }: NavBarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const navigate = useNavigate()
 
@@ -69,20 +61,9 @@ export function NavBar({
               <Home className="size-6 text-amber-500" />
               <p>Home</p>
             </NavLink>
-            <NavLink
-              to="/"
-              active={services}
-              dropdown={[
-                {
-                  title: 'Services',
-                  description: 'some description',
-                  path: '/services',
-                },
-              ]}
-            >
+            <NavLink to="/services" active={services}>
               <Layers className="size-6 text-amber-500" />
-              <p>Solutions</p>
-              <ChevronDown className="size-4 self-center transition duration-300 group-hover:rotate-180" />
+              <p>Services</p>
             </NavLink>
             <NavLink to="/news" active={news}>
               <Newspaper className="size-6 text-amber-500" />
@@ -96,10 +77,6 @@ export function NavBar({
               <Info className="size-6 text-amber-500" />
               <p>About</p>
             </NavLink>
-            {/* <NavLink to="/contact" active={contact}>
-              <Mail className="size-6 text-amber-500" />
-              <p>Contact</p>
-            </NavLink> */}
           </div>
           <div className="h-px w-full bg-gray-300 md:hidden lg:block lg:h-12 lg:w-px" />
           <div className="flex flex-col gap-2 md:hidden lg:flex">

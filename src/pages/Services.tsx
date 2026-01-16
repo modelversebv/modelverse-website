@@ -138,7 +138,7 @@ export function ServicesPage() {
             </p>
           </div>
 
-          <div className="flex max-w-sm flex-col gap-4 lg:max-w-4xl lg:flex-row lg:flex-wrap lg:justify-center-safe lg:overflow-hidden 2xl:max-w-none">
+          <div className="flex max-w-sm flex-col gap-4 lg:max-w-4xl lg:flex-row lg:flex-wrap lg:justify-center-safe 2xl:max-w-none">
             {services.map((value, index) => (
               <div className="flex flex-row gap-4 lg:max-w-3xs lg:flex-col 2xl:max-w-59">
                 <div className="flex flex-col items-center-safe gap-4 pt-8 lg:translate-x-30 lg:flex-row lg:pt-0 2xl:translate-x-28">
@@ -149,7 +149,7 @@ export function ServicesPage() {
                     />
                   )}
                 </div>
-                <Card className="w-full grow gap-4 bg-white p-4 transition-all duration-300 hover:border-green-500 hover:shadow-lg">
+                <Card className="w-full grow gap-4 bg-white p-4 transition-all duration-300 hover:-translate-y-2 hover:border-green-500 hover:shadow-lg/20">
                   <div className="flex flex-row gap-4 lg:flex-col lg:items-center-safe">
                     <div className="mb-4 flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-linear-to-r from-green-500/10 to-teal-500/10 lg:rounded-full">
                       <value.icon className="size-6 text-amber-500" />

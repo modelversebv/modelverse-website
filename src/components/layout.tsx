@@ -23,7 +23,6 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
       cases = false,
       services = false,
       about = false,
-      contact = false,
       hero,
       children,
     },
@@ -46,7 +45,6 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
           cases={cases}
           services={services}
           about={about}
-          contact={contact}
         />
         <div className="mt-20 flex grow flex-col md:mt-28">
           {hero}
