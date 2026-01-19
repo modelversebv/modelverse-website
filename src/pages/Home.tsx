@@ -135,7 +135,7 @@ export function HomePage() {
   return (
     <Layout home={true} hero={HomeHero}>
       {/* Metadata */}
-      <title>Modelverse | Risk & Compliance SaaS Platform</title>
+      <title>Modelverse | Cybersecurity GRC Solutions</title>
       <meta
         name="description"
         content="Modelverse automates GRC and risk scoring, providing real-time compliance intelligence for leading enterprises in various industries."

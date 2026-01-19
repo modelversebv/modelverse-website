@@ -103,7 +103,7 @@ export function CasesPage() {
   return (
     <Layout cases={true} hero={CasesHero}>
       {/* Metadata */}
-      <title>Modelverse Cases | GRC & Compliance Success Stories</title>
+      <title>Modelverse Cases | Customer Success Stories</title>
       <meta
         name="description"
         content="View how leading enterprises reduced audit time and achieved 100% compliance using the Modelverse Risk & Compliance SaaS platform."
