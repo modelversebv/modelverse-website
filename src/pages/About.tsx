@@ -178,7 +178,7 @@ export function AboutPage() {
   return (
     <Layout about={true} hero={AboutHero}>
       {/* Metadata */}
-      <title>About Modelverse</title>
+      <title>Modelverse | About Us</title>
       <meta
         name="description"
         content="Learn about the Modelverse team, our mission to simplify GRC, and our commitment to building the future of enterprise risk management software."

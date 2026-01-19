@@ -82,7 +82,7 @@ export function NewsPage() {
     <Layout news={true} hero={NewsHero}>
       {/* Metadata */}
       <title>
-        Modelverse Blog | GRC, Risk Compliance, and Security Insights
+        Modelverse Blog | Cybersecurity Insights
       </title>
       <meta
         name="description"
