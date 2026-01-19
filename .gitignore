@@ -32,3 +32,6 @@ dist-ssr
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+# Ignore local build of public files
+/public/sitemap.xml
