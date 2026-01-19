@@ -21,9 +21,9 @@ export function NavBar({ home, news, cases, services, about }: NavBarProps) {
   return (
     <div className="fixed top-0 z-50 w-full shrink-0 border-b lg:bg-white">
       <div
-        className={`flex flex-col overflow-hidden lg:container lg:mx-auto lg:h-fit lg:flex-row lg:items-center-safe lg:justify-between lg:overflow-visible ${mobileMenuOpen ? 'h-screen' : 'h-fit'}`}
+        className={`flex flex-col lg:container lg:mx-auto lg:h-fit lg:flex-row lg:items-center-safe lg:justify-between lg:overflow-visible ${mobileMenuOpen ? 'h-screen' : 'h-fit'}`}
       >
-        <div className="flex flex-row items-center-safe justify-between bg-white p-4">
+        <div className="flex shrink-0 flex-row items-center-safe justify-between bg-white p-4">
           <img
             src="/icon.png"
             className="size-12 cursor-pointer lg:hidden"
@@ -49,7 +49,7 @@ export function NavBar({ home, news, cases, services, about }: NavBarProps) {
           </div>
         </div>
         <div
-          className={`h-full flex-col gap-4 bg-white lg:flex lg:bg-transparent lg:opacity-100 lg:backdrop-blur-none ${mobileMenuOpen ? 'flex opacity-100' : 'hidden opacity-0'} p-4 lg:flex lg:flex-row lg:items-center-safe lg:justify-end-safe`}
+          className={`h-full flex-col gap-4 bg-white/85 backdrop-blur-md lg:flex lg:bg-transparent lg:opacity-100 lg:backdrop-blur-none ${mobileMenuOpen ? 'flex grow overflow-y-auto opacity-100' : 'hidden opacity-0'} p-4 lg:flex lg:flex-row lg:items-center-safe lg:justify-end-safe`}
         >
           {/* <div className="h-px w-full bg-gray-300 md:hidden" /> */}
           <div className="flex flex-col gap-2 lg:mr-auto lg:flex-row">
