@@ -120,7 +120,7 @@ export function ServicesPage() {
   return (
     <Layout services={true} hero={ServicesHero}>
       {/* Metadata */}
-      <title>Modelverse Services</title>
+      <title>Modelverse Solutions | Security Services</title>
       <meta
         name="description"
         content="View how leading enterprises reduced audit time and achieved 100% compliance using the Modelverse Risk & Compliance SaaS platform."

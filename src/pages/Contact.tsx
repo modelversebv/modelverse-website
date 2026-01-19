@@ -45,7 +45,7 @@ export function ContactPage() {
   return (
     <Layout hero={ContactHero}>
       {/* Metadata */}
-      <title>Contact Modelverse</title>
+      <title>Modelverse | Contact Us</title>
       <meta
         name="description"
         content="Ready to simplify your GRC? Contact the Modelverse team to schedule a personalized demo, get pricing information, or request technical support."
