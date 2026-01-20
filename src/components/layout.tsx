@@ -11,6 +11,7 @@ type LayoutProps = {
   about?: boolean
   services?: boolean
   contact?: boolean
+  test?: boolean
   hero?: React.ReactNode
   children?: React.ReactNode
 }
