@@ -35,7 +35,7 @@ export function NavBar() {
   const [expandedMenu, setExpendedMenu] = useState(false)
 
   return (
-    <div className="fixed inset-0 flex flex-col">
+    <div className="fixed top-0 flex flex-col">
       <div className="flex flex-row items-center-safe justify-between bg-white p-4 shadow-lg">
         <div className="size-12">
           <img src="icon.png" alt="Modelverse" />

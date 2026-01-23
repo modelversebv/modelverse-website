@@ -19,11 +19,11 @@ type LayoutProps = {
 export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
   (
     {
-      home = false,
-      news = false,
-      cases = false,
-      services = false,
-      about = false,
+      // home = false,
+      // news = false,
+      // cases = false,
+      // services = false,
+      // about = false,
       hero,
       children,
     },
@@ -40,14 +40,8 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
           preferences={showConsentPreferences}
           setPreferences={setShowConsentPreferences}
         />
-        <NavBar
-          home={home}
-          news={news}
-          cases={cases}
-          services={services}
-          about={about}
-        />
-        <div className="mt-20 flex grow flex-col lg:mt-28">
+        <NavBar />
+        <div className="flex grow flex-col">
           {hero}
           {children}
         </div>

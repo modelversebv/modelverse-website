@@ -2,22 +2,34 @@ import { cn } from '@/lib/utils'
 
 type HeroProps = {
   className?: string
+  backgroundImg?: string
+  backgroundClassName?: string
+  overlay?: boolean
   children?: React.ReactNode
 }
 
-export function Hero({ className, children }: HeroProps) {
+export function Hero({
+  className,
+  backgroundImg,
+  backgroundClassName,
+  children,
+}: HeroProps) {
   return (
-    <div className="bg-gradient-to-r from-green-500/10 to-teal-500/10 select-none">
-      <div className="bg-gradient-to-b from-transparent to-white">
-        <div
-          className={cn(
-            'flex flex-col gap-8 px-4 py-16 md:container md:mx-auto',
-            className
-          )}
-        >
-          {children}
-        </div>
+    <div
+      style={{ backgroundImage: `url(${backgroundImg})` }}
+      className={cn('bg-cover select-none', backgroundClassName)}
+    >
+      <div
+        className={cn(
+          'relative z-10 flex flex-col gap-8 px-4 py-16 md:container md:mx-auto',
+          className
+        )}
+      >
+        {children}
       </div>
+      {/* {overlay && (
+        <div className="absolute inset-0 bg-linear-to-b from-transparent to-white" />
+      )} */}
     </div>
   )
 }
