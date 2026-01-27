@@ -82,7 +82,7 @@ export function NewsPage() {
     <Layout news={true} hero={NewsHero}>
       {/* Metadata */}
       <title>
-        Modelverse Blog | GRC, Risk Compliance, and Security Insights
+        Modelverse Blog | Cybersecurity Insights
       </title>
       <meta
         name="description"
@@ -168,7 +168,7 @@ export function NewsPage() {
                   .filter((post) => !post.metadata.featured)
                   .map((post, index) => (
                     <Card className="bg-white p-0" key={index}>
-                      <div className="flex min-h-[200px] items-center-safe justify-center-safe">
+                      <div className="flex min-h-[200px] max-h-[200px] items-center-safe justify-center-safe">
                         {post.metadata.image != '' ? (
                           <img
                             src={post.metadata.image}
@@ -183,7 +183,7 @@ export function NewsPage() {
                         <h1 className="text-xl">{post.metadata.title}</h1>
                         <p className="text-gray-600">{post.metadata.summary}</p>
                         <div className="flex grow flex-col justify-end-safe gap-4">
-                          <div className="mt-auto flex flex-row flex-wrap items-center-safe gap-4 text-gray-500">
+                          <div className="mt-auto flex flex-col gap-4 text-gray-500">
                             <div className="flex shrink-0 flex-row items-center-safe gap-2">
                               <Avatar className="size-8 self-center">
                                 <AvatarImage

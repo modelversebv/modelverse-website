@@ -1,0 +1,45 @@
+export const metadata = {
+  featured: true,
+  title: 'Defending Against React2Shell (CVE‑2025‑55182)',
+  subtitle:
+    'A pre‑authentication remote code execution vulnerability in React’s Flight protocol turns one HTTP request into a server shell - and why a proactive patching mindset is your best defence.',
+  summary:
+    'A critical flaw in Meta’s React framework aparked widespread concern in early December after researchers uncovered a pre‑authentication remote code execution bug with a maximum CVSS severity rating of 10. The vulnerability stemmed from insecure deserialization in React Server Components (RSC), allowing a single malicious HTTP request to trigger arbitrary code execution on the server‑side. Although initially associated with Next.js, the issue traced back to React’s Flight protocol, affecting many systems around the world. Both exploits as well as a patch quickly surfaced, but in some cases the damage was already done.',
+  image:
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2068&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  date: '27/01/2026',
+  author: 'Sjors de Natris',
+  portrait: '/images/blog_authors/Sjors - web.jpg',
+}
+
+As a company working in the realm of cybersecurity, we always need to be up to date with the latest vulnerabilities and exploits, especially when these can potentially pose a threat to our own systems. Safe to say we were intrigued when one of our developers caught wind of a brand‑new vulnerability found in Meta's React framework in early December. Rest assured: even though our website uses React, we were not affected by the vulnerability in any way whatsoever. But to provide a better understanding of why that is, as well as how we approached the situation, we'll cover the fundamentals of the case here, from its discovery to its inevitable patching.
+
+## The “React2Shell” Crisis
+
+A short while ago Meta's React team disclosed a pre‑authentication remote code execution vulnerability (now referred to as CVE‑2025‑55182). It allowed a single malicious HTTP request to execute arbitrary code on any server using React and related packages. The vulnerability, originally uncovered by Lachlan Davidson on the 29th of November, received a lot of attention in the fleeting days which would follow. It was marked with a CVSS severity rating of 10, the highest possible rating. Patches for the affected RSC (_React Server Component_) packages shipped on the 3rd of December.
+
+The issue affected React version 19 and downstream frameworks, including in particular the widely used Next.js App Router. The vulnerability received a lot of attention from the cyber community when it was first reported; within the first 72 hours following the discovery, multiple actors observed public proofs of concept and real-life attempts aimed at exploiting the vulnerability, for example targeting cryptominers or installing backdoors.
+
+And while Next.js received much of the attention at first, it was soon realised that the root cause lived in React’s 'Flight' protocol. In fact, any framework embedding the `react‑server‑dom` component inherited the risk, making this a React‑first incident that propagated outward to a large number of systems. But how did this vulnerability really work?
+
+## How React Server Components (RSC) Work
+
+RSC works in a sort of hybrid model. It renders parts of your UI server-side, reducing client‑side JavaScript processing while still providing access to privileged resources (DBs, files, internal APIs). The client then populates the UI using _serialised chuncks_; essentially the data that is being streamed from the server.
+
+The React 'Flight' protocol is the streaming wire protocol that serializes the server component tree and related metadata (including references to client components, props, errors) so the client can reconstruct and hydrate it. In less-technical terms, it makes sure that the client and the server can meaningfully interact with one another. Frameworks and bundlers integrate with Flight by producing client/server builds and a manifest that maps module references to the actual bundles. Through this process the different protocols create the output. When client code holds a reference to a server action/function, that reference is serialized (not the function itself), invoked on the server, and its effects/results are reflected back through Flight updates. Flight itself doesn’t ship assets; it carries structured data and references that let React run coherently across server and client.
+
+When the server communicates with the client, it streams the serialised UI chunks for progressive rendering. The vulnerability emerges from communication from the client-side to the server-side: when using Server Functions or Actions (marked with `'use server'`), the client sends serialised payloads back to an endpoint. React subsequently _deserialises_ the payload, _invokes_ the function server‑side, and _returns_ the result. But here the cat jumps out of the bag: it turns out that the contents of the payload are not validated before they are deserialised, enabling the client to stuff the payload with arbitrary code which the servers will execute without restraint.
+
+## A Deeper Dive: Insecure Deserialisation
+
+The server‑side decoder for Flight trusted client‑supplied payloads and didn’t strictly validate the structure of internal chunks, allowing malicious objects to influence execution paths. Within the JavaScript environment, this can be classified as a _prototype pollution vulnerability_. Prototypes function as a sort of blueprint with certain properties, and they're a bit too complex to fully explicate here. The specific property we are interested in, is that it is a so‑called “thenable”.
+
+In short, a thenable is any object with a `.then()` method. JavaScript treats thenables like _Promises_, or objects which are used to resolve asynchronous operations. This means that a poorly validated thenable can alter a control flow when a deserialiser tries to resolve said flow (and keep the “promise”). This flexibility, though normally a feature, becomes a liability if the deserialiser _assumes_ trustworthy inputs.
+
+To exploit this assumption an attacker need only send one well‑crafted HTTP `POST` request to a Server Function/Action endpoint with a booby‑trapped Flight payload. To the server it looks like a legitimate UI/action update, while it is in fact smuggling structures that pollute prototypes and steer control‑flow resolution, resulting in an attacker gaining the ability to remotely execute code under the web server’s privileges.
+
+## How We _Reacted_
+
+Luckily, we do not use RSC in any substantial manner. In fact, we don't even have an 'own' server. The server which renders our webpage does not do anything beyond the front-end task of rendering visual components. Nevertheless, we treated React2Shell as a priority‑one vulnerability and pushed the patch as critical since we did not know the ins and outs of the vulnerability. Our short assessment alleviated our concerns of being vulnerable to a new attack, and thus the patch primarily served the purpose of future-proofing. We may adopt RSC later on our journey; we don’t want a “sleeping” vulnerability in our dependency tree.
+
+And as always, if you believe that you might have been successfully targeted by an exploiter of the React2Shell vulnerability (i.e., you are assuming you have been breached), make sure that you rotate your secrets, check for suspicious activity, and take action accordingly.

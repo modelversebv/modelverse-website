@@ -9,6 +9,7 @@ type LayoutProps = {
   news?: boolean
   cases?: boolean
   about?: boolean
+  services?: boolean
   contact?: boolean
   test?: boolean
   hero?: React.ReactNode
@@ -21,9 +22,8 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
       home = false,
       news = false,
       cases = false,
+      services = false,
       about = false,
-      contact = false,
-      test = false,
       hero,
       children,
     },
@@ -44,11 +44,10 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
           home={home}
           news={news}
           cases={cases}
+          services={services}
           about={about}
-          contact={contact}
-          test={test}
         />
-        <div className="mt-20 flex grow flex-col md:mt-28">
+        <div className="mt-20 flex grow flex-col lg:mt-28">
           {hero}
           {children}
         </div>
