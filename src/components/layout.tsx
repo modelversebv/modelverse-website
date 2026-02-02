@@ -9,6 +9,7 @@ type LayoutProps = {
   news?: boolean
   cases?: boolean
   about?: boolean
+  services?: boolean
   contact?: boolean
   test?: boolean
   hero?: React.ReactNode
@@ -21,9 +22,8 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
       home = false,
       news = false,
       cases = false,
+      services = false,
       about = false,
-      contact = false,
-      test = false,
       hero,
       children,
     },
@@ -34,7 +34,7 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
     return (
       <div
         ref={ref} // <- this is the key for parent to scroll
-        className="scrollbar-hide flex h-screen w-screen flex-col overflow-auto scroll-smooth font-sans"
+        className="scrollbar-hide flex h-screen w-screen flex-col overflow-auto scroll-smooth bg-slate-900 font-sans"
       >
         <CookieBanner
           preferences={showConsentPreferences}
@@ -42,13 +42,12 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
         />
         <NavBar
           home={home}
-          news={news}
-          cases={cases}
           about={about}
-          contact={contact}
-          test={test}
+          cases={cases}
+          news={news}
+          services={services}
         />
-        <div className="mt-20 flex grow flex-col md:mt-28">
+        <div className="flex grow flex-col">
           {hero}
           {children}
         </div>

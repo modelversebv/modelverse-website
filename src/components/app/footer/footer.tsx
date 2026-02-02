@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import { BuildNumber } from '@/components/buildNumber'
-import { Linkedin, Mail, Shield } from 'lucide-react'
+import { Github, Linkedin, Mail } from 'lucide-react'
 
 type FooterProps = {
   onManagePrivacy: (value: boolean) => void
@@ -25,33 +25,39 @@ export function Footer({ onManagePrivacy }: FooterProps) {
   }
 
   return (
-    <div className="shrink-0 bg-gray-900 text-white">
+    <div className="shrink-0 bg-slate-950 text-white">
       <div className="flex flex-col gap-8 px-4 py-8 md:container md:mx-auto md:px-8 md:py-16">
         <div className="flex flex-col gap-8 md:flex-row">
           <div className="flex flex-col gap-4">
             <div className="flex flex-row items-center-safe gap-2 text-lg">
-              <Shield className="size-8 text-amber-500" />
+              <img src="/icon.png" alt="Modelverse" className="size-8" />
               <span>Modelverse B.V.</span>
             </div>
-            <p className="text-amber-500 italic">We secure. You Succeed!</p>
+            <p className="text-lime-500 italic">We secure. You Succeed!</p>
             <p className="text-sm text-gray-400">
               Empowering organizations to manage risks and compliance with
               confidence.
             </p>
 
-            <div className="flex flex-row gap-4 text-amber-500">
+            <div className="flex flex-row gap-4 text-white">
               <a
                 href="https://www.linkedin.com/company/modelverse/"
-                className="flex size-10 items-center justify-center rounded-lg bg-gray-800 transition-colors hover:bg-gray-700"
+                className="flex size-10 items-center justify-center rounded-lg bg-gray-800 transition-colors duration-300 hover:bg-gray-700"
               >
                 <Linkedin className="size-6" />
               </a>
               <Link
                 to="/contact"
-                className="flex size-10 items-center justify-center rounded-lg bg-gray-800 transition-colors hover:bg-gray-700"
+                className="flex size-10 items-center justify-center rounded-lg bg-gray-800 transition-colors duration-300 hover:bg-gray-700"
               >
                 <Mail className="size-6" />
               </Link>
+              <a
+                href="https://github.com/modelversebv/modelverse-website/?tab=readme-ov-file#readme"
+                className="flex size-10 items-center justify-center rounded-lg bg-gray-800 transition-colors duration-300 hover:bg-gray-700"
+              >
+                <Github className="size-6" />
+              </a>
             </div>
           </div>
 

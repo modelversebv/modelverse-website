@@ -5,9 +5,20 @@ import { Layout } from '@/components/layout'
 import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 
 const ContactHero = (
-  <Hero className="items-center-safe justify-center-safe text-center md:max-w-4xl">
-    <h1 className="text-5xl sm:text-6xl">Get in Touch</h1>
-    <p className="text-xl text-gray-600">
+  <Hero
+    className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
+    backgroundClassName="bg-slate-900"
+  >
+    <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
+      <p className="text-sm">Contact Us</p>
+    </div>
+    <h1 className="text-5xl sm:text-6xl">
+      Get in{' '}
+      <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
+        Touch
+      </span>
+    </h1>
+    <p className="text-xl text-white/70">
       Have questions about Modelverse? Our team is here to help. Reach out and
       we'll respond within 24 hours.
     </p>
@@ -43,103 +54,56 @@ export function ContactPage() {
   ]
 
   return (
-    <Layout contact={true} hero={ContactHero}>
+    <Layout hero={ContactHero}>
       {/* Metadata */}
-      <title>Contact Modelverse</title>
+      <title>Modelverse | Contact Us</title>
       <meta
         name="description"
         content="Ready to simplify your GRC? Contact the Modelverse team to schedule a personalized demo, get pricing information, or request technical support."
       />
 
       {/* Content */}
-      <div className="bg-gray-50">
-        <div className="flex flex-col justify-center-safe gap-16 px-4 py-16 md:container md:mx-auto">
+      <div className="bg-linear-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
+        <div className="flex flex-col justify-center-safe gap-32 px-4 pt-16 pb-32 md:container md:mx-auto">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-4">
             {contactInfo.map((contact, index) => (
-              <Card key={index} className="bg-white">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r from-green-500/10 to-teal-500/10">
-                  <contact.icon className="size-6 text-amber-500" />
+              <Card
+                key={index}
+                className="bg-white/5 hover:border-lime-500/50 hover:bg-white/10"
+              >
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-linear-to-br from-lime-500 to-teal-500">
+                  <contact.icon className="size-6" />
                 </div>
-                <h3 className="mb-2 text-xl text-gray-900">{contact.title}</h3>
-                <p className="text-gray-900">{contact.primary}</p>
-                <p className="text-gray-600">{contact.secondary}</p>
+                <h3 className="mb-2 text-xl">{contact.title}</h3>
+                <p className="text-white/90">{contact.primary}</p>
+                <p className="text-white/70">{contact.secondary}</p>
               </Card>
             ))}
           </div>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            {/* <Card className="gap-4 bg-white">
-              <div className="flex flex-row gap-2">
-                <MessageSquare className="size-6 self-center text-amber-500" />
-                <h1 className="text-xl">Send us a Message</h1>
-              </div>
-              <FormInput
-                type="text"
-                id={'firstName'}
-                label={'First Name *'}
-                placeholder="First Name"
-              />
-              <FormInput
-                type="text"
-                id={'lastName'}
-                label={'Last Name *'}
-                placeholder="Last Name"
-              />
-              <FormInput
-                type="email"
-                id={'email'}
-                label={'Email *'}
-                placeholder="example@email.com"
-              />
-              <FormInput
-                type="text"
-                id={'company'}
-                label={'Company'}
-                placeholder="Your Company Name"
-              />
-              <FormTextArea
-                id={'message'}
-                label={'Message *'}
-                placeholder="Tell us about your needs..."
-              />
-              <button className="flex flex-row justify-center-safe gap-2 rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-3 py-1 font-semibold text-white">
-                Send Message
-                <Send className="size-4 self-center" />
-              </button>
-            </Card> */}
-
             <div className="flex flex-col gap-8">
               <h1 className="text-center text-4xl">
                 Frequently Asked Questions
               </h1>
               <div className="flex flex-col gap-4">
-                <Card className="gap-4 bg-white">
+                <Card className="gap-4 bg-white/5 p-8 hover:border-lime-500/50 hover:bg-white/10">
                   <h1 className="text-lg">
                     What is your response time for inquiries?
                   </h1>
-                  <p className="text-gray-600">
+                  <p className="text-white/70">
                     We typically respond to all inquiries within 24 hours during
                     business days. Enterprise customers receive priority support
                     with faster response times.
                   </p>
                 </Card>
-                <Card className="gap-4 bg-white">
+                <Card className="gap-4 bg-white/5 p-8 hover:border-lime-500/50 hover:bg-white/10">
                   <h1 className="text-lg">Do you offer personalized demos?</h1>
-                  <p className="text-gray-600">
+                  <p className="text-white/70">
                     Yes! We provide customized demos tailored to your
                     organization's specific needs and use cases. Simply select
                     "Book a meeting" in the top navigation bar.
                   </p>
                 </Card>
-                {/* <Card className="gap-4 bg-white">
-                  <h1 className="text-lg">
-                    Can I schedule a call with your sales team?
-                  </h1>
-                  <p className="text-gray-600">
-                    Absolutely. After submitting the form, our sales team will
-                    reach out to schedule a convenient time for a call or video
-                    meeting.
-                  </p>
-                </Card> */}
               </div>
             </div>
 

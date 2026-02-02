@@ -13,14 +13,20 @@ import {
 } from 'lucide-react'
 
 const AboutHero = (
-  <Hero className="items-center-safe justify-center-safe text-center md:max-w-4xl">
-    <div className="flex w-fit flex-row items-center-safe justify-center-safe gap-2 rounded-full bg-gradient-to-r from-green-500/20 to-teal-500/20 px-3 py-1 font-semibold text-amber-500">
+  <Hero
+    className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
+    backgroundClassName="bg-slate-900"
+  >
+    <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
       <p className="text-sm">About Modelverse</p>
     </div>
     <h1 className="text-5xl sm:text-6xl">
-      We're on a Mission to Democratize Risk Management
+      We're on a Mission to{' '}
+      <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
+        Democratize Risk Management
+      </span>
     </h1>
-    <p className="text-xl text-gray-600">
+    <p className="text-xl text-white/70">
       Making enterprise-grade information risk management accessible to
       organizations of all sizes.
     </p>
@@ -169,28 +175,29 @@ export function AboutPage() {
     {
       name: 'Alexandra Roger-Machart',
       role: 'Independent Communications & Media Relations Advisor',
-      linkedin: 'https://www.linkedin.com/in/alexandra-roger-machart-senior-manager-corporate-communications/',
+      linkedin:
+        'https://www.linkedin.com/in/alexandra-roger-machart-senior-manager-corporate-communications/',
       bio: 'Alexandra Roger-Machart is a forward-thinking senior professional with deep industry experience in the Renewable Energy and Consumer Goods sectors. Specializing in Communications and Corporate Disclosures, Alexandra helps companies strengthen their external profile, engage with stakeholders and enhance their corporate reporting through both strategic storytelling and regulatory expertise.\n Having worked across various organizational dynamics, from fast-growing startups to large blue-chip corporations such as Unilever, her background spans B2B, B2C and B2G environments. Her expertise covers Corporate and Financial Communications, Sustainability Reporting, Investor Relations, Crisis PR and Media Engagement.\n Passionate about Tech and AI-driven transformation, Alexandra advises startups and scaleups, bringing a customer-centric, interdisciplinary perspective and a global outlook with fluency in German, English, French and Dutch.',
       image: 'images/ambassadors/alexandra.jpg',
-    }
+    },
   ]
 
   return (
     <Layout about={true} hero={AboutHero}>
       {/* Metadata */}
-      <title>About Modelverse</title>
+      <title>Modelverse | About Us</title>
       <meta
         name="description"
         content="Learn about the Modelverse team, our mission to simplify GRC, and our commitment to building the future of enterprise risk management software."
       />
 
       {/* Content */}
-      <div className="bg-gray-50">
-        <div className="flex flex-col justify-center-safe gap-8 px-4 py-16 sm:gap-16 md:container md:mx-auto">
+      <div className="bg-linear-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
+        <div className="flex flex-col justify-center-safe gap-32 px-4 pt-16 pb-32 md:container md:mx-auto">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="flex flex-col gap-4 md:justify-center-safe">
               <h1 className="text-4xl sm:text-5xl">Our Story</h1>
-              <div className="flex flex-col gap-4 text-lg text-gray-600">
+              <div className="flex flex-col gap-4 text-lg text-white/70">
                 <p>
                   Modelverse was founded in 2023 by a team of experienced risk
                   managers who witnessed firsthand the challenges organizations
@@ -212,18 +219,20 @@ export function AboutPage() {
               </div>
             </div>
             <div className="relative flex items-center-safe justify-center-safe lg:basis-1/2">
-              <img
-                src="/images/team/Team minus Michel - web.jpg"
-                alt="Modelverse team of eight members, photographed together in their bright, modern office headquarters."
-                className="aspect-video rounded-lg border object-cover shadow-lg"
-              />
+              <Card className="hidden p-2 hover:bg-white/10 lg:flex">
+                <img
+                  src="/images/team/Team minus Michel - web.jpg"
+                  alt="Modelverse team of eight members, photographed together in their bright, modern office headquarters."
+                  className="aspect-video rounded-lg object-cover"
+                />
+              </Card>
             </div>
           </div>
 
           <div className="flex flex-col gap-8">
             <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
               <h1 className="text-4xl sm:text-5xl">Our Values</h1>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-white/70">
                 The principles that guide everything we do at Modelverse.
               </p>
             </div>
@@ -232,13 +241,16 @@ export function AboutPage() {
               {values.map((value, index) => (
                 <Card
                   key={index}
-                  className="bg-white transition-all duration-300 hover:border-green-500 hover:shadow-lg"
+                  className="group relative shadow-md transition-all duration-300 hover:border-lime-500/70 hover:shadow-lime-500/70"
                 >
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r from-green-500/10 to-teal-500/10">
-                    <value.icon className="size-6 text-amber-500" />
+                  <div className="absolute inset-0 rounded-lg bg-linear-to-br group-hover:from-lime-500/10 group-hover:to-teal-500/10" />
+                  <div className="relative z-1 flex flex-col gap-2">
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-linear-to-br from-lime-500 to-teal-500">
+                      <value.icon className="size-6" />
+                    </div>
+                    <h3 className="mb-2 text-xl">{value.title}</h3>
+                    <p className="text-white/70">{value.description}</p>
                   </div>
-                  <h3 className="mb-2 text-xl text-gray-900">{value.title}</h3>
-                  <p className="text-gray-600">{value.description}</p>
                 </Card>
               ))}
             </div>
@@ -249,40 +261,40 @@ export function AboutPage() {
           <div className="flex flex-col gap-8 text-center">
             <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
               <h1 className="text-4xl sm:text-5xl">Meet the Team</h1>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-white/70">
                 The passionate people behind Modelverse.
               </p>
             </div>
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {teamMembers.map((member, index) => (
-                <div
-                  className="flex flex-col rounded-lg border bg-white text-left"
+                <Card
+                  className="bg-white/5 p-0 hover:border-lime-500/50 hover:bg-white/10"
                   key={index}
                 >
-                  <img src={member.image} className="rounded-t-lg" alt="" />
+                  <img src={member.image} className="rounded-t-xl" alt="" />
                   <div className="flex grow flex-col p-8">
                     <h1 className="mb-2 text-xl">{member.name}</h1>
-                    <h1 className="mb-4 font-semibold text-amber-500">
+                    <h1 className="mb-4 bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text font-semibold text-transparent">
                       {member.role}
                     </h1>
-                    <p className="mb-4 text-gray-600">{member.bio}</p>
-                    <div className="flex grow flex-row items-end gap-2 text-amber-500">
+                    <p className="mb-4 text-left text-white/70">{member.bio}</p>
+                    <div className="flex grow flex-row items-end gap-2">
                       <a
                         href={member.linkedin}
-                        className="flex size-10 items-center justify-center rounded-lg bg-gradient-to-r from-green-500/10 to-teal-500/10 transition-colors hover:from-green-500/20 hover:to-teal-500/20"
+                        className="flex size-10 items-center justify-center rounded-lg border border-white/20 bg-white/10 transition-colors duration-300 hover:bg-white/20"
                       >
                         <Linkedin className="size-6" />
                       </a>
                       <a
                         href={member.mail}
-                        className="flex size-10 items-center justify-center rounded-lg bg-gradient-to-r from-green-500/10 to-teal-500/10 transition-colors hover:from-green-500/20 hover:to-teal-500/20"
+                        className="flex size-10 items-center justify-center rounded-lg border border-white/20 bg-white/10 transition-colors duration-300 hover:bg-white/20"
                       >
                         <Mail className="size-6" />
                       </a>
                     </div>
                   </div>
-                </div>
+                </Card>
               ))}
             </div>
           </div>
@@ -299,8 +311,11 @@ export function AboutPage() {
 
               <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
                 {ambassadors.map((ambassador, index) => (
-                  <Card className="gap-8 bg-white p-8 text-left" key={index}>
-                    <div className="flex flex-col gap-4 sm:flex-row">
+                  <Card
+                    className="gap-8 overflow-hidden bg-white/5 p-0 text-left hover:border-lime-500/50 hover:bg-white/10"
+                    key={index}
+                  >
+                    <div className="flex flex-col gap-4 px-8 pt-8 sm:flex-row">
                       <Avatar className="size-48 self-center md:size-38">
                         <AvatarImage
                           src={ambassador.image}
@@ -311,24 +326,23 @@ export function AboutPage() {
                       <div className="flex flex-col gap-4">
                         <div className="flex flex-col gap-2">
                           <h1 className="text-xl">{ambassador.name}</h1>
-                          <h1 className="font-semibold text-amber-500">
+                          <h1 className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text font-semibold text-transparent">
                             {ambassador.role}
                           </h1>
                         </div>
-
                         <a
                           href={ambassador.linkedin}
-                          className="flex size-10 items-center justify-center rounded-lg bg-gradient-to-r from-green-500/10 to-teal-500/10 text-amber-500 transition-colors hover:from-green-500/20 hover:to-teal-500/20"
+                          className="flex size-10 items-center justify-center rounded-lg border border-white/20 bg-white/10 transition-colors duration-300 hover:bg-white/20"
                         >
                           <Linkedin className="size-6" />
                         </a>
                       </div>
                     </div>
-                    <div className="flex flex-col gap-4 sm:flex-row">
-                      <PencilLine className="hidden size-6 shrink-0 text-amber-500 opacity-50 sm:block" />
+                    <div className="flex grow flex-col gap-4 bg-lime-500/10 p-8 sm:flex-row">
+                      <PencilLine className="hidden size-6 shrink-0 text-lime-500 opacity-50 sm:block" />
                       <div>
                         {ambassador.bio.split('\n').map((paragraph, index) => (
-                          <p key={index} className="mb-4 text-sm text-gray-600">
+                          <p key={index} className="mb-4 text-sm text-white/70">
                             {paragraph.trim()}
                           </p>
                         ))}

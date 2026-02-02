@@ -4,7 +4,6 @@ import { Card } from '@/components/app/misc/card'
 import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Badge } from '@/components/ui/badge'
 import { ArrowRight, Calendar, User } from 'lucide-react'
 
 // // For testing
@@ -18,12 +17,21 @@ export const markdownFiles = import.meta.glob('@/articles/!(*test*).mdx', {
 })
 
 const NewsHero = (
-  <Hero className="items-center-safe justify-center-safe text-center md:max-w-4xl">
-    <div className="flex w-fit flex-row items-center-safe justify-center-safe gap-2 rounded-full bg-gradient-to-r from-green-500/20 to-teal-500/20 px-3 py-1 font-semibold text-amber-500">
+  <Hero
+    className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
+    backgroundClassName="bg-slate-900"
+  >
+    <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
       <p className="text-sm">Blog & News</p>
     </div>
-    <h1 className="text-5xl sm:text-6xl">Insights on Risks & Compliance</h1>
-    <p className="text-xl text-gray-600">
+    <h1 className="text-5xl sm:text-6xl">
+      Insights on{' '}
+      <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
+        Cyber Risk
+      </span>{' '}
+      & Compliance
+    </h1>
+    <p className="text-xl text-white/70">
       Expert advice, industry trends, and practical guides to help you manage
       information risk.
     </p>
@@ -81,45 +89,48 @@ export function NewsPage() {
   return (
     <Layout news={true} hero={NewsHero}>
       {/* Metadata */}
-      <title>
-        Modelverse Blog | GRC, Risk Compliance, and Security Insights
-      </title>
+      <title>Modelverse Blog | Cybersecurity Insights</title>
       <meta
         name="description"
         content="Stay up-to-date with Modelverse's latest insights on GRC, compliance regulations, cybersecurity trends, and risk management best practices."
       />
 
       {/* Content */}
-      <div className="bg-gray-50">
-        <div className="flex flex-col justify-center-safe gap-8 px-4 py-16 md:container md:mx-auto">
+      <div className="bg-linear-to-b from-slate-900 via-slate-800 to-slate-900">
+        <div className="flex flex-col justify-center-safe gap-32 px-4 pt-16 pb-32 text-white md:container md:mx-auto">
           {blogPosts.length != 0 ? (
             blogPosts
               .filter((post) => post.metadata.featured)
               .map((post, index) => (
                 <Card
-                  className="grid grid-cols-1 bg-white p-0 lg:grid-cols-2"
+                  className="relative grid grid-cols-1 bg-white/5 p-0 hover:border-lime-500/50 hover:bg-white/10 lg:grid-cols-2"
                   key={index}
                 >
+                  <div className="absolute mt-4 ml-4 flex w-fit flex-row gap-2 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-1 text-white shadow-lg backdrop-blur-md">
+                    <p className="text-sm">Featured</p>
+                  </div>
                   <div className="flex items-center-safe justify-center-safe lg:h-full lg:basis-1/2">
                     {post.metadata.image != '' ? (
                       <img
                         src={post.metadata.image}
                         alt=""
-                        className="size-full rounded-t-lg object-cover lg:rounded-t-none lg:rounded-l-lg"
+                        className="size-full rounded-t-xl object-cover lg:rounded-t-none lg:rounded-l-xl"
                       />
                     ) : (
-                      <div className="size-full rounded-t-lg bg-black lg:rounded-t-none lg:rounded-l-lg" />
+                      <div className="size-full rounded-t-xl bg-black lg:rounded-t-none lg:rounded-l-xl" />
                     )}
                   </div>
                   <div className="flex flex-col gap-4 p-8 lg:basis-1/2 lg:justify-center-safe">
-                    <Badge className="bg-amber-200 text-amber-700">
-                      Featured
-                    </Badge>
-                    <h1 className="text-3xl">{post.metadata.title}</h1>
-                    <p className="text-lg text-gray-600">
+                    <h1
+                      className="cursor-pointer text-3xl transition-all duration-300 hover:text-lime-500"
+                      onClick={() => navigate(`/article/${post.postId}`)}
+                    >
+                      {post.metadata.title}
+                    </h1>
+                    <p className="text-lg text-white/70">
                       {post.metadata.summary}
                     </p>
-                    <div className="flex flex-row flex-wrap items-center-safe gap-4 text-gray-500">
+                    <div className="flex flex-row flex-wrap items-center-safe gap-4 text-white/60">
                       <div className="flex shrink-0 flex-row items-center-safe gap-2">
                         <Avatar className="size-8 self-center">
                           <AvatarImage
@@ -143,10 +154,11 @@ export function NewsPage() {
                       </div>
                     </div>
                     <button
-                      className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 sm:w-fit"
+                      className="group flex cursor-pointer flex-row justify-between gap-2 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:w-fit"
                       onClick={() => navigate(`/article/${post.postId}`)}
                     >
                       Read Article
+                      <ArrowRight className="transition-all duration-300 group-hover:translate-x-1" />
                     </button>
                   </div>
                 </Card>
@@ -167,23 +179,29 @@ export function NewsPage() {
                 {blogPosts
                   .filter((post) => !post.metadata.featured)
                   .map((post, index) => (
-                    <Card className="bg-white p-0" key={index}>
-                      <div className="flex min-h-[200px] items-center-safe justify-center-safe">
+                    <Card
+                      className="group cursor-pointer overflow-hidden bg-white/5 p-0 hover:border-lime-500/50 hover:bg-white/10"
+                      onClick={() => navigate(`/article/${post.postId}`)}
+                      key={index}
+                    >
+                      <div className="flex max-h-[200px] min-h-[200px] items-center-safe justify-center-safe overflow-hidden">
                         {post.metadata.image != '' ? (
                           <img
                             src={post.metadata.image}
                             alt=""
-                            className="size-full rounded-t-lg object-cover"
+                            className="size-full rounded-t-xl object-cover transition-all duration-300 group-hover:scale-105"
                           />
                         ) : (
-                          <div className="size-full rounded-t-lg bg-black" />
+                          <div className="size-full rounded-t-xl bg-black" />
                         )}
                       </div>
                       <div className="flex grow flex-col gap-4 p-8 md:justify-center-safe">
-                        <h1 className="text-xl">{post.metadata.title}</h1>
-                        <p className="text-gray-600">{post.metadata.summary}</p>
+                        <h1 className="text-xl transition-all duration-300 group-hover:text-lime-500">
+                          {post.metadata.title}
+                        </h1>
+                        <p className="text-white/70">{post.metadata.summary}</p>
                         <div className="flex grow flex-col justify-end-safe gap-4">
-                          <div className="mt-auto flex flex-row flex-wrap items-center-safe gap-4 text-gray-500">
+                          <div className="mt-auto flex flex-col gap-4 text-white/60">
                             <div className="flex shrink-0 flex-row items-center-safe gap-2">
                               <Avatar className="size-8 self-center">
                                 <AvatarImage
@@ -206,13 +224,6 @@ export function NewsPage() {
                               {post.metadata.date}
                             </div>
                           </div>
-                          <button
-                            className="group flex w-fit cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full bg-gradient-to-r text-amber-500/70 hover:text-amber-500"
-                            onClick={() => navigate(`/article/${post.postId}`)}
-                          >
-                            Read Article
-                            <ArrowRight className="size-5 transition-all duration-300 group-hover:translate-x-1" />
-                          </button>
                         </div>
                       </div>
                     </Card>

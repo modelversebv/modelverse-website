@@ -13,7 +13,8 @@ import { ContactPage } from './pages/Contact'
 import { HomePage } from './pages/Home'
 import { LegalPage } from './pages/Legal'
 import { NewsPage } from './pages/News'
-import { TestPage } from './pages/Test'
+import { ServicesPage } from './pages/Services'
+// import { TestPage } from './pages/Test'
 import { initializeGa4 } from './services/ga4'
 
 const COOKIE_CONSENT = 'user-preferences'
@@ -43,10 +44,11 @@ const RouterWrapper = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/news" element={<NewsPage />} />
         <Route path="/cases" element={<CasesPage />} />
+        <Route path="/services" element={<ServicesPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/article/:slug" element={<ArticlePage />} />
-        <Route path="/test" element={<TestPage />} />
+        {/* <Route path="/test" element={<TestPage />} /> */}
         <Route path="/legal/:slug" element={<LegalPage />} />
       </Routes>
     </>
