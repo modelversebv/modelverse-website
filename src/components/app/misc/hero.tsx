@@ -17,7 +17,7 @@ export function Hero({
   return (
     <div
       style={{ backgroundImage: `url(${backgroundImg})` }}
-      className={cn('bg-cover select-none', backgroundClassName)}
+      className={cn('bg-cover pt-20 select-none', backgroundClassName)}
     >
       <div
         className={cn(

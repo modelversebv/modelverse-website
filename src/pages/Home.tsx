@@ -111,7 +111,7 @@ export function HomePage() {
         <div className="absolute inset-0 bg-linear-to-b from-slate-900/50 via-slate-900/30 to-slate-900" />
 
         {/* Content */}
-        <div className="relative z-1 flex flex-col gap-16 md:container md:mx-auto lg:flex-row">
+        <div className="relative z-1 flex flex-col gap-16 py-20 md:container md:mx-auto lg:flex-row">
           <div className="flex flex-col gap-8 lg:basis-1/2">
             {/* Badge */}
             <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
@@ -135,7 +135,7 @@ export function HomePage() {
 
             {/* CTA Button */}
             <button
-              className="group flex cursor-pointer flex-row gap-2 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:w-fit"
+              className="group flex cursor-pointer flex-row justify-center-safe gap-2 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:w-fit"
               onClick={() =>
                 (window.location.href =
                   'https://outlook.office.com/bookwithme/user/d81d78745f8047d1a0ec05a07d8d40d6@modelverse.online/meetingtype/HEkH_Hmwx06JvFc-tP4ZJw2?anonymous')
@@ -168,7 +168,7 @@ export function HomePage() {
               <img
                 src="/images/misc/modelverse_platform.png"
                 alt="Modelverse Platform"
-                className="rounded-xl"
+                className="rounded-lg"
               />
             </Card>
           </div>
@@ -186,7 +186,7 @@ export function HomePage() {
       {/* Main content */}
       <div className="relative">
         <div className="absolute inset-0 bg-linear-to-b from-slate-900 via-slate-800 to-slate-900" />
-        <div className="relative z-1 flex flex-col gap-64 px-4 pt-16 pb-32 text-white md:container md:mx-auto">
+        <div className="relative z-1 flex flex-col gap-32 px-4 py-32 text-white md:container md:mx-auto">
           {/* Features */}
           <div className="flex flex-col gap-8 text-white md:container md:mx-auto">
             <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
@@ -220,7 +220,7 @@ export function HomePage() {
                 <img
                   src="/images/team/Team - web.jpg"
                   alt="Modelverse Platform"
-                  className="rounded-xl"
+                  className="rounded-lg"
                 />
               </Card>
             </div>
@@ -257,7 +257,7 @@ export function HomePage() {
             <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2">
               {testimonials.map((testimonial, index) => (
                 <Card
-                  className="p-0 transition-all duration-300 hover:shadow-lime-500/70"
+                  className="bg-white/5 p-0 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10"
                   key={index}
                 >
                   <YoutubeEmbed
@@ -285,12 +285,11 @@ export function HomePage() {
       {/* CTA (Call to action) */}
       <div className="relative overflow-hidden bg-linear-to-br from-slate-900 via-teal-900 to-slate-900 p-4 py-16 text-white">
         {/* Gradient balls */}
+        <div className="absolute top-0 left-0 h-96 w-96 rounded-full bg-linear-to-br from-lime-500/20 to-teal-500/20 blur-3xl" />
+        <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-linear-to-br from-teal-500/20 to-emerald-500/20 blur-3xl" />
 
         {/* Content */}
         <Card className="relative z-1 items-center-safe gap-4 text-center hover:bg-white/10 md:container md:mx-auto lg:max-w-3xl">
-          <div className="absolute top-0 left-0 size-16 rounded-full bg-lime-500 blur-3xl" />
-          <div className="absolute right-0 bottom-0 size-16 rounded-full bg-lime-500 blur-3xl" />
-
           <div className="relative z-1 flex flex-col items-center-safe justify-center-safe gap-4">
             {/* Badge */}
             <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
@@ -309,7 +308,7 @@ export function HomePage() {
 
             {/* Button */}
             <button
-              className="group flex cursor-pointer flex-row gap-2 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:w-fit"
+              className="group flex cursor-pointer flex-row justify-between gap-2 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:w-fit"
               onClick={() =>
                 (window.location.href =
                   'https://outlook.office.com/bookwithme/user/d81d78745f8047d1a0ec05a07d8d40d6@modelverse.online/meetingtype/HEkH_Hmwx06JvFc-tP4ZJw2?anonymous')

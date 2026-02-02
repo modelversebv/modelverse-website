@@ -25,7 +25,7 @@ export function Footer({ onManagePrivacy }: FooterProps) {
   }
 
   return (
-    <div className="shrink-0 bg-gray-900 text-white">
+    <div className="shrink-0 bg-slate-950 text-white">
       <div className="flex flex-col gap-8 px-4 py-8 md:container md:mx-auto md:px-8 md:py-16">
         <div className="flex flex-col gap-8 md:flex-row">
           <div className="flex flex-col gap-4">

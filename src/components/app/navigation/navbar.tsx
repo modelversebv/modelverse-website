@@ -1,40 +1,67 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-import { Dropdown } from '../misc/dropdown'
+import { Dropdown } from './dropdown'
+import { DropdownLink } from './dropdownLink'
+import { NavLink } from './navlink'
 
-// type NavBarProps = {
-//   home: boolean
-//   news: boolean
-//   cases: boolean
-//   services: boolean
-//   about: boolean
-// }
+type NavBarProps = {
+  home: boolean
+  news: boolean
+  cases: boolean
+  services: boolean
+  about: boolean
+}
 
-export function NavBar() {
+export function NavBar({
+  home = false,
+  news = false,
+  cases = false,
+  services = false,
+  about = false,
+}: NavBarProps) {
   const [isOpen, setIsOpen] = useState(false)
+  const navigate = useNavigate()
 
   return (
     <div
       className={`fixed top-0 right-0 left-0 flex flex-col gap-4 overflow-hidden border-b border-white/20 bg-white/10 p-4 text-white backdrop-blur-md transition-all duration-300 md:h-fit md:flex-row ${isOpen ? 'h-screen' : 'h-16'} z-100 md:overflow-visible`}
     >
       <div className="flex shrink-0 flex-row items-center-safe justify-between md:container md:mx-auto md:w-full">
-        <div className="flex flex-row items-center-safe gap-2">
+        <div
+          className="flex flex-row items-center-safe gap-2"
+          onClick={() => navigate('/')}
+        >
           <img src="/icon.png" alt="Modelverse" className="size-8" />
           <span className="text-lg font-semibold">Modelverse</span>
         </div>
-        <div className="hidden flex-row items-center-safe gap-4 md:flex">
-          <Link to="/test">Home</Link>
-          <Dropdown title="Solutions">
-            <Link to="/test">Platform</Link>
-            <Link to="/test">Services</Link>
+        <div className="hidden flex-row items-center-safe gap-4 md:flex lg:gap-8">
+          <NavLink active={home} to="/">
+            Home
+          </NavLink>
+          <Dropdown title="Solutions" active={services}>
+            <DropdownLink to="/" title="Platform">
+              Risk & compliance management
+            </DropdownLink>
+            <DropdownLink to="/services" title="Services" active={services}>
+              Pricing & Plans
+            </DropdownLink>
           </Dropdown>
-          <Link to="/test">Case Studies</Link>
-          <Link to="/test">News</Link>
-          <Link to="/test">About</Link>
+          <NavLink active={cases} to="/cases">
+            Case Studies
+          </NavLink>
+          <NavLink active={news} to="/news">
+            News
+          </NavLink>
+          <NavLink active={about} to="/about">
+            About
+          </NavLink>
         </div>
         <div className="hidden flex-row items-center md:flex">
-          <button className="cursor-pointer rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50">
+          <button
+            className="cursor-pointer rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50"
+            onClick={() => navigate('/contact')}
+          >
             Contact Us
           </button>
         </div>
@@ -52,17 +79,32 @@ export function NavBar() {
       </div>
       <div className="flex grow flex-col gap-4 overflow-scroll md:hidden">
         <div className="flex flex-col gap-4 border-y border-y-white/20 py-4">
-          <Link to="/test">Home</Link>
-          <Dropdown title="Solutions">
-            <Link to="/test">Platform</Link>
-            <Link to="/test">Services</Link>
+          <NavLink active={home} to="/">
+            Home
+          </NavLink>
+          <Dropdown title="Solutions" active={services}>
+            <DropdownLink to="/" title="Platform">
+              Risk & compliance management
+            </DropdownLink>
+            <DropdownLink to="/services" title="Services" active={services}>
+              Pricing & Plans
+            </DropdownLink>
           </Dropdown>
-          <Link to="/test">Case Studies</Link>
-          <Link to="/test">News</Link>
-          <Link to="/test">About</Link>
+          <NavLink active={cases} to="/cases">
+            Case Studies
+          </NavLink>
+          <NavLink active={news} to="/news">
+            News
+          </NavLink>
+          <NavLink active={about} to="/about">
+            About
+          </NavLink>
         </div>
         <div className="flex flex-col gap-4">
-          <button className="rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg">
+          <button
+            className="rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg"
+            onClick={() => navigate('/contact')}
+          >
             Contact Us
           </button>
         </div>

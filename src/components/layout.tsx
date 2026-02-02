@@ -19,11 +19,11 @@ type LayoutProps = {
 export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
   (
     {
-      // home = false,
-      // news = false,
-      // cases = false,
-      // services = false,
-      // about = false,
+      home = false,
+      news = false,
+      cases = false,
+      services = false,
+      about = false,
       hero,
       children,
     },
@@ -34,13 +34,19 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
     return (
       <div
         ref={ref} // <- this is the key for parent to scroll
-        className="scrollbar-hide flex h-screen w-screen flex-col overflow-auto scroll-smooth font-sans"
+        className="scrollbar-hide flex h-screen w-screen flex-col overflow-auto scroll-smooth bg-slate-900 font-sans"
       >
         <CookieBanner
           preferences={showConsentPreferences}
           setPreferences={setShowConsentPreferences}
         />
-        <NavBar />
+        <NavBar
+          home={home}
+          about={about}
+          cases={cases}
+          news={news}
+          services={services}
+        />
         <div className="flex grow flex-col">
           {hero}
           {children}

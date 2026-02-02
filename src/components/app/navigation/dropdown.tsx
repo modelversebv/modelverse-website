@@ -5,20 +5,25 @@ import { ChevronDown } from 'lucide-react'
 
 type DropdownProps = {
   title: string
+  active: boolean
   children: React.ReactNode
 }
 
-export function Dropdown({ title, children }: DropdownProps) {
+export function Dropdown({ title, active, children }: DropdownProps) {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <>
       <div className="group relative hidden flex-row items-center-safe gap-2 md:flex">
-        {title}
+        <span
+          className={`transition-all duration-300 ${active ? 'text-teal-500' : 'text-white/90 group-hover:text-white'}`}
+        >
+          {title}
+        </span>
         <ChevronDown
-          className={`size-4 transition-all duration-300 group-hover:rotate-180`}
+          className={`size-4 transition-all duration-300 group-hover:rotate-180 ${active && 'text-teal-500'}`}
         />
-        <div className="invisible absolute top-full translate-y-2 opacity-0 transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-          <div className="mt-2 flex flex-col gap-2 rounded-xl border border-white/20 bg-white/10 p-4 shadow-lg backdrop-blur-md">
+        <div className="invisible absolute top-full w-max translate-y-2 opacity-0 transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+          <div className="mt-2 flex flex-col overflow-hidden rounded-xl border border-white/30 bg-slate-900/80 shadow-lg">
             {children}
           </div>
         </div>
@@ -28,9 +33,13 @@ export function Dropdown({ title, children }: DropdownProps) {
           className="flex flex-row items-center-safe justify-between"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {title}
+          <span
+            className={`transition-all duration-300 ${active ? 'text-teal-500' : 'text-white/90 group-hover:text-white'}`}
+          >
+            {title}
+          </span>
           <ChevronDown
-            className={`size-4 transition-all duration-300 ${isOpen && 'rotate-180'}`}
+            className={`size-4 transition-all duration-300 ${isOpen && 'rotate-180'} ${active && 'text-teal-500'}`}
           />
         </div>
 
