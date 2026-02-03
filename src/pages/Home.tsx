@@ -1,3 +1,4 @@
+// import { useRef } from 'react'
 import YoutubeEmbed from '@/components/app/embed/youtubeEmbed'
 import { Card } from '@/components/app/misc/card'
 import { Layout } from '@/components/layout'
@@ -13,21 +14,9 @@ import {
   Search,
   Sparkles,
 } from 'lucide-react'
-
-// import { motion } from 'motion/react'
+import { motion } from 'motion/react'
 
 export function HomePage() {
-  // const FADE_IN_VARIANTS = {
-  //   hidden: { opacity: 0, y: 20 },
-  //   visible: {
-  //     opacity: 1,
-  //     y: 0,
-  //     transition: { duration: 0.6, ease: 'easeOut' },
-  //   },
-  // } as const
-
-  // const VIEWPORT_CONFIG = { once: true, amount: 0.2 }
-
   const features = [
     {
       icon: Compass,
@@ -95,6 +84,28 @@ export function HomePage() {
     },
   ]
 
+  // Framer Motion
+  // const containerRef = useRef<HTMLDivElement>(null)
+  // const heroRef = useRef<HTMLDivElement>(null)
+
+  // const { scrollYProgress } = useScroll({
+  //   container: containerRef,
+  //   target: heroRef,
+  //   offset: ['start start', 'end start'],
+  // })
+
+  // const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
+  // const heroScale = useTransform(scrollYProgress, [0, 0.8], [1, 0.9])
+
+  // const fadeUpVariant = {
+  //   hidden: { opacity: 0, y: 30 },
+  //   visible: {
+  //     opacity: 1,
+  //     y: 0,
+  //     transition: { duration: 0.6, ease: 'easeOut', staggerChildren: 0.1 },
+  //   },
+  // } as const
+
   return (
     <Layout home={true}>
       {/* Metadata */}
@@ -111,7 +122,7 @@ export function HomePage() {
         <div className="absolute inset-0 bg-linear-to-b from-slate-900/50 via-slate-900/30 to-slate-900" />
 
         {/* Content */}
-        <div className="relative z-1 flex flex-col gap-16 py-20 md:container md:mx-auto lg:flex-row">
+        <motion.div className="relative z-1 flex flex-col gap-16 py-20 md:container md:mx-auto lg:flex-row">
           <div className="flex flex-col gap-8 lg:basis-1/2">
             {/* Badge */}
             <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
@@ -172,7 +183,7 @@ export function HomePage() {
               />
             </Card>
           </div>
-        </div>
+        </motion.div>
 
         {/* Bouncing Icon bottom */}
         <div className="absolute right-0 bottom-4 left-0 flex animate-bounce justify-center-safe">
@@ -186,9 +197,9 @@ export function HomePage() {
       {/* Main content */}
       <div className="relative">
         <div className="absolute inset-0 bg-linear-to-b from-slate-900 via-slate-800 to-slate-900" />
-        <div className="relative z-1 flex flex-col gap-32 px-4 py-32 text-white md:container md:mx-auto">
+        <div className="relative z-1 flex flex-col gap-32 px-4 py-16 text-white md:container md:mx-auto">
           {/* Features */}
-          <div className="flex flex-col gap-8 text-white md:container md:mx-auto">
+          <motion.div className="flex flex-col gap-8 text-white md:container md:mx-auto">
             <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
               <h1 className="text-4xl sm:text-5xl">
                 Everything You Need to Manage Risks and Compliance
@@ -211,10 +222,10 @@ export function HomePage() {
                 </Card>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Benefits */}
-          <div className="flex flex-col gap-8 text-white md:container md:mx-auto lg:flex-row">
+          <motion.div className="flex flex-col gap-8 text-white md:container md:mx-auto lg:flex-row">
             <div className="flex items-center-safe justify-center-safe lg:basis-1/2">
               <Card className="hidden p-2 hover:bg-white/10 lg:flex">
                 <img
@@ -243,10 +254,10 @@ export function HomePage() {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Testimonials */}
-          <div className="flex flex-col gap-8 text-white md:container md:mx-auto">
+          <motion.div className="flex flex-col gap-8 text-white md:container md:mx-auto">
             <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
               <h1 className="text-4xl sm:text-5xl">Hear From Our Customers</h1>
               <p className="text-xl text-white/70">
@@ -278,7 +289,7 @@ export function HomePage() {
                 </Card>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 

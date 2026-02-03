@@ -97,7 +97,7 @@ export function NewsPage() {
 
       {/* Content */}
       <div className="bg-linear-to-b from-slate-900 via-slate-800 to-slate-900">
-        <div className="flex flex-col justify-center-safe gap-32 px-4 pt-16 pb-32 text-white md:container md:mx-auto">
+        <div className="flex flex-col justify-center-safe gap-32 px-4 py-16 text-white md:container md:mx-auto">
           {blogPosts.length != 0 ? (
             blogPosts
               .filter((post) => post.metadata.featured)

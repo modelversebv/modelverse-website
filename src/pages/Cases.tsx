@@ -122,7 +122,7 @@ export function CasesPage() {
 
       {/* Content */}
       <div className="bg-linear-to-b from-slate-900 via-slate-800 to-slate-900">
-        <div className="flex flex-col gap-8 px-4 pt-16 pb-32 md:container md:mx-auto">
+        <div className="flex flex-col gap-8 px-4 py-16 md:container md:mx-auto">
           {caseStudies.map((study, index) => (
             <Card
               className={`min-h-[400px] bg-white/5 p-0 text-white hover:border-lime-500/50 hover:bg-white/10 lg:flex-row ${index % 2 != 0 && 'lg:flex-row-reverse'}`}

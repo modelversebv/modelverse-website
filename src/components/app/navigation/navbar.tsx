@@ -25,11 +25,11 @@ export function NavBar({
 
   return (
     <div
-      className={`fixed top-0 right-0 left-0 flex flex-col gap-4 overflow-hidden border-b border-white/20 bg-white/10 p-4 text-white backdrop-blur-md transition-all duration-300 md:h-fit md:flex-row ${isOpen ? 'h-screen' : 'h-16'} z-100 md:overflow-visible`}
+      className={`fixed top-0 right-0 left-0 flex flex-col gap-4 overflow-hidden border-b border-white/20 p-4 text-white backdrop-blur-md transition-all duration-300 md:h-fit md:flex-row ${isOpen ? 'h-screen' : 'h-16'} z-100 md:overflow-visible`}
     >
       <div className="flex shrink-0 flex-row items-center-safe justify-between md:container md:mx-auto md:w-full">
         <div
-          className="flex flex-row items-center-safe gap-2"
+          className="flex cursor-pointer flex-row items-center-safe gap-2"
           onClick={() => navigate('/')}
         >
           <img src="/icon.png" alt="Modelverse" className="size-8" />
@@ -40,7 +40,7 @@ export function NavBar({
             Home
           </NavLink>
           <Dropdown title="Solutions" active={services}>
-            <DropdownLink to="/" title="Platform">
+            <DropdownLink to="/platform" title="Platform" disabled>
               Risk & compliance management
             </DropdownLink>
             <DropdownLink to="/services" title="Services" active={services}>
@@ -83,7 +83,7 @@ export function NavBar({
             Home
           </NavLink>
           <Dropdown title="Solutions" active={services}>
-            <DropdownLink to="/" title="Platform">
+            <DropdownLink to="/" title="Platform" disabled>
               Risk & compliance management
             </DropdownLink>
             <DropdownLink to="/services" title="Services" active={services}>

@@ -193,8 +193,8 @@ export function AboutPage() {
 
       {/* Content */}
       <div className="bg-linear-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
-        <div className="flex flex-col justify-center-safe gap-32 px-4 pt-16 pb-32 md:container md:mx-auto">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="flex flex-col justify-center-safe gap-32 px-4 py-16 md:container md:mx-auto">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
             <div className="flex flex-col gap-4 md:justify-center-safe">
               <h1 className="text-4xl sm:text-5xl">Our Story</h1>
               <div className="flex flex-col gap-4 text-lg text-white/70">
@@ -266,14 +266,14 @@ export function AboutPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid max-w-7xl grid-cols-1 gap-4 self-center sm:grid-cols-2 lg:grid-cols-4">
               {teamMembers.map((member, index) => (
                 <Card
                   className="bg-white/5 p-0 hover:border-lime-500/50 hover:bg-white/10"
                   key={index}
                 >
                   <img src={member.image} className="rounded-t-xl" alt="" />
-                  <div className="flex grow flex-col p-8">
+                  <div className="flex grow flex-col p-4">
                     <h1 className="mb-2 text-xl">{member.name}</h1>
                     <h1 className="mb-4 bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text font-semibold text-transparent">
                       {member.role}

@@ -1,7 +1,6 @@
 import { Card } from '@/components/app/misc/card'
 import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
-import { Badge } from '@/components/ui/badge'
 import {
   ArrowRight,
   Award,
@@ -42,6 +41,7 @@ export function ServicesPage() {
         'Assess your current security posture',
         'Articulate your investment opportunities',
       ],
+      gradient: 'from-lime-500 to-emerald-500',
     },
     {
       icon: Award,
@@ -53,6 +53,7 @@ export function ServicesPage() {
         'Supports for all certification frameworks',
         'Benefit from innovative automation',
       ],
+      gradient: 'from-green-500 to-teal-500',
     },
     {
       icon: ScrollText,
@@ -64,6 +65,7 @@ export function ServicesPage() {
         'Implement effective decision-making processes',
         'Align security with business objectives',
       ],
+      gradient: 'from-emerald-500 to-cyan-500',
     },
     {
       icon: Rocket,
@@ -75,6 +77,7 @@ export function ServicesPage() {
         'Embed security practices',
         'Promote a strong security culture',
       ],
+      gradient: 'from-cyan-500 to-emerald-500',
     },
     {
       icon: Eye,
@@ -86,6 +89,7 @@ export function ServicesPage() {
         'Detect anomalies and potential breaches',
         'Respond to incidents quickly and effectively',
       ],
+      gradient: 'from-teal-500 to-green-500',
     },
     {
       icon: Shield,
@@ -97,6 +101,7 @@ export function ServicesPage() {
         'Minimise fallout from attacks',
         'Maintain business continuity',
       ],
+      gradient: 'from-emerald-500 to-lime-500',
     },
   ]
 
@@ -132,7 +137,7 @@ export function ServicesPage() {
 
       {/* Content */}
       <div className="bg-linear-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
-        <div className="relative z-1 flex flex-col gap-32 px-4 py-32 text-white md:container md:mx-auto">
+        <div className="relative z-1 flex flex-col gap-32 px-4 py-16 text-white md:container md:mx-auto">
           <div className="flex flex-col items-center-safe gap-8 md:container md:mx-auto">
             <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
               <h1 className="text-4xl sm:text-5xl">Your Security Journey</h1>
@@ -154,8 +159,17 @@ export function ServicesPage() {
                       />
                     )}
                   </div>
-                  <Card className="w-full grow gap-4 bg-white/5 p-4 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10 lg:hover:-translate-y-2">
-                    <div className="flex flex-row gap-4 lg:flex-col lg:items-center-safe">
+                  <Card className="w-full grow overflow-hidden bg-white/5 p-0 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10 lg:hover:-translate-y-2">
+                    <div
+                      className={`flex flex-col gap-2 bg-linear-to-br p-4 ${value.gradient}`}
+                    >
+                      <div className="w-fit rounded-xl bg-white/30 p-2">
+                        <value.icon className="size-6" />
+                      </div>
+                      <h3 className="text-xl">{value.title}</h3>
+                      <p className="text-white/70">{value.description}</p>
+                    </div>
+                    {/* <div className="flex flex-row gap-4 lg:flex-col lg:items-center-safe">
                       <div className="mb-4 flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-lime-500 to-teal-500 lg:rounded-full">
                         <value.icon className="size-6" />
                       </div>
@@ -166,8 +180,8 @@ export function ServicesPage() {
                         <h3 className="text-xl">{value.title}</h3>
                       </div>
                     </div>
-                    <p className="text-white/70">{value.description}</p>
-                    <div className="flex flex-col gap-2">
+                    <p className="text-white/70">{value.description}</p> */}
+                    <div className="flex flex-col gap-2 p-4">
                       {value.points.map((point) => (
                         <div className="flex flex-row gap-2">
                           <Check className="size-6 shrink-0 text-lime-500" />

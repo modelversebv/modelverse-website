@@ -64,7 +64,7 @@ export function ContactPage() {
 
       {/* Content */}
       <div className="bg-linear-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
-        <div className="flex flex-col justify-center-safe gap-32 px-4 pt-16 pb-32 md:container md:mx-auto">
+        <div className="flex flex-col justify-center-safe gap-32 px-4 py-16 md:container md:mx-auto">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-4">
             {contactInfo.map((contact, index) => (
               <Card
