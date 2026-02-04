@@ -1,4 +1,3 @@
-import heroImage from '@/assets/heroes/about.avif'
 // Importing pfps
 import benImage from '@/assets/team/Ben - web.jpg'
 import bozhenaImage from '@/assets/team/Bozhena - web.jpg'
@@ -27,7 +26,7 @@ const AboutHero = (
   <Hero
     className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
     backgroundClassName="object-[center_70%]"
-    backgroundImg={heroImage}
+    backgroundImg="/images/heroes/about.avif"
     overlay
   >
     <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">

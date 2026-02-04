@@ -1,5 +1,4 @@
 // import { useRef } from 'react'
-import heroImage from '@/assets/heroes/home.avif'
 import teamImage from '@/assets/team/Team - web.jpg'
 import YoutubeEmbed from '@/components/app/embed/youtubeEmbed'
 import { Card } from '@/components/app/misc/card'
@@ -120,7 +119,7 @@ export function HomePage() {
       <div className="relative flex min-h-screen flex-col justify-center-safe p-4 text-white">
         {/* Background and Overlay */}
         <img
-          src={heroImage}
+          src="/images/heroes/home.avif"
           fetchPriority="high"
           alt=""
           className="absolute inset-0 size-full object-cover object-[74%_center] md:object-[85%_center] lg:object-[70%_center]"

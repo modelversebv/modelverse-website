@@ -1,6 +1,5 @@
-import heroImage from '@/assets/heroes/cases.avif'
-import eighteenZeroOneImage from '@/assets/new_logos/1801.jpg'
 // Importing images
+import eighteenZeroOneImage from '@/assets/new_logos/1801.jpg'
 import fellowmindImage from '@/assets/new_logos/fellowmind.jpg'
 import leydenjarImage from '@/assets/new_logos/leydan-jar.jpg'
 import nedatoImage from '@/assets/new_logos/nedato.jpg'
@@ -18,7 +17,7 @@ const CasesHero = (
   <Hero
     className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
     backgroundClassName="object-[center_40%]"
-    backgroundImg={heroImage}
+    backgroundImg="/images/heroes/cases.avif"
     overlay
   >
     <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
