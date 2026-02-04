@@ -81,9 +81,7 @@ export function NewsPage() {
   return (
     <Layout news={true} hero={NewsHero}>
       {/* Metadata */}
-      <title>
-        Modelverse Blog | Cybersecurity Insights
-      </title>
+      <title>Modelverse Blog | Cybersecurity Insights</title>
       <meta
         name="description"
         content="Stay up-to-date with Modelverse's latest insights on GRC, compliance regulations, cybersecurity trends, and risk management best practices."
@@ -168,7 +166,7 @@ export function NewsPage() {
                   .filter((post) => !post.metadata.featured)
                   .map((post, index) => (
                     <Card className="bg-white p-0" key={index}>
-                      <div className="flex min-h-[200px] max-h-[200px] items-center-safe justify-center-safe">
+                      <div className="flex max-h-[200px] min-h-[200px] items-center-safe justify-center-safe">
                         {post.metadata.image != '' ? (
                           <img
                             src={post.metadata.image}
