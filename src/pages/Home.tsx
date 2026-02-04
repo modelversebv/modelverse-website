@@ -1,11 +1,12 @@
 // import { useRef } from 'react'
+import heroImage from '@/assets/heroes/home.avif'
+import teamImage from '@/assets/team/Team - web.jpg'
 import YoutubeEmbed from '@/components/app/embed/youtubeEmbed'
 import { Card } from '@/components/app/misc/card'
 import { Layout } from '@/components/layout'
 import {
   ArrowRight,
   Brain,
-  ChartNoAxesCombined,
   Check,
   CheckCircle2,
   Compass,
@@ -118,7 +119,10 @@ export function HomePage() {
       {/* Landing Banner */}
       <div className="relative flex min-h-screen flex-col justify-center-safe p-4 text-white">
         {/* Background and Overlay */}
-        <div className="absolute inset-0 bg-[url(/background-9-16.jpg)] bg-cover bg-center bg-no-repeat" />
+        <div
+          style={{ backgroundImage: `url(${heroImage})` }}
+          className={`absolute inset-0 bg-cover bg-position-[74%_center] bg-no-repeat md:bg-position-[85%_center] lg:bg-position-[70%_center]`}
+        />
         <div className="absolute inset-0 bg-linear-to-b from-slate-900/50 via-slate-900/30 to-slate-900" />
 
         {/* Content */}
@@ -126,8 +130,8 @@ export function HomePage() {
           <div className="flex flex-col gap-8 lg:basis-1/2">
             {/* Badge */}
             <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
-              <ChartNoAxesCombined className="size-5" />
-              <p className="text-sm">Scalable Security</p>
+              <Sparkles className="size-5" />
+              <p className="text-sm">We secure. You succeed!</p>
             </div>
 
             {/* Title */}
@@ -174,7 +178,7 @@ export function HomePage() {
               </Card>
             </div>
           </div>
-          <div className="flex items-center-safe justify-center-safe lg:basis-1/2">
+          {/* <div className="flex items-center-safe justify-center-safe lg:basis-1/2">
             <Card className="hidden p-2 hover:bg-white/10 lg:flex">
               <img
                 src="/images/misc/modelverse_platform.png"
@@ -182,7 +186,7 @@ export function HomePage() {
                 className="rounded-lg"
               />
             </Card>
-          </div>
+          </div> */}
         </motion.div>
 
         {/* Bouncing Icon bottom */}
@@ -213,7 +217,7 @@ export function HomePage() {
                 >
                   <div className="absolute inset-0 rounded-lg bg-linear-to-br group-hover:from-lime-500/10 group-hover:to-teal-500/10" />
                   <div className="relative z-1 flex flex-col gap-2">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-linear-to-br from-lime-500 to-teal-500">
+                    <div className="mb-4 flex w-fit items-center justify-center rounded-xl bg-linear-to-br from-lime-500 to-teal-500 p-2">
                       <feature.icon className="size-6" />
                     </div>
                     <h3 className="mb-2 text-xl">{feature.title}</h3>
@@ -229,8 +233,8 @@ export function HomePage() {
             <div className="flex items-center-safe justify-center-safe lg:basis-1/2">
               <Card className="hidden p-2 hover:bg-white/10 lg:flex">
                 <img
-                  src="/images/team/Team - web.jpg"
-                  alt="Modelverse Platform"
+                  src={teamImage}
+                  alt="Modelverse Team"
                   className="rounded-lg"
                 />
               </Card>

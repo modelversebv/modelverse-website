@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 
+import emailBadge from '@/assets/badges/email-test-badge.png'
 import { BuildNumber } from '@/components/buildNumber'
 import { Github, Linkedin, Mail } from 'lucide-react'
 
@@ -42,19 +43,19 @@ export function Footer({ onManagePrivacy }: FooterProps) {
             <div className="flex flex-row gap-4 text-white">
               <a
                 href="https://www.linkedin.com/company/modelverse/"
-                className="flex size-10 items-center justify-center rounded-lg bg-gray-800 transition-colors duration-300 hover:bg-gray-700"
+                className="flex w-fit items-center justify-center rounded-xl bg-slate-800 p-2 transition-colors duration-300 hover:bg-slate-700"
               >
                 <Linkedin className="size-6" />
               </a>
               <Link
                 to="/contact"
-                className="flex size-10 items-center justify-center rounded-lg bg-gray-800 transition-colors duration-300 hover:bg-gray-700"
+                className="flex w-fit items-center justify-center rounded-xl bg-slate-800 p-2 transition-colors duration-300 hover:bg-slate-700"
               >
                 <Mail className="size-6" />
               </Link>
               <a
                 href="https://github.com/modelversebv/modelverse-website/?tab=readme-ov-file#readme"
-                className="flex size-10 items-center justify-center rounded-lg bg-gray-800 transition-colors duration-300 hover:bg-gray-700"
+                className="flex w-fit items-center justify-center rounded-xl bg-slate-800 p-2 transition-colors duration-300 hover:bg-slate-700"
               >
                 <Github className="size-6" />
               </a>
@@ -85,11 +86,7 @@ export function Footer({ onManagePrivacy }: FooterProps) {
         <div className="flex flex-col gap-4">
           <h4 className="text-sm text-gray-400">Security & Compliance</h4>
           <div className="flex flex-wrap gap-2">
-            <img
-              src="/images/badges/email-test-badge.png"
-              alt="Email Test: 100%"
-              className="w-32"
-            />
+            <img src={emailBadge} alt="Email Test: 100%" className="w-32" />
           </div>
         </div>
         <div className="h-px w-full shrink-0 bg-gray-800" />

@@ -19,6 +19,11 @@ export function DropdownLink({
     <>
       <Link
         to={to}
+        onClick={(e) => {
+          if (disabled) {
+            e.preventDefault()
+          }
+        }}
         className={`transtion-all hidden flex-col gap-2 p-2 text-white duration-300 ${disabled && 'cursor-default! text-white/50! hover:bg-transparent!'} ${active ? 'bg-teal-500/30' : 'hover:bg-white/20'} md:flex`}
       >
         <span className={`font-semibold ${active && 'text-teal-500'}`}>
@@ -32,6 +37,11 @@ export function DropdownLink({
       </Link>
       <Link
         to={to}
+        onClick={(e) => {
+          if (disabled) {
+            e.preventDefault()
+          }
+        }}
         className={`md:hidden ${disabled && 'text-white/50!'} ${active ? 'text-teal-500' : 'text-white/90 hover:text-white'}`}
       >
         {title}

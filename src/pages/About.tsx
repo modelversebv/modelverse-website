@@ -1,3 +1,14 @@
+import heroImage from '@/assets/heroes/about.avif'
+// Importing pfps
+import benImage from '@/assets/team/Ben - web.jpg'
+import bozhenaImage from '@/assets/team/Bozhena - web.jpg'
+import daanImage from '@/assets/team/Daan - web.jpg'
+import liliImage from '@/assets/team/Lili - web.jpg'
+import marionaImage from '@/assets/team/Mariona - web.jpg'
+import mateiImage from '@/assets/team/Matei - web.jpg'
+import reshmaImage from '@/assets/team/Reshma - web.jpg'
+import sjorsImage from '@/assets/team/Sjors - web.jpg'
+import teamImage from '@/assets/team/Team - web.jpg'
 import { Card } from '@/components/app/misc/card'
 import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
@@ -15,7 +26,9 @@ import {
 const AboutHero = (
   <Hero
     className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
-    backgroundClassName="bg-slate-900"
+    backgroundClassName="bg-slate-900 bg-[position:center_70%]"
+    backgroundImg={heroImage}
+    overlay
   >
     <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
       <p className="text-sm">About Modelverse</p>
@@ -39,7 +52,7 @@ export function AboutPage() {
       name: 'Ben Krutzen',
       role: 'CEO & CTO | Co-Founder',
       bio: 'Ben is the creator of Modelverse, driven by a passion for turning strategy into action. With over 25 years at Shell and later as a partner at KPMG, Ben helped organizations navigate complex challenges across transformation, risk, and technology. He holds a PhD in theoretical physics and once explored black holes at Imperial College London—before diving into the world of business.',
-      image: 'images/team/Ben - web.jpg',
+      image: benImage,
       linkedin: 'https://www.linkedin.com/in/benkrutzen/',
       mail: 'mailto:ben@modelverse.online',
       dob: '',
@@ -48,7 +61,7 @@ export function AboutPage() {
       name: 'Reshma Pandohi Mishre',
       role: 'Partner | Co-Founder',
       bio: 'Reshma brings deep expertise in strategic information management and cybersecurity, with a clear, structured approach to tackling complex challenges. Reshma held a variety of IT leadership an Security roles across international corporates and the energy sector. She holds an MSc in Applied Physics and an executive MSc in Cyber Security.',
-      image: 'images/team/Reshma - web.jpg',
+      image: reshmaImage,
       linkedin: 'https://www.linkedin.com/in/reshmapandohi/',
       mail: 'mailto:reshma@modelverse.online',
       dob: '',
@@ -57,7 +70,7 @@ export function AboutPage() {
       name: 'Daan Loyens',
       role: 'CFO & COO | Co-Founder',
       bio: 'Daan is an experienced entrepreneur and IT leader who’s passionate about using modern technology to help organizations tackle real-world challenges. Daan brings broad insight as a strategist, investor, and trusted cybersecurity advisor. He holds a PhD and MSc in Computing Science, along with an executive MSc in Cyber Security.',
-      image: 'images/team/Daan - web.jpg',
+      image: daanImage,
       linkedin: 'https://www.linkedin.com/in/dl11235813213456/',
       mail: 'mailto:daan@modelverse.online',
       dob: '',
@@ -66,7 +79,7 @@ export function AboutPage() {
       name: 'Lili Guo',
       role: 'Partner | CISO',
       bio: 'Lili is a governance expert with deep experience in health, cybersecurity and patient safety. Before becoming a partner, Lili spent 12 years at the Dutch Ministry of Health, working on organ donation, e-health, and cybersecurity. She holds a Cum Laude BSc in Biomedical Science, a Cum Laude MSc in Neuroscience, and a Summa Cum Laude MSc in Cyber Security Governance.',
-      image: 'images/team/Lili - web.jpg',
+      image: liliImage,
       linkedin: 'https://www.linkedin.com/in/lili-guo-3941b126/',
       mail: 'mailto:Lili@modelverse.online',
       dob: '',
@@ -75,7 +88,7 @@ export function AboutPage() {
       name: 'Bozhena Kovtun',
       role: 'Office Manager',
       bio: 'Bozhena smoothly runs the back-office, always friendly, accessible, and business-smart.',
-      image: 'images/team/Bozhena - web.jpg',
+      image: bozhenaImage,
       linkedin: 'https://www.linkedin.com/in/bozhena-kovtun-0a106619b/',
       mail: 'mailto:bozhena@valuetracks.io',
       dob: '',
@@ -84,7 +97,7 @@ export function AboutPage() {
       name: 'Mariona Fortuny Jané',
       role: 'Risk Consultant',
       bio: 'Mariona researches, interprets, structures and creates cybersecurity risk models and ESG models for enterprise clients.',
-      image: 'images/team/Mariona - web.jpg',
+      image: marionaImage,
       linkedin: 'https://www.linkedin.com/in/mariona-fortuny-jan%C3%A9/',
       mail: 'mailto:mariona@modelverse.online',
       dob: '',
@@ -93,7 +106,7 @@ export function AboutPage() {
       name: 'Sjors de Natris',
       role: 'Risk Consultant & Security Engineer',
       bio: 'Sjors is focused on risk management and platform improvements using cloud services and security infrastructure.',
-      image: 'images/team/Sjors - web.jpg',
+      image: sjorsImage,
       linkedin: 'https://www.linkedin.com/in/sjors-de-natris-470a51198/',
       mail: 'mailto:sjors@modelverse.online',
       dob: '',
@@ -102,7 +115,7 @@ export function AboutPage() {
       name: 'Matei Avram',
       role: 'Software Engineer',
       bio: 'Matei develops and maintains the website, helps implement DevOps practices, and supports the development of the Modelverse platform.',
-      image: 'images/team/Matei - web.jpg',
+      image: mateiImage,
       linkedin: 'https://www.linkedin.com/in/matei-avram-919771251/',
       mail: 'mailto:matei@modelverse.online',
       dob: '',
@@ -219,9 +232,9 @@ export function AboutPage() {
               </div>
             </div>
             <div className="relative flex items-center-safe justify-center-safe lg:basis-1/2">
-              <Card className="hidden p-2 hover:bg-white/10 lg:flex">
+              <Card className="flex p-2 hover:bg-white/10">
                 <img
-                  src="/images/team/Team minus Michel - web.jpg"
+                  src={teamImage}
                   alt="Modelverse team of eight members, photographed together in their bright, modern office headquarters."
                   className="aspect-video rounded-lg object-cover"
                 />
@@ -245,7 +258,7 @@ export function AboutPage() {
                 >
                   <div className="absolute inset-0 rounded-lg bg-linear-to-br group-hover:from-lime-500/10 group-hover:to-teal-500/10" />
                   <div className="relative z-1 flex flex-col gap-2">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-linear-to-br from-lime-500 to-teal-500">
+                    <div className="mb-4 flex w-fit items-center justify-center rounded-xl bg-linear-to-br from-lime-500 to-teal-500 p-2">
                       <value.icon className="size-6" />
                     </div>
                     <h3 className="mb-2 text-xl">{value.title}</h3>
@@ -282,13 +295,13 @@ export function AboutPage() {
                     <div className="flex grow flex-row items-end gap-2">
                       <a
                         href={member.linkedin}
-                        className="flex size-10 items-center justify-center rounded-lg border border-white/20 bg-white/10 transition-colors duration-300 hover:bg-white/20"
+                        className="flex w-fit items-center justify-center rounded-xl border border-white/20 bg-white/10 p-2 transition-colors duration-300 hover:bg-white/20"
                       >
                         <Linkedin className="size-6" />
                       </a>
                       <a
                         href={member.mail}
-                        className="flex size-10 items-center justify-center rounded-lg border border-white/20 bg-white/10 transition-colors duration-300 hover:bg-white/20"
+                        className="flex w-fit items-center justify-center rounded-xl border border-white/20 bg-white/10 p-2 transition-colors duration-300 hover:bg-white/20"
                       >
                         <Mail className="size-6" />
                       </a>
@@ -332,7 +345,7 @@ export function AboutPage() {
                         </div>
                         <a
                           href={ambassador.linkedin}
-                          className="flex size-10 items-center justify-center rounded-lg border border-white/20 bg-white/10 transition-colors duration-300 hover:bg-white/20"
+                          className="flex w-fit items-center justify-center rounded-xl border border-white/20 bg-white/10 p-2 transition-colors duration-300 hover:bg-white/20"
                         >
                           <Linkedin className="size-6" />
                         </a>

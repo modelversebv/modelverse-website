@@ -156,7 +156,7 @@ export function CookieBanner({
           {!showPreferences ? (
             <>
               <div className="flex flex-row gap-4">
-                <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-lime-500 to-teal-500">
+                <div className="flex h-fit w-fit shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-lime-500 to-teal-500 p-2">
                   <Cookie className="size-6 text-white" />
                 </div>
                 <div className="flex grow flex-col gap-4">
@@ -228,7 +228,7 @@ export function CookieBanner({
             <div className="scrollbar-hide overflow-auto p-4">
               <div className="flex flex-col gap-4">
                 <div className="flex flex-row gap-4">
-                  <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-lime-500 to-teal-500">
+                  <div className="flex h-fit w-fit shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-lime-500 to-teal-500 p-2">
                     <Settings className="size-6 text-white" />
                   </div>
                   <div className="flex grow flex-col gap-4">

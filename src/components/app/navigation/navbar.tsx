@@ -25,7 +25,7 @@ export function NavBar({
 
   return (
     <div
-      className={`fixed top-0 right-0 left-0 flex flex-col gap-4 overflow-hidden border-b border-white/20 p-4 text-white backdrop-blur-md transition-all duration-300 md:h-fit md:flex-row ${isOpen ? 'h-screen' : 'h-16'} z-100 md:overflow-visible`}
+      className={`fixed top-0 right-0 left-0 flex flex-col gap-4 overflow-hidden border-b border-white/20 bg-black/10 p-4 text-white backdrop-blur-md transition-all duration-300 md:h-fit md:flex-row ${isOpen ? 'h-screen' : 'h-16'} z-100 md:overflow-visible`}
     >
       <div className="flex shrink-0 flex-row items-center-safe justify-between md:container md:mx-auto md:w-full">
         <div
@@ -35,7 +35,7 @@ export function NavBar({
           <img src="/icon.png" alt="Modelverse" className="size-8" />
           <span className="text-lg font-semibold">Modelverse</span>
         </div>
-        <div className="hidden flex-row items-center-safe gap-4 md:flex lg:gap-8">
+        <div className="hidden flex-row items-center-safe gap-4 rounded-full border border-white/10 bg-white/5 px-4 py-2 font-semibold md:flex lg:gap-8">
           <NavLink active={home} to="/">
             Home
           </NavLink>
@@ -78,7 +78,7 @@ export function NavBar({
         </div>
       </div>
       <div className="flex grow flex-col gap-4 overflow-scroll md:hidden">
-        <div className="flex flex-col gap-4 border-y border-y-white/20 py-4">
+        <div className="flex flex-col gap-4 border-y border-y-white/20 py-4 font-semibold">
           <NavLink active={home} to="/">
             Home
           </NavLink>

@@ -1,17 +1,12 @@
 import { useNavigate } from 'react-router-dom'
 
+import heroImage from '@/assets/heroes/news.avif'
 import { Card } from '@/components/app/misc/card'
 import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { ArrowRight, Calendar, User } from 'lucide-react'
 
-// // For testing
-// export const markdownFiles = import.meta.glob('@/articles/(*test*).mdx', {
-//   eager: true,
-// })
-
-// For production
 export const markdownFiles = import.meta.glob('@/articles/!(*test*).mdx', {
   eager: true,
 })
@@ -19,7 +14,9 @@ export const markdownFiles = import.meta.glob('@/articles/!(*test*).mdx', {
 const NewsHero = (
   <Hero
     className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
-    backgroundClassName="bg-slate-900"
+    backgroundClassName="bg-slate-900 bg-[position:center_30%]"
+    backgroundImg={heroImage}
+    overlay
   >
     <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
       <p className="text-sm">Blog & News</p>
@@ -103,18 +100,18 @@ export function NewsPage() {
               .filter((post) => post.metadata.featured)
               .map((post, index) => (
                 <Card
-                  className="relative grid grid-cols-1 bg-white/5 p-0 hover:border-lime-500/50 hover:bg-white/10 lg:grid-cols-2"
+                  className="group relative grid grid-cols-1 overflow-hidden bg-white/5 p-0 hover:border-lime-500/50 hover:bg-white/10 lg:grid-cols-2"
                   key={index}
                 >
-                  <div className="absolute mt-4 ml-4 flex w-fit flex-row gap-2 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-1 text-white shadow-lg backdrop-blur-md">
+                  <div className="absolute z-1 mt-4 ml-4 flex w-fit flex-row gap-2 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-1 text-white shadow-lg backdrop-blur-md">
                     <p className="text-sm">Featured</p>
                   </div>
-                  <div className="flex items-center-safe justify-center-safe lg:h-full lg:basis-1/2">
+                  <div className="flex items-center-safe justify-center-safe overflow-hidden lg:h-full lg:basis-1/2">
                     {post.metadata.image != '' ? (
                       <img
                         src={post.metadata.image}
                         alt=""
-                        className="size-full rounded-t-xl object-cover lg:rounded-t-none lg:rounded-l-xl"
+                        className="size-full rounded-t-xl object-cover transition-all duration-300 group-hover:scale-105 lg:rounded-t-none lg:rounded-l-xl"
                       />
                     ) : (
                       <div className="size-full rounded-t-xl bg-black lg:rounded-t-none lg:rounded-l-xl" />
