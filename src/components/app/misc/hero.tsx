@@ -16,10 +16,18 @@ export function Hero({
   children,
 }: HeroProps) {
   return (
-    <div
-      style={{ backgroundImage: `url(${backgroundImg})` }}
-      className={cn('relative bg-cover pt-20 select-none', backgroundClassName)}
-    >
+    <div className="relative pt-20 select-none">
+      {backgroundImg && (
+        <img
+          src={backgroundImg}
+          fetchPriority="high"
+          alt=""
+          className={cn(
+            'absolute inset-0 size-full object-cover',
+            backgroundClassName
+          )}
+        />
+      )}
       {overlay && (
         <div className="absolute inset-0 bg-linear-to-b from-slate-900/50 via-slate-900/30 to-slate-900" />
       )}

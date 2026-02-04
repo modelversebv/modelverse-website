@@ -26,7 +26,7 @@ import {
 const AboutHero = (
   <Hero
     className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
-    backgroundClassName="bg-slate-900 bg-[position:center_70%]"
+    backgroundClassName="object-[center_70%]"
     backgroundImg={heroImage}
     overlay
   >

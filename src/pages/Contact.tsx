@@ -8,7 +8,7 @@ import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 const ContactHero = (
   <Hero
     className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
-    backgroundClassName="bg-slate-900 bg-position-[center_80%]"
+    backgroundClassName="object-[center_80%]"
     backgroundImg={heroImage}
     overlay
   >

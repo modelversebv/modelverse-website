@@ -14,7 +14,7 @@ export const markdownFiles = import.meta.glob('@/articles/!(*test*).mdx', {
 const NewsHero = (
   <Hero
     className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
-    backgroundClassName="bg-slate-900 bg-[position:center_30%]"
+    backgroundClassName="object-[center_40%]"
     backgroundImg={heroImage}
     overlay
   >

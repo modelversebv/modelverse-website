@@ -119,9 +119,11 @@ export function HomePage() {
       {/* Landing Banner */}
       <div className="relative flex min-h-screen flex-col justify-center-safe p-4 text-white">
         {/* Background and Overlay */}
-        <div
-          style={{ backgroundImage: `url(${heroImage})` }}
-          className={`absolute inset-0 bg-cover bg-position-[74%_center] bg-no-repeat md:bg-position-[85%_center] lg:bg-position-[70%_center]`}
+        <img
+          src={heroImage}
+          fetchPriority="high"
+          alt=""
+          className="absolute inset-0 size-full object-cover object-[74%_center] md:object-[85%_center] lg:object-[70%_center]"
         />
         <div className="absolute inset-0 bg-linear-to-b from-slate-900/50 via-slate-900/30 to-slate-900" />
 
