@@ -1,3 +1,5 @@
+import { useRef } from 'react'
+
 import { GoogleMapEmbed } from '@/components/app/embed/googleMapEmbed'
 import { Card } from '@/components/app/misc/card'
 import { Hero } from '@/components/app/misc/hero'
@@ -28,6 +30,9 @@ const ContactHero = (
 )
 
 export function ContactPage() {
+  const layoutRef = useRef<HTMLDivElement>(null)
+
+  // Data
   const contactInfo = [
     {
       icon: Mail,
@@ -56,7 +61,7 @@ export function ContactPage() {
   ]
 
   return (
-    <Layout hero={ContactHero}>
+    <Layout hero={ContactHero} ref={layoutRef}>
       {/* Metadata */}
       <title>Modelverse | Contact Us</title>
       <meta

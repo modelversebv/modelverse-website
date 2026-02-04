@@ -1,4 +1,6 @@
 // import { useRef } from 'react'
+import { useRef } from 'react'
+
 import teamImage from '@/assets/team/Team - web.jpg'
 import YoutubeEmbed from '@/components/app/embed/youtubeEmbed'
 import { Card } from '@/components/app/misc/card'
@@ -17,6 +19,9 @@ import {
 import { motion } from 'motion/react'
 
 export function HomePage() {
+  const layoutRef = useRef<HTMLDivElement>(null)
+
+  // Data
   const features = [
     {
       icon: Compass,
@@ -107,7 +112,7 @@ export function HomePage() {
   // } as const
 
   return (
-    <Layout home={true}>
+    <Layout home={true} ref={layoutRef}>
       {/* Metadata */}
       <title>Modelverse | Cybersecurity GRC Solutions</title>
       <meta

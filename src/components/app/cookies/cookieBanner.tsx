@@ -17,11 +17,15 @@ type Cookie = {
 type CookieBannerProps = {
   preferences: boolean
   setPreferences: (value: boolean) => void
+  onOpen?: () => void
+  onClose?: () => void
 }
 
 export function CookieBanner({
   preferences,
   setPreferences,
+  onOpen,
+  onClose,
 }: CookieBannerProps) {
   const cookies = [
     {
@@ -60,6 +64,14 @@ export function CookieBanner({
       return next
     })
   }
+
+  useEffect(() => {
+    if (showBanner) {
+      onOpen?.()
+    } else {
+      onClose?.()
+    }
+  }, [showBanner, onOpen, onClose])
 
   // Button functions
   const handleSave = () => {
@@ -151,7 +163,8 @@ export function CookieBanner({
     >
       <div className="container mx-auto flex size-full items-end-safe justify-center-safe">
         <Card
-          className={`animate-in slide-in-from-bottom {showPreferences && 'p-0'} max-h-2/3 w-full max-w-4xl gap-4 border border-lime-500/50 bg-slate-900/90 p-4 text-white shadow-lg transition duration-500 hover:bg-slate-900/90`}
+          data-lenis-prevent
+          className={`animate-in slide-in-from-bottom max-h-2/3 w-full max-w-4xl gap-4 border border-lime-500/50 bg-slate-900/90 p-0 text-white shadow-lg transition duration-500 hover:bg-slate-900/90`}
         >
           {!showPreferences ? (
             <>

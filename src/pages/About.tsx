@@ -1,4 +1,6 @@
 // Importing pfps
+import { useRef } from 'react'
+
 import benImage from '@/assets/team/Ben - web.jpg'
 import bozhenaImage from '@/assets/team/Bozhena - web.jpg'
 import daanImage from '@/assets/team/Daan - web.jpg'
@@ -46,6 +48,9 @@ const AboutHero = (
 )
 
 export function AboutPage() {
+  const layoutRef = useRef<HTMLDivElement>(null)
+
+  // Data
   const teamMembers = [
     {
       name: 'Ben Krutzen',
@@ -195,7 +200,7 @@ export function AboutPage() {
   ]
 
   return (
-    <Layout about={true} hero={AboutHero}>
+    <Layout about={true} hero={AboutHero} ref={layoutRef}>
       {/* Metadata */}
       <title>Modelverse | About Us</title>
       <meta

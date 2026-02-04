@@ -1,4 +1,6 @@
 // Importing images
+import { useRef } from 'react'
+
 import eighteenZeroOneImage from '@/assets/new_logos/1801.jpg'
 import fellowmindImage from '@/assets/new_logos/fellowmind.jpg'
 import leydenjarImage from '@/assets/new_logos/leydan-jar.jpg'
@@ -45,6 +47,9 @@ type CaseStudy = {
 }
 
 export function CasesPage() {
+  const layoutRef = useRef<HTMLDivElement>(null)
+
+  // Data
   const caseStudies: CaseStudy[] = [
     {
       name: 'Fellowmind',
@@ -121,7 +126,7 @@ export function CasesPage() {
   ]
 
   return (
-    <Layout cases={true} hero={CasesHero}>
+    <Layout cases={true} hero={CasesHero} ref={layoutRef}>
       {/* Metadata */}
       <title>Modelverse Cases | Customer Success Stories</title>
       <meta

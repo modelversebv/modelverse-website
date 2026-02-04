@@ -23,7 +23,7 @@ export function Dropdown({ title, active, children }: DropdownProps) {
           className={`size-4 transition-all duration-300 group-hover:rotate-180 ${active && 'text-teal-500'}`}
         />
         <div className="invisible absolute top-full w-max translate-y-2 opacity-0 transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-          <div className="mt-2 flex flex-col overflow-hidden rounded-xl border border-white/30 bg-slate-900/80 shadow-lg">
+          <div className="mt-6 flex flex-col overflow-hidden rounded-xl border border-white/30 bg-slate-900/80 shadow-lg">
             {children}
           </div>
         </div>

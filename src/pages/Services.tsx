@@ -1,3 +1,5 @@
+import { useRef } from 'react'
+
 import { Card } from '@/components/app/misc/card'
 import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
@@ -32,6 +34,9 @@ const ServicesHero = (
 )
 
 export function ServicesPage() {
+  const layoutRef = useRef<HTMLDivElement>(null)
+
+  // Data
   const services = [
     {
       icon: Map,
@@ -129,7 +134,7 @@ export function ServicesPage() {
   // ]
 
   return (
-    <Layout services={true} hero={ServicesHero}>
+    <Layout services={true} hero={ServicesHero} ref={layoutRef}>
       {/* Metadata */}
       <title>Modelverse Solutions | Security Services</title>
       <meta

@@ -92,10 +92,6 @@ export function LegalPage() {
       }))
 
       setToc(newToc)
-
-      if (layoutRef.current) {
-        layoutRef.current.scrollTo({ top: 0, behavior: 'smooth' })
-      }
     }, 0)
 
     return () => clearTimeout(timeout)

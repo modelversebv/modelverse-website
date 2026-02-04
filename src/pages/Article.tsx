@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import React from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
@@ -18,6 +18,8 @@ import { ArrowLeft, Calendar, User } from 'lucide-react'
 import { type MetaData } from './News'
 
 export function ArticlePage() {
+  const layoutRef = useRef<HTMLDivElement>(null)
+
   const navigate = useNavigate()
 
   const { slug } = useParams<{ slug: string }>()
@@ -89,7 +91,7 @@ export function ArticlePage() {
   const pageDescription = metadata.summary || 'Loading article summary...'
 
   return (
-    <Layout>
+    <Layout ref={layoutRef}>
       {/* Metadata */}
       <title>{pageTitle}</title>
       <meta name="description" content={pageDescription} />

@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { Card } from '@/components/app/misc/card'
@@ -51,6 +52,8 @@ export type BlogPost = {
 }
 
 export function NewsPage() {
+  const layoutRef = useRef<HTMLDivElement>(null)
+
   const navigate = useNavigate()
 
   function parseDate(dateString: string) {
@@ -83,7 +86,7 @@ export function NewsPage() {
     )
 
   return (
-    <Layout news={true} hero={NewsHero}>
+    <Layout news={true} hero={NewsHero} ref={layoutRef}>
       {/* Metadata */}
       <title>Modelverse Blog | Cybersecurity Insights</title>
       <meta
