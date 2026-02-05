@@ -25,7 +25,7 @@ export function NavBar({
 
   return (
     <div
-      className={`fixed top-0 right-0 left-0 flex flex-col gap-4 overflow-hidden border-b border-white/20 bg-black/10 p-4 text-white backdrop-blur-md transition-all duration-300 md:h-fit md:flex-row ${isOpen ? 'h-screen' : 'h-16'} z-100 md:overflow-visible`}
+      className={`fixed top-0 right-0 left-0 flex flex-col gap-4 overflow-hidden border-b border-white/20 bg-black/10 p-4 text-white backdrop-blur-md transition-all duration-300 md:h-fit md:flex-row ${isOpen ? 'h-dvh' : 'h-16'} z-100 md:overflow-visible`}
     >
       <div className="flex shrink-0 flex-row items-center-safe justify-between md:container md:mx-auto md:w-full">
         <div
