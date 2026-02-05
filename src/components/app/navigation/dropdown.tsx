@@ -14,15 +14,23 @@ export function Dropdown({ title, active, children }: DropdownProps) {
   return (
     <>
       <div className="group relative hidden flex-row items-center-safe gap-2 md:flex">
-        <span
-          className={`transition-all duration-300 ${active ? 'text-teal-500' : 'text-white/90 group-hover:text-white'}`}
+        <div
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex flex-row items-center-safe gap-2"
         >
-          {title}
-        </span>
-        <ChevronDown
-          className={`size-4 transition-all duration-300 group-hover:rotate-180 ${active && 'text-teal-500'}`}
-        />
-        <div className="invisible absolute top-full w-max translate-y-2 opacity-0 transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+          <span
+            className={`transition-all duration-300 ${active ? 'text-teal-500' : 'text-white/90 group-hover:text-white'}`}
+          >
+            {title}
+          </span>
+          <ChevronDown
+            className={`size-4 transition-all duration-300 group-hover:rotate-180 ${active && 'text-teal-500'} ${isOpen && 'rotate-180'}`}
+          />
+        </div>
+
+        <div
+          className={`invisible absolute top-full w-max opacity-0 transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 ${isOpen ? 'visible opacity-100' : 'translate-y-2'}`}
+        >
           <div className="mt-6 flex flex-col overflow-hidden rounded-xl border border-white/30 bg-slate-900/80 shadow-lg">
             {children}
           </div>

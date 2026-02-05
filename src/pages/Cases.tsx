@@ -1,6 +1,12 @@
 // Importing images
 import { useRef } from 'react'
 
+import {
+  fadeInUp,
+  slideInLeft,
+  slideInRight,
+  staggerContainer,
+} from '@/animations/variants'
 import eighteenZeroOneImage from '@/assets/new_logos/1801.jpg'
 import fellowmindImage from '@/assets/new_logos/fellowmind.jpg'
 import leydenjarImage from '@/assets/new_logos/leydan-jar.jpg'
@@ -14,6 +20,7 @@ import { Card } from '@/components/app/misc/card'
 import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
 import { ArrowRight, Info, TrendingUp } from 'lucide-react'
+import { motion, useInView } from 'motion/react'
 
 const CasesHero = (
   <Hero
@@ -125,6 +132,13 @@ export function CasesPage() {
     },
   ]
 
+  // Framer Motion
+  // Refs for scroll-triggered animations
+  const ctaRef = useRef<HTMLDivElement>(null)
+
+  // Track visibility for animations
+  const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 })
+
   return (
     <Layout cases={true} hero={CasesHero} ref={layoutRef}>
       {/* Metadata */}
@@ -137,37 +151,55 @@ export function CasesPage() {
       {/* Content */}
       <div className="bg-linear-to-b from-slate-900 via-slate-800 to-slate-900">
         <div className="flex flex-col gap-8 px-4 py-16 md:container md:mx-auto">
-          {caseStudies.map((study, index) => (
-            <Card
-              className={`group min-h-[300px] overflow-hidden bg-white/5 p-0 text-white hover:border-lime-500/50 hover:bg-white/10 lg:flex-row ${index % 2 != 0 && 'lg:flex-row-reverse'}`}
-              key={index}
-            >
-              <div className="flex h-[300px] items-center-safe justify-center-safe overflow-hidden lg:basis-1/2">
-                <img
-                  src={study.logo}
-                  alt=""
-                  className={`size-full rounded-t-lg object-cover transition-all duration-300 group-hover:scale-105 lg:rounded-t-none ${index % 2 != 0 ? 'lg:rounded-r-lg' : 'lg:rounded-l-lg'}`}
-                />
-              </div>
-              <div className="flex flex-col gap-4 p-4 lg:basis-1/2 lg:justify-center-safe">
-                <h1 className="text-3xl">{study.name}</h1>
-                <div className="flex flex-col justify-center-safe gap-2">
-                  <div className="flex w-fit flex-row gap-2 text-lg text-lime-500">
-                    <Info className="size-5 self-center" />
-                    About
+          {caseStudies.map((study, index) => {
+            const cardRef = useRef(null)
+            const isInView = useInView(cardRef, {
+              once: true,
+              amount:
+                typeof window !== 'undefined' && window.innerWidth >= 1024
+                  ? 0.8
+                  : 0.4,
+            })
+
+            return (
+              <motion.div
+                ref={cardRef}
+                initial="hidden"
+                animate={isInView ? 'visible' : 'hidden'}
+                variants={index % 2 == 0 ? slideInLeft : slideInRight}
+                key={index}
+              >
+                <Card className="group grid grid-cols-1 overflow-hidden bg-white/5 p-0 text-white hover:border-lime-500/50 hover:bg-white/10 lg:grid-cols-2">
+                  <div
+                    className={`relative flex h-[300px] items-center-safe justify-center-safe overflow-hidden lg:h-auto lg:basis-1/2 ${index % 2 != 0 && 'lg:order-last'}`}
+                  >
+                    <img
+                      src={study.logo}
+                      alt=""
+                      className={`size-full rounded-t-lg object-cover transition-all duration-300 lg:rounded-t-none ${index % 2 != 0 ? 'lg:rounded-r-lg' : 'lg:rounded-l-lg'} lg:absolute lg:inset-0`}
+                    />
                   </div>
-                  <p className="text-white/70">{study.about}</p>
-                </div>
-                <div className="flex flex-col justify-center-safe gap-2">
-                  <div className="flex w-fit flex-row gap-2 text-lg text-teal-500">
-                    <TrendingUp className="size-5 self-center" />
-                    Improvements
+                  <div className="flex flex-col gap-4 p-4 lg:basis-1/2 lg:justify-center-safe">
+                    <h1 className="text-3xl">{study.name}</h1>
+                    <div className="flex flex-col justify-center-safe gap-2">
+                      <div className="flex w-fit flex-row gap-2 text-lg text-lime-500">
+                        <Info className="size-5 self-center" />
+                        About
+                      </div>
+                      <p className="text-white/70">{study.about}</p>
+                    </div>
+                    <div className="flex flex-col justify-center-safe gap-2">
+                      <div className="flex w-fit flex-row gap-2 text-lg text-teal-500">
+                        <TrendingUp className="size-5 self-center" />
+                        Improvements
+                      </div>
+                      <p className="text-white/70">{study.case}</p>
+                    </div>
                   </div>
-                  <p className="text-white/70">{study.case}</p>
-                </div>
-              </div>
-            </Card>
-          ))}
+                </Card>
+              </motion.div>
+            )
+          })}
         </div>
       </div>
 
@@ -178,25 +210,36 @@ export function CasesPage() {
         <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-linear-to-br from-teal-500/20 to-emerald-500/20 blur-3xl" />
 
         {/* Content */}
-        <div className="relative z-1 flex flex-col gap-8 px-4 py-16 text-white sm:items-center-safe">
-          <div className="flex flex-col gap-4 text-center">
+        <motion.div
+          ref={ctaRef}
+          initial="hidden"
+          animate={ctaInView ? 'visible' : 'hidden'}
+          variants={staggerContainer}
+          className="relative z-1 flex flex-col gap-8 px-4 py-16 text-white sm:items-center-safe"
+        >
+          <motion.div
+            variants={fadeInUp}
+            className="flex flex-col gap-4 text-center"
+          >
             <h1 className="text-4xl">Ready to Write Your Success Story?</h1>
             <p className="text-lg text-white/70">
               Join these leading organizations in transforming your risk and
               compliance management.
             </p>
-          </div>
-          <button
-            className="group flex cursor-pointer flex-row justify-center-safe gap-2 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:w-fit"
-            onClick={() =>
-              (window.location.href =
-                'https://outlook.office.com/bookwithme/user/d81d78745f8047d1a0ec05a07d8d40d6@modelverse.online/meetingtype/HEkH_Hmwx06JvFc-tP4ZJw2?anonymous')
-            }
-          >
-            Request a Demo
-            <ArrowRight className="transition-all duration-300 group-hover:translate-x-1" />
-          </button>
-        </div>
+          </motion.div>
+          <motion.div variants={fadeInUp}>
+            <button
+              className="group flex w-full cursor-pointer flex-row justify-center-safe gap-2 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:w-fit"
+              onClick={() =>
+                (window.location.href =
+                  'https://outlook.office.com/bookwithme/user/d81d78745f8047d1a0ec05a07d8d40d6@modelverse.online/meetingtype/HEkH_Hmwx06JvFc-tP4ZJw2?anonymous')
+              }
+            >
+              Request a Demo
+              <ArrowRight className="transition-all duration-300 group-hover:translate-x-1" />
+            </button>
+          </motion.div>
+        </motion.div>
       </div>
     </Layout>
   )

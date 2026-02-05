@@ -4,6 +4,7 @@ type HeroProps = {
   className?: string
   backgroundImg?: string
   backgroundClassName?: string
+  containerClassName?: string
   overlay?: boolean
   children?: React.ReactNode
 }
@@ -12,11 +13,17 @@ export function Hero({
   className,
   backgroundImg,
   backgroundClassName,
+  containerClassName,
   overlay = false,
   children,
 }: HeroProps) {
   return (
-    <div className="relative pt-20 select-none">
+    <div
+      className={cn(
+        'relative h-dvh select-none md:h-fit md:pt-20',
+        containerClassName
+      )}
+    >
       {backgroundImg && (
         <img
           src={backgroundImg}
@@ -33,7 +40,7 @@ export function Hero({
       )}
       <div
         className={cn(
-          'relative z-1 flex flex-col gap-8 px-4 py-16 md:container md:mx-auto',
+          'relative z-1 flex h-full flex-col gap-8 px-4 py-16 md:container md:mx-auto',
           className
         )}
       >
