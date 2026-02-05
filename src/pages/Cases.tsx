@@ -155,10 +155,7 @@ export function CasesPage() {
             const cardRef = useRef(null)
             const isInView = useInView(cardRef, {
               once: true,
-              amount:
-                typeof window !== 'undefined' && window.innerWidth >= 1024
-                  ? 0.8
-                  : 0.4,
+              amount: 0.4,
             })
 
             return (
