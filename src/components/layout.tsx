@@ -42,12 +42,13 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
       (scrollRef as React.RefObject<HTMLDivElement>) || internalRef
 
     useEffect(() => {
-      if (!containerRef.current) return
+      const isMobile = window.innerWidth < 1024
+
+      if (isMobile || !containerRef.current) return
       const lenis = new Lenis({
         wrapper: containerRef.current,
         content: containerRef.current.firstElementChild as HTMLElement,
         smoothWheel: true,
-        syncTouch: true,
         lerp: 0.08,
       })
       lenisRef.current = lenis
@@ -98,7 +99,7 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
     return (
       <div
         ref={scrollRef}
-        className="h-dvh w-dvw overflow-hidden bg-slate-900 font-sans"
+        className="scrollbar-hide h-dvh w-dvw overflow-x-hidden overflow-y-scroll bg-slate-900 font-sans lg:overflow-hidden"
       >
         <CookieBanner
           preferences={showConsentPreferences}
