@@ -114,8 +114,6 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
           cases={cases}
           news={news}
           services={services}
-          onOpen={() => setPauseScroll(true)}
-          onClose={() => setPauseScroll(false)}
         />
         <div ref={contentRef} className="flex min-h-screen flex-col">
           {hero}

@@ -164,7 +164,7 @@ export function CookieBanner({
       <div className="container mx-auto flex size-full items-end-safe justify-center-safe">
         <Card
           data-lenis-prevent
-          className={`animate-in slide-in-from-bottom max-h-2/3 w-full max-w-4xl gap-4 border border-lime-500/50 bg-slate-900/90 p-0 text-white shadow-lg transition duration-500 hover:bg-slate-900/90`}
+          className={`animate-in slide-in-from-bottom max-h-2/3 ${!showPreferences ? 'p-4' : 'p-0'} w-full max-w-4xl gap-4 border border-lime-500/50 bg-slate-900/90 text-white shadow-lg transition duration-500 hover:bg-slate-900/90`}
         >
           {!showPreferences ? (
             <>

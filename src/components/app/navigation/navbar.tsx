@@ -11,8 +11,6 @@ type NavBarProps = {
   cases: boolean
   services: boolean
   about: boolean
-  onOpen?: () => void
-  onClose?: () => void
 }
 
 export function NavBar({
@@ -21,17 +19,9 @@ export function NavBar({
   cases = false,
   services = false,
   about = false,
-  onOpen,
-  onClose,
 }: NavBarProps) {
   const [isOpen, setIsOpen] = useState(false)
   const navigate = useNavigate()
-
-  const toggleMenu = () => {
-    setIsOpen((prev) => !prev)
-    if (!isOpen) onOpen?.()
-    else onClose?.()
-  }
 
   return (
     <div
@@ -77,7 +67,7 @@ export function NavBar({
         </div>
         <div
           className="relative size-6 cursor-pointer md:hidden"
-          onClick={toggleMenu}
+          onClick={() => setIsOpen(!isOpen)}
         >
           <div
             className={`absolute top-0 bottom-0 m-auto h-1 w-full rounded-full bg-white transition-all duration-200 ${!isOpen ? '-translate-y-1' : '-rotate-45'}`}
