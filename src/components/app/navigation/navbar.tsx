@@ -77,10 +77,7 @@ export function NavBar({
           />
         </div>
       </div>
-      <div
-        data-lenis-prevent
-        className="flex grow flex-col gap-4 overflow-scroll md:hidden"
-      >
+      <div className="flex grow flex-col gap-4 overflow-scroll md:hidden">
         <div className="flex flex-col gap-4 border-y border-y-white/20 py-4 font-semibold">
           <NavLink active={home} to="/">
             Home
