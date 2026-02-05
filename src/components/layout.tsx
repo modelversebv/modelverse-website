@@ -99,7 +99,7 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
     return (
       <div
         ref={scrollRef}
-        className="scrollbar-hide h-screen w-screen overflow-x-hidden overflow-y-scroll bg-slate-900 font-sans lg:overflow-hidden"
+        className="scrollbar-hide h-screen w-screen overflow-scroll bg-slate-900 font-sans lg:overflow-hidden"
       >
         <CookieBanner
           preferences={showConsentPreferences}
