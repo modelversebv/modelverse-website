@@ -47,6 +47,7 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
         wrapper: containerRef.current,
         content: containerRef.current.firstElementChild as HTMLElement,
         smoothWheel: true,
+        syncTouch: true,
         lerp: 0.08,
       })
       lenisRef.current = lenis
