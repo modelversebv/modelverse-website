@@ -90,26 +90,33 @@ export function HomePage() {
   ]
 
   // Framer Motion
-  // const containerRef = useRef<HTMLDivElement>(null)
+  // Hero Scroll Tracking
   // const heroRef = useRef<HTMLDivElement>(null)
-
-  // const { scrollYProgress } = useScroll({
-  //   container: containerRef,
+  // const { scrollYProgress: heroScrollY } = useScroll({
+  //   container: layoutRef,
   //   target: heroRef,
   //   offset: ['start start', 'end start'],
   // })
+  // const heroOpacity = useTransform(heroScrollY, [0, 0.6], [1, 0])
+  // const heroScale = useTransform(heroScrollY, [0, 0.8], [1, 0.9])
 
-  // const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
-  // const heroScale = useTransform(scrollYProgress, [0, 0.8], [1, 0.9])
-
-  // const fadeUpVariant = {
-  //   hidden: { opacity: 0, y: 30 },
+  // Features framer motion
+  // const featuresVariants = {
+  //   hidden: { opacity: 0, y: 50 },
   //   visible: {
   //     opacity: 1,
   //     y: 0,
-  //     transition: { duration: 0.6, ease: 'easeOut', staggerChildren: 0.1 },
+  //     transition: {
+  //       duration: 0.5,
+  //       staggerChildren: 0.2,
+  //     },
   //   },
   // } as const
+
+  // const featuresCardsVariants = {
+  //   hidden: { opacity: 0, y: 20 },
+  //   visible: { opacity: 1, y: 0 },
+  // }
 
   return (
     <Layout home={true} ref={layoutRef}>
@@ -132,7 +139,14 @@ export function HomePage() {
         <div className="absolute inset-0 bg-linear-to-b from-slate-900/50 via-slate-900/30 to-slate-900" />
 
         {/* Content */}
-        <motion.div className="relative z-1 flex flex-col gap-16 py-20 md:container md:mx-auto lg:flex-row">
+        <motion.div
+          // ref={heroRef}
+          // style={{ opacity: heroOpacity, scale: heroScale }}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+          className="relative z-1 flex flex-col gap-16 py-20 md:container md:mx-auto lg:flex-row"
+        >
           <div className="flex flex-col gap-8 lg:basis-1/2">
             {/* Badge */}
             <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
@@ -196,12 +210,20 @@ export function HomePage() {
         </motion.div>
 
         {/* Bouncing Icon bottom */}
-        <div className="absolute right-0 bottom-4 left-0 flex animate-bounce justify-center-safe">
-          <div className="flex flex-col items-center-safe justify-center-safe gap-2">
+        <motion.div
+          // style={{ opacity: heroOpacity, scale: heroScale }}
+          className="absolute right-0 bottom-4 left-0 flex animate-bounce justify-center-safe"
+        >
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 1.5 }}
+            className="flex flex-col items-center-safe justify-center-safe gap-2"
+          >
             <Sparkles className="size-6 text-lime-500" />
             <span className="text-sm text-white/70">Explore More</span>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* Main content */}
@@ -209,7 +231,7 @@ export function HomePage() {
         <div className="absolute inset-0 bg-linear-to-b from-slate-900 via-slate-800 to-slate-900" />
         <div className="relative z-1 flex flex-col gap-32 px-4 py-16 text-white md:container md:mx-auto">
           {/* Features */}
-          <motion.div className="flex flex-col gap-8 text-white md:container md:mx-auto">
+          <div className="flex flex-col gap-8 text-white md:container md:mx-auto">
             <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
               <h1 className="text-4xl sm:text-5xl">
                 Everything You Need to Manage Risks and Compliance
@@ -232,7 +254,7 @@ export function HomePage() {
                 </Card>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           {/* Benefits */}
           <motion.div className="flex flex-col gap-8 text-white md:container md:mx-auto lg:flex-row">
