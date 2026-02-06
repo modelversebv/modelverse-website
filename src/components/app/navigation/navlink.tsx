@@ -10,13 +10,9 @@ export function NavLink({ active = false, to, children }: NavLinkProps) {
   return (
     <Link
       to={to}
-      className={`rounded-full font-semibold text-black lg:font-normal`}
+      className={`${active ? 'text-teal-500' : 'text-white/90 hover:text-white'}`}
     >
-      <div
-        className={`flex flex-row gap-2 rounded-full px-4 py-2 transition-all duration-300 ${active ? 'bg-linear-to-r from-green-500/30 to-teal-500/30' : 'opacity-90 lg:opacity-70 lg:hover:opacity-100'}`}
-      >
-        {children}
-      </div>
+      {children}
     </Link>
   )
 }

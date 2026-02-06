@@ -17,11 +17,15 @@ type Cookie = {
 type CookieBannerProps = {
   preferences: boolean
   setPreferences: (value: boolean) => void
+  onOpen?: () => void
+  onClose?: () => void
 }
 
 export function CookieBanner({
   preferences,
   setPreferences,
+  onOpen,
+  onClose,
 }: CookieBannerProps) {
   const cookies = [
     {
@@ -46,7 +50,6 @@ export function CookieBanner({
     if (!consentCookie) return true
     return false
   })
-  const [animateBanner, setanimateBanner] = useState(false)
 
   const [showPreferences, setShowPreferences] = useState(preferences)
 
@@ -61,6 +64,14 @@ export function CookieBanner({
       return next
     })
   }
+
+  useEffect(() => {
+    if (showBanner) {
+      onOpen?.()
+    } else {
+      onClose?.()
+    }
+  }, [showBanner, onOpen, onClose])
 
   // Button functions
   const handleSave = () => {
@@ -127,10 +138,6 @@ export function CookieBanner({
   }
 
   useEffect(() => {
-    requestAnimationFrame(() => setanimateBanner(true))
-  }, [])
-
-  useEffect(() => {
     const handlePreferencesChange = () => {
       if (preferences) {
         const consentCookie = getCookie(COOKIE_CONSENT)
@@ -156,18 +163,19 @@ export function CookieBanner({
     >
       <div className="container mx-auto flex size-full items-end-safe justify-center-safe">
         <Card
-          className={`max-h-2/3 w-full max-w-4xl gap-4 bg-white p-4 shadow-lg transition duration-500 ${animateBanner ? '-translate-y-0' : 'translate-y-full'} ${showPreferences && 'p-0'}`}
+          data-lenis-prevent
+          className={`animate-in slide-in-from-bottom max-h-2/3 ${!showPreferences ? 'p-4' : 'p-0'} w-full max-w-4xl gap-4 border border-lime-500/50 bg-slate-900/90 text-white shadow-lg transition duration-500 hover:bg-slate-900/90`}
         >
           {!showPreferences ? (
             <>
               <div className="flex flex-row gap-4">
-                <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-gradient-to-r from-green-500/10 to-teal-500/10">
-                  <Cookie className="size-6 text-amber-500" />
+                <div className="flex h-fit w-fit shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-lime-500 to-teal-500 p-2">
+                  <Cookie className="size-6 text-white" />
                 </div>
                 <div className="flex grow flex-col gap-4">
                   <h1 className="text-xl">We Value Your Privacy</h1>
-                  <ScrollArea className="max-h-48 text-gray-600 md:max-h-none">
-                    <p className="text-gray-600">
+                  <ScrollArea className="max-h-48 md:max-h-none">
+                    <p className="text-white/70">
                       We use two third-party services: Google Maps and YouTube
                       to enhance your browser experience. These services may set
                       cookies and process your data. By clicking 'Accept All',
@@ -176,7 +184,7 @@ export function CookieBanner({
                       decide to modify your preferences. You can customize your
                       preferences or learn more in our{' '}
                       <button
-                        className="cursor-pointer font-semibold text-amber-500 hover:underline"
+                        className="cursor-pointer font-semibold text-lime-500 hover:underline"
                         onClick={() => {
                           handleReject()
                           navigate('/legal/cookie_policy')
@@ -186,7 +194,7 @@ export function CookieBanner({
                       </button>
                       . For further reference, you can also consult our{' '}
                       <button
-                        className="cursor-pointer font-semibold text-amber-500 hover:underline"
+                        className="cursor-pointer font-semibold text-lime-500 hover:underline"
                         onClick={() => {
                           handleReject()
                           navigate('/legal/privacy_policy')
@@ -199,7 +207,7 @@ export function CookieBanner({
                   </ScrollArea>
                 </div>
                 <button
-                  className="size-fit cursor-pointer text-gray-400 transition-all duration-300 hover:text-black"
+                  className="size-fit cursor-pointer text-white/70 transition-all duration-300 hover:text-white"
                   onClick={handleSave}
                 >
                   <X className="size-4" />
@@ -207,21 +215,21 @@ export function CookieBanner({
               </div>
               <div className="flex flex-col gap-2 md:flex-row md:gap-4">
                 <button
-                  className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 md:w-fit"
+                  className="cursor-pointer rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:w-fit"
                   onClick={handleAccept}
                 >
                   Accept All
                 </button>
 
                 <button
-                  className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 md:w-fit"
+                  className="cursor-pointer rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:w-fit"
                   onClick={handleAccept}
                 >
                   Reject All
                 </button>
 
                 <button
-                  className="group flex cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full border px-4 py-2 font-semibold transition-all duration-300 hover:bg-gray-200 md:w-fit"
+                  className="group flex cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full border border-white/20 px-4 py-2 font-semibold transition-all duration-300 hover:bg-white/20 md:w-fit"
                   onClick={handleManage}
                 >
                   <Settings className="size-4 transition-all duration-300 group-hover:rotate-45" />
@@ -233,35 +241,35 @@ export function CookieBanner({
             <div className="scrollbar-hide overflow-auto p-4">
               <div className="flex flex-col gap-4">
                 <div className="flex flex-row gap-4">
-                  <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-gradient-to-r from-green-500/10 to-teal-500/10">
-                    <Settings className="size-6 text-amber-500" />
+                  <div className="flex h-fit w-fit shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-lime-500 to-teal-500 p-2">
+                    <Settings className="size-6 text-white" />
                   </div>
                   <div className="flex grow flex-col gap-4">
                     <h1 className="text-xl">Cookie Preferences</h1>
-                    <p className="text-gray-600">
+                    <p className="text-white/70">
                       Manage your cookie settings. You can enable or disable
                       different types of cookies below.
                     </p>
                   </div>
                   <button
-                    className="size-fit cursor-pointer text-gray-400 transition-all duration-300 hover:text-black"
+                    className="size-fit cursor-pointer text-white/70 transition-all duration-300 hover:text-white"
                     onClick={handleSave}
                   >
                     <X className="size-4" />
                   </button>
                 </div>
                 <div className="flex flex-col gap-4">
-                  <Card className="gap-4 bg-gray-100 p-4">
+                  <Card className="gap-4 p-4 hover:bg-white/10">
                     <div className="flex flex-row items-center-safe gap-2">
-                      <Shield className="size-5 text-amber-500" />
+                      <Shield className="size-5 text-lime-500" />
                       <span className="font-semibold">Essential Cookies</span>
                       <Switch
-                        className="tran ml-auto from-green-500 to-teal-500 data-[state=checked]:bg-gradient-to-r data-[state=unchecked]:bg-gray-300"
+                        className="tran ml-auto data-[state=checked]:bg-lime-500 data-[state=unchecked]:bg-gray-300"
                         checked
                         disabled
                       />
                     </div>
-                    <p className="text-gray-600">
+                    <p className="text-white/70">
                       Required for the website to function. These cannot be
                       disabled.
                     </p>
@@ -271,37 +279,37 @@ export function CookieBanner({
                       <div className="flex flex-row items-center-safe gap-2">
                         <span className="font-semibold">{cookie.title}</span>
                         <Switch
-                          className="ml-auto from-green-500 to-teal-500 data-[state=checked]:bg-gradient-to-r data-[state=unchecked]:bg-gray-300"
+                          className="ml-auto data-[state=checked]:bg-lime-500 data-[state=unchecked]:bg-gray-300"
                           onCheckedChange={() => setChoiceAt(index)}
                           checked={choices[index]}
                         />
                       </div>
-                      <p className="text-gray-600">{cookie.desc}</p>
+                      <p className="text-white/70">{cookie.desc}</p>
                     </Card>
                   ))}
                 </div>
                 <div className="flex flex-col gap-2 md:flex-row md:gap-4">
                   <button
-                    className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 md:w-fit"
+                    className="cursor-pointer rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:w-fit"
                     onClick={handleAccept}
                   >
                     Accept All
                   </button>
                   <button
-                    className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 md:w-fit"
+                    className="cursor-pointer rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:w-fit"
                     onClick={handleReject}
                   >
                     Reject All
                   </button>
 
                   <button
-                    className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50 md:ml-auto md:w-fit"
+                    className="cursor-pointer rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:ml-auto md:w-fit"
                     onClick={handleSave}
                   >
                     Save
                   </button>
                   <button
-                    className="group flex cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full border px-4 py-2 font-semibold transition-all duration-300 hover:bg-gray-200 md:w-fit"
+                    className="group flex cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full border border-white/20 px-4 py-2 font-semibold transition-all duration-300 hover:bg-white/20 md:w-fit"
                     onClick={() => setShowPreferences(false)}
                   >
                     Back

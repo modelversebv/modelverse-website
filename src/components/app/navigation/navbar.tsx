@@ -1,9 +1,8 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import logo from '@/assets/logo.png'
-import { Folder, Home, Info, Layers, Newspaper } from 'lucide-react'
-
+import { Dropdown } from './dropdown'
+import { DropdownLink } from './dropdownLink'
 import { NavLink } from './navlink'
 
 type NavBarProps = {
@@ -12,77 +11,128 @@ type NavBarProps = {
   cases: boolean
   services: boolean
   about: boolean
+  layoutRef: React.RefObject<HTMLDivElement>
 }
 
-export function NavBar({ home, news, cases, services, about }: NavBarProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+export function NavBar({
+  home = false,
+  news = false,
+  cases = false,
+  services = false,
+  about = false,
+  layoutRef,
+}: NavBarProps) {
+  const [isOpen, setIsOpen] = useState(false)
   const navigate = useNavigate()
 
+  const scrollToTop = () => {
+    if (!home || !layoutRef) return
+
+    const offset = -96
+
+    if ((window as any).lenis) {
+      ;(window as any).lenis.scrollTo(0, {
+        offset,
+      })
+      return
+    }
+
+    // Native scroll (mobile or fallback)
+    if (layoutRef.current) {
+      layoutRef.current.scrollTo({
+        top: 0 + offset,
+        behavior: 'smooth',
+      })
+    }
+  }
+
   return (
-    <div className="fixed top-0 z-50 w-full shrink-0 border-b lg:bg-white">
-      <div
-        className={`flex flex-col lg:container lg:mx-auto lg:h-fit lg:flex-row lg:items-center-safe lg:justify-between lg:overflow-visible ${mobileMenuOpen ? 'h-screen' : 'h-fit'}`}
-      >
-        <div className="flex shrink-0 flex-row items-center-safe justify-between bg-white p-4">
-          <img
-            src="/icon.png"
-            className="size-12 cursor-pointer lg:hidden"
-            alt="Modelverse"
-            onClick={() => navigate('/')}
-          />
-          <img
-            src={logo}
-            alt="Modelverse"
-            className="hidden h-20 cursor-pointer lg:block"
-            onClick={() => navigate('/')}
-          />
-          <div
-            className="relative size-6 cursor-pointer lg:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+    <div
+      className={`fixed top-0 right-0 left-0 flex flex-col gap-4 overflow-hidden border-b border-white/20 bg-black/10 p-4 text-white backdrop-blur-md transition-all duration-300 md:h-fit md:flex-row ${isOpen ? 'h-dvh' : 'h-16'} z-100 md:overflow-visible`}
+    >
+      <div className="flex shrink-0 flex-row items-center-safe justify-between md:container md:mx-auto md:w-full">
+        <div
+          className="flex cursor-pointer flex-row items-center-safe gap-2"
+          onClick={() => {
+            navigate('/')
+            scrollToTop()
+          }}
+        >
+          <img src="/icon.png" alt="Modelverse" className="size-8" />
+          <span className="text-lg font-semibold">Modelverse</span>
+        </div>
+        <div className="hidden flex-row items-center-safe gap-4 rounded-full border border-white/10 bg-white/5 px-4 py-2 font-semibold md:flex lg:gap-8">
+          <NavLink active={home} to="/">
+            Home
+          </NavLink>
+          <Dropdown title="Solutions" active={services}>
+            <DropdownLink to="/platform" title="Platform" disabled>
+              Risk & compliance management
+            </DropdownLink>
+            <DropdownLink to="/services" title="Services" active={services}>
+              Pricing & Plans
+            </DropdownLink>
+          </Dropdown>
+          <NavLink active={cases} to="/cases">
+            Case Studies
+          </NavLink>
+          <NavLink active={news} to="/news">
+            News
+          </NavLink>
+          <NavLink active={about} to="/about">
+            About
+          </NavLink>
+        </div>
+        <div className="hidden flex-row items-center md:flex">
+          <button
+            className="cursor-pointer rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50"
+            onClick={() => navigate('/contact')}
           >
-            <div
-              className={`absolute top-0 bottom-0 m-auto h-1 w-full rounded-full bg-amber-500 transition-all duration-200 ${!mobileMenuOpen ? '-translate-y-1' : '-rotate-45'}`}
-            />
-            <div
-              className={`absolute top-0 bottom-0 m-auto h-1 w-full rounded-full bg-amber-500 transition-all duration-200 ${!mobileMenuOpen ? 'translate-y-1' : 'rotate-45'}`}
-            />
-          </div>
+            Contact Us
+          </button>
         </div>
         <div
-          className={`h-full flex-col gap-4 bg-white/85 backdrop-blur-md lg:flex lg:bg-transparent lg:opacity-100 lg:backdrop-blur-none ${mobileMenuOpen ? 'flex grow overflow-y-auto opacity-100' : 'hidden opacity-0'} p-4 lg:flex lg:flex-row lg:items-center-safe lg:justify-end-safe`}
+          className="relative size-6 cursor-pointer md:hidden"
+          onClick={() => setIsOpen(!isOpen)}
         >
-          {/* <div className="h-px w-full bg-gray-300 md:hidden" /> */}
-          <div className="flex flex-col gap-2 lg:mr-auto lg:flex-row">
-            <NavLink to="/" active={home}>
-              <Home className="size-6 text-amber-500" />
-              <p>Home</p>
-            </NavLink>
-            <NavLink to="/services" active={services}>
-              <Layers className="size-6 text-amber-500" />
-              <p>Services</p>
-            </NavLink>
-            <NavLink to="/news" active={news}>
-              <Newspaper className="size-6 text-amber-500" />
-              <p>News</p>
-            </NavLink>
-            <NavLink to="/cases" active={cases}>
-              <Folder className="size-6 text-amber-500" />
-              <p>Cases</p>
-            </NavLink>
-            <NavLink to="/about" active={about}>
-              <Info className="size-6 text-amber-500" />
-              <p>About</p>
-            </NavLink>
-          </div>
-          <div className="hidden h-px w-full bg-gray-300 lg:block lg:h-12 lg:w-px" />
-          <div className="flex flex-col gap-2">
-            <button
-              className="cursor-pointer rounded-full bg-linear-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50"
-              onClick={() => navigate('/contact')}
-            >
-              Contact Us
-            </button>
-          </div>
+          <div
+            className={`absolute top-0 bottom-0 m-auto h-1 w-full rounded-full bg-white transition-all duration-200 ${!isOpen ? '-translate-y-1' : '-rotate-45'}`}
+          />
+          <div
+            className={`absolute top-0 bottom-0 m-auto h-1 w-full rounded-full bg-white transition-all duration-200 ${!isOpen ? 'translate-y-1' : 'rotate-45'}`}
+          />
+        </div>
+      </div>
+      <div className="flex grow flex-col gap-4 overflow-scroll md:hidden">
+        <div className="flex flex-col gap-4 border-y border-y-white/20 py-4 font-semibold">
+          <NavLink active={home} to="/">
+            Home
+          </NavLink>
+          <Dropdown title="Solutions" active={services}>
+            <DropdownLink to="/" title="Platform" disabled>
+              Risk & compliance management
+            </DropdownLink>
+            <DropdownLink to="/services" title="Services" active={services}>
+              Pricing & Plans
+            </DropdownLink>
+          </Dropdown>
+          <NavLink active={cases} to="/cases">
+            Case Studies
+          </NavLink>
+          <NavLink active={news} to="/news">
+            News
+          </NavLink>
+          <NavLink active={about} to="/about">
+            About
+          </NavLink>
+        </div>
+        <div className="flex flex-col gap-4">
+          <button
+            className="rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg"
+            onClick={() => navigate('/contact')}
+          >
+            Contact Us
+          </button>
         </div>
       </div>
     </div>
