@@ -67,7 +67,7 @@ export function YouTubeEmbed({
           allowFullScreen
         ></iframe>
       ) : (
-        <div className="absolute top-0 left-0 flex h-full w-full flex-col items-center-safe justify-center-safe gap-2 bg-gray-100 p-4">
+        <div className="absolute top-0 left-0 flex h-full w-full flex-col items-center-safe justify-center-safe gap-2 border-b border-white/20 p-4 text-white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -84,11 +84,11 @@ export function YouTubeEmbed({
           <h1 className="text-center text-base md:text-lg lg:text-xl 2xl:text-2xl">
             YouTube content blocked
           </h1>
-          <p className="text-center text-xs text-black/70 md:text-sm lg:text-base 2xl:text-lg">
+          <p className="text-center text-xs text-white/70 md:text-sm lg:text-base 2xl:text-lg">
             This content is provided by YouTube and requires your consent
           </p>
           <button
-            className="cursor-pointer rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/50"
+            className="cursor-pointer rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-lime-500/50"
             onClick={grantConsent}
           >
             Accept

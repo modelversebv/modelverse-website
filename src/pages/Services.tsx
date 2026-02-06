@@ -1,8 +1,11 @@
+import { useRef } from 'react'
+
+import { fadeInUp, scaleIn, staggerContainer } from '@/animations/variants'
 import { Card } from '@/components/app/misc/card'
 import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
-import { Badge } from '@/components/ui/badge'
 import {
+  ArrowRight,
   Award,
   Check,
   Eye,
@@ -11,14 +14,21 @@ import {
   ScrollText,
   Shield,
 } from 'lucide-react'
+import { motion, useInView } from 'motion/react'
 
 const ServicesHero = (
-  <Hero className="items-center-safe justify-center-safe text-center md:max-w-4xl">
-    <div className="flex w-fit flex-row items-center-safe justify-center-safe gap-2 rounded-full bg-linear-to-r from-green-500/20 to-teal-500/20 px-3 py-1 font-semibold text-amber-500">
-      <p className="text-sm">Our Services</p>
+  <Hero
+    className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
+    backgroundClassName="object-center"
+    backgroundImg="/images/heroes/services.avif"
+    overlay
+  >
+    <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
+      <Shield className="size-5" />
+      <p className="text-sm">We secure. You succeed!</p>
     </div>
     <h1 className="text-5xl sm:text-6xl">Security Services</h1>
-    <p className="text-xl text-gray-600">
+    <p className="text-xl text-white/70">
       Comprehensive security services designed to mature your organization's
       cybersecurity posture. Choose the packages you need and select the
       implementation tier that matches your pace and requirements.
@@ -27,6 +37,9 @@ const ServicesHero = (
 )
 
 export function ServicesPage() {
+  const layoutRef = useRef<HTMLDivElement>(null)
+
+  // Data
   const services = [
     {
       icon: Map,
@@ -38,6 +51,7 @@ export function ServicesPage() {
         'Assess your current security posture',
         'Articulate your investment opportunities',
       ],
+      gradient: 'from-lime-500 to-emerald-500',
     },
     {
       icon: Award,
@@ -49,6 +63,7 @@ export function ServicesPage() {
         'Supports for all certification frameworks',
         'Benefit from innovative automation',
       ],
+      gradient: 'from-green-500 to-teal-500',
     },
     {
       icon: ScrollText,
@@ -60,6 +75,7 @@ export function ServicesPage() {
         'Implement effective decision-making processes',
         'Align security with business objectives',
       ],
+      gradient: 'from-emerald-500 to-cyan-500',
     },
     {
       icon: Rocket,
@@ -71,6 +87,7 @@ export function ServicesPage() {
         'Embed security practices',
         'Promote a strong security culture',
       ],
+      gradient: 'from-cyan-500 to-emerald-500',
     },
     {
       icon: Eye,
@@ -82,6 +99,7 @@ export function ServicesPage() {
         'Detect anomalies and potential breaches',
         'Respond to incidents quickly and effectively',
       ],
+      gradient: 'from-teal-500 to-green-500',
     },
     {
       icon: Shield,
@@ -93,6 +111,7 @@ export function ServicesPage() {
         'Minimise fallout from attacks',
         'Maintain business continuity',
       ],
+      gradient: 'from-emerald-500 to-lime-500',
     },
   ]
 
@@ -117,8 +136,17 @@ export function ServicesPage() {
   //   },
   // ]
 
+  // Framer Motion
+  // Refs for scroll-triggered animations
+  const servicesRef = useRef<HTMLDivElement>(null)
+  const ctaRef = useRef<HTMLDivElement>(null)
+
+  // Track visibility for animations
+  const servicesInView = useInView(servicesRef, { once: true, amount: 0.1 })
+  const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 })
+
   return (
-    <Layout services={true} hero={ServicesHero}>
+    <Layout services={true} hero={ServicesHero} ref={layoutRef}>
       {/* Metadata */}
       <title>Modelverse Solutions | Security Services</title>
       <meta
@@ -127,78 +155,122 @@ export function ServicesPage() {
       />
 
       {/* Content */}
-      <div className="bg-gray-50">
-        <div className="flex flex-col items-center-safe gap-8 px-4 py-16 md:container md:mx-auto">
-          <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
-            <h1 className="text-4xl sm:text-5xl">Your Security Journey</h1>
-            <p className="text-xl text-gray-600">
-              Our packages follow a logical progression to build a comprehensive
-              security program. Start where you need and scale as your
-              organization matures.
-            </p>
-          </div>
+      <div className="bg-linear-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
+        <div className="relative z-1 flex flex-col gap-32 px-4 py-16 text-white md:container md:mx-auto">
+          <motion.div
+            ref={servicesRef}
+            initial="hidden"
+            animate={servicesInView ? 'visible' : 'hidden'}
+            variants={staggerContainer}
+            className="flex flex-col items-center-safe gap-8 md:container md:mx-auto"
+          >
+            <motion.div
+              variants={fadeInUp}
+              className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
+            >
+              <h1 className="text-4xl sm:text-5xl">Your Security Journey</h1>
+              <p className="text-xl text-white/70">
+                Our packages follow a logical progression to build a
+                comprehensive security program. Start where you need and scale
+                as your organization matures.
+              </p>
+            </motion.div>
 
-          <div className="flex max-w-sm flex-col gap-4 lg:max-w-4xl lg:flex-row lg:flex-wrap lg:justify-center-safe 2xl:max-w-none">
-            {services.map((value, index) => (
-              <div className="flex flex-row gap-4 lg:max-w-3xs lg:flex-col 2xl:max-w-59">
-                <div className="flex flex-col items-center-safe gap-4 pt-8 lg:translate-x-30 lg:flex-row lg:pt-0 2xl:translate-x-28">
-                  <div className="size-4 shrink-0 rounded-full bg-green-500" />
-                  {index != services.length - 1 && (
-                    <div
-                      className={`w-0.5 grow bg-gray-300 lg:h-0.5 ${index == 2 && 'lg:hidden 2xl:block'}`}
+            <motion.div
+              variants={staggerContainer}
+              className="flex max-w-sm flex-col gap-4 lg:max-w-4xl lg:flex-row lg:flex-wrap lg:justify-center-safe 2xl:max-w-none"
+            >
+              {services.map((value, index) => (
+                <motion.div
+                  variants={scaleIn}
+                  className="flex flex-row gap-4 lg:max-w-3xs lg:flex-col 2xl:max-w-59"
+                >
+                  <div className="flex flex-col items-center-safe gap-4 pt-8 lg:translate-x-30 lg:flex-row lg:pt-0 2xl:translate-x-28">
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={servicesInView ? { scale: 1 } : { scale: 0 }}
+                      transition={{ duration: 0.3, delay: 0.1 + index * 0.15 }}
+                      className="size-4 shrink-0 rounded-full bg-lime-500"
                     />
-                  )}
-                </div>
-                <Card className="w-full grow gap-4 bg-white p-4 transition-all duration-300 lg:hover:-translate-y-2 lg:hover:border-green-500 lg:hover:shadow-lg/20">
-                  <div className="flex flex-row gap-4 lg:flex-col lg:items-center-safe">
-                    <div className="mb-4 flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-linear-to-r from-green-500/10 to-teal-500/10 lg:rounded-full">
-                      <value.icon className="size-6 text-amber-500" />
-                    </div>
-                    <div className="flex flex-col gap-2 lg:items-center-safe">
-                      <Badge className="">
-                        {index + 1}. {value.badge}
-                      </Badge>
-                      <h3 className="text-xl text-gray-900">{value.title}</h3>
-                    </div>
+                    {index != services.length - 1 && (
+                      <motion.div
+                        initial={{ scaleX: 0 }}
+                        animate={servicesInView ? { scaleX: 1 } : { scaleX: 0 }}
+                        transition={{
+                          duration: 0.4,
+                          delay: 0.2 + index * 0.15,
+                        }}
+                        className={`w-0.5 grow bg-white/20 lg:h-0.5 ${index == 2 && 'lg:hidden 2xl:block'}`}
+                      />
+                    )}
                   </div>
-                  <p className="text-gray-600">{value.description}</p>
-                  <div className="flex flex-col gap-2">
-                    {value.points.map((point) => (
-                      <div className="flex flex-row gap-2">
-                        <Check className="size-6 shrink-0 text-green-500" />
-                        <p className="text-gray-700">{point}</p>
+                  <motion.div variants={fadeInUp} className="size-full">
+                    <Card className="size-full grow overflow-hidden bg-white/5 p-0 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10 lg:hover:-translate-y-2">
+                      <div
+                        className={`flex flex-col gap-2 bg-linear-to-br p-4 ${value.gradient}`}
+                      >
+                        <div className="w-fit rounded-xl bg-white/30 p-2">
+                          <value.icon className="size-6" />
+                        </div>
+                        <h3 className="text-xl">{value.title}</h3>
+                        <p className="text-white/70">{value.description}</p>
                       </div>
-                    ))}
-                  </div>
-                </Card>
-              </div>
-            ))}
-          </div>
+                      <div className="flex flex-col gap-2 p-4">
+                        {value.points.map((point) => (
+                          <div className="flex flex-row gap-2">
+                            <Check className="size-6 shrink-0 text-lime-500" />
+                            <p className="text-white/80">{point}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </Card>
+                  </motion.div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
         </div>
       </div>
 
-      {/* CTA (Call to action) */}
-      <div className="flex flex-col gap-8 bg-linear-to-r from-green-500 to-teal-500 px-4 py-16 text-white sm:items-center-safe">
-        <div className="flex flex-col gap-4 text-center md:container md:mx-auto">
-          <h1 className="text-4xl sm:text-5xl">
-            Ready to Start Your Security Journey?
-          </h1>
-          <p className="text-xl">
-            Our team will help you select the right packages and tier for your
-            organization's unique needs and maturity level.
-          </p>
-        </div>
-        <button
-          className="cursor-pointer rounded-full bg-white px-4 py-2 font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-white/50 sm:w-fit"
-          onClick={() =>
-            (window.location.href =
-              'https://outlook.office.com/bookwithme/user/d81d78745f8047d1a0ec05a07d8d40d6@modelverse.online/meetingtype/HEkH_Hmwx06JvFc-tP4ZJw2?anonymous')
-          }
+      {/* CTA */}
+      <div className="relative overflow-hidden bg-linear-to-br from-lime-900/30 via-teal-900/30 to-slate-900">
+        {/* Gradients */}
+        <div className="absolute top-0 left-0 h-96 w-96 rounded-full bg-linear-to-br from-lime-500/20 to-teal-500/20 blur-3xl" />
+        <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-linear-to-br from-teal-500/20 to-emerald-500/20 blur-3xl" />
+
+        {/* Content */}
+        <motion.div
+          ref={ctaRef}
+          initial="hidden"
+          animate={ctaInView ? 'visible' : 'hidden'}
+          variants={staggerContainer}
+          className="relative z-1 flex flex-col gap-8 px-4 py-16 text-white sm:items-center-safe"
         >
-          <div className="bg-linear-to-r from-green-500 to-teal-500 bg-clip-text text-transparent">
-            Schedule Consultation
-          </div>
-        </button>
+          <motion.div
+            variants={fadeInUp}
+            className="flex flex-col gap-4 text-center md:container md:mx-auto"
+          >
+            <h1 className="text-4xl sm:text-5xl">
+              Ready to Start Your Security Journey?
+            </h1>
+            <p className="text-xl">
+              Our team will help you select the right packages and tier for your
+              organization's unique needs and maturity level.
+            </p>
+          </motion.div>
+          <motion.div variants={fadeInUp}>
+            <button
+              className="group flex w-full cursor-pointer flex-row justify-center-safe gap-2 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:w-fit"
+              onClick={() =>
+                (window.location.href =
+                  'https://outlook.office.com/bookwithme/user/d81d78745f8047d1a0ec05a07d8d40d6@modelverse.online/meetingtype/HEkH_Hmwx06JvFc-tP4ZJw2?anonymous')
+              }
+            >
+              Schedule Consultation
+              <ArrowRight className="transition-all duration-300 group-hover:translate-x-1" />
+            </button>
+          </motion.div>
+        </motion.div>
       </div>
     </Layout>
   )
