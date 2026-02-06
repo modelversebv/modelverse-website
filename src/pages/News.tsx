@@ -19,7 +19,7 @@ import {
   EllipsisIcon,
   User,
 } from 'lucide-react'
-import { AnimatePresence, motion, number, useInView } from 'motion/react'
+import { AnimatePresence, motion, useInView } from 'motion/react'
 
 export const markdownFiles = import.meta.glob('@/articles/!(*test*).mdx', {
   eager: true,
