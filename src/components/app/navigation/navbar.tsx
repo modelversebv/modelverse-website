@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { Dropdown } from './dropdown'
@@ -11,6 +11,7 @@ type NavBarProps = {
   cases: boolean
   services: boolean
   about: boolean
+  layoutRef: React.RefObject<HTMLDivElement>
 }
 
 export function NavBar({
@@ -19,9 +20,31 @@ export function NavBar({
   cases = false,
   services = false,
   about = false,
+  layoutRef,
 }: NavBarProps) {
   const [isOpen, setIsOpen] = useState(false)
   const navigate = useNavigate()
+
+  const scrollToTop = () => {
+    if (!home || !layoutRef) return
+
+    const offset = -96
+
+    if ((window as any).lenis) {
+      ;(window as any).lenis.scrollTo(0, {
+        offset,
+      })
+      return
+    }
+
+    // Native scroll (mobile or fallback)
+    if (layoutRef.current) {
+      layoutRef.current.scrollTo({
+        top: 0 + offset,
+        behavior: 'smooth',
+      })
+    }
+  }
 
   return (
     <div
@@ -30,7 +53,10 @@ export function NavBar({
       <div className="flex shrink-0 flex-row items-center-safe justify-between md:container md:mx-auto md:w-full">
         <div
           className="flex cursor-pointer flex-row items-center-safe gap-2"
-          onClick={() => navigate('/')}
+          onClick={() => {
+            navigate('/')
+            scrollToTop()
+          }}
         >
           <img src="/icon.png" alt="Modelverse" className="size-8" />
           <span className="text-lg font-semibold">Modelverse</span>

@@ -100,7 +100,7 @@ export function ContactPage() {
             initial="hidden"
             animate={detailsInView ? 'visible' : 'hidden'}
             variants={staggerContainer}
-            className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4"
+            className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4"
           >
             {contactInfo.map((contact, index) => (
               <motion.div variants={scaleIn} key={index}>
@@ -115,13 +115,13 @@ export function ContactPage() {
               </motion.div>
             ))}
           </motion.div>
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
             <motion.div
               ref={questionsRef}
               initial="hidden"
               animate={questionsInView ? 'visible' : 'hidden'}
               variants={staggerContainer}
-              className="flex flex-col gap-8"
+              className="flex flex-col gap-4"
             >
               <motion.h1 variants={fadeInUp} className="text-center text-4xl">
                 Frequently Asked Questions
@@ -162,7 +162,7 @@ export function ContactPage() {
               initial="hidden"
               animate={mapsInView ? 'visible' : 'hidden'}
               variants={staggerContainer}
-              className="flex flex-col items-center-safe gap-8 lg:basis-1/2"
+              className="flex flex-col items-center-safe gap-4 lg:basis-1/2"
             >
               <motion.h1 variants={fadeInUp} className="text-center text-4xl">
                 Directions

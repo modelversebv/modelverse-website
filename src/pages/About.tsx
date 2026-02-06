@@ -402,7 +402,7 @@ export function AboutPage() {
                 className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
               >
                 <h1 className="text-4xl sm:text-5xl">Our Ambassadors</h1>
-                <p className="text-xl text-gray-600">
+                <p className="text-xl text-white/70">
                   Trusted voices in the risk and compliance management community
                   who believe in our mission.
                 </p>

@@ -259,7 +259,7 @@ export function HomePage() {
           >
             <motion.div
               variants={fadeInUp}
-              className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
+              className="mx-auto flex max-w-4xl flex-col text-center"
             >
               <h1 className="text-4xl sm:text-5xl">
                 Everything You Need to Manage Risks and Compliance

@@ -120,6 +120,7 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
           cases={cases}
           news={news}
           services={services}
+          layoutRef={containerRef}
         />
         <div ref={contentRef} className="flex min-h-screen flex-col">
           {hero}
