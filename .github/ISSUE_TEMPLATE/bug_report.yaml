@@ -103,6 +103,8 @@ body:
     attributes:
       label: Build version
       description: Version number of the build where the bug is present.
+    validations:
+      required: true
 
   - type: textarea
     id: additional_context

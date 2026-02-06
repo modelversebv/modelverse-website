@@ -2,12 +2,22 @@ name: Epic
 description: A large body of work composed of multiple subfeatures.
 title: '[Epic]: '
 type: epic
+projects: ['modelversebv/2']
 
 body:
   - type: markdown
     attributes:
       value: |
         Use this to keep track of large bodies of work composed of multiple subfeatures.
+
+  - type: checkboxes
+    id: dupe_check
+    attributes:
+      label: Is there an existing issue targeting the same bug?
+      description: Please search open issues before filing a new one.
+      options:
+        - label: I have searched existing issues
+          required: true
 
   - type: textarea
     id: summary
