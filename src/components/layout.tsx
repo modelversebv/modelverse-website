@@ -44,23 +44,26 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
     useEffect(() => {
       const isMobile = window.innerWidth < 1024
 
-      if (isMobile || !containerRef.current) return
+      if (isMobile || !containerRef.current || !contentRef.current) return
       const lenis = new Lenis({
         wrapper: containerRef.current,
-        content: containerRef.current.firstElementChild as HTMLElement,
+        content: contentRef.current,
         smoothWheel: true,
         lerp: 0.08,
       })
       lenisRef.current = lenis
+
+      // Expose lenis to the ref so parent components can access it
+      if (scrollRef && typeof scrollRef !== 'function') {
+        ;(window as any).lenis = lenis
+      }
 
       // Listen for anchor scroll
       const handleAnchorClick = (e: MouseEvent) => {
         const target = e.target as HTMLElement
         const anchor = target.closest('a')
 
-        // Check if it's a link with a hash (e.g., #privacy)
         if (anchor && anchor.hash && anchor.origin === window.location.origin) {
-          // Find the element within the Layout's container
           const targetId = anchor.hash.slice(1)
           const targetElement = document.getElementById(targetId)
 
@@ -83,7 +86,10 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
       }
       requestAnimationFrame(raf)
 
-      return () => lenis.destroy()
+      return () => {
+        window.removeEventListener('click', handleAnchorClick)
+        lenis.destroy()
+      }
     }, [])
 
     // Pause or resume scrolling
@@ -99,7 +105,7 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
     return (
       <div
         ref={scrollRef}
-        className="scrollbar-hide h-dvh w-screen overflow-scroll bg-slate-900 font-sans lg:overflow-hidden"
+        className="scrollbar-hide h-dvh w-dvw overflow-x-hidden overflow-y-scroll scroll-smooth bg-slate-900 font-sans lg:overflow-hidden"
       >
         <CookieBanner
           preferences={showConsentPreferences}

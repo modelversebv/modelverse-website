@@ -59,7 +59,6 @@ export function LegalPage() {
 
     import(`@/legal/${slug}.mdx`)
       .then((mod: any) => {
-        console.log('success')
         setMDXComponent(() => mod.default)
         setMetadata({
           title: mod.metadata.title,
@@ -68,7 +67,6 @@ export function LegalPage() {
         })
       })
       .catch(() => {
-        console.log('error')
         setError(true)
       })
   }, [slug])
@@ -92,6 +90,19 @@ export function LegalPage() {
       }))
 
       setToc(newToc)
+
+      // Stop Lenis animation and scroll to top
+      if ((window as any).lenis) {
+        ;(window as any).lenis.scrollTo(0)
+      } else if (layoutRef.current) {
+        const el = layoutRef.current
+        // DO NOT TOUCH. For some reason its stable with 2 rAF :/
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            el.scrollTop = 0
+          })
+        })
+      }
     }, 0)
 
     return () => clearTimeout(timeout)

@@ -156,7 +156,6 @@ export function NewsPage() {
       const width = window.innerWidth
       if (width >= 1280) setArticlesPerPage(4)
       else if (width >= 1024) setArticlesPerPage(3)
-      else if (width >= 768) setArticlesPerPage(2)
       else setArticlesPerPage(2)
     }
 
@@ -186,6 +185,41 @@ export function NewsPage() {
     once: true,
     margin: '-100px',
   })
+
+  function scrollToRecentArticles() {
+    const target = recentArticlesRef.current
+    if (!target) return
+
+    const offset = -96
+
+    // Lenis (desktop)
+    if ((window as any).lenis) {
+      ;(window as any).lenis.scrollTo(target, {
+        offset: offset,
+        immediate: false,
+      })
+      return
+    }
+
+    // Native scroll fallback (mobile)
+    const container = layoutRef.current
+    if (!container) return
+
+    // Wait until the DOM has fully updated
+    const doScroll = () => {
+      const containerRect = container.getBoundingClientRect()
+      const targetRect = target.getBoundingClientRect()
+
+      container.scrollTop += targetRect.top - containerRect.top + offset
+    }
+
+    // Double rAF ensures layout is settled after DOM changes
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        doScroll()
+      })
+    })
+  }
 
   return (
     <Layout news={true} hero={NewsHero} ref={layoutRef}>
@@ -296,7 +330,7 @@ export function NewsPage() {
                 variants={staggerContainer}
                 className="flex flex-col gap-8"
               >
-                <motion.h1 id="recentArticles" className="text-4xl sm:text-5xl">
+                <motion.h1 className="text-4xl sm:text-5xl">
                   Recent Articles
                 </motion.h1>
 
@@ -367,21 +401,21 @@ export function NewsPage() {
                   className="flex flex-row justify-center-safe gap-2"
                 >
                   <motion.div variants={fadeInUp}>
-                    <a
-                      href="#recentArticles"
+                    <button
                       className="flex cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full border border-white/20 bg-white/5 p-1 font-semibold shadow-lg transition-all duration-300 hover:bg-white/10 md:pr-3"
                       onClick={() => {
                         setCurrentPage((prev) => {
                           if (prev == 0) return prev
                           return prev - 1
                         })
+                        scrollToRecentArticles()
                       }}
                     >
                       <ChevronLeft className="size-6" />
                       <span className="hidden md:md:inline-block">
                         Previous
                       </span>
-                    </a>
+                    </button>
                   </motion.div>
 
                   <motion.div
@@ -395,34 +429,34 @@ export function NewsPage() {
                       const isActive = page === currentPage
 
                       return (
-                        <a
-                          href="#recentArticles"
+                        <button
                           key={index}
                           className={`flex size-8 cursor-pointer items-center-safe justify-center-safe rounded-full border font-semibold transition-all duration-300 ${isActive ? 'border-white/20 bg-white/5 hover:bg-white/10' : 'border-transparent hover:bg-white/5'}`}
                           onClick={() => {
                             setCurrentPage(page)
+                            scrollToRecentArticles()
                           }}
                         >
                           {page + 1}
-                        </a>
+                        </button>
                       )
                     })}
                   </motion.div>
 
                   <motion.div variants={fadeInUp}>
-                    <a
-                      href="#recentArticles"
+                    <button
                       className="flex cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full border border-white/20 bg-white/5 p-1 font-semibold shadow-lg transition-all duration-300 hover:bg-white/10 md:pl-3"
                       onClick={() => {
                         setCurrentPage((prev) => {
                           if (prev == blogPostPages.length - 1) return prev
                           return prev + 1
                         })
+                        scrollToRecentArticles()
                       }}
                     >
                       <span className="hidden md:inline-block">Next</span>
                       <ChevronRight className="size-6" />
-                    </a>
+                    </button>
                   </motion.div>
                 </motion.div>
               </motion.div>
