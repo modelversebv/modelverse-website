@@ -167,35 +167,35 @@ export function AboutPage() {
       name: 'Jan-Willem Klerkx',
       role: 'Co-Founder & CEO, BonCode',
       linkedin: 'https://www.linkedin.com/in/jwklerkx/',
-      bio: 'Jan-Willem Klerkx is a seasoned entrepreneur and CEO of BonCode who’s passion for software quality and business agility continues to shape his mission: enabling companies to make informed decisions about their technology landscape and turn complex challenges into strategic opportunities. His approach combines deep technical insight with strategic thinking, helping organizations reduce risk, improve maintainability, and unlock innovation through objective source code and architecture analysis.',
+      bio: 'Jan-Willem Klerkx is passionate about software quality and business agility. His approach combines deep technical insight with strategic thinking, helping organizations reduce risk, improve maintainability, and unlock innovation through objective source code and architecture analysis.  ',
       image: 'images/ambassadors/jan-willem.jpg',
     },
     {
       name: 'Gordon Muehl',
       role: 'Founder & Managing Director, MuehlCyberConsulting',
       linkedin: 'https://www.linkedin.com/in/gordonmuehl/',
-      bio: 'Gordon Muehl is a CTO and cybersecurity leader with over 30 years of experience in global technology strategy. He has led innovation for Fortune 500 companies, built high-performing international teams, and embedded security culture into a 100.000 employee R&D organization. Specializing in secure software development lifecycle, technical due diligence, and non-functional requirements governance aswell, Gordon bridges business and technical domains from CxOs to developers and continues to shape the future of secure software development.',
+      bio: 'Gordon Muehl has led innovation for Fortune 500 companies, built high-performing international teams, and embedded security culture into a 100.000 employee R&D organization. Specializing in secure software development lifecycle, technical due diligence, and non-functional requirements of governance, Gordon bridges business and technical domains from CxOs to developers.',
       image: 'images/ambassadors/gordon.png',
     },
     {
       name: 'Dennis Mulder',
       role: 'Co-Founder & CTO, Full Circle IT NL',
       linkedin: 'https://www.linkedin.com/in/dennismulder/',
-      bio: 'Dennis Mulder is an independent IT architect and advisor, founder of Full Circle IT and CEO of WVE Business Technology Architecture, with 25+ years’ experience. Dennis specializes in IT strategy, AI, and digital transformation, and focuses on bridging business and tech from boardroom to execution for organisations. He is a Certified Distinguished IT Architect (CITA-D), president of Iasa Global NL, and chairs the Chief Architect Forum. Dennis is committed to developing talent and advancing the profession, always with an eye for practical impact.',
+      bio: 'Dennis Mulder specializes in IT strategy, AI, and digital transformation, and focuses on bridging businesses and tech from boardroom to execution for organizations. He is a Certified Distinguished IT Architect (CITA-D), president of Iasa Global NL, and chairs the Chief Architect Forum. Dennis is committed to developing talent always with an eye for practical impact.',
       image: 'images/ambassadors/dennis.jpg',
     },
     {
       name: 'Oskar Brink',
       role: 'Independent Cyber Security and Risk Manager',
       linkedin: 'https://www.linkedin.com/in/oskarbrink/',
-      bio: 'Oskar Brink is an all-round Cybersecurity and Risk Manager with more than 25 years of experience. Through his work, he excels at aligning security and risk strategies with business objectives, driving sustainable transformation, and fostering continuous improvement through coaching and collaboration. He specialises in bringing clarity and structure to complex IT environments to transform organizations into more agile, secure, and resilient. Oskar has led large and diverse teams, and has international experience working in Malaysia and India.',
+      bio: 'Oskar Brink excels at aligning security and risk strategies with business objectives, driving sustainable transformation, and fostering continuous improvement through coaching - with international experience in Malaysia and India. He specializes in bringing clarity and structure to complex IT environments to transform organizations into more agile, secure, and resilient.',
       image: 'images/ambassadors/oskar.jpg',
     },
     {
       name: 'Robert Bals',
       role: 'Lead Auditor ISO 27001 & Data Protection Officer, IsoSecure',
       linkedin: 'https://www.linkedin.com/in/rbals/',
-      bio: 'Robert Bals is a certified ISO 27001 Lead Auditor and GDPR Data Protection Officer with over 10 years of experience. Robert stands out for combining deep technical expertise with a pragmatic, jargon-free and practical mindset. He provides tailored ISMS implementations, audits for ISO 27001 and TUV Nord certification, and GDPR solutions. Through delivering scalable, client-focused results - to turn security into a competitive advantage - he helps ICT, software, and healthcare organizations strengthen information security and compliance.',
+      bio: 'Robert Bals stands out for combining deep technical expertise with a pragmatic, jargon-free, and practical mindset. He provides tailored ISMS implementations, audits for ISO 27001 and TUV Nord certification, and GDPR solutions. Through delivering scalable, client-focused results, he helps ICT, software, and healthcare organizations strengthen information security and compliance.',
       image: 'images/ambassadors/robert.jpg',
     },
     {
@@ -203,7 +203,7 @@ export function AboutPage() {
       role: 'Independent Communications & Media Relations Advisor',
       linkedin:
         'https://www.linkedin.com/in/alexandra-roger-machart-senior-manager-corporate-communications/',
-      bio: 'Alexandra Roger-Machart is a forward-thinking senior professional in the sectors of Renewable Energy, Consumer Goods, Corporate Financial Communications, and Investor Relations, Crisis PR and Media Engagement. Having worked across various organizational dynamics, from fast-growing startups to large blue-chip corporations her background spans B2B, B2C and B2G environments. Passionate about Tech and AI-driven transformation, Alexandra advises startups and scaleups strengthen to their external profile, engage with stakeholders and enhance their corporate reporting through an interisciplinary perspective of strategic storytelling and regulatory expertise.',
+      bio: 'Alexandra Roger-Machart is a passionate about Tech and AI-driven transformation, she advises startups and scaleups strengthen to their external profile, engage with stakeholders and enhance their corporate reporting through an interdisciplinary perspective of strategic storytelling and regulatory expertise.',
       image: 'images/ambassadors/alexandra.jpg',
     },
   ]
@@ -417,8 +417,8 @@ export function AboutPage() {
                     variants={index % 2 === 0 ? slideInLeft : slideInRight}
                     key={index}
                   >
-                    <Card className="size-full gap-8 overflow-hidden bg-white/5 p-0 text-left hover:border-lime-500/50 hover:bg-white/10">
-                      <div className="flex flex-col gap-4 px-8 pt-8 sm:flex-row">
+                    <Card className="size-full gap-4 overflow-hidden bg-white/5 p-0 text-left hover:border-lime-500/50 hover:bg-white/10">
+                      <div className="flex flex-col gap-4 px-4 pt-4 sm:flex-row">
                         <Avatar className="size-48 self-center md:size-38">
                           <AvatarImage
                             src={ambassador.image}
@@ -441,7 +441,7 @@ export function AboutPage() {
                           </a>
                         </div>
                       </div>
-                      <div className="flex grow flex-col gap-4 bg-lime-500/10 p-8 sm:flex-row">
+                      <div className="flex grow flex-col gap-4 bg-lime-500/10 p-4 sm:flex-row">
                         <PencilLine className="hidden size-6 shrink-0 text-lime-500 opacity-50 sm:block" />
                         <div>
                           {ambassador.bio
