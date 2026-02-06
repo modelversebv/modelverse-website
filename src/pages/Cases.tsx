@@ -19,7 +19,7 @@ import thebeImage from '@/assets/new_logos/thebe.jpg'
 import { Card } from '@/components/app/misc/card'
 import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
-import { ArrowRight, Info, TrendingUp } from 'lucide-react'
+import { ArrowRight, Info, Shield, TrendingUp } from 'lucide-react'
 import { motion, useInView } from 'motion/react'
 
 const CasesHero = (
@@ -30,7 +30,8 @@ const CasesHero = (
     overlay
   >
     <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
-      <p className="text-sm">Success Stories</p>
+      <Shield className="size-5" />
+      <p className="text-sm">We secure. You succeed!</p>
     </div>
     <h1 className="text-5xl sm:text-6xl">
       Real Results from{' '}

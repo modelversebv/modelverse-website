@@ -19,12 +19,13 @@ import { motion, useInView } from 'motion/react'
 const ServicesHero = (
   <Hero
     className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
-    backgroundClassName="object-[center_65%]"
+    backgroundClassName="object-center"
     backgroundImg="/images/heroes/services.avif"
     overlay
   >
     <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
-      <p className="text-sm">Our Services</p>
+      <Shield className="size-5" />
+      <p className="text-sm">We secure. You succeed!</p>
     </div>
     <h1 className="text-5xl sm:text-6xl">Security Services</h1>
     <p className="text-xl text-white/70">

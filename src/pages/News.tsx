@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import {
@@ -17,6 +17,7 @@ import {
   ChevronLeft,
   ChevronRight,
   EllipsisIcon,
+  Shield,
   User,
 } from 'lucide-react'
 import { AnimatePresence, motion, useInView } from 'motion/react'
@@ -33,7 +34,8 @@ const NewsHero = (
     overlay
   >
     <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
-      <p className="text-sm">Blog & News</p>
+      <Shield className="size-5" />
+      <p className="text-sm">We secure. You succeed!</p>
     </div>
     <h1 className="text-5xl sm:text-6xl">
       Insights on{' '}
@@ -108,36 +110,72 @@ export function NewsPage() {
   )
 
   // Creating blog posts pages
-  const blogPostPages: BlogPost[][] = []
-  const pages = Math.trunc(recentBlogPosts.length / 4)
-  const reminder = recentBlogPosts.length % 4
-  let i = 0
-  for (i = 0; i < pages; i++) {
-    const blogPostsPage = recentBlogPosts.slice(i * 4, i * 4 + 4)
-    blogPostPages.push(blogPostsPage)
-  }
-  if (reminder) {
-    const blogPostsPage = recentBlogPosts.slice(i * 4, i * 4 + reminder)
-    blogPostPages.push(blogPostsPage)
-  }
-
+  // Creating blog posts pages
   const [currentPage, setCurrentPage] = useState(0)
+  const [articlesPerPage, setArticlesPerPage] = useState(3)
+
+  // Compute pages from articles - memoize to avoid recalculation
+  const blogPostPages = useMemo(() => {
+    const pages: BlogPost[][] = []
+    const totalPages = Math.ceil(recentBlogPosts.length / articlesPerPage)
+
+    for (let i = 0; i < totalPages; i++) {
+      const start = i * articlesPerPage
+      const end = start + articlesPerPage
+      pages.push(recentBlogPosts.slice(start, end))
+    }
+
+    return pages
+  }, [recentBlogPosts, articlesPerPage])
+
   const currentPageData = blogPostPages[currentPage]
 
-  // Helper function pagination
   const getPaginationRange = () => {
+    const totalPages = blogPostPages.length
+    if (totalPages <= 1) return [0]
+
     let paginationRange = [0]
-    for (let i = 1; i < pages - 1; i++) {
-      console.log(i)
-      if (i < currentPage - 1 || i > currentPage + 1) paginationRange.push(-1)
-      else paginationRange.push(i)
+
+    for (let i = 1; i < totalPages - 1; i++) {
+      if (i < currentPage - 1 || i > currentPage + 1) {
+        paginationRange.push(-1)
+      } else {
+        paginationRange.push(i)
+      }
     }
-    paginationRange.push(blogPostPages.length - 1)
+
+    paginationRange.push(totalPages - 1)
     paginationRange = [...new Set(paginationRange)]
-    console.log(paginationRange)
+
     return paginationRange
   }
-  getPaginationRange()
+
+  // Handle responsive articles per page
+  useEffect(() => {
+    const updateCount = () => {
+      const width = window.innerWidth
+      if (width >= 1280) setArticlesPerPage(4)
+      else if (width >= 1024) setArticlesPerPage(3)
+      else if (width >= 768) setArticlesPerPage(2)
+      else setArticlesPerPage(2)
+    }
+
+    updateCount()
+    window.addEventListener('resize', updateCount)
+    return () => window.removeEventListener('resize', updateCount)
+  }, [])
+
+  // Reset to first page when articles per page changes
+  useEffect(() => {
+    setCurrentPage(0)
+  }, [articlesPerPage])
+
+  // Also ensure current page doesn't exceed available pages
+  useEffect(() => {
+    if (currentPage >= blogPostPages.length && blogPostPages.length > 0) {
+      setCurrentPage(blogPostPages.length - 1)
+    }
+  }, [currentPage, blogPostPages.length])
 
   // Framer Motion
   // Refs for scroll-triggered animations
@@ -258,7 +296,7 @@ export function NewsPage() {
                 variants={staggerContainer}
                 className="flex flex-col gap-8"
               >
-                <motion.h1 className="text-4xl sm:text-5xl">
+                <motion.h1 id="recentArticles" className="text-4xl sm:text-5xl">
                   Recent Articles
                 </motion.h1>
 
@@ -329,8 +367,9 @@ export function NewsPage() {
                   className="flex flex-row justify-center-safe gap-2"
                 >
                   <motion.div variants={fadeInUp}>
-                    <button
-                      className="flex cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full border border-white/20 bg-white/5 py-1 pr-3 pl-1 font-semibold shadow-lg transition-all duration-300 hover:bg-white/10"
+                    <a
+                      href="#recentArticles"
+                      className="flex cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full border border-white/20 bg-white/5 p-1 font-semibold shadow-lg transition-all duration-300 hover:bg-white/10 md:pr-3"
                       onClick={() => {
                         setCurrentPage((prev) => {
                           if (prev == 0) return prev
@@ -339,13 +378,15 @@ export function NewsPage() {
                       }}
                     >
                       <ChevronLeft className="size-6" />
-                      Previous
-                    </button>
+                      <span className="hidden md:md:inline-block">
+                        Previous
+                      </span>
+                    </a>
                   </motion.div>
 
                   <motion.div
                     variants={fadeInUp}
-                    className="flex flex-row items-center-safe justify-center-safe gap-1"
+                    className="flex shrink-0 flex-row items-center-safe justify-center-safe gap-1"
                   >
                     {getPaginationRange().map((page, index) => {
                       if (page == -1)
@@ -354,30 +395,34 @@ export function NewsPage() {
                       const isActive = page === currentPage
 
                       return (
-                        <button
+                        <a
+                          href="#recentArticles"
                           key={index}
-                          className={`size-8 cursor-pointer rounded-full border font-semibold transition-all duration-300 ${isActive ? 'border-white/20 bg-white/5 hover:bg-white/10' : 'border-transparent hover:bg-white/5'}`}
-                          onClick={() => setCurrentPage(page)}
+                          className={`flex size-8 cursor-pointer items-center-safe justify-center-safe rounded-full border font-semibold transition-all duration-300 ${isActive ? 'border-white/20 bg-white/5 hover:bg-white/10' : 'border-transparent hover:bg-white/5'}`}
+                          onClick={() => {
+                            setCurrentPage(page)
+                          }}
                         >
                           {page + 1}
-                        </button>
+                        </a>
                       )
                     })}
                   </motion.div>
 
                   <motion.div variants={fadeInUp}>
-                    <button
-                      className="flex cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full border border-white/20 bg-white/5 py-1 pr-1 pl-3 font-semibold shadow-lg transition-all duration-300 hover:bg-white/10"
+                    <a
+                      href="#recentArticles"
+                      className="flex cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full border border-white/20 bg-white/5 p-1 font-semibold shadow-lg transition-all duration-300 hover:bg-white/10 md:pl-3"
                       onClick={() => {
                         setCurrentPage((prev) => {
-                          if (prev == pages) return prev
+                          if (prev == blogPostPages.length - 1) return prev
                           return prev + 1
                         })
                       }}
                     >
-                      Next
+                      <span className="hidden md:inline-block">Next</span>
                       <ChevronRight className="size-6" />
-                    </button>
+                    </a>
                   </motion.div>
                 </motion.div>
               </motion.div>

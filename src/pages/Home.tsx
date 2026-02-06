@@ -21,6 +21,7 @@ import {
   Lock,
   Rocket,
   Search,
+  Shield,
   Sparkles,
 } from 'lucide-react'
 import { motion, useInView, useScroll, useTransform } from 'motion/react'
@@ -157,7 +158,7 @@ export function HomePage() {
               variants={fadeInUp}
               className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md"
             >
-              <Sparkles className="size-5" />
+              <Shield className="size-5" />
               <p className="text-sm">We secure. You succeed!</p>
             </motion.div>
 

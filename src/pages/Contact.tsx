@@ -11,7 +11,7 @@ import { GoogleMapEmbed } from '@/components/app/embed/googleMapEmbed'
 import { Card } from '@/components/app/misc/card'
 import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
-import { Clock, Mail, MapPin, Phone } from 'lucide-react'
+import { Clock, Mail, MapPin, Phone, Shield } from 'lucide-react'
 import { motion, useInView } from 'motion/react'
 
 const ContactHero = (
@@ -22,7 +22,8 @@ const ContactHero = (
     overlay
   >
     <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
-      <p className="text-sm">Contact Us</p>
+      <Shield className="size-5" />
+      <p className="text-sm">We secure. You succeed!</p>
     </div>
     <h1 className="text-5xl sm:text-6xl">
       Get in{' '}
@@ -166,8 +167,13 @@ export function ContactPage() {
               <motion.h1 variants={fadeInUp} className="text-center text-4xl">
                 Directions
               </motion.h1>
-              <motion.div variants={slideInRight} className="h-full w-full">
-                <GoogleMapEmbed className="grow" />
+              <motion.div
+                variants={slideInRight}
+                className="h-full min-h-[300px] w-full lg:min-h-0"
+              >
+                <Card className="size-full bg-white/5 p-0 hover:border-lime-500/50 hover:bg-white/10">
+                  <GoogleMapEmbed className="grow border-0" />
+                </Card>
               </motion.div>
             </motion.div>
           </div>

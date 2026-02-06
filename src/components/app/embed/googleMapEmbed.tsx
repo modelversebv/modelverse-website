@@ -45,7 +45,7 @@ export function GoogleMapEmbed({ className }: GoogleMapEmbedProps) {
   return (
     <div
       className={cn(
-        'relative size-full min-h-[300px] overflow-hidden rounded-md border border-white/20 select-none',
+        'relative size-full overflow-hidden rounded-xl border border-white/20 select-none',
         className
       )}
     >
