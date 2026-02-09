@@ -8,7 +8,7 @@ import {
   slideInRight,
   staggerContainer,
 } from '@/animations/variants'
-import teamImage from '@/assets/team/Team - web.jpg'
+import teamImage from '@/assets/team/Team minus Michel - web.jpg'
 import YoutubeEmbed from '@/components/app/embed/youtubeEmbed'
 import { Card, MotionCard } from '@/components/app/misc/card'
 import { Layout } from '@/components/layout'
