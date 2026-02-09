@@ -42,9 +42,10 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
       (scrollRef as React.RefObject<HTMLDivElement>) || internalRef
 
     useEffect(() => {
-      const isMobile = window.innerWidth < 1024
+      const hasFinePointer = window.matchMedia('(pointer: fine)').matches
 
-      if (isMobile || !containerRef.current || !contentRef.current) return
+      if (!hasFinePointer || !containerRef.current || !contentRef.current)
+        return
       const lenis = new Lenis({
         wrapper: containerRef.current,
         content: contentRef.current,
@@ -105,7 +106,7 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
     return (
       <div
         ref={scrollRef}
-        className="scrollbar-hide h-dvh w-dvw overflow-x-hidden overflow-y-scroll scroll-smooth bg-slate-900 font-sans lg:overflow-hidden"
+        className="scrollbar-hide h-dvh w-dvw overflow-x-hidden overflow-y-scroll scroll-smooth bg-slate-900 font-sans pointer-fine:overflow-hidden"
       >
         <CookieBanner
           preferences={showConsentPreferences}

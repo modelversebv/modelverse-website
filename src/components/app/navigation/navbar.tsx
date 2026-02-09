@@ -70,7 +70,7 @@ export function NavBar({
               Risk & compliance management
             </DropdownLink>
             <DropdownLink to="/services" title="Services" active={services}>
-              Pricing & Plans
+              Security Plans
             </DropdownLink>
           </Dropdown>
           <NavLink active={cases} to="/cases">
