@@ -93,7 +93,7 @@ export function HomePage() {
       name: 'Christiaan Rood',
       role: 'CEO',
       company: 'LeydenJar Technologies',
-      video: 'KO0yNnQ8zbQ',
+      video: 'NqY7SBjryJo',
     },
   ]
 
