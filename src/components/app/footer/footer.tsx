@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import emailBadge from '@/assets/badges/email-test-badge.png'
+import msBadge from '@/assets/badges/ms-badge.png'
 import { BuildNumber } from '@/components/buildNumber'
 import { Github, Linkedin, Mail } from 'lucide-react'
 
@@ -85,8 +86,13 @@ export function Footer({ onManagePrivacy }: FooterProps) {
         <div className="h-px w-full shrink-0 bg-gray-800" />
         <div className="flex flex-col gap-4">
           <h4 className="text-sm text-gray-400">Security & Compliance</h4>
-          <div className="flex flex-wrap gap-2">
-            <img src={emailBadge} alt="Email Test: 100%" className="w-32" />
+          <div className="flex flex-wrap items-center gap-2 py-2">
+            <img
+              src={msBadge}
+              alt="Microsoft for Startups partnership badge"
+              className="max-h-12"
+            />
+            <img src={emailBadge} alt="Email Test: 100%" className="max-h-6" />
           </div>
         </div>
         <div className="h-px w-full shrink-0 bg-gray-800" />
