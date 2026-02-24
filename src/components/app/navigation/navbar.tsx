@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { Dropdown } from './dropdown'
-import { DropdownLink } from './dropdownLink'
+// import { Dropdown } from './dropdown'
+// import { DropdownLink } from './dropdownLink'
 import { NavLink } from './navlink'
 
 type NavBarProps = {
