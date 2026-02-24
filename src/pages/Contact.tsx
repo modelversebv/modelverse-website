@@ -46,7 +46,7 @@ export function ContactPage() {
     {
       icon: Mail,
       title: 'Email',
-      primary: 'partners@modelverse.online',
+      primary: 'info@modelverse.online',
       secondary: 'support@modelverse.online',
     },
     {
