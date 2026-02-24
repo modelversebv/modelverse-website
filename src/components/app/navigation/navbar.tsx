@@ -65,14 +65,17 @@ export function NavBar({
           <NavLink active={home} to="/">
             Home
           </NavLink>
-          <Dropdown title="Solutions" active={services}>
+          <NavLink active={services} to="/services">
+            Services
+          </NavLink>
+          {/* <Dropdown title="Solutions" active={services}>
             <DropdownLink to="/platform" title="Platform" disabled>
               Risk & compliance management
             </DropdownLink>
             <DropdownLink to="/services" title="Services" active={services}>
               Security Plans
             </DropdownLink>
-          </Dropdown>
+          </Dropdown> */}
           <NavLink active={cases} to="/cases">
             Case Studies
           </NavLink>
@@ -108,14 +111,17 @@ export function NavBar({
           <NavLink active={home} to="/">
             Home
           </NavLink>
-          <Dropdown title="Solutions" active={services}>
+          <NavLink active={services} to="/services">
+            Services
+          </NavLink>
+          {/* <Dropdown title="Solutions" active={services}>
             <DropdownLink to="/" title="Platform" disabled>
               Risk & compliance management
             </DropdownLink>
             <DropdownLink to="/services" title="Services" active={services}>
               Pricing & Plans
             </DropdownLink>
-          </Dropdown>
+          </Dropdown> */}
           <NavLink active={cases} to="/cases">
             Case Studies
           </NavLink>

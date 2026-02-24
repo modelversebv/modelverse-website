@@ -270,11 +270,8 @@ export function HomePage() {
               className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
             >
               {features.map((feature, index) => (
-                <motion.div variants={scaleIn}>
-                  <Card
-                    key={index}
-                    className="group relative size-full shadow-md hover:border-lime-500/70 hover:shadow-lime-500/70"
-                  >
+                <motion.div variants={scaleIn} key={index}>
+                  <Card className="group relative size-full shadow-md hover:border-lime-500/70 hover:shadow-lime-500/70">
                     <div className="absolute inset-0 rounded-lg bg-linear-to-br group-hover:from-lime-500/10 group-hover:to-teal-500/10" />
                     <div className="relative z-1 flex flex-col gap-2">
                       <div className="mb-4 flex w-fit items-center justify-center rounded-xl bg-linear-to-br from-lime-500 to-teal-500 p-2">
@@ -329,11 +326,8 @@ export function HomePage() {
                 className="flex flex-col gap-4"
               >
                 {benefits.map((benefit, index) => (
-                  <motion.div variants={slideInRight}>
-                    <Card
-                      key={index}
-                      className="flex-row gap-2 hover:translate-x-2"
-                    >
+                  <motion.div variants={slideInRight} key={index}>
+                    <Card className="flex-row gap-2 hover:translate-x-2">
                       <CheckCircle2 className="size-6 shrink-0 text-lime-500" />
                       <p>{benefit}</p>
                     </Card>
@@ -366,11 +360,8 @@ export function HomePage() {
               className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2"
             >
               {testimonials.map((testimonial, index) => (
-                <motion.div variants={scaleIn}>
-                  <Card
-                    className="size-full bg-white/5 p-0 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10"
-                    key={index}
-                  >
+                <motion.div variants={scaleIn} key={index}>
+                  <Card className="size-full bg-white/5 p-0 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10">
                     <YoutubeEmbed
                       videoId={testimonial.video}
                       className="rounded-t-xl"

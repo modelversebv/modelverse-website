@@ -182,6 +182,7 @@ export function ServicesPage() {
             >
               {services.map((value, index) => (
                 <motion.div
+                  key={index}
                   variants={scaleIn}
                   className="flex flex-row gap-4 lg:max-w-3xs lg:flex-col 2xl:max-w-59"
                 >
@@ -216,8 +217,11 @@ export function ServicesPage() {
                         <p className="text-white/70">{value.description}</p>
                       </div>
                       <div className="flex flex-col gap-2 p-4">
-                        {value.points.map((point) => (
-                          <div className="flex flex-row gap-2">
+                        {value.points.map((point, jndex) => (
+                          <div
+                            key={`service-${index}-point-${jndex}`}
+                            className="flex flex-row gap-2"
+                          >
                             <Check className="size-6 shrink-0 text-lime-500" />
                             <p className="text-white/80">{point}</p>
                           </div>
