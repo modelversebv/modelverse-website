@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
 import emailBadge from '@/assets/badges/email-test-badge.png'
@@ -11,18 +12,27 @@ type FooterProps = {
 
 export function Footer({ onManagePrivacy }: FooterProps) {
   const currentDate = new Date()
+  const { t } = useTranslation()
 
   const footerLinks = {
-    Company: [
-      { name: 'About', href: '/about' },
-      { name: 'Blog', href: '/news' },
-      { name: 'Contact', href: '/contact' },
+    [t('footer.sections.company.title')]: [
+      { name: t('footer.sections.company.about'), href: '/about' },
+      { name: t('footer.sections.company.blog'), href: '/news' },
+      { name: t('footer.sections.company.contact'), href: '/contact' },
     ],
-    Legal: [
-      { name: 'Privacy Policy', href: '/legal/privacy_policy' },
-      { name: 'Terms of Service', href: '/legal/terms_of_service' },
-      { name: 'Cookie Policy', href: '/legal/cookie_policy' },
-      // { name: 'GDPR', href: '' },
+    [t('footer.sections.legal.title')]: [
+      {
+        name: t('footer.sections.legal.privacy_policy'),
+        href: '/legal/privacy_policy',
+      },
+      {
+        name: t('footer.sections.legal.terms_of_service'),
+        href: '/legal/terms_of_service',
+      },
+      {
+        name: t('footer.sections.legal.cookie_policy'),
+        href: '/legal/cookie_policy',
+      },
     ],
   }
 
@@ -35,11 +45,8 @@ export function Footer({ onManagePrivacy }: FooterProps) {
               <img src="/icon.png" alt="Modelverse" className="size-8" />
               <span>Modelverse B.V.</span>
             </div>
-            <p className="text-lime-500 italic">We secure. You Succeed!</p>
-            <p className="text-sm text-gray-400">
-              Empowering organizations to manage risks and compliance with
-              confidence.
-            </p>
+            <p className="text-lime-500 italic">{t('footer.tagline')}</p>
+            <p className="text-sm text-gray-400">{t('footer.description')}</p>
 
             <div className="flex flex-row gap-4 text-white">
               <a
@@ -85,7 +92,9 @@ export function Footer({ onManagePrivacy }: FooterProps) {
         </div>
         <div className="h-px w-full shrink-0 bg-gray-800" />
         <div className="flex flex-col gap-4">
-          <h4 className="text-sm text-gray-400">Security & Compliance</h4>
+          <h4 className="text-sm text-gray-400">
+            {t('footer.security_compliance')}
+          </h4>
           <div className="flex flex-wrap items-center gap-2 py-2">
             <img
               src={msBadge}
@@ -98,22 +107,22 @@ export function Footer({ onManagePrivacy }: FooterProps) {
         <div className="h-px w-full shrink-0 bg-gray-800" />
         <div className="flex flex-col justify-between gap-4 text-sm text-gray-400 md:flex-row">
           <p>
-            © {currentDate.getFullYear()}. Modelverse B.V. All rights reserved.
-            <br />
-            CoC - 89447476
-            <br />
-            VAT - NL864985800B01
-            <br />
+            © {currentDate.getFullYear()}. Modelverse B.V.{' '}
+            {t('footer.copyright')} <br />
+            CoC - 89447476 <br />
+            VAT - NL864985800B01 <br />
             build - (<BuildNumber />)
           </p>
+
           <p
             className="cursor-pointer hover:text-white"
             onClick={() => onManagePrivacy(true)}
           >
-            Manage Privacy Preferences
+            {t('footer.privacy')}
           </p>
         </div>
       </div>
     </div>
   )
 }
+ 

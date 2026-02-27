@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react' // TAKE OUT useEffect LATER
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 
@@ -34,6 +34,14 @@ export function NavBar({
   const navigate = useNavigate()
   const { i18n } = useTranslation()
   const { t } = useTranslation()
+
+  // TAKE OUT THIS ENTIRE BLOCK LATER, JUST FOR TESTING
+  // useEffect(() => {
+  //   // Force Dutch for testing on every refresh/mount
+  //   if (i18n && i18n.language !== 'nl-NL') {
+  //     i18n.changeLanguage('nl-NL')
+  //   }
+  // }, [i18n])
 
   const scrollToTop = () => {
     if (!home || !layoutRef) return
