@@ -7,6 +7,27 @@
     "about": "Over Ons",
     "contact": "Neem Contact Op"
   },
+  "footer": {
+    "tagline": "Wij beveiligen. Jij slaagt!",
+    "description": "Organisaties in staat stellen risico's en compliance met vertrouwen te beheren.",
+    "sections": {
+      "company": {
+        "title": "Bedrijf",
+        "about": "Over Ons",
+        "blog": "Nieuws",
+        "contact": "Contact"
+      },
+      "legal": {
+        "title": "Juridisch",
+        "privacy_policy": "Privacybeleid",
+        "terms_of_service": "Servicevoorwaarden",
+        "cookie_policy": "Cookiebeleid"
+      }
+    },
+    "security_compliance": "Beveiliging & Compliance",
+    "copyright": "Alle rechten voorbehouden.",
+    "privacy": "Privacyvoorkeuren Beheren"
+  },
   "home": {
     "hero": {
       "badge": "Wij beveiligen. Jij slaagt!",

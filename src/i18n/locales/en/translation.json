@@ -7,6 +7,27 @@
     "about": "About",
     "contact": "Contact Us"
   },
+  "footer": {
+    "tagline": "We secure. You Succeed!",
+    "description": "Empowering organizations to manage risks and compliance with confidence.",
+    "sections": {
+      "company": {
+        "title": "Company",
+        "about": "About",
+        "blog": "News",
+        "contact": "Contact"
+      },
+      "legal": {
+        "title": "Legal",
+        "privacy_policy": "Privacy Policy",
+        "terms_of_service": "Terms of Service",
+        "cookie_policy": "Cookie Policy"
+      }
+    },
+    "security_compliance": "Security & Compliance",
+    "copyright": "All rights reserved.",
+    "privacy": "Manage Privacy Preferences"
+  },
   "home": {
     "hero": {
       "badge": "We secure. You succeed!",

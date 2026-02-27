@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { Globe } from 'lucide-react'
 
 import { Dropdown } from './dropdown'
+import { DropdownLink } from './dropdownLink'
 // import { DropdownLink } from './dropdownLink'
 import { NavLink } from './navlink'
 
@@ -12,6 +13,7 @@ type NavBarProps = {
   home: boolean
   news: boolean
   cases: boolean
+  platform: boolean
   services: boolean
   about: boolean
   layoutRef: React.RefObject<HTMLDivElement>
@@ -26,6 +28,7 @@ export function NavBar({
   home = false,
   news = false,
   cases = false,
+  platform = false,
   services = false,
   about = false,
   layoutRef,
@@ -91,9 +94,21 @@ export function NavBar({
           <NavLink active={home} to="/">
             {t('navbar.home')}
           </NavLink>
-          <NavLink active={services} to="/services">
+          <Dropdown
+            childrenClassname="w-57 left-0 pt-2"
+            title="Solutions"
+            active={platform || services}
+          >
+            <DropdownLink to="/platform" title="Platform" active={platform}>
+              Risk & Compliance Management
+            </DropdownLink>
+            <DropdownLink to="/services" title="Services" active={services}>
+              Service Packages
+            </DropdownLink>
+          </Dropdown>
+          {/* <NavLink active={services} to="/services">
             {t('navbar.services')}
-          </NavLink>
+          </NavLink> */}
           <NavLink active={cases} to="/cases">
             {t('navbar.cases')}
           </NavLink>
