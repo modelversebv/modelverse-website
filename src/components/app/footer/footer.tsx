@@ -116,6 +116,7 @@ export function Footer({ onManagePrivacy }: FooterProps) {
             <br />
             build - (<BuildNumber />)
           </p>
+
           <p
             className="cursor-pointer hover:text-white"
             onClick={() => onManagePrivacy(true)}

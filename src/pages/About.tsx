@@ -386,16 +386,16 @@ export function AboutPage() {
                   key={index}
                 >
                   <Card className="size-full gap-4 overflow-hidden bg-white/5 p-0 text-left hover:border-lime-500/50 hover:bg-white/10">
-                    <div className="flex flex-col gap-4 px-4 pt-4 sm:flex-row">
-                      <Avatar className="size-48 self-center md:size-38">
+                    <div className="flex flex-col gap-4 px-4 pt-4 sm:flex-row sm:items-center-safe">
+                      <Avatar className="size-48 shrink-0 self-center md:size-38">
                         <AvatarImage
                           src={ambassador.image}
                           className="object-cover object-center"
                         />
                         <AvatarFallback></AvatarFallback>
                       </Avatar>
-                      <div className="flex flex-col gap-4">
-                        <div className="flex flex-col gap-2">
+                      <div className="flex size-full grow flex-row justify-between gap-4">
+                        <div className="flex flex-col justify-center-safe gap-2">
                           <h1 className="text-xl">{ambassador.name}</h1>
                           <h1 className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text font-semibold text-transparent">
                             {ambassador.role}
@@ -403,7 +403,7 @@ export function AboutPage() {
                         </div>
                         <a
                           href={ambassador.linkedin}
-                          className="flex w-fit items-center justify-center rounded-xl border border-white/20 bg-white/10 p-2 transition-colors duration-300 hover:bg-white/20"
+                          className="flex size-fit items-center justify-center rounded-xl border border-white/20 bg-white/10 p-2 transition-colors duration-300 hover:bg-white/20"
                         >
                           <Linkedin className="size-6" />
                         </a>

@@ -12,7 +12,9 @@ i18n
   .init({
     resources: {
       'nl-NL': { translation: nl },
+      nl: { translation: nl },
       'en-US': { translation: en },
+      en: { translation: en },
     },
     fallbackLng: 'en-US',
     detection: {

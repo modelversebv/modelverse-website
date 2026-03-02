@@ -6,7 +6,6 @@ import { Globe } from 'lucide-react'
 
 import { Dropdown } from './dropdown'
 import { DropdownLink } from './dropdownLink'
-// import { DropdownLink } from './dropdownLink'
 import { NavLink } from './navlink'
 
 type NavBarProps = {
@@ -35,8 +34,7 @@ export function NavBar({
 }: NavBarProps) {
   const [isOpen, setIsOpen] = useState(false)
   const navigate = useNavigate()
-  const { i18n } = useTranslation()
-  const { t } = useTranslation()
+  const { i18n, t } = useTranslation()
 
   const scrollToTop = () => {
     if (!home || !layoutRef) return
@@ -163,9 +161,14 @@ export function NavBar({
           <NavLink active={home} to="/">
             {t('navbar.home')}
           </NavLink>
-          <NavLink active={services} to="/services">
-            {t('navbar.services')}
-          </NavLink>
+          <Dropdown title="Solutions" active={platform || services}>
+            <DropdownLink to="/platform" title="Platform" active={platform}>
+              Risk & Compliance Management
+            </DropdownLink>
+            <DropdownLink to="/services" title="Services" active={services}>
+              Service Packages
+            </DropdownLink>
+          </Dropdown>
           <NavLink active={cases} to="/cases">
             {t('navbar.cases')}
           </NavLink>

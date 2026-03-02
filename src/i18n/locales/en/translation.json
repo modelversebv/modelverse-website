@@ -2,13 +2,13 @@
   "navbar": {
     "home": "Home",
     "services": "Services",
-    "cases": "Case Studies",
+    "cases": "Cases",
     "news": "News",
     "about": "About",
     "contact": "Contact Us"
   },
   "footer": {
-    "tagline": "We secure. You Succeed!",
+    "tagline": "We secure. You succeed!",
     "description": "Empowering organizations to manage risks and compliance with confidence.",
     "sections": {
       "company": {
@@ -47,27 +47,27 @@
       "items": {
         "strategic_risk": {
           "title": "Strategic Risk Management",
-          "description": "We help you manage risks — and opportunities — across three levels: organization, assets, and findings. This layered approach brings clarity and efficiency. Say goodbye to bloated risk registers with hundreds of vague entries."
+          "description": "We help you manage risks and opportunities across three levels: organization, assets, and findings. This layered approach brings clarity and efficiency. Say goodbye to bloated risk registers with hundreds of vague entries."
         },
         "real_world": {
           "title": "Real-World Capabilities",
-          "description": "Our proprietary Capability Models reflect modern IT and business realities. They focus on what actually reduces risk, giving you a clear view of how well your organization is equipped to manage it."
+          "description": "Our proprietary Capability Models reflect modern IT and business realities. They focus on what actually reduces risk, giving you a clear view of how well your organization is equipped to manage them."
         },
         "actionable": {
           "title": "Actionable Roadmaps",
-          "description": "We generate prioritized backlogs based on Capability scores, so you know exactly where to invest in mitigation. Each item links directly to a Capability, enabling you to track progress and confidently plan ahead."
+          "description": "We generate prioritized backlogs based on Capability scores, so you know exactly where to invest in mitigation. Each item in your organization's roadmap links directly to a Capability, enabling you to track progress and confidently plan ahead."
         },
         "smart_compliance": {
           "title": "Smart Compliance Automation",
-          "description": "We generate tailored Policies, Procedures, and Controls using curated libraries built on real-world experience. Many Controls are automated, and our platform manages the full plan-do-check-act cycle — keeping you continuously audit-ready."
+          "description": "We generate tailored Policies, Procedures, and Controls using curated libraries built on real-world experience. Many Controls are automated, and our platform manages the full plan-do-check-act cycle — ensuring you remain audit-ready."
         },
         "audit": {
           "title": "Integrated Audit Intelligence",
-          "description": "Audits and pen tests are essential for ongoing risk mitigation. We capture findings and link them directly to your compliance framework, so they roll up into organization-level risks with full traceability."
+          "description": "Audits and pen tests are essential for continuous risk mitigation. We capture findings and link them directly to your compliance framework, so they roll up into organization-level risks with full traceability."
         },
         "multi_standard": {
           "title": "Effortless Multi-Standard Assurance",
-          "description": "Whether you're navigating regulations or meeting client demands, we streamline compliance across multiple standards. Our automated mapping links your Policies, Procedures, and Controls to any framework — and generates the reports you need."
+          "description": "Whether you're navigating regulations or meeting client demands, we streamline compliance across multiple standards. Our automated mapping links your Policies, Procedures, and Controls to any framework and generates the reports you need."
         }
       }
     },
@@ -75,18 +75,18 @@
       "title": "We Secure. You Succeed!",
       "subtitle": "Whether you're a 10-person startup or a 10,000-employee enterprise, Modelverse scales with your needs.",
       "items": [
-        "Scale your risk management team without hiring",
-        "Reduce security incidents",
-        "Be continuously audit-ready",
+        "Scale your risk management without hiring extra staff",
+        "Reduce the prevalence of security incidents",
+        "Maintain continuous audit-readiness",
         "Save time on compliance reporting",
-        "Single pane of glass",
-        "Control automation",
-        "Interfacing to your systems"
+        "Centralised and all-inclusive overview",
+        "Intelligent control automation",
+        "Calibrated for your systems"
       ]
     },
     "testimonials": {
-      "title": "Hear From Our Customers",
-      "subtitle": "See how leaders are transforming their organizations with Modelverse",
+      "title": "What Our Customers Say",
+      "subtitle": "See how industry leaders are transforming their organizations with Modelverse",
       "items": [
         {
           "quote": "Modelverse has transformed our approach to cybersecurity risk management.",
@@ -96,7 +96,7 @@
           "video": "XEPf418PJFU"
         },
         {
-          "quote": "Reshma and the Team has helped us close our security gaps.",
+          "quote": "Reshma and the team have helped us close our security gaps.",
           "name": "Christiaan Rood",
           "role": "CEO",
           "company": "LeydenJar Technologies",
@@ -111,11 +111,151 @@
       "button": "Get Started"
     }
   },
+  "platform": {
+    "hero": {
+      "badge": "We secure. You succeed!",
+      "title_line1": "Cyber Risk Management",
+      "title_line2": "Made Simple",
+      "description": "The only GRC platform built from the ground up for small and medium-sized organizations. Powerful enterprise features without the enterprise complexity."
+    },
+    "key_features": {
+      "title_line1": "Built for the Future of",
+      "title_line2": "Compliance",
+      "subtitle": "Every feature designed to save you time, reduce risk, and simplify compliance management",
+      "items": [
+        {
+          "img_tag": "AI-Powered",
+          "title": "Intelligent Risk Assessment",
+          "description": "AI-powered risk scoring and automated threat detection that learns from your organization's unique security posture",
+          "improvement": "85% faster risk identification"
+        },
+        {
+          "img_tag": "AI-Powered",
+          "title": "Intelligent Risk Assessment",
+          "description": "AI-powered risk scoring and automated threat detection that learns from your organization's unique security posture",
+          "improvement": "85% faster risk identification"
+        },
+        {
+          "img_tag": "AI-Powered",
+          "title": "Intelligent Risk Assessment",
+          "description": "AI-powered risk scoring and automated threat detection that learns from your organization's unique security posture",
+          "improvement": "85% faster risk identification"
+        },
+        {
+          "img_tag": "AI-Powered",
+          "title": "Intelligent Risk Assessment",
+          "description": "AI-powered risk scoring and automated threat detection that learns from your organization's unique security posture",
+          "improvement": "85% faster risk identification"
+        }
+      ]
+    },
+    "fingertips": {
+      "title_line1": "Everything at your",
+      "title_line2": "Fingertips",
+      "subtitle": "A comprehensive dashboard designed to give you instant visibility into your organization's security posture",
+      "modules": "9 Integrated Modules",
+      "breakdown_items": [
+        {
+          "title": "Overdue Items",
+          "description": "Track items requiring immediate attention"
+        },
+        {
+          "title": "Overdue Items",
+          "description": "Track items requiring immediate attention"
+        },
+        {
+          "title": "Overdue Items",
+          "description": "Track items requiring immediate attention"
+        },
+        {
+          "title": "Overdue Items",
+          "description": "Track items requiring immediate attention"
+        }
+      ],
+      "home_items": [
+        {
+          "title": "Overdue Items",
+          "description": "Track items requiring immediate attention"
+        },
+        {
+          "title": "Overdue Items",
+          "description": "Track items requiring immediate attention"
+        },
+        {
+          "title": "Overdue Items",
+          "description": "Track items requiring immediate attention"
+        }
+      ],
+      "module_items": [
+        { "title": "Risks" },
+        { "title": "Risks" },
+        { "title": "Risks" },
+        { "title": "Risks" },
+        { "title": "Risks" },
+        { "title": "Risks" },
+        { "title": "Risks" },
+        { "title": "Risks" },
+        { "title": "Risks" }
+      ]
+    },
+    "differentiators": {
+      "title_line1": "Why Organizations Choose",
+      "title_line2": "Modelverse",
+      "subtitle": "We've reimagined GRC from the ground up to address the real challenges faced by modern organizations",
+      "items": [
+        {
+          "title": "Purpose-Built for SMBs",
+          "description": "Unlike enterprise-focused tools, we're designed specifically for small and medium-sized organizations. No overwhelming complexity, just what you need."
+        },
+        {
+          "title": "Setup in Minutes, Not Months",
+          "description": "Most GRC tools take 3-6 months to implement. Our platform gets you operational in under an hour with guided onboarding."
+        },
+        {
+          "title": "Automated Evidence Collection",
+          "description": "Stop manually gathering compliance evidence. Our platform automatically collects and organizes proof for audits."
+        },
+        {
+          "title": "Always Up-to-Date",
+          "description": "Regulatory frameworks change constantly. We automatically update our compliance libraries so you're always current."
+        },
+        {
+          "title": "Multi-Language Support",
+          "description": "Native support for 8+ European languages with localized compliance frameworks and documentation."
+        },
+        {
+          "title": "Bank-Grade Security",
+          "description": "Built on zero-trust architecture with end-to-end encryption. Your sensitive data never leaves your control."
+        }
+      ]
+    },
+    "comparison": {
+      "title_line1": "Everything You Need.",
+      "title_line2": "Nothing You Don't.",
+      "subtitle": "Unlike bloated enterprise tools, Modelverse includes only the features that small and medium-sized organizations actually need and use",
+      "points": [
+        "Visual risk mapping and heat maps",
+        "Automated policy template library",
+        "Integrated vendor risk management",
+        "Mobile-first responsive design",
+        "Real-time audit preparation",
+        "Smart recommendation engine",
+        "One-click regulatory reports",
+        "Continuous monitoring alerts"
+      ]
+    },
+    "cta": {
+      "title_line1": "Ready to Transform",
+      "title_line2": "Risk Management?",
+      "subtitle": "Join hundreds of organizations who have simplified their compliance journey with Modelverse.",
+      "button": "Get Started"
+    }
+  },
   "services": {
     "hero": {
       "badge": "We secure. You succeed!",
       "title": "Security Services",
-      "description": "Comprehensive security services designed to mature your organization's cybersecurity posture. Choose the packages you need and select the implementation tier that matches your pace and requirements."
+      "description": "Comprehensive security services designed to mature your organization's cybersecurity posture. Select the packages your organization needs. At your pace, to your goals."
     },
     "journey": {
       "title": "Your Security Journey",
@@ -184,8 +324,8 @@
       }
     },
     "cta": {
-      "title": "Ready to Start Your Security Journey?",
-      "subtitle": "Our team will help you select the right packages and tier for your organization's unique needs and maturity level.",
+      "title": "Ready to Take the Next Step?",
+      "subtitle": "Our team will help you select the right packages for your organization's unique needs and maturity level.",
       "button": "Schedule Consultation"
     }
   },
@@ -194,7 +334,7 @@
       "badge": "We secure. You succeed!",
       "title_line1": "Real Results from",
       "title_line2": "Real Customers",
-      "description": "See how organizations like yours are transforming their risk and compliance management with Modelverse."
+      "description": "Learn how our clients are transforming their risk and compliance management with Modelverse."
     },
     "labels": {
       "about": "About",
@@ -209,7 +349,7 @@
       },
       {
         "name": "Provincie Flevoland",
-        "about": "The Province of Flevoland is the twelfth and newest province of the Netherlands, established in 1986, when the southern and eastern Flevopolders, together with the Noordoostpolder, were merged into one provincial entity.",
+        "about": "The Province of Flevoland is the newest and smallest province of the Netherlands, and is the governing authority for the region's (critical) infrastructure, the environment, spatial planning and other areas of public management.",
         "case": "We are piloting Modelverse for Flevoland to improve their risk management, increasing the effectiveness of the implemented cybersecurity measures and saving time for the IT, OT and data privacy teams, as well as the CISO.",
         "url": "https://www.flevoland.nl/"
       },
@@ -251,7 +391,7 @@
       },
       {
         "name": "LeydenJar Technology",
-        "about": "LeydenJar Technology is a scale-up that developed a high-performing pure silicon anode for batteries, boosting the energy of batteries by 50%. They are developing their first production plant in the Eindhoven region.",
+        "about": "LeydenJar Technology is a scale-up that developed a high-performing pure silicon anode for batteries, boosting the energy capacity of batteries by 50%. They are developing their first production plant in the Eindhoven region.",
         "case": "We helped LeydenJar to protect the intellectual property of their core technology using Modelverse.",
         "url": "https://leyden-jar.com/"
       }
@@ -265,10 +405,10 @@
   "news": {
     "hero": {
       "badge": "We secure. You succeed!",
-      "title_line1": "Insights on",
-      "title_line2": "Cyber Risk",
+      "title_line1": "Insights into",
+      "title_line2": "Cybersecurity Risks",
       "title_line3": "& Compliance",
-      "description": "Expert advice, industry trends, and practical guides to help you manage information risk."
+      "description": "Expert advice, industry trends, and practical guides to help you manage cybersecurity risk."
     },
     "featured": "Featured",
     "read_article": "Read Article",
@@ -294,7 +434,7 @@
       "paragraphs": [
         "Modelverse was founded in 2023 by a team of experienced risk managers who witnessed firsthand the challenges organizations face when trying to implement effective risk and compliance management programs.",
         "We saw companies struggling with complex compliance requirements, limited resources, and a shortage of talent. Meanwhile, enterprise risk management solutions were either too expensive or too complex.",
-        "We knew there had to be a better way. That's why we built Modelverse — a platform that brings the power of enterprise risk and compliance management to organizations of all sizes, with the simplicity and affordability that organizations need."
+        "We knew there had to be a better way. That's why we built Modelverse — a platform that makes enterprise risk and compliance management accessible to organizations of all sizes, with the simplicity and affordability that organizations need."
       ]
     },
     "values": {
@@ -324,10 +464,10 @@
       "subtitle": "The passionate people behind Modelverse.",
       "members": [
         {
-          "bio": "Ben is the creator of Modelverse, driven by a passion for turning strategy into action. With over 25 years at Shell and later as a partner at KPMG, Ben helped organizations navigate complex challenges across transformation, risk, and technology. He holds a PhD in theoretical physics and once explored black holes at Imperial College London—before diving into the world of business."
+          "bio": "Ben is the creator of Modelverse, driven by a passion for turning strategy into action. With over 25 years at Shell and later as a partner at KPMG, Ben helped organizations navigate complex challenges across transformation, risk, and technology. He holds a PhD in theoretical physics and once explored black holes at Imperial College London — before diving into the world of business."
         },
         {
-          "bio": "Reshma brings deep expertise in strategic information management and cybersecurity, with a clear, structured approach to tackling complex challenges. Reshma held a variety of IT leadership and Security roles across international corporates and the energy sector. She holds an MSc in Applied Physics and an executive MSc in Cyber Security."
+          "bio": "Reshma brings deep expertise in strategic information management and cybersecurity with a clear, structured approach to tackling complex challenges. Reshma held a variety of IT leadership and Security roles across international corporates and the energy sector. She holds an MSc in Applied Physics and an executive MSc in Cyber Security."
         },
         {
           "bio": "Daan is an experienced entrepreneur and IT leader who's passionate about using modern technology to help organizations tackle real-world challenges. Daan brings broad insight as a strategist, investor, and trusted cybersecurity advisor. He holds a PhD and MSc in Computing Science, along with an executive MSc in Cyber Security."
@@ -336,13 +476,13 @@
           "bio": "Lili is a governance expert with deep experience in health, cybersecurity and patient safety. Before becoming a partner, Lili spent 12 years at the Dutch Ministry of Health, working on organ donation, e-health, and cybersecurity. She holds a Cum Laude BSc in Biomedical Science, a Cum Laude MSc in Neuroscience, and a Summa Cum Laude MSc in Cyber Security Governance."
         },
         {
-          "bio": "Bozhena smoothly runs the back-office, always friendly, accessible, and business-smart."
+          "bio": "Bozhena runs the back-office. Always friendly, accessible, and above all business-smart."
         },
         {
           "bio": "Mariona researches, interprets, structures and creates cybersecurity risk models and ESG models for enterprise clients."
         },
         {
-          "bio": "Sjors is focused on risk management and platform improvements using cloud services and security infrastructure."
+          "bio": "Sjors is focused on risk management, consultancy, and platform improvements with a focus on cloud services and security infrastructure."
         },
         {
           "bio": "Matei develops and maintains the website, helps implement DevOps practices, and supports the development of the Modelverse platform."
@@ -379,7 +519,7 @@
       "badge": "We secure. You succeed!",
       "title_line1": "Get in",
       "title_line2": "Touch",
-      "description": "Have questions about Modelverse? Our team is here to help. Reach out and we'll respond within 24 hours."
+      "description": "Do you have questions about Modelverse? Our team is here to help. Reach out and we'll be in touch within a day."
     },
     "info": {
       "email": {
@@ -398,9 +538,9 @@
         "secondary": "2595 AN The Hague"
       },
       "support": {
-        "title": "Support Hours",
-        "primary": "24/7 for Enterprise Agreements",
-        "secondary": "Mon-Fri, 9:00-18:00 CET for Standard"
+        "title": "Support",
+        "primary": "During business hours",
+        "secondary": "Mon-Fri, 9:00-18:00 CET"
       }
     },
     "faq": {
@@ -408,11 +548,11 @@
       "items": [
         {
           "question": "What is your response time for inquiries?",
-          "answer": "We typically respond to all inquiries within 24 hours during business days. Enterprise customers receive priority support with faster response times."
+          "answer": "We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call us on the number above."
         },
         {
           "question": "Do you offer personalized demos?",
-          "answer": "Yes! We provide customized demos tailored to your organization's specific needs and use cases. Simply select \"Book a meeting\" in the top navigation bar."
+          "answer": "Yes! We provide customized demos tailored to your organization's needs. Simply use the button on the bottom of this page."
         }
       ]
     },
