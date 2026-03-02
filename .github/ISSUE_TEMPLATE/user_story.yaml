@@ -1,9 +1,8 @@
 name: User story
 description: Capture a product slice with clear acceptance criteria.
-title: '[Story] <persona|role> wants <capability> to <benefit>'
+title: '[Story]: '
 type: story
-# labels: ["story", "needs-triage"]
-# projects: ["<org-or-user>/<project-number>"]
+projects: ['modelversebv/2']
 
 body:
   - type: markdown
@@ -11,11 +10,20 @@ body:
       value: |
         Provide the story format, acceptance criteria, and constraints.
 
+  - type: checkboxes
+    id: dupe_check
+    attributes:
+      label: Is there an existing issue targeting the same story?
+      description: Please search open issues before filing a new one.
+      options:
+        - label: I have searched existing issues
+          required: true
+
   - type: textarea
     id: story
     attributes:
       label: Story
-      description: Use the standard format.
+      description: What should the user be able to do and why?
       placeholder: |
         As a <role/persona>,
         I want <capability>,
@@ -24,54 +32,11 @@ body:
       required: true
 
   - type: textarea
-    id: acceptance_criteria
-    attributes:
-      label: Acceptance criteria
-      description: Prefer Given/When/Then where possible.
-      placeholder: |
-        Given …
-        When …
-        Then …
-
-  - type: textarea
-    id: non_functional
-    attributes:
-      label: Non-functional requirements
-      description: Accessibility, performance, security, SEO, etc.
-      placeholder: '- Performance: p95 < 200ms…'
-
-  - type: dropdown
-    id: story_points
-    attributes:
-      label: Story points
-      options:
-        - 1
-        - 2
-        - 3
-        - 5
-        - 8
-        - 13
-
-  - type: textarea
     id: dependencies
     attributes:
       label: Dependencies
-      placeholder: '- Depends on: #789, API v2'
-
-  - type: checkboxes
-    id: dor
-    attributes:
-      label: Definition of Ready
-      options:
-        - label: Story is clear and testable
-        - label: Acceptance criteria defined
-        - label: No external blockers
-
-  - type: checkboxes
-    id: dod
-    attributes:
-      label: Definition of Done
-      options:
-        - label: Implementation complete
-        # - label: Unit/integration tests added
-        # - label: Accessibility checks passed
+      description: Link to any related issues, features, or external factors.
+      placeholder: |
+      - Depends on #789,
+      - Depends on API 29c34b7 v2,
+      - Depends on XYZ team delivering ABC.

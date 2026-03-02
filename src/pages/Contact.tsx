@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import {
   fadeInUp,
@@ -14,73 +15,71 @@ import { Layout } from '@/components/layout'
 import { Clock, Mail, MapPin, Phone, Shield } from 'lucide-react'
 import { motion, useInView } from 'motion/react'
 
-const ContactHero = (
-  <Hero
-    className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
-    backgroundClassName="object-[center_80%]"
-    backgroundImg="/images/heroes/contact.avif"
-    overlay
-  >
-    <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
-      <Shield className="size-5" />
-      <p className="text-sm">We secure. You succeed!</p>
-    </div>
-    <h1 className="text-5xl sm:text-6xl">
-      Get in{' '}
-      <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
-        Touch
-      </span>
-    </h1>
-    <p className="text-xl text-white/70">
-      Have questions about Modelverse? Our team is here to help. Reach out and
-      we'll respond within 24 hours.
-    </p>
-  </Hero>
-)
-
 export function ContactPage() {
   const layoutRef = useRef<HTMLDivElement>(null)
+  const { t } = useTranslation()
+
+  const ContactHero = (
+    <Hero
+      className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
+      backgroundClassName="object-[center_80%]"
+      backgroundImg="/images/heroes/contact.avif"
+      overlay
+    >
+      <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
+        <Shield className="size-5" />
+        <p className="text-sm">{t('contact.hero.badge')}</p>
+      </div>
+      <h1 className="text-5xl sm:text-6xl">
+        {t('contact.hero.title_line1')}{' '}
+        <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
+          {t('contact.hero.title_line2')}
+        </span>
+      </h1>
+      <p className="text-xl text-white/70">{t('contact.hero.description')}</p>
+    </Hero>
+  )
 
   // Data
   const contactInfo = [
     {
       icon: Mail,
-      title: 'Email',
-      primary: 'partners@modelverse.online',
-      secondary: 'support@modelverse.online',
+      title: t('contact.info.email.title'),
+      primary: t('contact.info.email.primary'),
+      secondary: t('contact.info.email.secondary'),
     },
     {
       icon: Phone,
-      title: 'Phone',
-      primary: '+31 6 27612498',
-      secondary: 'Mon-Fri, 9:00-18:00 CET',
+      title: t('contact.info.phone.title'),
+      primary: t('contact.info.phone.primary'),
+      secondary: t('contact.info.phone.secondary'),
     },
     {
       icon: MapPin,
-      title: 'Office',
-      primary: 'Wilhelmina van Pruisenweg 104',
-      secondary: '2595 AN The Hague',
+      title: t('contact.info.office.title'),
+      primary: t('contact.info.office.primary'),
+      secondary: t('contact.info.office.secondary'),
     },
     {
       icon: Clock,
-      title: 'Support Hours',
-      primary: '24/7 for Enterprise Agreements',
-      secondary: 'Mon-Fri, 9:00-18:00 CET for Standard',
+      title: t('contact.info.support.title'),
+      primary: t('contact.info.support.primary'),
+      secondary: t('contact.info.support.secondary'),
     },
   ]
 
+  const faqItems = t('contact.faq.items', { returnObjects: true }) as {
+    question: string
+    answer: string
+  }[]
+
   // Framer Motion
-  // Refs for scroll-triggered animations
   const detailsRef = useRef<HTMLDivElement>(null)
   const questionsRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<HTMLDivElement>(null)
 
-  // Track visibility for animations
   const detailsInView = useInView(detailsRef, { once: true, amount: 0.2 })
-  const questionsInView = useInView(questionsRef, {
-    once: true,
-    amount: 0.2,
-  })
+  const questionsInView = useInView(questionsRef, { once: true, amount: 0.2 })
   const mapsInView = useInView(mapRef, { once: true, amount: 0.2 })
 
   return (
@@ -115,6 +114,7 @@ export function ContactPage() {
               </motion.div>
             ))}
           </motion.div>
+
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
             <motion.div
               ref={questionsRef}
@@ -124,36 +124,20 @@ export function ContactPage() {
               className="flex flex-col gap-4"
             >
               <motion.h1 variants={fadeInUp} className="text-center text-4xl">
-                Frequently Asked Questions
+                {t('contact.faq.title')}
               </motion.h1>
               <motion.div
                 variants={staggerContainer}
                 className="flex flex-col gap-4"
               >
-                <motion.div variants={slideInLeft}>
-                  <Card className="gap-4 bg-white/5 p-8 hover:border-lime-500/50 hover:bg-white/10">
-                    <h1 className="text-lg">
-                      What is your response time for inquiries?
-                    </h1>
-                    <p className="text-white/70">
-                      We typically respond to all inquiries within 24 hours
-                      during business days. Enterprise customers receive
-                      priority support with faster response times.
-                    </p>
-                  </Card>
-                </motion.div>
-                <motion.div variants={slideInLeft}>
-                  <Card className="gap-4 bg-white/5 p-8 hover:border-lime-500/50 hover:bg-white/10">
-                    <h1 className="text-lg">
-                      Do you offer personalized demos?
-                    </h1>
-                    <p className="text-white/70">
-                      Yes! We provide customized demos tailored to your
-                      organization's specific needs and use cases. Simply select
-                      "Book a meeting" in the top navigation bar.
-                    </p>
-                  </Card>
-                </motion.div>
+                {faqItems.map((item, index) => (
+                  <motion.div variants={slideInLeft} key={index}>
+                    <Card className="gap-4 bg-white/5 p-8 hover:border-lime-500/50 hover:bg-white/10">
+                      <h1 className="text-lg">{item.question}</h1>
+                      <p className="text-white/70">{item.answer}</p>
+                    </Card>
+                  </motion.div>
+                ))}
               </motion.div>
             </motion.div>
 
@@ -165,7 +149,7 @@ export function ContactPage() {
               className="flex flex-col items-center-safe gap-4 lg:basis-1/2"
             >
               <motion.h1 variants={fadeInUp} className="text-center text-4xl">
-                Directions
+                {t('contact.directions.title')}
               </motion.h1>
               <motion.div
                 variants={slideInRight}

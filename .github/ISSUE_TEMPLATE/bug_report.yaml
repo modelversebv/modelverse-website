@@ -1,9 +1,8 @@
 name: Bug report
 description: Report a reproducible defect on the company website.
-title: '[Bug] <page-or-component>: <summary>'
+title: '[Bug]: '
 type: bug
-# labels: ["bug", "needs-triage"]
-# projects: ["<org-or-user>/<project-number>"]  # optional: auto-add to a Project
+projects: ['modelversebv/2']
 
 body:
   - type: markdown
@@ -15,7 +14,7 @@ body:
   - type: checkboxes
     id: dupe_check
     attributes:
-      label: Is there an existing issue?
+      label: Is there an existing issue targeting the same bug?
       description: Please search open issues before filing a new one.
       options:
         - label: I have searched existing issues
@@ -27,12 +26,8 @@ body:
       label: URL(s) affected
       description: Full page URL(s) where the bug occurs.
       placeholder: 'https://www.example.com/path'
-
-  - type: input
-    id: component
-    attributes:
-      label: Page / component
-      placeholder: 'e.g., Home hero, Navigation menu, Contact form'
+    validations:
+      required: true
 
   - type: dropdown
     id: severity
@@ -40,27 +35,21 @@ body:
       label: Severity (impact)
       description: How disruptive is this issue?
       options:
-        - Critical — crash/security/data loss
-        - High — page/functionality broken for many users
+        - Critical — crash/security/blank page
+        - High — page/functionality broken for most users
         - Medium — degraded behavior/workaround exists
         - Low — minor visual/content issue
-      default: 2
     validations:
       required: true
 
   - type: textarea
-    id: current_behavior
+    id: description
     attributes:
-      label: Current behavior
-      description: What happened?
-      placeholder: 'Describe the observed behavior.'
-
-  - type: textarea
-    id: expected_behavior
-    attributes:
-      label: Expected behavior
-      description: What should have happened?
-      placeholder: 'Describe the desired/expected behavior.'
+      label: Description
+      description: What is the expected behaviour, and what is the current behaviour?
+      placeholder: 'Describe the bug.'
+    validations:
+      required: true
 
   - type: textarea
     id: repro_steps
@@ -68,16 +57,15 @@ body:
       label: Steps to reproduce
       description: Walk us through the exact steps.
       placeholder: |
-        1) Go to …
-        2) Click …
-        3) Observe …
-    validations:
-      required: true
+        1. Go to …
+        2. Click …
+        3. Observe …
 
   - type: dropdown
     id: device
     attributes:
-      label: Device type(s)
+      label: Specific to device(s)
+      description: Only fill in if applicable
       multiple: true
       options:
         - Desktop
@@ -88,7 +76,8 @@ body:
   - type: dropdown
     id: browsers
     attributes:
-      label: Browser(s)
+      label: Specific to browser(s)
+      description: Only fill in if applicable
       multiple: true
       options:
         - Chrome
@@ -99,7 +88,8 @@ body:
   - type: dropdown
     id: os
     attributes:
-      label: Operating system(s)
+      label: Specific to operating system(s)
+      description: Only fill in if applicable
       multiple: true
       options:
         - macOS
@@ -109,47 +99,15 @@ body:
         - Android
 
   - type: input
-    id: app_version
+    id: version
     attributes:
-      label: Site/Build version (if applicable)
-      description: e.g., release tag, commit SHA, or build ID.
-
-  - type: textarea
-    id: screenshots
-    attributes:
-      label: Screenshots / screen recordings
-      description: Drag and drop images or links to recordings.
-      render: markdown
-
-  - type: textarea
-    id: logs
-    attributes:
-      label: Console logs / network errors
-      description: Paste relevant output. This will be formatted as code.
-      render: shell
+      label: Build version
+      description: Version number of the build where the bug is present.
+    validations:
+      required: true
 
   - type: textarea
     id: additional_context
     attributes:
       label: Additional context
-      description: Any other details, related issues, or hypotheses.
-
-  - type: checkboxes
-    id: quality_gate
-    attributes:
-      label: Definition of done (for the fix)
-      description: Used by maintainers to confirm quality before closing.
-      options:
-        - label: Reproduction verified
-        - label: Fix implemented
-        - label: Tests added/updated
-        - label: Docs updated (if needed)
-        - label: Regression risk assessed
-
-  - type: checkboxes
-    id: dod
-    attributes:
-      label: Definition of Done
-      options:
-        - label: Implementation complete
-        - label: Bug fixed
+      description: Any other details, screenshots, logs, or hypotheses.

@@ -1,5 +1,6 @@
 // Importing pfps
 import { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import {
   fadeInUp,
@@ -16,7 +17,7 @@ import marionaImage from '@/assets/team/Mariona - web.jpg'
 import mateiImage from '@/assets/team/Matei - web.jpg'
 import reshmaImage from '@/assets/team/Reshma - web.jpg'
 import sjorsImage from '@/assets/team/Sjors - web.jpg'
-import teamImage from '@/assets/team/Team - web.jpg'
+import teamImage from '@/assets/team/Team minus Michel - web.jpg'
 import { Card } from '@/components/app/misc/card'
 import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
@@ -32,133 +33,103 @@ import {
 } from 'lucide-react'
 import { motion, useInView } from 'motion/react'
 
-const AboutHero = (
-  <Hero
-    className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
-    backgroundClassName="object-[center_70%]"
-    backgroundImg="/images/heroes/about.avif"
-    overlay
-  >
-    <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
-      <Shield className="size-5" />
-      <p className="text-sm">We secure. You succeed!</p>
-    </div>
-    <h1 className="text-5xl sm:text-6xl">
-      We're on a Mission to{' '}
-      <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
-        Democratize Risk Management
-      </span>
-    </h1>
-    <p className="text-xl text-white/70">
-      Making enterprise-grade information risk management accessible to
-      organizations of all sizes.
-    </p>
-  </Hero>
-)
-
 export function AboutPage() {
   const layoutRef = useRef<HTMLDivElement>(null)
+  const { t } = useTranslation()
+
+  const AboutHero = (
+    <Hero
+      className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
+      backgroundClassName="object-[center_70%]"
+      backgroundImg="/images/heroes/about.avif"
+      overlay
+    >
+      <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
+        <Shield className="size-5" />
+        <p className="text-sm">{t('about.hero.badge')}</p>
+      </div>
+      <h1 className="text-5xl sm:text-6xl">
+        {t('about.hero.title_line1')}{' '}
+        <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
+          {t('about.hero.title_line2')}
+        </span>
+      </h1>
+      <p className="text-xl text-white/70">{t('about.hero.description')}</p>
+    </Hero>
+  )
 
   // Data
+  const values = [
+    { icon: User, key: 'customer_first' },
+    { icon: Shield, key: 'security_by_design' },
+    { icon: Eye, key: 'transparency' },
+    { icon: Book, key: 'continuous_learning' },
+  ]
+
   const teamMembers = [
     {
       name: 'Ben Krutzen',
       role: 'CEO & CTO | Co-Founder',
-      bio: 'Ben is the creator of Modelverse, driven by a passion for turning strategy into action. With over 25 years at Shell and later as a partner at KPMG, Ben helped organizations navigate complex challenges across transformation, risk, and technology. He holds a PhD in theoretical physics and once explored black holes at Imperial College London—before diving into the world of business.',
+      bio: t('about.team.members.0.bio'),
       image: benImage,
       linkedin: 'https://www.linkedin.com/in/benkrutzen/',
       mail: 'mailto:ben@modelverse.online',
-      dob: '',
     },
     {
       name: 'Reshma Pandohi Mishre',
       role: 'Partner | Co-Founder',
-      bio: 'Reshma brings deep expertise in strategic information management and cybersecurity, with a clear, structured approach to tackling complex challenges. Reshma held a variety of IT leadership an Security roles across international corporates and the energy sector. She holds an MSc in Applied Physics and an executive MSc in Cyber Security.',
+      bio: t('about.team.members.1.bio'),
       image: reshmaImage,
       linkedin: 'https://www.linkedin.com/in/reshmapandohi/',
       mail: 'mailto:reshma@modelverse.online',
-      dob: '',
     },
     {
       name: 'Daan Loyens',
       role: 'CFO & COO | Co-Founder',
-      bio: 'Daan is an experienced entrepreneur and IT leader who’s passionate about using modern technology to help organizations tackle real-world challenges. Daan brings broad insight as a strategist, investor, and trusted cybersecurity advisor. He holds a PhD and MSc in Computing Science, along with an executive MSc in Cyber Security.',
+      bio: t('about.team.members.2.bio'),
       image: daanImage,
       linkedin: 'https://www.linkedin.com/in/dl11235813213456/',
       mail: 'mailto:daan@modelverse.online',
-      dob: '',
     },
     {
       name: 'Lili Guo',
       role: 'Partner | CISO',
-      bio: 'Lili is a governance expert with deep experience in health, cybersecurity and patient safety. Before becoming a partner, Lili spent 12 years at the Dutch Ministry of Health, working on organ donation, e-health, and cybersecurity. She holds a Cum Laude BSc in Biomedical Science, a Cum Laude MSc in Neuroscience, and a Summa Cum Laude MSc in Cyber Security Governance.',
+      bio: t('about.team.members.3.bio'),
       image: liliImage,
       linkedin: 'https://www.linkedin.com/in/lili-guo-3941b126/',
       mail: 'mailto:Lili@modelverse.online',
-      dob: '',
     },
     {
       name: 'Bozhena Kovtun',
       role: 'Office Manager',
-      bio: 'Bozhena smoothly runs the back-office, always friendly, accessible, and business-smart.',
+      bio: t('about.team.members.4.bio'),
       image: bozhenaImage,
       linkedin: 'https://www.linkedin.com/in/bozhena-kovtun-0a106619b/',
       mail: 'mailto:bozhena@valuetracks.io',
-      dob: '',
     },
     {
       name: 'Mariona Fortuny Jané',
       role: 'Risk Consultant',
-      bio: 'Mariona researches, interprets, structures and creates cybersecurity risk models and ESG models for enterprise clients.',
+      bio: t('about.team.members.5.bio'),
       image: marionaImage,
       linkedin: 'https://www.linkedin.com/in/mariona-fortuny-jan%C3%A9/',
       mail: 'mailto:mariona@modelverse.online',
-      dob: '',
     },
     {
       name: 'Sjors de Natris',
       role: 'Risk Consultant & Security Engineer',
-      bio: 'Sjors is focused on risk management and platform improvements using cloud services and security infrastructure.',
+      bio: t('about.team.members.6.bio'),
       image: sjorsImage,
       linkedin: 'https://www.linkedin.com/in/sjors-de-natris-470a51198/',
       mail: 'mailto:sjors@modelverse.online',
-      dob: '',
     },
     {
       name: 'Matei Avram',
       role: 'Software Engineer',
-      bio: 'Matei develops and maintains the website, helps implement DevOps practices, and supports the development of the Modelverse platform.',
+      bio: t('about.team.members.7.bio'),
       image: mateiImage,
       linkedin: 'https://www.linkedin.com/in/matei-avram-919771251/',
       mail: 'mailto:matei@modelverse.online',
-      dob: '',
-    },
-  ]
-
-  const values = [
-    {
-      icon: User,
-      title: 'Customer First',
-      description:
-        "We build products that solve real problems. Our customers' success is our success.",
-    },
-    {
-      icon: Shield,
-      title: 'Security by Design',
-      description:
-        "Security isn't an afterthought—it's built into everything we do, from code to culture.",
-    },
-    {
-      icon: Eye,
-      title: 'Transparency',
-      description:
-        'We believe in open communication with our customers, partners, and each other.',
-    },
-    {
-      icon: Book,
-      title: 'Continuous Learning',
-      description:
-        'The threat landscape evolves daily. We stay ahead through constant innovation and education.',
     },
   ]
 
@@ -167,35 +138,35 @@ export function AboutPage() {
       name: 'Jan-Willem Klerkx',
       role: 'Co-Founder & CEO, BonCode',
       linkedin: 'https://www.linkedin.com/in/jwklerkx/',
-      bio: 'Jan-Willem Klerkx is passionate about software quality and business agility. His approach combines deep technical insight with strategic thinking, helping organizations reduce risk, improve maintainability, and unlock innovation through objective source code and architecture analysis.  ',
+      bio: t('about.ambassadors.items.0.bio'),
       image: 'images/ambassadors/jan-willem.jpg',
     },
     {
       name: 'Gordon Muehl',
       role: 'Founder & Managing Director, MuehlCyberConsulting',
       linkedin: 'https://www.linkedin.com/in/gordonmuehl/',
-      bio: 'Gordon Muehl has led innovation for Fortune 500 companies, built high-performing international teams, and embedded security culture into a 100.000 employee R&D organization. Specializing in secure software development lifecycle, technical due diligence, and non-functional requirements of governance, Gordon bridges business and technical domains from CxOs to developers.',
+      bio: t('about.ambassadors.items.1.bio'),
       image: 'images/ambassadors/gordon.png',
     },
     {
       name: 'Dennis Mulder',
       role: 'Co-Founder & CTO, Full Circle IT NL',
       linkedin: 'https://www.linkedin.com/in/dennismulder/',
-      bio: 'Dennis Mulder specializes in IT strategy, AI, and digital transformation, and focuses on bridging businesses and tech from boardroom to execution for organizations. He is a Certified Distinguished IT Architect (CITA-D), president of Iasa Global NL, and chairs the Chief Architect Forum. Dennis is committed to developing talent always with an eye for practical impact.',
+      bio: t('about.ambassadors.items.2.bio'),
       image: 'images/ambassadors/dennis.jpg',
     },
     {
       name: 'Oskar Brink',
       role: 'Independent Cyber Security and Risk Manager',
       linkedin: 'https://www.linkedin.com/in/oskarbrink/',
-      bio: 'Oskar Brink excels at aligning security and risk strategies with business objectives, driving sustainable transformation, and fostering continuous improvement through coaching - with international experience in Malaysia and India. He specializes in bringing clarity and structure to complex IT environments to transform organizations into more agile, secure, and resilient.',
+      bio: t('about.ambassadors.items.3.bio'),
       image: 'images/ambassadors/oskar.jpg',
     },
     {
       name: 'Robert Bals',
       role: 'Lead Auditor ISO 27001 & Data Protection Officer, IsoSecure',
       linkedin: 'https://www.linkedin.com/in/rbals/',
-      bio: 'Robert Bals stands out for combining deep technical expertise with a pragmatic, jargon-free, and practical mindset. He provides tailored ISMS implementations, audits for ISO 27001 and TUV Nord certification, and GDPR solutions. Through delivering scalable, client-focused results, he helps ICT, software, and healthcare organizations strengthen information security and compliance.',
+      bio: t('about.ambassadors.items.4.bio'),
       image: 'images/ambassadors/robert.jpg',
     },
     {
@@ -203,7 +174,7 @@ export function AboutPage() {
       role: 'Independent Communications & Media Relations Advisor',
       linkedin:
         'https://www.linkedin.com/in/alexandra-roger-machart-senior-manager-corporate-communications/',
-      bio: 'Alexandra Roger-Machart is a passionate about Tech and AI-driven transformation, she advises startups and scaleups strengthen to their external profile, engage with stakeholders and enhance their corporate reporting through an interdisciplinary perspective of strategic storytelling and regulatory expertise.',
+      bio: t('about.ambassadors.items.5.bio'),
       image: 'images/ambassadors/alexandra.jpg',
     },
   ]
@@ -252,30 +223,21 @@ export function AboutPage() {
                 variants={slideInLeft}
                 className="text-4xl sm:text-5xl"
               >
-                Our Story
+                {t('about.story.title')}
               </motion.h1>
               <motion.div
                 variants={staggerContainer}
                 className="flex flex-col gap-4 text-lg text-white/70"
               >
-                <motion.p variants={slideInLeft}>
-                  Modelverse was founded in 2023 by a team of experienced risk
-                  managers who witnessed firsthand the challenges organizations
-                  face when trying to implement effective risk and compliance
-                  management programs.
-                </motion.p>
-                <motion.p variants={slideInLeft}>
-                  We saw companies struggling with complex compliance
-                  requirements, limited resources, and a shortage of talent.
-                  Meanwhile, enterprise risk management solutions were either
-                  too expensive or too complex.
-                </motion.p>
-                <motion.p variants={slideInLeft}>
-                  We knew there had to be a better way. That's why we built
-                  Modelverse — a platform that brings the power of enterprise
-                  risk and compliance management to organizations of all sizes,
-                  with the simplicity and affordability that organizations need.
-                </motion.p>
+                {(
+                  t('about.story.paragraphs', {
+                    returnObjects: true,
+                  }) as string[]
+                ).map((paragraph, index) => (
+                  <motion.p key={index} variants={slideInLeft}>
+                    {paragraph}
+                  </motion.p>
+                ))}
               </motion.div>
             </motion.div>
             <motion.div
@@ -304,9 +266,11 @@ export function AboutPage() {
               variants={fadeInUp}
               className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
             >
-              <h1 className="text-4xl sm:text-5xl">Our Values</h1>
+              <h1 className="text-4xl sm:text-5xl">
+                {t('about.values.title')}
+              </h1>
               <p className="text-xl text-white/70">
-                The principles that guide everything we do at Modelverse.
+                {t('about.values.subtitle')}
               </p>
             </motion.div>
 
@@ -322,8 +286,12 @@ export function AboutPage() {
                       <div className="mb-4 flex w-fit items-center justify-center rounded-xl bg-linear-to-br from-lime-500 to-teal-500 p-2">
                         <value.icon className="size-6" />
                       </div>
-                      <h3 className="mb-2 text-xl">{value.title}</h3>
-                      <p className="text-white/70">{value.description}</p>
+                      <h3 className="mb-2 text-xl">
+                        {t(`about.values.items.${value.key}.title`)}
+                      </h3>
+                      <p className="text-white/70">
+                        {t(`about.values.items.${value.key}.description`)}
+                      </p>
                     </div>
                   </Card>
                 </motion.div>
@@ -345,9 +313,9 @@ export function AboutPage() {
               variants={fadeInUp}
               className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
             >
-              <h1 className="text-4xl sm:text-5xl">Meet the Team</h1>
+              <h1 className="text-4xl sm:text-5xl">{t('about.team.title')}</h1>
               <p className="text-xl text-white/70">
-                The passionate people behind Modelverse.
+                {t('about.team.subtitle')}
               </p>
             </motion.div>
 
@@ -389,79 +357,76 @@ export function AboutPage() {
           </motion.div>
 
           {/* Ambassadors */}
-          {ambassadors.length != 0 && (
+          <motion.div
+            ref={ambassadorsRef}
+            initial="hidden"
+            animate={ambassadorsInView ? 'visible' : 'hidden'}
+            variants={staggerContainer}
+            className="flex flex-col gap-8 text-center"
+          >
             <motion.div
-              ref={ambassadorsRef}
-              initial="hidden"
-              animate={ambassadorsInView ? 'visible' : 'hidden'}
-              variants={staggerContainer}
-              className="flex flex-col gap-8 text-center"
+              variants={fadeInUp}
+              className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
             >
-              <motion.div
-                variants={fadeInUp}
-                className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
-              >
-                <h1 className="text-4xl sm:text-5xl">Our Ambassadors</h1>
-                <p className="text-xl text-white/70">
-                  Trusted voices in the risk and compliance management community
-                  who believe in our mission.
-                </p>
-              </motion.div>
-
-              <motion.div
-                variants={staggerContainer}
-                className="grid grid-cols-1 gap-4 lg:grid-cols-2"
-              >
-                {ambassadors.map((ambassador, index) => (
-                  <motion.div
-                    variants={index % 2 === 0 ? slideInLeft : slideInRight}
-                    key={index}
-                  >
-                    <Card className="size-full gap-4 overflow-hidden bg-white/5 p-0 text-left hover:border-lime-500/50 hover:bg-white/10">
-                      <div className="flex flex-col gap-4 px-4 pt-4 sm:flex-row">
-                        <Avatar className="size-48 self-center md:size-38">
-                          <AvatarImage
-                            src={ambassador.image}
-                            className="object-cover object-center"
-                          />
-                          <AvatarFallback></AvatarFallback>
-                        </Avatar>
-                        <div className="flex flex-col gap-4">
-                          <div className="flex flex-col gap-2">
-                            <h1 className="text-xl">{ambassador.name}</h1>
-                            <h1 className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text font-semibold text-transparent">
-                              {ambassador.role}
-                            </h1>
-                          </div>
-                          <a
-                            href={ambassador.linkedin}
-                            className="flex w-fit items-center justify-center rounded-xl border border-white/20 bg-white/10 p-2 transition-colors duration-300 hover:bg-white/20"
-                          >
-                            <Linkedin className="size-6" />
-                          </a>
-                        </div>
-                      </div>
-                      <div className="flex grow flex-col gap-4 bg-lime-500/10 p-4 sm:flex-row">
-                        <PencilLine className="hidden size-6 shrink-0 text-lime-500 opacity-50 sm:block" />
-                        <div>
-                          {ambassador.bio
-                            .split('\n')
-                            .map((paragraph, index) => (
-                              <p
-                                key={index}
-                                className="mb-4 text-sm text-white/70"
-                              >
-                                {paragraph.trim()}
-                              </p>
-                            ))}
-                        </div>
-                      </div>
-                    </Card>
-                  </motion.div>
-                ))}
-              </motion.div>
+              <h1 className="text-4xl sm:text-5xl">
+                {t('about.ambassadors.title')}
+              </h1>
+              <p className="text-xl text-white/70">
+                {t('about.ambassadors.subtitle')}
+              </p>
             </motion.div>
-          )}
+
+            <motion.div
+              variants={staggerContainer}
+              className="grid grid-cols-1 gap-4 lg:grid-cols-2"
+            >
+              {ambassadors.map((ambassador, index) => (
+                <motion.div
+                  variants={index % 2 === 0 ? slideInLeft : slideInRight}
+                  key={index}
+                >
+                  <Card className="size-full gap-4 overflow-hidden bg-white/5 p-0 text-left hover:border-lime-500/50 hover:bg-white/10">
+                    <div className="flex flex-col gap-4 px-4 pt-4 sm:flex-row sm:items-center-safe">
+                      <Avatar className="size-48 shrink-0 self-center md:size-38">
+                        <AvatarImage
+                          src={ambassador.image}
+                          className="object-cover object-center"
+                        />
+                        <AvatarFallback></AvatarFallback>
+                      </Avatar>
+                      <div className="flex size-full grow flex-row justify-between gap-4">
+                        <div className="flex flex-col justify-center-safe gap-2">
+                          <h1 className="text-xl">{ambassador.name}</h1>
+                          <h1 className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text font-semibold text-transparent">
+                            {ambassador.role}
+                          </h1>
+                        </div>
+                        <a
+                          href={ambassador.linkedin}
+                          className="flex size-fit items-center justify-center rounded-xl border border-white/20 bg-white/10 p-2 transition-colors duration-300 hover:bg-white/20"
+                        >
+                          <Linkedin className="size-6" />
+                        </a>
+                      </div>
+                    </div>
+                    <div className="flex grow flex-col gap-4 bg-lime-500/10 p-4 sm:flex-row">
+                      <PencilLine className="hidden size-6 shrink-0 text-lime-500 opacity-50 sm:block" />
+                      <div>
+                        {ambassador.bio.split('\n').map((paragraph, pIndex) => (
+                          <p
+                            key={pIndex}
+                            className="mb-4 text-sm text-white/70"
+                          >
+                            {paragraph.trim()}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  </Card>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </Layout>

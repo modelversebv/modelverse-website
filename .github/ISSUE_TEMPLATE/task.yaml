@@ -1,9 +1,8 @@
 name: Task
 description: A general engineering or operational task.
-title: '[Task] <area-or-component>: <summary>'
+title: '[Task]: '
 type: task
-# labels: ["task", "needs-triage"]
-# projects: ["<org-or-user>/<project-number>"]
+projects: ['modelversebv/2']
 
 body:
   - type: markdown
@@ -11,11 +10,14 @@ body:
       value: |
         Use this for one-off tasks, maintenance, chores, and operational work.
 
-  - type: input
-    id: area
+  - type: checkboxes
+    id: dupe_check
     attributes:
-      label: Area / component
-      placeholder: 'e.g., CI/CD, Infra, Analytics, Content'
+      label: Is there an existing issue targeting the same task?
+      description: Please search open issues before filing a new one.
+      options:
+        - label: I have searched existing issues
+          required: true
 
   - type: textarea
     id: description
@@ -25,41 +27,3 @@ body:
       placeholder: 'Explain the steps, context, and desired outcome.'
     validations:
       required: true
-
-  - type: textarea
-    id: subtasks
-    attributes:
-      label: Subtasks (checklist)
-      description: Use markdown checkboxes to break down work.
-      placeholder: |
-        - [ ] Step 1…
-        - [ ] Step 2…
-        - [ ] Verify…
-
-  - type: input
-    id: due_date
-    attributes:
-      label: Due date (optional)
-      placeholder: 'YYYY-MM-DD'
-
-  - type: textarea
-    id: dependencies
-    attributes:
-      label: Dependencies / related issues
-      placeholder: '- Blocked by: #456, Vendor input'
-
-  - type: textarea
-    id: resources
-    attributes:
-      label: References / resources
-      description: Links to docs, runbooks, examples.
-      render: markdown
-
-  - type: checkboxes
-    id: dod
-    attributes:
-      label: Definition of Done
-      options:
-        - label: Work completed
-        - label: Verified by reviewer/stakeholder
-        # - label: Monitoring/alerts updated (if relevant)
