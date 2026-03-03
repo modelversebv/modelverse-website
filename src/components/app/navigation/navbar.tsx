@@ -88,7 +88,7 @@ export function NavBar({
           <span className="text-lg font-semibold">Modelverse</span>
           {/* <span className="text-xs text-red-500">{i18n.language}</span> */}
         </div>
-        <div className="hidden flex-row items-center-safe gap-4 rounded-full border border-white/10 bg-white/5 px-4 py-2 font-semibold md:flex lg:gap-8">
+        <div className="hidden flex-row items-center-safe gap-4 rounded-full border border-white/10 bg-white/5 px-4 py-2 font-semibold md:flex md:text-xs lg:gap-8 lg:text-base">
           <NavLink active={home} to="/">
             {t('navbar.home')}
           </NavLink>
@@ -119,14 +119,14 @@ export function NavBar({
         </div>
         <div className="hidden flex-row items-center gap-2 md:flex">
           <button
-            className="cursor-pointer rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50"
+            className="cursor-pointer rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:text-xs lg:text-base"
             onClick={() => navigate('/contact')}
           >
             {t('navbar.contact')}
           </button>
 
           <Dropdown
-            classname="bg-white/5 border border-white/10 rounded-full px-4 py-2"
+            classname="bg-white/5 border border-white/10 rounded-full px-4 py-2 md:text-xs lg:text-base"
             childrenClassname="w-30 right-0"
             title={LanguageToggler}
           >

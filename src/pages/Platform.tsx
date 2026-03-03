@@ -172,7 +172,7 @@ export function PlatformPage() {
                     className={`md:min-h-none flex min-h-dvh flex-col justify-center-safe gap-4 md:min-h-min ${index % 2 == 0 ? 'md:flex-row' : 'md:flex-row-reverse'} md:items-center-safe`}
                     key={`feature-${index}`}
                   >
-                    <Card className="relative bg-white/5 p-2 hover:border-lime-500/50 hover:bg-white/10 md:basis-1/2">
+                    <Card className="relative bg-white/5 p-2 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10 md:basis-1/2">
                       <div className="absolute -top-3 -right-3 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 text-xs font-semibold">
                         {feature.img_tag}
                       </div>
@@ -182,7 +182,7 @@ export function PlatformPage() {
                         className="rounded-lg"
                       />
                     </Card>
-                    <Card className="size-fit bg-white/5 hover:border-lime-500/50 hover:bg-white/10 md:basis-1/2">
+                    <Card className="size-fit bg-white/5 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10 md:basis-1/2">
                       <div className="mb-4 flex w-fit items-center justify-center rounded-xl bg-linear-to-br from-lime-500 to-teal-500 p-2">
                         <feature.icon className="size-6" />
                       </div>
@@ -226,7 +226,7 @@ export function PlatformPage() {
             <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
               {brokenDownFeatures.map((item, index) => (
                 <motion.div variants={fadeInUp} key={`fingertipItem-${index}`}>
-                  <Card className="bg-white/5 hover:border-lime-500/50 hover:bg-white/10">
+                  <Card className="bg-white/5 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10">
                     <span className="mb-4 text-3xl">{item.icon}</span>
                     <h3 className="mb-2 text-xl">{item.title}</h3>
                     <p className="text-white/70">{item.description}</p>
@@ -237,7 +237,7 @@ export function PlatformPage() {
             <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-3">
               {homeItems.map((item, index) => (
                 <motion.div variants={fadeInUp} key={`homeItem-${index}`}>
-                  <Card className="bg-white/5 hover:border-lime-500/50 hover:bg-white/10">
+                  <Card className="bg-white/5 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10">
                     <span className="mb-4 text-3xl">{item.icon}</span>
                     <h3 className="mb-2 text-xl">{item.title}</h3>
                     <p className="text-white/70">{item.description}</p>
@@ -250,13 +250,11 @@ export function PlatformPage() {
                 <h1>{t('platform.fingertips.modules')}</h1>
                 <div className="grid w-full grid-cols-3 gap-4 md:grid-cols-5 lg:grid-cols-9">
                   {modules.map((module, index) => (
-                    <motion.div
-                      className="flex flex-col items-center-safe justify-center-safe gap-2 rounded-xl bg-white/5 p-2 hover:bg-white/10"
-                      variants={scaleIn}
-                      key={`module-${index}`}
-                    >
-                      <span>{module.icon}</span>
-                      <span>{module.title}</span>
+                    <motion.div variants={scaleIn} key={`module-${index}`}>
+                      <div className="flex flex-col items-center-safe justify-center-safe gap-2 rounded-xl bg-white/5 p-2 transition-all duration-300 hover:bg-white/10">
+                        <span className="text-xl">{module.icon}</span>
+                        <span>{module.title}</span>
+                      </div>
                     </motion.div>
                   ))}
                 </div>

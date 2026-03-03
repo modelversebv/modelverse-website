@@ -114,7 +114,7 @@
   "platform": {
     "hero": {
       "badge": "Wij beveiligen. Jij slaagt!",
-      "title_line1": "Cyberrisicobeheer",
+      "title_line1": "Cyberrisico-beheer",
       "title_line2": "Eenvoudig Gemaakt",
       "description": "Het enige GRC-platform dat van de grond af aan is gebouwd voor kleine en middelgrote organisaties. Krachtige enterprise-functies zonder de enterprise-complexiteit."
     },
@@ -426,7 +426,7 @@
     "hero": {
       "badge": "We secure. You succeed!",
       "title_line1": "Wij zijn op een Missie om",
-      "title_line2": "Risicobeheer te Democratiseren",
+      "title_line2": "Risicobeheer te Democrati-seren",
       "description": "Enterprise-kwaliteit informatierisicobeheer toegankelijk maken voor organisaties van elke omvang."
     },
     "story": {
@@ -446,7 +446,7 @@
           "description": "We bouwen producten die echte problemen oplossen. Het succes van onze klanten is ons succes."
         },
         "security_by_design": {
-          "title": "Security by Design",
+          "title": "Beveiliging door ontwerp",
           "description": "Beveiliging is geen bijzaak — het zit ingebakken in alles wat we doen, van code tot cultuur."
         },
         "transparency": {
