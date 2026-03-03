@@ -5,7 +5,7 @@ set -e
 cd "$(git rev-parse --show-toplevel)"
 
 # Add all changes
-git add src/blogs
+git add src/articles
 
 # Checking for changes
 if git diff-index --quiet HEAD --; then

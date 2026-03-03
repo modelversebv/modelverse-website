@@ -1,0 +1,47 @@
+{
+  "name": "Blog Editor",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:24",
+
+  "workspaceFolder": "/workspaces/modelverse-website/src/articles",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "SanaAjani.taskrunnercode",
+
+        // Syntax highlighting for .mdx files.
+        // Makes the metadata block and markdown body visually distinct.
+        "unifiedjs.vscode-mdx"
+      ],
+
+      "settings": {
+        "task.autoDetect": "off",
+        "workbench.startupEditor": "none",
+        "editor.wordWrap": "on",
+        "terminal.integrated.defaultProfile.linux": "bash",
+
+        "[mdx]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        },
+        "[markdown]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        }
+      }
+    }
+  },
+
+  "postCreateCommand": "cd /workspaces/modelverse-website && npm ci",
+
+  "forwardPorts": [5173],
+  "portsAttributes": {
+    "5173": {
+      "label": "Vite Dev Server",
+      "onAutoForward": "openBrowser"
+    }
+  },
+
+  "remoteUser": "node"
+}

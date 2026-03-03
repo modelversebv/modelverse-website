@@ -1,0 +1,53 @@
+{
+  "name": "Translation Editor",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:24",
+
+  "workspaceFolder": "/workspaces/modelverse-website/src/i18n/locales",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "SanaAjani.taskrunnercode",
+
+        // Visual side-panel for editing i18next JSON files.
+        // Shows every translation key as a labelled editable field.
+        // Displays English and Dutch side by side.
+        // Flags missing translations in red.
+        // Editors never need to open or touch the raw JSON file.
+        "lokalise.i18n-ally"
+      ],
+
+      "settings": {
+        "task.autoDetect": "off",
+        "workbench.startupEditor": "none",
+        "editor.wordWrap": "on",
+        "terminal.integrated.defaultProfile.linux": "bash",
+
+        // Tell i18n Ally where the translation files are and which is the source language
+        "i18n-ally.localesPaths": ["."],
+        "i18n-ally.sourceLanguage": "en",
+        "i18n-ally.displayLanguage": "en",
+        "i18n-ally.keystyle": "nested",
+
+        // Auto-format JSON on save to prevent broken structure from a stray comma or bracket
+        "[json]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        }
+      }
+    }
+  },
+
+  "postCreateCommand": "cd /workspaces/modelverse-website && npm ci",
+
+  "forwardPorts": [5173],
+  "portsAttributes": {
+    "5173": {
+      "label": "Vite Dev Server",
+      "onAutoForward": "openBrowser"
+    }
+  },
+
+  "remoteUser": "node"
+}
