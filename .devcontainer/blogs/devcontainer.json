@@ -25,33 +25,13 @@
         "[markdown]": {
           "editor.defaultFormatter": "esbenp.prettier-vscode",
           "editor.formatOnSave": true
-        },
-
-        "explorer.fileNesting.enabled": false,
-        "files.exclude": {
-          "src/assets": true,
-          "src/animations": true,
-          "src/components": true,
-          "src/hooks": true,
-          "src/legal": true,
-          "src/lib": true,
-          "src/pages": true,
-          "src/services": true,
-          "src/i18n": true,
-          "src/App.css": true,
-          "src/App.tsx": true,
-          "src/index.css": true,
-          "src/main.tsx": true,
-          "public": true,
-          "tests": true,
-          ".github": true,
-          ".firebase": true
         }
       }
     }
   },
 
   "postCreateCommand": "cd /workspaces/modelverse-website && npm ci",
+  "postStartCommand": "code /workspaces/modelverse-website/blogs.code-workspace",
 
   "forwardPorts": [5173],
   "portsAttributes": {
