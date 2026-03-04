@@ -2,16 +2,13 @@
   "name": "Blog Editor",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:24",
 
-  "workspaceFolder": "/workspaces/modelverse-website/src/articles",
+  "workspaceFolder": "/workspaces/modelverse-website",
 
   "customizations": {
     "vscode": {
       "extensions": [
         "esbenp.prettier-vscode",
         "SanaAjani.taskrunnercode",
-
-        // Syntax highlighting for .mdx files.
-        // Makes the metadata block and markdown body visually distinct.
         "unifiedjs.vscode-mdx"
       ],
 
@@ -28,6 +25,27 @@
         "[markdown]": {
           "editor.defaultFormatter": "esbenp.prettier-vscode",
           "editor.formatOnSave": true
+        },
+
+        "explorer.fileNesting.enabled": false,
+        "files.exclude": {
+          "src/assets": true,
+          "src/animations": true,
+          "src/components": true,
+          "src/hooks": true,
+          "src/legal": true,
+          "src/lib": true,
+          "src/pages": true,
+          "src/services": true,
+          "src/i18n": true,
+          "src/App.css": true,
+          "src/App.tsx": true,
+          "src/index.css": true,
+          "src/main.tsx": true,
+          "public": true,
+          "tests": true,
+          ".github": true,
+          ".firebase": true
         }
       }
     }

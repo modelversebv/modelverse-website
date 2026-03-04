@@ -2,19 +2,13 @@
   "name": "Translation Editor",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:24",
 
-  "workspaceFolder": "/workspaces/modelverse-website/src/i18n/locales",
+  "workspaceFolder": "/workspaces/modelverse-website",
 
   "customizations": {
     "vscode": {
       "extensions": [
         "esbenp.prettier-vscode",
         "SanaAjani.taskrunnercode",
-
-        // Visual side-panel for editing i18next JSON files.
-        // Shows every translation key as a labelled editable field.
-        // Displays English and Dutch side by side.
-        // Flags missing translations in red.
-        // Editors never need to open or touch the raw JSON file.
         "lokalise.i18n-ally"
       ],
 
@@ -24,16 +18,35 @@
         "editor.wordWrap": "on",
         "terminal.integrated.defaultProfile.linux": "bash",
 
-        // Tell i18n Ally where the translation files are and which is the source language
-        "i18n-ally.localesPaths": ["."],
+        "i18n-ally.localesPaths": ["src/i18n/locales"],
         "i18n-ally.sourceLanguage": "en",
         "i18n-ally.displayLanguage": "en",
         "i18n-ally.keystyle": "nested",
 
-        // Auto-format JSON on save to prevent broken structure from a stray comma or bracket
         "[json]": {
           "editor.defaultFormatter": "esbenp.prettier-vscode",
           "editor.formatOnSave": true
+        },
+
+        "explorer.fileNesting.enabled": false,
+        "files.exclude": {
+          "src/articles": true,
+          "src/assets": true,
+          "src/animations": true,
+          "src/components": true,
+          "src/hooks": true,
+          "src/legal": true,
+          "src/lib": true,
+          "src/pages": true,
+          "src/services": true,
+          "src/App.css": true,
+          "src/App.tsx": true,
+          "src/index.css": true,
+          "src/main.tsx": true,
+          "public": true,
+          "tests": true,
+          ".github": true,
+          ".firebase": true
         }
       }
     }
