@@ -125,7 +125,7 @@ export function NavBar({
             {t('navbar.contact')}
           </button>
 
-          <Dropdown
+          {/* <Dropdown
             classname="bg-white/5 border border-white/10 rounded-full px-4 py-2 md:text-xs lg:text-base"
             childrenClassname="w-30 right-0"
             title={LanguageToggler}
@@ -142,7 +142,7 @@ export function NavBar({
                 </button>
               )
             )}
-          </Dropdown>
+          </Dropdown> */}
         </div>
         <div
           className="relative size-6 cursor-pointer md:hidden"
@@ -188,7 +188,7 @@ export function NavBar({
           </button>
         </div>
         <div className="flex flex-col border-t border-white/20 pt-4">
-          <Dropdown title={LanguageToggler}>
+          {/* <Dropdown title={LanguageToggler}>
             {LANGUAGES.filter((lang) => lang.code !== i18n.language).map(
               (lang) => (
                 <button
@@ -200,7 +200,7 @@ export function NavBar({
                 </button>
               )
             )}
-          </Dropdown>
+          </Dropdown> */}
         </div>
       </div>
     </div>

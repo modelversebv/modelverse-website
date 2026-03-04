@@ -16,7 +16,8 @@ i18n
       'en-US': { translation: en },
       en: { translation: en },
     },
-    fallbackLng: 'en-US',
+    lng: 'en-US',
+    // fallbackLng: 'en-US',
     detection: {
       order: ['querystring', 'navigator'],
       caches: [],
