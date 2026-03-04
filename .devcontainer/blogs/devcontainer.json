@@ -1,5 +1,5 @@
 {
-  "name": "React + TypeScript + MDX Dev",
+  "name": "Blog Editor",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:24",
 
   "workspaceFolder": "/workspaces/modelverse-website/src/articles",
