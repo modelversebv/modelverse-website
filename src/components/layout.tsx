@@ -11,6 +11,7 @@ type LayoutProps = {
   news?: boolean
   cases?: boolean
   about?: boolean
+  platform?: boolean
   services?: boolean
   contact?: boolean
   test?: boolean
@@ -24,6 +25,7 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
       home = false,
       news = false,
       cases = false,
+      platform = false,
       services = false,
       about = false,
       hero,
@@ -120,6 +122,7 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
           about={about}
           cases={cases}
           news={news}
+          platform={platform}
           services={services}
           layoutRef={containerRef}
         />

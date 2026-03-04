@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
 import { MDXRenderer } from '@/components/app/mdx/mdxRenderer'
@@ -32,14 +33,15 @@ export const legalPages = import.meta.glob('@/legal/*.mdx', {
 
 export function LegalPage() {
   const layoutRef = useRef<HTMLDivElement>(null)
-
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   const { slug } = useParams<{ slug: string }>()
   const crumb = slug
     ?.split('_')
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ')
+
   const [MDXComponent, setMDXComponent] = useState<React.ComponentType | null>(
     null
   )
@@ -74,7 +76,6 @@ export function LegalPage() {
   useEffect(() => {
     if (!MDXComponent) return
 
-    // Delay to ensure MDX renders into the DOM
     const timeout = setTimeout(() => {
       const article = document.querySelector('article')
       if (!article) return
@@ -91,12 +92,10 @@ export function LegalPage() {
 
       setToc(newToc)
 
-      // Stop Lenis animation and scroll to top
       if ((window as any).lenis) {
         ;(window as any).lenis.scrollTo(0)
       } else if (layoutRef.current) {
         const el = layoutRef.current
-        // DO NOT TOUCH. For some reason its stable with 2 rAF :/
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
             el.scrollTop = 0
@@ -123,7 +122,7 @@ export function LegalPage() {
       <meta name="description" content={pageDescription} />
       <link rel="canonical" href={`https://modelverse.online/legal/${slug}`} />
 
-      {/* Content */}
+      {/* Breadcrumb */}
       <div className="shrink-0 border-b border-white/20 pt-18">
         <div className="p-4 md:container md:mx-auto">
           <div className="mx-auto max-w-6xl">
@@ -132,7 +131,7 @@ export function LegalPage() {
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
                     <Link to="/" className="hover:text-white">
-                      Home
+                      {t('legal.breadcrumb.home')}
                     </Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
@@ -150,16 +149,15 @@ export function LegalPage() {
         <div className="mx-auto flex h-full max-w-6xl flex-col gap-4 md:gap-8">
           {error ? (
             <div className="mx-auto flex h-full max-w-4xl flex-col items-center-safe justify-center-safe gap-4 px-4 py-16 text-center">
-              <h1 className="text-4xl sm:text-5xl">Page Not Found</h1>
+              <h1 className="text-4xl sm:text-5xl">{t('legal.error.title')}</h1>
               <p className="text-xl text-white/70">
-                Sorry, the page you’re looking for does not exist or has been
-                removed.
+                {t('legal.error.description')}
               </p>
               <button
                 className="group flex cursor-pointer flex-row justify-center-safe gap-2 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:w-fit"
-                onClick={() => navigate(`/`)}
+                onClick={() => navigate('/')}
               >
-                Back to Home
+                {t('legal.error.button')}
               </button>
             </div>
           ) : (
@@ -169,7 +167,7 @@ export function LegalPage() {
                 onClick={() => navigate('/')}
               >
                 <ArrowLeft className="size-5 transition-all duration-300 group-hover:-translate-x-1" />
-                Back to Home
+                {t('legal.back')}
               </button>
               <div className="relative flex flex-col gap-4 md:gap-8 lg:flex-row">
                 {toc.length > 0 && (
@@ -178,7 +176,7 @@ export function LegalPage() {
                       <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-linear-to-br from-lime-500 to-teal-500">
                         <FileText className="size-6" />
                       </div>
-                      Table of Contents
+                      {t('legal.toc')}
                     </div>
                     <ul className="pl-2">
                       {toc.map((item) => (
@@ -200,11 +198,15 @@ export function LegalPage() {
                     </h1>
                     <div className="flex flex-col">
                       <p className="text-white/70">
-                        <span className="font-bold">Last Updated: </span>
+                        <span className="font-bold">
+                          {t('legal.last_updated')}:{' '}
+                        </span>
                         {metadata.last_updated}
                       </p>
                       <p className="text-white/70">
-                        <span className="font-bold">Effective Date: </span>
+                        <span className="font-bold">
+                          {t('legal.effective_date')}:{' '}
+                        </span>
                         {metadata.effective_date}
                       </p>
                     </div>

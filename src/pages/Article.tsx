@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
 import { MDXRenderer } from '@/components/app/mdx/mdxRenderer'
@@ -14,13 +15,12 @@ import {
 } from '@/components/ui/breadcrumb'
 import { ArrowLeft, Calendar, User } from 'lucide-react'
 
-// import { type BlogPost, type MetaData, markdownFiles } from './News'
 import { type MetaData } from './News'
 
 export function ArticlePage() {
   const layoutRef = useRef<HTMLDivElement>(null)
-
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   const { slug } = useParams<{ slug: string }>()
   const [MDXComponent, setMDXComponent] = useState<React.ComponentType | null>(
@@ -43,7 +43,6 @@ export function ArticlePage() {
 
     import(`@/articles/${slug}.mdx`)
       .then((mod: any) => {
-        // console.log('success')
         setMDXComponent(() => mod.default)
         setMetadata({
           featured: mod.metadata.featured,
@@ -57,33 +56,9 @@ export function ArticlePage() {
         })
       })
       .catch(() => {
-        // console.log('error')
         setError(true)
       })
   }, [slug])
-
-  // // Other Articles
-  // const blogPosts: BlogPost[] = []
-
-  // Object.entries(markdownFiles).map(([path, file]) => {
-  //   const mod = file as any
-
-  //   const metadata: MetaData = {
-  //     featured: mod.metadata.featured,
-  //     title: mod.metadata.title,
-  //     summary: mod.metadata.summary,
-  //     image: mod.metadata.image,
-  //     date: mod.metadata.date,
-  //     author: mod.metadata.author,
-  //   }
-
-  //   const postId = path.split('/').pop()?.replace('.mdx', '') || path
-
-  //   blogPosts.push({
-  //     postId,
-  //     metadata,
-  //   })
-  // })
 
   const pageTitle = metadata.title
     ? `Modelverse Blog | ${metadata.title}`
@@ -100,7 +75,7 @@ export function ArticlePage() {
         href={`https://modelverse.online/article/${slug}`}
       />
 
-      {/* Content */}
+      {/* Breadcrumb */}
       <div className="shrink-0 border-b border-white/20 pt-18">
         <div className="px-4 py-4 md:container md:mx-auto md:px-8">
           <div className="mx-auto max-w-4xl">
@@ -109,7 +84,7 @@ export function ArticlePage() {
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
                     <Link to="/" className="hover:text-white">
-                      Home
+                      {t('article.breadcrumb.home')}
                     </Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
@@ -117,13 +92,13 @@ export function ArticlePage() {
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
                     <Link to="/news" className="hover:text-white">
-                      News
+                      {t('article.breadcrumb.news')}
                     </Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem className="text-lime-500">
-                  Article
+                  {t('article.breadcrumb.article')}
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
@@ -178,16 +153,17 @@ export function ArticlePage() {
         <div className="mx-auto flex h-full max-w-4xl flex-col gap-4 md:gap-8">
           {error ? (
             <div className="mx-auto flex h-full max-w-4xl flex-col items-center-safe justify-center-safe gap-4 px-4 py-16 text-center">
-              <h1 className="text-4xl sm:text-5xl">Article Not Found</h1>
+              <h1 className="text-4xl sm:text-5xl">
+                {t('article.error.title')}
+              </h1>
               <p className="text-xl text-white/70">
-                Sorry, the article you’re looking for does not exist or has been
-                removed.
+                {t('article.error.description')}
               </p>
               <button
                 className="group flex cursor-pointer flex-row justify-center-safe gap-2 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:w-fit"
-                onClick={() => navigate(`/news`)}
+                onClick={() => navigate('/news')}
               >
-                Back to News
+                {t('article.error.button')}
               </button>
             </div>
           ) : (
@@ -197,7 +173,7 @@ export function ArticlePage() {
                 onClick={() => navigate('/news')}
               >
                 <ArrowLeft className="size-5 transition-all duration-300 group-hover:-translate-x-1" />
-                Back to News
+                {t('article.back')}
               </button>
               <article className="prose prose-invert prose-img:rounded-lg prose-img:mx-auto prose-img:max-w-2xl prose-img:w-full prose-img:object-cover max-w-full">
                 {MDXComponent && <MDXRenderer mdxContent={MDXComponent} />}
