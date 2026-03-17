@@ -161,14 +161,17 @@ export function NavBar({
           <NavLink active={home} to="/">
             {t('navbar.home')}
           </NavLink>
-          <Dropdown title="Solutions" active={platform || services}>
+          <NavLink active={services} to="/services">
+            {t('navbar.services')}
+          </NavLink>
+          {/* <Dropdown title="Solutions" active={platform || services}>
             <DropdownLink to="/platform" title="Platform" active={platform}>
               Risk & Compliance Management
             </DropdownLink>
             <DropdownLink to="/services" title="Services" active={services}>
               Service Packages
             </DropdownLink>
-          </Dropdown>
+          </Dropdown> */}
           <NavLink active={cases} to="/cases">
             {t('navbar.cases')}
           </NavLink>
