@@ -92,7 +92,7 @@ export function NavBar({
           <NavLink active={home} to="/">
             {t('navbar.home')}
           </NavLink>
-          <Dropdown
+          {/* <Dropdown
             childrenClassname="w-57 left-0 pt-2"
             title="Solutions"
             active={platform || services}
@@ -103,10 +103,10 @@ export function NavBar({
             <DropdownLink to="/services" title="Services" active={services}>
               Service Packages
             </DropdownLink>
-          </Dropdown>
-          {/* <NavLink active={services} to="/services">
+          </Dropdown> */}
+          <NavLink active={services} to="/services">
             {t('navbar.services')}
-          </NavLink> */}
+          </NavLink>
           <NavLink active={cases} to="/cases">
             {t('navbar.cases')}
           </NavLink>
