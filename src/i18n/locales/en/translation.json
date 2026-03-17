@@ -1,0 +1,593 @@
+{
+  "navbar": {
+    "home": "Home",
+    "services": "Services",
+    "cases": "Cases",
+    "news": "News",
+    "about": "About",
+    "contact": "Contact Us"
+  },
+  "footer": {
+    "tagline": "We secure. You succeed!",
+    "description": "Empowering organizations to manage risks and compliance with confidence.",
+    "sections": {
+      "company": {
+        "title": "Company",
+        "about": "About",
+        "blog": "News",
+        "contact": "Contact"
+      },
+      "legal": {
+        "title": "Legal",
+        "privacy_policy": "Privacy Policy",
+        "terms_of_service": "Terms of Service",
+        "cookie_policy": "Cookie Policy"
+      }
+    },
+    "security_compliance": "Security & Compliance",
+    "copyright": "All rights reserved.",
+    "privacy": "Manage Privacy Preferences"
+  },
+  "home": {
+    "hero": {
+      "badge": "We secure. You succeed!",
+      "title_line1": "Modelverse",
+      "title_line2": "Information Risk",
+      "description": "Empowering organizations to effectively manage Risks and Compliance through intelligent automation.",
+      "cta": "Request a Demo",
+      "explore": "Explore More",
+      "stats": {
+        "risk_domains": "Risk Domains",
+        "standards": "Standards",
+        "country_footprints": "Country Footprints"
+      }
+    },
+    "features": {
+      "title": "Everything You Need to Manage Risks and Compliance",
+      "items": {
+        "strategic_risk": {
+          "title": "Strategic Risk Management",
+          "description": "We help you manage risks and opportunities across three levels: organization, assets, and findings. This layered approach brings clarity and efficiency. Say goodbye to bloated risk registers with hundreds of vague entries."
+        },
+        "real_world": {
+          "title": "Real-World Capabilities",
+          "description": "Our proprietary Capability Models reflect modern IT and business realities. They focus on what actually reduces risk, giving you a clear view of how well your organization is equipped to manage them."
+        },
+        "actionable": {
+          "title": "Actionable Roadmaps",
+          "description": "We generate prioritized backlogs based on Capability scores, so you know exactly where to invest in mitigation. Each item in your organization's roadmap links directly to a Capability, enabling you to track progress and confidently plan ahead."
+        },
+        "smart_compliance": {
+          "title": "Smart Compliance Automation",
+          "description": "We generate tailored Policies, Procedures, and Controls using curated libraries built on real-world experience. Many Controls are automated, and our platform manages the full plan-do-check-act cycle — ensuring you remain audit-ready."
+        },
+        "audit": {
+          "title": "Integrated Audit Intelligence",
+          "description": "Audits and pen tests are essential for continuous risk mitigation. We capture findings and link them directly to your compliance framework, so they roll up into organization-level risks with full traceability."
+        },
+        "multi_standard": {
+          "title": "Effortless Multi-Standard Assurance",
+          "description": "Whether you're navigating regulations or meeting client demands, we streamline compliance across multiple standards. Our automated mapping links your Policies, Procedures, and Controls to any framework and generates the reports you need."
+        }
+      }
+    },
+    "benefits": {
+      "title": "We Secure. You Succeed!",
+      "subtitle": "Whether you're a 10-person startup or a 10,000-employee enterprise, Modelverse scales with your needs.",
+      "items": [
+        "Scale your risk management without hiring extra staff",
+        "Reduce the prevalence of security incidents",
+        "Maintain continuous audit-readiness",
+        "Save time on compliance reporting",
+        "Centralised and all-inclusive overview",
+        "Intelligent control automation",
+        "Calibrated for your systems"
+      ]
+    },
+    "testimonials": {
+      "title": "What Our Customers Say",
+      "subtitle": "See how industry leaders are transforming their organizations with Modelverse",
+      "items": [
+        {
+          "quote": "Modelverse has transformed our approach to cybersecurity risk management.",
+          "name": "David Warnink",
+          "role": "CIO",
+          "company": "Fellowmind",
+          "video": "XEPf418PJFU"
+        },
+        {
+          "quote": "Reshma and the team have helped us close our security gaps.",
+          "name": "Christiaan Rood",
+          "role": "CEO",
+          "company": "LeydenJar Technologies",
+          "video": "NqY7SBjryJo"
+        }
+      ]
+    },
+    "cta": {
+      "badge": "Launch Your Security Journey",
+      "title": "Ready to secure your future?",
+      "subtitle": "Join the organizations that trust Modelverse to manage their risks today.",
+      "button": "Get Started"
+    }
+  },
+  "platform": {
+    "hero": {
+      "badge": "We secure. You succeed!",
+      "title_line1": "Cyber Risk Management",
+      "title_line2": "Made Simple",
+      "description": "The only GRC platform built from the ground up for small and medium-sized organizations. Powerful enterprise features without the enterprise complexity."
+    },
+    "key_features": {
+      "title_line1": "Built for the Future of",
+      "title_line2": "Compliance",
+      "subtitle": "Every feature designed to save you time, reduce risk, and simplify compliance management",
+      "items": [
+        {
+          "img_tag": "AI-Powered",
+          "title": "Intelligent Risk Assessment",
+          "description": "AI-powered risk scoring and automated threat detection that learns from your organization's unique security posture",
+          "improvement": "85% faster risk identification"
+        },
+        {
+          "img_tag": "AI-Powered",
+          "title": "Intelligent Risk Assessment",
+          "description": "AI-powered risk scoring and automated threat detection that learns from your organization's unique security posture",
+          "improvement": "85% faster risk identification"
+        },
+        {
+          "img_tag": "AI-Powered",
+          "title": "Intelligent Risk Assessment",
+          "description": "AI-powered risk scoring and automated threat detection that learns from your organization's unique security posture",
+          "improvement": "85% faster risk identification"
+        },
+        {
+          "img_tag": "AI-Powered",
+          "title": "Intelligent Risk Assessment",
+          "description": "AI-powered risk scoring and automated threat detection that learns from your organization's unique security posture",
+          "improvement": "85% faster risk identification"
+        }
+      ]
+    },
+    "fingertips": {
+      "title_line1": "Everything at your",
+      "title_line2": "Fingertips",
+      "subtitle": "A comprehensive dashboard designed to give you instant visibility into your organization's security posture",
+      "modules": "9 Integrated Modules",
+      "breakdown_items": [
+        {
+          "title": "Overdue Items",
+          "description": "Track items requiring immediate attention"
+        },
+        {
+          "title": "Overdue Items",
+          "description": "Track items requiring immediate attention"
+        },
+        {
+          "title": "Overdue Items",
+          "description": "Track items requiring immediate attention"
+        },
+        {
+          "title": "Overdue Items",
+          "description": "Track items requiring immediate attention"
+        }
+      ],
+      "home_items": [
+        {
+          "title": "Overdue Items",
+          "description": "Track items requiring immediate attention"
+        },
+        {
+          "title": "Overdue Items",
+          "description": "Track items requiring immediate attention"
+        },
+        {
+          "title": "Overdue Items",
+          "description": "Track items requiring immediate attention"
+        }
+      ],
+      "module_items": [
+        { "title": "Risks" },
+        { "title": "Risks" },
+        { "title": "Risks" },
+        { "title": "Risks" },
+        { "title": "Risks" },
+        { "title": "Risks" },
+        { "title": "Risks" },
+        { "title": "Risks" },
+        { "title": "Risks" }
+      ]
+    },
+    "differentiators": {
+      "title_line1": "Why Organizations Choose",
+      "title_line2": "Modelverse",
+      "subtitle": "We've reimagined GRC from the ground up to address the real challenges faced by modern organizations",
+      "items": [
+        {
+          "title": "Purpose-Built for SMBs",
+          "description": "Unlike enterprise-focused tools, we're designed specifically for small and medium-sized organizations. No overwhelming complexity, just what you need."
+        },
+        {
+          "title": "Setup in Minutes, Not Months",
+          "description": "Most GRC tools take 3-6 months to implement. Our platform gets you operational in under an hour with guided onboarding."
+        },
+        {
+          "title": "Automated Evidence Collection",
+          "description": "Stop manually gathering compliance evidence. Our platform automatically collects and organizes proof for audits."
+        },
+        {
+          "title": "Always Up-to-Date",
+          "description": "Regulatory frameworks change constantly. We automatically update our compliance libraries so you're always current."
+        },
+        {
+          "title": "Multi-Language Support",
+          "description": "Native support for 8+ European languages with localized compliance frameworks and documentation."
+        },
+        {
+          "title": "Bank-Grade Security",
+          "description": "Built on zero-trust architecture with end-to-end encryption. Your sensitive data never leaves your control."
+        }
+      ]
+    },
+    "comparison": {
+      "title_line1": "Everything You Need.",
+      "title_line2": "Nothing You Don't.",
+      "subtitle": "Unlike bloated enterprise tools, Modelverse includes only the features that small and medium-sized organizations actually need and use",
+      "points": [
+        "Visual risk mapping and heat maps",
+        "Automated policy template library",
+        "Integrated vendor risk management",
+        "Mobile-first responsive design",
+        "Real-time audit preparation",
+        "Smart recommendation engine",
+        "One-click regulatory reports",
+        "Continuous monitoring alerts"
+      ]
+    },
+    "cta": {
+      "title_line1": "Ready to Transform",
+      "title_line2": "Risk Management?",
+      "subtitle": "Join hundreds of organizations who have simplified their compliance journey with Modelverse.",
+      "button": "Get Started"
+    }
+  },
+  "services": {
+    "hero": {
+      "badge": "We secure. You succeed!",
+      "title": "Security Services",
+      "description": "Comprehensive security services designed to mature your organization's cybersecurity posture. Select the packages your organization needs. At your pace, to your goals."
+    },
+    "journey": {
+      "title": "Your Security Journey",
+      "subtitle": "Our packages follow a logical progression to build a comprehensive security program. Start where you need and scale as your organization matures."
+    },
+    "items": {
+      "strategy": {
+        "badge": "SecStrat",
+        "title": "Strategy",
+        "description": "Build a solid foundation for your security program",
+        "points": [
+          "Understanding your cyber risks",
+          "Assess your current security posture",
+          "Articulate your investment opportunities"
+        ]
+      },
+      "certification": {
+        "badge": "SecCert",
+        "title": "Certification",
+        "description": "Achieve and maintain compliance certifications",
+        "points": [
+          "Get a head start with our quality libraries",
+          "Supports for all certification frameworks",
+          "Benefit from innovative automation"
+        ]
+      },
+      "governance": {
+        "badge": "SecGov",
+        "title": "Governance",
+        "description": "Establish clear accountability and risk ownership",
+        "points": [
+          "Define roles and responsibilities",
+          "Implement effective decision-making processes",
+          "Align security with business objectives"
+        ]
+      },
+      "programme": {
+        "badge": "SecProg",
+        "title": "Programme",
+        "description": "Drive organization-wide security adoption",
+        "points": [
+          "Leverage executive support",
+          "Embed security practices",
+          "Promote a strong security culture"
+        ]
+      },
+      "operations": {
+        "badge": "SecOps",
+        "title": "Operations",
+        "description": "Proactively prevent and detect security incidents",
+        "points": [
+          "Monitor threats in real-time",
+          "Detect anomalies and potential breaches",
+          "Respond to incidents quickly and effectively"
+        ]
+      },
+      "resilience": {
+        "badge": "SecRes",
+        "title": "Resilience",
+        "description": "Prepare for and respond to security incidents",
+        "points": [
+          "Prepare for potential incidents",
+          "Minimise fallout from attacks",
+          "Maintain business continuity"
+        ]
+      }
+    },
+    "cta": {
+      "title": "Ready to Take the Next Step?",
+      "subtitle": "Our team will help you select the right packages for your organization's unique needs and maturity level.",
+      "button": "Schedule Consultation"
+    }
+  },
+  "cases": {
+    "hero": {
+      "badge": "We secure. You succeed!",
+      "title_line1": "Real Results from",
+      "title_line2": "Real Customers",
+      "description": "Learn how our clients are transforming their risk and compliance management with Modelverse."
+    },
+    "labels": {
+      "about": "About",
+      "improvements": "Improvements"
+    },
+    "items": [
+      {
+        "name": "Fellowmind",
+        "about": "Fellowmind is one of the largest Microsoft integrators in western Europe and is active in the Netherlands, Poland, Denmark, Sweden and Finland.",
+        "case": "Modelverse is used to support the security strategy and manage all information risks across Fellowmind's different regions. Additionally, data privacy processes are supported, and a continuous improvement program is on its way to execute the security strategy.",
+        "url": "https://www.fellowmind.com/"
+      },
+      {
+        "name": "Provincie Flevoland",
+        "about": "The Province of Flevoland is the newest and smallest province of the Netherlands, and is the governing authority for the region's (critical) infrastructure, the environment, spatial planning and other areas of public management.",
+        "case": "We are piloting Modelverse for Flevoland to improve their risk management, increasing the effectiveness of the implemented cybersecurity measures and saving time for the IT, OT and data privacy teams, as well as the CISO.",
+        "url": "https://www.flevoland.nl/"
+      },
+      {
+        "name": "PharmaPartners",
+        "about": "Pharmapartners is a leading company in the provision of integrated healthcare systems in the Netherlands, ensuring healthcare providers have access to reliable, up-to-date and complete (patient) information.",
+        "case": "We are supporting PharmaPartners with a strategic cyber security plan and a plan ensuring patient safety.",
+        "url": "https://www.pharmapartners.nl/"
+      },
+      {
+        "name": "Thebe",
+        "about": "Thebe provides district nursing, specialist care, home support and day care in 19 municipalities in the Western and central parts of Brabant. They also provide care in 25 residential care centres in the region.",
+        "case": "Modelverse is being piloted for Thebe's digital risk management.",
+        "url": "https://www.thebe.nl/"
+      },
+      {
+        "name": "1801",
+        "about": "1801 advises schools and ROCs on learning, teaching and organising education. They support education professionals with all the challenges that education entails, bringing stalled processes in motion and solving strategic issues.",
+        "case": "Modelverse is used to manage information security and saves the CISO and IT team substantial time and effort.",
+        "url": "https://1801.nl/"
+      },
+      {
+        "name": "NPI",
+        "about": "The NPI is the Dutch training provider for physiotherapists. They support paramedical professionals in lifelong learning with courses, training, webinars, e-learning and scientific information services.",
+        "case": "NPI uses Modelverse to manage all their information. Compliance is also managed using the functionality for security policies. This way policies can be easily maintained and published to the entire staff.",
+        "url": "https://www.npi.nl/"
+      },
+      {
+        "name": "Nedato",
+        "about": "Nedato is the largest Dutch cooperative of potato farmers. They act as a wholesaler connecting potato farmers with the fried potato processing industry.",
+        "case": "Nedato is using the digital risk management functionality of Modelverse.",
+        "url": "https://nedato.nl/"
+      },
+      {
+        "name": "NewForrest Fingerfood",
+        "about": "NewForrest Fingerfood is a Dutch company that specializes in producing frozen finger foods, mini snacks, and appetizers for both the retail and food service markets.",
+        "case": "NewForrest is using the digital risk management functionality of Modelverse.",
+        "url": "https://newforrest.nl/"
+      },
+      {
+        "name": "LeydenJar Technology",
+        "about": "LeydenJar Technology is a scale-up that developed a high-performing pure silicon anode for batteries, boosting the energy capacity of batteries by 50%. They are developing their first production plant in the Eindhoven region.",
+        "case": "We helped LeydenJar to protect the intellectual property of their core technology using Modelverse.",
+        "url": "https://leyden-jar.com/"
+      }
+    ],
+    "cta": {
+      "title": "Ready to Write Your Success Story?",
+      "subtitle": "Join these leading organizations in transforming your risk and compliance management.",
+      "button": "Request a Demo"
+    }
+  },
+  "news": {
+    "hero": {
+      "badge": "We secure. You succeed!",
+      "title_line1": "Insights into",
+      "title_line2": "Cybersecurity Risks",
+      "title_line3": "& Compliance",
+      "description": "Expert advice, industry trends, and practical guides to help you manage cybersecurity risk."
+    },
+    "featured": "Featured",
+    "read_article": "Read Article",
+    "recent_articles": "Recent Articles",
+    "empty": {
+      "title": "Nothing new!",
+      "subtitle": "Come back later for interesting updates!"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "We secure. You succeed!",
+      "title_line1": "We're on a Mission to",
+      "title_line2": "Democratize Risk Management",
+      "description": "Making enterprise-grade information risk management accessible to organizations of all sizes."
+    },
+    "story": {
+      "title": "Our Story",
+      "paragraphs": [
+        "Modelverse was founded in 2023 by a team of experienced risk managers who witnessed firsthand the challenges organizations face when trying to implement effective risk and compliance management programs.",
+        "We saw companies struggling with complex compliance requirements, limited resources, and a shortage of talent. Meanwhile, enterprise risk management solutions were either too expensive or too complex.",
+        "We knew there had to be a better way. That's why we built Modelverse — a platform that makes enterprise risk and compliance management accessible to organizations of all sizes, with the simplicity and affordability that organizations need."
+      ]
+    },
+    "values": {
+      "title": "Our Values",
+      "subtitle": "The principles that guide everything we do at Modelverse.",
+      "items": {
+        "customer_first": {
+          "title": "Customer First",
+          "description": "We build products that solve real problems. Our customers' success is our success."
+        },
+        "security_by_design": {
+          "title": "Security by Design",
+          "description": "Security isn't an afterthought—it's built into everything we do, from code to culture."
+        },
+        "transparency": {
+          "title": "Transparency",
+          "description": "We believe in open communication with our customers, partners, and each other."
+        },
+        "continuous_learning": {
+          "title": "Continuous Learning",
+          "description": "The threat landscape evolves daily. We stay ahead through constant innovation and education."
+        }
+      }
+    },
+    "team": {
+      "title": "Meet the Team",
+      "subtitle": "The passionate people behind Modelverse.",
+      "members": [
+        {
+          "bio": "Ben is the creator of Modelverse, driven by a passion for turning strategy into action. With over 25 years at Shell and later as a partner at KPMG, Ben helped organizations navigate complex challenges across transformation, risk, and technology. He holds a PhD in theoretical physics and once explored black holes at Imperial College London — before diving into the world of business."
+        },
+        {
+          "bio": "Reshma brings deep expertise in strategic information management and cybersecurity with a clear, structured approach to tackling complex challenges. Reshma held a variety of IT leadership and Security roles across international corporates and the energy sector. She holds an MSc in Applied Physics and an executive MSc in Cyber Security."
+        },
+        {
+          "bio": "Daan is an experienced entrepreneur and IT leader who's passionate about using modern technology to help organizations tackle real-world challenges. Daan brings broad insight as a strategist, investor, and trusted cybersecurity advisor. He holds a PhD and MSc in Computing Science, along with an executive MSc in Cyber Security."
+        },
+        {
+          "bio": "Lili is a governance expert with deep experience in health, cybersecurity and patient safety. Before becoming a partner, Lili spent 12 years at the Dutch Ministry of Health, working on organ donation, e-health, and cybersecurity. She holds a Cum Laude BSc in Biomedical Science, a Cum Laude MSc in Neuroscience, and a Summa Cum Laude MSc in Cyber Security Governance."
+        },
+        {
+          "bio": "Bozhena runs the back-office. Always friendly, accessible, and above all business-smart."
+        },
+        {
+          "bio": "Mariona researches, interprets, structures and creates cybersecurity risk models and ESG models for enterprise clients."
+        },
+        {
+          "bio": "Sjors is focused on risk management, consultancy, and platform improvements with a focus on cloud services and security infrastructure."
+        },
+        {
+          "bio": "Matei develops and maintains the website, helps implement DevOps practices, and supports the development of the Modelverse platform."
+        },
+        {
+          "bio": "Maria delivers cybersecurity projects for multiple clients."
+        }
+      ]
+    },
+    "ambassadors": {
+      "title": "Our Ambassadors",
+      "subtitle": "Trusted voices in the risk and compliance management community who believe in our mission.",
+      "items": [
+        {
+          "bio": "Jan-Willem Klerkx is passionate about software quality and business agility. His approach combines deep technical insight with strategic thinking, helping organizations reduce risk, improve maintainability, and unlock innovation through objective source code and architecture analysis."
+        },
+        {
+          "bio": "Gordon Muehl has led innovation for Fortune 500 companies, built high-performing international teams, and embedded security culture into a 100.000 employee R&D organization. Specializing in secure software development lifecycle, technical due diligence, and non-functional requirements of governance, Gordon bridges business and technical domains from CxOs to developers."
+        },
+        {
+          "bio": "Dennis Mulder specializes in IT strategy, AI, and digital transformation, and focuses on bridging businesses and tech from boardroom to execution for organizations. He is a Certified Distinguished IT Architect (CITA-D), president of Iasa Global NL, and chairs the Chief Architect Forum. Dennis is committed to developing talent always with an eye for practical impact."
+        },
+        {
+          "bio": "Oskar Brink excels at aligning security and risk strategies with business objectives, driving sustainable transformation, and fostering continuous improvement through coaching - with international experience in Malaysia and India. He specializes in bringing clarity and structure to complex IT environments to transform organizations into more agile, secure, and resilient."
+        },
+        {
+          "bio": "Robert Bals stands out for combining deep technical expertise with a pragmatic, jargon-free, and practical mindset. He provides tailored ISMS implementations, audits for ISO 27001 and TUV Nord certification, and GDPR solutions. Through delivering scalable, client-focused results, he helps ICT, software, and healthcare organizations strengthen information security and compliance."
+        },
+        {
+          "bio": "Alexandra Roger-Machart is passionate about Tech and AI-driven transformation, she advises startups and scaleups to strengthen their external profile, engage with stakeholders and enhance their corporate reporting through an interdisciplinary perspective of strategic storytelling and regulatory expertise."
+        }
+      ]
+    }
+  },
+  "contact": {
+    "hero": {
+      "badge": "We secure. You succeed!",
+      "title_line1": "Get in",
+      "title_line2": "Touch",
+      "description": "Do you have questions about Modelverse? Our team is here to help. Reach out and we'll be in touch within a day."
+    },
+    "info": {
+      "email": {
+        "title": "Email",
+        "primary": "info@modelverse.online",
+        "secondary": "support@modelverse.online"
+      },
+      "phone": {
+        "title": "Phone",
+        "primary": "+31 6 27612498",
+        "secondary": "Mon-Fri, 9:00-18:00 CET"
+      },
+      "office": {
+        "title": "Office",
+        "primary": "Wilhelmina van Pruisenweg 104",
+        "secondary": "2595 AN The Hague"
+      },
+      "support": {
+        "title": "Support",
+        "primary": "During business hours",
+        "secondary": "Mon-Fri, 9:00-18:00 CET"
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "What is your response time for inquiries?",
+          "answer": "We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call us on the number above."
+        },
+        {
+          "question": "Do you offer personalized demos?",
+          "answer": "Yes! We provide customized demos tailored to your organization's needs. Simply use the button on the bottom of this page."
+        }
+      ]
+    },
+    "directions": {
+      "title": "Directions"
+    }
+  },
+  "article": {
+    "breadcrumb": {
+      "home": "Home",
+      "news": "News",
+      "article": "Article"
+    },
+    "error": {
+      "title": "Article Not Found",
+      "description": "Sorry, the article you're looking for does not exist or has been removed.",
+      "button": "Back to News"
+    },
+    "back": "Back to News"
+  },
+  "legal": {
+    "breadcrumb": {
+      "home": "Home"
+    },
+    "toc": "Table of Contents",
+    "last_updated": "Last Updated",
+    "effective_date": "Effective Date",
+    "error": {
+      "title": "Page Not Found",
+      "description": "Sorry, the page you're looking for does not exist or has been removed.",
+      "button": "Back to Home"
+    },
+    "back": "Back to Home"
+  }
+}

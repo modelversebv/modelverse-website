@@ -1,5 +1,5 @@
-// Importing images
 import { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import {
   fadeInUp,
@@ -22,122 +22,52 @@ import { Layout } from '@/components/layout'
 import { ArrowRight, Info, Shield, TrendingUp } from 'lucide-react'
 import { motion, useInView } from 'motion/react'
 
-const CasesHero = (
-  <Hero
-    className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
-    backgroundClassName="object-[center_40%]"
-    backgroundImg="/images/heroes/cases.avif"
-    overlay
-  >
-    <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
-      <Shield className="size-5" />
-      <p className="text-sm">We secure. You succeed!</p>
-    </div>
-    <h1 className="text-5xl sm:text-6xl">
-      Real Results from{' '}
-      <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
-        Real Customers
-      </span>
-    </h1>
-    <p className="text-xl text-white/70">
-      See how organizations like yours are transforming their risk and
-      compliance management with Modelverse.
-    </p>
-  </Hero>
-)
+const logos = [
+  fellowmindImage,
+  provincieImage,
+  pharmapartnersImage,
+  thebeImage,
+  eighteenZeroOneImage,
+  npiImage,
+  nedatoImage,
+  newforrestImage,
+  leydenjarImage,
+]
 
 type CaseStudy = {
   name: string
   about: string
   case: string
-  logo: string
   url: string
 }
 
 export function CasesPage() {
   const layoutRef = useRef<HTMLDivElement>(null)
+  const { t } = useTranslation()
 
-  // Data
-  const caseStudies: CaseStudy[] = [
-    {
-      name: 'Fellowmind',
-      about:
-        'Fellowmind is one of the largest Microsoft integrators in western Europe and is active in the Netherlands, Poland, Denmark, Sweden and Finland.',
-      case: 'Modelverse is used to support the security strategy and manage all information risks across Fellowmind’s different regions. Additionally, data privacy processes are supported, and a continuous improvement program is on its way to execute the security strategy.',
-      logo: fellowmindImage,
-      url: 'https://www.fellowmind.com/',
-    },
-    {
-      name: 'Provincie Flevoland',
-      about:
-        'The Province of Flevoland is the twelfth and newest province of the Netherlands, established in 1986, when the southern and eastern Flevopolders, together with the Noordoostpolder, were merged into one provincial entity.',
-      case: 'We are piloting Modelverse for Flevoland to improve their risk management, increasing the effectiveness of the implemented cybersecurity measures and saving time for the IT, OT and data privacy teams, as well as the CISO.',
-      logo: provincieImage,
-      url: 'https://www.flevoland.nl/',
-    },
-    {
-      name: 'PharmaPartners',
-      about:
-        'Pharmapartners is a leading company in the provision of integrated healthcare systems in the Netherlands, ensuring healthcare providers have access to reliable, up-to-date and complete (patient) information.',
-      case: 'We are supporting PharmaPartners with a strategic cyber security plan and a plan ensuring patient safety.',
-      logo: pharmapartnersImage,
-      url: 'https://www.pharmapartners.nl/',
-    },
-    {
-      name: 'Thebe',
-      about:
-        'Thebe provides district nursing, specialist care, home support and day care in 19 municipalities in the Western and central parts of Brabant. They also provide care in 25 residential care centres in the region.',
-      case: 'Modelverse is being piloted for Thebe’s digital risk management.',
-      logo: thebeImage,
-      url: 'https://www.thebe.nl/',
-    },
-    {
-      name: '1801',
-      about:
-        '1801 advises schools and ROCs on learning, teaching and organising education. They support education professionals with all the challenges that education entails, bringing stalled processes in motion and solving strategic issues',
-      case: 'Modelverse is used to manage information security and saves the CISO and IT team substantial time and effort.',
-      logo: eighteenZeroOneImage,
-      url: 'https://1801.nl/',
-    },
-    {
-      name: 'NPI',
-      about:
-        'The NPI is the Dutch training provider for physiotherapists. They support paramedical professionals in lifelong learning with courses, training, webinars, e-learning and scientific information services.',
-      case: 'NPI uses Modelverse to manage all their information. Compliance is also managed using the functionality for security policies. This way policies can be easily maintained and published to the entire staff.',
-      logo: npiImage,
-      url: 'https://www.npi.nl/',
-    },
-    {
-      name: 'Nedato',
-      about:
-        'Nedato is the largest Dutch cooperative of potato farmers. They act as a wholesaler connecting potato farmers with the fried potato processing industry.',
-      case: 'Nedato is using the digital risk management functionality of Modelverse.',
-      logo: nedatoImage,
-      url: 'https://nedato.nl/',
-    },
-    {
-      name: 'NewForrest Fingerfood',
-      about:
-        'NewForrest Fingerfood is a Dutch company that specializes in producing frozen finger foods, mini snacks, and appetizers for both the retail and food service markets.',
-      case: 'NewForrest is using the digital risk management functionality of Modelverse.',
-      logo: newforrestImage,
-      url: 'https://newforrest.nl/',
-    },
-    {
-      name: 'LeydenJar Technology',
-      about:
-        'LeydenJar Technology is a scale-up that developed a high-performing pure silicon anode for batteries, boosting the energy of batteries by 50%. They are developing their first production plant in the Eindhoven region.',
-      case: 'We helped LeydenJar to protect the intellectual property of their core technology using Modelverse.',
-      logo: leydenjarImage,
-      url: 'https://leyden-jar.com/',
-    },
-  ]
+  const CasesHero = (
+    <Hero
+      className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
+      backgroundClassName="object-[center_40%]"
+      backgroundImg="/images/heroes/cases.avif"
+      overlay
+    >
+      <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
+        <Shield className="size-5" />
+        <p className="text-sm">{t('cases.hero.badge')}</p>
+      </div>
+      <h1 className="text-5xl sm:text-6xl">
+        {t('cases.hero.title_line1')}{' '}
+        <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
+          {t('cases.hero.title_line2')}
+        </span>
+      </h1>
+      <p className="text-xl text-white/70">{t('cases.hero.description')}</p>
+    </Hero>
+  )
 
-  // Framer Motion
-  // Refs for scroll-triggered animations
+  const caseStudies = t('cases.items', { returnObjects: true }) as CaseStudy[]
   const ctaRef = useRef<HTMLDivElement>(null)
-
-  // Track visibility for animations
   const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 })
 
   return (
@@ -154,10 +84,7 @@ export function CasesPage() {
         <div className="flex flex-col gap-4 px-4 py-16 md:container md:mx-auto">
           {caseStudies.map((study, index) => {
             const cardRef = useRef(null)
-            const isInView = useInView(cardRef, {
-              once: true,
-              amount: 0.4,
-            })
+            const isInView = useInView(cardRef, { once: true, amount: 0.4 })
 
             return (
               <motion.div
@@ -172,7 +99,7 @@ export function CasesPage() {
                     className={`relative flex h-[300px] items-center-safe justify-center-safe overflow-hidden lg:h-auto lg:basis-1/2 ${index % 2 != 0 && 'lg:order-last'}`}
                   >
                     <img
-                      src={study.logo}
+                      src={logos[index]}
                       alt=""
                       className={`size-full rounded-t-lg object-cover transition-all duration-300 lg:rounded-t-none ${index % 2 != 0 ? 'lg:rounded-r-lg' : 'lg:rounded-l-lg'} lg:absolute lg:inset-0`}
                     />
@@ -182,14 +109,14 @@ export function CasesPage() {
                     <div className="flex flex-col justify-center-safe gap-2">
                       <div className="flex w-fit flex-row gap-2 text-lg text-lime-500">
                         <Info className="size-5 self-center" />
-                        About
+                        {t('cases.labels.about')}
                       </div>
                       <p className="text-white/70">{study.about}</p>
                     </div>
                     <div className="flex flex-col justify-center-safe gap-2">
                       <div className="flex w-fit flex-row gap-2 text-lg text-teal-500">
                         <TrendingUp className="size-5 self-center" />
-                        Improvements
+                        {t('cases.labels.improvements')}
                       </div>
                       <p className="text-white/70">{study.case}</p>
                     </div>
@@ -203,11 +130,9 @@ export function CasesPage() {
 
       {/* CTA */}
       <div className="relative overflow-hidden bg-linear-to-br from-lime-900/30 via-teal-900/30 to-slate-900">
-        {/* Gradients */}
         <div className="absolute top-0 left-0 h-96 w-96 rounded-full bg-linear-to-br from-lime-500/20 to-teal-500/20 blur-3xl" />
         <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-linear-to-br from-teal-500/20 to-emerald-500/20 blur-3xl" />
 
-        {/* Content */}
         <motion.div
           ref={ctaRef}
           initial="hidden"
@@ -217,13 +142,10 @@ export function CasesPage() {
         >
           <motion.div
             variants={fadeInUp}
-            className="flex flex-col gap-4 text-center"
+            className="flex flex-col gap-4 text-center md:container md:mx-auto"
           >
-            <h1 className="text-4xl">Ready to Write Your Success Story?</h1>
-            <p className="text-lg text-white/70">
-              Join these leading organizations in transforming your risk and
-              compliance management.
-            </p>
+            <h1 className="text-4xl sm:text-5xl">{t('cases.cta.title')}</h1>
+            <p className="text-xl text-white/70">{t('cases.cta.subtitle')}</p>
           </motion.div>
           <motion.div variants={fadeInUp}>
             <button
@@ -233,7 +155,7 @@ export function CasesPage() {
                   'https://outlook.office.com/bookwithme/user/d81d78745f8047d1a0ec05a07d8d40d6@modelverse.online/meetingtype/HEkH_Hmwx06JvFc-tP4ZJw2?anonymous')
               }
             >
-              Request a Demo
+              {t('cases.cta.button')}
               <ArrowRight className="transition-all duration-300 group-hover:translate-x-1" />
             </button>
           </motion.div>

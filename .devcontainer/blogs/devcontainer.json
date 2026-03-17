@@ -6,34 +6,19 @@
 
   "customizations": {
     "vscode": {
-      "extensions": [
-        "esbenp.prettier-vscode",
-        "SanaAjani.taskrunnercode",
-
-        // Syntax highlighting for .mdx files.
-        // Makes the metadata block and markdown body visually distinct.
-        "unifiedjs.vscode-mdx"
-      ],
+      "extensions": ["esbenp.prettier-vscode", "SanaAjani.taskrunnercode"],
 
       "settings": {
         "task.autoDetect": "off",
         "workbench.startupEditor": "none",
         "editor.wordWrap": "on",
-        "terminal.integrated.defaultProfile.linux": "bash",
-
-        "[mdx]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode",
-          "editor.formatOnSave": true
-        },
-        "[markdown]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode",
-          "editor.formatOnSave": true
-        }
+        "terminal.integrated.defaultProfile.linux": "bash"
       }
     }
   },
 
-  "postCreateCommand": "cd /workspaces/modelverse-website && npm ci",
+  // Install dependencies after the container builds
+  "postCreateCommand": "npm ci",
 
   "forwardPorts": [5173],
   "portsAttributes": {
