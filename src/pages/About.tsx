@@ -13,6 +13,7 @@ import benImage from '@/assets/team/Ben - web.jpg'
 import bozhenaImage from '@/assets/team/Bozhena - web.jpg'
 import daanImage from '@/assets/team/Daan - web.jpg'
 import liliImage from '@/assets/team/Lili - web.jpg'
+import mariaImage from '@/assets/team/Maria - web.jpg'
 import marionaImage from '@/assets/team/Mariona - web.jpg'
 import mateiImage from '@/assets/team/Matei - web.jpg'
 import reshmaImage from '@/assets/team/Reshma - web.jpg'
@@ -130,6 +131,14 @@ export function AboutPage() {
       image: mateiImage,
       linkedin: 'https://www.linkedin.com/in/matei-avram-919771251/',
       mail: 'mailto:matei@modelverse.online',
+    },
+    {
+      name: 'Maria Litvinova',
+      role: 'Risk Consultant',
+      bio: t('about.team.members.8.bio'),
+      image: mariaImage,
+      linkedin: 'https://www.linkedin.com/in/maria-litvinova-370063317/',
+      mail: 'mailto:maria@modelverse.online',
     },
   ]
 
@@ -321,7 +330,7 @@ export function AboutPage() {
 
             <motion.div
               variants={staggerContainer}
-              className="grid max-w-7xl grid-cols-1 gap-4 self-center sm:grid-cols-2 lg:grid-cols-4"
+              className="grid max-w-7xl grid-cols-1 gap-4 self-center sm:grid-cols-2 lg:grid-cols-3"
             >
               {teamMembers.map((member, index) => (
                 <motion.div variants={scaleIn} key={index}>
