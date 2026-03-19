@@ -57,8 +57,9 @@ export function CasesPage() {
         <p className="text-sm">{t('cases.hero.badge')}</p>
       </div>
       <h1 className="text-5xl sm:text-6xl">
-        {t('cases.hero.title_line1')}{' '}
+        {t('cases.hero.title_line1')}
         <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
+          <br/>
           {t('cases.hero.title_line2')}
         </span>
       </h1>

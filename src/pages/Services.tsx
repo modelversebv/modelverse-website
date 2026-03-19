@@ -28,11 +28,16 @@ export function ServicesPage() {
       backgroundImg="/images/heroes/services.avif"
       overlay
     >
-      <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
+      <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-black/15 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
         <Shield className="size-5" />
         <p className="text-sm">{t('services.hero.badge')}</p>
       </div>
-      <h1 className="text-5xl sm:text-6xl">{t('services.hero.title')}</h1>
+      <h1 className="text-5xl sm:text-6xl">
+        {t('services.hero.title_line1')} 
+        <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
+          {t('services.hero.title_line2')}
+        </span>
+      </h1>
       <p className="text-xl text-white/70">{t('services.hero.description')}</p>
     </Hero>
   )

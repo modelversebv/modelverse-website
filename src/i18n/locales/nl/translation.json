@@ -47,7 +47,7 @@
       "items": {
         "strategic_risk": {
           "title": "Strategisch Risicobeheer",
-          "description": "Wij helpen u risico's én kansen te beheren op drie verschillende niveaus: organisatie, assets, en bevindingen. Deze gelaagde aanpak brengt bewezen duidelijkheid en efficiëntie. Zeg vaarwwel tegen eindeloze risicoregisters met honderden vage vermeldingen."
+          "description": "Wij helpen u risico's én kansen te beheren op drie verschillende niveaus: organisatie, assets, en bevindingen. Deze gelaagde aanpak brengt bewezen duidelijkheid en efficiëntie. Zeg vaarwel tegen eindeloze risicoregisters met honderden vage vermeldingen."
         },
         "real_world": {
           "title": "Praktijkgerichte Capabilities",
@@ -63,7 +63,7 @@
         },
         "audit": {
           "title": "Geïntegreerde Auditintelligentie",
-          "description": "Audits en pentests zijn essentieel voor continue risicobeperking. Wij leggen bevindingen vast en koppelen ze direct aan uw compliance-framework, zodat risico's doorvertalen naar het organisatieniveau met volledige traceerbaarheid."
+          "description": "Audits en penetration-tests zijn essentieel voor continue risicobeperking. Wij leggen bevindingen vast en koppelen ze direct aan uw compliance-framework, zodat risico's doorvertalen naar het organisatieniveau met volledige traceerbaarheid."
         },
         "multi_standard": {
           "title": "Moeiteloze Multi-Standaard Assurance",
@@ -278,7 +278,7 @@
         "description": "Behaal en behoud compliance-certificeringen",
         "points": [
           "Profiteer van onze kwaliteitsbibliotheken",
-          "Ondersteuning voor álle certificeringsframeworks",
+          "Ondersteuning voor álle frameworks",
           "Ontdek innovatieve automatisering"
         ]
       },
@@ -349,14 +349,14 @@
       },
       {
         "name": "Provincie Flevoland",
-        "about": "Provincie Flevoland is de nieuwste en kleinste provincie van Nederland, en is de verantwooredlijk voor het bestuur van onder andere de (kritische) infrastructuur, het milieu, en ruimtelijke ordening in de regio.",
-        "case": "We piloten Modelverse voor Flevoland om hun risicobeheer te verbeteren, de effectiviteit van de geïmplementeerde cybersecuritymaatregelen te verhogen en tijd te besparen voor de IT-, OT- en gegevensprivacyteams, evenals de CISO.",
+        "about": "Provincie Flevoland is de nieuwste en kleinste provincie van Nederland, en is de verantwoordelijk voor het bestuur van onder andere de (kritische) infrastructuur, het milieu, en ruimtelijke ordening in de regio.",
+        "case": "We piloten Modelverse voor Flevoland om hun risicobeheer te verbeteren, de effectiviteit van de geïmplementeerde cybersecurity maatregelen te verhogen en tijd te besparen voor de IT-, OT- en gegevensprivacyteams, evenals de CISO.",
         "url": "https://www.flevoland.nl/"
       },
       {
         "name": "PharmaPartners",
         "about": "Pharmapartners is een erkende marktleider in de levering van geïntegreerde zorgsystemen binnen Nederland, dat zorgverleners toegang geeft tot betrouwbare, actuele en volledige (patiënt)informatie.",
-        "case": "We ondersteunen PharmaPartners met een strategisch cybersecurityplan en een plan voor de waarborging van patiëntveiligheid.",
+        "case": "We ondersteunen PharmaPartners met een strategisch cybersecurity plan en een plan voor de waarborging van patiëntveiligheid.",
         "url": "https://www.pharmapartners.nl/"
       },
       {
@@ -374,7 +374,7 @@
       {
         "name": "NPI",
         "about": "Het NPI is de Nederlandse opleidingsinstelling voor fysiotherapeuten. Ze ondersteunen paramedische professionals bij levenslang leren met cursussen, trainingen, webinars, e-learning en wetenschappelijke informatiediensten.",
-        "case": "NPI gebruikt Modelverse om al hun informatie te beheren. Compliance wordt ook beheerd via de functionaliteit voor beveiligings-policies, zodat beleid eenvoudig kan worden onderhouden en makkelijk gedistribueerd kan worden aan al het personeel.",
+        "case": "NPI gebruikt Modelverse om al hun informatie te beheren. Compliance wordt ook beheerd via de functionaliteit voor beveiligingsbeleid, zodat beleid eenvoudig kan worden onderhouden en makkelijk gedistribueerd kan worden aan al het personeel.",
         "url": "https://www.npi.nl/"
       },
       {
@@ -385,13 +385,13 @@
       },
       {
         "name": "NewForrest Fingerfood",
-        "about": "NewForrest Fingerfood is een Nederlands bedrijf gespecialiseerd in de productie van diepgevroren fingerfood, minisnacks en hapjes voor zowel de retail- als de foodservicemarkt.",
+        "about": "NewForrest Fingerfood is een Nederlands bedrijf gespecialiseerd in de productie van diepgevroren fingerfood, minisnacks en hapjes voor zowel de retail- als de servicemarkt.",
         "case": "NewForrest maakt gebruik van de digitale risicobeheer functionaliteit van Modelverse.",
         "url": "https://newforrest.nl/"
       },
       {
         "name": "LeydenJar Technology",
-        "about": "LeydenJar Technology is een scale-up die een hoogpresterende pure siliciumanode voor batterijen heeft ontwikkeld, waardoor de energiecapaciteit van batterijen met 50% wordt verhoogd. Ze ontwikkelen hun eerste productiefaciliteit in de regio Eindhoven.",
+        "about": "LeydenJar Technology is een scale-up die een hoog presterende pure siliciumanode voor batterijen heeft ontwikkeld, waardoor de energiecapaciteit van batterijen met 50% wordt verhoogd. Ze ontwikkelen hun eerste productiefaciliteit in de regio Eindhoven.",
         "case": "We hebben LeydenJar geholpen de intellectuele eigendom van hun kerntechnologie te beschermen met Modelverse.",
         "url": "https://leyden-jar.com/"
       }
@@ -426,7 +426,7 @@
     "hero": {
       "badge": "We secure. You succeed!",
       "title_line1": "Wij zijn op een Missie om",
-      "title_line2": "Risicobeheer te Democrati-seren",
+      "title_line2": "Risicobeheer te Democratiseren",
       "description": "Enterprise-kwaliteit informatierisicobeheer toegankelijk maken voor organisaties van elke omvang."
     },
     "story": {
@@ -470,7 +470,7 @@
           "bio": "Reshma brengt diepgaande expertise in strategisch informatiebeheer en cybersecurity met een heldere, gestructureerde aanpak voor complexe uitdagingen. Reshma heeft diverse IT-leiderschaps- en beveiligingsfuncties vervuld bij internationale bedrijven en in de energiesector. Ze heeft een MSc in Toegepaste Natuurkunde en een executive MSc in Cybersecurity."
         },
         {
-          "bio": "Daan is een ervaren ondernemer en IT-leider die gepassioneerd is over het gebruik van moderne technologie om organisaties te helpen echte uitdagingen aan te pakken. Daan brengt breed inzicht als strateeg, investeerder en vertrouwde cybersecurityadviseur. Hij heeft een PhD en MSc in Informatica, evenals een executive MSc in Cybersecurity."
+          "bio": "Daan is een ervaren ondernemer en IT-leider die gepassioneerd is over het gebruik van moderne technologie om organisaties te helpen echte uitdagingen aan te pakken. Daan brengt breed inzicht als strateeg, investeerder en vertrouwde cybersecurity adviseur. Hij heeft een PhD en MSc in Informatica, evenals een executive MSc in Cybersecurity."
         },
         {
           "bio": "Lili is een governance-expert met ruime ervaring in gezondheidszorg, cybersecurity en patiëntveiligheid. Voordat ze partner werd, werkte Lili 12 jaar bij het Nederlandse Ministerie van Volksgezondheid, aan orgaandonatie, e-health en cybersecurity. Ze heeft een Cum Laude BSc in Biomedische Wetenschappen, een Cum Laude MSc in Neurowetenschappen en een Summa Cum Laude MSc in Cybersecurity Governance."
@@ -494,10 +494,10 @@
       "subtitle": "Vertrouwde stemmen in de risico- en compliance community die geloven in onze missie.",
       "items": [
         {
-          "bio": "Jan-Willem Klerkx is gepassioneerd over softwarekwaliteit en bedrijfsbehendigheid. Zijn aanpak combineert diepgaand technisch inzicht met strategisch denken, waarmee hij organisaties helpt risico's te verminderen, onderhoudbaarheid te verbeteren en innovatie te ontsluiten via objectieve broncode- en architectuuranalyse."
+          "bio": "Jan-Willem Klerkx is gepassioneerd over softwarekwaliteit en bedrijfs-behendigheid. Zijn aanpak combineert diepgaand technisch inzicht met strategisch denken, waarmee hij organisaties helpt risico's te verminderen, onderhoudbaarheid te verbeteren en innovatie te ontsluiten via objectieve broncode- en architectuuranalyse."
         },
         {
-          "bio": "Gordon Muehl heeft innovatie geleid voor Fortune 500-bedrijven, hoogpresterende internationale teams opgebouwd en een beveiligingscultuur ingebed in een R&D-organisatie met 100.000 medewerkers. Hij specialiseert zich in de levenscyclus van veilige softwareontwikkeling, technische due diligence en niet-functionele governance-eisen."
+          "bio": "Gordon Muehl heeft innovatie geleid voor Fortune 500-bedrijven, hoog presterende internationale teams opgebouwd en een beveiligingscultuur ingebed in een R&D-organisatie met 100.000 medewerkers. Hij specialiseert zich in de levenscyclus van veilige softwareontwikkeling, technische due diligence en niet-functionele governance-eisen."
         },
         {
           "bio": "Dennis Mulder specialiseert zich in IT-strategie, AI en digitale transformatie, en richt zich op het overbruggen van bedrijf en technologie van boardroom tot uitvoering. Hij is gecertificeerd Distinguished IT Architect (CITA-D), president van Iasa Global NL en voorzitter van het Chief Architect Forum. Dennis zet zich in voor talentontwikkeling met altijd oog voor praktische impact."
@@ -506,10 +506,10 @@
           "bio": "Oskar Brink blinkt uit in het afstemmen van beveiligings- en risicostrategieën op bedrijfsdoelstellingen, het stimuleren van duurzame transformatie en het bevorderen van continue verbetering door coaching — met internationale ervaring in Maleisië en India. Hij specialiseert zich in het brengen van duidelijkheid en structuur in complexe IT-omgevingen."
         },
         {
-          "bio": "Robert Bals onderscheidt zich door het combineren van diepgaande technische expertise met een pragmatische, jargonvrije en praktische mindset. Hij biedt op maat gemaakte ISMS-implementaties, audits voor ISO 27001 en TUV Nord-certificering en GDPR-oplossingen voor ICT-, software- en zorgorganisaties."
+          "bio": "Robert Bals onderscheidt zich door het combineren van diepgaande technische expertise met een pragmatische, jargon-vrije en praktische mindset. Hij biedt op maat gemaakte ISMS-implementaties, audits voor ISO 27001 en TUV Nord-certificering en GDPR-oplossingen voor ICT-, software- en zorgorganisaties."
         },
         {
-          "bio": "Alexandra Roger-Machart is gepassioneerd over Tech en AI-gedreven transformatie. Ze adviseert startups en scaleups om hun externe profiel te versterken, stakeholders te betrekken en hun corporate reporting te verbeteren via een interdisciplinair perspectief van strategisch storytelling en regelgevingsexpertise."
+          "bio": "Alexandra Roger-Machart is gepassioneerd over Tech en AI-gedreven transformatie. Ze adviseert startups en scale-ups om hun externe profiel te versterken, stakeholders te betrekken en hun corporate reporting te verbeteren via een interdisciplinair perspectief van strategisch storytelling en regelgevingsexpertise."
         }
       ]
     }

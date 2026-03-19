@@ -16,14 +16,15 @@ import { Layout } from '@/components/layout'
 import {
   ArrowRight,
   Brain,
-  Check,
   CheckCircle2,
+  ClipboardList,
   Compass,
-  Lock,
+  Merge,
   Rocket,
-  Search,
+  Route,
   Shield,
   Sparkles,
+  Users,
 } from 'lucide-react'
 import { motion, useInView, useScroll, useTransform } from 'motion/react'
 
@@ -31,14 +32,14 @@ export function HomePage() {
   const layoutRef = useRef<HTMLDivElement>(null)
   const { t } = useTranslation()
 
-  // Data
+  // Cards
   const features = [
-    { icon: Compass, key: 'strategic_risk' },
-    { icon: Brain, key: 'real_world' },
-    { icon: Rocket, key: 'actionable' },
-    { icon: Lock, key: 'smart_compliance' },
-    { icon: Search, key: 'audit' },
-    { icon: Check, key: 'multi_standard' },
+    { icon: Compass, key: 'card1' },
+    { icon: Route, key: 'card2' },
+    { icon: Brain, key: 'card3' },
+    { icon: ClipboardList, key: 'card4' },
+    { icon: Merge, key: 'card5' },
+    { icon: Users, key: 'card6' },
   ]
 
   const benefits = t('home.benefits.items', { returnObjects: true }) as string[]
@@ -79,10 +80,10 @@ export function HomePage() {
   return (
     <Layout home={true} ref={layoutRef}>
       {/* Metadata */}
-      <title>Modelverse | Cybersecurity GRC Solutions</title>
+      <title>Modelverse | Cybersecurity Risk Management</title>
       <meta
         name="description"
-        content="Modelverse automates GRC and risk scoring, providing real-time compliance intelligence for leading enterprises in various industries."
+        content="Modelverse is a Dutch company that provides cybersecurity risk management solutions for organizations of all sizes."
       />
 
       {/* Landing Banner */}
@@ -101,7 +102,7 @@ export function HomePage() {
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
-          className="relative z-1 flex flex-col gap-16 py-20 md:container md:mx-auto lg:flex-row"
+          className="relative z-1 gap-16 py-20 md:container md:mx-auto lg:flex-row"
         >
           <div className="flex flex-col gap-8 lg:basis-1/2">
             {/* Badge */}
@@ -152,7 +153,7 @@ export function HomePage() {
               className="flex flex-row flex-wrap gap-4"
             >
               <MotionCard variants={scaleIn}>
-                <h1 className="text-3xl whitespace-nowrap">6</h1>
+                <h1 className="text-3xl whitespace-nowrap">125+</h1>
                 <p className="w-full text-sm text-white/90">
                   {t('home.hero.stats.risk_domains')}
                 </p>
@@ -351,7 +352,7 @@ export function HomePage() {
             <div className="relative z-1 flex flex-col items-center-safe justify-center-safe gap-4">
               <motion.div
                 variants={scaleIn}
-                className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md"
+                className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-black/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md"
               >
                 <Rocket className="size-5" />
                 <p className="text-sm">{t('home.cta.badge')}</p>

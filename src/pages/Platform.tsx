@@ -35,6 +35,7 @@ export function PlatformPage() {
       className="items-center-safe justify-center-safe text-center text-white lg:flex-row"
       backgroundClassName="object-center"
       containerClassName="min-h-dvh h-fit pt-16 md:pt-none md:min-h-min"
+      backgroundImg="/images/heroes/platform.avif"
       overlay
     >
       <div className="flex flex-col gap-8 lg:text-left">
@@ -43,10 +44,10 @@ export function PlatformPage() {
           <p className="text-sm">{t('platform.hero.badge')}</p>
         </div>
         <h1 className="text-5xl sm:text-6xl">
+          {t('platform.hero.title_line1')}{' '}
           <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
-            {t('platform.hero.title_line1')}
-          </span>{' '}
-          {t('platform.hero.title_line2')}
+            {t('platform.hero.title_line2')}
+          </span>
         </h1>
         <p className="text-xl text-white/70">
           {t('platform.hero.description')}
@@ -105,12 +106,17 @@ export function PlatformPage() {
   }) as string[]
 
   // Framer Motion
+  const implementationRef = useRef<HTMLDivElement>(null)
   const keyFeaturesRef = useRef<HTMLDivElement>(null)
   const brokenDownFeaturesRef = useRef<HTMLDivElement>(null)
   const diffsRef = useRef<HTMLDivElement>(null)
   const comparisonRef = useRef<HTMLDivElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
 
+  const implementationInView = useInView(implementationRef, {
+    once: true,
+    amount: 0.1,
+  })
   const keyFeaturesInView = useInView(keyFeaturesRef, {
     once: true,
     amount: 0.1,
@@ -137,6 +143,31 @@ export function PlatformPage() {
       {/* Content */}
       <div className="bg-linear-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
         <div className="relative z-1 flex flex-col gap-32 px-4 py-16 text-white md:container md:mx-auto">
+          
+          {/* Implementation */}
+          <div className ="flex flex-col items-center-safe justify-center-safe text-center gap-8 md:container md:max-w-4xl md:mx-auto">
+            <motion.div
+              ref={implementationRef}
+              initial="hidden"
+              animate={implementationInView ? 'visible' : 'hidden'}
+              variants={staggerContainer}
+              className="flex flex-col items-center-safe gap-8 md:container md:mx-auto"
+            >
+            <h1 className="text-4xl sm:text-5xl">
+              {t('platform.implementation.title_line1')}{' '}
+              <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
+                {t('platform.implementation.title_line2')}
+              </span>
+            </h1>
+            <p className="text-xl text-white/70">
+              {t('platform.implementation.subtitle')}
+            </p>
+            </motion.div>
+          </div>
+          
+
+          
+          
           {/* Key Features Showcase */}
           <div className="flex flex-col items-center-safe gap-8">
             <motion.div

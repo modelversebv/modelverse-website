@@ -100,7 +100,7 @@ export function NavBar({
             <DropdownLink to="/platform" title="Platform" active={platform}>
               Risk & Compliance Management
             </DropdownLink>
-            <DropdownLink to="/services" title="Services" active={services}>
+            <DropdownLink to="/services" title="Consultancy Services" active={services}>
               Service Packages
             </DropdownLink>
           </Dropdown>
