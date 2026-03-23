@@ -8,21 +8,36 @@ import {
   slideInRight,
   staggerContainer,
 } from '@/animations/variants'
+import riskImage from '@/assets/platform_showcase/risk.png'
+import capabilityImage from '@/assets/platform_showcase/capability.png'
+import roadmapImage from '@/assets/platform_showcase/roadmap.png'
 import platformImage from '@/assets/platform.png'
 import { Card } from '@/components/app/misc/card'
 import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
 import {
   ArrowRight,
+  Award,
   Check,
   Clock,
+  Eye,
   Globe,
   Lock,
+  Map,
+  Rocket,
+  ScrollText,
   Shield,
   Sparkles,
   Target,
   TrendingUp,
   Zap,
+  ShieldCheck,
+  Layers,
+  FileText,
+  Stamp,
+  ClipboardCheck,
+  Users,
+  BookOpen,
 } from 'lucide-react'
 import { motion, useInView } from 'motion/react'
 
@@ -32,14 +47,14 @@ export function PlatformPage() {
 
   const PlatformHero = (
     <Hero
-      className="items-center-safe justify-center-safe text-center text-white lg:flex-row"
+      className="items-center-safe justify-center-safe text-center text-white xl:flex-row"
       backgroundClassName="object-center"
-      containerClassName="min-h-dvh h-fit pt-16 md:pt-none md:min-h-min"
+      containerClassName="min-h-dvh h-fit pt-16 md:pt-none md:min-h-auto"
       backgroundImg="/images/heroes/platform.avif"
       overlay
     >
-      <div className="flex flex-col gap-8 lg:text-left">
-        <div className="mx-auto flex h-fit w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md lg:mx-0">
+      <div className="flex flex-col gap-8 xl:text-left max-w-3xl">
+        <div className="mx-auto flex h-fit w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md xl:mx-0">
           <Shield className="size-5" />
           <p className="text-sm">{t('platform.hero.badge')}</p>
         </div>
@@ -53,7 +68,7 @@ export function PlatformPage() {
           {t('platform.hero.description')}
         </p>
       </div>
-      <Card className="p-2 hover:bg-white/10">
+      <Card className="p-2 hover:bg-white/10 lg:max-w-4xl xl:w-500">
         <img
           src={platformImage}
           alt="Modelverse Platform"
@@ -67,6 +82,7 @@ export function PlatformPage() {
   const keyFeautres = (
     t('platform.key_features.items', { returnObjects: true }) as {
       img_tag: string
+      img_id: string
       title: string
       description: string
       improvement: string
@@ -87,11 +103,22 @@ export function PlatformPage() {
     }[]
   ).map((item) => ({ ...item, icon: '🚨' }))
 
-  const modules = (
+  const moduleIcons = [
+    ShieldCheck,
+    Layers,
+    Map,
+    FileText,
+    Stamp,
+    Lock,
+    ClipboardCheck,
+    Users,
+    BookOpen,
+  ]
+  const module_items = (
     t('platform.fingertips.module_items', { returnObjects: true }) as {
       title: string
     }[]
-  ).map((item) => ({ ...item, icon: '🛡️' }))
+  ).map((item, index) => ({ ...item, icon: moduleIcons[index] }))
 
   const differentiatorIcons = [Sparkles, Zap, Target, Clock, Globe, Lock]
   const differentiators = (
@@ -104,6 +131,15 @@ export function PlatformPage() {
   const comparisonPoints = t('platform.comparison.points', {
     returnObjects: true,
   }) as string[]
+
+  const implementationIcons = [Map, Eye, Shield, Award, ScrollText, Rocket]
+  const implementationTrack = (
+    t('platform.implementation_track.step', {returnObjects: true}) as { 
+      title: string
+      icon: string
+      description: string 
+    }[]
+  ).map((item, index) => ({ ...item, icon: implementationIcons[index] }))
 
   // Framer Motion
   const implementationRef = useRef<HTMLDivElement>(null)
@@ -144,7 +180,48 @@ export function PlatformPage() {
       <div className="bg-linear-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
         <div className="relative z-1 flex flex-col gap-32 px-4 py-16 text-white md:container md:mx-auto">
           
-          {/* Implementation */}
+          {/* What makes us different */}
+          <motion.div
+            ref={diffsRef}
+            initial="hidden"
+            animate={diffsInView ? 'visible' : 'hidden'}
+            variants={staggerContainer}
+            className="flex flex-col items-center-safe gap-8"
+          >
+            <motion.div
+              variants={fadeInUp}
+              className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
+            >
+              <h1 className="text-4xl sm:text-5xl">
+                {t('platform.differentiators.title_line1')}{' '}
+                <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
+                  {t('platform.differentiators.title_line2')}
+                </span>
+              </h1>
+              <p className="text-xl text-white/70">
+                {t('platform.differentiators.subtitle')}
+              </p>
+            </motion.div>
+            <motion.div
+              variants={staggerContainer}
+              className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
+            >
+              {differentiators.map((diff, index) => (
+                <motion.div variants={fadeInUp} key={`diff-${index}`}>
+                  <Card className="size-full bg-white/5 hover:border-lime-500/50 hover:bg-white/10">
+                    <div className="mb-4 flex w-fit items-center justify-center rounded-xl bg-linear-to-br from-lime-500 to-teal-500 p-2">
+                      <diff.icon className="size-6" />
+                    </div>
+                    <h3 className="mb-2 text-xl">{diff.title}</h3>
+                    <p className="text-white/70">{diff.description}</p>
+                  </Card>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+
+
+          {/* Implementation Text */}
           <div className ="flex flex-col items-center-safe justify-center-safe text-center gap-8 md:container md:max-w-4xl md:mx-auto">
             <motion.div
               ref={implementationRef}
@@ -165,7 +242,38 @@ export function PlatformPage() {
             </motion.div>
           </div>
           
+          {/* Implementation Steps */}
+          <div className="max-w-4xl items-center-safe justify-center-safe mx-auto flex flex-col">
+            {implementationTrack.map((step, index) => (
+              <div className="flex flex-col items-center-safe justify-center-safe" key={`implementationStep-${index}`}>
+                <div className={`flex flex-col ${index % 2 == 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 items-center-safe relative`}>
 
+                {/* Number */}
+                <div className="shrink-0 relative z-10">
+                  <span className="text-9xl font-bold bg-linear-to-r from-lime-400 to-teal-400 bg-clip-text text-transparent">
+                    {String(index + 1)}
+                  </span>
+                </div>
+
+                {/* Content */}
+                <Card className="p-6 gap-4 flex flex-col bg-white/5 hover:border-lime-500/50 hover:bg-white/10">
+                  <div className="flex items-center gap-4">
+                    <div className="flex size-12 items-center justify-center rounded-lg bg-linear-to-br from-lime-500 to-teal-500 shrink-0">
+                      <step.icon className="size-6" />
+                    </div>
+                    <h3 className="text-xl">{step.title}</h3>
+                  </div>
+                <p className="text-white/90">{step.description}</p>
+                </Card>
+              </div>
+
+              {/* Vertical Line */}
+                {index !== implementationTrack.length - 1 && (
+                  <div className="hidden md:block w-0.5 h-24 bg-linear-to-b from-lime-400/50 to-teal-400/50" />
+                )}
+              </div>
+              ))}
+            </div>
           
           
           {/* Key Features Showcase */}
@@ -208,7 +316,7 @@ export function PlatformPage() {
                         {feature.img_tag}
                       </div>
                       <img
-                        src={platformImage}
+                        src={feature.img_id === 'risk' ? riskImage : feature.img_id === 'capability' ? capabilityImage : roadmapImage}
                         alt="Modelverse Platform"
                         className="rounded-lg"
                       />
@@ -280,56 +388,16 @@ export function PlatformPage() {
               <Card className="items-center-safe justify-center-safe gap-4 border-lime-500/50 bg-lime-500/10 backdrop-blur-md hover:bg-lime-500/10">
                 <h1>{t('platform.fingertips.modules')}</h1>
                 <div className="grid w-full grid-cols-3 gap-4 md:grid-cols-5 lg:grid-cols-9">
-                  {modules.map((module, index) => (
+                  {module_items.map((module, index) => (
                     <motion.div variants={scaleIn} key={`module-${index}`}>
                       <div className="flex flex-col items-center-safe justify-center-safe gap-2 rounded-xl bg-white/5 p-2 transition-all duration-300 hover:bg-white/10">
-                        <span className="text-xl">{module.icon}</span>
+                        <module.icon className="size-6" />
                         <span>{module.title}</span>
                       </div>
                     </motion.div>
                   ))}
                 </div>
               </Card>
-            </motion.div>
-          </motion.div>
-
-          {/* What makes us different */}
-          <motion.div
-            ref={diffsRef}
-            initial="hidden"
-            animate={diffsInView ? 'visible' : 'hidden'}
-            variants={staggerContainer}
-            className="flex flex-col items-center-safe gap-8"
-          >
-            <motion.div
-              variants={fadeInUp}
-              className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
-            >
-              <h1 className="text-4xl sm:text-5xl">
-                {t('platform.differentiators.title_line1')}{' '}
-                <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
-                  {t('platform.differentiators.title_line2')}
-                </span>
-              </h1>
-              <p className="text-xl text-white/70">
-                {t('platform.differentiators.subtitle')}
-              </p>
-            </motion.div>
-            <motion.div
-              variants={staggerContainer}
-              className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
-            >
-              {differentiators.map((diff, index) => (
-                <motion.div variants={fadeInUp} key={`diff-${index}`}>
-                  <Card className="size-full bg-white/5 hover:border-lime-500/50 hover:bg-white/10">
-                    <div className="mb-4 flex w-fit items-center justify-center rounded-xl bg-linear-to-br from-lime-500 to-teal-500 p-2">
-                      <diff.icon className="size-6" />
-                    </div>
-                    <h3 className="mb-2 text-xl">{diff.title}</h3>
-                    <p className="text-white/70">{diff.description}</p>
-                  </Card>
-                </motion.div>
-              ))}
             </motion.div>
           </motion.div>
 

@@ -44,7 +44,10 @@ export function ServicesPage() {
 
   // Data
   const services = [
-    { icon: Map, key: 'strategy', gradient: 'from-lime-500 to-emerald-500' },
+    { 
+      icon: Map, 
+      key: 'strategy', 
+      gradient: 'from-lime-500 to-emerald-500' },
     {
       icon: Award,
       key: 'certification',
@@ -60,7 +63,10 @@ export function ServicesPage() {
       key: 'programme',
       gradient: 'from-cyan-500 to-emerald-500',
     },
-    { icon: Eye, key: 'operations', gradient: 'from-teal-500 to-green-500' },
+    { 
+      icon: Eye,
+      key: 'operations', 
+      gradient: 'from-teal-500 to-green-500' },
     {
       icon: Shield,
       key: 'resilience',

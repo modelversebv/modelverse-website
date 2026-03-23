@@ -122,34 +122,59 @@
       "title_line2": "Implementation",
       "subtitle": "Our expert consultants will guide you through a seamless implementation process, ensuring you get up and running quickly and effectively. We work closely with your team to understand your unique needs and tailor the platform to fit your organisation's specific requirements."
     },
+    "implementation_track": {
+      "step": [
+        {
+          "title": "Initial Assessment & Roadmap Creation",
+          "description": "The first step is to conduct a comprehensive assessment of your current cybersecurity posture, challenges, and goals. This helps us understand your unique needs and ensures alignment with your organisation's objectives. A timeline will be set out, and your cybersecurity team will get to know the platform and the consultants who will be supporting you throughout the implementation process."
+        },
+        {
+          "title": "Landscape Assessment & Risk Impact Analysis",
+          "description": "Together we map your cybersecurity infrastructure, tools, and applications. We then analyse the impact of the most critical risks for your organisation. Understanding the landscape and the impact of risks is crucial for guiding your cybersecurity efforts and making informed decisions about where to invest resources for maximum effectiveness."
+        },
+        {
+          "title": "Security Capabilities & Maturity Level",
+          "description": "We evaluate your existing security capabilities and maturity level across the key cybersecurity domains. Identifying gaps and opportunities for improvement allows us to tailor our recommendations to reach your goals as efficiently as possible. With the experience of our consultants and the insights from the platform, we can help you develop a clear roadmap for enhancing your cybersecurity posture and achieving your desired outcomes."
+        },
+        {
+          "title": "Risk Likelihood Assessment",
+          "description": "We assess the likelihood of the most critical risks your organisation is facing based on a combination of factors, including the current threat landscape, your organisation's specific vulnerabilities, and your previously identified security capabilities."
+        },
+        {
+          "title": "Improvement Backlog",
+          "description": "Based on the previous steps, we construct a backlog of recommended improvements. This backlog serves as a roadmap for your cyber-secure future, continuously guiding your efforts along the way. It provides a clear and actionable plan for enhancing your cybersecurity posture and achieving your goals."
+        },
+        {
+          "title": "Prioritised Roadmap & Handover",
+          "description": "We work with you to develop a prioritised roadmap for implementing a subset of the recommended improvements, ensuring that your cybersecurity efforts are focused on the most impactful areas and aligned with your organisation's current goals and resources. After the roadmap is set, we hand over the reins to your team, providing ongoing support and guidance as needed to ensure continuous progress towards your cybersecurity objectives."
+        }
+      ]
+    },
     "key_features": {
       "title_line1": "Built for the Future of",
       "title_line2": "Compliance",
       "subtitle": "Every feature designed to save you time, reduce risk, and simplify compliance management",
       "items": [
         {
-          "img_tag": "AI-Powered",
-          "title": "Intelligent Risk Assessment",
-          "description": "AI-powered risk scoring and automated threat detection that learns from your organisation's unique security posture",
-          "improvement": "85% faster risk identification"
+          "img_tag": "Placeholder",
+          "img_id": "risk",
+          "title": "Risk Assessment and Prioritisation",
+          "description": "Placeholder",
+          "improvement": "Placeholder"
         },
         {
-          "img_tag": "AI-Powered",
-          "title": "Intelligent Risk Assessment",
-          "description": "AI-powered risk scoring and automated threat detection that learns from your organisation's unique security posture",
-          "improvement": "85% faster risk identification"
+          "img_tag": "Placeholder",
+          "img_id": "capability",
+          "title": "Comprehensive Capability Analysis",
+          "description": "Placeholder",
+          "improvement": "Placeholder"
         },
         {
-          "img_tag": "AI-Powered",
-          "title": "Intelligent Risk Assessment",
-          "description": "AI-powered risk scoring and automated threat detection that learns from your organisation's unique security posture",
-          "improvement": "85% faster risk identification"
-        },
-        {
-          "img_tag": "AI-Powered",
-          "title": "Intelligent Risk Assessment",
-          "description": "AI-powered risk scoring and automated threat detection that learns from your organisation's unique security posture",
-          "improvement": "85% faster risk identification"
+          "img_tag": "Placeholder",
+          "img_id": "roadmap",
+          "title": "Roadmap Development and Tracking",
+          "description": "Placeholder",
+          "improvement": "Placeholder"
         }
       ]
     },
@@ -192,44 +217,32 @@
       ],
       "module_items": [
         { "title": "Risks" },
-        { "title": "Risks" },
-        { "title": "Risks" },
-        { "title": "Risks" },
-        { "title": "Risks" },
-        { "title": "Risks" },
-        { "title": "Risks" },
-        { "title": "Risks" },
-        { "title": "Risks" }
+        { "title": "Capabilities" },
+        { "title": "Roadmap" },
+        { "title": "Landscape" },
+        { "title": "Compliance" },
+        { "title": "Privacy" },
+        { "title": "Audits" },
+        { "title": "Assurance" },
+        { "title": "ISMS" }
       ]
     },
     "differentiators": {
-      "title_line1": "Why Organisations Choose",
-      "title_line2": "Modelverse",
-      "subtitle": "We've reimagined GRC from the ground up to address the real challenges faced by modern organisations",
+      "title_line1": "Why",
+      "title_line2": "Modelverse?",
+      "subtitle": "The everyday struggles that cybersecurity professionals face.",
       "items": [
         {
-          "title": "Purpose-Built for SMBs",
-          "description": "Unlike enterprise-focused tools, we're designed specifically for small and medium-sized organisations. No overwhelming complexity, just what you need."
+          "title": "Endless Excel Sheets",
+          "description": "Risk management often relies on manual processes and spreadsheets, leading to inefficiencies and errors. Modelverse automates these processes, providing a centralised platform for managing risks and compliance."
         },
         {
-          "title": "Setup in Minutes, Not Months",
-          "description": "Most GRC tools take 3-6 months to implement. Our platform gets you operational in under an hour with guided onboarding."
+          "title": "Manual Compliance Management",
+          "description": "Manual compliance management is time-consuming and error-prone. Modelverse streamlines this process with automated workflows and real-time reporting."
         },
         {
-          "title": "Automated Evidence Collection",
-          "description": "Stop manually gathering compliance evidence. Our platform automatically collects and organises proof for audits."
-        },
-        {
-          "title": "Always Up-to-Date",
-          "description": "Regulatory frameworks change constantly. We automatically update our compliance libraries so you're always current."
-        },
-        {
-          "title": "Multi-Language Support",
-          "description": "Native support for 8+ European languages with localised compliance frameworks and documentation."
-        },
-        {
-          "title": "Bank-Grade Security",
-          "description": "Built on zero-trust architecture with end-to-end encryption. Your sensitive data never leaves your control."
+          "title": "Siloed Systems",
+          "description": "Siloed systems make it difficult to gain a comprehensive view of your organisation's security posture. Modelverse provides a unified platform for managing risks and compliance."
         }
       ]
     },
@@ -563,6 +576,11 @@
     },
     "directions": {
       "title": "Directions"
+    },
+    "cta": {
+      "title": "Ready to Connect?",
+      "subtitle": "Get to know how Modelverse can help your organisation manage cybersecurity risks and compliance with confidence.",
+      "button": "Book a demo"
     }
   },
   "article": {
