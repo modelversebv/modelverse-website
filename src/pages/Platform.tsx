@@ -14,14 +14,12 @@ import { Hero } from '@/components/app/misc/hero'
 import { Layout } from '@/components/layout'
 import {
   ArrowRight,
-  Award,
   BookOpen,
+  ChartLine,
   CheckCircle2,
   ClipboardCheck,
-  Clock,
   Eye,
   FileText,
-  Globe,
   Layers,
   ListRestart,
   Lock,
@@ -30,17 +28,126 @@ import {
   ScrollText,
   Shield,
   ShieldCheck,
-  Sparkles,
+  Sprout,
   Stamp,
-  Target,
   TrendingUp,
   TriangleAlert,
   Ungroup,
   Users,
   Wrench,
-  Zap,
 } from 'lucide-react'
 import { motion, useInView } from 'motion/react'
+
+function FeatureItem({
+  feature,
+  index,
+}: {
+  feature: {
+    img_tag: string
+    img_id: string
+    title: string
+    description: string
+    improvement: string
+    icon: typeof Shield
+  }
+  index: number
+}) {
+  const featureRef = useRef(null)
+  const featureInView = useInView(featureRef, { once: true, amount: 0.4 })
+  return (
+    <motion.div
+      ref={featureRef}
+      initial="hidden"
+      animate={featureInView ? 'visible' : 'hidden'}
+      variants={fadeInUp}
+      className={`md:min-h-none flex flex-col justify-center-safe gap-4 max-md:pb-24 md:min-h-min ${index % 2 == 0 ? 'md:flex-row' : 'md:flex-row-reverse'} md:items-center-safe`}
+    >
+      <Card className="relative max-w-lg bg-white/5 p-4 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10 md:basis-1/2">
+        <div className="absolute -top-3 -right-3 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 text-xs font-semibold">
+          {feature.img_tag}
+        </div>
+        <img
+          src={feature.img_id}
+          alt={feature.title}
+          className="size-200/100 rounded-lg"
+        />
+      </Card>
+      <Card className="size-fit bg-white/5 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10 md:basis-1/2">
+        <div className="mb-4 flex w-fit items-center justify-center rounded-xl bg-linear-to-br from-lime-500 to-teal-500 p-2">
+          <feature.icon className="size-6" />
+        </div>
+        <h3 className="mb-2 text-xl">{feature.title}</h3>
+        <p className="mb-4 text-white/70">{feature.description}</p>
+        <div className="flex flex-row items-center-safe gap-2 text-xs font-semibold text-lime-500">
+          <TrendingUp className="size-4" />
+          <span>{feature.improvement}</span>
+        </div>
+      </Card>
+    </motion.div>
+  )
+}
+
+function ImplementationStepItem({
+  step,
+  index,
+}: {
+  step: {
+    title: string
+    icon: typeof Shield
+    description: string
+  }
+  index: number
+}) {
+  const stepRef = useRef(null)
+  const stepInView = useInView(stepRef, { once: true, amount: 0.4 })
+  const isEven = index % 2 === 0
+  return (
+    <motion.div
+      ref={stepRef}
+      initial="hidden"
+      animate={stepInView ? 'visible' : 'hidden'}
+      variants={staggerContainer}
+      className="flex flex-col items-center-safe justify-center-safe"
+    >
+      {/* Vertical Line */}
+      {index !== 0 && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={stepInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="hidden h-24 w-0.5 bg-linear-to-b from-lime-500/50 to-teal-500/50 md:block"
+        />
+      )}
+
+      <div
+        className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} relative items-center-safe gap-4 max-md:pt-8 md:gap-12`}
+      >
+        {/* Number */}
+        <motion.div
+          variants={isEven ? slideInLeft : slideInRight}
+          className="relative z-10 shrink-0"
+        >
+          <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-9xl font-bold text-transparent">
+            {String(index + 1)}
+          </span>
+        </motion.div>
+
+        {/* Content */}
+        <motion.div variants={isEven ? slideInRight : slideInLeft}>
+          <Card className="flex flex-col gap-4 bg-white/5 p-6 hover:border-lime-500/50 hover:bg-white/10">
+            <div className="flex items-center gap-4">
+              <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-lime-500 to-teal-500">
+                <step.icon className="size-6" />
+              </div>
+              <h3 className="text-xl">{step.title}</h3>
+            </div>
+            <p className="text-white/90">{step.description}</p>
+          </Card>
+        </motion.div>
+      </div>
+    </motion.div>
+  )
+}
 
 export function PlatformPage() {
   const layoutRef = useRef<HTMLDivElement>(null)
@@ -81,6 +188,7 @@ export function PlatformPage() {
   )
 
   // Data
+  const featureShowcaseIcons = [Sprout, Layers, ChartLine]
   const featureShowcase = (
     t('platform.feature_showcase.items', { returnObjects: true }) as {
       img_tag: string
@@ -89,7 +197,7 @@ export function PlatformPage() {
       description: string
       improvement: string
     }[]
-  ).map((item) => ({ ...item, icon: Shield }))
+  ).map((item, index) => ({ ...item, icon: featureShowcaseIcons[index] }))
 
   const moduleColours = [
     { bgColour: 'bg-red-500', hoverColour: 'hover:bg-red-700' },
@@ -339,47 +447,9 @@ export function PlatformPage() {
               </p>
             </motion.div>
             <div className="flex flex-col md:gap-16">
-              {featureShowcase.map((feature, index) => {
-                const featureRef = useRef(null)
-                const featureInView = useInView(featureRef, {
-                  once: true,
-                  amount: 0.4,
-                })
-                return (
-                  <motion.div
-                    ref={featureRef}
-                    initial="hidden"
-                    animate={featureInView ? 'visible' : 'hidden'}
-                    variants={fadeInUp}
-                    className={`md:min-h-none flex flex-col justify-center-safe gap-4 max-md:pb-24 md:min-h-min ${index % 2 == 0 ? 'md:flex-row' : 'md:flex-row-reverse'} md:items-center-safe`}
-                    key={`feature-${index}`}
-                  >
-                    <Card className="relative max-w-lg bg-white/5 p-4 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10 md:basis-1/2">
-                      <div className="absolute -top-3 -right-3 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 text-xs font-semibold">
-                        {feature.img_tag}
-                      </div>
-                      <img
-                        src={feature.img_id}
-                        alt={feature.title}
-                        className="size-200/100 rounded-lg"
-                      />
-                    </Card>
-                    <Card className="size-fit bg-white/5 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10 md:basis-1/2">
-                      <div className="mb-4 flex w-fit items-center justify-center rounded-xl bg-linear-to-br from-lime-500 to-teal-500 p-2">
-                        <feature.icon className="size-6" />
-                      </div>
-                      <h3 className="mb-2 text-xl">{feature.title}</h3>
-                      <p className="mb-4 text-white/70">
-                        {feature.description}
-                      </p>
-                      <div className="flex flex-row items-center-safe gap-2 text-xs font-semibold text-lime-500">
-                        <TrendingUp className="size-4" />
-                        <span>{feature.improvement}</span>
-                      </div>
-                    </Card>
-                  </motion.div>
-                )
-              })}
+              {featureShowcase.map((feature, index) => (
+                <FeatureItem key={`feature-${index}`} feature={feature} index={index} />
+              ))}
             </div>
           </div>
 
@@ -405,63 +475,9 @@ export function PlatformPage() {
 
             {/* Implementation Steps */}
             <div className="mx-auto flex max-w-4xl flex-col items-center-safe justify-center-safe">
-              {implementationTrack.map((step, index) => {
-                const stepRef = useRef(null)
-                const stepInView = useInView(stepRef, {
-                  once: true,
-                  amount: 0.4,
-                })
-                const isEven = index % 2 === 0
-                return (
-                  <motion.div
-                    ref={stepRef}
-                    initial="hidden"
-                    animate={stepInView ? 'visible' : 'hidden'}
-                    variants={staggerContainer}
-                    className="flex flex-col items-center-safe justify-center-safe"
-                    key={`implementationStep-${index}`}
-                  >
-                    {/* Vertical Line - appears when this step enters view */}
-                    {index !== 0 && (
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={stepInView ? { opacity: 1 } : { opacity: 0 }}
-                        transition={{ duration: 0.8, delay: 0.6 }}
-                        className="hidden h-24 w-0.5 bg-linear-to-b from-lime-500/50 to-teal-500/50 md:block"
-                      />
-                    )}
-
-                    <div
-                      className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} relative items-center-safe gap-4 max-md:pt-8 md:gap-12`}
-                    >
-                      {/* Number */}
-                      <motion.div
-                        variants={isEven ? slideInLeft : slideInRight}
-                        className="relative z-10 shrink-0"
-                      >
-                        <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-9xl font-bold text-transparent">
-                          {String(index + 1)}
-                        </span>
-                      </motion.div>
-
-                      {/* Content */}
-                      <motion.div
-                        variants={isEven ? slideInRight : slideInLeft}
-                      >
-                        <Card className="flex flex-col gap-4 bg-white/5 p-6 hover:border-lime-500/50 hover:bg-white/10">
-                          <div className="flex items-center gap-4">
-                            <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-lime-500 to-teal-500">
-                              <step.icon className="size-6" />
-                            </div>
-                            <h3 className="text-xl">{step.title}</h3>
-                          </div>
-                          <p className="text-white/90">{step.description}</p>
-                        </Card>
-                      </motion.div>
-                    </div>
-                  </motion.div>
-                )
-              })}
+              {implementationTrack.map((step, index) => (
+                <ImplementationStepItem key={`implementationStep-${index}`} step={step} index={index} />
+              ))}
             </div>
           </div>
         </div>
