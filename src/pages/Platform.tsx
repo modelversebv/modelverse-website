@@ -8,9 +8,6 @@ import {
   slideInRight,
   staggerContainer,
 } from '@/animations/variants'
-import riskImage from '@/assets/platform_showcase/risk.png'
-import capabilityImage from '@/assets/platform_showcase/capability.png'
-import roadmapImage from '@/assets/platform_showcase/roadmap.png'
 import platformImage from '@/assets/platform.png'
 import { Card } from '@/components/app/misc/card'
 import { Hero } from '@/components/app/misc/hero'
@@ -18,26 +15,30 @@ import { Layout } from '@/components/layout'
 import {
   ArrowRight,
   Award,
-  Check,
+  BookOpen,
+  CheckCircle2,
+  ClipboardCheck,
   Clock,
   Eye,
+  FileText,
   Globe,
+  Layers,
+  ListRestart,
   Lock,
   Map,
   Rocket,
   ScrollText,
   Shield,
+  ShieldCheck,
   Sparkles,
+  Stamp,
   Target,
   TrendingUp,
-  Zap,
-  ShieldCheck,
-  Layers,
-  FileText,
-  Stamp,
-  ClipboardCheck,
+  TriangleAlert,
+  Ungroup,
   Users,
-  BookOpen,
+  Wrench,
+  Zap,
 } from 'lucide-react'
 import { motion, useInView } from 'motion/react'
 
@@ -45,6 +46,7 @@ export function PlatformPage() {
   const layoutRef = useRef<HTMLDivElement>(null)
   const { t } = useTranslation()
 
+  // Hero
   const PlatformHero = (
     <Hero
       className="items-center-safe justify-center-safe text-center text-white xl:flex-row"
@@ -53,12 +55,12 @@ export function PlatformPage() {
       backgroundImg="/images/heroes/platform.avif"
       overlay
     >
-      <div className="flex flex-col gap-8 xl:text-left max-w-3xl">
+      <div className="flex max-w-3xl flex-col gap-8 xl:text-left">
         <div className="mx-auto flex h-fit w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md xl:mx-0">
           <Shield className="size-5" />
           <p className="text-sm">{t('platform.hero.badge')}</p>
         </div>
-        <h1 className="text-5xl sm:text-6xl">
+        <h1 className="text-5xl leading-tight sm:text-6xl">
           {t('platform.hero.title_line1')}{' '}
           <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
             {t('platform.hero.title_line2')}
@@ -79,8 +81,8 @@ export function PlatformPage() {
   )
 
   // Data
-  const keyFeautres = (
-    t('platform.key_features.items', { returnObjects: true }) as {
+  const featureShowcase = (
+    t('platform.feature_showcase.items', { returnObjects: true }) as {
       img_tag: string
       img_id: string
       title: string
@@ -89,20 +91,17 @@ export function PlatformPage() {
     }[]
   ).map((item) => ({ ...item, icon: Shield }))
 
-  const brokenDownFeatures = (
-    t('platform.fingertips.breakdown_items', { returnObjects: true }) as {
-      title: string
-      description: string
-    }[]
-  ).map((item) => ({ ...item, icon: '🚨' }))
-
-  const homeItems = (
-    t('platform.fingertips.home_items', { returnObjects: true }) as {
-      title: string
-      description: string
-    }[]
-  ).map((item) => ({ ...item, icon: '🚨' }))
-
+  const moduleColours = [
+    { bgColour: 'bg-red-500', hoverColour: 'hover:bg-red-700' },
+    { bgColour: 'bg-emerald-500', hoverColour: 'hover:bg-emerald-700' },
+    { bgColour: 'bg-cyan-500', hoverColour: 'hover:bg-cyan-700' },
+    { bgColour: 'bg-gray-500', hoverColour: 'hover:bg-gray-600' },
+    { bgColour: 'bg-pink-500', hoverColour: 'hover:bg-pink-700' },
+    { bgColour: 'bg-green-500', hoverColour: 'hover:bg-green-700' },
+    { bgColour: 'bg-blue-500', hoverColour: 'hover:bg-blue-700' },
+    { bgColour: 'bg-indigo-500', hoverColour: 'hover:bg-indigo-700' },
+    { bgColour: 'bg-amber-500', hoverColour: 'hover:bg-amber-700' },
+  ]
   const moduleIcons = [
     ShieldCheck,
     Layers,
@@ -118,9 +117,13 @@ export function PlatformPage() {
     t('platform.fingertips.module_items', { returnObjects: true }) as {
       title: string
     }[]
-  ).map((item, index) => ({ ...item, icon: moduleIcons[index] }))
+  ).map((item, index) => ({
+    ...item,
+    icon: moduleIcons[index],
+    colour: moduleColours[index],
+  }))
 
-  const differentiatorIcons = [Sparkles, Zap, Target, Clock, Globe, Lock]
+  const differentiatorIcons = [ListRestart, Wrench, Ungroup]
   const differentiators = (
     t('platform.differentiators.items', { returnObjects: true }) as {
       title: string
@@ -132,12 +135,19 @@ export function PlatformPage() {
     returnObjects: true,
   }) as string[]
 
-  const implementationIcons = [Map, Eye, Shield, Award, ScrollText, Rocket]
+  const implementationIcons = [
+    Map,
+    Eye,
+    Shield,
+    TriangleAlert,
+    ScrollText,
+    Rocket,
+  ]
   const implementationTrack = (
-    t('platform.implementation_track.step', {returnObjects: true}) as { 
+    t('platform.implementation_track.step', { returnObjects: true }) as {
       title: string
       icon: string
-      description: string 
+      description: string
     }[]
   ).map((item, index) => ({ ...item, icon: implementationIcons[index] }))
 
@@ -179,8 +189,7 @@ export function PlatformPage() {
       {/* Content */}
       <div className="bg-linear-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
         <div className="relative z-1 flex flex-col gap-32 px-4 py-16 text-white md:container md:mx-auto">
-          
-          {/* What makes us different */}
+          {/* Problems Solved */}
           <motion.div
             ref={diffsRef}
             initial="hidden"
@@ -204,10 +213,14 @@ export function PlatformPage() {
             </motion.div>
             <motion.div
               variants={staggerContainer}
-              className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
+              className="grid grid-cols-1 gap-4 md:grid-cols-4 lg:grid-cols-3"
             >
               {differentiators.map((diff, index) => (
-                <motion.div variants={fadeInUp} key={`diff-${index}`}>
+                <motion.div
+                  variants={fadeInUp}
+                  key={`diff-${index}`}
+                  className="flex justify-center md:col-span-2 md:last:col-start-2 lg:col-span-1 lg:last:col-start-auto"
+                >
                   <Card className="size-full bg-white/5 hover:border-lime-500/50 hover:bg-white/10">
                     <div className="mb-4 flex w-fit items-center justify-center rounded-xl bg-linear-to-br from-lime-500 to-teal-500 p-2">
                       <diff.icon className="size-6" />
@@ -220,62 +233,92 @@ export function PlatformPage() {
             </motion.div>
           </motion.div>
 
-
-          {/* Implementation Text */}
-          <div className ="flex flex-col items-center-safe justify-center-safe text-center gap-8 md:container md:max-w-4xl md:mx-auto">
+          {/* Modules at Your Fingertips */}
+          <motion.div
+            ref={brokenDownFeaturesRef}
+            initial="hidden"
+            animate={brokenDownFeaturesInView ? 'visible' : 'hidden'}
+            variants={staggerContainer}
+            className="flex flex-col items-center-safe gap-8"
+          >
             <motion.div
-              ref={implementationRef}
-              initial="hidden"
-              animate={implementationInView ? 'visible' : 'hidden'}
-              variants={staggerContainer}
-              className="flex flex-col items-center-safe gap-8 md:container md:mx-auto"
+              variants={fadeInUp}
+              className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
             >
-            <h1 className="text-4xl sm:text-5xl">
-              {t('platform.implementation.title_line1')}{' '}
-              <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
-                {t('platform.implementation.title_line2')}
-              </span>
-            </h1>
-            <p className="text-xl text-white/70">
-              {t('platform.implementation.subtitle')}
-            </p>
+              <h1 className="text-4xl sm:text-5xl">
+                {t('platform.fingertips.title_line1')}
+                <br />
+                <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
+                  {t('platform.fingertips.title_line2')}
+                </span>
+              </h1>
+              <p className="text-xl text-white/70">
+                {t('platform.fingertips.subtitle')}
+              </p>
             </motion.div>
-          </div>
-          
-          {/* Implementation Steps */}
-          <div className="max-w-4xl items-center-safe justify-center-safe mx-auto flex flex-col">
-            {implementationTrack.map((step, index) => (
-              <div className="flex flex-col items-center-safe justify-center-safe" key={`implementationStep-${index}`}>
-                <div className={`flex flex-col ${index % 2 == 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 items-center-safe relative`}>
-
-                {/* Number */}
-                <div className="shrink-0 relative z-10">
-                  <span className="text-9xl font-bold bg-linear-to-r from-lime-400 to-teal-400 bg-clip-text text-transparent">
-                    {String(index + 1)}
-                  </span>
+            <motion.div variants={staggerContainer} className="w-full">
+              <Card className="items-center-safe justify-center-safe gap-4 border-white/20 bg-white/5 backdrop-blur-md hover:border-lime-500/50 hover:bg-white/10">
+                <h1>{t('platform.fingertips.modules')}</h1>
+                <div className="grid w-full grid-cols-4 gap-4 md:grid-cols-10 xl:grid-cols-9">
+                  {module_items.map((module, index) => (
+                    <motion.div
+                      variants={scaleIn}
+                      key={`module-${index}`}
+                      className="flex justify-center max-xl:col-span-2 max-md:last:col-start-2 md:nth-6:col-start-2 xl:col-span-1 xl:nth-6:col-start-auto"
+                    >
+                      <div
+                        className={`flex w-full flex-col items-center-safe justify-center-safe gap-2 rounded-xl ${module.colour.bgColour} p-2 transition-all duration-300 ${module.colour.hoverColour}`}
+                      >
+                        <module.icon className="size-6" />
+                        <span>{module.title}</span>
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
+              </Card>
+            </motion.div>
+          </motion.div>
 
-                {/* Content */}
-                <Card className="p-6 gap-4 flex flex-col bg-white/5 hover:border-lime-500/50 hover:bg-white/10">
-                  <div className="flex items-center gap-4">
-                    <div className="flex size-12 items-center justify-center rounded-lg bg-linear-to-br from-lime-500 to-teal-500 shrink-0">
-                      <step.icon className="size-6" />
-                    </div>
-                    <h3 className="text-xl">{step.title}</h3>
-                  </div>
-                <p className="text-white/90">{step.description}</p>
-                </Card>
-              </div>
-
-              {/* Vertical Line */}
-                {index !== implementationTrack.length - 1 && (
-                  <div className="hidden md:block w-0.5 h-24 bg-linear-to-b from-lime-400/50 to-teal-400/50" />
-                )}
-              </div>
+          {/* Feature comparison */}
+          <motion.div
+            ref={comparisonRef}
+            initial="hidden"
+            animate={comparisonInView ? 'visible' : 'hidden'}
+            variants={staggerContainer}
+            className="flex flex-col items-center-safe gap-8"
+          >
+            <motion.div
+              variants={fadeInUp}
+              className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
+            >
+              <h1 className="text-4xl sm:text-5xl">
+                {t('platform.comparison.title_line1')}{' '}
+                <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
+                  {t('platform.comparison.title_line2')}
+                </span>
+              </h1>
+              <p className="text-xl text-white/70">
+                {t('platform.comparison.subtitle')}
+              </p>
+            </motion.div>
+            <motion.div
+              variants={staggerContainer}
+              className="grid w-full max-w-4xl grid-cols-1 gap-3 sm:grid-cols-2"
+            >
+              {comparisonPoints.map((point, index) => (
+                <motion.div
+                  variants={slideInLeft}
+                  key={`comparisonPoint-${index}`}
+                >
+                  <Card className="flex-row gap-2 hover:translate-x-2">
+                    <CheckCircle2 className="size-6 shrink-0 text-lime-500" />
+                    <p>{point}</p>
+                  </Card>
+                </motion.div>
               ))}
-            </div>
-          
-          
+            </motion.div>
+          </motion.div>
+
           {/* Key Features Showcase */}
           <div className="flex flex-col items-center-safe gap-8">
             <motion.div
@@ -286,17 +329,17 @@ export function PlatformPage() {
               className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
             >
               <h1 className="text-4xl sm:text-5xl">
-                {t('platform.key_features.title_line1')}{' '}
+                {t('platform.feature_showcase.title_line1')}{' '}
                 <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
-                  {t('platform.key_features.title_line2')}
+                  {t('platform.feature_showcase.title_line2')}
                 </span>
               </h1>
               <p className="text-xl text-white/70">
-                {t('platform.key_features.subtitle')}
+                {t('platform.feature_showcase.subtitle')}
               </p>
             </motion.div>
             <div className="flex flex-col md:gap-16">
-              {keyFeautres.map((feature, index) => {
+              {featureShowcase.map((feature, index) => {
                 const featureRef = useRef(null)
                 const featureInView = useInView(featureRef, {
                   once: true,
@@ -308,17 +351,17 @@ export function PlatformPage() {
                     initial="hidden"
                     animate={featureInView ? 'visible' : 'hidden'}
                     variants={fadeInUp}
-                    className={`md:min-h-none flex min-h-dvh flex-col justify-center-safe gap-4 md:min-h-min ${index % 2 == 0 ? 'md:flex-row' : 'md:flex-row-reverse'} md:items-center-safe`}
+                    className={`md:min-h-none flex flex-col justify-center-safe gap-4 max-md:pb-24 md:min-h-min ${index % 2 == 0 ? 'md:flex-row' : 'md:flex-row-reverse'} md:items-center-safe`}
                     key={`feature-${index}`}
                   >
-                    <Card className="relative bg-white/5 p-2 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10 md:basis-1/2">
+                    <Card className="relative max-w-lg bg-white/5 p-4 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10 md:basis-1/2">
                       <div className="absolute -top-3 -right-3 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 text-xs font-semibold">
                         {feature.img_tag}
                       </div>
                       <img
-                        src={feature.img_id === 'risk' ? riskImage : feature.img_id === 'capability' ? capabilityImage : roadmapImage}
-                        alt="Modelverse Platform"
-                        className="rounded-lg"
+                        src={feature.img_id}
+                        alt={feature.title}
+                        className="size-200/100 rounded-lg"
                       />
                     </Card>
                     <Card className="size-fit bg-white/5 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10 md:basis-1/2">
@@ -340,121 +383,87 @@ export function PlatformPage() {
             </div>
           </div>
 
-          {/* Dashboard Features Breakdown */}
-          <motion.div
-            ref={brokenDownFeaturesRef}
-            initial="hidden"
-            animate={brokenDownFeaturesInView ? 'visible' : 'hidden'}
-            variants={staggerContainer}
-            className="flex flex-col items-center-safe gap-8"
-          >
+          {/* Implementation Text */}
+          <div className="flex flex-col items-center-safe justify-center-safe gap-8 md:container md:mx-auto md:max-w-4xl">
             <motion.div
-              variants={fadeInUp}
-              className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
+              ref={implementationRef}
+              initial="hidden"
+              animate={implementationInView ? 'visible' : 'hidden'}
+              variants={staggerContainer}
+              className="flex flex-col items-center-safe gap-8 md:container md:mx-auto"
             >
               <h1 className="text-4xl sm:text-5xl">
-                {t('platform.fingertips.title_line1')}{' '}
+                {t('platform.implementation.title_line1')}{' '}
                 <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
-                  {t('platform.fingertips.title_line2')}
+                  {t('platform.implementation.title_line2')}
                 </span>
               </h1>
-              <p className="text-xl text-white/70">
-                {t('platform.fingertips.subtitle')}
+              <p className="text-center text-xl text-white/70">
+                {t('platform.implementation.subtitle')}
               </p>
             </motion.div>
-            <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-              {brokenDownFeatures.map((item, index) => (
-                <motion.div variants={fadeInUp} key={`fingertipItem-${index}`}>
-                  <Card className="bg-white/5 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10">
-                    <span className="mb-4 text-3xl">{item.icon}</span>
-                    <h3 className="mb-2 text-xl">{item.title}</h3>
-                    <p className="text-white/70">{item.description}</p>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-            <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-3">
-              {homeItems.map((item, index) => (
-                <motion.div variants={fadeInUp} key={`homeItem-${index}`}>
-                  <Card className="bg-white/5 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10">
-                    <span className="mb-4 text-3xl">{item.icon}</span>
-                    <h3 className="mb-2 text-xl">{item.title}</h3>
-                    <p className="text-white/70">{item.description}</p>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-            <motion.div variants={staggerContainer} className="w-full">
-              <Card className="items-center-safe justify-center-safe gap-4 border-lime-500/50 bg-lime-500/10 backdrop-blur-md hover:bg-lime-500/10">
-                <h1>{t('platform.fingertips.modules')}</h1>
-                <div className="grid w-full grid-cols-3 gap-4 md:grid-cols-5 lg:grid-cols-9">
-                  {module_items.map((module, index) => (
-                    <motion.div variants={scaleIn} key={`module-${index}`}>
-                      <div className="flex flex-col items-center-safe justify-center-safe gap-2 rounded-xl bg-white/5 p-2 transition-all duration-300 hover:bg-white/10">
-                        <module.icon className="size-6" />
-                        <span>{module.title}</span>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </Card>
-            </motion.div>
-          </motion.div>
 
-          {/* Feature comparison */}
-          <motion.div
-            ref={comparisonRef}
-            initial="hidden"
-            animate={comparisonInView ? 'visible' : 'hidden'}
-            variants={staggerContainer}
-            className="flex flex-col items-center-safe gap-8 lg:flex-row"
-          >
-            <motion.div
-              variants={staggerContainer}
-              className="flex flex-col gap-4"
-            >
-              <motion.div
-                variants={slideInLeft}
-                className="flex w-full flex-col gap-4"
-              >
-                <h1 className="text-4xl sm:text-5xl">
-                  {t('platform.comparison.title_line1')}{' '}
-                  <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
-                    {t('platform.comparison.title_line2')}
-                  </span>
-                </h1>
-                <p className="text-xl text-white/70">
-                  {t('platform.comparison.subtitle')}
-                </p>
-              </motion.div>
-              <motion.div
-                variants={staggerContainer}
-                className="grid grid-cols-1 gap-2 md:grid-cols-2"
-              >
-                {comparisonPoints.map((point, index) => (
+            {/* Implementation Steps */}
+            <div className="mx-auto flex max-w-4xl flex-col items-center-safe justify-center-safe">
+              {implementationTrack.map((step, index) => {
+                const stepRef = useRef(null)
+                const stepInView = useInView(stepRef, {
+                  once: true,
+                  amount: 0.4,
+                })
+                const isEven = index % 2 === 0
+                return (
                   <motion.div
-                    className="flex flex-row gap-2"
-                    variants={slideInLeft}
-                    key={`comparisonPoint-${index}`}
+                    ref={stepRef}
+                    initial="hidden"
+                    animate={stepInView ? 'visible' : 'hidden'}
+                    variants={staggerContainer}
+                    className="flex flex-col items-center-safe justify-center-safe"
+                    key={`implementationStep-${index}`}
                   >
-                    <div className="size-fit rounded-full bg-linear-to-r from-lime-500 to-teal-500 p-1">
-                      <Check className="size-4 shrink-0 text-white" />
+                    {/* Vertical Line - appears when this step enters view */}
+                    {index !== 0 && (
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={stepInView ? { opacity: 1 } : { opacity: 0 }}
+                        transition={{ duration: 0.8, delay: 0.6 }}
+                        className="hidden h-24 w-0.5 bg-linear-to-b from-lime-500/50 to-teal-500/50 md:block"
+                      />
+                    )}
+
+                    <div
+                      className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} relative items-center-safe gap-4 max-md:pt-8 md:gap-12`}
+                    >
+                      {/* Number */}
+                      <motion.div
+                        variants={isEven ? slideInLeft : slideInRight}
+                        className="relative z-10 shrink-0"
+                      >
+                        <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-9xl font-bold text-transparent">
+                          {String(index + 1)}
+                        </span>
+                      </motion.div>
+
+                      {/* Content */}
+                      <motion.div
+                        variants={isEven ? slideInRight : slideInLeft}
+                      >
+                        <Card className="flex flex-col gap-4 bg-white/5 p-6 hover:border-lime-500/50 hover:bg-white/10">
+                          <div className="flex items-center gap-4">
+                            <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-lime-500 to-teal-500">
+                              <step.icon className="size-6" />
+                            </div>
+                            <h3 className="text-xl">{step.title}</h3>
+                          </div>
+                          <p className="text-white/90">{step.description}</p>
+                        </Card>
+                      </motion.div>
                     </div>
-                    <span className="text-sm">{point}</span>
                   </motion.div>
-                ))}
-              </motion.div>
-            </motion.div>
-            <motion.div variants={slideInRight} className="">
-              <Card className="p-2 hover:bg-white/10">
-                <img
-                  src={platformImage}
-                  alt="Modelverse Platform"
-                  className="rounded-lg"
-                />
-              </Card>
-            </motion.div>
-          </motion.div>
+                )
+              })}
+            </div>
+          </div>
         </div>
       </div>
 

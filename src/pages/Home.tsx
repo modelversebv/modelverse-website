@@ -104,7 +104,7 @@ export function HomePage() {
           variants={staggerContainer}
           className="relative z-1 gap-16 py-20 md:container md:mx-auto lg:flex-row"
         >
-          <div className="flex flex-col gap-8 lg:basis-1/2">
+          <div className="flex flex-col gap-8 lg:w-1/2">
             {/* Badge */}
             <motion.div
               variants={fadeInUp}
@@ -119,9 +119,12 @@ export function HomePage() {
               variants={fadeInUp}
               className="flex flex-col text-5xl drop-shadow-lg sm:text-6xl lg:text-7xl"
             >
-              <span>Modelverse</span>
-              <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
+              <span className="pb-[0.15em]">Modelverse</span>
+              <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text pb-[0.15em] text-transparent">
                 {t('home.hero.title_line2')}
+              </span>
+              <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text pb-[0.15em] text-transparent">
+                {t('home.hero.title_line3')}
               </span>
             </motion.div>
 
@@ -153,19 +156,25 @@ export function HomePage() {
               className="flex flex-row flex-wrap gap-4"
             >
               <MotionCard variants={scaleIn}>
-                <h1 className="text-3xl whitespace-nowrap">125+</h1>
+                <h1 className="pb-1 text-center text-3xl whitespace-nowrap">
+                  125+
+                </h1>
                 <p className="w-full text-sm text-white/90">
                   {t('home.hero.stats.risk_domains')}
                 </p>
               </MotionCard>
               <MotionCard variants={scaleIn}>
-                <h1 className="text-3xl whitespace-nowrap">30+</h1>
+                <h1 className="pb-1 text-center text-3xl whitespace-nowrap">
+                  30+
+                </h1>
                 <p className="w-full text-sm text-white/90">
                   {t('home.hero.stats.standards')}
                 </p>
               </MotionCard>
               <MotionCard variants={scaleIn}>
-                <h1 className="text-3xl whitespace-nowrap">7</h1>
+                <h1 className="pb-1 text-center text-3xl whitespace-nowrap">
+                  7
+                </h1>
                 <p className="w-full text-sm text-white/90">
                   {t('home.hero.stats.country_footprints')}
                 </p>
