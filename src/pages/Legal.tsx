@@ -108,12 +108,12 @@ export function LegalPage() {
   }, [MDXComponent])
 
   const pageTitle = metadata.title
-    ? `${metadata.title}`
-    : 'Modelverse Legal Page Loading...'
+    ? `Modelverse | ${metadata.title}`
+    : `${t('legal.metadata.title_loading')}`
 
   const pageDescription = metadata.title
-    ? `The official ${metadata.title} document for the Modelverse GRC and Risk Compliance platform.`
-    : 'Loading essential legal and regulatory documentation...'
+    ? `${t('legal.metadata.description_line1')} ${metadata.title} ${t('legal.metadata.description_line2')}`
+    : `${t('legal.metadata.loading')}`
 
   return (
     <Layout ref={layoutRef}>

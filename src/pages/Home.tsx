@@ -80,11 +80,8 @@ export function HomePage() {
   return (
     <Layout home={true} ref={layoutRef}>
       {/* Metadata */}
-      <title>Modelverse | Cybersecurity Risk Management</title>
-      <meta
-        name="description"
-        content="Modelverse is a Dutch company that provides cybersecurity risk management solutions for organizations of all sizes."
-      />
+      <title>{t('home.metadata.title')}</title>
+      <meta name="description" content={t('home.metadata.description')} />
 
       {/* Landing Banner */}
       <div className="relative flex min-h-screen flex-col justify-center-safe p-4 text-white">
@@ -92,7 +89,7 @@ export function HomePage() {
           src="/images/heroes/home.avif"
           fetchPriority="high"
           alt=""
-          className="absolute inset-0 size-full object-cover object-[74%_center] md:object-[85%_center] lg:object-[70%_center]"
+          className="absolute inset-0 size-full object-cover object-[50%_center] md:object-[40%_center] lg:object-[55%_center]"
         />
         <div className="absolute inset-0 bg-linear-to-b from-slate-900/50 via-slate-900/30 to-slate-900" />
 
@@ -104,7 +101,7 @@ export function HomePage() {
           variants={staggerContainer}
           className="relative z-1 gap-16 py-20 md:container md:mx-auto lg:flex-row"
         >
-          <div className="flex flex-col gap-8 lg:w-1/2">
+          <div className="flex flex-col gap-8 md:w-xl xl:w-1/2">
             {/* Badge */}
             <motion.div
               variants={fadeInUp}

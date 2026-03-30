@@ -59,7 +59,7 @@ export function CasesPage() {
       <h1 className="text-5xl sm:text-6xl">
         {t('cases.hero.title_line1')}
         <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
-          <br/>
+          <br />
           {t('cases.hero.title_line2')}
         </span>
       </h1>
@@ -74,11 +74,8 @@ export function CasesPage() {
   return (
     <Layout cases={true} hero={CasesHero} ref={layoutRef}>
       {/* Metadata */}
-      <title>Modelverse Cases | Customer Success Stories</title>
-      <meta
-        name="description"
-        content="View how leading enterprises reduced audit time and achieved 100% compliance using the Modelverse Risk & Compliance SaaS platform."
-      />
+      <title>{t('cases.metadata.title')}</title>
+      <meta name="description" content={t('cases.metadata.description')} />
 
       {/* Content */}
       <div className="bg-linear-to-b from-slate-900 via-slate-800 to-slate-900">

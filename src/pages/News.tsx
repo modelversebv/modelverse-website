@@ -192,11 +192,8 @@ export function NewsPage() {
   return (
     <Layout news={true} hero={NewsHero} ref={layoutRef}>
       {/* Metadata */}
-      <title>Modelverse Blog | Cybersecurity Insights</title>
-      <meta
-        name="description"
-        content="Stay up-to-date with Modelverse's latest insights on GRC, compliance regulations, cybersecurity trends, and risk management best practices."
-      />
+      <title>{t('news.metadata.title')}</title>
+      <meta name="description" content={t('news.metadata.description')} />
 
       {/* Content */}
       <div className="bg-linear-to-b from-slate-900 via-slate-800 to-slate-900">

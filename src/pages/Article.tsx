@@ -61,7 +61,7 @@ export function ArticlePage() {
   }, [slug])
 
   const pageTitle = metadata.title
-    ? `Modelverse Blog | ${metadata.title}`
+    ? `Modelverse | ${metadata.title}`
     : 'Modelverse Blog Loading...'
   const pageDescription = metadata.summary || 'Loading article summary...'
 

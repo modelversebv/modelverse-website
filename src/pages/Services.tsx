@@ -33,7 +33,7 @@ export function ServicesPage() {
         <p className="text-sm">{t('services.hero.badge')}</p>
       </div>
       <h1 className="text-5xl sm:text-6xl">
-        {t('services.hero.title_line1')} 
+        {t('services.hero.title_line1')}
         <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
           {t('services.hero.title_line2')}
         </span>
@@ -44,10 +44,11 @@ export function ServicesPage() {
 
   // Data
   const services = [
-    { 
-      icon: Map, 
-      key: 'strategy', 
-      gradient: 'from-lime-500 to-emerald-500' },
+    {
+      icon: Map,
+      key: 'strategy',
+      gradient: 'from-lime-500 to-emerald-500',
+    },
     {
       icon: Award,
       key: 'certification',
@@ -63,10 +64,11 @@ export function ServicesPage() {
       key: 'programme',
       gradient: 'from-cyan-500 to-emerald-500',
     },
-    { 
+    {
       icon: Eye,
-      key: 'operations', 
-      gradient: 'from-teal-500 to-green-500' },
+      key: 'operations',
+      gradient: 'from-teal-500 to-green-500',
+    },
     {
       icon: Shield,
       key: 'resilience',
@@ -84,11 +86,8 @@ export function ServicesPage() {
   return (
     <Layout services={true} hero={ServicesHero} ref={layoutRef}>
       {/* Metadata */}
-      <title>Modelverse Solutions | Security Services</title>
-      <meta
-        name="description"
-        content="View how leading enterprises reduced audit time and achieved 100% compliance using the Modelverse Risk & Compliance SaaS platform."
-      />
+      <title>{t('services.metadata.title')}</title>
+      <meta name="description" content={t('services.metadata.description')} />
 
       {/* Content */}
       <div className="bg-linear-to-b from-slate-900 via-slate-800 to-slate-900 text-white">

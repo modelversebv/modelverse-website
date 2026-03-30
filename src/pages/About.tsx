@@ -198,11 +198,8 @@ export function AboutPage() {
   return (
     <Layout about={true} hero={AboutHero} ref={layoutRef}>
       {/* Metadata */}
-      <title>Modelverse | About Us</title>
-      <meta
-        name="description"
-        content="Learn about the Modelverse team, our mission to simplify GRC, and our commitment to building the future of enterprise risk management software."
-      />
+      <title>{t('about.metadata.title')}</title>
+      <meta name="description" content={t('about.metadata.description')} />
 
       {/* Content */}
       <div className="bg-linear-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
