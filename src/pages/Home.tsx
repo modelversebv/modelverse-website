@@ -1,4 +1,3 @@
-// import { useRef } from 'react'
 import { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -28,20 +27,22 @@ import {
 } from 'lucide-react'
 import { motion, useInView, useScroll, useTransform } from 'motion/react'
 
+// --- Constants ---
+const features = [
+  { icon: Compass, key: 'card1' },
+  { icon: Route, key: 'card2' },
+  { icon: Brain, key: 'card3' },
+  { icon: ClipboardList, key: 'card4' },
+  { icon: Merge, key: 'card5' },
+  { icon: Users, key: 'card6' },
+]
+
+// --- Page ---
 export function HomePage() {
   const layoutRef = useRef<HTMLDivElement>(null)
   const { t } = useTranslation()
 
-  // Cards
-  const features = [
-    { icon: Compass, key: 'card1' },
-    { icon: Route, key: 'card2' },
-    { icon: Brain, key: 'card3' },
-    { icon: ClipboardList, key: 'card4' },
-    { icon: Merge, key: 'card5' },
-    { icon: Users, key: 'card6' },
-  ]
-
+  // Merging translation items with static constants arrays
   const benefits = t('home.benefits.items', { returnObjects: true }) as string[]
 
   const testimonials = t('home.testimonials.items', {
@@ -54,7 +55,7 @@ export function HomePage() {
     video: string
   }[]
 
-  // Framer Motion
+  // Scroll-triggered animation refs — must stay in the component (hooks)
   const heroRef = useRef<HTMLDivElement>(null)
   const featuresRef = useRef<HTMLDivElement>(null)
   const benefitsRef = useRef<HTMLDivElement>(null)
@@ -133,7 +134,7 @@ export function HomePage() {
               {t('home.hero.description')}
             </motion.p>
 
-            {/* CTA Button */}
+            {/* Demo Button */}
             <motion.div variants={fadeInUp}>
               <button
                 className="group flex w-full cursor-pointer flex-row justify-center-safe gap-2 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:w-fit"

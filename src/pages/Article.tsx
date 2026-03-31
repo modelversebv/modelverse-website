@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
@@ -16,6 +15,8 @@ import {
 import { ArrowLeft, Calendar, User } from 'lucide-react'
 
 import { type MetaData } from './News'
+
+// --- Page ---
 
 export function ArticlePage() {
   const layoutRef = useRef<HTMLDivElement>(null)

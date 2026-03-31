@@ -18,18 +18,15 @@ import {
   Mail,
   MapPin,
   Phone,
-  Rocket,
   Shield,
 } from 'lucide-react'
 import { motion, useInView } from 'motion/react'
 
-export function ContactPage() {
-  const layoutRef = useRef<HTMLDivElement>(null)
-  const ctaRef = useRef<HTMLDivElement>(null)
-  const ctaInView = useInView(ctaRef, { once: true, amount: 0.2 })
-  const { t } = useTranslation()
+// --- Sub-components ---
 
-  const ContactHero = (
+function ContactHero() {
+  const { t } = useTranslation()
+  return (
     <Hero
       className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
       backgroundClassName="object-[center_80%]"
@@ -49,8 +46,14 @@ export function ContactPage() {
       <p className="text-xl text-white/70">{t('contact.hero.description')}</p>
     </Hero>
   )
+}
 
-  // Data
+// --- Page ---
+
+export function ContactPage() {
+  const layoutRef = useRef<HTMLDivElement>(null)
+  const { t } = useTranslation()
+
   const contactInfo = [
     {
       icon: Mail,
@@ -83,17 +86,18 @@ export function ContactPage() {
     answer: string
   }[]
 
-  // Framer Motion
   const detailsRef = useRef<HTMLDivElement>(null)
   const questionsRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<HTMLDivElement>(null)
+  const ctaRef = useRef<HTMLDivElement>(null)
 
   const detailsInView = useInView(detailsRef, { once: true, amount: 0.2 })
   const questionsInView = useInView(questionsRef, { once: true, amount: 0.2 })
   const mapsInView = useInView(mapRef, { once: true, amount: 0.2 })
+  const ctaInView = useInView(ctaRef, { once: true, amount: 0.2 })
 
   return (
-    <Layout hero={ContactHero} ref={layoutRef}>
+    <Layout hero={<ContactHero />} ref={layoutRef}>
       {/* Metadata */}
       <title>{t('contact.metadata.title')}</title>
       <meta name="description" content={t('contact.metadata.description')} />
@@ -170,7 +174,7 @@ export function ContactPage() {
           </div>
         </div>
 
-        {/* CTA (Call to action) */}
+        {/* CTA */}
         <div className="relative overflow-hidden bg-linear-to-br from-slate-900 via-teal-900 to-slate-900 p-4 py-16 text-white">
           <div className="absolute top-0 left-0 h-96 w-96 rounded-full bg-linear-to-br from-lime-500/20 to-teal-500/20 blur-3xl" />
           <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-linear-to-br from-teal-500/20 to-emerald-500/20 blur-3xl" />

@@ -17,11 +17,46 @@ import {
 } from 'lucide-react'
 import { motion, useInView } from 'motion/react'
 
-export function ServicesPage() {
-  const layoutRef = useRef<HTMLDivElement>(null)
-  const { t } = useTranslation()
+// --- Constants ---
 
-  const ServicesHero = (
+const services = [
+  {
+    icon: Map,
+    key: 'strategy',
+    gradient: 'from-lime-500 to-emerald-500',
+  },
+  {
+    icon: Award,
+    key: 'certification',
+    gradient: 'from-green-500 to-teal-500',
+  },
+  {
+    icon: ScrollText,
+    key: 'governance',
+    gradient: 'from-emerald-500 to-cyan-500',
+  },
+  {
+    icon: Rocket,
+    key: 'programme',
+    gradient: 'from-cyan-500 to-emerald-500',
+  },
+  {
+    icon: Eye,
+    key: 'operations',
+    gradient: 'from-teal-500 to-green-500',
+  },
+  {
+    icon: Shield,
+    key: 'resilience',
+    gradient: 'from-emerald-500 to-lime-500',
+  },
+]
+
+// --- Sub-components (just the hero section) ---
+
+function ServicesHero() {
+  const { t } = useTranslation()
+  return (
     <Hero
       className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
       backgroundClassName="object-center"
@@ -41,42 +76,15 @@ export function ServicesPage() {
       <p className="text-xl text-white/70">{t('services.hero.description')}</p>
     </Hero>
   )
+}
 
-  // Data
-  const services = [
-    {
-      icon: Map,
-      key: 'strategy',
-      gradient: 'from-lime-500 to-emerald-500',
-    },
-    {
-      icon: Award,
-      key: 'certification',
-      gradient: 'from-green-500 to-teal-500',
-    },
-    {
-      icon: ScrollText,
-      key: 'governance',
-      gradient: 'from-emerald-500 to-cyan-500',
-    },
-    {
-      icon: Rocket,
-      key: 'programme',
-      gradient: 'from-cyan-500 to-emerald-500',
-    },
-    {
-      icon: Eye,
-      key: 'operations',
-      gradient: 'from-teal-500 to-green-500',
-    },
-    {
-      icon: Shield,
-      key: 'resilience',
-      gradient: 'from-emerald-500 to-lime-500',
-    },
-  ]
+// --- Page ---
 
-  // Framer Motion
+export function ServicesPage() {
+  // Framer Motion animation refs (must stay in the component (hooks))
+  const layoutRef = useRef<HTMLDivElement>(null)
+  const { t } = useTranslation()
+
   const servicesRef = useRef<HTMLDivElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
 
@@ -84,7 +92,7 @@ export function ServicesPage() {
   const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 })
 
   return (
-    <Layout services={true} hero={ServicesHero} ref={layoutRef}>
+    <Layout services={true} hero={<ServicesHero />} ref={layoutRef}>
       {/* Metadata */}
       <title>{t('services.metadata.title')}</title>
       <meta name="description" content={t('services.metadata.description')} />

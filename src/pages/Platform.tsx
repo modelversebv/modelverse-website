@@ -22,6 +22,7 @@ import {
   Layers,
   ListRestart,
   Lock,
+  type LucideIcon,
   Map,
   Rocket,
   ScrollText,
@@ -37,12 +38,152 @@ import {
 } from 'lucide-react'
 import { motion, useInView } from 'motion/react'
 
-export function PlatformPage() {
-  const layoutRef = useRef<HTMLDivElement>(null)
-  const { t } = useTranslation()
+// --- Static Constants ---
 
-  // Hero
-  const PlatformHero = (
+const featureShowcaseIcons = [Sprout, Layers, ChartLine]
+
+const moduleColours = [
+  { bgColour: 'bg-red-500', hoverColour: 'hover:bg-red-700' },
+  { bgColour: 'bg-emerald-500', hoverColour: 'hover:bg-emerald-700' },
+  { bgColour: 'bg-cyan-500', hoverColour: 'hover:bg-cyan-700' },
+  { bgColour: 'bg-gray-500', hoverColour: 'hover:bg-gray-600' },
+  { bgColour: 'bg-pink-500', hoverColour: 'hover:bg-pink-700' },
+  { bgColour: 'bg-green-500', hoverColour: 'hover:bg-green-700' },
+  { bgColour: 'bg-blue-500', hoverColour: 'hover:bg-blue-700' },
+  { bgColour: 'bg-indigo-500', hoverColour: 'hover:bg-indigo-700' },
+  { bgColour: 'bg-amber-500', hoverColour: 'hover:bg-amber-700' },
+]
+
+const moduleIcons = [
+  ShieldCheck,
+  Layers,
+  Map,
+  FileText,
+  Stamp,
+  Lock,
+  ClipboardCheck,
+  Users,
+  BookOpen,
+]
+
+const problemIcons = [ListRestart, Wrench, Ungroup]
+
+const implementationIcons = [
+  Map,
+  Eye,
+  Shield,
+  TriangleAlert,
+  ScrollText,
+  Rocket,
+]
+
+// --- Sub-components ---
+
+function FeatureShowcaseItem({
+  feature,
+  index,
+}: {
+  feature: {
+    img_tag: string
+    img_id: string
+    title: string
+    description: string
+    improvement: string
+    icon: LucideIcon
+  }
+  index: number
+}) {
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true, amount: 0.4 })
+
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? 'visible' : 'hidden'}
+      variants={fadeInUp}
+      className={`md:min-h-none flex flex-col justify-center-safe gap-4 max-md:pb-24 md:min-h-min ${index % 2 == 0 ? 'md:flex-row' : 'md:flex-row-reverse'} md:items-center-safe`}
+    >
+      <Card className="relative max-w-lg bg-white/5 p-4 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10 md:basis-1/2">
+        <div className="absolute -top-3 -right-3 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 text-xs font-semibold">
+          {feature.img_tag}
+        </div>
+        <img
+          src={feature.img_id}
+          alt={feature.title}
+          className="size-200/100 rounded-lg"
+        />
+      </Card>
+      <Card className="size-fit bg-white/5 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10 md:basis-1/2">
+        <div className="mb-4 flex w-fit items-center justify-center rounded-xl bg-linear-to-br from-lime-500 to-teal-500 p-2">
+          <feature.icon className="size-6" />
+        </div>
+        <h3 className="mb-2 text-xl">{feature.title}</h3>
+        <p className="mb-4 text-white/70">{feature.description}</p>
+        <div className="flex flex-row items-center-safe gap-2 text-xs font-semibold text-lime-500">
+          <TrendingUp className="size-4" />
+          <span>{feature.improvement}</span>
+        </div>
+      </Card>
+    </motion.div>
+  )
+}
+
+function ImplementationStepItem({
+  step,
+  index,
+}: {
+  step: {
+    title: string
+    description: string
+    icon: LucideIcon
+  }
+  index: number
+}) {
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true, amount: 0.4 })
+
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? 'visible' : 'hidden'}
+      variants={fadeInUp}
+      className="flex flex-col items-center-safe justify-center-safe"
+    >
+      {index !== 0 && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="hidden h-24 w-0.5 bg-linear-to-b from-lime-500/50 to-teal-500/50 md:block"
+        />
+      )}
+      <div
+        className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} relative items-center-safe gap-4 max-md:pt-8 md:gap-12`}
+      >
+        <div className="relative z-10 shrink-0">
+          <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-9xl font-bold text-transparent">
+            {String(index + 1)}
+          </span>
+        </div>
+        <Card className="flex flex-col gap-4 bg-white/5 p-6 hover:border-lime-500/50 hover:bg-white/10">
+          <div className="flex items-center gap-4">
+            <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-lime-500 to-teal-500">
+              <step.icon className="size-6" />
+            </div>
+            <h3 className="text-xl">{step.title}</h3>
+          </div>
+          <p className="text-white/90">{step.description}</p>
+        </Card>
+      </div>
+    </motion.div>
+  )
+}
+
+function PlatformHero() {
+  const { t } = useTranslation()
+  return (
     <Hero
       className="items-center-safe justify-center-safe text-center text-white xl:flex-row"
       backgroundClassName="object-center"
@@ -74,9 +215,15 @@ export function PlatformPage() {
       </Card>
     </Hero>
   )
+}
 
-  // Data
-  const featureShowcaseIcons = [Sprout, Layers, ChartLine]
+// --- Page component ---
+
+export function PlatformPage() {
+  const layoutRef = useRef<HTMLDivElement>(null)
+  const { t } = useTranslation()
+
+  // Merging translation items with static constants arrays
   const featureShowcase = (
     t('platform.feature_showcase.items', { returnObjects: true }) as {
       img_tag: string
@@ -87,28 +234,6 @@ export function PlatformPage() {
     }[]
   ).map((item, index) => ({ ...item, icon: featureShowcaseIcons[index] }))
 
-  const moduleColours = [
-    { bgColour: 'bg-red-500', hoverColour: 'hover:bg-red-700' },
-    { bgColour: 'bg-emerald-500', hoverColour: 'hover:bg-emerald-700' },
-    { bgColour: 'bg-cyan-500', hoverColour: 'hover:bg-cyan-700' },
-    { bgColour: 'bg-gray-500', hoverColour: 'hover:bg-gray-600' },
-    { bgColour: 'bg-pink-500', hoverColour: 'hover:bg-pink-700' },
-    { bgColour: 'bg-green-500', hoverColour: 'hover:bg-green-700' },
-    { bgColour: 'bg-blue-500', hoverColour: 'hover:bg-blue-700' },
-    { bgColour: 'bg-indigo-500', hoverColour: 'hover:bg-indigo-700' },
-    { bgColour: 'bg-amber-500', hoverColour: 'hover:bg-amber-700' },
-  ]
-  const moduleIcons = [
-    ShieldCheck,
-    Layers,
-    Map,
-    FileText,
-    Stamp,
-    Lock,
-    ClipboardCheck,
-    Users,
-    BookOpen,
-  ]
   const moduleItems = (
     t('platform.fingertips.module_items', { returnObjects: true }) as {
       title: string
@@ -119,7 +244,6 @@ export function PlatformPage() {
     colour: moduleColours[index],
   }))
 
-  const problemIcons = [ListRestart, Wrench, Ungroup]
   const problems = (
     t('platform.problems.items', { returnObjects: true }) as {
       title: string
@@ -131,14 +255,6 @@ export function PlatformPage() {
     returnObjects: true,
   }) as string[]
 
-  const implementationIcons = [
-    Map,
-    Eye,
-    Shield,
-    TriangleAlert,
-    ScrollText,
-    Rocket,
-  ]
   const implementationTrack = (
     t('platform.implementation_track.step', { returnObjects: true }) as {
       title: string
@@ -146,7 +262,7 @@ export function PlatformPage() {
     }[]
   ).map((item, index) => ({ ...item, icon: implementationIcons[index] }))
 
-  // Framer Motion
+  // Framer Motion animation refs (must stay in the component (hooks))
   const problemsRef = useRef<HTMLDivElement>(null)
   const keyFeaturesRef = useRef<HTMLDivElement>(null)
   const modulesRef = useRef<HTMLDivElement>(null)
@@ -171,12 +287,12 @@ export function PlatformPage() {
   const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 })
 
   return (
-    <Layout platform={true} hero={PlatformHero} ref={layoutRef}>
+    <Layout platform={true} hero={<PlatformHero />} ref={layoutRef}>
       {/* Metadata */}
       <title>{t('platform.metadata.title')}</title>
       <meta name="description" content={t('platform.metadata.description')} />
 
-      {/* Content */}
+      {/* Page content */}
       <div className="bg-linear-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
         <div className="relative z-1 flex flex-col gap-32 px-4 py-16 text-white md:container md:mx-auto">
           {/* Problems Solved */}
@@ -329,46 +445,13 @@ export function PlatformPage() {
               </p>
             </motion.div>
             <div className="flex flex-col md:gap-16">
-              {featureShowcase.map((feature, index) => {
-                const featureRef = useRef(null)
-                const featureInView = useInView(featureRef, {
-                  once: true,
-                  amount: 0.4,
-                })
-                return (
-                  <motion.div
-                    ref={featureRef}
-                    initial="hidden"
-                    animate={featureInView ? 'visible' : 'hidden'}
-                    variants={fadeInUp}
-                    className={`md:min-h-none flex flex-col justify-center-safe gap-4 max-md:pb-24 md:min-h-min ${index % 2 == 0 ? 'md:flex-row' : 'md:flex-row-reverse'} md:items-center-safe`}
-                  >
-                    <Card className="relative max-w-lg bg-white/5 p-4 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10 md:basis-1/2">
-                      <div className="absolute -top-3 -right-3 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 text-xs font-semibold">
-                        {feature.img_tag}
-                      </div>
-                      <img
-                        src={feature.img_id}
-                        alt={feature.title}
-                        className="size-200/100 rounded-lg"
-                      />
-                    </Card>
-                    <Card className="size-fit bg-white/5 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10 md:basis-1/2">
-                      <div className="mb-4 flex w-fit items-center justify-center rounded-xl bg-linear-to-br from-lime-500 to-teal-500 p-2">
-                        <feature.icon className="size-6" />
-                      </div>
-                      <h3 className="mb-2 text-xl">{feature.title}</h3>
-                      <p className="mb-4 text-white/70">
-                        {feature.description}
-                      </p>
-                      <div className="flex flex-row items-center-safe gap-2 text-xs font-semibold text-lime-500">
-                        <TrendingUp className="size-4" />
-                        <span>{feature.improvement}</span>
-                      </div>
-                    </Card>
-                  </motion.div>
-                )
-              })}
+              {featureShowcase.map((feature, index) => (
+                <FeatureShowcaseItem
+                  key={index}
+                  feature={feature}
+                  index={index}
+                />
+              ))}
             </div>
           </div>
 
@@ -394,56 +477,9 @@ export function PlatformPage() {
 
             {/* Implementation Steps */}
             <div className="mx-auto flex max-w-4xl flex-col items-center-safe justify-center-safe">
-              {implementationTrack.map((step, index) => {
-                const stepRef = useRef(null)
-                const stepInView = useInView(stepRef, {
-                  once: true,
-                  amount: 0.4,
-                })
-
-                return (
-                  <motion.div
-                    ref={stepRef}
-                    initial="hidden"
-                    animate={stepInView ? 'visible' : 'hidden'}
-                    variants={fadeInUp}
-                    key={index}
-                    className="flex flex-col items-center-safe justify-center-safe"
-                  >
-                    {/* Vertical Line */}
-                    {index !== 0 && (
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={stepInView ? { opacity: 1 } : { opacity: 0 }}
-                        transition={{ duration: 0.8, delay: 0.6 }}
-                        className="hidden h-24 w-0.5 bg-linear-to-b from-lime-500/50 to-teal-500/50 md:block"
-                      />
-                    )}
-
-                    <div
-                      className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} relative items-center-safe gap-4 max-md:pt-8 md:gap-12`}
-                    >
-                      {/* Number */}
-                      <div className="relative z-10 shrink-0">
-                        <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-9xl font-bold text-transparent">
-                          {String(index + 1)}
-                        </span>
-                      </div>
-
-                      {/* Content */}
-                      <Card className="flex flex-col gap-4 bg-white/5 p-6 hover:border-lime-500/50 hover:bg-white/10">
-                        <div className="flex items-center gap-4">
-                          <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-lime-500 to-teal-500">
-                            <step.icon className="size-6" />
-                          </div>
-                          <h3 className="text-xl">{step.title}</h3>
-                        </div>
-                        <p className="text-white/90">{step.description}</p>
-                      </Card>
-                    </div>
-                  </motion.div>
-                )
-              })}
+              {implementationTrack.map((step, index) => (
+                <ImplementationStepItem key={index} step={step} index={index} />
+              ))}
             </div>
           </div>
         </div>
