@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
@@ -14,6 +13,8 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
 import { ArrowLeft, FileText } from 'lucide-react'
+
+// --- Constants ---
 
 type MetaData = {
   title: string
@@ -30,6 +31,8 @@ type TocEntry = {
 export const legalPages = import.meta.glob('@/legal/*.mdx', {
   eager: true,
 })
+
+// --- Page ---
 
 export function LegalPage() {
   const layoutRef = useRef<HTMLDivElement>(null)
@@ -108,12 +111,12 @@ export function LegalPage() {
   }, [MDXComponent])
 
   const pageTitle = metadata.title
-    ? `${metadata.title}`
-    : 'Modelverse Legal Page Loading...'
+    ? `Modelverse | ${metadata.title}`
+    : `${t('legal.metadata.title_loading')}`
 
   const pageDescription = metadata.title
-    ? `The official ${metadata.title} document for the Modelverse GRC and Risk Compliance platform.`
-    : 'Loading essential legal and regulatory documentation...'
+    ? `${t('legal.metadata.description_line1')} ${metadata.title} ${t('legal.metadata.description_line2')}`
+    : `${t('legal.metadata.loading')}`
 
   return (
     <Layout ref={layoutRef}>

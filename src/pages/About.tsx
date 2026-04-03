@@ -1,4 +1,3 @@
-// Importing pfps
 import { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -34,11 +33,20 @@ import {
 } from 'lucide-react'
 import { motion, useInView } from 'motion/react'
 
-export function AboutPage() {
-  const layoutRef = useRef<HTMLDivElement>(null)
-  const { t } = useTranslation()
+// --- Constants ---
 
-  const AboutHero = (
+const values = [
+  { icon: User, key: 'customer_first' },
+  { icon: Shield, key: 'security_by_design' },
+  { icon: Eye, key: 'transparency' },
+  { icon: Book, key: 'continuous_learning' },
+]
+
+// --- Sub-components ---
+
+function AboutHero() {
+  const { t } = useTranslation()
+  return (
     <Hero
       className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
       backgroundClassName="object-[center_70%]"
@@ -58,14 +66,13 @@ export function AboutPage() {
       <p className="text-xl text-white/70">{t('about.hero.description')}</p>
     </Hero>
   )
+}
 
-  // Data
-  const values = [
-    { icon: User, key: 'customer_first' },
-    { icon: Shield, key: 'security_by_design' },
-    { icon: Eye, key: 'transparency' },
-    { icon: Book, key: 'continuous_learning' },
-  ]
+// --- Page ---
+
+export function AboutPage() {
+  const layoutRef = useRef<HTMLDivElement>(null)
+  const { t } = useTranslation()
 
   const teamMembers = [
     {
@@ -188,14 +195,11 @@ export function AboutPage() {
     },
   ]
 
-  // Framer Motion
-  // Refs for scroll-triggered animations
   const storyRef = useRef<HTMLDivElement>(null)
   const valuesRef = useRef<HTMLDivElement>(null)
   const teamRef = useRef<HTMLDivElement>(null)
   const ambassadorsRef = useRef<HTMLDivElement>(null)
 
-  // Track visibility for animations
   const storyInView = useInView(storyRef, { once: true, amount: 0.2 })
   const valuesInView = useInView(valuesRef, { once: true, amount: 0.2 })
   const teamInView = useInView(teamRef, { once: true, margin: '-100px' })
@@ -205,13 +209,10 @@ export function AboutPage() {
   })
 
   return (
-    <Layout about={true} hero={AboutHero} ref={layoutRef}>
+    <Layout about={true} hero={<AboutHero />} ref={layoutRef}>
       {/* Metadata */}
-      <title>Modelverse | About Us</title>
-      <meta
-        name="description"
-        content="Learn about the Modelverse team, our mission to simplify GRC, and our commitment to building the future of enterprise risk management software."
-      />
+      <title>{t('about.metadata.title')}</title>
+      <meta name="description" content={t('about.metadata.description')} />
 
       {/* Content */}
       <div className="bg-linear-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
@@ -308,8 +309,6 @@ export function AboutPage() {
             </motion.div>
           </motion.div>
 
-          {/* Maybe add Milestones */}
-
           {/* Team */}
           <motion.div
             ref={teamRef}
@@ -330,7 +329,7 @@ export function AboutPage() {
 
             <motion.div
               variants={staggerContainer}
-              className="grid max-w-7xl grid-cols-1 gap-4 self-center sm:grid-cols-2 lg:grid-cols-3"
+              className="grid max-w-7xl grid-cols-1 gap-4 self-center md:grid-cols-3"
             >
               {teamMembers.map((member, index) => (
                 <motion.div variants={scaleIn} key={index}>
