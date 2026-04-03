@@ -353,7 +353,7 @@
       {
         "name": "Provincie Flevoland",
         "about": "The Province of Flevoland is the newest and smallest province of the Netherlands, and is the governing authority for the region's (critical) infrastructure, the environment, spatial planning and other areas of public management.",
-        "case": "We are piloting Modelverse for Flevoland to improve their risk management, increasing the effectiveness of the implemented cybersecurity measures and saving time for the IT, OT and data privacy teams, as well as the CISO.",
+        "case": "We are supporting Flevoland with Modelverse to improve their risk management, increasing the effectiveness of the implemented cybersecurity measures and saving time for the IT, OT and data privacy teams, as well as the CISO.",
         "url": "https://www.flevoland.nl/"
       },
       {
@@ -375,9 +375,9 @@
         "url": "https://1801.nl/"
       },
       {
-        "name": "NPI",
-        "about": "The NPI is the Dutch training provider for physiotherapists. They support paramedical professionals in lifelong learning with courses, training, webinars, e-learning and scientific information services.",
-        "case": "NPI uses Modelverse to manage all their information. Compliance is also managed using the functionality for security policies. This way policies can be easily maintained and published to the entire staff.",
+        "name": "NPi",
+        "about": "The NPi is the Dutch training provider for physiotherapists. They support paramedical professionals in lifelong learning with courses, training, webinars, e-learning and scientific information services.",
+        "case": "NPi uses Modelverse to manage all their information. Compliance is also managed using the functionality for security policies. This way policies can be easily maintained and published to the entire staff.",
         "url": "https://www.npi.nl/"
       },
       {
