@@ -357,28 +357,10 @@
         "url": "https://www.flevoland.nl/"
       },
       {
-        "name": "PharmaPartners",
-        "about": "Pharmapartners is a leading company in the provision of integrated healthcare systems in the Netherlands, ensuring healthcare providers have access to reliable, up-to-date and complete (patient) information.",
-        "case": "We are supporting PharmaPartners with a strategic cybersecurity plan and a plan ensuring patient safety.",
-        "url": "https://www.pharmapartners.nl/"
-      },
-      {
-        "name": "Thebe",
-        "about": "Thebe provides district nursing, specialist care, home support and day care in 19 municipalities in the Western and central parts of Brabant. They also provide care in 25 residential care centres in the region.",
-        "case": "Modelverse is being piloted for Thebe's digital risk management.",
-        "url": "https://www.thebe.nl/"
-      },
-      {
-        "name": "1801",
-        "about": "1801 advises schools and ROCs on learning, teaching and organising education. They support education professionals with all the challenges that education entails, bringing stalled processes in motion and solving strategic issues.",
-        "case": "Modelverse is used to manage information security and saves the CISO and IT team substantial time and effort.",
-        "url": "https://1801.nl/"
-      },
-      {
-        "name": "NPi",
-        "about": "The NPi is the Dutch training provider for physiotherapists. They support paramedical professionals in lifelong learning with courses, training, webinars, e-learning and scientific information services.",
-        "case": "NPi uses Modelverse to manage all their information. Compliance is also managed using the functionality for security policies. This way policies can be easily maintained and published to the entire staff.",
-        "url": "https://www.npi.nl/"
+        "name": "Escola Andersen",
+        "about": "Escola Andersen, backed by more than 50 years of experience, is a Spanish educational center approved by the Generalitat de Catalunya where education is provided from Early Childhood (3 years) to 4th year of Compulsory Secondary Education (16 years).",
+        "case": "We are supporting Escola Andersen to strengthen their cybersecurity and privacy by ensuring their compliance with GDPR and Spanish national security laws specific for educational centers.",
+        "url": "https://escolaandersen.com/"
       },
       {
         "name": "Nedato",
@@ -393,9 +375,33 @@
         "url": "https://newforrest.nl/"
       },
       {
+        "name": "1801",
+        "about": "1801 advises schools and ROCs on learning, teaching and organising education. They support education professionals with all the challenges that education entails, bringing stalled processes in motion and solving strategic issues.",
+        "case": "Modelverse is used to manage information security and saves the CISO and IT team substantial time and effort.",
+        "url": "https://1801.nl/"
+      },
+      {
+        "name": "PharmaPartners",
+        "about": "Pharmapartners is a leading company in the provision of integrated healthcare systems in the Netherlands, ensuring healthcare providers have access to reliable, up-to-date and complete (patient) information.",
+        "case": "We are supporting PharmaPartners with a strategic cybersecurity plan and a plan ensuring patient safety.",
+        "url": "https://www.pharmapartners.nl/"
+      },
+      {
+        "name": "Thebe",
+        "about": "Thebe provides district nursing, specialist care, home support and day care in 19 municipalities in the Western and central parts of Brabant. They also provide care in 25 residential care centres in the region.",
+        "case": "Modelverse is being piloted for Thebe's digital risk management.",
+        "url": "https://www.thebe.nl/"
+      },
+      {
+        "name": "NPi",
+        "about": "The NPi is the Dutch training provider for physiotherapists. They support paramedical professionals in lifelong learning with courses, training, webinars, e-learning and scientific information services.",
+        "case": "NPi uses Modelverse to manage all their information. Compliance is also managed using the functionality for security policies. This way policies can be easily maintained and published to the entire staff.",
+        "url": "https://www.npi.nl/"
+      },
+      {
         "name": "LeydenJar Technology",
         "about": "LeydenJar Technology is a scale-up that developed a high-performing pure silicon anode for batteries, boosting the energy capacity of batteries by 50%. They are developing their first production plant in the Eindhoven region.",
-        "case": "We helped LeydenJar to protect the intellectual property of their core technology using Modelverse.",
+        "case": "We are helping LeydenJar to protect the intellectual property of their core technology using Modelverse.",
         "url": "https://leyden-jar.com/"
       }
     ],
