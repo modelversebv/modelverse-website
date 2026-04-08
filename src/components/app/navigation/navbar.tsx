@@ -20,6 +20,10 @@ const LANGUAGES = [
   { code: 'nl-NL', label: 'Dutch', short: 'NL', flagCode: 'nl' },
   { code: 'en-US', label: 'English', short: 'EN', flagCode: 'gb' },
 ]
+
+export function NavBar({
+  home = false,
+  news = false,
   cases = false,
   platform = false,
   services = false,
