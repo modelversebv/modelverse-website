@@ -52,7 +52,7 @@
       "items": {
         "card1": {
           "title": "Strategic Risk Management",
-          "description": "We help you manage risks and opportunities across three levels: organisation, assets, and findings. Capability driven roadmaps give you a clear understanding of where to invest. Say goodbye to bloated risk registers with hundreds of vague entries."
+          "description": "We help you manage risks across three levels: organisation, assets, and findings. Capability driven roadmaps give you a clear understanding of where to invest. Say goodbye to bloated risk registers with hundreds of vague entries."
         },
         "card2": {
           "title": "Streamlined Compliance",
@@ -110,7 +110,7 @@
     },
     "cta": {
       "badge": "Launch Your Security Journey",
-      "title": "Ready to secure your future?",
+      "title": "Ready to Secure your Future?",
       "subtitle": "Join the organisations that trust Modelverse to manage their risks today.",
       "button": "Get Started"
     }
@@ -122,7 +122,7 @@
     },
     "hero": {
       "badge": "We secure. You succeed!",
-      "title_line1": "Cybersecurity",
+      "title_line1": "Cybersecurity ",
       "title_line2": "Made Easy",
       "description": "Start using a unified platform to manage cybersecurity risks, compliance and security governance across your entire organisation. Gain full visibility over your cybersecurity posture while simplifying regulatory compliance and operational resilience through intelligent automation."
     },
@@ -136,7 +136,7 @@
           "description": "Risk management practitioners often rely on spreadsheets and documents with vague entries and inconsistent data, leading to inefficiency and errors. Modelverse automates and simplifies these processes, saving you countless time and effort."
         },
         {
-          "title": "No More Manual Compliance Management",
+          "title": "No more Manual Compliance",
           "description": "Manual compliance management is time-consuming and difficult to maintain, especially as organisations grow. Modelverse streamlines this process with automated workflows and reporting, so that even small teams can manage compliance effectively."
         },
         {
@@ -146,7 +146,7 @@
       ]
     },
     "fingertips": {
-      "title_line1": "Enterprise-Grade Modules ",
+      "title_line1": "Enterprise-grade Modules ",
       "title_line2": "at Your Fingertips",
       "subtitle": "Modelverse has all the features you need to manage your cybersecurity risks and compliance, organised into 9 integrated modules that work together seamlessly to provide you with a comprehensive solution for your cybersecurity needs.",
       "modules": "9 Integrated Modules",
@@ -171,7 +171,7 @@
         "Role-based task management and accountability",
         "Continuously updated compliance frameworks",
         "Comprehensive and interactive visualisations",
-        "Custom template generation",
+        "Custom template document generation",
         "AI-powered recommendations",
         "Single location for all your audit needs",
         "Professional risk and control libraries"
@@ -180,7 +180,7 @@
     "feature_showcase": {
       "title_line1": "Built for the ",
       "title_line2": "Future of Compliance",
-      "subtitle": "Every feature designed to save you time, reduce risk, and simplify compliance management",
+      "subtitle": "Every feature is designed to save you time, reduce risk, and simplify compliance management. Here is a showcase of some of the features that we provide to help you manage your cybersecurity risks and compliance with confidence.",
       "items": [
         {
           "img_tag": "Capability Overview",
@@ -218,7 +218,7 @@
         },
         {
           "title": "Landscape Assessment & Risk Impact Analysis",
-          "description": "Together we map your cybersecurity infrastructure, tools, and applications. We then analyse the impact of the most critical risks for your organisation. Understanding the landscape and the impact of risks is crucial for guiding your cybersecurity journey and making informed decisions about where to invest resources with maximum effectiveness."
+          "description": "Together we map your cybersecurity infrastructure, tools, and applications. We then analyse the potential impact of the most critical risks for your organisation. Understanding the landscape and the impact of risks is crucial for guiding your cybersecurity journey and making informed decisions about where to invest resources with maximum effectiveness."
         },
         {
           "title": "Security Capabilities & Maturity Level",
@@ -248,7 +248,7 @@
   "services": {
     "metadata": {
       "title": "Modelverse | Consultancy Services",
-      "description": "View how leading enterprises reduced audit time and achieved 100% compliance using the Modelverse Risk & Compliance SaaS platform."
+      "description": "Modelverse offers a range of comprehensive security consultancy services that are designed to mature your organisation's cybersecurity posture. Select the services you need, and leverage the expertise of our consultants to reach your goals at your pace."
     },
     "hero": {
       "badge": "We secure. You succeed!",
@@ -353,32 +353,8 @@
       {
         "name": "Provincie Flevoland",
         "about": "The Province of Flevoland is the newest and smallest province of the Netherlands, and is the governing authority for the region's (critical) infrastructure, the environment, spatial planning and other areas of public management.",
-        "case": "We are supporting Flevoland with Modelverse to improve their risk management, increasing the effectiveness of the implemented cybersecurity measures and saving time for the IT, OT and data privacy teams, as well as the CISO.",
+        "case": "We are piloting Modelverse for Flevoland to improve their risk management, increasing the effectiveness of the implemented cybersecurity measures and saving time for the IT, OT and data privacy teams, as well as the CISO.",
         "url": "https://www.flevoland.nl/"
-      },
-      {
-        "name": "Escola Andersen",
-        "about": "Escola Andersen, backed by more than 50 years of experience, is a Spanish educational center approved by the Generalitat de Catalunya where education is provided from Early Childhood (3 years) to 4th year of Compulsory Secondary Education (16 years).",
-        "case": "We are supporting Escola Andersen to strengthen their cybersecurity and privacy by ensuring their compliance with GDPR and Spanish national security laws specific for educational centers.",
-        "url": "https://escolaandersen.com/"
-      },
-      {
-        "name": "Nedato",
-        "about": "Nedato is the largest Dutch cooperative of potato farmers. They act as a wholesaler connecting potato farmers with the fried potato processing industry.",
-        "case": "Nedato is using the digital risk management functionality of Modelverse.",
-        "url": "https://nedato.nl/"
-      },
-      {
-        "name": "NewForrest Fingerfood",
-        "about": "NewForrest Fingerfood is a Dutch company that specialises in producing frozen finger foods, mini snacks, and appetisers for both the retail and food service markets.",
-        "case": "NewForrest is using the digital risk management functionality of Modelverse.",
-        "url": "https://newforrest.nl/"
-      },
-      {
-        "name": "1801",
-        "about": "1801 advises schools and ROCs on learning, teaching and organising education. They support education professionals with all the challenges that education entails, bringing stalled processes in motion and solving strategic issues.",
-        "case": "Modelverse is used to manage information security and saves the CISO and IT team substantial time and effort.",
-        "url": "https://1801.nl/"
       },
       {
         "name": "PharmaPartners",
@@ -393,15 +369,33 @@
         "url": "https://www.thebe.nl/"
       },
       {
-        "name": "NPi",
-        "about": "The NPi is the Dutch training provider for physiotherapists. They support paramedical professionals in lifelong learning with courses, training, webinars, e-learning and scientific information services.",
-        "case": "NPi uses Modelverse to manage all their information. Compliance is also managed using the functionality for security policies. This way policies can be easily maintained and published to the entire staff.",
+        "name": "1801",
+        "about": "1801 advises schools and ROCs on learning, teaching and organising education. They support education professionals with all the challenges that education entails, bringing stalled processes in motion and solving strategic issues.",
+        "case": "Modelverse is used to manage information security and saves the CISO and IT team substantial time and effort.",
+        "url": "https://1801.nl/"
+      },
+      {
+        "name": "NPI",
+        "about": "The NPI is the Dutch training provider for physiotherapists. They support paramedical professionals in lifelong learning with courses, training, webinars, e-learning and scientific information services.",
+        "case": "NPI uses Modelverse to manage all their information. Compliance is also managed using the functionality for security policies. This way policies can be easily maintained and published to the entire staff.",
         "url": "https://www.npi.nl/"
+      },
+      {
+        "name": "Nedato",
+        "about": "Nedato is the largest Dutch cooperative of potato farmers. They act as a wholesaler connecting potato farmers with the fried potato processing industry.",
+        "case": "Nedato is using the digital risk management functionality of Modelverse.",
+        "url": "https://nedato.nl/"
+      },
+      {
+        "name": "NewForrest Fingerfood",
+        "about": "NewForrest Fingerfood is a Dutch company that specialises in producing frozen finger foods, mini snacks, and appetisers for both the retail and food service markets.",
+        "case": "NewForrest is using the digital risk management functionality of Modelverse.",
+        "url": "https://newforrest.nl/"
       },
       {
         "name": "LeydenJar Technology",
         "about": "LeydenJar Technology is a scale-up that developed a high-performing pure silicon anode for batteries, boosting the energy capacity of batteries by 50%. They are developing their first production plant in the Eindhoven region.",
-        "case": "We are helping LeydenJar to protect the intellectual property of their core technology using Modelverse.",
+        "case": "We helped LeydenJar to protect the intellectual property of their core technology using Modelverse.",
         "url": "https://leyden-jar.com/"
       }
     ],
