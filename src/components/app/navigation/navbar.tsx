@@ -195,6 +195,7 @@ export function NavBar({
                   onClick={() => changeLanguage(lang.code)}
                 >
                   <span className={`fi fi-${lang.flagCode} mr-1`} />
+                  {lang.label}
                 </button>
               )
             )}
