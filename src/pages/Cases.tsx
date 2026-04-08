@@ -8,6 +8,7 @@ import {
   staggerContainer,
 } from '@/animations/variants'
 import eighteenZeroOneImage from '@/assets/new_logos/1801.jpg'
+import andersenImage from '@/assets/new_logos/andersen.jpg'
 import fellowmindImage from '@/assets/new_logos/fellowmind.jpg'
 import leydenjarImage from '@/assets/new_logos/leydan-jar.jpg'
 import nedatoImage from '@/assets/new_logos/nedato.jpg'
@@ -34,12 +35,13 @@ type CaseStudy = {
 const logos = [
   fellowmindImage,
   provincieImage,
-  pharmapartnersImage,
-  thebeImage,
-  eighteenZeroOneImage,
-  npiImage,
+  andersenImage,
   nedatoImage,
   newforrestImage,
+  eighteenZeroOneImage,
+  pharmapartnersImage,
+  thebeImage,
+  npiImage,
   leydenjarImage,
 ]
 
