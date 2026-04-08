@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 
-import { Globe } from 'lucide-react'
-
 import { Dropdown } from './dropdown'
 import { DropdownLink } from './dropdownLink'
 import { NavLink } from './navlink'
@@ -19,8 +17,8 @@ type NavBarProps = {
 }
 
 const LANGUAGES = [
-  { code: 'nl-NL', label: 'Dutch', short: 'NL' },
-  { code: 'en-US', label: 'English', short: 'EN' },
+  { code: 'nl-NL', label: 'Dutch', short: 'NL', flagCode: 'nl' },
+  { code: 'en-US', label: 'English', short: 'EN', flagCode: 'gb' },
 ]
 
 export function NavBar({
@@ -66,7 +64,7 @@ export function NavBar({
 
   const LanguageToggler = (
     <div className="inline-flex flex-row items-center-safe justify-center-safe font-semibold">
-      <Globe className="mr-1 size-4 lg:size-6" />
+      <span className={`fi fi-${currentLang?.flagCode} mr-2`} />
       <span className="md:hidden">{currentLang?.label}</span>
       <span className="hidden md:inline-block">{currentLang?.short} </span>
     </div>
@@ -86,7 +84,6 @@ export function NavBar({
         >
           <img src="/icon.png" alt="Modelverse" className="size-8" />
           <span className="text-lg font-semibold">Modelverse</span>
-          {/* <span className="text-xs text-red-500">{i18n.language}</span> */}
         </div>
         <div className="hidden flex-row items-center-safe gap-4 rounded-full border border-white/10 bg-white/5 px-4 py-2 font-semibold md:flex md:text-xs lg:gap-8 lg:text-base">
           <NavLink active={home} to="/">
@@ -100,13 +97,14 @@ export function NavBar({
             <DropdownLink to="/platform" title="Platform" active={platform}>
               Risk & Compliance Management
             </DropdownLink>
-            <DropdownLink to="/services" title="Consultancy Services" active={services}>
+            <DropdownLink
+              to="/services"
+              title="Consultancy Services"
+              active={services}
+            >
               Service Packages
             </DropdownLink>
           </Dropdown>
-          {/* <NavLink active={services} to="/services">
-            {t('navbar.services')}
-          </NavLink> */}
           <NavLink active={cases} to="/cases">
             {t('navbar.cases')}
           </NavLink>
@@ -117,7 +115,7 @@ export function NavBar({
             {t('navbar.about')}
           </NavLink>
         </div>
-        <div className="hidden flex-row items-center gap-2 md:flex">
+        <div className="hidden flex-row items-center gap-4 md:flex">
           <button
             className="cursor-pointer rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:text-xs lg:text-base"
             onClick={() => navigate('/contact')}
@@ -125,9 +123,9 @@ export function NavBar({
             {t('navbar.contact')}
           </button>
 
-          {/* <Dropdown
+          <Dropdown
             classname="bg-white/5 border border-white/10 rounded-full px-4 py-2 md:text-xs lg:text-base"
-            childrenClassname="w-30 right-0"
+            childrenClassname="w-20 right-0"
             title={LanguageToggler}
           >
             {LANGUAGES.filter((lang) => lang.code !== i18n.language).map(
@@ -137,12 +135,12 @@ export function NavBar({
                   className="cursor-pointer px-4 py-2 transition-all duration-300 hover:bg-white/20"
                   onClick={() => changeLanguage(lang.code)}
                 >
-                  {lang.label}{' '}
+                  <span className={`fi fi-${lang.flagCode} mr-2`} />
                   <span className="font-semibold">{lang.short}</span>
                 </button>
               )
             )}
-          </Dropdown> */}
+          </Dropdown>
         </div>
         <div
           className="relative size-6 cursor-pointer md:hidden"
@@ -188,7 +186,7 @@ export function NavBar({
           </button>
         </div>
         <div className="flex flex-col border-t border-white/20 pt-4">
-          {/* <Dropdown title={LanguageToggler}>
+          <Dropdown title={LanguageToggler}>
             {LANGUAGES.filter((lang) => lang.code !== i18n.language).map(
               (lang) => (
                 <button
@@ -196,11 +194,12 @@ export function NavBar({
                   className="ml-1 text-left text-white/90 hover:text-white"
                   onClick={() => changeLanguage(lang.code)}
                 >
+                  <span className={`fi fi-${lang.flagCode} mr-1`} />
                   {lang.label}
                 </button>
               )
             )}
-          </Dropdown> */}
+          </Dropdown>
         </div>
       </div>
     </div>
