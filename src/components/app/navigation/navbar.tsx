@@ -20,10 +20,6 @@ const LANGUAGES = [
   { code: 'nl-NL', label: 'Dutch', short: 'NL', flagCode: 'nl' },
   { code: 'en-US', label: 'English', short: 'EN', flagCode: 'gb' },
 ]
-
-export function NavBar({
-  home = false,
-  news = false,
   cases = false,
   platform = false,
   services = false,
@@ -84,6 +80,7 @@ export function NavBar({
         >
           <img src="/icon.png" alt="Modelverse" className="size-8" />
           <span className="text-lg font-semibold">Modelverse</span>
+          {/* <span className="text-xs text-red-500">{i18n.language}</span> */}
         </div>
         <div className="hidden flex-row items-center-safe gap-4 rounded-full border border-white/10 bg-white/5 px-4 py-2 font-semibold md:flex md:text-xs lg:gap-8 lg:text-base">
           <NavLink active={home} to="/">
