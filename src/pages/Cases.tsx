@@ -8,6 +8,7 @@ import {
   staggerContainer,
 } from '@/animations/variants'
 import eighteenZeroOneImage from '@/assets/new_logos/1801.jpg'
+import andersenImage from '@/assets/new_logos/andersen.jpg'
 import fellowmindImage from '@/assets/new_logos/fellowmind.jpg'
 import leydenjarImage from '@/assets/new_logos/leydan-jar.jpg'
 import nedatoImage from '@/assets/new_logos/nedato.jpg'
@@ -22,17 +23,7 @@ import { Layout } from '@/components/layout'
 import { ArrowRight, Info, Shield, TrendingUp } from 'lucide-react'
 import { motion, useInView } from 'motion/react'
 
-const logos = [
-  fellowmindImage,
-  provincieImage,
-  pharmapartnersImage,
-  thebeImage,
-  eighteenZeroOneImage,
-  npiImage,
-  nedatoImage,
-  newforrestImage,
-  leydenjarImage,
-]
+// --- Constants ---
 
 type CaseStudy = {
   name: string
@@ -41,11 +32,24 @@ type CaseStudy = {
   url: string
 }
 
-export function CasesPage() {
-  const layoutRef = useRef<HTMLDivElement>(null)
-  const { t } = useTranslation()
+const logos = [
+  fellowmindImage,
+  provincieImage,
+  andersenImage,
+  nedatoImage,
+  newforrestImage,
+  eighteenZeroOneImage,
+  pharmapartnersImage,
+  thebeImage,
+  npiImage,
+  leydenjarImage,
+]
 
-  const CasesHero = (
+// --- Sub-components ---
+
+function CasesHero() {
+  const { t } = useTranslation()
+  return (
     <Hero
       className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
       backgroundClassName="object-[center_40%]"
@@ -57,74 +61,85 @@ export function CasesPage() {
         <p className="text-sm">{t('cases.hero.badge')}</p>
       </div>
       <h1 className="text-5xl sm:text-6xl">
-        {t('cases.hero.title_line1')}{' '}
+        {t('cases.hero.title_line1')}
         <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
+          <br />
           {t('cases.hero.title_line2')}
         </span>
       </h1>
       <p className="text-xl text-white/70">{t('cases.hero.description')}</p>
     </Hero>
   )
+}
+
+function CaseStudyItem({ study, index }: { study: CaseStudy; index: number }) {
+  const { t } = useTranslation()
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true, amount: 0.4 })
+
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? 'visible' : 'hidden'}
+      variants={index % 2 == 0 ? slideInLeft : slideInRight}
+    >
+      <Card className="group grid grid-cols-1 overflow-hidden bg-white/5 p-0 text-white hover:border-lime-500/50 hover:bg-white/10 lg:grid-cols-2">
+        <div
+          className={`relative flex h-[300px] items-center-safe justify-center-safe overflow-hidden lg:h-auto lg:basis-1/2 ${index % 2 != 0 && 'lg:order-last'}`}
+        >
+          <img
+            src={logos[index]}
+            alt=""
+            className={`size-full rounded-t-lg object-cover transition-all duration-300 lg:rounded-t-none ${index % 2 != 0 ? 'lg:rounded-r-lg' : 'lg:rounded-l-lg'} lg:absolute lg:inset-0`}
+          />
+        </div>
+        <div className="flex flex-col gap-4 p-4 lg:basis-1/2 lg:justify-center-safe">
+          <h1 className="text-3xl">{study.name}</h1>
+          <div className="flex flex-col justify-center-safe gap-2">
+            <div className="flex w-fit flex-row gap-2 text-lg text-lime-500">
+              <Info className="size-5 self-center" />
+              {t('cases.labels.about')}
+            </div>
+            <p className="text-white/70">{study.about}</p>
+          </div>
+          <div className="flex flex-col justify-center-safe gap-2">
+            <div className="flex w-fit flex-row gap-2 text-lg text-teal-500">
+              <TrendingUp className="size-5 self-center" />
+              {t('cases.labels.improvements')}
+            </div>
+            <p className="text-white/70">{study.case}</p>
+          </div>
+        </div>
+      </Card>
+    </motion.div>
+  )
+}
+
+// --- Page ---
+
+export function CasesPage() {
+  // Framer Motion animation refs (must stay in the component (hooks))
+  const layoutRef = useRef<HTMLDivElement>(null)
+  const { t } = useTranslation()
 
   const caseStudies = t('cases.items', { returnObjects: true }) as CaseStudy[]
+
   const ctaRef = useRef<HTMLDivElement>(null)
   const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 })
 
   return (
-    <Layout cases={true} hero={CasesHero} ref={layoutRef}>
+    <Layout cases={true} hero={<CasesHero />} ref={layoutRef}>
       {/* Metadata */}
-      <title>Modelverse Cases | Customer Success Stories</title>
-      <meta
-        name="description"
-        content="View how leading enterprises reduced audit time and achieved 100% compliance using the Modelverse Risk & Compliance SaaS platform."
-      />
+      <title>{t('cases.metadata.title')}</title>
+      <meta name="description" content={t('cases.metadata.description')} />
 
       {/* Content */}
       <div className="bg-linear-to-b from-slate-900 via-slate-800 to-slate-900">
         <div className="flex flex-col gap-4 px-4 py-16 md:container md:mx-auto">
-          {caseStudies.map((study, index) => {
-            const cardRef = useRef(null)
-            const isInView = useInView(cardRef, { once: true, amount: 0.4 })
-
-            return (
-              <motion.div
-                ref={cardRef}
-                initial="hidden"
-                animate={isInView ? 'visible' : 'hidden'}
-                variants={index % 2 == 0 ? slideInLeft : slideInRight}
-                key={index}
-              >
-                <Card className="group grid grid-cols-1 overflow-hidden bg-white/5 p-0 text-white hover:border-lime-500/50 hover:bg-white/10 lg:grid-cols-2">
-                  <div
-                    className={`relative flex h-[300px] items-center-safe justify-center-safe overflow-hidden lg:h-auto lg:basis-1/2 ${index % 2 != 0 && 'lg:order-last'}`}
-                  >
-                    <img
-                      src={logos[index]}
-                      alt=""
-                      className={`size-full rounded-t-lg object-cover transition-all duration-300 lg:rounded-t-none ${index % 2 != 0 ? 'lg:rounded-r-lg' : 'lg:rounded-l-lg'} lg:absolute lg:inset-0`}
-                    />
-                  </div>
-                  <div className="flex flex-col gap-4 p-4 lg:basis-1/2 lg:justify-center-safe">
-                    <h1 className="text-3xl">{study.name}</h1>
-                    <div className="flex flex-col justify-center-safe gap-2">
-                      <div className="flex w-fit flex-row gap-2 text-lg text-lime-500">
-                        <Info className="size-5 self-center" />
-                        {t('cases.labels.about')}
-                      </div>
-                      <p className="text-white/70">{study.about}</p>
-                    </div>
-                    <div className="flex flex-col justify-center-safe gap-2">
-                      <div className="flex w-fit flex-row gap-2 text-lg text-teal-500">
-                        <TrendingUp className="size-5 self-center" />
-                        {t('cases.labels.improvements')}
-                      </div>
-                      <p className="text-white/70">{study.case}</p>
-                    </div>
-                  </div>
-                </Card>
-              </motion.div>
-            )
-          })}
+          {caseStudies.map((study, index) => (
+            <CaseStudyItem key={index} study={study} index={index} />
+          ))}
         </div>
       </div>
 

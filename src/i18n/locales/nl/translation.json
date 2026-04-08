@@ -1,102 +1,105 @@
 {
   "navbar": {
     "home": "Home",
-    "services": "Diensten",
+    "solutions": "Oplossingen",
     "cases": "Cases",
     "news": "Nieuws",
-    "about": "Over Ons",
-    "contact": "Contact Opnemen"
+    "about": "Over ons",
+    "contact": "Contact"
   },
   "footer": {
     "tagline": "We secure. You succeed!",
-    "description": "Empowering organizations to manage risks and compliance with confidence.",
+    "description": "Organisaties in staat stellen om risico's en compliance met vertrouwen te beheren.",
     "sections": {
       "company": {
         "title": "Bedrijf",
-        "about": "Over Ons",
+        "about": "Over ons",
         "blog": "Nieuws",
         "contact": "Contact"
       },
       "legal": {
         "title": "Juridisch",
         "privacy_policy": "Privacybeleid",
-        "terms_of_service": "Servicevoorwaarden",
+        "terms_of_service": "Gebruiksvoorwaarden",
         "cookie_policy": "Cookiebeleid"
       }
     },
-    "security_compliance": "Beveiliging & Compliance",
+    "security_compliance": "Security & Compliance",
     "copyright": "Alle rechten voorbehouden.",
-    "privacy": "Privacyvoorkeuren Beheren"
+    "privacy": "Privacyvoorkeuren beheren"
   },
   "home": {
+    "metadata": {
+      "title": "Modelverse | Cybersecurity Risk Management",
+      "description": "Modelverse biedt een cybersecurity-risicobeheerplatform en consultancydiensten voor organisaties van alle groottes."
+    },
     "hero": {
       "badge": "We secure. You succeed!",
       "title_line1": "Modelverse",
-      "title_line2": "Information Risk",
-      "description": "Gebruik intelligente automatisering om risico's en compliance effectief te beheren.",
-      "cta": "Demo Aanvragen",
-      "explore": "Ontdek Meer",
+      "title_line2": "Cybersecurity Control",
+      "description": "Verbeter en monitor je cybersecurity-houding met ons intelligente risicobeheerplatform, ontworpen en ondersteund door onze ervaren consultants.",
+      "cta": "Vraag een demo aan",
+      "explore": "Meer ontdekken",
       "stats": {
-        "risk_domains": "Risicodomeinen",
-        "standards": "Standaarden",
-        "country_footprints": "Verschillende Landen"
+        "risk_domains": "Jaar ervaring",
+        "standards": "Frameworks",
+        "country_footprints": "Actieve landen"
       }
     },
     "features": {
-      "title": "Alles wat u nodig heeft om risico's en compliance te beheren",
+      "title": "Alles wat je nodig hebt om Risico's en Compliance te beheren",
       "items": {
-        "strategic_risk": {
+        "card1": {
           "title": "Strategisch Risicobeheer",
-          "description": "Wij helpen u risico's én kansen te beheren op drie verschillende niveaus: organisatie, assets, en bevindingen. Deze gelaagde aanpak brengt bewezen duidelijkheid en efficiëntie. Zeg vaarwwel tegen eindeloze risicoregisters met honderden vage vermeldingen."
+          "description": "Wij helpen je risico's te beheren op drie niveaus: organisatie, assets en findings. Capability-gedreven roadmaps geven je een helder inzicht in waar je moet investeren. Zeg vaarwel tegen overvolle risicoregisters met honderden vage items."
         },
-        "real_world": {
-          "title": "Praktijkgerichte Capabilities",
-          "description": "Onze Capability Models weerspiegelen de moderne IT- en bedrijfsrealiteit. Ze richten zich op dat wat risico's daadwerkelijk vermindert en geven u een helder beeld van hoe goed uw organisatie tegen risico's opgewassen is."
+        "card2": {
+          "title": "Gestroomlijnde Compliance",
+          "description": "Wij bouwen naadloos voort op je bestaande voortgang met certificeringsframeworks om minimale verstoring van je bedrijfsvoering te garanderen. Of je nu ISO 27001-gecertificeerd wilt worden, aan GDPR-vereisten wilt voldoen of NIS2-compliant wil zijn — wij staan voor je klaar."
         },
-        "actionable": {
-          "title": "Actiegerichte Roadmaps",
-          "description": "Wij genereren geprioriteerde backlogs op basis van Capability-scores, zodat u precies weet waar u het meest effectief in risicomitigatie kan investeren. Elk item in uw roadmap is direct gekoppeld aan een Capability, zodat u uw voortgang kunt bijhouden en zelfverzekerd vooruit kunt plannen."
+        "card3": {
+          "title": "Intelligente Automatisering",
+          "description": "Onze aanpak is gebouwd op een fundament van intelligente automatisering, ontworpen om je tijd te besparen en risico's te verminderen. Van bewijsverzameling tot slimme aanbevelingen — wij helpen je voorop te blijven en je te focussen op wat het meeste telt."
         },
-        "smart_compliance": {
-          "title": "Slimme Compliance-Automatisering",
-          "description": "Wij genereren op maat gemaakte Policies, Procedures en Controls op basis van gecureerde bibliotheken die werken in de praktijk. Veel Controls zijn geautomatiseerd en ons platform waarborgt de volledige plan-do-check-act cyclus — zodat u altijd audit-ready bent."
+        "card4": {
+          "title": "Altijd Audit-Ready",
+          "description": "Wij maken beleidsregels, procedures en controls op maat met behulp van gecureerde, praktijk-gedreven bibliotheken. Met ons platform kunnen onze consultants de meeste controls automatiseren en een single source of truth opbouwen, zodat je altijd klaar bent voor een audit."
         },
-        "audit": {
-          "title": "Geïntegreerde Auditintelligentie",
-          "description": "Audits en pentests zijn essentieel voor continue risicobeperking. Wij leggen bevindingen vast en koppelen ze direct aan uw compliance-framework, zodat risico's doorvertalen naar het organisatieniveau met volledige traceerbaarheid."
+        "card5": {
+          "title": "Naadloze Integraties",
+          "description": "Verbind je bestaande tools en systemen moeiteloos met ons platform. Of het nu gaat om Microsoft-diensten, LeanIX, Ultimo, sosafe of iets anders — wij integreren het en centraliseren je risico- en compliancebeheer."
         },
-        "multi_standard": {
-          "title": "Moeiteloze Multi-Standaard Assurance",
-          "description": "Of u nu regelgeving wilt naleven of wilt voldoen aan klanteisen — wij stroomlijnen compliance over meerdere standaarden. Onze geautomatiseerde mapping koppelt uw Policies, Procedures en Controls aan elk framework en genereert de benodigde rapporten."
+        "card6": {
+          "title": "Professionele Begeleiding",
+          "description": "Ons team van experts biedt gepersonaliseerde ondersteuning om je te helpen de complexiteit van cybersecurity te navigeren. Van strategisch advies tot hands-on implementatie — wij waarborgen jouw succes gedurende het gehele proces."
         }
       }
     },
     "benefits": {
-      "title": "We secure. You succeed!",
-      "subtitle": "Of u nu een startup met 10 personen of een multinational met 10.000 medewerkers bent, Modelverse schaalt mee met uw behoeften.",
+      "title": "We Secure. You Succeed!",
+      "subtitle": "Of je nu een startup van 10 personen bent of een enterprise met 10.000 medewerkers — Modelverse schaalt mee met jouw behoeften.",
       "items": [
-        "Schaal uw risicobeheerteam zonder extra personeel",
-        "Verminder de impact van beveiligingsincidenten",
-        "Waarborg continue audit-readiness",
-        "Bespaar tijd op compliance-rapportage",
-        "Één gecentraliseerd, alomvattend overzicht",
-        "Intelligente automatisering van controls",
-        "Gekalibreerd met uw systemen"
+        "Schaal je cybersecurity-risicobeheer op zonder extra personeel aan te nemen",
+        "Ontwikkel je cybersecurity-strategie met onze ervaren consultants",
+        "Één gecentraliseerd platform voor al je risico's en compliance",
+        "Verklein de kans op en impact van cybersecurity-incidenten",
+        "Stroomlijn je cybersecurity-rapportagevereisten",
+        "Behoud continue audit-readiness"
       ]
     },
     "testimonials": {
-      "title": "Wat onze klanten zeggen",
-      "subtitle": "Ontdek hoe industry leaders hun organisaties transformeren met Modelverse",
+      "title": "Wat onze Klanten zeggen",
+      "subtitle": "Ontdek hoe toonaangevende organisaties zichzelf transformeren met Modelverse.",
       "items": [
         {
-          "quote": "Modelverse heeft onze aanpak van cybersecurity risicobeheer getransformeerd.",
+          "quote": "Modelverse heeft onze aanpak van cybersecurity-risicobeheer getransformeerd.",
           "name": "David Warnink",
           "role": "CIO",
           "company": "Fellowmind",
           "video": "XEPf418PJFU"
         },
         {
-          "quote": "Reshma en het team hebben ons geholpen onze beveiligingslekken te dichten.",
+          "quote": "Reshma en het team hebben ons geholpen onze beveiligingsgaten te dichten.",
           "name": "Christiaan Rood",
           "role": "CEO",
           "company": "LeydenJar Technologies",
@@ -105,171 +108,166 @@
       ]
     },
     "cta": {
-      "badge": "Beveilig Uw Organisatie",
-      "title": "Klaar voor de volgende stap?",
-      "subtitle": "Sluit u aan bij de organisaties die Modelverse vertrouwen om hun risico's te beheren.",
+      "badge": "Begin je beveiligingsreis",
+      "title": "Klaar om je Toekomst te Beveiligen?",
+      "subtitle": "Sluit je aan bij de organisaties die Modelverse vertrouwen voor hun risicobeheer.",
       "button": "Aan de slag"
     }
   },
   "platform": {
-    "hero": {
-      "badge": "Wij beveiligen. Jij slaagt!",
-      "title_line1": "Cyberrisico-beheer",
-      "title_line2": "Eenvoudig Gemaakt",
-      "description": "Het enige GRC-platform dat van de grond af aan is gebouwd voor kleine en middelgrote organisaties. Krachtige enterprise-functies zonder de enterprise-complexiteit."
+    "metadata": {
+      "title": "Modelverse | Platform",
+      "description": "Beheer je cybersecurity-risico's en compliance met het Modelverse Risk & Compliance SaaS-platform."
     },
-    "key_features": {
-      "title_line1": "Gebouwd voor de Toekomst van",
-      "title_line2": "Compliance",
-      "subtitle": "Elke functie ontworpen om u tijd te besparen, risico's te verminderen en compliancebeheer te vereenvoudigen",
+    "hero": {
+      "badge": "We secure. You succeed!",
+      "title_line1": "Eenvoudige ",
+      "title_line2": "Cybersecurity",
+      "description": "Één overkoepelend platform voor het beheren van alle cybersecurity-risico's, compliance en security governance binnen je gehele organisatie. Verkrijg volledig inzicht in je cybersecurity-houding terwijl je de naleving van regelgeving en operationele weerbaarheid vereenvoudigt met intelligente automatisering."
+    },
+    "problems": {
+      "title_line1": "Los je Problemen op met",
+      "title_line2": "Modelverse",
+      "subtitle": "Cybersecurity-professionals staan elke dag voor tal van uitdagingen. Modelverse is ontworpen om deze uitdagingen aan te pakken en je te voorzien van een uitgebreide oplossing voor het intelligent beheren van je cybersecurity-risico's en compliance.",
       "items": [
         {
-          "img_tag": "AI-Gestuurd",
-          "title": "Intelligente Risicobeoordeling",
-          "description": "AI-gestuurde risicoscoring en geautomatiseerde bedreigingsdetectie die leert van de unieke beveiligingspositie van uw organisatie",
-          "improvement": "85% snellere risicoidentificatie"
+          "title": "Zeg Vaarwel aan Eindeloze Excel-sheets",
+          "description": "Risicobeheerders gebruiken vaak spreadsheets en documenten met vage items en inconsistente gegevens, wat leidt tot inefficiëntie en fouten. Modelverse automatiseert en vereenvoudigt hun processen en bespaart ze talloze uren werk."
         },
         {
-          "img_tag": "AI-Gestuurd",
-          "title": "Intelligente Risicobeoordeling",
-          "description": "AI-gestuurde risicoscoring en geautomatiseerde bedreigingsdetectie die leert van de unieke beveiligingspositie van uw organisatie",
-          "improvement": "85% snellere risicoidentificatie"
+          "title": "Geen Handmatige Compliance meer",
+          "description": "Handmatig compliancebeheer is tijdrovend en moeilijk te onderhouden, zeker naarmate organisaties groeien. Modelverse stroomlijnt compliance met geautomatiseerde workflows en rapportage, zodat zelfs kleinschalige teams compliance effectief kunnen beheren."
         },
         {
-          "img_tag": "AI-Gestuurd",
-          "title": "Intelligente Risicobeoordeling",
-          "description": "AI-gestuurde risicoscoring en geautomatiseerde bedreigingsdetectie die leert van de unieke beveiligingspositie van uw organisatie",
-          "improvement": "85% snellere risicoidentificatie"
-        },
-        {
-          "img_tag": "AI-Gestuurd",
-          "title": "Intelligente Risicobeoordeling",
-          "description": "AI-gestuurde risicoscoring en geautomatiseerde bedreigingsdetectie die leert van de unieke beveiligingspositie van uw organisatie",
-          "improvement": "85% snellere risicoidentificatie"
+          "title": "Fragmentatie behoort tot het Verleden",
+          "description": "Gefragmenteerde systemen maken het moeilijk om een volledig beeld te krijgen van de security-houding van je organisatie. Krijg het overzicht over je assets en processen met Modelverse en bewaar alle informatie op één plek."
         }
       ]
     },
     "fingertips": {
-      "title_line1": "Alles binnen",
-      "title_line2": "Handbereik",
-      "subtitle": "Een uitgebreid dashboard ontworpen om u direct inzicht te geven in de beveiligingspositie van uw organisatie",
+      "title_line1": "Enterprise-grade Modules ",
+      "title_line2": "binnen Handbereik",
+      "subtitle": "Modelverse heeft alles wat je nodig hebt voor het beheren van cybersecurity-risico's en compliance, verspreid over 9 geïntegreerde modules die naadloos samenwerken als één uitgebreide oplossing voor al je cybersecurity-behoeften.",
       "modules": "9 Geïntegreerde Modules",
-      "breakdown_items": [
-        {
-          "title": "Achterstallige Items",
-          "description": "Volg items die onmiddellijke aandacht vereisen"
-        },
-        {
-          "title": "Achterstallige Items",
-          "description": "Volg items die onmiddellijke aandacht vereisen"
-        },
-        {
-          "title": "Achterstallige Items",
-          "description": "Volg items die onmiddellijke aandacht vereisen"
-        },
-        {
-          "title": "Achterstallige Items",
-          "description": "Volg items die onmiddellijke aandacht vereisen"
-        }
-      ],
-      "home_items": [
-        {
-          "title": "Achterstallige Items",
-          "description": "Volg items die onmiddellijke aandacht vereisen"
-        },
-        {
-          "title": "Achterstallige Items",
-          "description": "Volg items die onmiddellijke aandacht vereisen"
-        },
-        {
-          "title": "Achterstallige Items",
-          "description": "Volg items die onmiddellijke aandacht vereisen"
-        }
-      ],
       "module_items": [
-        { "title": "Risico's" },
-        { "title": "Risico's" },
-        { "title": "Risico's" },
-        { "title": "Risico's" },
-        { "title": "Risico's" },
-        { "title": "Risico's" },
-        { "title": "Risico's" },
-        { "title": "Risico's" },
-        { "title": "Risico's" }
-      ]
-    },
-    "differentiators": {
-      "title_line1": "Waarom Organisaties Kiezen voor",
-      "title_line2": "Modelverse",
-      "subtitle": "We hebben GRC van de grond af opnieuw bedacht om de echte uitdagingen van moderne organisaties aan te pakken",
-      "items": [
-        {
-          "title": "Speciaal Gebouwd voor MKB",
-          "description": "In tegenstelling tot enterprise-tools zijn wij specifiek ontworpen voor kleine en middelgrote organisaties. Geen overweldigende complexiteit, alleen wat u nodig heeft."
-        },
-        {
-          "title": "Operationeel in Minuten, Niet Maanden",
-          "description": "De meeste GRC-tools duren 3-6 maanden om te implementeren. Ons platform maakt u in minder dan een uur operationeel met begeleide onboarding."
-        },
-        {
-          "title": "Geautomatiseerde Bewijsverzameling",
-          "description": "Stop met het handmatig verzamelen van compliancebewijzen. Ons platform verzamelt en organiseert automatisch bewijs voor audits."
-        },
-        {
-          "title": "Altijd Up-to-Date",
-          "description": "Regelgevingskaders veranderen voortdurend. We updaten onze compliancebibliotheken automatisch zodat u altijd actueel bent."
-        },
-        {
-          "title": "Meertalige Ondersteuning",
-          "description": "Native ondersteuning voor 8+ Europese talen met gelokaliseerde compliance-frameworks en documentatie."
-        },
-        {
-          "title": "Bankwaardige Beveiliging",
-          "description": "Gebouwd op zero-trust architectuur met end-to-end encryptie. Uw gevoelige gegevens verlaten nooit uw controle."
-        }
+        { "title": "Risks" },
+        { "title": "Capabilities" },
+        { "title": "Roadmap" },
+        { "title": "Landscape" },
+        { "title": "Compliance" },
+        { "title": "Privacy" },
+        { "title": "Audits" },
+        { "title": "Assurance" },
+        { "title": "ISMS" }
       ]
     },
     "comparison": {
-      "title_line1": "Alles wat u Nodig Heeft.",
-      "title_line2": "Niets wat u Niet Nodig Heeft.",
-      "subtitle": "In tegenstelling tot opgeblazen enterprise-tools bevat Modelverse alleen de functies die kleine en middelgrote organisaties daadwerkelijk nodig hebben en gebruiken",
+      "title_line1": "Alles wat je nodig hebt.",
+      "title_line2": "Niets meer, niets minder.",
+      "subtitle": "In tegenstelling tot omslachtige risicobeheerplatforms bevat Modelverse alleen de functies die je organisatie daadwerkelijk nodig heeft en gebruikt. Hier zijn enkele functies die wij bieden en die je niet terugvindt in andere platforms.",
       "points": [
-        "Visuele risicokaarten en heatmaps",
-        "Geautomatiseerde bibliotheek met beleidssjablonen",
-        "Geïntegreerd leveranciersrisicobeheer",
-        "Mobile-first responsief ontwerp",
-        "Realtime auditvoorbereiding",
-        "Slim aanbevelingssysteem",
-        "Regelgevingsrapporten met één klik",
-        "Continue bewakingswaarschuwingen"
+        "Autonome AI-gedreven supply chain management",
+        "Role-based takenbeheer en eigenaarschap",
+        "Continu bijgewerkte compliance frameworks",
+        "Uitgebreide en interactieve visualisaties",
+        "Documentgeneratie via aangepaste sjablonen",
+        "AI-gedreven aanbevelingen",
+        "Één locatie voor al je audit-behoeften",
+        "Professionele risico- en controlbibliotheken"
+      ]
+    },
+    "feature_showcase": {
+      "title_line1": "Gebouwd voor de",
+      "title_line2": "Toekomst van Compliance",
+      "subtitle": "Elke functie is ontworpen om je tijd te besparen, risico's te verminderen en compliancebeheer te vereenvoudigen. Hier is een overzicht van enkele functies die we bieden om je cybersecurity-risico's en compliance met vertrouwen te beheren.",
+      "items": [
+        {
+          "img_tag": "Capability Overview",
+          "img_id": "/images/platform_showcase/capability_timeline.png",
+          "title": "Zie je Security Capabilities groeien over Tijd",
+          "description": "Volg de ontwikkeling van je security capabilities met onze intuïtieve tijdlijnweergave. Identificeer trends, monitor vooruitgang en neem geïnformeerde beslissingen om je cybersecurity-houding voortdurend te verbeteren.",
+          "improvement": "Volg je vooruitgang"
+        },
+        {
+          "img_tag": "ISMS Module",
+          "img_id": "/images/platform_showcase/isms.png",
+          "title": "Één Gecentraliseerde Locatie voor al je Compliance-informatie",
+          "description": "Onze ISMS-module fungeert als één gecentraliseerde bron voor al je compliance-informatie. Van beleidsregels en procedures tot controls en bewijsmateriaal — alles is georganiseerd en gemakkelijk toegankelijk op één centrale locatie. Dit zorgt ervoor dat je altijd klaar bent voor een audit en snel kunt reageren op compliance-vragen en audits.",
+          "improvement": "Één gecentraliseerde bron van waarheid"
+        },
+        {
+          "img_tag": "Metrics Dashboard",
+          "img_id": "/images/platform_showcase/reporting.png",
+          "title": "Eenvoudige Rapportage en Monitoring",
+          "description": "Onze uitgebreide rapportage- en monitoringfuncties geven je real-time inzicht in je cybersecurity-positie. Dashboards, geautomatiseerde rapporten en continue monitoring zorgen ervoor dat je over de informatie beschikt die je nodig hebt om weloverwogen beslissingen te nemen en potentiële dreigingen voor te blijven.",
+          "improvement": "Real-time inzichten"
+        }
+      ]
+    },
+    "implementation": {
+      "title_line1": "Begeleide",
+      "title_line2": "Implementatie",
+      "subtitle": "Onze ervaren consultants begeleiden je door een soepel implementatieproces, zodat je snel en effectief aan de slag kunt. We werken nauw samen met jouw team om je unieke behoeftes te begrijpen en het platform aan te passen aan de specifieke vereisten van jouw organisatie."
+    },
+    "implementation_track": {
+      "step": [
+        {
+          "title": "Initiële Beoordeling & Strategische Afstemming",
+          "description": "De eerste stap is het vergaren van een uitgebreid inzicht in je huidige cybersecurity-houding, uitdagingen en doelen. Dit helpt ons je unieke behoeften te begrijpen en zorgt ervoor dat onze implementatieaanpak aansluit bij de doelstellingen van jouw organisatie. Er wordt een tijdlijn opgesteld en we laten jouw cybersecurity-team kennis maken met het platform en de consultants die je gedurende het gehele implementatieproces ondersteunen."
+        },
+        {
+          "title": "Landschapsbeoordeling & Risico-impactanalyse",
+          "description": "Samen brengen we jouw cybersecurity-infrastructuur, tools en applicaties in kaart. Vervolgens analyseren we de potentiële impact van de meest kritieke risico's voor je organisatie. Inzicht in het applicatielandschap en de impact van risico's is cruciaal voor het sturen van je cybersecurity-traject en het nemen van weloverwogen beslissingen over waar je middelen het meest effectief kunt inzetten."
+        },
+        {
+          "title": "Security Capabilities & Volwassenheidsniveau",
+          "description": "Wij evalueren je bestaande security capabilities en volwassenheidsniveau in de belangrijkste cybersecurity-domeinen. Door de verschillende gaps en verbetermogelijkheden te identificeren kunnen we je doelen zo efficiënt mogelijk bereiken. Met de ervaring van onze consultants en de inzichten van het platform helpen wij je je cybersecurity-houding te verbeteren en je gewenste resultaten moeiteloos te behalen."
+        },
+        {
+          "title": "Beoordeling van Risico-waarschijnlijkheid",
+          "description": "Wij beoordelen de waarschijnlijkheid van de meest kritieke risico's waarmee je organisatie wordt geconfronteerd, op basis van een combinatie van factoren — waaronder het huidige dreigingslandschap, de specifieke kwetsbaarheden van je organisatie en de eerder geïdentificeerde security capabilities. Dit is de laatste stap in ons uitgebreide risicobeoordelingsproces en geeft je een helder beeld van de risicoblootstelling van je organisatie."
+        },
+        {
+          "title": "Backlog van Verbeteringen",
+          "description": "Maar jouw verhaal eindigt daar niet. Op basis van de vorige stappen stellen wij een backlog van aanbevolen verbeteringen op. Deze backlog dient als een repository voor potentiële verbeteringen en blijft je inspanningen continu sturen naarmate je organisatie evolueert. Het biedt de basis voor duidelijke en uitvoerbare plannen die je cybersecurity-volwassenheid verder kunnen verbeteren."
+        },
+        {
+          "title": "Geprioriteerde Roadmap, Overdracht & Ondersteuning",
+          "description": "Wij werken samen met jou aan een geprioriteerde roadmap voor het implementeren van een selectie van de aanbevolen verbeteringen, zodat je cybersecurity-inspanningen gericht zijn op de meest impactvolle gebieden en goed aansluiten bij de huidige doelen en middelen van je organisatie. Na het opstellen van de roadmap dragen wij het roer over aan jouw team en bieden we doorlopende ondersteuning en begeleiding om continue voortgang richting je cybersecurity doelstellingen te waarborgen."
+        }
       ]
     },
     "cta": {
-      "title_line1": "Klaar om",
-      "title_line2": "Risicobeheer te Transformeren?",
-      "subtitle": "Sluit u aan bij honderden organisaties die hun compliancetraject hebben vereenvoudigd met Modelverse.",
-      "button": "Aan de Slag"
+      "title_line1": "Klaar om Risicobeheer",
+      "title_line2": "te Transformeren?",
+      "subtitle": "Sluit je aan bij succesvolle organisaties die hun cybersecurity beheren met Modelverse, krijg diepgaand inzicht in je cybersecurity-houding en profiteer van de meest intelligente automatisering in de branche.",
+      "button": "Aan de slag"
     }
   },
   "services": {
+    "metadata": {
+      "title": "Modelverse | Consultancy Services",
+      "description": "Modelverse biedt een reeks uitgebreide security-pakketten die zijn ontworpen om de cybersecurity-positie van je organisatie te versterken. Selecteer de pakketten die je nodig hebt en benut de expertise van onze consultants om je doelen op jouw tempo te bereiken."
+    },
     "hero": {
       "badge": "We secure. You succeed!",
-      "title": "Security Services",
-      "description": "Uitgebreide beveiligingsdiensten ontworpen om het cybersecurity-volwassenheidsniveau van uw organisatie te verbeteren. Selecteer de pakketten die uw organisatie nodig heeft. Op uw tempo, naar uw doelen."
+      "title_line1": "Jouw organisatie, ",
+      "title_line2": "onze expertise",
+      "description": "Onafhankelijk van ons platform bieden wij een reeks uitgebreide security-pakketten aan die zijn ontworpen om de cybersecurity-houding van je organisatie te versterken. Selecteer de pakketten die je nodig hebt en benut de expertise van onze consultants om je doelen op jouw tempo te bereiken."
     },
     "journey": {
-      "title": "Uw Security Journey",
-      "subtitle": "Onze pakketten volgen een logische progressie om een uitgebreid beveiligingsprogramma op te bouwen. Begin waar u wilt en schaal op naarmate uw organisatie volwassener wordt."
+      "title": "Security Pakketten",
+      "subtitle": "Onze pakketten volgen een logische progressie naar het bouwen van een veerkrachtige cybersecurity-infrastructuur voor je organisatie. Kies de pakketten die bij je behoeften passen en schaal op naarmate je organisatie volwassener wordt, of neem contact met ons op om je situatie te bespreken."
     },
     "items": {
       "strategy": {
         "badge": "SecStrat",
         "title": "Strategie",
-        "description": "Bouw een sterke basis voor uw beveiligingsprogramma",
+        "description": "Bouw een solide fundament voor je security-programma",
         "points": [
-          "Begrijp uw cyberrisico's",
-          "Beoordeel uw huidige volwassenheidsniveau",
-          "Weet waar u het meest effectief kunt investeren"
+          "Krijg inzicht in je cyber-risico's",
+          "Beoordeel je huidige security-houding",
+          "Breng je investeringsmogelijkheden in kaart"
         ]
       },
       "certification": {
@@ -277,144 +275,158 @@
         "title": "Certificering",
         "description": "Behaal en behoud compliance-certificeringen",
         "points": [
-          "Profiteer van onze kwaliteitsbibliotheken",
-          "Ondersteuning voor álle certificeringsframeworks",
-          "Ontdek innovatieve automatisering"
+          "Maak een vliegende start met onze kwaliteitsbibliotheken",
+          "Ondersteuning voor alle certificeringsframeworks",
+          "Profiteer van innovatieve automatisering"
         ]
       },
       "governance": {
         "badge": "SecGov",
         "title": "Governance",
-        "description": "Stel duidelijke verantwoordelijkheden vast",
+        "description": "Vestig duidelijke verantwoordelijkheden",
         "points": [
           "Definieer rollen en verantwoordelijkheden",
-          "Bevorder effectieve besluitvorming",
-          "Stem beveiliging af op bedrijfsdoelstellingen"
+          "Implementeer effectieve besluitvormingsprocessen",
+          "Stem security af op bedrijfsdoelstellingen"
         ]
       },
       "programme": {
         "badge": "SecProg",
         "title": "Programma",
-        "description": "Stimuleer organisatiebrede beveiligingsprincipes",
+        "description": "Stimuleer organisatiebrede security-adoptie",
         "points": [
           "Benut steun van het management",
-          "Veranker beveiligingspraktijken",
-          "Bevorder een sterke beveiligingscultuur"
+          "Integreer security-praktijken",
+          "Promoot een sterke security-cultuur"
         ]
       },
       "operations": {
         "badge": "SecOps",
         "title": "Operaties",
-        "description": "Voorkom proactief beveiligingsincidenten",
+        "description": "Voorkom en detecteer security-incidenten proactief",
         "points": [
-          "Monitor bedreigingen in real-time",
-          "Detecteer potentiële inbreuken",
+          "Monitor dreigingen in real-time",
+          "Detecteer anomalieën en potentiële inbreuken",
           "Reageer snel en effectief op incidenten"
         ]
       },
       "resilience": {
         "badge": "SecRes",
         "title": "Weerbaarheid",
-        "description": "Bereid u voor op beveiligingsincidenten",
+        "description": "Bereid je goed voor op security-incidenten",
         "points": [
-          "Bereid u voor op mogelijke incidenten",
-          "Minimaliseer de impact van incidenten",
-          "Waarborg de bedrijfscontinuïteit"
+          "Bereid je voor op mogelijke incidenten",
+          "Minimaliseer de schade van aanvallen",
+          "Waarborg bedrijfscontinuïteit"
         ]
       }
     },
     "cta": {
-      "title": "Klaar voor de volgende stap?",
-      "subtitle": "Ons team helpt u de juiste pakketten te selecteren voor uw organisatie's unieke behoeften en volwassenheidsniveau.",
-      "button": "Consultatie Inplannen"
+      "title": "Klaar voor de Volgende Stap?",
+      "subtitle": "Ons team helpt je de juiste pakketten te selecteren voor de unieke behoeften en het volwassenheidsniveau van je organisatie.",
+      "button": "Plan een Consultatie"
     }
   },
   "cases": {
+    "metadata": {
+      "title": "Modelverse | Klantcases",
+      "description": "Ontdek hoe Modelverse organisaties helpt hun cybersecurity-positie te verbeteren en compliance te bereiken."
+    },
     "hero": {
       "badge": "We secure. You succeed!",
-      "title_line1": "Echte Resultaten van",
-      "title_line2": "Echte Klanten",
-      "description": "Ontdek hoe onze klanten hun risico- en compliancebeheer transformeren met Modelverse."
+      "title_line1": "Echte resultaten van",
+      "title_line2": "echte klanten",
+      "description": "Ontdek hoe onze klanten hun cybersecurity-praktijken transformeren met Modelverse."
     },
     "labels": {
       "about": "Over",
-      "improvements": "Verbeteringen"
+      "improvements": "Onze rol"
     },
     "items": [
       {
         "name": "Fellowmind",
         "about": "Fellowmind is een van de grootste Microsoft-integrators in West-Europa en is actief in Nederland, Polen, Denemarken, Zweden en Finland.",
-        "case": "Modelverse wordt gebruikt om de beveiligingsstrategie te ondersteunen en alle informatierisico's in de verschillende regio's van Fellowmind te beheren. Daarnaast worden gegevensprivacyprocessen ondersteund en is er een continuous-improvement programma om de beveiligingsstrategie uit te voeren.",
+        "case": "Modelverse wordt gebruikt om de security-strategie te ondersteunen en alle informatierisico's te beheren in de verschillende regio's van Fellowmind. Daarnaast worden data privacy-processen ondersteund en is er een continu verbeteringsprogramma gaande om de security-strategie uit te voeren.",
         "url": "https://www.fellowmind.com/"
       },
       {
         "name": "Provincie Flevoland",
-        "about": "Provincie Flevoland is de nieuwste en kleinste provincie van Nederland, en is de verantwooredlijk voor het bestuur van onder andere de (kritische) infrastructuur, het milieu, en ruimtelijke ordening in de regio.",
-        "case": "We piloten Modelverse voor Flevoland om hun risicobeheer te verbeteren, de effectiviteit van de geïmplementeerde cybersecuritymaatregelen te verhogen en tijd te besparen voor de IT-, OT- en gegevensprivacyteams, evenals de CISO.",
+        "about": "De Provincie Flevoland is de nieuwste en kleinste provincie van Nederland, en is de verantwoordelijke autoriteit voor onder andere de (kritieke) infrastructuur, het milieu, en de ruimtelijke ordening in de regio.",
+        "case": "We ondersteunen Flevoland met Modelverse om hun risicomanagement te verbeteren, de effectiviteit van de geïmplementeerde cybersecurity-maatregelen te verhogen en tijd te besparen voor de IT-, OT- en data privacy-teams, evenals de CISO.",
         "url": "https://www.flevoland.nl/"
       },
       {
-        "name": "PharmaPartners",
-        "about": "Pharmapartners is een erkende marktleider in de levering van geïntegreerde zorgsystemen binnen Nederland, dat zorgverleners toegang geeft tot betrouwbare, actuele en volledige (patiënt)informatie.",
-        "case": "We ondersteunen PharmaPartners met een strategisch cybersecurityplan en een plan voor de waarborging van patiëntveiligheid.",
-        "url": "https://www.pharmapartners.nl/"
-      },
-      {
-        "name": "Thebe",
-        "about": "Thebe biedt wijkverpleging, gespecialiseerde zorg, thuisondersteuning en dagopvang in 19 gemeenten in het westelijke en centrale deel van Brabant. Ze bieden ook zorg in 25 woonzorgcentra in de regio.",
-        "case": "Modelverse wordt getest voor het digitale risicobeheer van Thebe.",
-        "url": "https://www.thebe.nl/"
-      },
-      {
-        "name": "1801",
-        "about": "1801 adviseert scholen en ROC's over leren, lesgeven en het organiseren van onderwijs. Ze ondersteunen onderwijsprofessionals bij alle uitdagingen die het onderwijs met zich meebrengt.",
-        "case": "Modelverse wordt gebruikt om informatiebeveiliging te beheren en bespaart de CISO en het IT-team aanzienlijke hoeveelheden tijd en moeite.",
-        "url": "https://1801.nl/"
-      },
-      {
-        "name": "NPI",
-        "about": "Het NPI is de Nederlandse opleidingsinstelling voor fysiotherapeuten. Ze ondersteunen paramedische professionals bij levenslang leren met cursussen, trainingen, webinars, e-learning en wetenschappelijke informatiediensten.",
-        "case": "NPI gebruikt Modelverse om al hun informatie te beheren. Compliance wordt ook beheerd via de functionaliteit voor beveiligings-policies, zodat beleid eenvoudig kan worden onderhouden en makkelijk gedistribueerd kan worden aan al het personeel.",
-        "url": "https://www.npi.nl/"
+        "name": "Escola Andersen",
+        "about": "Escola Andersen is een Spaans onderwijscentrum met meer dan 50 jaar ervaring, goedgekeurd door de Generalitat de Catalunya, waar onderwijs wordt gegeven van de vroege kinderjaren (3 jaar) tot het 4e jaar van het verplicht voortgezet onderwijs (16 jaar).",
+        "case": "We ondersteunen Escola Andersen bij het versterken van hun cybersecurity en privacy door het waarborgen van naleving van de GDPR en Spaanse nationale veiligheidswetten specifiek voor onderwijsinstellingen.",
+        "url": "https://escolaandersen.com/"
       },
       {
         "name": "Nedato",
-        "about": "Nedato is de grootste Nederlandse coöperatie van aardappeltelers. Ze fungeren als groothandel die aardappeltelers verbindt met de verwerkende industrie voor frietaardappelen.",
-        "case": "Nedato maakt gebruik van de digitale risicobeheer functionaliteit van Modelverse.",
+        "about": "Nedato is de grootste Nederlandse coöperatie van aardappeltelers. Ze fungeren als groothandel die aardappeltelers verbindt met de frietindustrie.",
+        "case": "Nedato maakt gebruik van de digitale risicomanagementfunctionaliteit van Modelverse.",
         "url": "https://nedato.nl/"
       },
       {
         "name": "NewForrest Fingerfood",
-        "about": "NewForrest Fingerfood is een Nederlands bedrijf gespecialiseerd in de productie van diepgevroren fingerfood, minisnacks en hapjes voor zowel de retail- als de foodservicemarkt.",
-        "case": "NewForrest maakt gebruik van de digitale risicobeheer functionaliteit van Modelverse.",
+        "about": "NewForrest Fingerfood is een Nederlands bedrijf dat gespecialiseerd is in de productie van diepgevroren fingerfood, minisnacks en hapjes voor zowel de retail- als foodservicemarkt.",
+        "case": "NewForrest maakt gebruik van de digitale risicomanagementfunctionaliteit van Modelverse.",
         "url": "https://newforrest.nl/"
       },
       {
+        "name": "1801",
+        "about": "1801 adviseert scholen en ROC's op het gebied van leren, lesgeven en het organiseren van onderwijs. Ze ondersteunen onderwijsprofessionals bij alle uitdagingen die het onderwijs met zich meebrengt, brengen vastgelopen processen in beweging en lossen strategische vraagstukken op.",
+        "case": "Modelverse wordt gebruikt om informatiebeveiliging te beheren en bespaart de CISO en het IT-team aanzienlijke tijd en inspanning.",
+        "url": "https://1801.nl/"
+      },
+      {
+        "name": "PharmaPartners",
+        "about": "Pharmapartners is een toonaangevend bedrijf in de levering van geïntegreerde zorgsystemen in Nederland, en zorgt ervoor dat zorgverleners toegang hebben tot betrouwbare, actuele en volledige (patiënt)informatie.",
+        "case": "We ondersteunen PharmaPartners met een strategisch cybersecurity-plan en een plan dat patiëntveiligheid waarborgt.",
+        "url": "https://www.pharmapartners.nl/"
+      },
+      {
+        "name": "Thebe",
+        "about": "Thebe biedt wijkverpleging, specialistische zorg, thuisondersteuning en dagopvang in 19 gemeenten in het westelijke en centrale deel van Brabant. Ze bieden ook zorg in 25 woonzorgcentra in de regio.",
+        "case": "Modelverse wordt als pilot ingezet voor het digitale risicomanagement van Thebe.",
+        "url": "https://www.thebe.nl/"
+      },
+      {
+        "name": "NPi",
+        "about": "Het NPi is de Nederlandse opleidingsinstelling voor fysiotherapeuten. Ze ondersteunen paramedische professionals in levenslang leren met cursussen, trainingen, webinars, e-learning en wetenschappelijke informatiediensten.",
+        "case": "NPi gebruikt Modelverse om al hun informatie te beheren. Compliance wordt ook beheerd via de functionaliteit voor security-beleid. Op deze manier kunnen beleidsregels eenvoudig worden onderhouden en gepubliceerd naar het volledige personeel.",
+        "url": "https://www.npi.nl/"
+      },
+      {
         "name": "LeydenJar Technology",
-        "about": "LeydenJar Technology is een scale-up die een hoogpresterende pure siliciumanode voor batterijen heeft ontwikkeld, waardoor de energiecapaciteit van batterijen met 50% wordt verhoogd. Ze ontwikkelen hun eerste productiefaciliteit in de regio Eindhoven.",
-        "case": "We hebben LeydenJar geholpen de intellectuele eigendom van hun kerntechnologie te beschermen met Modelverse.",
+        "about": "LeydenJar Technology is een scale-up die een hoogpresterende puur-silicium anode voor batterijen heeft ontwikkeld, waarmee de energiecapaciteit van batterijen met 50% wordt vergroot. Ze ontwikkelen hun eerste productiefaciliteit in de regio Eindhoven.",
+        "case": "We helpen LeydenJar om de intellectuele eigendom van hun kerntechnologie te beschermen met Modelverse.",
         "url": "https://leyden-jar.com/"
       }
     ],
     "cta": {
-      "title": "Klaar om uw succesverhaal te schrijven?",
-      "subtitle": "Sluit u aan bij deze toonaangevende organisaties en transformeer uw risico- en compliancebeheer.",
-      "button": "Demo Aanvragen"
+      "title": "Klaar om Jouw Succesverhaal te Schrijven?",
+      "subtitle": "Sluit je aan bij deze toonaangevende organisaties en transformeer je cybersecurity aanpak.",
+      "button": "Vraag een demo aan"
     }
   },
   "news": {
+    "metadata": {
+      "title": "Modelverse | Blogs & Nieuws",
+      "description": "Blijf op de hoogte van de nieuwste inzichten van Modelverse over cybersecurity, compliance-regelgeving, trends en best practices."
+    },
     "hero": {
-      "badge": "Wij beveiligen. Jij slaagt!",
-      "title_line1": "Inzichten over",
-      "title_line2": "Cyberrisico's",
+      "badge": "We secure. You succeed!",
+      "title_line1": "Inzichten in",
+      "title_line2": "Cybersecurity-risico's",
       "title_line3": "& Compliance",
-      "description": "Deskundig advies, trends en praktische gidsen om u te helpen informatierisico's te beheren."
+      "description": "De nieuwste inzichten over cybersecurity regelgeving, trends en best practices."
     },
     "featured": "Uitgelicht",
-    "read_article": "Artikel Lezen",
-    "recent_articles": "Recente Artikelen",
+    "read_article": "Lees artikel",
+    "recent_articles": "Recente artikelen",
     "empty": {
-      "title": "Niks nieuws!",
+      "title": "Nog niets nieuws!",
       "subtitle": "Kom later terug voor interessante updates!"
     },
     "pagination": {
@@ -423,106 +435,115 @@
     }
   },
   "about": {
+    "metadata": {
+      "title": "Modelverse | Over ons",
+      "description": "Lees meer over de missie, waarden, het team en de ambassadeurs van Modelverse die de toekomst van cybersecurity-risicobeheer vormgeven."
+    },
     "hero": {
       "badge": "We secure. You succeed!",
-      "title_line1": "Wij zijn op een Missie om",
-      "title_line2": "Risicobeheer te Democrati-seren",
-      "description": "Enterprise-kwaliteit informatierisicobeheer toegankelijk maken voor organisaties van elke omvang."
+      "title_line1": "Wij zijn op een missie om",
+      "title_line2": "Risicobeheer te democratiseren",
+      "description": "Enterprise-grade cybersecurity risicobeheer, toegankelijk voor organisaties van alle formaten."
     },
     "story": {
       "title": "Ons Verhaal",
       "paragraphs": [
-        "Modelverse werd in 2023 opgericht door een team van ervaren risicomanagers die met eigen ogen de uitdagingen zagen die organisaties dagelijks moeten overkomen bij het implementeren van effectieve risico- en complianceprogramma's.",
-        "We zagen bedrijven worstelen met complexe compliancevereisten, beperkte middelen en een tekort aan talent. Ondertussen waren enterprise risicobeheeroplossingen ofwel te duur of te complex.",
-        "We wisten dat het anders moest. Daarom bouwden we Modelverse — een platform dat enterprise risico- en compliancebeheer toegankelijk maakt voor organisaties van elke omvang, met de eenvoud en betaalbaarheid die organisaties nodig hebben."
+        "Modelverse werd in 2023 opgericht door een team van ervaren risicomanagers die met eigen ogen de uitdagingen zagen waar organisaties mee geconfronteerd worden bij het implementeren van effectieve risico- en compliancemanagementsystemen.",
+        "We zagen bedrijven worstelen met complexe compliance-vereisten, beperkte middelen en een tekort aan talent. Tegelijkertijd waren enterprise-risicobeheersystemen ofwel te duur ofwel te complex.",
+        "We wisten dat het beter kon, en moest. Daarom bouwden wij het Modelverse-platform, waarmee enterprise-risico- en compliancebeheer toegankelijk wordt voor organisaties van alle groottes, met de eenvoud en betaalbaarheid die organisaties nodig hebben.",
+        "Ondersteund door ons team van ervaren consultants stellen wij onze klanten in staat hun cybersecurity-houding met vertrouwen te verbeteren, zodat zij zich kunnen richten op waar ze het beste in zijn: hun organisaties runnen."
       ]
     },
     "values": {
       "title": "Onze Waarden",
-      "subtitle": "De principes die alles sturen wat we doen bij Modelverse.",
+      "subtitle": "De principes die al ons werk bij Modelverse sturen.",
       "items": {
         "customer_first": {
-          "title": "Klant Staat Voorop",
-          "description": "We bouwen producten die echte problemen oplossen. Het succes van onze klanten is ons succes."
+          "title": "Klant Staat Centraal",
+          "description": "Wij leveren producten en diensten die echte problemen oplossen. Onze klanten zijn onze eerste prioriteit; hun succes is ons succes."
         },
         "security_by_design": {
-          "title": "Beveiliging door ontwerp",
-          "description": "Beveiliging is geen bijzaak — het zit ingebakken in alles wat we doen, van code tot cultuur."
+          "title": "Security by Design",
+          "description": "Security mag geen bijzaak zijn. Het is ingebakken in alles wat wij doen, van code tot cultuur, en moet in elke situatie een prioriteit zijn."
         },
         "transparency": {
           "title": "Transparantie",
-          "description": "We geloven in open communicatie met onze klanten, partners en elkaar."
+          "description": "Wij geloven in open communicatie met onze klanten, partners en elkaar. Eerlijkheid en integriteit zijn kernwaarden voor ons team."
         },
         "continuous_learning": {
-          "title": "Continu Leren",
-          "description": "Het dreigingslandschap evolueert dagelijks. We blijven voorop lopen door voortdurend innovatie en educatie te bevorderen."
+          "title": "Continu leren",
+          "description": "Het dreigingslandschap evolueert voortdurend. Wij blijven up-to-date door continue innovatie en educatie."
         }
       }
     },
     "team": {
-      "title": "Ontmoet het Team",
-      "subtitle": "De gepassioneerde mensen achter Modelverse.",
+      "title": "Maak kennis met het team",
+      "subtitle": "De gedreven mensen achter Modelverse.",
       "members": [
         {
-          "bio": "Ben is de oprichter van Modelverse, gedreven door een passie om strategie om te zetten in actie. Met meer dan 25 jaar ervaring bij Shell en later als partner bij KPMG is Ben gespecialiseerd in het helpen van organisaties bij het navigeren van complexe uitdagingen op het gebied van transformatie, risico en technologie. Hij heeft een PhD in theoretische natuurkunde en onderzocht ooit zwarte gaten aan het Imperial College in London — voordat hij in de wereld van het bedrijfsleven dook."
+          "bio": "Ben is de oprichter van Modelverse en wordt gedreven door een passie voor het omzetten van strategie in actie. Met meer dan 25 jaar bij Shell en later als partner bij KPMG heeft Ben organisaties geholpen complexe uitdagingen op het gebied van transformatie, risico en technologie te navigeren. Hij heeft een PhD in theoretische natuurkunde en onderzocht ooit zwarte gaten aan het Imperial College London — voordat hij de wereld van het bedrijfsleven in dook."
         },
         {
-          "bio": "Reshma brengt diepgaande expertise in strategisch informatiebeheer en cybersecurity met een heldere, gestructureerde aanpak voor complexe uitdagingen. Reshma heeft diverse IT-leiderschaps- en beveiligingsfuncties vervuld bij internationale bedrijven en in de energiesector. Ze heeft een MSc in Toegepaste Natuurkunde en een executive MSc in Cybersecurity."
+          "bio": "Reshma brengt diepgaande expertise in strategisch informatiebeheer en cybersecurity met een duidelijke, gestructureerde aanpak voor complexe uitdagingen. Reshma bekleedde diverse IT-leiderschap- en security-functies bij internationale bedrijven en in de energiesector. Zij heeft een MSc in toegepaste natuurkunde en een executive MSc in cybersecurity."
         },
         {
-          "bio": "Daan is een ervaren ondernemer en IT-leider die gepassioneerd is over het gebruik van moderne technologie om organisaties te helpen echte uitdagingen aan te pakken. Daan brengt breed inzicht als strateeg, investeerder en vertrouwde cybersecurityadviseur. Hij heeft een PhD en MSc in Informatica, evenals een executive MSc in Cybersecurity."
+          "bio": "Daan is een ervaren ondernemer en IT-leider die gepassioneerd is over het gebruik van moderne technologie om organisaties te helpen echte uitdagingen aan te pakken. Daan brengt brede inzichten als strateeg, investeerder en vertrouwde cybersecurity-adviseur. Hij heeft een PhD en MSc in computerwetenschappen, evenals een executive MSc in cybersecurity."
         },
         {
-          "bio": "Lili is een governance-expert met ruime ervaring in gezondheidszorg, cybersecurity en patiëntveiligheid. Voordat ze partner werd, werkte Lili 12 jaar bij het Nederlandse Ministerie van Volksgezondheid, aan orgaandonatie, e-health en cybersecurity. Ze heeft een Cum Laude BSc in Biomedische Wetenschappen, een Cum Laude MSc in Neurowetenschappen en een Summa Cum Laude MSc in Cybersecurity Governance."
+          "bio": "Lili is een governance-expert met diepgaande ervaring in gezondheid, cybersecurity en patiëntveiligheid. Voordat zij partner werd, werkte Lili 12 jaar bij het Nederlandse Ministerie van Volksgezondheid aan orgaandonatie, e-health en cybersecurity. Zij heeft een BSc cum laude in biomedische wetenschappen, een MSc cum laude in neurowetenschappen en een MSc summa cum laude in cybersecurity governance."
         },
         {
-          "bio": "Bozhena beheert de back-office. Altijd vriendelijk, toegankelijk, en bovenal zakelijk slim."
+          "bio": "Bozhena leidt de backoffice. Altijd vriendelijk, aanspreekbaar en boven alles business-smart."
         },
         {
-          "bio": "Mariona onderzoekt, interpreteert, structureert en creëert cybersecurity-risicomodellen en ESG-modellen voor enterprise klanten."
+          "bio": "Mariona onderzoekt, interpreteert, structureert en creëert cybersecurity-risicomodellen en ESG-modellen voor enterprise-klanten."
         },
         {
-          "bio": "Sjors richt zich op risicobeheer, consultancy en platformverbeteringen met een focus op clouddiensten en beveiligingsinfrastructuur."
+          "bio": "Sjors richt zich op risicobeheer, consultancy en platformverbeteringen met een focus op clouddiensten en security-infrastructuur."
         },
         {
           "bio": "Matei ontwikkelt en onderhoudt de website, helpt bij het implementeren van DevOps-praktijken en ondersteunt de ontwikkeling van het Modelverse platform."
         },
         {
-          "bio": "Maria levert cybersecurity projecten voor meerdere clienten."
+          "bio": "Maria levert cybersecurity-projecten voor meerdere klanten."
         }
       ]
     },
     "ambassadors": {
       "title": "Onze Ambassadeurs",
-      "subtitle": "Vertrouwde stemmen in de risico- en compliance community die geloven in onze missie.",
+      "subtitle": "Vertrouwde stemmen op het gebied van cybersecurity-risico en compliance die geloven in Modelverse.",
       "items": [
         {
-          "bio": "Jan-Willem Klerkx is gepassioneerd over softwarekwaliteit en bedrijfsbehendigheid. Zijn aanpak combineert diepgaand technisch inzicht met strategisch denken, waarmee hij organisaties helpt risico's te verminderen, onderhoudbaarheid te verbeteren en innovatie te ontsluiten via objectieve broncode- en architectuuranalyse."
+          "bio": "Jan-Willem Klerkx is gepassioneerd over softwarekwaliteit en bedrijfsbehendigheid. Zijn aanpak combineert diepgaand technisch inzicht met strategisch denken, waarmee hij organisaties helpt risico's te verkleinen, onderhoudbaarheid te verbeteren en innovatie te ontsluiten via objectieve broncode- en architectuuranalyse."
         },
         {
-          "bio": "Gordon Muehl heeft innovatie geleid voor Fortune 500-bedrijven, hoogpresterende internationale teams opgebouwd en een beveiligingscultuur ingebed in een R&D-organisatie met 100.000 medewerkers. Hij specialiseert zich in de levenscyclus van veilige softwareontwikkeling, technische due diligence en niet-functionele governance-eisen."
+          "bio": "Gordon Muehl heeft innovatie geleid voor Fortune 500-bedrijven, internationaal goed presterende teams opgebouwd en een security-cultuur ingebed in een R&D-organisatie van 100.000 medewerkers. Gespecialiseerd in secure software development lifecycle, technische due diligence en niet-functionele vereisten van governance — Gordon overbrugt zakelijke en technische domeinen van CxO's tot ontwikkelaars."
         },
         {
-          "bio": "Dennis Mulder specialiseert zich in IT-strategie, AI en digitale transformatie, en richt zich op het overbruggen van bedrijf en technologie van boardroom tot uitvoering. Hij is gecertificeerd Distinguished IT Architect (CITA-D), president van Iasa Global NL en voorzitter van het Chief Architect Forum. Dennis zet zich in voor talentontwikkeling met altijd oog voor praktische impact."
+          "bio": "Dennis Mulder is gespecialiseerd in IT-strategie, AI en digitale transformatie en richt zich op het overbruggen van bedrijven en technologie van de bestuurskamer tot uitvoering voor organisaties. Hij is een Certified Distinguished IT Architect (CITA-D), president van Iasa Global NL en voorzitter van het Chief Architect Forum. Dennis zet zich in voor talentontwikkeling, altijd met oog voor praktische impact."
         },
         {
-          "bio": "Oskar Brink blinkt uit in het afstemmen van beveiligings- en risicostrategieën op bedrijfsdoelstellingen, het stimuleren van duurzame transformatie en het bevorderen van continue verbetering door coaching — met internationale ervaring in Maleisië en India. Hij specialiseert zich in het brengen van duidelijkheid en structuur in complexe IT-omgevingen."
+          "bio": "Oskar Brink blinkt uit in het afstemmen van security- en risicostrategieën op bedrijfsdoelstellingen, het stimuleren van duurzame transformatie en het bevorderen van continue verbetering door middel van coaching — met internationale ervaring in Maleisië en India. Hij is gespecialiseerd in het brengen van helderheid en structuur in complexe IT-omgevingen om organisaties te transformeren naar meer wendbaarheid, security en weerbaarheid."
         },
         {
-          "bio": "Robert Bals onderscheidt zich door het combineren van diepgaande technische expertise met een pragmatische, jargonvrije en praktische mindset. Hij biedt op maat gemaakte ISMS-implementaties, audits voor ISO 27001 en TUV Nord-certificering en GDPR-oplossingen voor ICT-, software- en zorgorganisaties."
+          "bio": "Robert Bals onderscheidt zich door het combineren van diepgaande technische expertise met een pragmatische, jargonvrije en praktische mindset. Hij biedt op maat gemaakte ISMS-implementaties, audits voor ISO 27001- en TUV Nord-certificering en GDPR-oplossingen. Door schaalbare, klantgerichte resultaten te leveren helpt hij ICT-, software- en zorgorganisaties hun informatiebeveiliging en compliance te versterken."
         },
         {
-          "bio": "Alexandra Roger-Machart is gepassioneerd over Tech en AI-gedreven transformatie. Ze adviseert startups en scaleups om hun externe profiel te versterken, stakeholders te betrekken en hun corporate reporting te verbeteren via een interdisciplinair perspectief van strategisch storytelling en regelgevingsexpertise."
+          "bio": "Alexandra Roger-Machart is gepassioneerd over technologie en AI-gedreven transformatie; zij adviseert start-ups en scale-ups bij het versterken van hun externe profiel, het betrekken van stakeholders en het verbeteren van hun corporate reporting via een interdisciplinair perspectief van strategisch storytelling en regelgevingsexpertise."
         }
       ]
     }
   },
   "contact": {
+    "metadata": {
+      "title": "Modelverse | Contact",
+      "description": "Neem contact op met het Modelverse-team om een gepersonaliseerde demo te plannen, prijsinformatie te verkrijgen of technische ondersteuning aan te vragen."
+    },
     "hero": {
       "badge": "We secure. You succeed!",
       "title_line1": "Neem",
-      "title_line2": "Contact Op",
-      "description": "Heeft u vragen over Modelverse? Ons team staat klaar om u te helpen. Neem contact op en we reageren binnen een dag."
+      "title_line2": "Contact op",
+      "description": "Heb je vragen over Modelverse? Ons team staat voor je klaar. Neem contact met ons op en we reageren binnen een dag."
     },
     "info": {
       "email": {
@@ -533,34 +554,39 @@
       "phone": {
         "title": "Telefoon",
         "primary": "+31 6 27612498",
-        "secondary": "Ma-Vr, 9:00-18:00 CET"
+        "secondary": "Ma-vr, 9:00-18:00 CET"
       },
       "office": {
         "title": "Kantoor",
         "primary": "Wilhelmina van Pruisenweg 104",
-        "secondary": "2595 AN Den Haag"
+        "secondary": "2595 AN The Hague"
       },
       "support": {
-        "title": "Ondersteuning",
+        "title": "Support",
         "primary": "Tijdens kantooruren",
-        "secondary": "Ma-Vr, 9:00-18:00 CET voor Standaard"
+        "secondary": "Ma-vr, 9:00-18:00 CET"
       }
     },
     "faq": {
-      "title": "Veelgestelde Vragen",
+      "title": "Veelgestelde vragen",
       "items": [
         {
-          "question": "Wat is jullie reactietijd op vragen?",
-          "answer": "We reageren doorgaans binnen 24 uur op alle vragen tijdens werkdagen. Voor dringende zaken kunt u ons bereiken via het nummer hierboven."
+          "question": "Wat is jullie reactietijd voor vragen?",
+          "answer": "Wij reageren doorgaans binnen 24 uur op alle vragen tijdens werkdagen. Voor dringende zaken kun je ons bellen op het hierboven vermelde nummer."
         },
         {
-          "question": "Biedt u gepersonaliseerde demo's aan?",
-          "answer": "Jazeker! We bieden op maat gemaakte demo's aan die zijn afgestemd op de specifieke behoeften van uw organisatie. U kunt simpelweg gebruikmaken van de knop onderaan de pagina"
+          "question": "Bieden jullie gepersonaliseerde demo's aan?",
+          "answer": "Ja! Wij bieden op maat gemaakte demo's aan die zijn afgestemd op de behoeften van jouw organisatie. Gebruik de knop onderaan deze pagina om een meeting met ons in te plannen."
         }
       ]
     },
     "directions": {
       "title": "Routebeschrijving"
+    },
+    "cta": {
+      "title": "Klaar voor een Gesprek?",
+      "subtitle": "Ontdek hoe Modelverse je organisatie kan helpen cybersecurity-risico's en compliance met vertrouwen te beheren.",
+      "button": "Boek een demo"
     }
   },
   "article": {
@@ -570,24 +596,30 @@
       "article": "Artikel"
     },
     "error": {
-      "title": "Artikel Niet Gevonden",
-      "description": "Sorry, het artikel dat u zoekt bestaat niet of is verwijderd.",
-      "button": "Terug naar Nieuws"
+      "title": "Artikel niet gevonden",
+      "description": "Sorry, het artikel dat je zoekt bestaat niet of is verwijderd.",
+      "button": "Terug naar nieuws"
     },
-    "back": "Terug naar Nieuws"
+    "back": "Terug naar nieuws"
   },
   "legal": {
+    "metadata": {
+      "description_line1": "Het officiële",
+      "description_line2": "document.",
+      "title_loading": "Modelverse | Juridische pagina laden...",
+      "loading": "Juridische en regelgevende documentatie laden..."
+    },
     "breadcrumb": {
       "home": "Home"
     },
     "toc": "Inhoudsopgave",
-    "last_updated": "Laatst Bijgewerkt",
+    "last_updated": "Laatst bijgewerkt",
     "effective_date": "Ingangsdatum",
     "error": {
-      "title": "Pagina Niet Gevonden",
-      "description": "Sorry, de pagina die u zoekt bestaat niet of is verwijderd.",
-      "button": "Terug naar Home"
+      "title": "Pagina niet gevonden",
+      "description": "Sorry, de pagina die je zoekt bestaat niet of is verwijderd.",
+      "button": "Terug naar home"
     },
-    "back": "Terug naar Home"
+    "back": "Terug naar home"
   }
 }

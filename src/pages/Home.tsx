@@ -1,4 +1,3 @@
-// import { useRef } from 'react'
 import { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -16,31 +15,34 @@ import { Layout } from '@/components/layout'
 import {
   ArrowRight,
   Brain,
-  Check,
   CheckCircle2,
+  ClipboardList,
   Compass,
-  Lock,
+  Merge,
   Rocket,
-  Search,
+  Route,
   Shield,
   Sparkles,
+  Users,
 } from 'lucide-react'
 import { motion, useInView, useScroll, useTransform } from 'motion/react'
 
+// --- Constants ---
+const features = [
+  { icon: Compass, key: 'card1' },
+  { icon: Route, key: 'card2' },
+  { icon: Brain, key: 'card3' },
+  { icon: ClipboardList, key: 'card4' },
+  { icon: Merge, key: 'card5' },
+  { icon: Users, key: 'card6' },
+]
+
+// --- Page ---
 export function HomePage() {
   const layoutRef = useRef<HTMLDivElement>(null)
   const { t } = useTranslation()
 
-  // Data
-  const features = [
-    { icon: Compass, key: 'strategic_risk' },
-    { icon: Brain, key: 'real_world' },
-    { icon: Rocket, key: 'actionable' },
-    { icon: Lock, key: 'smart_compliance' },
-    { icon: Search, key: 'audit' },
-    { icon: Check, key: 'multi_standard' },
-  ]
-
+  // Merging translation items with static constants arrays
   const benefits = t('home.benefits.items', { returnObjects: true }) as string[]
 
   const testimonials = t('home.testimonials.items', {
@@ -53,7 +55,7 @@ export function HomePage() {
     video: string
   }[]
 
-  // Framer Motion
+  // Scroll-triggered animation refs — must stay in the component (hooks)
   const heroRef = useRef<HTMLDivElement>(null)
   const featuresRef = useRef<HTMLDivElement>(null)
   const benefitsRef = useRef<HTMLDivElement>(null)
@@ -79,11 +81,8 @@ export function HomePage() {
   return (
     <Layout home={true} ref={layoutRef}>
       {/* Metadata */}
-      <title>Modelverse | Cybersecurity GRC Solutions</title>
-      <meta
-        name="description"
-        content="Modelverse automates GRC and risk scoring, providing real-time compliance intelligence for leading enterprises in various industries."
-      />
+      <title>{t('home.metadata.title')}</title>
+      <meta name="description" content={t('home.metadata.description')} />
 
       {/* Landing Banner */}
       <div className="relative flex min-h-screen flex-col justify-center-safe p-4 text-white">
@@ -91,7 +90,7 @@ export function HomePage() {
           src="/images/heroes/home.avif"
           fetchPriority="high"
           alt=""
-          className="absolute inset-0 size-full object-cover object-[74%_center] md:object-[85%_center] lg:object-[70%_center]"
+          className="absolute inset-0 size-full object-cover object-[45%_center] md:object-[35%_center] lg:object-[40%_center]"
         />
         <div className="absolute inset-0 bg-linear-to-b from-slate-900/50 via-slate-900/30 to-slate-900" />
 
@@ -101,9 +100,9 @@ export function HomePage() {
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
-          className="relative z-1 flex flex-col gap-16 py-20 md:container md:mx-auto lg:flex-row"
+          className="relative z-1 gap-16 py-20 md:container md:mx-auto lg:flex-row"
         >
-          <div className="flex flex-col gap-8 lg:basis-1/2">
+          <div className="flex flex-col gap-8 md:w-xl xl:w-4xl">
             {/* Badge */}
             <motion.div
               variants={fadeInUp}
@@ -119,7 +118,7 @@ export function HomePage() {
               className="flex flex-col text-5xl drop-shadow-lg sm:text-6xl lg:text-7xl"
             >
               <span>Modelverse</span>
-              <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text pb-3 text-transparent">
                 {t('home.hero.title_line2')}
               </span>
             </motion.div>
@@ -127,12 +126,12 @@ export function HomePage() {
             {/* Description */}
             <motion.p
               variants={fadeInUp}
-              className="text-xl text-white/90 drop-shadow-lg"
+              className="max-w-xl text-xl text-white/90 drop-shadow-lg"
             >
               {t('home.hero.description')}
             </motion.p>
 
-            {/* CTA Button */}
+            {/* Demo Button */}
             <motion.div variants={fadeInUp}>
               <button
                 className="group flex w-full cursor-pointer flex-row justify-center-safe gap-2 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:w-fit"
@@ -149,24 +148,30 @@ export function HomePage() {
             {/* Cards */}
             <motion.div
               variants={staggerContainer}
-              className="flex flex-row flex-wrap gap-4"
+              className="flex flex-row flex-wrap gap-4 text-center"
             >
-              <MotionCard variants={scaleIn}>
-                <h1 className="text-3xl whitespace-nowrap">6</h1>
-                <p className="w-full text-sm text-white/90">
-                  {t('home.hero.stats.risk_domains')}
-                </p>
-              </MotionCard>
-              <MotionCard variants={scaleIn}>
-                <h1 className="text-3xl whitespace-nowrap">30+</h1>
+              <MotionCard variants={scaleIn} className="md:w-[30%] xl:w-[20%]">
+                <h1 className="pb-1 text-center text-3xl whitespace-nowrap">
+                  30+
+                </h1>
                 <p className="w-full text-sm text-white/90">
                   {t('home.hero.stats.standards')}
                 </p>
               </MotionCard>
-              <MotionCard variants={scaleIn}>
-                <h1 className="text-3xl whitespace-nowrap">7</h1>
+              <MotionCard variants={scaleIn} className="md:w-[30%] xl:w-[20%]">
+                <h1 className="pb-1 text-center text-3xl whitespace-nowrap">
+                  7
+                </h1>
                 <p className="w-full text-sm text-white/90">
                   {t('home.hero.stats.country_footprints')}
+                </p>
+              </MotionCard>
+              <MotionCard variants={scaleIn} className="md:w-[30%] xl:w-[20%]">
+                <h1 className="pb-1 text-center text-3xl whitespace-nowrap">
+                  125+
+                </h1>
+                <p className="w-full text-sm text-white/90">
+                  {t('home.hero.stats.risk_domains')}
                 </p>
               </MotionCard>
             </motion.div>
@@ -351,7 +356,7 @@ export function HomePage() {
             <div className="relative z-1 flex flex-col items-center-safe justify-center-safe gap-4">
               <motion.div
                 variants={scaleIn}
-                className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md"
+                className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-black/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md"
               >
                 <Rocket className="size-5" />
                 <p className="text-sm">{t('home.cta.badge')}</p>
