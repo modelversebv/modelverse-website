@@ -90,7 +90,7 @@ export function HomePage() {
           src="/images/heroes/home.avif"
           fetchPriority="high"
           alt=""
-          className="absolute inset-0 size-full object-cover object-[50%_center] md:object-[40%_center] lg:object-[55%_center]"
+          className="absolute inset-0 size-full object-cover object-[45%_center] md:object-[35%_center] lg:object-[40%_center]"
         />
         <div className="absolute inset-0 bg-linear-to-b from-slate-900/50 via-slate-900/30 to-slate-900" />
 
@@ -102,7 +102,7 @@ export function HomePage() {
           variants={staggerContainer}
           className="relative z-1 gap-16 py-20 md:container md:mx-auto lg:flex-row"
         >
-          <div className="flex flex-col gap-8 md:w-xl xl:w-1/2">
+          <div className="flex flex-col gap-8 md:w-xl xl:w-4xl">
             {/* Badge */}
             <motion.div
               variants={fadeInUp}
@@ -117,19 +117,16 @@ export function HomePage() {
               variants={fadeInUp}
               className="flex flex-col text-5xl drop-shadow-lg sm:text-6xl lg:text-7xl"
             >
-              <span className="pb-[0.15em]">Modelverse</span>
-              <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text pb-[0.15em] text-transparent">
+              <span>Modelverse</span>
+              <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text pb-3 text-transparent">
                 {t('home.hero.title_line2')}
-              </span>
-              <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text pb-[0.15em] text-transparent">
-                {t('home.hero.title_line3')}
               </span>
             </motion.div>
 
             {/* Description */}
             <motion.p
               variants={fadeInUp}
-              className="text-xl text-white/90 drop-shadow-lg"
+              className="max-w-xl text-xl text-white/90 drop-shadow-lg"
             >
               {t('home.hero.description')}
             </motion.p>
@@ -151,17 +148,9 @@ export function HomePage() {
             {/* Cards */}
             <motion.div
               variants={staggerContainer}
-              className="flex flex-row flex-wrap gap-4"
+              className="flex flex-row flex-wrap gap-4 text-center"
             >
-              <MotionCard variants={scaleIn}>
-                <h1 className="pb-1 text-center text-3xl whitespace-nowrap">
-                  125+
-                </h1>
-                <p className="w-full text-sm text-white/90">
-                  {t('home.hero.stats.risk_domains')}
-                </p>
-              </MotionCard>
-              <MotionCard variants={scaleIn}>
+              <MotionCard variants={scaleIn} className="md:w-[30%] xl:w-[20%]">
                 <h1 className="pb-1 text-center text-3xl whitespace-nowrap">
                   30+
                 </h1>
@@ -169,12 +158,20 @@ export function HomePage() {
                   {t('home.hero.stats.standards')}
                 </p>
               </MotionCard>
-              <MotionCard variants={scaleIn}>
+              <MotionCard variants={scaleIn} className="md:w-[30%] xl:w-[20%]">
                 <h1 className="pb-1 text-center text-3xl whitespace-nowrap">
                   7
                 </h1>
                 <p className="w-full text-sm text-white/90">
                   {t('home.hero.stats.country_footprints')}
+                </p>
+              </MotionCard>
+              <MotionCard variants={scaleIn} className="md:w-[30%] xl:w-[20%]">
+                <h1 className="pb-1 text-center text-3xl whitespace-nowrap">
+                  125+
+                </h1>
+                <p className="w-full text-sm text-white/90">
+                  {t('home.hero.stats.risk_domains')}
                 </p>
               </MotionCard>
             </motion.div>

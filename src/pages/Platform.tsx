@@ -398,7 +398,8 @@ export function PlatformPage() {
               className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
             >
               <h1 className="text-4xl sm:text-5xl">
-                {t('platform.comparison.title_line1')}{' '}
+                {t('platform.comparison.title_line1')}
+                <br />
                 <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
                   {t('platform.comparison.title_line2')}
                 </span>
@@ -435,7 +436,8 @@ export function PlatformPage() {
               className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
             >
               <h1 className="text-4xl sm:text-5xl">
-                {t('platform.feature_showcase.title_line1')}{' '}
+                {t('platform.feature_showcase.title_line1')}
+                <br />
                 <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
                   {t('platform.feature_showcase.title_line2')}
                 </span>

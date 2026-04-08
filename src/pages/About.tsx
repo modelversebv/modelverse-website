@@ -329,14 +329,18 @@ export function AboutPage() {
 
             <motion.div
               variants={staggerContainer}
-              className="grid max-w-7xl grid-cols-1 gap-4 self-center md:grid-cols-3"
+              className="grid max-w-7xl grid-cols-1 gap-4 self-center md:grid-cols-3 lg:grid-cols-10"
             >
               {teamMembers.map((member, index) => (
-                <motion.div variants={scaleIn} key={index}>
+                <motion.div
+                  variants={scaleIn}
+                  key={index}
+                  className="lg:col-span-2 lg:nth-1:col-start-2"
+                >
                   <Card className="size-full bg-white/5 p-0 hover:border-lime-500/50 hover:bg-white/10">
                     <img src={member.image} className="rounded-t-xl" alt="" />
                     <div className="flex grow flex-col p-4">
-                      <h1 className="mb-2 text-xl">{member.name}</h1>
+                      <h1 className="mb-2 text-lg">{member.name}</h1>
                       <h1 className="mb-4 bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text font-semibold text-transparent">
                         {member.role}
                       </h1>
