@@ -9,7 +9,7 @@
   },
   "footer": {
     "tagline": "We secure. You succeed!",
-    "description": "Organisaties in staat stellen om risico's en compliance met vertrouwen te beheren.",
+    "description": "Organisaties in staat stellen om cybersecurity risico's en compliance met vertrouwen te beheren.",
     "sections": {
       "company": {
         "title": "Bedrijf",
@@ -77,7 +77,7 @@
     },
     "benefits": {
       "title": "We Secure. You Succeed!",
-      "subtitle": "Of je nu een startup van 10 personen bent of een enterprise met 10.000 medewerkers — Modelverse schaalt mee met jouw behoeften.",
+      "subtitle": "Of je nu een kleinschalige startup of een grootschalige enterprise bent — Modelverse schaalt mee met jouw behoeften.",
       "items": [
         "Schaal je cybersecurity-risicobeheer op zonder extra personeel aan te nemen",
         "Ontwikkel je cybersecurity-strategie met onze ervaren consultants",
@@ -136,7 +136,7 @@
         },
         {
           "title": "Geen Handmatige Compliance meer",
-          "description": "Handmatig compliancebeheer is tijdrovend en moeilijk te onderhouden, zeker naarmate organisaties groeien. Modelverse stroomlijnt compliance met geautomatiseerde workflows en rapportage, zodat zelfs kleinschalige teams compliance effectief kunnen beheren."
+          "description": "Handmatig compliancebeheer is tijdrovend en moeilijk te onderhouden, zeker naarmate organisaties groeien. Modelverse stroomlijnt compliance met geautomatiseerde workflows, zodat zelfs kleinschalige teams compliance effectief kunnen beheren."
         },
         {
           "title": "Fragmentatie behoort tot het Verleden",
@@ -161,10 +161,76 @@
         { "title": "ISMS" }
       ]
     },
+    "frameworks": {
+      "title_line1": "Één Platform voor ",
+      "title_line2": "Alle Frameworks",
+      "subtitle": "Modelverse ondersteunt compliance voor elk framework. Onze bibliotheken worden continu bijgewerkt met de nieuwste vereisten en best practices, zodat je er zeker van kunt zijn dat je altijd up-to-date bent met de meest relevante frameworks voor jouw organisatie.",
+      "items": [
+        {
+          "name": "ISO 27001/27002",
+          "description": "Internationale standaard die best practice vereisten definieert voor informatiebeveiligingssystemen",
+          "colour": "from-blue-500/20 to-indigo-500/20"
+        },
+        {
+          "name": "GDPR",
+          "description": "EU-regelgeving die de bescherming van persoonsgegevens en privacyrechten voor alle individuen regelt",
+          "colour": "from-emerald-500/20 to-green-500/20"
+        },
+        {
+          "name": "NIS2 Directive",
+          "description": "EU-richtlijn die cybersecurity-maatregelen verplicht stelt voor organisaties in kritieke en belangrijke sectoren",
+          "colour": "from-purple-500/20 to-violet-500/20"
+        },
+        {
+          "name": "BIO2",
+          "description": "Nederlandse Basisnorm voor informatiebeveiliging binnen organisaties in de publieke sector",
+          "colour": "from-orange-500/20 to-amber-500/20"
+        },
+        {
+          "name": "NEN 7510",
+          "description": "Nederlandse norm die patiënt- en medische gegevens beschermt binnen zorginstellingen",
+          "colour": "from-pink-500/20 to-rose-500/20"
+        },
+        {
+          "name": "DORA",
+          "description": "EU-wet die digitale operationele weerbaarheid waarborgt voor financiële instellingen en ICT-aanbieders",
+          "colour": "from-red-500/20 to-orange-500/20"
+        },
+        {
+          "name": "ISO 27701",
+          "description": "Privacy-informatiebeheer uitbreiding op ISO 27001 voor AVG-conforme gegevensbescherming",
+          "colour": "from-cyan-500/20 to-teal-500/20"
+        },
+        {
+          "name": "NIST CSF",
+          "description": "Amerikaans raamwerk met gestructureerde richtlijnen voor het verbeteren en beheren van cyberrisico's",
+          "colour": "from-indigo-500/20 to-sky-500/20"
+        },
+        {
+          "name": "PCI DSS",
+          "description": "Wereldwijde beveiligingsstandaard voor organisaties die betaalkaartgegevens verwerken, opslaan of verzenden",
+          "colour": "from-violet-500/20 to-fuchsia-500/20"
+        }
+      ],
+      "stats": [
+        {
+          "title": "30+",
+          "subtitle": "Frameworks Supported"
+        },
+        {
+          "title": "Multi-Region",
+          "subtitle": "EU, US & Global Coverage"
+        },
+        {
+          "title": "Auto-Updated",
+          "subtitle": "Latest Regulatory Changes"
+        }
+      ]
+    },
     "comparison": {
       "title_line1": "Alles wat je nodig hebt.",
       "title_line2": "Niets meer, niets minder.",
-      "subtitle": "In tegenstelling tot omslachtige risicobeheerplatforms bevat Modelverse alleen de functies die je organisatie daadwerkelijk nodig heeft en gebruikt. Hier zijn enkele functies die wij bieden en die je niet terugvindt in andere platforms.",
+      "subtitle": "In tegenstelling tot de vele omslachtige cybersecurity platforms bevat Modelverse alleen de functies die je organisatie daadwerkelijk nodig heeft en gebruikt. Hier zijn enkele functies die wij bieden en die je niet terugvindt in andere platforms.",
       "points": [
         "Autonome AI-gedreven supply chain management",
         "Role-based takenbeheer en eigenaarschap",
@@ -448,7 +514,7 @@
     "story": {
       "title": "Ons Verhaal",
       "paragraphs": [
-        "Modelverse werd in 2023 opgericht door een team van ervaren risicomanagers die met eigen ogen de uitdagingen zagen waar organisaties mee geconfronteerd worden bij het implementeren van effectieve risico- en compliancemanagementsystemen.",
+        "Modelverse werd in 2023 opgericht door een team van ervaren risicomanagers die met eigen ogen de uitdagingen zagen waar organisaties mee geconfronteerd worden bij het implementeren van effectieve cybersecurityprogramma's.",
         "We zagen bedrijven worstelen met complexe compliance-vereisten, beperkte middelen en een tekort aan talent. Tegelijkertijd waren enterprise-risicobeheersystemen ofwel te duur ofwel te complex.",
         "We wisten dat het beter kon, en moest. Daarom bouwden wij het Modelverse-platform, waarmee enterprise-risico- en compliancebeheer toegankelijk wordt voor organisaties van alle groottes, met de eenvoud en betaalbaarheid die organisaties nodig hebben.",
         "Ondersteund door ons team van ervaren consultants stellen wij onze klanten in staat hun cybersecurity-houding met vertrouwen te verbeteren, zodat zij zich kunnen richten op waar ze het beste in zijn: hun organisaties runnen."
@@ -464,7 +530,7 @@
         },
         "security_by_design": {
           "title": "Security by Design",
-          "description": "Security mag geen bijzaak zijn. Het is ingebakken in alles wat wij doen, van code tot cultuur, en moet in elke situatie een prioriteit zijn."
+          "description": "Security mag geen bijzaak zijn. Het is ingebakken in alles wat wij doen, van code tot cultuur, en is in elke situatie een prioriteit."
         },
         "transparency": {
           "title": "Transparantie",
@@ -477,35 +543,71 @@
       }
     },
     "team": {
-      "title": "Maak kennis met het team",
+      "title": "Maak kennis met het Team",
       "subtitle": "De gedreven mensen achter Modelverse.",
       "members": [
         {
-          "bio": "Ben is de oprichter van Modelverse en wordt gedreven door een passie voor het omzetten van strategie in actie. Met meer dan 25 jaar bij Shell en later als partner bij KPMG heeft Ben organisaties geholpen complexe uitdagingen op het gebied van transformatie, risico en technologie te navigeren. Hij heeft een PhD in theoretische natuurkunde en onderzocht ooit zwarte gaten aan het Imperial College London — voordat hij de wereld van het bedrijfsleven in dook."
+          "name": "Ben Krutzen",
+          "role": "CEO & CTO | Co-Founder",
+          "bio": "Ben is de oprichter van Modelverse en wordt gedreven door een passie voor het omzetten van strategie in actie. Met meer dan 25 jaar bij Shell en later als partner bij KPMG heeft Ben organisaties geholpen complexe uitdagingen op het gebied van transformatie, risico en technologie te navigeren. Hij heeft een PhD in Theoretische Natuurkunde en onderzocht ooit zwarte gaten aan het Imperial College London — voordat hij de wereld van het bedrijfsleven in dook.",
+          "linkedin": "https://www.linkedin.com/in/benkrutzen/",
+          "mail": "mailto:ben@modelverse.online"
         },
         {
-          "bio": "Reshma brengt diepgaande expertise in strategisch informatiebeheer en cybersecurity met een duidelijke, gestructureerde aanpak voor complexe uitdagingen. Reshma bekleedde diverse IT-leiderschap- en security-functies bij internationale bedrijven en in de energiesector. Zij heeft een MSc in toegepaste natuurkunde en een executive MSc in cybersecurity."
+          "name": "Reshma Pandohi Mishre",
+          "role": "Partner | Co-Founder",
+          "bio": "Reshma brengt diepgaande expertise in strategisch informatiebeheer en cybersecurity met een duidelijke, gestructureerde aanpak voor complexe uitdagingen. Reshma bekleedde diverse IT-leiderschap- en security-functies bij internationale bedrijven en in de energiesector. Ze heeft een MSc in Toegepaste Natuurkunde en een executive MSc in Cybersecurity.",
+          "linkedin": "https://www.linkedin.com/in/reshmapandohi/",
+          "mail": "mailto:reshma@modelverse.online"
         },
         {
-          "bio": "Daan is een ervaren ondernemer en IT-leider die gepassioneerd is over het gebruik van moderne technologie om organisaties te helpen echte uitdagingen aan te pakken. Daan brengt brede inzichten als strateeg, investeerder en vertrouwde cybersecurity-adviseur. Hij heeft een PhD en MSc in computerwetenschappen, evenals een executive MSc in cybersecurity."
+          "name": "Daan Loyens",
+          "role": "CFO & COO | Co-Founder",
+          "bio": "Daan is een ervaren ondernemer en IT-leider die gepassioneerd is over het gebruik van moderne technologie om organisaties te helpen echte uitdagingen aan te pakken. Daan brengt brede inzichten als strateeg, investeerder en vertrouwde cybersecurity-adviseur. Hij heeft een PhD in Informatica, evenals een executive MSc in Cybersecurity.",
+          "linkedin": "https://www.linkedin.com/in/dl11235813213456/",
+          "mail": "mailto:daan@modelverse.online"
         },
         {
-          "bio": "Lili is een governance-expert met diepgaande ervaring in gezondheid, cybersecurity en patiëntveiligheid. Voordat zij partner werd, werkte Lili 12 jaar bij het Nederlandse Ministerie van Volksgezondheid aan orgaandonatie, e-health en cybersecurity. Zij heeft een BSc cum laude in biomedische wetenschappen, een MSc cum laude in neurowetenschappen en een MSc summa cum laude in cybersecurity governance."
+          "name": "Lili Guo",
+          "role": "Partner | CISO",
+          "bio": "Lili is een governance-expert met diepgaande ervaring in gezondheid, cybersecurity en patiëntveiligheid. Voordat ze partner werd, werkte Lili 12 jaar bij het Nederlandse Ministerie van Volksgezondheid aan orgaandonatie, e-health en cybersecurity. Ze heeft een BSc cum laude in Biomedische Wetenschappen, een MSc cum laude in Neurowetenschappen en een MSc summa cum laude in Cybersecurity Governance.",
+          "linkedin": "https://www.linkedin.com/in/lili-guo-3941b126/",
+          "mail": "mailto:Lili@modelverse.online"
         },
         {
-          "bio": "Bozhena leidt de backoffice. Altijd vriendelijk, aanspreekbaar en boven alles business-smart."
+          "name": "Bozhena Kovtun",
+          "role": "Office Manager",
+          "bio": "Bozhena leidt onze backoffice op de HSD Campus in Den Haag, de nationale hub voor innovatie in de Nederlandse veiligheidssector. Altijd vriendelijk, aanspreekbaar en boven alles business-smart.",
+          "linkedin": "https://www.linkedin.com/in/bozhena-kovtun-0a106619b/",
+          "mail": "mailto:bozhena@valuetracks.io"
         },
         {
-          "bio": "Mariona onderzoekt, interpreteert, structureert en creëert cybersecurity-risicomodellen en ESG-modellen voor enterprise-klanten."
+          "name": "Mariona Fortuny Jané",
+          "role": "Risk Consultant",
+          "bio": "Mariona onderzoekt, interpreteert, structureert en creëert cybersecurity-risicomodellen en ESG-modellen voor enterprise-klanten. Ze heeft een Bachelor in Internationale Betrekkingen en een MSc in Cybersecurity Governance.",
+          "linkedin": "https://www.linkedin.com/in/mariona-fortuny-jan%C3%A9/",
+          "mail": "mailto:mariona@modelverse.online"
         },
         {
-          "bio": "Sjors richt zich op risicobeheer, consultancy en platformverbeteringen met een focus op clouddiensten en security-infrastructuur."
+          "name": "Sjors de Natris",
+          "role": "Risk Consultant | Security Engineer",
+          "bio": "Sjors is een generalist die zich voornamelijk richt op consultancy, risicobeheer en DevOps. Hij heeft een BSc in Internationale Betrekkingen en Organisaties en werkt toe naar een MSc in Cybersecurity Governance.",
+          "linkedin": "https://www.linkedin.com/in/sjors-de-natris-470a51198/",
+          "mail": "mailto:sjors@modelverse.online"
         },
         {
-          "bio": "Matei ontwikkelt en onderhoudt de website, helpt bij het implementeren van DevOps-praktijken en ondersteunt de ontwikkeling van het Modelverse platform."
+          "name": "Matei Avram",
+          "role": "Software Engineer",
+          "bio": "Matei ontwikkelt en onderhoudt het Modelverse platform en de website, implementeert DevOps-praktijken en beheert de cloud-infrastructuur. Hij heeft een BSc in Informatica en een MSc in Software Engineering.",
+          "linkedin": "https://www.linkedin.com/in/matei-avram-919771251/",
+          "mail": "mailto:matei@modelverse.online"
         },
         {
-          "bio": "Maria levert cybersecurity-projecten voor meerdere klanten."
+          "name": "Maria Litvinova",
+          "role": "Risk Consultant",
+          "bio": "Maria ondersteunt de uitvoering van cybersecurity-projecten voor meerdere klanten. Ze heeft een BSc in Security Studies en een MSc cum laude in Countering Organised Crime and Terrorism.",
+          "linkedin": "https://www.linkedin.com/in/maria-litvinova-370063317/",
+          "mail": "mailto:maria@modelverse.online"
         }
       ]
     },

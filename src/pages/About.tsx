@@ -74,80 +74,29 @@ export function AboutPage() {
   const layoutRef = useRef<HTMLDivElement>(null)
   const { t } = useTranslation()
 
-  const teamMembers = [
-    {
-      name: 'Ben Krutzen',
-      role: 'CEO & CTO | Co-Founder',
-      bio: t('about.team.members.0.bio'),
-      image: benImage,
-      linkedin: 'https://www.linkedin.com/in/benkrutzen/',
-      mail: 'mailto:ben@modelverse.online',
-    },
-    {
-      name: 'Reshma Pandohi Mishre',
-      role: 'Partner | Co-Founder',
-      bio: t('about.team.members.1.bio'),
-      image: reshmaImage,
-      linkedin: 'https://www.linkedin.com/in/reshmapandohi/',
-      mail: 'mailto:reshma@modelverse.online',
-    },
-    {
-      name: 'Daan Loyens',
-      role: 'CFO & COO | Co-Founder',
-      bio: t('about.team.members.2.bio'),
-      image: daanImage,
-      linkedin: 'https://www.linkedin.com/in/dl11235813213456/',
-      mail: 'mailto:daan@modelverse.online',
-    },
-    {
-      name: 'Lili Guo',
-      role: 'Partner | CISO',
-      bio: t('about.team.members.3.bio'),
-      image: liliImage,
-      linkedin: 'https://www.linkedin.com/in/lili-guo-3941b126/',
-      mail: 'mailto:Lili@modelverse.online',
-    },
-    {
-      name: 'Bozhena Kovtun',
-      role: 'Office Manager',
-      bio: t('about.team.members.4.bio'),
-      image: bozhenaImage,
-      linkedin: 'https://www.linkedin.com/in/bozhena-kovtun-0a106619b/',
-      mail: 'mailto:bozhena@valuetracks.io',
-    },
-    {
-      name: 'Mariona Fortuny Jané',
-      role: 'Risk Consultant',
-      bio: t('about.team.members.5.bio'),
-      image: marionaImage,
-      linkedin: 'https://www.linkedin.com/in/mariona-fortuny-jan%C3%A9/',
-      mail: 'mailto:mariona@modelverse.online',
-    },
-    {
-      name: 'Sjors de Natris',
-      role: 'Risk Consultant & Security Engineer',
-      bio: t('about.team.members.6.bio'),
-      image: sjorsImage,
-      linkedin: 'https://www.linkedin.com/in/sjors-de-natris-470a51198/',
-      mail: 'mailto:sjors@modelverse.online',
-    },
-    {
-      name: 'Matei Avram',
-      role: 'Software Engineer',
-      bio: t('about.team.members.7.bio'),
-      image: mateiImage,
-      linkedin: 'https://www.linkedin.com/in/matei-avram-919771251/',
-      mail: 'mailto:matei@modelverse.online',
-    },
-    {
-      name: 'Maria Litvinova',
-      role: 'Risk Consultant',
-      bio: t('about.team.members.8.bio'),
-      image: mariaImage,
-      linkedin: 'https://www.linkedin.com/in/maria-litvinova-370063317/',
-      mail: 'mailto:maria@modelverse.online',
-    },
-  ]
+  const teamMembers = (
+    t('about.team.members', { returnObjects: true }) as {
+      name: string
+      role: string
+      bio: string
+      linkedin: string
+      mail: string
+    }[]
+  ).map((member) => ({
+    ...member,
+    image:
+      {
+        Ben: benImage,
+        Bozhena: bozhenaImage,
+        Daan: daanImage,
+        Lili: liliImage,
+        Maria: mariaImage,
+        Mariona: marionaImage,
+        Matei: mateiImage,
+        Reshma: reshmaImage,
+        Sjors: sjorsImage,
+      }[member.name.split(' ')[0]] || '',
+  }))
 
   const ambassadors = [
     {
