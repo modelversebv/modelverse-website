@@ -311,6 +311,7 @@ export function PlatformPage() {
   const implementationRef = useRef<HTMLDivElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
   const frameworksRef = useRef<HTMLDivElement>(null)
+  const greenBoxRef = useRef<HTMLDivElement>(null)
 
   const problemsInView = useInView(problemsRef, { once: true, amount: 0.1 })
   const keyFeaturesInView = useInView(keyFeaturesRef, {
@@ -322,11 +323,12 @@ export function PlatformPage() {
     amount: 0.1,
   })
   const comparisonInView = useInView(comparisonRef, { once: true, amount: 0.1 })
+  const greenBoxInView = useInView(greenBoxRef, { once: true, amount: 0.8 })
   const implementationInView = useInView(implementationRef, {
     once: true,
     amount: 0.1,
   })
-  const frameworksInView = useInView(frameworksRef, { once: true, amount: 0.3 })
+  const frameworksInView = useInView(frameworksRef, { once: true, amount: 0.1 })
   const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 })
 
   return (
@@ -453,7 +455,7 @@ export function PlatformPage() {
             </motion.div>
 
             <motion.div variants={staggerContainer} className="w-full">
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+              <div className="grid grid-cols-1 gap-6 pb-6 md:grid-cols-3">
                 {frameworkItems.map((framework, index) => (
                   <motion.div key={`framework-${index}`} variants={fadeInUp}>
                     <Card className="gap-4 border-white/20 bg-white/5 backdrop-blur-md hover:border-lime-500/50 hover:bg-white/10">
@@ -474,36 +476,39 @@ export function PlatformPage() {
                   </motion.div>
                 ))}
               </div>
-            </motion.div>
 
-            <motion.div
-              variants={fadeInUp}
-              className="w-full rounded-2xl border border-lime-400/30 bg-linear-to-r from-lime-500/10 to-teal-500/10 p-8 text-center backdrop-blur-xl md:w-3/5 lg:w-full"
-            >
-              <div className="flex flex-col items-center max-lg:gap-4 lg:flex-row lg:justify-evenly">
-                {statItems.flatMap((stat, index) => [
-                  index > 0 ? (
+              <motion.div
+                ref={greenBoxRef}
+                variants={fadeInUp}
+                initial="hidden"
+                animate={greenBoxInView ? 'visible' : 'hidden'}
+                className="w-full rounded-2xl border border-lime-400/30 bg-linear-to-r from-lime-500/10 to-teal-500/10 p-8 text-center backdrop-blur-xl md:w-3/5 lg:w-full"
+              >
+                <div className="flex flex-col items-center max-lg:gap-4 lg:flex-row lg:justify-evenly">
+                  {statItems.flatMap((stat, index) => [
+                    index > 0 ? (
+                      <div
+                        key={`divider-${index}`}
+                        className="h-px w-3/4 bg-white/20 lg:h-12 lg:w-px"
+                      />
+                    ) : null,
                     <div
-                      key={`divider-${index}`}
-                      className="h-px w-3/4 bg-white/20 lg:h-12 lg:w-px"
-                    />
-                  ) : null,
-                  <div
-                    key={`stat-${index}`}
-                    className="flex items-center gap-4 max-lg:w-[230px] lg:justify-center"
-                  >
-                    <div className="flex size-12 items-center justify-center rounded-full bg-linear-to-r from-lime-500 to-teal-500">
-                      <stat.icon className="size-6 text-white" />
-                    </div>
-                    <div className="text-left">
-                      <div className="text-2xl text-white">{stat.title}</div>
-                      <div className="text-sm text-white/70">
-                        {stat.subtitle}
+                      key={`stat-${index}`}
+                      className="flex items-center gap-4 max-lg:w-[230px] lg:justify-center"
+                    >
+                      <div className="flex size-12 items-center justify-center rounded-full bg-linear-to-r from-lime-500 to-teal-500">
+                        <stat.icon className="size-6 text-white" />
                       </div>
-                    </div>
-                  </div>,
-                ])}
-              </div>
+                      <div className="text-left">
+                        <div className="text-2xl text-white">{stat.title}</div>
+                        <div className="text-sm text-white/70">
+                          {stat.subtitle}
+                        </div>
+                      </div>
+                    </div>,
+                  ])}
+                </div>
+              </motion.div>
             </motion.div>
           </motion.div>
 
