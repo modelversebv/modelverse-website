@@ -14,17 +14,24 @@ import { Layout } from '@/components/layout'
 import {
   ArrowRight,
   BookOpen,
+  Building2,
   ChartLine,
   CheckCircle2,
   ClipboardCheck,
+  Earth,
   Eye,
+  FileCheck,
   FileText,
+  Globe,
+  KeyRound,
   Layers,
+  ListCheck,
   ListRestart,
   Lock,
   type LucideIcon,
   Map,
   Rocket,
+  Scale,
   ScrollText,
   Shield,
   ShieldCheck,
@@ -54,6 +61,8 @@ const moduleColours = [
   { bgColour: 'bg-amber-500', hoverColour: 'hover:bg-amber-700' },
 ]
 
+const problemIcons = [ListRestart, Wrench, Ungroup]
+
 const moduleIcons = [
   ShieldCheck,
   Layers,
@@ -66,7 +75,19 @@ const moduleIcons = [
   BookOpen,
 ]
 
-const problemIcons = [ListRestart, Wrench, Ungroup]
+const frameworkIcons = [
+  Globe,
+  Scale,
+  Shield,
+  Building2,
+  FileCheck,
+  TrendingUp,
+  Eye,
+  BookOpen,
+  KeyRound,
+]
+
+const statIcons = [ListCheck, Earth, ListRestart]
 
 const implementationIcons = [
   Map,
@@ -167,7 +188,7 @@ function ImplementationStepItem({
             {String(index + 1)}
           </span>
         </div>
-        <Card className="flex flex-col gap-4 bg-white/5 p-6 hover:border-lime-500/50 hover:bg-white/10">
+        <Card className="flex size-full flex-col gap-4 bg-white/5 p-6 shadow-md hover:border-lime-500/50 hover:bg-white/10 hover:shadow-lime-500/70">
           <div className="flex items-center gap-4">
             <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-lime-500 to-teal-500">
               <step.icon className="size-6" />
@@ -234,6 +255,13 @@ export function PlatformPage() {
     }[]
   ).map((item, index) => ({ ...item, icon: featureShowcaseIcons[index] }))
 
+  const problems = (
+    t('platform.problems.items', { returnObjects: true }) as {
+      title: string
+      description: string
+    }[]
+  ).map((item, index) => ({ ...item, icon: problemIcons[index] }))
+
   const moduleItems = (
     t('platform.fingertips.module_items', { returnObjects: true }) as {
       title: string
@@ -244,12 +272,25 @@ export function PlatformPage() {
     colour: moduleColours[index],
   }))
 
-  const problems = (
-    t('platform.problems.items', { returnObjects: true }) as {
-      title: string
+  const frameworkItems = (
+    t('platform.frameworks.items', {
+      returnObjects: true,
+    }) as {
+      name: string
       description: string
+      colour: string
     }[]
-  ).map((item, index) => ({ ...item, icon: problemIcons[index] }))
+  ).map((item, index) => ({
+    ...item,
+    icon: frameworkIcons[index],
+  }))
+
+  const statItems = (
+    t('platform.frameworks.stats', { returnObjects: true }) as {
+      title: string
+      subtitle: string
+    }[]
+  ).map((item, index) => ({ ...item, icon: statIcons[index] }))
 
   const comparisonPoints = t('platform.comparison.points', {
     returnObjects: true,
@@ -269,6 +310,8 @@ export function PlatformPage() {
   const comparisonRef = useRef<HTMLDivElement>(null)
   const implementationRef = useRef<HTMLDivElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
+  const frameworksRef = useRef<HTMLDivElement>(null)
+  const greenBoxRef = useRef<HTMLDivElement>(null)
 
   const problemsInView = useInView(problemsRef, { once: true, amount: 0.1 })
   const keyFeaturesInView = useInView(keyFeaturesRef, {
@@ -280,10 +323,12 @@ export function PlatformPage() {
     amount: 0.1,
   })
   const comparisonInView = useInView(comparisonRef, { once: true, amount: 0.1 })
+  const greenBoxInView = useInView(greenBoxRef, { once: true, amount: 0.8 })
   const implementationInView = useInView(implementationRef, {
     once: true,
     amount: 0.1,
   })
+  const frameworksInView = useInView(frameworksRef, { once: true, amount: 0.1 })
   const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 })
 
   return (
@@ -327,7 +372,7 @@ export function PlatformPage() {
                   key={`diff-${index}`}
                   className="flex justify-center md:col-span-2 md:last:col-start-2 lg:col-span-1 lg:last:col-start-auto"
                 >
-                  <Card className="size-full bg-white/5 hover:border-lime-500/50 hover:bg-white/10">
+                  <Card className="size-full bg-white/5 shadow-md hover:border-lime-500/50 hover:bg-white/10 hover:shadow-lime-500/70">
                     <div className="mb-4 flex w-fit items-center justify-center rounded-xl bg-linear-to-br from-lime-500 to-teal-500 p-2">
                       <diff.icon className="size-6" />
                     </div>
@@ -364,6 +409,7 @@ export function PlatformPage() {
             </motion.div>
             <motion.div variants={staggerContainer} className="w-full">
               <Card className="items-center-safe justify-center-safe gap-4 border-white/20 bg-white/5 backdrop-blur-md hover:border-lime-500/50 hover:bg-white/10">
+                <div className="absolute inset-0 rounded-lg bg-linear-to-br group-hover:from-lime-500/10 group-hover:to-teal-500/10" />
                 <h1>{t('platform.fingertips.modules')}</h1>
                 <div className="grid w-full grid-cols-4 gap-4 md:grid-cols-10 xl:grid-cols-9">
                   {moduleItems.map((module, index) => (
@@ -382,6 +428,87 @@ export function PlatformPage() {
                   ))}
                 </div>
               </Card>
+            </motion.div>
+          </motion.div>
+
+          {/* Frameworks */}
+          <motion.div
+            ref={frameworksRef}
+            initial="hidden"
+            animate={frameworksInView ? 'visible' : 'hidden'}
+            variants={fadeInUp}
+            className="flex flex-col items-center-safe gap-8"
+          >
+            <motion.div
+              variants={fadeInUp}
+              className="mx-auto flex max-w-4xl flex-col text-center"
+            >
+              <h2 className="mb-6 text-4xl text-white md:text-5xl">
+                {t('platform.frameworks.title_line1')}{' '}
+                <span className="bg-linear-to-r from-lime-400 to-teal-400 bg-clip-text text-transparent">
+                  {t('platform.frameworks.title_line2')}
+                </span>
+              </h2>
+              <p className="text-xl text-white/70">
+                {t('platform.frameworks.subtitle')}
+              </p>
+            </motion.div>
+
+            <motion.div variants={staggerContainer} className="w-full">
+              <div className="grid grid-cols-1 gap-6 pb-6 md:grid-cols-3">
+                {frameworkItems.map((framework, index) => (
+                  <motion.div key={`framework-${index}`} variants={fadeInUp}>
+                    <Card className="gap-4 border-white/20 bg-white/5 backdrop-blur-md hover:border-lime-500/50 hover:bg-white/10">
+                      <div className="flex items-center gap-4">
+                        <div
+                          className={`h-14 w-14 rounded-xl bg-linear-to-r ${framework.colour} flex items-center justify-center border border-white/10`}
+                        >
+                          <framework.icon className="size-7 text-white" />
+                        </div>
+                        <h3 className="text-xl text-white transition-colors duration-300 group-hover:text-lime-400">
+                          {framework.name}
+                        </h3>
+                      </div>
+                      <p className="text-sm text-white/70">
+                        {framework.description}
+                      </p>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+
+              <motion.div
+                ref={greenBoxRef}
+                variants={fadeInUp}
+                initial="hidden"
+                animate={greenBoxInView ? 'visible' : 'hidden'}
+                className="w-full rounded-2xl border border-lime-400/30 bg-linear-to-r from-lime-500/10 to-teal-500/10 p-8 text-center backdrop-blur-xl md:w-3/5 lg:w-full"
+              >
+                <div className="flex flex-col items-center max-lg:gap-4 lg:flex-row lg:justify-evenly">
+                  {statItems.flatMap((stat, index) => [
+                    index > 0 ? (
+                      <div
+                        key={`divider-${index}`}
+                        className="h-px w-3/4 bg-white/20 lg:h-12 lg:w-px"
+                      />
+                    ) : null,
+                    <div
+                      key={`stat-${index}`}
+                      className="flex items-center gap-4 max-lg:w-[230px] lg:justify-center"
+                    >
+                      <div className="flex size-12 items-center justify-center rounded-full bg-linear-to-r from-lime-500 to-teal-500">
+                        <stat.icon className="size-6 text-white" />
+                      </div>
+                      <div className="text-left">
+                        <div className="text-2xl text-white">{stat.title}</div>
+                        <div className="text-sm text-white/70">
+                          {stat.subtitle}
+                        </div>
+                      </div>
+                    </div>,
+                  ])}
+                </div>
+              </motion.div>
             </motion.div>
           </motion.div>
 
