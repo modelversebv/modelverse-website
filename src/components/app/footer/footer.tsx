@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
 import emailBadge from '@/assets/badges/email-test-badge.png'
+import isoBadge from '@/assets/badges/iso-27001-badge.png'
 import msBadge from '@/assets/badges/ms-badge.png'
 import { BuildNumber } from '@/components/buildNumber'
 import { Github, Linkedin, Mail } from 'lucide-react'
@@ -97,11 +98,16 @@ export function Footer({ onManagePrivacy }: FooterProps) {
           </h4>
           <div className="flex flex-wrap items-center gap-2 py-2">
             <img
+              src={isoBadge}
+              alt="ISO 27001 Certification"
+              className="max-h-16"
+            />
+            <img
               src={msBadge}
               alt="Microsoft for Startups partnership badge"
-              className="max-h-12"
+              className="max-h-16"
             />
-            <img src={emailBadge} alt="Email Test: 100%" className="max-h-6" />
+            {/* <img src={emailBadge} alt="Email Test: 100%" className="max-h-12" /> */}
           </div>
         </div>
         <div className="h-px w-full shrink-0 bg-gray-800" />
