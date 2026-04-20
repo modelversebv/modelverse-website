@@ -2,11 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
 import emailBadge from '@/assets/badges/email-test-badge.png'
-<<<<<<< HEAD
 import isoBadge from '@/assets/badges/iso-27001-badge-resized.png'
-=======
-import isoBadge from '@/assets/badges/iso-27001-badge.png'
->>>>>>> origin/main
 import msBadge from '@/assets/badges/ms-badge.png'
 import { BuildNumber } from '@/components/buildNumber'
 import { Github, Linkedin, Mail } from 'lucide-react'
