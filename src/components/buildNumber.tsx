@@ -1,3 +1,3 @@
 export function BuildNumber() {
-  return import.meta.env.VITE_BUILD_SHA || 'local'
+  return process.env.NEXT_PUBLIC_BUILD_SHA || 'local'
 }

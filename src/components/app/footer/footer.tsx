@@ -98,18 +98,18 @@ export function Footer({ onManagePrivacy }: FooterProps) {
           </h4>
           <div className="flex flex-row gap-2 py-2">
             <img
-              src={isoBadge}
+              src={isoBadge.src}
               alt="ISO 27001 Certification"
               className="max-h-32"
             />
             <div className="flex flex-col justify-center gap-2">
               <img
-                src={emailBadge}
+                src={emailBadge.src}
                 alt="Email Test: 100%"
                 className="max-h-9"
               />
               <img
-                src={msBadge}
+                src={msBadge.src}
                 alt="Microsoft for Startups partnership badge"
                 className="max-h-20"
               />

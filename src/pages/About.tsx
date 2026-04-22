@@ -85,17 +85,19 @@ export function AboutPage() {
   ).map((member) => ({
     ...member,
     image:
-      {
-        Ben: benImage,
-        Bozhena: bozhenaImage,
-        Daan: daanImage,
-        Lili: liliImage,
-        Maria: mariaImage,
-        Mariona: marionaImage,
-        Matei: mateiImage,
-        Reshma: reshmaImage,
-        Sjors: sjorsImage,
-      }[member.name.split(' ')[0]] || '',
+      (
+        {
+          Ben: benImage,
+          Bozhena: bozhenaImage,
+          Daan: daanImage,
+          Lili: liliImage,
+          Maria: mariaImage,
+          Mariona: marionaImage,
+          Matei: mateiImage,
+          Reshma: reshmaImage,
+          Sjors: sjorsImage,
+        }[member.name.split(' ')[0]] as { src: string } | undefined
+      )?.src ?? '',
   }))
 
   const ambassadors = [
@@ -205,7 +207,7 @@ export function AboutPage() {
             >
               <Card className="flex p-2 hover:bg-white/10">
                 <img
-                  src={teamImage}
+                  src={teamImage.src}
                   alt="Modelverse team of eight members, photographed together in their bright, modern office headquarters."
                   className="aspect-video rounded-lg object-cover"
                 />

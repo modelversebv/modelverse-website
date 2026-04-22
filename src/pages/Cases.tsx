@@ -89,7 +89,7 @@ function CaseStudyItem({ study, index }: { study: CaseStudy; index: number }) {
           className={`relative flex h-[300px] items-center-safe justify-center-safe overflow-hidden lg:h-auto lg:basis-1/2 ${index % 2 != 0 && 'lg:order-last'}`}
         >
           <img
-            src={logos[index]}
+            src={logos[index].src}
             alt=""
             className={`size-full rounded-t-lg object-cover transition-all duration-300 lg:rounded-t-none ${index % 2 != 0 ? 'lg:rounded-r-lg' : 'lg:rounded-l-lg'} lg:absolute lg:inset-0`}
           />

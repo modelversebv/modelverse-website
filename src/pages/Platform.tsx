@@ -229,7 +229,7 @@ function PlatformHero() {
       </div>
       <Card className="p-2 hover:bg-white/10 lg:max-w-4xl xl:w-500">
         <img
-          src={platformImage}
+          src={platformImage.src}
           alt="Modelverse Platform"
           className="rounded-lg"
         />

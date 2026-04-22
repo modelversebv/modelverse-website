@@ -35,3 +35,7 @@ dist-ssr
 
 # Ignore local build of public files
 /public/sitemap.xml
+
+# Next.js
+.next
+next-env.d.ts

@@ -2,13 +2,15 @@ import ReactGA from 'react-ga4'
 
 import { removeCookie } from 'typescript-cookie'
 
-const TRACKING_ID = import.meta.env.VITE_GA4_MEASUREMENT_ID || ''
+const TRACKING_ID = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID || ''
 
 const isGa4Enabled = !!TRACKING_ID
 let isInitialized = false
 
 if (!isGa4Enabled) {
-  console.warn('GA4 Tracking disabled. VITE_GA4_MEASUREMENT_ID is missing.')
+  console.warn(
+    'GA4 Tracking disabled. NEXT_PUBLIC_GA4_MEASUREMENT_ID is missing.'
+  )
 }
 
 const deleteGaCookies = () => {

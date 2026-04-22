@@ -255,7 +255,7 @@ export function HomePage() {
             >
               <Card className="hidden p-2 hover:bg-white/10 lg:flex">
                 <img
-                  src={teamImage}
+                  src={teamImage.src}
                   alt="Modelverse Team"
                   className="rounded-lg"
                 />
