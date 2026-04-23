@@ -1,5 +1,8 @@
+import '../index.css'
 import 'flag-icons/css/flag-icons.min.css'
 import type { Metadata } from 'next'
+
+import { IntlProvider } from '@/providers/IntlProvider'
 
 export const metadata: Metadata = {
   title: 'Modelverse',
@@ -14,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div id="root">{children}</div>
+        <IntlProvider>
+          <div id="root">{children}</div>
+        </IntlProvider>
       </body>
     </html>
   )
