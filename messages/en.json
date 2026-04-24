@@ -1,0 +1,721 @@
+{
+  "navbar": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "cases": "Cases",
+    "news": "News",
+    "about": "About",
+    "contact": "Contact Us"
+  },
+  "footer": {
+    "tagline": "We secure. You succeed!",
+    "description": "Empowering organisations to manage cybersecurity risks and compliance with confidence.",
+    "sections": {
+      "company": {
+        "title": "Company",
+        "about": "About",
+        "blog": "News",
+        "contact": "Contact"
+      },
+      "legal": {
+        "title": "Legal",
+        "privacy_policy": "Privacy Policy",
+        "terms_of_service": "Terms of Service",
+        "cookie_policy": "Cookie Policy"
+      }
+    },
+    "security_compliance": "Security & Compliance",
+    "copyright": "All rights reserved.",
+    "privacy": "Manage Privacy Preferences"
+  },
+  "home": {
+    "metadata": {
+      "title": "Modelverse | Cybersecurity Risk Management",
+      "description": "Modelverse provides a cybersecurity risk management platform and consultancy services for organizations of all sizes."
+    },
+    "hero": {
+      "badge": "We secure. You succeed!",
+      "title_line1": "Modelverse",
+      "title_line2": "Cybersecurity Control",
+      "description": "Improve and monitor your cybersecurity posture with our intelligent risk management platform, designed and supported by our experienced consultants.",
+      "cta": "Request a Demo",
+      "explore": "Explore More",
+      "stats": {
+        "risk_domains": "Years of Experience",
+        "standards": "Frameworks",
+        "country_footprints": "Active Countries"
+      }
+    },
+    "features": {
+      "title": "Everything You Need to Manage Risks and Compliance",
+      "items": {
+        "card1": {
+          "title": "Strategic Risk Management",
+          "description": "We help you manage risks across three levels: organisation, assets, and findings. Capability-driven roadmaps give you a clear understanding of where to invest. Say goodbye to bloated risk registers with hundreds of vague entries."
+        },
+        "card2": {
+          "title": "Streamlined Compliance",
+          "description": "We seamlessly continue from your existing progress on certification frameworks to ensure minimal disruption to your operations. Whether you want to be ISO 27001 certified, meet GDPR requirements, or align with NIS2, we've got you covered."
+        },
+        "card3": {
+          "title": "Intelligent Automation",
+          "description": "Our approach is built on a foundation of intelligent automation, designed to save you time and reduce risks. From evidence collection to smart recommendations, we help you stay ahead of the curve and focus on what matters most."
+        },
+        "card4": {
+          "title": "Continuous Audit-Readiness",
+          "description": "We create tailored policies, procedures, and controls using curated libraries built on real-world experience. Using our platform our consultants can automate most controls, and build a single source of truth, ensuring you are always audit-ready."
+        },
+        "card5": {
+          "title": "Seamless Integrations",
+          "description": "Connect your existing tools and systems to our platform effortlessly. Whether it's Microsoft services, LeanIX, Ultimo, sosafe, or others; we can integrate them and centralise your risk and compliance management."
+        },
+        "card6": {
+          "title": "Professional Guidance",
+          "description": "Our team of experts provides personalised support to help you navigate the complexities of cybersecurity. From strategic advice to hands-on implementation, we're here to ensure your success every step of the way."
+        }
+      }
+    },
+    "benefits": {
+      "title": "We Secure. You Succeed!",
+      "subtitle": "Whether you're a small startup or a large enterprise, Modelverse scales with your needs.",
+      "items": [
+        "Scale your cybersecurity risk management without hiring extra staff",
+        "Develop your cybersecurity strategy with our experienced consultants",
+        "One centralised platform to manage your risks and compliance",
+        "Reduce the likelihood and impact of cybersecurity incidents",
+        "Streamline your cybersecurity reporting",
+        "Maintain continuous audit-readiness"
+      ]
+    },
+    "testimonials": {
+      "title": "What Our Customers Say",
+      "subtitle": "Learn how industry leaders are transforming their organisations with Modelverse.",
+      "items": [
+        {
+          "quote": "Modelverse has transformed our approach to cybersecurity risk management.",
+          "name": "David Warnink",
+          "role": "CIO",
+          "company": "Fellowmind",
+          "video": "XEPf418PJFU"
+        },
+        {
+          "quote": "Reshma and the team have helped us close our security gaps.",
+          "name": "Christiaan Rood",
+          "role": "CEO",
+          "company": "LeydenJar Technologies",
+          "video": "NqY7SBjryJo"
+        }
+      ]
+    },
+    "cta": {
+      "badge": "Launch Your Security Journey",
+      "title": "Ready to Secure your Future?",
+      "subtitle": "Join the organisations that trust Modelverse to manage their risks today.",
+      "button": "Get Started"
+    }
+  },
+  "platform": {
+    "metadata": {
+      "title": "Modelverse | Platform",
+      "description": "Manage your cybersecurity risks and compliance using the Modelverse Risk & Compliance SaaS platform."
+    },
+    "hero": {
+      "badge": "We secure. You succeed!",
+      "title_line1": "Cybersecurity ",
+      "title_line2": "Made Easy",
+      "description": "Start using a unified platform to manage cybersecurity risks, compliance and security governance across your entire organisation. Gain full visibility over your cybersecurity posture while simplifying regulatory compliance and operational resilience through intelligent automation."
+    },
+    "problems": {
+      "title_line1": "Solve Your Problems with",
+      "title_line2": "Modelverse",
+      "subtitle": "There are many challenges that cybersecurity professionals face every day. Modelverse is designed to address these challenges and provide you with a comprehensive solution for managing your cybersecurity risks and compliance intelligently.",
+      "items": [
+        {
+          "title": "Say Goodbye to Endless Excel Sheets",
+          "description": "Risk management practitioners often rely on spreadsheets and documents with vague entries and inconsistent data, leading to inefficiency and errors. Modelverse automates and simplifies these processes, saving you countless time and effort."
+        },
+        {
+          "title": "No more Manual Compliance",
+          "description": "Manual compliance management is time-consuming and difficult to maintain, especially as organisations grow. Modelverse streamlines this process with automated workflows, so that even small teams can manage compliance effectively."
+        },
+        {
+          "title": "Siloed Systems are a Thing of the Past",
+          "description": "Siloed systems make it difficult to gain a comprehensive view of your organisation's security posture. Regain oversight over your assets and processes with Modelverse, and have all your information in one location."
+        }
+      ]
+    },
+    "fingertips": {
+      "title_line1": "Enterprise-grade Modules",
+      "title_line2": "at Your Fingertips",
+      "subtitle": "Modelverse has all the features you need to manage your cybersecurity risks and compliance, organised into 9 integrated modules that work together seamlessly to provide you with a comprehensive solution for your cybersecurity needs.",
+      "modules": "9 Integrated Modules",
+      "module_items": [
+        { "title": "Risks" },
+        { "title": "Capabilities" },
+        { "title": "Roadmap" },
+        { "title": "Landscape" },
+        { "title": "Compliance" },
+        { "title": "Privacy" },
+        { "title": "Audits" },
+        { "title": "Assurance" },
+        { "title": "ISMS" }
+      ]
+    },
+    "frameworks": {
+      "title_line1": "One Platform for ",
+      "title_line2": "All Frameworks",
+      "subtitle": "The Modelverse platform supports compliance for any framework. Our libraries are continuously updated with the latest requirements and best practices, so you can be confident that you're always up to date with the most relevant frameworks for your organisation.",
+      "items": [
+        {
+          "name": "ISO 27001/27002",
+          "description": "International standard defining best practice requirements for managing information security systems",
+          "colour": "from-blue-500/20 to-indigo-500/20"
+        },
+        {
+          "name": "GDPR",
+          "description": "EU regulation governing personal data protection and privacy rights for all individuals",
+          "colour": "from-emerald-500/20 to-green-500/20"
+        },
+        {
+          "name": "NIS2 Directive",
+          "description": "EU directive mandating cybersecurity measures for critical and important sector organizations",
+          "colour": "from-purple-500/20 to-violet-500/20"
+        },
+        {
+          "name": "BIO2",
+          "description": "Dutch government baseline for information security across all public sector organizations",
+          "colour": "from-orange-500/20 to-amber-500/20"
+        },
+        {
+          "name": "NEN 7510",
+          "description": "Dutch standard protecting patient and medical data in healthcare organizations",
+          "colour": "from-pink-500/20 to-rose-500/20"
+        },
+        {
+          "name": "DORA",
+          "description": "EU act ensuring digital operational resilience for financial sector institutions and ICT providers",
+          "colour": "from-red-500/20 to-orange-500/20"
+        },
+        {
+          "name": "ISO 27701",
+          "description": "Privacy information management extension to ISO 27001 for GDPR-aligned data protection",
+          "colour": "from-cyan-500/20 to-teal-500/20"
+        },
+        {
+          "name": "NIST CSF",
+          "description": "US framework providing structured guidance to improve and manage organizational cybersecurity risk",
+          "colour": "from-indigo-500/20 to-sky-500/20"
+        },
+        {
+          "name": "PCI DSS",
+          "description": "Global security standard for organizations that process, store, or transmit payment card data",
+          "colour": "from-violet-500/20 to-fuchsia-500/20"
+        }
+      ],
+      "stats": [
+        {
+          "title": "30+",
+          "subtitle": "Frameworks Supported"
+        },
+        {
+          "title": "Multi-Region",
+          "subtitle": "EU, US & Global Coverage"
+        },
+        {
+          "title": "Auto-Updated",
+          "subtitle": "Latest Regulatory Changes"
+        }
+      ]
+    },
+    "comparison": {
+      "title_line1": "Everything You Need.",
+      "title_line2": "Nothing You Don't.",
+      "subtitle": "Unlike the many bloated cybersecurity platforms, Modelverse includes only the features that your organisation actually needs and uses. Here are some of the features that we provide that you won't find in other platforms.",
+      "points": [
+        "Autonomous AI-driven supply chain management",
+        "Role-based task management and accountability",
+        "Continuously updated compliance frameworks",
+        "Comprehensive and interactive visualisations",
+        "Custom template document generation",
+        "AI-powered recommendations",
+        "Single location for all your audit needs",
+        "Professional risk and control libraries"
+      ]
+    },
+    "feature_showcase": {
+      "title_line1": "Built for the",
+      "title_line2": "Future of Compliance",
+      "subtitle": "Every feature is designed to save you time, reduce risk, and simplify compliance management. Here is a showcase of some of the features that we provide to help you manage your cybersecurity risks and compliance with confidence.",
+      "items": [
+        {
+          "title": "See your Security Capabilities Grow over Time",
+          "description": "Track the development of your security capabilities over time with our intuitive timeline view. Identify trends, monitor progress, and make informed decisions to continuously improve your cybersecurity posture.",
+          "improvement": "Track Your Improvements"
+        },
+        {
+          "title": "One Centralised Location for all your Compliance Information",
+          "description": "Our ISMS module serves as a single source of truth for all your compliance information. From policies and procedures to controls and evidence, everything is organised and easily accessible in one centralised location. This ensures that you are always audit-ready and can quickly respond to any compliance inquiries or audits.",
+          "improvement": "A Single Source of Truth"
+        },
+        {
+          "title": "Reporting and Monitoring Made Easy",
+          "description": "Our comprehensive reporting and monitoring features provide you with real-time insights into your cybersecurity posture. Dashboards, automated reports, and continuous monitoring ensure that you have the information you need to make informed decisions and stay ahead of potential threats.",
+          "improvement": "Real-Time Insights"
+        }
+      ]
+    },
+    "implementation": {
+      "title_line1": "Guided",
+      "title_line2": "Implementation",
+      "subtitle": "Our expert consultants will guide you through a seamless implementation process, ensuring you get up and running quickly and effectively. We work closely with your team to understand your unique needs and tailor the platform to fit your organisation's specific requirements."
+    },
+    "implementation_track": {
+      "step": [
+        {
+          "title": "Initial Assessment & Strategy Alignment",
+          "description": "The first step is to gain a comprehensive understanding of your current cybersecurity posture, challenges, and goals. This helps us to understand your unique needs and ensures the implementation is aligned with your organisation's objectives. A timeline will be set out, and your cybersecurity team will get to know the platform and the consultants who will be supporting you throughout the implementation process."
+        },
+        {
+          "title": "Landscape Assessment & Risk Impact Analysis",
+          "description": "Together we map your cybersecurity infrastructure, tools, and applications. We then analyse the potential impact of the most critical risks for your organisation. Understanding the landscape and the impact of risks is crucial for guiding your cybersecurity journey and making informed decisions about where to invest resources with maximum effectiveness."
+        },
+        {
+          "title": "Security Capabilities & Maturity Level",
+          "description": "We evaluate your existing security capabilities and maturity level across key cybersecurity domains. Identifying different gaps and opportunities for improvement allows us to reach your goals as efficiently as possible. With the experience of our consultants and the insights from the platform, we can help you improve your cybersecurity posture and achieve your desired outcomes with ease."
+        },
+        {
+          "title": "Risk Likelihood Assessment",
+          "description": "We assess the likelihood of the most critical risks your organisation is facing based on a combination of factors, including the current threat landscape, your organisation's specific vulnerabilities, and your previously identified security capabilities. This is the final step in our comprehensive risk assessment process, and gives you a clear picture of your organisation's risk exposure."
+        },
+        {
+          "title": "Improvement Backlog",
+          "description": "But your story does not end there. Based on the previous steps, we construct a backlog of recommended improvements. This backlog serves as a repository for potential improvements, continuously guiding your efforts as your organisation evolves. It provides the basis for clear and actionable plans that further enhance your cybersecurity maturity."
+        },
+        {
+          "title": "Prioritised Roadmap, Handover & Support",
+          "description": "We work with you to develop a prioritised roadmap for implementing a subset of the recommended improvements, ensuring that your cybersecurity efforts are focused on the most impactful areas and aligned with your organisation's current goals and resources. After the roadmap is set, we hand over the reins to your team, providing ongoing support and guidance as needed to ensure continuous progress towards your cybersecurity objectives."
+        }
+      ]
+    },
+    "cta": {
+      "title_line1": "Ready to Transform",
+      "title_line2": "Risk Management?",
+      "subtitle": "Join the successful organizations that manage their cyber security with Modelverse, get deep insights into your security posture and benefit from the most intelligent automation in the industry.",
+      "button": "Get Started"
+    }
+  },
+  "services": {
+    "metadata": {
+      "title": "Modelverse | Consultancy Services",
+      "description": "Modelverse offers a range of comprehensive security consultancy services that are designed to mature your organisation's cybersecurity posture. Select the services you need, and leverage the expertise of our consultants to reach your goals at your pace."
+    },
+    "hero": {
+      "badge": "We secure. You succeed!",
+      "title_line1": "Your Organisation, ",
+      "title_line2": "Our Expertise",
+      "description": "Independent from our platform, we offer a range of comprehensive security packages that are designed to mature your organisation's cybersecurity posture. Select the packages you need, and leverage the expertise of our consultants to reach your goals at your pace."
+    },
+    "journey": {
+      "title": "Security Packages",
+      "subtitle": "Our packages follow a logical progression towards building a resilient cybersecurity infrastructure for your organisation. Choose the packages that suit your needs and scale up as your organisation matures, or contact us to discuss your situation."
+    },
+    "items": {
+      "strategy": {
+        "badge": "SecStrat",
+        "title": "Strategy",
+        "description": "Build a solid foundation for your security program",
+        "points": [
+          "Understanding your cyber risks",
+          "Assess your current security posture",
+          "Articulate your investment opportunities"
+        ]
+      },
+      "certification": {
+        "badge": "SecCert",
+        "title": "Certification",
+        "description": "Achieve and maintain compliance certifications",
+        "points": [
+          "Get a head start with our quality libraries",
+          "Supports for all certification frameworks",
+          "Benefit from innovative automation"
+        ]
+      },
+      "governance": {
+        "badge": "SecGov",
+        "title": "Governance",
+        "description": "Establish clear accountability and risk ownership",
+        "points": [
+          "Define roles and responsibilities",
+          "Implement effective decision-making processes",
+          "Align security with business objectives"
+        ]
+      },
+      "programme": {
+        "badge": "SecProg",
+        "title": "Programme",
+        "description": "Drive organisation-wide security adoption",
+        "points": [
+          "Leverage executive support",
+          "Embed security practices",
+          "Promote a strong security culture"
+        ]
+      },
+      "operations": {
+        "badge": "SecOps",
+        "title": "Operations",
+        "description": "Proactively prevent and detect security incidents",
+        "points": [
+          "Monitor threats in real-time",
+          "Detect anomalies and potential breaches",
+          "Respond to incidents quickly and effectively"
+        ]
+      },
+      "resilience": {
+        "badge": "SecRes",
+        "title": "Resilience",
+        "description": "Prepare for and respond to security incidents",
+        "points": [
+          "Prepare for potential incidents",
+          "Minimise fallout from attacks",
+          "Maintain business continuity"
+        ]
+      }
+    },
+    "cta": {
+      "title": "Ready to Take the Next Step?",
+      "subtitle": "Our team will help you select the right packages for your organisation's unique needs and maturity level.",
+      "button": "Schedule Consultation"
+    }
+  },
+  "cases": {
+    "metadata": {
+      "title": "Modelverse | Client Cases",
+      "description": "Learn how Modelverse is helping organisations improve their cybersecurity posture and achieve compliance."
+    },
+    "hero": {
+      "badge": "We secure. You succeed!",
+      "title_line1": "Real Results from",
+      "title_line2": "Real Customers",
+      "description": "Learn how our clients are transforming their cybersecurity practices with Modelverse."
+    },
+    "labels": {
+      "about": "About",
+      "improvements": "Our Role"
+    },
+    "items": [
+      {
+        "name": "Fellowmind",
+        "about": "Fellowmind is one of the largest Microsoft integrators in western Europe and is active in the Netherlands, Poland, Denmark, Sweden and Finland.",
+        "case": "Modelverse is used to support the security strategy and manage all information risks across Fellowmind's different regions. Additionally, data privacy processes are supported, and a continuous improvement program is on its way to execute the security strategy.",
+        "url": "https://www.fellowmind.com/"
+      },
+      {
+        "name": "Provincie Flevoland",
+        "about": "The Province of Flevoland is the newest and smallest province of the Netherlands, and is the governing authority for the region's (critical) infrastructure, the environment, spatial planning and other areas of public management.",
+        "case": "We are supporting Flevoland with Modelverse to improve their risk management, increasing the effectiveness of the implemented cybersecurity measures and saving time for the IT, OT and data privacy teams, as well as the CISO.",
+        "url": "https://www.flevoland.nl/"
+      },
+      {
+        "name": "Escola Andersen",
+        "about": "Escola Andersen, backed by more than 50 years of experience, is a Spanish educational center approved by the Generalitat de Catalunya where education is provided from Early Childhood (3 years) to 4th year of Compulsory Secondary Education (16 years).",
+        "case": "We are supporting Escola Andersen to strengthen their cybersecurity and privacy by ensuring their compliance with GDPR and Spanish national security laws specific for educational centers.",
+        "url": "https://escolaandersen.com/"
+      },
+      {
+        "name": "Nedato",
+        "about": "Nedato is the largest Dutch cooperative of potato farmers. They act as a wholesaler connecting potato farmers with the potato fries industry.",
+        "case": "Nedato is using the digital risk management functionality of Modelverse.",
+        "url": "https://nedato.nl/"
+      },
+      {
+        "name": "NewForrest Fingerfood",
+        "about": "NewForrest Fingerfood is a Dutch company that specialises in producing frozen finger foods, mini snacks, and appetisers for both the retail and food service markets.",
+        "case": "NewForrest is using the digital risk management functionality of Modelverse.",
+        "url": "https://newforrest.nl/"
+      },
+      {
+        "name": "1801",
+        "about": "1801 advises schools and ROCs on learning, teaching and organising education. They support education professionals with all the challenges that education entails, bringing stalled processes in motion and solving strategic issues.",
+        "case": "Modelverse is used to manage information security and saves the CISO and IT team substantial time and effort.",
+        "url": "https://1801.nl/"
+      },
+      {
+        "name": "PharmaPartners",
+        "about": "Pharmapartners is a leading company in the provision of integrated healthcare systems in the Netherlands, ensuring healthcare providers have access to reliable, up-to-date and complete (patient) information.",
+        "case": "We are supporting PharmaPartners with a strategic cybersecurity plan and a plan ensuring patient safety.",
+        "url": "https://www.pharmapartners.nl/"
+      },
+      {
+        "name": "Thebe",
+        "about": "Thebe provides district nursing, specialist care, home support and day care in 19 municipalities in the Western and central parts of Brabant. They also provide care in 25 residential care centres in the region.",
+        "case": "Modelverse is being piloted for Thebe's digital risk management.",
+        "url": "https://www.thebe.nl/"
+      },
+      {
+        "name": "NPi",
+        "about": "The NPi is the Dutch training provider for physiotherapists. They support paramedical professionals in lifelong learning with courses, training, webinars, e-learning and scientific information services.",
+        "case": "NPi uses Modelverse to manage all their information. Compliance is also managed using the functionality for security policies. This way policies can be easily maintained and published to the entire staff.",
+        "url": "https://www.npi.nl/"
+      },
+      {
+        "name": "LeydenJar Technology",
+        "about": "LeydenJar Technology is a scale-up that developed a high-performing pure silicon anode for batteries, boosting the energy capacity of batteries by 50%. They are developing their first production plant in the Eindhoven region.",
+        "case": "We are helping LeydenJar to protect the intellectual property of their core technology using Modelverse.",
+        "url": "https://leyden-jar.com/"
+      }
+    ],
+    "cta": {
+      "title": "Ready to Write Your Success Story?",
+      "subtitle": "Join these leading organisations in transforming your cybersecurity practices.",
+      "button": "Request a Demo"
+    }
+  },
+  "news": {
+    "metadata": {
+      "title": "Modelverse | Blogs & News",
+      "description": "Stay up-to-date with Modelverse's latest insights on cybersecurity, compliance regulations, trends, and best practices."
+    },
+    "hero": {
+      "badge": "We secure. You succeed!",
+      "title_line1": "Insights into",
+      "title_line2": "Cybersecurity Risks",
+      "title_line3": "& Compliance",
+      "description": "Expert advice, industry trends, and practical guides to help you manage your cybersecurity."
+    },
+    "featured": "Featured",
+    "read_article": "Read Article",
+    "recent_articles": "Recent Articles",
+    "empty": {
+      "title": "Nothing new!",
+      "subtitle": "Come back later for interesting updates!"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    }
+  },
+  "about": {
+    "metadata": {
+      "title": "Modelverse | About Us",
+      "description": "Learn about Modelverse's mission, values, team, and ambassadors who are shaping the future of cybersecurity risk management."
+    },
+    "hero": {
+      "badge": "We secure. You succeed!",
+      "title_line1": "We're on a Mission to",
+      "title_line2": "Democratise Risk Management",
+      "description": "Making enterprise-grade information risk management accessible to organisations of all sizes."
+    },
+    "story": {
+      "title": "Our Story",
+      "paragraphs": [
+        "Modelverse was founded in 2023 by a team of experienced risk managers who witnessed first hand the challenges organisations face when trying to implement effective cybersecurity programs.",
+        "We saw companies struggling with complex compliance requirements, limited resources, and a shortage of talent. Meanwhile, enterprise risk management solutions were either too expensive or too complex.",
+        "We knew there had to be a better way. That's why we built the Modelverse platform, making enterprise risk and compliance management accessible to organisations of all sizes, with the simplicity and affordability that organisations need.",
+        "Paired with our team of expert consultants, we empower our customers to improve their cybersecurity posture with confidence, so they can focus on what they do best: running their organisations."
+      ]
+    },
+    "values": {
+      "title": "Our Values",
+      "subtitle": "The principles that guide everything we do at Modelverse.",
+      "items": {
+        "customer_first": {
+          "title": "Customer First",
+          "description": "We build products and provide services that solve real problems. Our customers are our first priority — their success is our success."
+        },
+        "security_by_design": {
+          "title": "Security by Design",
+          "description": "Security shouldn't be an afterthought. It's built into everything we do, from code to culture, and is a priority in any situation."
+        },
+        "transparency": {
+          "title": "Transparency",
+          "description": "We believe in open communication with our customers, partners, and each other. Honesty and integrity are core values for our team."
+        },
+        "continuous_learning": {
+          "title": "Continuous Learning",
+          "description": "The threat landscape is constantly evolving. We stay up to date through continuous innovation and education."
+        }
+      }
+    },
+    "team": {
+      "title": "Meet the Team",
+      "subtitle": "The passionate people behind Modelverse.",
+      "members": [
+        {
+          "name": "Ben Krutzen",
+          "role": "CEO & CTO | Co-Founder",
+          "bio": "Ben is the creator of Modelverse, driven by a passion for turning strategy into action. With over 25 years at Shell and later as a partner at KPMG, Ben helped organisations navigate complex challenges across transformation, risk, and technology. He holds a PhD in theoretical physics and once explored black holes at Imperial College London — before diving into the world of business.",
+          "linkedin": "https://www.linkedin.com/in/benkrutzen/",
+          "mail": "mailto:ben@modelverse.online"
+        },
+        {
+          "name": "Reshma Pandohi Mishre",
+          "role": "Partner | Co-Founder",
+          "bio": "Reshma brings deep expertise in strategic information management and cybersecurity with a clear, structured approach to tackling complex challenges. Reshma held a variety of IT leadership and Security roles across international corporations and the energy sector. She holds an MSc in Applied Physics and an executive MSc in cybersecurity.",
+          "linkedin": "https://www.linkedin.com/in/reshmapandohi/",
+          "mail": "mailto:reshma@modelverse.online"
+        },
+        {
+          "name": "Daan Loyens",
+          "role": "CFO & COO | Co-Founder",
+          "bio": "Daan is an experienced entrepreneur and IT leader who's passionate about using modern technology to help organisations tackle real-world challenges. Daan brings broad insight as a strategist, investor, and trusted cybersecurity advisor. He holds a PhD in Computing Science, along with an executive MSc in cybersecurity.",
+          "linkedin": "https://www.linkedin.com/in/dl11235813213456/",
+          "mail": "mailto:daan@modelverse.online"
+        },
+        {
+          "name": "Lili Guo",
+          "role": "Partner | CISO",
+          "bio": "Lili is a governance expert with deep experience in health, cybersecurity and patient safety. Before becoming a partner, Lili spent 12 years at the Dutch Ministry of Health, working on organ donation, e-health, and cybersecurity. She holds a Cum Laude BSc in Biomedical Science, a Cum Laude MSc in Neuroscience, and a Summa Cum Laude MSc in cybersecurity Governance.",
+          "linkedin": "https://www.linkedin.com/in/lili-guo-3941b126/",
+          "mail": "mailto:Lili@modelverse.online"
+        },
+        {
+          "name": "Bozhena Kovtun",
+          "role": "Office Manager",
+          "bio": "Bozhena runs our backoffice at the HSD Campus in The Hague, the national innovation hub for the Dutch security sector. Always friendly, approachable, and above all business-smart.",
+          "linkedin": "https://www.linkedin.com/in/bozhena-kovtun-0a106619b/",
+          "mail": "mailto:bozhena@valuetracks.io"
+        },
+        {
+          "name": "Mariona Fortuny Jané",
+          "role": "Risk Consultant",
+          "bio": "Mariona researches, interprets, structures and creates cybersecurity risk models and ESG models for enterprise clients. She holds a Bachelor's degree in International Relations and an MSc in Cybersecurity Governance.",
+          "linkedin": "https://www.linkedin.com/in/mariona-fortuny-jan%C3%A9/",
+          "mail": "mailto:mariona@modelverse.online"
+        },
+        {
+          "name": "Sjors de Natris",
+          "role": "Risk Consultant | Security Engineer",
+          "bio": "Sjors is a generalist primarily focused on consultancy, risk management, and DevOps. He holds a BSc in International Relations and Organisations and is working towards an MSc in Cybersecurity Governance.",
+          "linkedin": "https://www.linkedin.com/in/sjors-de-natris-470a51198/",
+          "mail": "mailto:sjors@modelverse.online"
+        },
+        {
+          "name": "Matei Avram",
+          "role": "Software Engineer",
+          "bio": "Matei develops and maintains the Modelverse platform and website, implements DevOps practices, and manages our cloud infrastructure. He holds a BSc in Computer Science and an MSc in Software Engineering.",
+          "linkedin": "https://www.linkedin.com/in/matei-avram-919771251/",
+          "mail": "mailto:matei@modelverse.online"
+        },
+        {
+          "name": "Maria Litvinova",
+          "role": "Risk Consultant",
+          "bio": "Maria aids in the delivery of cybersecurity projects for multiple clients. She holds a BSc in Security Studies and a Cum Laude MSc in Countering Organised Crime and Terrorism.",
+          "linkedin": "https://www.linkedin.com/in/maria-litvinova-370063317/",
+          "mail": "mailto:maria@modelverse.online"
+        }
+      ]
+    },
+    "ambassadors": {
+      "title": "Our Ambassadors",
+      "subtitle": "Trusted voices in the cybersecurity risk and compliance communities who believe in Modelverse.",
+      "items": [
+        {
+          "bio": "Jan-Willem Klerkx is passionate about software quality and business agility. His approach combines deep technical insight with strategic thinking, helping organisations reduce risk, improve maintainability, and unlock innovation through objective source code and architecture analysis."
+        },
+        {
+          "bio": "Gordon Muehl has led innovation for Fortune 500 companies, built high-performing international teams, and embedded security culture into a 100.000 employee R&D organisation. Specialising in secure software development lifecycle, technical due diligence, and non-functional requirements of governance, Gordon bridges business and technical domains from CxOs to developers."
+        },
+        {
+          "bio": "Dennis Mulder specialises in IT strategy, AI, and digital transformation, and focuses on bridging businesses and tech from boardroom to execution for organisations. He is a Certified Distinguished IT Architect (CITA-D), president of Iasa Global NL, and chairs the Chief Architect Forum. Dennis is committed to developing talent always with an eye for practical impact."
+        },
+        {
+          "bio": "Oskar Brink excels at aligning security and risk strategies with business objectives, driving sustainable transformation, and fostering continuous improvement through coaching - with international experience in Malaysia and India. He specialises in bringing clarity and structure to complex IT environments to transform organisations into more agile, secure, and resilient."
+        },
+        {
+          "bio": "Robert Bals stands out for combining deep technical expertise with a pragmatic, jargon-free, and practical mindset. He provides tailored ISMS implementations, audits for ISO 27001 and TUV Nord certification, and GDPR solutions. Through delivering scalable, client-focused results, he helps ICT, software, and healthcare organisations strengthen information security and compliance."
+        },
+        {
+          "bio": "Alexandra Roger-Machart is passionate about Tech and AI-driven transformation, she advises start-ups and scale-ups to strengthen their external profile, engage with stakeholders and enhance their corporate reporting through an interdisciplinary perspective of strategic storytelling and regulatory expertise."
+        }
+      ]
+    }
+  },
+  "contact": {
+    "metadata": {
+      "title": "Modelverse | Contact Us",
+      "description": "Contact the Modelverse team to schedule a personalised demo, get pricing information, or request technical support."
+    },
+    "hero": {
+      "badge": "We secure. You succeed!",
+      "title_line1": "Get in",
+      "title_line2": "Touch",
+      "description": "Do you have questions about Modelverse? Our team is here to help. Reach out and we'll be in touch within a day."
+    },
+    "info": {
+      "email": {
+        "title": "Email",
+        "primary": "info@modelverse.online",
+        "secondary": "support@modelverse.online"
+      },
+      "phone": {
+        "title": "Phone",
+        "primary": "+31 6 27612498",
+        "secondary": "Mon-Fri, 9:00-18:00 CET"
+      },
+      "office": {
+        "title": "Office",
+        "primary": "Wilhelmina van Pruisenweg 104",
+        "secondary": "2595 AN The Hague"
+      },
+      "support": {
+        "title": "Support",
+        "primary": "During business hours",
+        "secondary": "Mon-Fri, 9:00-18:00 CET"
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "What is your response time for inquiries?",
+          "answer": "We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call us on the number provided above."
+        },
+        {
+          "question": "Do you offer personalised demos?",
+          "answer": "Yes! We provide customised demos tailored to your organisation's needs. You can use the button on the bottom of this page to plan a meeting with us."
+        }
+      ]
+    },
+    "directions": {
+      "title": "Directions"
+    },
+    "cta": {
+      "title": "Ready to Connect?",
+      "subtitle": "Get to know how Modelverse can help your organisation manage cybersecurity risks and compliance with confidence.",
+      "button": "Book a demo"
+    }
+  },
+  "article": {
+    "breadcrumb": {
+      "home": "Home",
+      "news": "News",
+      "article": "Article"
+    },
+    "error": {
+      "title": "Article Not Found",
+      "description": "Sorry, the article you're looking for does not exist or has been removed.",
+      "button": "Back to News"
+    },
+    "back": "Back to News"
+  },
+  "legal": {
+    "metadata": {
+      "description_line1": "The official",
+      "description_line2": "document.",
+      "title_loading": "Modelverse | Legal Page Loading...",
+      "loading": "Loading legal and regulatory documentation..."
+    },
+    "breadcrumb": {
+      "home": "Home"
+    },
+    "toc": "Table of Contents",
+    "last_updated": "Last Updated",
+    "effective_date": "Effective Date",
+    "error": {
+      "title": "Page Not Found",
+      "description": "Sorry, the page you're looking for does not exist or has been removed.",
+      "button": "Back to Home"
+    },
+    "back": "Back to Home"
+  }
+}
