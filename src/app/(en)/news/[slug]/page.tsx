@@ -1,6 +1,7 @@
 import { ArticleContent } from '@/app/_content/article'
 import { getArticleSlugs } from '@/lib/articles'
 import type { MetaData } from '@/lib/articles'
+import { buildAlternates, localeUrl } from '@/lib/metadata'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
@@ -23,13 +24,7 @@ export async function generateMetadata({
       openGraph: {
         images: meta.image ? [meta.image] : [],
       },
-      alternates: {
-        canonical: `https://modelverse.online/news/${slug}`,
-        languages: {
-          en: `https://modelverse.online/news/${slug}`,
-          nl: `https://modelverse.online/nl/news/${slug}`,
-        },
-      },
+      alternates: buildAlternates('en', `/news/${slug}`),
     }
   } catch {
     return {}
@@ -71,8 +66,18 @@ export default async function Page({
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://modelverse.online/news/${slug}`,
+      '@id': localeUrl('en', `/news/${slug}`),
     },
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: localeUrl('en', '') },
+      { '@type': 'ListItem', position: 2, name: 'News', item: localeUrl('en', '/news') },
+      { '@type': 'ListItem', position: 3, name: meta.title, item: localeUrl('en', `/news/${slug}`) },
+    ],
   }
 
   return (
@@ -80,6 +85,10 @@ export default async function Page({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <ArticleContent metadata={meta}>
         <Component />

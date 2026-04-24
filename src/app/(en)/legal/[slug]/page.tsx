@@ -6,6 +6,7 @@ import PrivacyPolicy, {
 import TermsOfService, {
   metadata as termsMeta,
 } from '@/legal/terms_of_service.mdx'
+import { buildAlternates } from '@/lib/metadata'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
@@ -39,13 +40,7 @@ export async function generateMetadata({
   return {
     title: `Modelverse | ${page.meta.title}`,
     description: `The official ${page.meta.title} document for Modelverse B.V.`,
-    alternates: {
-      canonical: `https://modelverse.online/legal/${slug}`,
-      languages: {
-        en: `https://modelverse.online/legal/${slug}`,
-        nl: `https://modelverse.online/nl/legal/${slug}`,
-      },
-    },
+    alternates: buildAlternates('en', `/legal/${slug}`),
   }
 }
 
