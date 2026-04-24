@@ -23,12 +23,6 @@ function localeUrl(locale: string, path: string) {
   return `${BASE_URL}${prefix}${path || '/'}`
 }
 
-function buildAlternates(path: string) {
-  return Object.fromEntries(
-    SUPPORTED_LOCALES.map((l) => [l, localeUrl(l, path)])
-  )
-}
-
 export default function sitemap(): MetadataRoute.Sitemap {
   const slugs = getArticleSlugs()
 
@@ -38,7 +32,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: page === '' ? 'weekly' : ('monthly' as const),
       priority: page === '' ? 1 : 0.8,
-      alternates: { languages: buildAlternates(page) },
     }))
   )
 
@@ -48,7 +41,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'yearly' as const,
       priority: 0.3,
-      alternates: { languages: buildAlternates(`/legal/${slug}`) },
     }))
   )
 
@@ -58,7 +50,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'never' as const,
       priority: 0.6,
-      alternates: { languages: buildAlternates(`/news/${slug}`) },
     }))
   )
 
