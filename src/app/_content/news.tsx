@@ -85,9 +85,9 @@ function FeaturedPostItem({ post, index }: { post: BlogPost; index: number }) {
         </div>
         <div className="flex flex-col gap-4 p-4 lg:basis-1/2 lg:justify-center-safe">
           <Link href={`/news/${post.postId}`}>
-            <h1 className="cursor-pointer text-3xl transition-all duration-300 hover:text-lime-500">
+            <h2 className="cursor-pointer text-3xl transition-all duration-300 hover:text-lime-500">
               {post.metadata.title}
-            </h1>
+            </h2>
           </Link>
           <p className="text-lg text-white/70">{post.metadata.summary}</p>
           <div className="flex flex-row flex-wrap items-center-safe gap-4 text-white/60">
@@ -146,9 +146,9 @@ function RecentPostItem({ post }: { post: BlogPost }) {
         )}
       </div>
       <div className="flex grow flex-col gap-4 p-4 md:justify-center-safe">
-        <h1 className="text-xl transition-all duration-300 group-hover:text-lime-500">
+        <h3 className="text-xl transition-all duration-300 group-hover:text-lime-500">
           {post.metadata.title}
-        </h1>
+        </h3>
         <p className="text-white/70">{post.metadata.summary}</p>
         <div className="flex grow flex-col justify-end-safe gap-4">
           <div className="mt-auto flex flex-col gap-4 text-white/60">
@@ -274,7 +274,7 @@ export function NewsContent({ blogPosts }: { blogPosts: BlogPost[] }) {
             ))
           ) : (
             <div className="flex flex-col items-center-safe justify-center-safe gap-4">
-              <h1 className="text-4xl sm:text-5xl">{t('news.empty.title')}</h1>
+              <h2 className="text-4xl sm:text-5xl">{t('news.empty.title')}</h2>
               <p className="text-xl text-white/70">
                 {t('news.empty.subtitle')}
               </p>
@@ -290,9 +290,9 @@ export function NewsContent({ blogPosts }: { blogPosts: BlogPost[] }) {
                 variants={staggerContainer}
                 className="flex flex-col gap-8"
               >
-                <motion.h1 className="text-4xl sm:text-5xl">
+                <motion.h2 className="text-4xl sm:text-5xl">
                   {t('news.recent_articles')}
-                </motion.h1>
+                </motion.h2>
 
                 <motion.div
                   key={currentPage}

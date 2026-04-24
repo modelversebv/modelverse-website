@@ -144,7 +144,7 @@ export function CookieBanner({
                   <Cookie className="size-6 text-white" />
                 </div>
                 <div className="flex grow flex-col gap-4">
-                  <h1 className="text-xl">We Value Your Privacy</h1>
+                  <p className="text-xl">We Value Your Privacy</p>
                   <ScrollArea className="max-h-48 md:max-h-none">
                     <p className="text-white/70">
                       We use two third-party services: Google Maps and YouTube
@@ -214,7 +214,7 @@ export function CookieBanner({
                     <Settings className="size-6 text-white" />
                   </div>
                   <div className="flex grow flex-col gap-4">
-                    <h1 className="text-xl">Cookie Preferences</h1>
+                    <p className="text-xl">Cookie Preferences</p>
                     <p className="text-white/70">
                       Manage your cookie settings. You can enable or disable
                       different types of cookies below.

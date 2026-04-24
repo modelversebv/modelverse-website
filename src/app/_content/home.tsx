@@ -104,7 +104,7 @@ export function HomeContent() {
               <p className="text-sm">{t('home.hero.badge')}</p>
             </motion.div>
 
-            <motion.div
+            <motion.h1
               variants={fadeInUp}
               className="flex flex-col text-5xl drop-shadow-lg sm:text-6xl lg:text-7xl"
             >
@@ -112,7 +112,7 @@ export function HomeContent() {
               <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text pb-3 text-transparent">
                 {t('home.hero.title_line2')}
               </span>
-            </motion.div>
+            </motion.h1>
 
             <motion.p
               variants={fadeInUp}
@@ -139,25 +139,25 @@ export function HomeContent() {
               className="flex flex-row flex-wrap gap-4 text-center"
             >
               <MotionCard variants={scaleIn} className="md:w-[30%] xl:w-[20%]">
-                <h1 className="pb-1 text-center text-3xl whitespace-nowrap">
+                <p className="pb-1 text-center text-3xl whitespace-nowrap">
                   30+
-                </h1>
+                </p>
                 <p className="w-full text-sm text-white/90">
                   {t('home.hero.stats.standards')}
                 </p>
               </MotionCard>
               <MotionCard variants={scaleIn} className="md:w-[30%] xl:w-[20%]">
-                <h1 className="pb-1 text-center text-3xl whitespace-nowrap">
+                <p className="pb-1 text-center text-3xl whitespace-nowrap">
                   7
-                </h1>
+                </p>
                 <p className="w-full text-sm text-white/90">
                   {t('home.hero.stats.country_footprints')}
                 </p>
               </MotionCard>
               <MotionCard variants={scaleIn} className="md:w-[30%] xl:w-[20%]">
-                <h1 className="pb-1 text-center text-3xl whitespace-nowrap">
+                <p className="pb-1 text-center text-3xl whitespace-nowrap">
                   125+
-                </h1>
+                </p>
                 <p className="w-full text-sm text-white/90">
                   {t('home.hero.stats.risk_domains')}
                 </p>
@@ -200,9 +200,9 @@ export function HomeContent() {
               variants={fadeInUp}
               className="mx-auto flex max-w-4xl flex-col text-center"
             >
-              <h1 className="text-4xl sm:text-5xl">
+              <h2 className="text-4xl sm:text-5xl">
                 {t('home.features.title')}
-              </h1>
+              </h2>
             </motion.div>
             <motion.div
               variants={staggerContainer}
@@ -256,9 +256,9 @@ export function HomeContent() {
                 variants={fadeInUp}
                 className="flex max-w-4xl flex-col gap-4"
               >
-                <h1 className="text-4xl sm:text-5xl">
+                <h2 className="text-4xl sm:text-5xl">
                   {t('home.benefits.title')}
-                </h1>
+                </h2>
                 <p className="text-xl text-white/70">
                   {t('home.benefits.subtitle')}
                 </p>
@@ -291,9 +291,9 @@ export function HomeContent() {
               variants={fadeInUp}
               className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
             >
-              <h1 className="text-4xl sm:text-5xl">
+              <h2 className="text-4xl sm:text-5xl">
                 {t('home.testimonials.title')}
-              </h1>
+              </h2>
               <p className="text-xl text-white/70">
                 {t('home.testimonials.subtitle')}
               </p>
@@ -348,9 +348,9 @@ export function HomeContent() {
                 <Rocket className="size-5" />
                 <p className="text-sm">{t('home.cta.badge')}</p>
               </motion.div>
-              <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl">
+              <motion.h2 variants={fadeInUp} className="text-4xl sm:text-5xl">
                 {t('home.cta.title')}
-              </motion.h1>
+              </motion.h2>
               <motion.p variants={fadeInUp} className="text-xl text-white/90">
                 {t('home.cta.subtitle')}
               </motion.p>

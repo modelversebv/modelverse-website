@@ -77,7 +77,7 @@ export function Footer({ onManagePrivacy }: FooterProps) {
           <div className="flex shrink-0 flex-col gap-8 md:ml-auto md:flex-row md:items-center-safe">
             {Object.entries(footerLinks).map(([section, links]) => (
               <div key={section} className="flex flex-col gap-2">
-                <h1 className="font-bold">{section}</h1>
+                <p className="font-bold">{section}</p>
                 <ul className="text-gray-300">
                   {links.map((link, index) => (
                     <li key={index}>

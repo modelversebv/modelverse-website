@@ -109,9 +109,9 @@ export function ServicesContent() {
               variants={fadeInUp}
               className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
             >
-              <h1 className="text-4xl sm:text-5xl">
+              <h2 className="text-4xl sm:text-5xl">
                 {t('services.journey.title')}
-              </h1>
+              </h2>
               <p className="text-xl text-white/70">
                 {t('services.journey.subtitle')}
               </p>
@@ -207,7 +207,7 @@ export function ServicesContent() {
             variants={fadeInUp}
             className="flex flex-col gap-4 text-center md:container md:mx-auto"
           >
-            <h1 className="text-4xl sm:text-5xl">{t('services.cta.title')}</h1>
+            <h2 className="text-4xl sm:text-5xl">{t('services.cta.title')}</h2>
             <p className="text-xl">{t('services.cta.subtitle')}</p>
           </motion.div>
           <motion.div variants={fadeInUp}>

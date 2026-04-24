@@ -166,12 +166,12 @@ export function AboutContent() {
               variants={staggerContainer}
               className="flex flex-col gap-4 md:justify-center-safe"
             >
-              <motion.h1
+              <motion.h2
                 variants={slideInLeft}
                 className="text-4xl sm:text-5xl"
               >
                 {t('about.story.title')}
-              </motion.h1>
+              </motion.h2>
               <motion.div
                 variants={staggerContainer}
                 className="flex flex-col gap-4 text-lg text-white/70"
@@ -211,9 +211,9 @@ export function AboutContent() {
               variants={fadeInUp}
               className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
             >
-              <h1 className="text-4xl sm:text-5xl">
+              <h2 className="text-4xl sm:text-5xl">
                 {t('about.values.title')}
-              </h1>
+              </h2>
               <p className="text-xl text-white/70">
                 {t('about.values.subtitle')}
               </p>
@@ -256,7 +256,7 @@ export function AboutContent() {
               variants={fadeInUp}
               className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
             >
-              <h1 className="text-4xl sm:text-5xl">{t('about.team.title')}</h1>
+              <h2 className="text-4xl sm:text-5xl">{t('about.team.title')}</h2>
               <p className="text-xl text-white/70">
                 {t('about.team.subtitle')}
               </p>
@@ -275,10 +275,10 @@ export function AboutContent() {
                   <Card className="size-full bg-white/5 p-0 hover:border-lime-500/50 hover:bg-white/10">
                     <img src={member.image} className="rounded-t-xl" alt="" />
                     <div className="flex grow flex-col p-4">
-                      <h1 className="mb-2 text-lg">{member.name}</h1>
-                      <h1 className="mb-4 bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text font-semibold text-transparent">
+                      <h3 className="mb-2 text-lg">{member.name}</h3>
+                      <p className="mb-4 bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text font-semibold text-transparent">
                         {member.role}
-                      </h1>
+                      </p>
                       <p className="mb-4 text-left text-white/70">
                         {member.bio}
                       </p>
@@ -315,9 +315,9 @@ export function AboutContent() {
               variants={fadeInUp}
               className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
             >
-              <h1 className="text-4xl sm:text-5xl">
+              <h2 className="text-4xl sm:text-5xl">
                 {t('about.ambassadors.title')}
-              </h1>
+              </h2>
               <p className="text-xl text-white/70">
                 {t('about.ambassadors.subtitle')}
               </p>
@@ -343,10 +343,10 @@ export function AboutContent() {
                       </Avatar>
                       <div className="flex size-full grow flex-row justify-between gap-4">
                         <div className="flex flex-col justify-center-safe gap-2">
-                          <h1 className="text-xl">{ambassador.name}</h1>
-                          <h1 className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text font-semibold text-transparent">
+                          <h3 className="text-xl">{ambassador.name}</h3>
+                          <p className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text font-semibold text-transparent">
                             {ambassador.role}
-                          </h1>
+                          </p>
                         </div>
                         <a
                           href={ambassador.linkedin}

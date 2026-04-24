@@ -87,7 +87,7 @@ function CaseStudyItem({ study, index }: { study: CaseStudy; index: number }) {
           />
         </div>
         <div className="flex flex-col gap-4 p-4 lg:basis-1/2 lg:justify-center-safe">
-          <h1 className="text-3xl">{study.name}</h1>
+          <h2 className="text-3xl">{study.name}</h2>
           <div className="flex flex-col justify-center-safe gap-2">
             <div className="flex w-fit flex-row gap-2 text-lg text-lime-500">
               <Info className="size-5 self-center" />
@@ -147,7 +147,7 @@ export function CasesContent() {
             variants={fadeInUp}
             className="flex flex-col gap-4 text-center md:container md:mx-auto"
           >
-            <h1 className="text-4xl sm:text-5xl">{t('cases.cta.title')}</h1>
+            <h2 className="text-4xl sm:text-5xl">{t('cases.cta.title')}</h2>
             <p className="text-xl text-white/70">{t('cases.cta.subtitle')}</p>
           </motion.div>
           <motion.div variants={fadeInUp}>

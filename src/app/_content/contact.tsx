@@ -125,9 +125,9 @@ export function ContactContent() {
               variants={staggerContainer}
               className="flex flex-col gap-4"
             >
-              <motion.h1 variants={fadeInUp} className="text-center text-4xl">
+              <motion.h2 variants={fadeInUp} className="text-center text-4xl">
                 {t('contact.faq.title')}
-              </motion.h1>
+              </motion.h2>
               <motion.div
                 variants={staggerContainer}
                 className="flex flex-col gap-4"
@@ -135,7 +135,7 @@ export function ContactContent() {
                 {faqItems.map((item, index) => (
                   <motion.div variants={slideInLeft} key={index}>
                     <Card className="gap-4 bg-white/5 p-8 hover:border-lime-500/50 hover:bg-white/10">
-                      <h1 className="text-lg">{item.question}</h1>
+                      <h3 className="text-lg">{item.question}</h3>
                       <p className="text-white/70">{item.answer}</p>
                     </Card>
                   </motion.div>
@@ -150,9 +150,9 @@ export function ContactContent() {
               variants={staggerContainer}
               className="flex flex-col items-center-safe gap-4 lg:basis-1/2"
             >
-              <motion.h1 variants={fadeInUp} className="text-center text-4xl">
+              <motion.h2 variants={fadeInUp} className="text-center text-4xl">
                 {t('contact.directions.title')}
-              </motion.h1>
+              </motion.h2>
               <motion.div
                 variants={slideInRight}
                 className="h-full min-h-[300px] w-full lg:min-h-0"
@@ -178,9 +178,9 @@ export function ContactContent() {
           >
             <Card className="relative z-1 items-center-safe gap-4 text-center hover:bg-white/10 md:container md:mx-auto lg:max-w-3xl">
               <div className="relative z-1 flex flex-col items-center-safe justify-center-safe gap-6">
-                <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl">
+                <motion.h2 variants={fadeInUp} className="text-4xl sm:text-5xl">
                   {t('contact.cta.title')}
-                </motion.h1>
+                </motion.h2>
                 <motion.p variants={fadeInUp} className="text-xl text-white/90">
                   {t('contact.cta.subtitle')}
                 </motion.p>

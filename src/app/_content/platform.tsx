@@ -359,12 +359,12 @@ export function PlatformContent() {
               variants={fadeInUp}
               className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
             >
-              <h1 className="text-4xl sm:text-5xl">
+              <h2 className="text-4xl sm:text-5xl">
                 {t('platform.problems.title_line1')}{' '}
                 <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
                   {t('platform.problems.title_line2')}
                 </span>
-              </h1>
+              </h2>
               <p className="text-xl text-white/70">
                 {t('platform.problems.subtitle')}
               </p>
@@ -403,13 +403,13 @@ export function PlatformContent() {
               variants={fadeInUp}
               className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
             >
-              <h1 className="text-4xl sm:text-5xl">
+              <h2 className="text-4xl sm:text-5xl">
                 {t('platform.fingertips.title_line1')}
                 <br />
                 <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
                   {t('platform.fingertips.title_line2')}
                 </span>
-              </h1>
+              </h2>
               <p className="text-xl text-white/70">
                 {t('platform.fingertips.subtitle')}
               </p>
@@ -417,7 +417,7 @@ export function PlatformContent() {
             <motion.div variants={staggerContainer} className="w-full">
               <Card className="items-center-safe justify-center-safe gap-4 border-white/20 bg-white/5 backdrop-blur-md hover:border-lime-500/50 hover:bg-white/10">
                 <div className="absolute inset-0 rounded-lg bg-linear-to-br group-hover:from-lime-500/10 group-hover:to-teal-500/10" />
-                <h1>{t('platform.fingertips.modules')}</h1>
+                <h3>{t('platform.fingertips.modules')}</h3>
                 <div className="grid w-full grid-cols-4 gap-4 md:grid-cols-10 xl:grid-cols-9">
                   {moduleItems.map((module, index) => (
                     <motion.div
@@ -531,13 +531,13 @@ export function PlatformContent() {
               variants={fadeInUp}
               className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
             >
-              <h1 className="text-4xl sm:text-5xl">
+              <h2 className="text-4xl sm:text-5xl">
                 {t('platform.comparison.title_line1')}
                 <br />
                 <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
                   {t('platform.comparison.title_line2')}
                 </span>
-              </h1>
+              </h2>
               <p className="text-xl text-white/70">
                 {t('platform.comparison.subtitle')}
               </p>
@@ -569,13 +569,13 @@ export function PlatformContent() {
               variants={fadeInUp}
               className="mx-auto flex max-w-4xl flex-col gap-4 text-center"
             >
-              <h1 className="text-4xl sm:text-5xl">
+              <h2 className="text-4xl sm:text-5xl">
                 {t('platform.feature_showcase.title_line1')}
                 <br />
                 <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
                   {t('platform.feature_showcase.title_line2')}
                 </span>
-              </h1>
+              </h2>
               <p className="text-xl text-white/70">
                 {t('platform.feature_showcase.subtitle')}
               </p>
@@ -600,12 +600,12 @@ export function PlatformContent() {
               variants={staggerContainer}
               className="flex flex-col items-center-safe gap-8 md:container md:mx-auto"
             >
-              <h1 className="text-4xl sm:text-5xl">
+              <h2 className="text-4xl sm:text-5xl">
                 {t('platform.implementation.title_line1')}{' '}
                 <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
                   {t('platform.implementation.title_line2')}
                 </span>
-              </h1>
+              </h2>
               <p className="text-center text-xl text-white/70">
                 {t('platform.implementation.subtitle')}
               </p>
@@ -637,12 +637,12 @@ export function PlatformContent() {
             variants={fadeInUp}
             className="flex flex-col items-center-safe gap-4 text-center md:container md:mx-auto"
           >
-            <h1 className="text-4xl sm:text-5xl">
+            <h2 className="text-4xl sm:text-5xl">
               {t('platform.cta.title_line1')}{' '}
               <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
                 {t('platform.cta.title_line2')}
               </span>
-            </h1>
+            </h2>
             <p className="max-w-4xl text-xl">{t('platform.cta.subtitle')}</p>
           </motion.div>
           <motion.div variants={fadeInUp}>
