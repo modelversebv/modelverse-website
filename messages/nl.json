@@ -248,22 +248,16 @@
       "subtitle": "Elke functie is ontworpen om je tijd te besparen, risico's te verminderen en compliancebeheer te vereenvoudigen. Hier is een overzicht van enkele functies die we bieden om je cybersecurity-risico's en compliance met vertrouwen te beheren.",
       "items": [
         {
-          "img_tag": "Capability Overview",
-          "img_id": "/images/platform_showcase/capability_timeline.png",
           "title": "Zie je Security Capabilities groeien over Tijd",
           "description": "Volg de ontwikkeling van je security capabilities met onze intuïtieve tijdlijnweergave. Identificeer trends, monitor vooruitgang en neem geïnformeerde beslissingen om je cybersecurity-houding voortdurend te verbeteren.",
           "improvement": "Volg je vooruitgang"
         },
         {
-          "img_tag": "ISMS Module",
-          "img_id": "/images/platform_showcase/isms.png",
           "title": "Één Gecentraliseerde Locatie voor al je Compliance-informatie",
           "description": "Onze ISMS-module fungeert als één gecentraliseerde bron voor al je compliance-informatie. Van beleidsregels en procedures tot controls en bewijsmateriaal — alles is georganiseerd en gemakkelijk toegankelijk op één centrale locatie. Dit zorgt ervoor dat je altijd klaar bent voor een audit en snel kunt reageren op compliance-vragen en audits.",
           "improvement": "Één gecentraliseerde bron van waarheid"
         },
         {
-          "img_tag": "Metrics Dashboard",
-          "img_id": "/images/platform_showcase/reporting.png",
           "title": "Eenvoudige Rapportage en Monitoring",
           "description": "Onze uitgebreide rapportage- en monitoringfuncties geven je real-time inzicht in je cybersecurity-positie. Dashboards, geautomatiseerde rapporten en continue monitoring zorgen ervoor dat je over de informatie beschikt die je nodig hebt om weloverwogen beslissingen te nemen en potentiële dreigingen voor te blijven.",
           "improvement": "Real-time inzichten"

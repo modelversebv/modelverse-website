@@ -39,3 +39,9 @@ dist-ssr
 # Next.js
 .next
 next-env.d.ts
+
+# Firebase
+.firebase
+
+# Firecrawl
+.firecrawl

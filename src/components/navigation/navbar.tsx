@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 
 import { useLocale } from '@/providers/IntlProvider'
@@ -35,8 +35,11 @@ export function NavBar({
 }: NavBarProps) {
   const [isOpen, setIsOpen] = useState(false)
   const router = useRouter()
+  const pathname = usePathname()
   const t = useTranslations()
-  const { locale, setLocale } = useLocale()
+  const { locale } = useLocale()
+
+  const prefix = locale === 'en' ? '' : `/${locale}`
 
   const scrollToTop = () => {
     if (!home || !layoutRef) return
@@ -54,7 +57,12 @@ export function NavBar({
   }
 
   const changeLanguage = (lang: (typeof LANGUAGES)[number]['code']) => {
-    setLocale(lang)
+    if (lang === 'en') {
+      const newPath = pathname.replace(/^\/nl/, '') || '/'
+      router.push(newPath)
+    } else {
+      router.push(pathname.startsWith('/nl') ? pathname : `/nl${pathname}`)
+    }
   }
 
   const currentLang = LANGUAGES.find((lang) => lang.code === locale)
@@ -75,7 +83,7 @@ export function NavBar({
         <div
           className="flex cursor-pointer flex-row items-center-safe gap-2"
           onClick={() => {
-            router.push('/')
+            router.push(prefix || '/')
             scrollToTop()
           }}
         >
@@ -83,7 +91,7 @@ export function NavBar({
           <span className="text-lg font-semibold">Modelverse</span>
         </div>
         <div className="hidden flex-row items-center-safe gap-4 rounded-full border border-white/10 bg-white/5 px-4 py-2 font-semibold md:flex md:text-xs lg:gap-8 lg:text-base">
-          <NavLink active={home} href="/">
+          <NavLink active={home} href={prefix || '/'}>
             {t('navbar.home')}
           </NavLink>
           <Dropdown
@@ -91,31 +99,31 @@ export function NavBar({
             title="Solutions"
             active={platform || services}
           >
-            <DropdownLink href="/platform" title="Platform" active={platform}>
+            <DropdownLink href={`${prefix}/platform`} title="Platform" active={platform}>
               Risk & Compliance Management
             </DropdownLink>
             <DropdownLink
-              href="/services"
+              href={`${prefix}/services`}
               title="Consultancy Services"
               active={services}
             >
               Service Packages
             </DropdownLink>
           </Dropdown>
-          <NavLink active={cases} href="/cases">
+          <NavLink active={cases} href={`${prefix}/cases`}>
             {t('navbar.cases')}
           </NavLink>
-          <NavLink active={news} href="/news">
+          <NavLink active={news} href={`${prefix}/news`}>
             {t('navbar.news')}
           </NavLink>
-          <NavLink active={about} href="/about">
+          <NavLink active={about} href={`${prefix}/about`}>
             {t('navbar.about')}
           </NavLink>
         </div>
         <div className="hidden flex-row items-center gap-4 md:flex">
           <button
             className="cursor-pointer rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:text-xs lg:text-base"
-            onClick={() => router.push('/contact')}
+            onClick={() => router.push(`${prefix}/contact`)}
           >
             {t('navbar.contact')}
           </button>
@@ -151,31 +159,31 @@ export function NavBar({
       </div>
       <div className="flex grow flex-col gap-4 overflow-scroll md:hidden">
         <div className="flex flex-col gap-4 border-t border-white/20 pt-4 font-semibold">
-          <NavLink active={home} href="/">
+          <NavLink active={home} href={prefix || '/'}>
             {t('navbar.home')}
           </NavLink>
           <Dropdown title="Solutions" active={platform || services}>
-            <DropdownLink href="/platform" title="Platform" active={platform}>
+            <DropdownLink href={`${prefix}/platform`} title="Platform" active={platform}>
               Risk & Compliance Management
             </DropdownLink>
-            <DropdownLink href="/services" title="Services" active={services}>
+            <DropdownLink href={`${prefix}/services`} title="Services" active={services}>
               Service Packages
             </DropdownLink>
           </Dropdown>
-          <NavLink active={cases} href="/cases">
+          <NavLink active={cases} href={`${prefix}/cases`}>
             {t('navbar.cases')}
           </NavLink>
-          <NavLink active={news} href="/news">
+          <NavLink active={news} href={`${prefix}/news`}>
             {t('navbar.news')}
           </NavLink>
-          <NavLink active={about} href="/about">
+          <NavLink active={about} href={`${prefix}/about`}>
             {t('navbar.about')}
           </NavLink>
         </div>
         <div className="flex flex-col border-t border-white/20 pt-4">
           <button
             className="rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg"
-            onClick={() => router.push('/contact')}
+            onClick={() => router.push(`${prefix}/contact`)}
           >
             {t('navbar.contact')}
           </button>

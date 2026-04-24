@@ -248,22 +248,16 @@
       "subtitle": "Every feature is designed to save you time, reduce risk, and simplify compliance management. Here is a showcase of some of the features that we provide to help you manage your cybersecurity risks and compliance with confidence.",
       "items": [
         {
-          "img_tag": "Capability Overview",
-          "img_id": "/images/platform_showcase/capability_timeline.png",
           "title": "See your Security Capabilities Grow over Time",
           "description": "Track the development of your security capabilities over time with our intuitive timeline view. Identify trends, monitor progress, and make informed decisions to continuously improve your cybersecurity posture.",
           "improvement": "Track Your Improvements"
         },
         {
-          "img_tag": "ISMS Module",
-          "img_id": "/images/platform_showcase/isms.png",
           "title": "One Centralised Location for all your Compliance Information",
           "description": "Our ISMS module serves as a single source of truth for all your compliance information. From policies and procedures to controls and evidence, everything is organised and easily accessible in one centralised location. This ensures that you are always audit-ready and can quickly respond to any compliance inquiries or audits.",
           "improvement": "A Single Source of Truth"
         },
         {
-          "img_tag": "Metrics Dashboard",
-          "img_id": "/images/platform_showcase/reporting.png",
           "title": "Reporting and Monitoring Made Easy",
           "description": "Our comprehensive reporting and monitoring features provide you with real-time insights into your cybersecurity posture. Dashboards, automated reports, and continuous monitoring ensure that you have the information you need to make informed decisions and stay ahead of potential threats.",
           "improvement": "Real-Time Insights"

@@ -1,14 +1,16 @@
 'use client'
 
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext } from 'react'
 
 import { NextIntlClientProvider } from 'next-intl'
 
 import { useGaTracker } from '@/lib/analytics/use-ga-tracker'
+import type { Locale } from '@/lib/locales'
 import enMessages from '../../messages/en.json'
 import nlMessages from '../../messages/nl.json'
 
-export type Locale = 'en' | 'nl'
+export type { Locale } from '@/lib/locales'
+export { SUPPORTED_LOCALES } from '@/lib/locales'
 
 const messages: Record<Locale, typeof enMessages> = {
   en: enMessages,
@@ -17,29 +19,28 @@ const messages: Record<Locale, typeof enMessages> = {
 
 type LocaleContextValue = {
   locale: Locale
-  setLocale: (locale: Locale) => void
 }
 
-const LocaleContext = createContext<LocaleContextValue>({
-  locale: 'en',
-  setLocale: () => {},
-})
+const LocaleContext = createContext<LocaleContextValue>({ locale: 'en' })
 
 export const useLocale = () => useContext(LocaleContext)
 
-function detectLocale(): Locale {
-  if (typeof window === 'undefined') return 'en'
-  const lang = navigator.language || ''
-  return lang.startsWith('nl') ? 'nl' : 'en'
-}
-
-export function IntlProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocale] = useState<Locale>(detectLocale)
+export function IntlProvider({
+  locale,
+  children,
+}: {
+  locale: Locale
+  children: React.ReactNode
+}) {
   useGaTracker()
 
   return (
-    <LocaleContext.Provider value={{ locale, setLocale }}>
-      <NextIntlClientProvider locale={locale} messages={messages[locale]} timeZone="Europe/Amsterdam">
+    <LocaleContext.Provider value={{ locale }}>
+      <NextIntlClientProvider
+        locale={locale}
+        messages={messages[locale]}
+        timeZone="Europe/Amsterdam"
+      >
         {children}
       </NextIntlClientProvider>
     </LocaleContext.Provider>

@@ -1,6 +1,6 @@
-import emailBadge from '@/assets/badges/email-test-badge.png'
-import isoBadge from '@/assets/badges/iso-27001-badge-resized.png'
-import msBadge from '@/assets/badges/ms-badge.png'
+'use client'
+
+import { useLocale } from '@/providers/IntlProvider'
 import { Github, Linkedin, Mail } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
@@ -14,25 +14,28 @@ type FooterProps = {
 export function Footer({ onManagePrivacy }: FooterProps) {
   const currentDate = new Date()
   const t = useTranslations()
+  const { locale } = useLocale()
+
+  const prefix = locale === 'en' ? '' : `/${locale}`
 
   const footerLinks = {
     [t('footer.sections.company.title')]: [
-      { name: t('footer.sections.company.about'), href: '/about' },
-      { name: t('footer.sections.company.blog'), href: '/news' },
-      { name: t('footer.sections.company.contact'), href: '/contact' },
+      { name: t('footer.sections.company.about'), href: `${prefix}/about` },
+      { name: t('footer.sections.company.blog'), href: `${prefix}/news` },
+      { name: t('footer.sections.company.contact'), href: `${prefix}/contact` },
     ],
     [t('footer.sections.legal.title')]: [
       {
         name: t('footer.sections.legal.privacy_policy'),
-        href: '/legal/privacy_policy',
+        href: `${prefix}/legal/privacy_policy`,
       },
       {
         name: t('footer.sections.legal.terms_of_service'),
-        href: '/legal/terms_of_service',
+        href: `${prefix}/legal/terms_of_service`,
       },
       {
         name: t('footer.sections.legal.cookie_policy'),
-        href: '/legal/cookie_policy',
+        href: `${prefix}/legal/cookie_policy`,
       },
     ],
   }
@@ -57,7 +60,7 @@ export function Footer({ onManagePrivacy }: FooterProps) {
                 <Linkedin className="size-6" />
               </a>
               <Link
-                href="/contact"
+                href={`${prefix}/contact`}
                 className="flex w-fit items-center justify-center rounded-xl bg-slate-800 p-2 transition-colors duration-300 hover:bg-slate-700"
               >
                 <Mail className="size-6" />
@@ -98,18 +101,18 @@ export function Footer({ onManagePrivacy }: FooterProps) {
           </h4>
           <div className="flex flex-row gap-2 py-2">
             <img
-              src={isoBadge.src}
+              src="/images/badges/iso-27001-badge-resized.png"
               alt="ISO 27001 Certification"
               className="max-h-32 rounded-md border-2 border-white"
             />
             <div className="flex flex-col justify-center gap-2">
               <img
-                src={emailBadge.src}
+                src="/images/badges/email-test-badge.png"
                 alt="Email Test: 100%"
                 className="max-h-9"
               />
               <img
-                src={msBadge.src}
+                src="/images/badges/ms-badge.png"
                 alt="Microsoft for Startups partnership badge"
                 className="max-h-20"
               />
