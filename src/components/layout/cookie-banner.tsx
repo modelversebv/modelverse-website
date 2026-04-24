@@ -13,6 +13,8 @@ import { Cookie, Settings, Shield, X } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { getCookie, setCookie } from 'typescript-cookie'
 
+import { useLocale } from '@/providers/IntlProvider'
+
 type CookieOption = {
   title: string
   desc: string
@@ -32,6 +34,8 @@ export function CookieBanner({
   onClose,
 }: CookieBannerProps) {
   const router = useRouter()
+  const { locale } = useLocale()
+  const prefix = locale === 'en' ? '' : `/${locale}`
 
   const cookies: CookieOption[] = [
     {
@@ -158,7 +162,7 @@ export function CookieBanner({
                         className="cursor-pointer font-semibold text-lime-500 hover:underline"
                         onClick={() => {
                           handleReject()
-                          router.push('/legal/cookie_policy')
+                          router.push(`${prefix}/legal/cookie_policy`)
                         }}
                       >
                         Cookie Policy
@@ -168,7 +172,7 @@ export function CookieBanner({
                         className="cursor-pointer font-semibold text-lime-500 hover:underline"
                         onClick={() => {
                           handleReject()
-                          router.push('/legal/privacy_policy')
+                          router.push(`${prefix}/legal/privacy_policy`)
                         }}
                       >
                         Privacy Policy
