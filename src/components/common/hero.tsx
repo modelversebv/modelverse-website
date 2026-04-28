@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils'
 type HeroProps = {
   className?: string
   backgroundImg?: string
+  backgroundAlt?: string
   backgroundClassName?: string
   containerClassName?: string
   overlay?: boolean
@@ -12,6 +13,7 @@ type HeroProps = {
 export function Hero({
   className,
   backgroundImg,
+  backgroundAlt = '',
   backgroundClassName,
   containerClassName,
   overlay = false,
@@ -28,7 +30,7 @@ export function Hero({
         <img
           src={backgroundImg}
           fetchPriority="high"
-          alt=""
+          alt={backgroundAlt}
           className={cn(
             'absolute inset-0 size-full object-cover',
             backgroundClassName

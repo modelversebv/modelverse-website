@@ -61,7 +61,7 @@ export function ArticleContent({ metadata, children }: ArticleContentProps) {
       </div>
 
       <div className="relative h-[500px] w-full overflow-hidden bg-black">
-        <img src={metadata.image} alt="" className="size-full object-cover" />
+        <img src={metadata.image} alt={metadata.title} className="size-full object-cover" />
         <div className="absolute inset-0 size-full bg-linear-to-t from-gray-900 via-gray-900/50 to-gray-900">
           <div className="flex size-full items-end-safe justify-center-safe px-4 py-16 md:container md:mx-auto">
             <div className="mx-auto flex w-full max-w-4xl flex-col gap-4 md:gap-8">

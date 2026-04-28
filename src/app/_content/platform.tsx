@@ -223,6 +223,7 @@ function PlatformHero() {
       backgroundClassName="object-center"
       containerClassName="min-h-dvh h-fit pt-16 md:pt-none md:min-h-auto"
       backgroundImg="/images/heroes/platform.avif"
+      backgroundAlt="Modelverse cybersecurity platform"
       overlay
     >
       <div className="flex max-w-3xl flex-col gap-8 xl:text-left">
