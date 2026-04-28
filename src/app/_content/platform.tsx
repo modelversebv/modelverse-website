@@ -335,7 +335,7 @@ export function PlatformContent() {
     amount: 0.1,
   })
   const comparisonInView = useInView(comparisonRef, { once: true, amount: 0.1 })
-  const greenBoxInView = useInView(greenBoxRef, { once: true, amount: 0.8 })
+  const greenBoxInView = useInView(greenBoxRef, { once: true, amount: 1 })
   const implementationInView = useInView(implementationRef, {
     once: true,
     amount: 0.1,
