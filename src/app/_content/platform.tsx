@@ -370,7 +370,6 @@ export function PlatformContent() {
   const implementationRef = useRef<HTMLDivElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
   const frameworksRef = useRef<HTMLDivElement>(null)
-  const greenBoxRef = useRef<HTMLDivElement>(null)
 
   const problemsInView = useInView(problemsRef, { once: true, amount: 0.1 })
   const keyFeaturesInView = useInView(keyFeaturesRef, {
@@ -382,7 +381,6 @@ export function PlatformContent() {
     amount: 0.1,
   })
   const comparisonInView = useInView(comparisonRef, { once: true, amount: 0.1 })
-  const greenBoxInView = useInView(greenBoxRef, { once: true, amount: 0.8 })
   const implementationInView = useInView(implementationRef, {
     once: true,
     amount: 0.1,
@@ -533,10 +531,7 @@ export function PlatformContent() {
               </div>
 
               <motion.div
-                ref={greenBoxRef}
                 variants={fadeInUp}
-                initial="hidden"
-                animate={greenBoxInView ? 'visible' : 'hidden'}
                 className="w-full rounded-2xl border border-lime-400/30 bg-linear-to-r from-lime-500/10 to-teal-500/10 p-8 text-center backdrop-blur-xl md:w-3/5 lg:w-full"
               >
                 <div className="flex flex-col items-center max-lg:gap-4 lg:flex-row lg:justify-evenly">
