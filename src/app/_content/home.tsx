@@ -82,7 +82,7 @@ export function HomeContent() {
         <img
           src="/images/heroes/home.avif"
           fetchPriority="high"
-          alt=""
+          alt="Cybersecurity risk management"
           className="absolute inset-0 size-full object-cover object-[45%_center] md:object-[35%_center] lg:object-[40%_center]"
         />
         <div className="absolute inset-0 bg-linear-to-b from-slate-900/50 via-slate-900/30 to-slate-900" />

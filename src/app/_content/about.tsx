@@ -43,6 +43,7 @@ function AboutHero() {
       className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
       backgroundClassName="object-[center_70%]"
       backgroundImg="/images/heroes/about.avif"
+      backgroundAlt="About Modelverse"
       overlay
     >
       <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
@@ -273,7 +274,7 @@ export function AboutContent() {
                   className="lg:col-span-2 lg:nth-1:col-start-2"
                 >
                   <Card className="size-full bg-white/5 p-0 hover:border-lime-500/50 hover:bg-white/10">
-                    <img src={member.image} className="rounded-t-xl" alt="" />
+                    <img src={member.image} className="rounded-t-xl" alt={member.name} />
                     <div className="flex grow flex-col p-4">
                       <h3 className="mb-2 text-lg">{member.name}</h3>
                       <p className="mb-4 bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text font-semibold text-transparent">

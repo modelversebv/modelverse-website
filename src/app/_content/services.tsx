@@ -63,6 +63,7 @@ function ServicesHero() {
       className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
       backgroundClassName="object-center"
       backgroundImg="/images/heroes/services.avif"
+      backgroundAlt="Modelverse cybersecurity services"
       overlay
     >
       <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-black/15 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">

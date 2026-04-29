@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { Card } from '@/components/common/card'
 import { Hero } from '@/components/common/hero'
@@ -215,6 +215,52 @@ function ImplementationStepItem({
   )
 }
 
+function PlatformStatusBadge() {
+  const [status, setStatus] = useState<{
+    indicator: string
+    description: string
+  } | null>(null)
+
+  useEffect(() => {
+    fetch('https://modelverse-1.statuspage.io/api/v2/summary.json')
+      .then((r) => r.json())
+      .then((data) => setStatus(data.status))
+      .catch(() => {})
+  }, [])
+
+  if (!status) return null
+
+  const dotColor =
+    status.indicator === 'none'
+      ? 'bg-lime-500'
+      : status.indicator === 'minor'
+        ? 'bg-yellow-500'
+        : 'bg-red-500'
+
+  const pingColor =
+    status.indicator === 'none'
+      ? 'bg-lime-400'
+      : status.indicator === 'minor'
+        ? 'bg-yellow-400'
+        : 'bg-red-400'
+
+  return (
+    <div className="absolute bottom-3 left-3 flex items-center gap-2 rounded-full bg-slate-900/60 px-2 py-1 backdrop-blur-sm">
+      <span className="relative flex size-2.5">
+        <span
+          className={`absolute inline-flex size-full animate-ping rounded-full ${pingColor} opacity-75`}
+        />
+        <span
+          className={`relative inline-flex size-2.5 rounded-full ${dotColor}`}
+        />
+      </span>
+      <span className="text-xs font-medium text-white">
+        {status.description}
+      </span>
+    </div>
+  )
+}
+
 function PlatformHero() {
   const t = useTranslations()
   return (
@@ -223,6 +269,7 @@ function PlatformHero() {
       backgroundClassName="object-center"
       containerClassName="min-h-dvh h-fit pt-16 md:pt-none md:min-h-auto"
       backgroundImg="/images/heroes/platform.avif"
+      backgroundAlt="Modelverse cybersecurity platform"
       overlay
     >
       <div className="flex max-w-3xl flex-col gap-8 xl:text-left">
@@ -240,12 +287,13 @@ function PlatformHero() {
           {t('platform.hero.description')}
         </p>
       </div>
-      <Card className="p-2 hover:bg-white/10 lg:max-w-4xl xl:w-500">
+      <Card className="relative p-2 hover:bg-white/10 lg:max-w-4xl xl:w-500">
         <img
           src="/images/platform-showcase/platform.png"
           alt="Modelverse Platform"
           className="rounded-lg"
         />
+        <PlatformStatusBadge />
       </Card>
     </Hero>
   )
@@ -322,7 +370,6 @@ export function PlatformContent() {
   const implementationRef = useRef<HTMLDivElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
   const frameworksRef = useRef<HTMLDivElement>(null)
-  const greenBoxRef = useRef<HTMLDivElement>(null)
 
   const problemsInView = useInView(problemsRef, { once: true, amount: 0.1 })
   const keyFeaturesInView = useInView(keyFeaturesRef, {
@@ -334,7 +381,6 @@ export function PlatformContent() {
     amount: 0.1,
   })
   const comparisonInView = useInView(comparisonRef, { once: true, amount: 0.1 })
-  const greenBoxInView = useInView(greenBoxRef, { once: true, amount: 0.8 })
   const implementationInView = useInView(implementationRef, {
     once: true,
     amount: 0.1,
@@ -485,10 +531,7 @@ export function PlatformContent() {
               </div>
 
               <motion.div
-                ref={greenBoxRef}
                 variants={fadeInUp}
-                initial="hidden"
-                animate={greenBoxInView ? 'visible' : 'hidden'}
                 className="w-full rounded-2xl border border-lime-400/30 bg-linear-to-r from-lime-500/10 to-teal-500/10 p-8 text-center backdrop-blur-xl md:w-3/5 lg:w-full"
               >
                 <div className="flex flex-col items-center max-lg:gap-4 lg:flex-row lg:justify-evenly">

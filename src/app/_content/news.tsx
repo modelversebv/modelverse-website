@@ -36,6 +36,7 @@ function NewsHero() {
       className="items-center-safe justify-center-safe text-center text-white md:max-w-4xl"
       backgroundClassName="object-[center_40%]"
       backgroundImg="/images/heroes/news.avif"
+      backgroundAlt="Modelverse news and insights"
       overlay
     >
       <div className="flex w-fit flex-row gap-2 rounded-full border border-white/20 bg-white/10 px-2 py-1 text-lime-500 shadow-lg backdrop-blur-md">
@@ -76,7 +77,7 @@ function FeaturedPostItem({ post, index }: { post: BlogPost; index: number }) {
           {post.metadata.image != '' ? (
             <img
               src={post.metadata.image}
-              alt=""
+              alt={post.metadata.title}
               className="size-full rounded-t-xl object-cover transition-all duration-300 lg:absolute lg:inset-0 lg:rounded-t-none lg:rounded-l-xl"
             />
           ) : (
@@ -138,7 +139,7 @@ function RecentPostItem({ post }: { post: BlogPost }) {
         {post.metadata.image != '' ? (
           <img
             src={post.metadata.image}
-            alt=""
+            alt={post.metadata.title}
             className="size-full rounded-t-xl object-cover transition-all duration-300 group-hover:scale-105"
           />
         ) : (
