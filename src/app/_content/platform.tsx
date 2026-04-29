@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { Card } from '@/components/common/card'
 import { Hero } from '@/components/common/hero'
@@ -215,6 +215,52 @@ function ImplementationStepItem({
   )
 }
 
+function PlatformStatusBadge() {
+  const [status, setStatus] = useState<{
+    indicator: string
+    description: string
+  } | null>(null)
+
+  useEffect(() => {
+    fetch('https://modelverse-1.statuspage.io/api/v2/summary.json')
+      .then((r) => r.json())
+      .then((data) => setStatus(data.status))
+      .catch(() => {})
+  }, [])
+
+  if (!status) return null
+
+  const dotColor =
+    status.indicator === 'none'
+      ? 'bg-lime-500'
+      : status.indicator === 'minor'
+        ? 'bg-yellow-500'
+        : 'bg-red-500'
+
+  const pingColor =
+    status.indicator === 'none'
+      ? 'bg-lime-400'
+      : status.indicator === 'minor'
+        ? 'bg-yellow-400'
+        : 'bg-red-400'
+
+  return (
+    <div className="absolute bottom-3 left-3 flex items-center gap-2 rounded-full bg-slate-900/60 px-2 py-1 backdrop-blur-sm">
+      <span className="relative flex size-2.5">
+        <span
+          className={`absolute inline-flex size-full animate-ping rounded-full ${pingColor} opacity-75`}
+        />
+        <span
+          className={`relative inline-flex size-2.5 rounded-full ${dotColor}`}
+        />
+      </span>
+      <span className="text-xs font-medium text-white">
+        {status.description}
+      </span>
+    </div>
+  )
+}
+
 function PlatformHero() {
   const t = useTranslations()
   return (
@@ -241,12 +287,13 @@ function PlatformHero() {
           {t('platform.hero.description')}
         </p>
       </div>
-      <Card className="p-2 hover:bg-white/10 lg:max-w-4xl xl:w-500">
+      <Card className="relative p-2 hover:bg-white/10 lg:max-w-4xl xl:w-500">
         <img
           src="/images/platform-showcase/platform.png"
           alt="Modelverse Platform"
           className="rounded-lg"
         />
+        <PlatformStatusBadge />
       </Card>
     </Hero>
   )
