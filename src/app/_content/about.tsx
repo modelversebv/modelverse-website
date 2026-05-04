@@ -78,17 +78,19 @@ export function AboutContent() {
   ).map((member) => ({
     ...member,
     image:
-      ({
-        Ben: '/images/team/ben.jpg',
-        Bozhena: '/images/team/bozhena.jpg',
-        Daan: '/images/team/daan.jpg',
-        Lili: '/images/team/lili.jpg',
-        Maria: '/images/team/maria.jpg',
-        Mariona: '/images/team/mariona.jpg',
-        Matei: '/images/team/matei.jpg',
-        Reshma: '/images/team/reshma.jpg',
-        Sjors: '/images/team/sjors.jpg',
-      } as Record<string, string>)[member.name.split(' ')[0]] ?? '',
+      (
+        {
+          Ben: '/images/team/ben.jpg',
+          Bozhena: '/images/team/bozhena.jpg',
+          Daan: '/images/team/daan.jpg',
+          Lili: '/images/team/lili.jpg',
+          Maria: '/images/team/maria.jpg',
+          Mariona: '/images/team/mariona.jpg',
+          Matei: '/images/team/matei.jpg',
+          Reshma: '/images/team/reshma.jpg',
+          Sjors: '/images/team/sjors.jpg',
+        } as Record<string, string>
+      )[member.name.split(' ')[0]] ?? '',
   }))
 
   const ambassadors = [
@@ -127,14 +129,14 @@ export function AboutContent() {
       bio: t('about.ambassadors.items.4.bio'),
       image: '/images/ambassadors/robert.jpg',
     },
-    {
-      name: 'Alexandra Roger-Machart',
-      role: 'Independent Communications & Media Relations Advisor',
-      linkedin:
-        'https://www.linkedin.com/in/alexandra-roger-machart-senior-manager-corporate-communications/',
-      bio: t('about.ambassadors.items.5.bio'),
-      image: '/images/ambassadors/alexandra.jpg',
-    },
+    // { // This text will need to be updated before it goes live again
+    //   name: 'Alexandra Roger-Machart',
+    //   role: 'Independent Communications & Media Relations Advisor',
+    //   linkedin:
+    //     'https://www.linkedin.com/in/alexandra-roger-machart-senior-manager-corporate-communications/',
+    //   bio: t('about.ambassadors.items.5.bio'),
+    //   image: '/images/ambassadors/alexandra.jpg',
+    // },
   ]
 
   const storyRef = useRef<HTMLDivElement>(null)
@@ -274,7 +276,11 @@ export function AboutContent() {
                   className="lg:col-span-2 lg:nth-1:col-start-2"
                 >
                   <Card className="size-full bg-white/5 p-0 hover:border-lime-500/50 hover:bg-white/10">
-                    <img src={member.image} className="rounded-t-xl" alt={member.name} />
+                    <img
+                      src={member.image}
+                      className="rounded-t-xl"
+                      alt={member.name}
+                    />
                     <div className="flex grow flex-col p-4">
                       <h3 className="mb-2 text-lg">{member.name}</h3>
                       <p className="mb-4 bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text font-semibold text-transparent">
@@ -326,12 +332,13 @@ export function AboutContent() {
 
             <motion.div
               variants={staggerContainer}
-              className="grid grid-cols-1 gap-4 lg:grid-cols-2"
+              className="grid grid-cols-1 gap-4 lg:grid-cols-4"
             >
               {ambassadors.map((ambassador, index) => (
                 <motion.div
                   variants={index % 2 === 0 ? slideInLeft : slideInRight}
                   key={index}
+                  className="lg:col-span-2 lg:last:col-start-2"
                 >
                   <Card className="size-full gap-4 overflow-hidden bg-white/5 p-0 text-left hover:border-lime-500/50 hover:bg-white/10">
                     <div className="flex flex-col gap-4 px-4 pt-4 sm:flex-row sm:items-center-safe">
