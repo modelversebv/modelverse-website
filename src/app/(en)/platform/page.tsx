@@ -1,11 +1,11 @@
 import { PlatformContent } from '@/app/_content/platform'
 import { buildAlternates } from '@/lib/metadata'
 import type { Metadata } from 'next'
+import en from '../../../../messages/en.json'
 
 export const metadata: Metadata = {
-  title: 'Modelverse | Platform',
-  description:
-    'Manage your cybersecurity risks and compliance using the Modelverse Risk & Compliance SaaS platform.',
+  title: en.platform.metadata.title,
+  description: en.platform.metadata.description,
   alternates: buildAlternates('en', '/platform'),
 }
 

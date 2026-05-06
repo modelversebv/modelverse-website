@@ -30,7 +30,7 @@
   },
   "home": {
     "metadata": {
-      "title": "Modelverse | Cybersecurity Risk Management",
+      "title": "Cybersecurity Risk Management | Modelverse",
       "description": "Modelverse provides a cybersecurity risk management platform and consultancy services for organizations of all sizes."
     },
     "hero": {
@@ -116,7 +116,7 @@
   },
   "platform": {
     "metadata": {
-      "title": "Modelverse | Platform",
+      "title": "Platform | Modelverse",
       "description": "Manage your cybersecurity risks and compliance using the Modelverse Risk & Compliance SaaS platform."
     },
     "hero": {
@@ -306,7 +306,7 @@
   },
   "services": {
     "metadata": {
-      "title": "Modelverse | Consultancy Services",
+      "title": "Consultancy Services | Modelverse",
       "description": "Modelverse offers a range of comprehensive security consultancy services that are designed to mature your organisation's cybersecurity posture. Select the services you need, and leverage the expertise of our consultants to reach your goals at your pace."
     },
     "hero": {
@@ -389,7 +389,7 @@
   },
   "cases": {
     "metadata": {
-      "title": "Modelverse | Client Cases",
+      "title": "Client Cases | Modelverse",
       "description": "Learn how Modelverse is helping organisations improve their cybersecurity posture and achieve compliance."
     },
     "hero": {
@@ -472,7 +472,7 @@
   },
   "news": {
     "metadata": {
-      "title": "Modelverse | Blogs & News",
+      "title": "Blogs & News | Modelverse",
       "description": "Stay up-to-date with Modelverse's latest insights on cybersecurity, compliance regulations, trends, and best practices."
     },
     "hero": {
@@ -496,7 +496,7 @@
   },
   "about": {
     "metadata": {
-      "title": "Modelverse | About Us",
+      "title": "About Us | Modelverse",
       "description": "Learn about Modelverse's mission, values, team, and ambassadors who are shaping the future of cybersecurity risk management."
     },
     "hero": {
@@ -632,7 +632,7 @@
   },
   "contact": {
     "metadata": {
-      "title": "Modelverse | Contact Us",
+      "title": "Contact Us | Modelverse",
       "description": "Contact the Modelverse team to schedule a personalised demo, get pricing information, or request technical support."
     },
     "hero": {
@@ -667,8 +667,20 @@
       "title": "Frequently Asked Questions",
       "items": [
         {
-          "question": "What is your response time for inquiries?",
-          "answer": "We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call us on the number provided above."
+          "question": "Who is Modelverse for?",
+          "answer": "Modelverse is designed for organisations of all sizes and industries, from small businesses to large enterprises and public sector organisations. Our aim is to empower you to manage cybersecurity risks and compliance in a systematic and efficient way. Modelverse is built to be operated by a small team, so you don't need a large cybersecurity or compliance department to get value from it. Whether you're a solo CISO, a growing organisation, or an established enterprise, Modelverse gives you the structure and tooling to stay in control. Our clients are predominantly European, but we are continuously expanding our coverage and aim to support organisations globally."
+        },
+        {
+          "question": "Which compliance frameworks does Modelverse support?",
+          "answer": "We support compliance for any framework relevant to your organisation. Our libraries are continuously updated with the latest requirements and best practices, so you can be confident that you're always up to date. Some of the most widely used frameworks we support include ISO 27001/27002, GDPR, NIS2, BIO2, NEN 7510, DORA, ISO 27701, NIST CSF, and PCI DSS — but we also support local variations and custom frameworks. Importantly, Modelverse is built not just to help you achieve a certification, but to make it easy to maintain it year over year. Re-certification cycles become significantly less painful when your evidence, controls, and documentation are already centralised and kept current in the platform."
+        },
+        {
+          "question": "What is included in a cybersecurity risk assessment?",
+          "answer": "Our standard cybersecurity risk assessment serves as a comprehensive evaluation of your organisation's security posture. It includes an analysis of your current security capabilities, an assessment of the relative likelihood and impact of potential risks, and a prioritised roadmap for improvement. The goal is to continuously provide you with actionable insights rather than an arbitrary scorecard, and we work closely with your team to understand your unique context and tailor the recommendations accordingly. Crucially, findings don't sit in a report and collect dust; rather, they feed directly into Modelverse as a living improvement backlog, so your organisation can continue to act on them, track progress, and update them as your environment evolves."
+        },
+        {
+          "question": "How is Modelverse different from traditional security consultancy?",
+          "answer": "Traditional security consultants typically parachute in, deliver a report or help achieve an individual certification, and then leave. What you do with their produced information after they're gone is largely up to you. Modelverse takes a fundamentally different approach: we combine the platform and consultancy into a continuously live programme. Our platform serves as a single source of truth for all your risk and compliance information, and our consultants can support you not just through initial implementation, but through re-certification cycles and ongoing programme management. Moreover, the platform is specifically designed to be run by a small team or even a single person, without depending on constant external consultant hours. Cybersecurity becomes something your organisation owns and operates continuously, rather than an expensive one-off exercise."
         },
         {
           "question": "Do you offer personalised demos?",
@@ -701,8 +713,8 @@
   "legal": {
     "metadata": {
       "description_line1": "The official",
-      "description_line2": "document.",
-      "title_loading": "Modelverse | Legal Page Loading...",
+      "description_line2": "document for Modelverse B.V.",
+      "title_loading": "Legal Page Loading... | Modelverse",
       "loading": "Loading legal and regulatory documentation..."
     },
     "breadcrumb": {

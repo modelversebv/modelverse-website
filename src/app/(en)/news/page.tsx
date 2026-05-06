@@ -2,11 +2,11 @@ import { NewsContent } from '@/app/_content/news'
 import { getAllArticles } from '@/lib/articles'
 import { buildAlternates } from '@/lib/metadata'
 import type { Metadata } from 'next'
+import en from '../../../../messages/en.json'
 
 export const metadata: Metadata = {
-  title: 'Modelverse | News',
-  description:
-    'Stay up to date with the latest cybersecurity news, insights, and expert articles from the Modelverse team.',
+  title: en.news.metadata.title,
+  description: en.news.metadata.description,
   alternates: buildAlternates('en', '/news'),
 }
 

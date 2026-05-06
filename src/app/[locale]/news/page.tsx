@@ -2,6 +2,10 @@ import { NewsContent } from '@/app/_content/news'
 import { getAllArticles } from '@/lib/articles'
 import { buildAlternates } from '@/lib/metadata'
 import type { Metadata } from 'next'
+import enMessages from '../../../../messages/en.json'
+import nlMessages from '../../../../messages/nl.json'
+
+const messages = { en: enMessages, nl: nlMessages }
 
 export async function generateMetadata({
   params,
@@ -9,10 +13,10 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params
+  const t = messages[locale as keyof typeof messages] ?? enMessages
   return {
-    title: 'Modelverse | News',
-    description:
-      'Stay up to date with the latest cybersecurity news, insights, and expert articles from the Modelverse team.',
+    title: t.news.metadata.title,
+    description: t.news.metadata.description,
     alternates: buildAlternates(locale, '/news'),
   }
 }

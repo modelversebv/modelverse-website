@@ -30,7 +30,7 @@
   },
   "home": {
     "metadata": {
-      "title": "Modelverse | Cybersecurity Risk Management",
+      "title": "Cybersecurity Risk Management | Modelverse",
       "description": "Modelverse biedt een cybersecurity-risicobeheerplatform en consultancydiensten voor organisaties van alle groottes."
     },
     "hero": {
@@ -116,7 +116,7 @@
   },
   "platform": {
     "metadata": {
-      "title": "Modelverse | Platform",
+      "title": "Platform | Modelverse",
       "description": "Beheer je cybersecurity-risico's en compliance met het Modelverse Risk & Compliance SaaS-platform."
     },
     "hero": {
@@ -306,7 +306,7 @@
   },
   "services": {
     "metadata": {
-      "title": "Modelverse | Consultancy Services",
+      "title": "Consultancy Services | Modelverse",
       "description": "Modelverse biedt een reeks uitgebreide security-pakketten die zijn ontworpen om de cybersecurity-positie van je organisatie te versterken. Selecteer de pakketten die je nodig hebt en benut de expertise van onze consultants om je doelen op jouw tempo te bereiken."
     },
     "hero": {
@@ -389,7 +389,7 @@
   },
   "cases": {
     "metadata": {
-      "title": "Modelverse | Klantcases",
+      "title": "Klantcases | Modelverse",
       "description": "Ontdek hoe Modelverse organisaties helpt hun cybersecurity-positie te verbeteren en compliance te bereiken."
     },
     "hero": {
@@ -472,7 +472,7 @@
   },
   "news": {
     "metadata": {
-      "title": "Modelverse | Blogs & Nieuws",
+      "title": "Blogs & Nieuws | Modelverse",
       "description": "Blijf op de hoogte van de nieuwste inzichten van Modelverse over cybersecurity, compliance-regelgeving, trends en best practices."
     },
     "hero": {
@@ -496,7 +496,7 @@
   },
   "about": {
     "metadata": {
-      "title": "Modelverse | Over ons",
+      "title": "Over ons | Modelverse",
       "description": "Lees meer over de missie, waarden, het team en de ambassadeurs van Modelverse die de toekomst van cybersecurity-risicobeheer vormgeven."
     },
     "hero": {
@@ -632,7 +632,7 @@
   },
   "contact": {
     "metadata": {
-      "title": "Modelverse | Contact",
+      "title": "Contact | Modelverse",
       "description": "Neem contact op met het Modelverse-team om een gepersonaliseerde demo te plannen, prijsinformatie te verkrijgen of technische ondersteuning aan te vragen."
     },
     "hero": {
@@ -667,8 +667,20 @@
       "title": "Veelgestelde vragen",
       "items": [
         {
-          "question": "Wat is jullie reactietijd voor vragen?",
-          "answer": "Wij reageren doorgaans binnen 24 uur op alle vragen tijdens werkdagen. Voor dringende zaken kun je ons bellen op het hierboven vermelde nummer."
+          "question": "Voor wie is Modelverse?",
+          "answer": "Modelverse is ontworpen voor organisaties van alle groottes en alle sectoren, van kleine bedrijven tot grote ondernemingen en publieke instanties. Ons doel is om je in staat te stellen cybersecurity-risico's en compliance op een systematische en efficiënte manier te beheren. Modelverse is gebouwd om te worden gebruikt door een klein team, zodat je geen grote cybersecurity- of compliance-afdeling nodig hebt om er waarde uit te halen. Of je nu een solo CISO bent, een groeiende organisatie, of een gevestigde onderneming — Modelverse geeft je de structuur en tooling om in controle te blijven. Onze klanten zijn voornamelijk Europees, maar we breiden onze dekking continu uit en streven ernaar organisaties wereldwijd te ondersteunen."
+        },
+        {
+          "question": "Welke compliance-frameworks ondersteunt Modelverse?",
+          "answer": "We ondersteunen compliance voor elk framework dat relevant is voor jouw organisatie. Onze bibliotheken worden continu bijgewerkt met de nieuwste vereisten en best practices, zodat je er zeker van kunt zijn dat je altijd up-to-date bent. Enkele van de meest gebruikte frameworks zijn ISO 27001/27002, GDPR, NIS2, BIO2, NEN 7510, DORA, ISO 27701, NIST CSF en PCI DSS — maar we ondersteunen ook lokale varianten en aangepaste frameworks. Modelverse is niet alleen bedoeld om je te helpen een certificering te behalen, maar ook om het eenvoudig te maken deze jaar na jaar te onderhouden. Hercertificering wordt aanzienlijk minder belastend wanneer je bewijs, controls en documentatie al gecentraliseerd en actueel opgenomen zijn in het platform."
+        },
+        {
+          "question": "Wat is inbegrepen in een cybersecurity-risicobeoordeling?",
+          "answer": "Onze standaard cybersecurity-risicobeoordeling dient als een uitgebreide evaluatie van de security-houding van je organisatie. Het omvat een analyse van je huidige security capabilities, een beoordeling van de relatieve waarschijnlijkheid en impact van potentiële risico's, en een geprioriteerde roadmap voor verbetering. Het doel is om je continu te voorzien van bruikbare inzichten in plaats van een willekeurige scorekaart, en we werken nauw samen met jouw team om je unieke context te begrijpen en de aanbevelingen overeenkomstig aan te passen. Cruciaal is dat bevindingen  niet in een rapport blijven liggen; ze worden direct ingevoerd in Modelverse als een levende backlog van verbeteringen, zodat je organisatie er continu op kan voortbouwen, voortgang bij kan houden en ze kan bijwerken naarmate je omgeving evolueert."
+        },
+        {
+          "question": "Hoe onderscheidt Modelverse zich van traditionele security-consultants?",
+          "answer": "Traditionele security-consultants komen doorgaans langs, leveren een rapport op of helpen bij het behalen van een individuele certificering, en vertrekken dan weer. Wat je daarna met de geproduceerde informatie doet, is grotendeels aan jou. Modelverse hanteert een fundamenteel andere aanpak: we combineren het platform en consultancy in een continu actief programma. Ons platform fungeert als één gecentraliseerde bron voor al je risico- en compliance-informatie, en onze consultants kunnen je ondersteunen, niet alleen bij de initiële implementatie, maar ook bij hercertificering en doorlopend programmamanagement. Bovendien is het platform specifiek ontworpen om te worden beheerd door een klein team of zelfs één persoon, zonder afhankelijk te zijn van constante manuren geleverd door externe consultants. Cybersecurity wordt iets wat je organisatie zelf in bezit heeft en continu uitvoert, in plaats van een kostbare eenmalige oefening."
         },
         {
           "question": "Bieden jullie gepersonaliseerde demo's aan?",
@@ -701,8 +713,8 @@
   "legal": {
     "metadata": {
       "description_line1": "Het officiële",
-      "description_line2": "document.",
-      "title_loading": "Modelverse | Juridische pagina laden...",
+      "description_line2": "document van Modelverse B.V.",
+      "title_loading": "Juridische pagina laden... | Modelverse",
       "loading": "Juridische en regelgevende documentatie laden..."
     },
     "breadcrumb": {

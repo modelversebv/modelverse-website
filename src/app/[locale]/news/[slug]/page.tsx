@@ -19,7 +19,7 @@ export async function generateMetadata({
     const mod = await import(`@/articles/${slug}.mdx`)
     const meta: MetaData = mod.metadata
     return {
-      title: `Modelverse | ${meta.title}`,
+      title: `${meta.title} | Modelverse`,
       description: meta.summary,
       openGraph: {
         images: meta.image ? [meta.image] : [],

@@ -46,6 +46,42 @@ import {
 import { motion, useInView } from 'motion/react'
 import { useTranslations } from 'next-intl'
 
+// --- Schema ---
+
+const softwareApplicationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Modelverse',
+  url: 'https://modelverse.online/platform',
+  applicationCategory: 'SecurityApplication',
+  operatingSystem: 'Web',
+  provider: {
+    '@type': 'Organization',
+    name: 'Modelverse',
+    url: 'https://modelverse.online',
+  },
+  description:
+    'A unified SaaS platform for managing cybersecurity risks, compliance, and security governance across your entire organisation. Nine integrated modules — Risks, Capabilities, Roadmap, Landscape, Compliance, Privacy, Audits, Assurance, and ISMS — with support for 30+ frameworks including ISO 27001, GDPR, NIS2, NIST CSF, and DORA.',
+  featureList: [
+    'Risk management',
+    'Capability management',
+    'Security roadmap planning',
+    'IT landscape management',
+    'Compliance management',
+    'Privacy management',
+    'Audit management',
+    'Assurance management',
+    'ISMS management',
+    'AI-powered recommendations',
+    'Autonomous AI-driven supply chain management',
+    'Role-based task management and accountability',
+    'Continuously updated compliance frameworks',
+    'Custom template document generation',
+    'Professional risk and control libraries',
+    'Interactive visualisations',
+  ],
+}
+
 // --- Static Constants ---
 
 const featureShowcaseIcons = [Sprout, Layers, ChartLine]
@@ -389,6 +425,11 @@ export function PlatformContent() {
   const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 })
 
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
+      />
     <Layout platform={true} hero={<PlatformHero />} ref={layoutRef}>
       {/* Page content */}
       <div className="bg-linear-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
@@ -703,5 +744,6 @@ export function PlatformContent() {
         </motion.div>
       </div>
     </Layout>
+    </>
   )
 }
