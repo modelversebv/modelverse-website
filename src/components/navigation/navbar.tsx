@@ -1,10 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import { usePathname, useRouter } from 'next/navigation'
-import { useTranslations } from 'next-intl'
 
 import { useLocale } from '@/providers/IntlProvider'
+import { useTranslations } from 'next-intl'
+import { usePathname, useRouter } from 'next/navigation'
+
 import { Dropdown } from './dropdown'
 import { DropdownLink } from './dropdown-link'
 import { NavLink } from './nav-link'
@@ -99,7 +100,11 @@ export function NavBar({
             title="Solutions"
             active={platform || services}
           >
-            <DropdownLink href={`${prefix}/platform`} title="Platform" active={platform}>
+            <DropdownLink
+              href={`${prefix}/platform`}
+              title="Platform"
+              active={platform}
+            >
               Risk & Compliance Management
             </DropdownLink>
             <DropdownLink
@@ -163,10 +168,18 @@ export function NavBar({
             {t('navbar.home')}
           </NavLink>
           <Dropdown title="Solutions" active={platform || services}>
-            <DropdownLink href={`${prefix}/platform`} title="Platform" active={platform}>
+            <DropdownLink
+              href={`${prefix}/platform`}
+              title="Platform"
+              active={platform}
+            >
               Risk & Compliance Management
             </DropdownLink>
-            <DropdownLink href={`${prefix}/services`} title="Services" active={services}>
+            <DropdownLink
+              href={`${prefix}/services`}
+              title="Services"
+              active={services}
+            >
               Service Packages
             </DropdownLink>
           </Dropdown>
