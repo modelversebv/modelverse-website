@@ -6,8 +6,10 @@ export type MetaData = {
   title: string
   subtitle: string
   summary: string
+  seoDescription: string
   image: string
-  date: string
+  publishedAt: string
+  locale: string
   author: string
   portrait: string
 }
@@ -15,11 +17,7 @@ export type MetaData = {
 export type BlogPost = {
   postId: string
   metadata: MetaData
-}
-
-export function parseDate(dateString: string) {
-  const [day, month, year] = dateString.split('/').map(Number)
-  return new Date(year, month - 1, day)
+  wordCount: number
 }
 
 export function getArticleSlugs(): string[] {
@@ -28,6 +26,21 @@ export function getArticleSlugs(): string[] {
     .readdirSync(dir)
     .filter((f) => f.endsWith('.mdx') && !f.includes('test'))
     .map((f) => f.replace('.mdx', ''))
+}
+
+export function computeWordCount(slug: string): number {
+  const filePath = path.join(process.cwd(), 'src/articles', `${slug}.mdx`)
+  const raw = fs.readFileSync(filePath, 'utf-8')
+  const withoutMeta = raw.replace(/^export const \w+ = \{[\s\S]*?^}\s*\n/m, '')
+  const text = withoutMeta
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/`[^`\n]+`/g, ' ')
+    .replace(/^\s*#{1,6}\s+/gm, ' ')
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
+    .replace(/[*_~>|]/g, ' ')
+    .replace(/\n+/g, ' ')
+  return text.trim().split(/\s+/).filter(Boolean).length
 }
 
 export async function getAllArticles(): Promise<BlogPost[]> {
@@ -39,13 +52,14 @@ export async function getAllArticles(): Promise<BlogPost[]> {
       return {
         postId: slug,
         metadata: mod.metadata as MetaData,
+        wordCount: computeWordCount(slug),
       }
     })
   )
 
   return articles.sort(
     (a, b) =>
-      parseDate(b.metadata.date).getTime() -
-      parseDate(a.metadata.date).getTime()
+      new Date(b.metadata.publishedAt).getTime() -
+      new Date(a.metadata.publishedAt).getTime()
   )
 }

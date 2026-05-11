@@ -13,6 +13,7 @@ import {
   staggerContainer,
 } from '@/lib/animation-variants'
 import type { BlogPost } from '@/lib/articles'
+import { formatDate } from '@/lib/format-date'
 import {
   ArrowRight,
   Calendar,
@@ -111,7 +112,7 @@ function FeaturedPostItem({ post, index }: { post: BlogPost; index: number }) {
                   <Calendar className="size-4 shrink-0" />
                 </AvatarFallback>
               </Avatar>
-              {post.metadata.date}
+              {formatDate(post.metadata.publishedAt)}
             </div>
           </div>
           <Link
@@ -172,7 +173,7 @@ function RecentPostItem({ post }: { post: BlogPost }) {
                   <Calendar className="size-4 shrink-0" />
                 </AvatarFallback>
               </Avatar>
-              {post.metadata.date}
+              {formatDate(post.metadata.publishedAt)}
             </div>
           </div>
         </div>

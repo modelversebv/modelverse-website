@@ -1,6 +1,10 @@
 import { ContactContent } from '@/app/_content/contact'
 import { buildAlternates } from '@/lib/metadata'
 import type { Metadata } from 'next'
+import enMessages from '../../../../messages/en.json'
+import nlMessages from '../../../../messages/nl.json'
+
+const messages = { en: enMessages, nl: nlMessages }
 
 export async function generateMetadata({
   params,
@@ -8,10 +12,10 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params
+  const t = messages[locale as keyof typeof messages] ?? enMessages
   return {
-    title: 'Modelverse | Contact',
-    description:
-      'Get in touch with Modelverse. Reach out to our team for questions about our cybersecurity risk management platform or consultancy services.',
+    title: t.contact.metadata.title,
+    description: t.contact.metadata.description,
     alternates: buildAlternates(locale, '/contact'),
   }
 }

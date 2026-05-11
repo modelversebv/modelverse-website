@@ -1,14 +1,14 @@
 import { LegalContent } from '@/app/_content/legal'
 import CookiePolicy, { metadata as cookieMeta } from '@/legal/cookie_policy.mdx'
-import PrivacyPolicy, {
-  metadata as privacyMeta,
-} from '@/legal/privacy_policy.mdx'
-import TermsOfService, {
-  metadata as termsMeta,
-} from '@/legal/terms_of_service.mdx'
+import PrivacyPolicy, { metadata as privacyMeta } from '@/legal/privacy_policy.mdx'
+import TermsOfService, { metadata as termsMeta } from '@/legal/terms_of_service.mdx'
 import { buildAlternates } from '@/lib/metadata'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import enMessages from '../../../../../messages/en.json'
+import nlMessages from '../../../../../messages/nl.json'
+
+const messages = { en: enMessages, nl: nlMessages }
 
 type LegalMeta = {
   title: string
@@ -37,9 +37,11 @@ export async function generateMetadata({
   const { locale, slug } = await params
   const page = pages[slug]
   if (!page) return {}
+  const t = messages[locale as keyof typeof messages] ?? enMessages
+  const lm = t.legal.metadata
   return {
-    title: `Modelverse | ${page.meta.title}`,
-    description: `The official ${page.meta.title} document for Modelverse B.V.`,
+    title: `${page.meta.title} | Modelverse`,
+    description: `${lm.description_line1} ${page.meta.title} ${lm.description_line2}`,
     alternates: buildAlternates(locale, `/legal/${slug}`),
   }
 }

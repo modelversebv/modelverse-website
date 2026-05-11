@@ -1,11 +1,11 @@
 import { AboutContent } from '@/app/_content/about'
 import { buildAlternates } from '@/lib/metadata'
 import type { Metadata } from 'next'
+import en from '../../../../messages/en.json'
 
 export const metadata: Metadata = {
-  title: 'Modelverse | About',
-  description:
-    'Learn about Modelverse — our mission, team, and commitment to helping organizations manage cybersecurity risk and achieve compliance.',
+  title: en.about.metadata.title,
+  description: en.about.metadata.description,
   alternates: buildAlternates('en', '/about'),
 }
 

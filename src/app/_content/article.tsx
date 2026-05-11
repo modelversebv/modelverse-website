@@ -14,16 +14,18 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
-import { ArrowLeft, Calendar, User } from 'lucide-react'
+import { ArrowLeft, BookOpen, Calendar, User } from 'lucide-react'
 
 import type { MetaData } from '@/lib/articles'
+import { formatDate } from '@/lib/format-date'
 
 type ArticleContentProps = {
   metadata: MetaData
+  wordCount: number
   children: React.ReactNode
 }
 
-export function ArticleContent({ metadata, children }: ArticleContentProps) {
+export function ArticleContent({ metadata, wordCount, children }: ArticleContentProps) {
   const layoutRef = useRef<HTMLDivElement>(null)
   const router = useRouter()
   const t = useTranslations()
@@ -93,7 +95,16 @@ export function ArticleContent({ metadata, children }: ArticleContentProps) {
                       <Calendar className="size-4 shrink-0" />
                     </AvatarFallback>
                   </Avatar>
-                  {metadata.date}
+                  {formatDate(metadata.publishedAt)}
+                </div>
+                <div className="flex shrink-0 flex-row items-center-safe gap-2">
+                  <Avatar>
+                    <AvatarImage></AvatarImage>
+                    <AvatarFallback className="bg-transparent">
+                      <BookOpen className="size-4 shrink-0" />
+                    </AvatarFallback>
+                  </Avatar>
+                  ~{wordCount.toLocaleString()} words
                 </div>
               </div>
             </div>
