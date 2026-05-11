@@ -1,5 +1,5 @@
 import { ArticleContent } from '@/app/_content/article'
-import { getArticleSlugs } from '@/lib/articles'
+import { computeWordCount, getArticleSlugs } from '@/lib/articles'
 import type { MetaData } from '@/lib/articles'
 import { buildAlternates, localeUrl } from '@/lib/metadata'
 import type { Metadata } from 'next'
@@ -19,8 +19,8 @@ export async function generateMetadata({
     const mod = await import(`@/articles/${slug}.mdx`)
     const meta: MetaData = mod.metadata
     return {
-      title: `Modelverse | ${meta.title}`,
-      description: meta.summary,
+      title: `${meta.title} | Modelverse`,
+      description: meta.seoDescription,
       openGraph: {
         images: meta.image ? [meta.image] : [],
       },
@@ -48,15 +48,12 @@ export default async function Page({
   const Component = mod.default
   const meta: MetaData = mod.metadata
 
-  const [day, month, year] = meta.date.split('/')
-  const isoDate = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`
-
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: meta.title,
-    description: meta.summary,
-    datePublished: isoDate,
+    description: meta.seoDescription,
+    datePublished: meta.publishedAt,
     author: { '@type': 'Person', name: meta.author },
     image: meta.image ? `https://modelverse.online${meta.image}` : undefined,
     publisher: {
@@ -90,7 +87,7 @@ export default async function Page({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <ArticleContent metadata={meta}>
+      <ArticleContent metadata={meta} wordCount={computeWordCount(slug)}>
         <Component />
       </ArticleContent>
     </>

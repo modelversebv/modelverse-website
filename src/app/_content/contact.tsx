@@ -2,17 +2,12 @@
 
 import { useRef } from 'react'
 
+import { Accordion } from '@/components/common/accordion'
 import { Card } from '@/components/common/card'
 import { Hero } from '@/components/common/hero'
 import { GoogleMapEmbed } from '@/components/embed/google-map-embed'
 import { Layout } from '@/components/layout/page-layout'
-import {
-  fadeInUp,
-  scaleIn,
-  slideInLeft,
-  slideInRight,
-  staggerContainer,
-} from '@/lib/animation-variants'
+import { fadeInUp, scaleIn, staggerContainer } from '@/lib/animation-variants'
 import { ArrowRight, Clock, Mail, MapPin, Phone, Shield } from 'lucide-react'
 import { motion, useInView } from 'motion/react'
 import { useTranslations } from 'next-intl'
@@ -84,12 +79,10 @@ export function ContactContent() {
 
   const detailsRef = useRef<HTMLDivElement>(null)
   const questionsRef = useRef<HTMLDivElement>(null)
-  const mapRef = useRef<HTMLDivElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
 
   const detailsInView = useInView(detailsRef, { once: true, amount: 0.2 })
   const questionsInView = useInView(questionsRef, { once: true, amount: 0.2 })
-  const mapsInView = useInView(mapRef, { once: true, amount: 0.2 })
   const ctaInView = useInView(ctaRef, { once: true, amount: 0.2 })
 
   return (
@@ -99,71 +92,48 @@ export function ContactContent() {
         <div className="flex flex-col justify-center-safe gap-32 px-4 py-16 md:container md:mx-auto">
           <motion.div
             ref={detailsRef}
+            className="grid grid-cols-1 gap-4 lg:grid-cols-2"
             initial="hidden"
             animate={detailsInView ? 'visible' : 'hidden'}
             variants={staggerContainer}
-            className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4"
           >
-            {contactInfo.map((contact, index) => (
-              <motion.div variants={scaleIn} key={index}>
-                <Card className="size-full bg-white/5 hover:border-lime-500/50 hover:bg-white/10">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-linear-to-br from-lime-500 to-teal-500">
-                    <contact.icon className="size-6" />
-                  </div>
-                  <h3 className="mb-2 text-xl">{contact.title}</h3>
-                  <p className="text-white/90">{contact.primary}</p>
-                  <p className="text-white/70">{contact.secondary}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              {contactInfo.map((contact, index) => (
+                <motion.div variants={scaleIn} key={index}>
+                  <Card className="size-full bg-white/5 hover:border-lime-500/50 hover:bg-white/10">
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-linear-to-br from-lime-500 to-teal-500">
+                      <contact.icon className="size-6" />
+                    </div>
+                    <h3 className="mb-2 text-xl">{contact.title}</h3>
+                    <p className="text-white/90">{contact.primary}</p>
+                    <p className="text-white/70">{contact.secondary}</p>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
 
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-            <motion.div
-              ref={questionsRef}
-              initial="hidden"
-              animate={questionsInView ? 'visible' : 'hidden'}
-              variants={staggerContainer}
-              className="flex flex-col gap-4"
-            >
-              <motion.h2 variants={fadeInUp} className="text-center text-4xl">
-                {t('contact.faq.title')}
-              </motion.h2>
-              <motion.div
-                variants={staggerContainer}
-                className="flex flex-col gap-4"
-              >
-                {faqItems.map((item, index) => (
-                  <motion.div variants={slideInLeft} key={index}>
-                    <Card className="gap-4 bg-white/5 p-8 hover:border-lime-500/50 hover:bg-white/10">
-                      <h3 className="text-lg">{item.question}</h3>
-                      <p className="text-white/70">{item.answer}</p>
-                    </Card>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              ref={mapRef}
-              initial="hidden"
-              animate={mapsInView ? 'visible' : 'hidden'}
-              variants={staggerContainer}
-              className="flex flex-col items-center-safe gap-4 lg:basis-1/2"
-            >
-              <motion.h2 variants={fadeInUp} className="text-center text-4xl">
-                {t('contact.directions.title')}
-              </motion.h2>
-              <motion.div
-                variants={slideInRight}
-                className="h-full min-h-[300px] w-full lg:min-h-0"
-              >
+            <div className="flex flex-col items-center-safe gap-4 lg:basis-1/2">
+              <motion.div variants={scaleIn} className="size-full">
                 <Card className="size-full bg-white/5 p-0 hover:border-lime-500/50 hover:bg-white/10">
                   <GoogleMapEmbed className="grow border-0" />
                 </Card>
               </motion.div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            ref={questionsRef}
+            initial="hidden"
+            animate={questionsInView ? 'visible' : 'hidden'}
+            variants={staggerContainer}
+            className="flex max-w-4xl flex-col gap-8 md:mx-auto"
+          >
+            <motion.h2 variants={fadeInUp} className="text-center text-4xl">
+              {t('contact.faq.title')}
+            </motion.h2>
+
+            <Accordion items={faqItems} />
+          </motion.div>
         </div>
 
         {/* CTA */}

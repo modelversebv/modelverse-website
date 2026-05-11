@@ -1,4 +1,4 @@
-import { getAllArticles, parseDate } from '@/lib/articles'
+import { getAllArticles } from '@/lib/articles'
 import { SUPPORTED_LOCALES } from '@/lib/locales'
 import { metadata as cookieMeta } from '@/legal/cookie_policy.mdx'
 import { metadata as privacyMeta } from '@/legal/privacy_policy.mdx'
@@ -59,7 +59,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const articleEntries: MetadataRoute.Sitemap = articles.flatMap((article) =>
     SUPPORTED_LOCALES.map((locale) => ({
       url: localeUrl(locale, `/news/${article.postId}`),
-      lastModified: parseDate(article.metadata.date),
+      lastModified: new Date(article.metadata.publishedAt),
       changeFrequency: 'never' as const,
       priority: 0.6,
     }))

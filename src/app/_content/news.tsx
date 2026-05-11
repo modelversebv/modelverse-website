@@ -13,6 +13,7 @@ import {
   staggerContainer,
 } from '@/lib/animation-variants'
 import type { BlogPost } from '@/lib/articles'
+import { formatDate } from '@/lib/format-date'
 import {
   ArrowRight,
   Calendar,
@@ -26,6 +27,7 @@ import { AnimatePresence, motion, useInView } from 'motion/react'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { useLocale } from '@/providers/IntlProvider'
 
 // --- Sub-components ---
 
@@ -57,6 +59,8 @@ function NewsHero() {
 
 function FeaturedPostItem({ post, index }: { post: BlogPost; index: number }) {
   const t = useTranslations()
+  const { locale } = useLocale()
+  const prefix = locale === 'en' ? '' : `/${locale}`
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, amount: 0.3 })
 
@@ -85,7 +89,7 @@ function FeaturedPostItem({ post, index }: { post: BlogPost; index: number }) {
           )}
         </div>
         <div className="flex flex-col gap-4 p-4 lg:basis-1/2 lg:justify-center-safe">
-          <Link href={`/news/${post.postId}`}>
+          <Link href={`${prefix}/news/${post.postId}`}>
             <h2 className="cursor-pointer text-3xl transition-all duration-300 hover:text-lime-500">
               {post.metadata.title}
             </h2>
@@ -111,11 +115,11 @@ function FeaturedPostItem({ post, index }: { post: BlogPost; index: number }) {
                   <Calendar className="size-4 shrink-0" />
                 </AvatarFallback>
               </Avatar>
-              {post.metadata.date}
+              {formatDate(post.metadata.publishedAt)}
             </div>
           </div>
           <Link
-            href={`/news/${post.postId}`}
+            href={`${prefix}/news/${post.postId}`}
             className="group flex cursor-pointer flex-row justify-center-safe gap-2 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:w-fit"
           >
             {t('news.read_article')}
@@ -129,11 +133,13 @@ function FeaturedPostItem({ post, index }: { post: BlogPost; index: number }) {
 
 function RecentPostItem({ post }: { post: BlogPost }) {
   const router = useRouter()
+  const { locale } = useLocale()
+  const prefix = locale === 'en' ? '' : `/${locale}`
 
   return (
     <Card
       className="group size-full cursor-pointer overflow-hidden bg-white/5 p-0 hover:border-lime-500/50 hover:bg-white/10"
-      onClick={() => router.push(`/news/${post.postId}`)}
+      onClick={() => router.push(`${prefix}/news/${post.postId}`)}
     >
       <div className="flex h-[200px] items-center-safe justify-center-safe overflow-hidden">
         {post.metadata.image != '' ? (
@@ -172,7 +178,7 @@ function RecentPostItem({ post }: { post: BlogPost }) {
                   <Calendar className="size-4 shrink-0" />
                 </AvatarFallback>
               </Avatar>
-              {post.metadata.date}
+              {formatDate(post.metadata.publishedAt)}
             </div>
           </div>
         </div>

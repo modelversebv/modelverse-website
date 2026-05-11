@@ -67,6 +67,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="alternate" type="text/plain" title="LLMs.txt" href="/llms.txt" />
+        <link rel="alternate" type="text/plain" title="LLMs-full.txt" href="/llms-full.txt" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

@@ -1,0 +1,77 @@
+# Modelverse
+
+> Modelverse is a cybersecurity risk management platform and consultancy based in The Hague, Netherlands. It helps organisations of all sizes improve their security posture through intelligent automation, compliance management, and expert guidance. Founded in 2023 and operating across 7 countries, Modelverse combines enterprise-grade software with hands-on consultancy services.
+
+Modelverse B.V. is registered in the Netherlands (CoC: 89447476, VAT: NL864985800B01) and is ISO 27001 certified. It is a Microsoft for Startups partner and is headquartered at the HSD Campus in The Hague — the national innovation hub for the Dutch security sector.
+
+## Platform
+
+The Modelverse platform is a unified SaaS solution for managing cybersecurity risk, compliance, and security governance. It replaces fragmented spreadsheets and siloed tools with a single centralised source of truth, designed for both small teams and large enterprises.
+
+- [Platform overview](https://modelverse.online/platform): Features, modules, and implementation process
+
+### Modules (9 integrated)
+- **Risks** — Manage risks across organisation, assets, and findings
+- **Capabilities** — Track security capability development over time
+- **Roadmap** — Capability-driven investment and improvement planning
+- **Landscape** — Map cybersecurity infrastructure and applications
+- **Compliance** — Automate compliance workflows across frameworks
+- **Privacy** — GDPR and privacy information management
+- **Audits** — Centralised audit evidence and readiness
+- **Assurance** — Supply chain and third-party risk management
+- **ISMS** — Single source of truth for all compliance information
+
+### Supported Frameworks (30+)
+ISO 27001/27002, ISO 27701, GDPR, NIS2, DORA, BIO2, NEN 7510, NIST CSF, PCI DSS, and more. Frameworks are continuously updated with the latest regulatory requirements.
+
+### Key Capabilities
+- Autonomous AI-driven supply chain management
+- AI-powered risk and compliance recommendations
+- Role-based task management and accountability
+- Custom template document generation
+- Comprehensive dashboards and real-time reporting
+- Seamless integrations with Microsoft services, LeanIX, Ultimo, SoSafe, and others
+
+### Platform Implementation Process
+Modelverse follows a structured 6-step guided implementation methodology:
+1. Initial Assessment & Strategy Alignment
+2. Landscape Assessment & Risk Impact Analysis
+3. Security Capabilities & Maturity Level evaluation
+4. Risk Likelihood Assessment
+5. Improvement Backlog construction
+6. Prioritised Roadmap, Handover & Ongoing Support
+
+## Consultancy Services
+
+Independent of the platform, Modelverse offers modular security packages delivered by experienced consultants. Packages follow a logical maturity progression and can be selected based on the organisation's current needs.
+
+- [Services overview](https://modelverse.online/services): All consultancy packages
+
+### Security Packages
+- **Strategy** — Assess current posture, understand risks, identify investment opportunities
+- **Certification** — Achieve and maintain compliance certifications (ISO 27001, NIS2, GDPR, etc.)
+- **Governance** — Define roles, responsibilities, and decision-making processes
+- **Programme** — Drive organisation-wide security adoption and culture
+- **Operations** — Real-time threat monitoring, anomaly detection, incident response
+- **Resilience** — Incident preparedness, business continuity, minimising attack fallout
+
+## About
+
+- [About Modelverse](https://modelverse.online/about): Company story, values, and team
+
+Modelverse was founded in 2023 by Ben Krutzen (CEO/CTO), Reshma Pandohi Mishre (Partner), and Daan Loyens (CFO/COO) — all experienced risk management and cybersecurity professionals. The founding mission is to democratise enterprise-grade information risk management, making it accessible and affordable for organisations of all sizes.
+
+### Core Values
+- **Customer First** — Products and services that solve real problems
+- **Security by Design** — Security built into code, culture, and process
+- **Transparency** — Open communication with customers and partners
+- **Continuous Learning** — Staying ahead of an evolving threat landscape
+
+## Other Pages
+
+- [Cases](https://modelverse.online/cases): Customer success stories
+- [News](https://modelverse.online/news): Company news and updates
+- [Contact](https://modelverse.online/contact): Get in touch or request a demo
+- [Privacy Policy](https://modelverse.online/legal/privacy_policy)
+- [Terms of Service](https://modelverse.online/legal/terms_of_service)
+- [Cookie Policy](https://modelverse.online/legal/cookie_policy)

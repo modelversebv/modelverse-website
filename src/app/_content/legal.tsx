@@ -15,6 +15,7 @@ import { ArrowLeft, FileText } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { useLocale } from '@/providers/IntlProvider'
 
 type LegalMeta = {
   title: string
@@ -38,6 +39,8 @@ export function LegalContent({ slug, metadata, children }: LegalContentProps) {
   const layoutRef = useRef<HTMLDivElement>(null)
   const router = useRouter()
   const t = useTranslations()
+  const { locale } = useLocale()
+  const prefix = locale === 'en' ? '' : `/${locale}`
 
   const crumb = slug
     .split('_')
@@ -76,7 +79,7 @@ export function LegalContent({ slug, metadata, children }: LegalContentProps) {
               <BreadcrumbList className="text-white/70">
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link href="/" className="hover:text-white">
+                    <Link href={`${prefix}/`} className="hover:text-white">
                       {t('legal.breadcrumb.home')}
                     </Link>
                   </BreadcrumbLink>
@@ -95,7 +98,7 @@ export function LegalContent({ slug, metadata, children }: LegalContentProps) {
         <div className="mx-auto flex h-full max-w-6xl flex-col gap-4 md:gap-8">
           <button
             className="group flex w-fit cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full px-4 py-2 text-sm font-semibold text-lime-500 transition-all duration-300"
-            onClick={() => router.push('/')}
+            onClick={() => router.push(`${prefix}/`)}
           >
             <ArrowLeft className="size-5 transition-all duration-300 group-hover:-translate-x-1" />
             {t('legal.back')}

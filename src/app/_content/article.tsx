@@ -14,19 +14,24 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
-import { ArrowLeft, Calendar, User } from 'lucide-react'
+import { ArrowLeft, BookOpen, Calendar, User } from 'lucide-react'
 
 import type { MetaData } from '@/lib/articles'
+import { formatDate } from '@/lib/format-date'
+import { useLocale } from '@/providers/IntlProvider'
 
 type ArticleContentProps = {
   metadata: MetaData
+  wordCount: number
   children: React.ReactNode
 }
 
-export function ArticleContent({ metadata, children }: ArticleContentProps) {
+export function ArticleContent({ metadata, wordCount, children }: ArticleContentProps) {
   const layoutRef = useRef<HTMLDivElement>(null)
   const router = useRouter()
   const t = useTranslations()
+  const { locale } = useLocale()
+  const prefix = locale === 'en' ? '' : `/${locale}`
 
   return (
     <Layout ref={layoutRef}>
@@ -37,7 +42,7 @@ export function ArticleContent({ metadata, children }: ArticleContentProps) {
               <BreadcrumbList className="text-white/70">
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link href="/" className="hover:text-white">
+                    <Link href={`${prefix}/`} className="hover:text-white">
                       {t('article.breadcrumb.home')}
                     </Link>
                   </BreadcrumbLink>
@@ -45,7 +50,7 @@ export function ArticleContent({ metadata, children }: ArticleContentProps) {
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link href="/news" className="hover:text-white">
+                    <Link href={`${prefix}/news`} className="hover:text-white">
                       {t('article.breadcrumb.news')}
                     </Link>
                   </BreadcrumbLink>
@@ -93,7 +98,16 @@ export function ArticleContent({ metadata, children }: ArticleContentProps) {
                       <Calendar className="size-4 shrink-0" />
                     </AvatarFallback>
                   </Avatar>
-                  {metadata.date}
+                  {formatDate(metadata.publishedAt)}
+                </div>
+                <div className="flex shrink-0 flex-row items-center-safe gap-2">
+                  <Avatar>
+                    <AvatarImage></AvatarImage>
+                    <AvatarFallback className="bg-transparent">
+                      <BookOpen className="size-4 shrink-0" />
+                    </AvatarFallback>
+                  </Avatar>
+                  ~{wordCount.toLocaleString()} words
                 </div>
               </div>
             </div>
@@ -105,7 +119,7 @@ export function ArticleContent({ metadata, children }: ArticleContentProps) {
         <div className="mx-auto flex h-full max-w-4xl flex-col gap-4 md:gap-8">
           <button
             className="group flex w-fit cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full px-4 py-2 text-sm font-semibold text-lime-500 transition-all duration-300"
-            onClick={() => router.push('/news')}
+            onClick={() => router.push(`${prefix}/news`)}
           >
             <ArrowLeft className="size-5 transition-all duration-300 group-hover:-translate-x-1" />
             {t('article.back')}
