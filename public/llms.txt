@@ -8,7 +8,7 @@ Modelverse B.V. is registered in the Netherlands (CoC: 89447476, VAT: NL86498580
 
 The Modelverse platform is a unified SaaS solution for managing cybersecurity risk, compliance, and security governance. It replaces fragmented spreadsheets and siloed tools with a single centralised source of truth, designed for both small teams and large enterprises.
 
-- [Platform overview](https://www.modelverse.online/platform): Features, modules, and implementation process
+- [Platform overview](https://modelverse.online/platform): Features, modules, and implementation process
 
 ### Modules (9 integrated)
 - **Risks** — Manage risks across organisation, assets, and findings
@@ -45,7 +45,7 @@ Modelverse follows a structured 6-step guided implementation methodology:
 
 Independent of the platform, Modelverse offers modular security packages delivered by experienced consultants. Packages follow a logical maturity progression and can be selected based on the organisation's current needs.
 
-- [Services overview](https://www.modelverse.online/services): All consultancy packages
+- [Services overview](https://modelverse.online/services): All consultancy packages
 
 ### Security Packages
 - **Strategy** — Assess current posture, understand risks, identify investment opportunities
@@ -57,7 +57,7 @@ Independent of the platform, Modelverse offers modular security packages deliver
 
 ## About
 
-- [About Modelverse](https://www.modelverse.online/about): Company story, values, and team
+- [About Modelverse](https://modelverse.online/about): Company story, values, and team
 
 Modelverse was founded in 2023 by Ben Krutzen (CEO/CTO), Reshma Pandohi Mishre (Partner), and Daan Loyens (CFO/COO) — all experienced risk management and cybersecurity professionals. The founding mission is to democratise enterprise-grade information risk management, making it accessible and affordable for organisations of all sizes.
 
@@ -69,9 +69,9 @@ Modelverse was founded in 2023 by Ben Krutzen (CEO/CTO), Reshma Pandohi Mishre (
 
 ## Other Pages
 
-- [Cases](https://www.modelverse.online/cases): Customer success stories
-- [News](https://www.modelverse.online/news): Company news and updates
-- [Contact](https://www.modelverse.online/contact): Get in touch or request a demo
-- [Privacy Policy](https://www.modelverse.online/legal/privacy_policy)
-- [Terms of Service](https://www.modelverse.online/legal/terms_of_service)
-- [Cookie Policy](https://www.modelverse.online/legal/cookie_policy)
+- [Cases](https://modelverse.online/cases): Customer success stories
+- [News](https://modelverse.online/news): Company news and updates
+- [Contact](https://modelverse.online/contact): Get in touch or request a demo
+- [Privacy Policy](https://modelverse.online/legal/privacy_policy)
+- [Terms of Service](https://modelverse.online/legal/terms_of_service)
+- [Cookie Policy](https://modelverse.online/legal/cookie_policy)

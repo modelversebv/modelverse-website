@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://modelverse.online/sitemap.xml
+
+# LLMs
+# llms.txt: https://modelverse.online/llms.txt
+# llms-full.txt: https://modelverse.online/llms-full.txt
