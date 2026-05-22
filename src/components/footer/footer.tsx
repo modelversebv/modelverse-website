@@ -99,7 +99,7 @@ export function Footer({ onManagePrivacy }: FooterProps) {
           <h4 className="text-sm text-gray-400">
             {t('footer.security_compliance')}
           </h4>
-          <div className="flex flex-row gap-2 py-2">
+          <div className="flex flex-row flex-wrap items-end gap-2 py-2">
             <img
               src="/images/badges/iso-27001-badge-resized.png"
               alt="ISO 27001 Certification"
@@ -107,16 +107,21 @@ export function Footer({ onManagePrivacy }: FooterProps) {
             />
             <div className="flex flex-col justify-center gap-2">
               <img
-                src="/images/badges/email-test-badge.png"
-                alt="Email Test: 100%"
-                className="max-h-9"
-              />
-              <img
                 src="/images/badges/ms-badge.png"
                 alt="Microsoft for Startups partnership badge"
                 className="max-h-20"
               />
+              <img
+                src="/images/badges/embed-badge-websitetest.svg"
+                alt="Email Test: 100%"
+                className="max-h-9"
+              />
             </div>
+            <img
+              src="/images/badges/embed-badge-emailtest.svg"
+              alt="Email Test: 100%"
+              className="max-h-9"
+            />
           </div>
         </div>
         <div className="h-px w-full shrink-0 bg-gray-800" />
