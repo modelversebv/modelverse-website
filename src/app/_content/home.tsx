@@ -83,7 +83,7 @@ export function HomeContent() {
           src="/images/heroes/home.avif"
           fetchPriority="high"
           alt="Cybersecurity risk management"
-          className="absolute inset-0 size-full object-cover object-[45%_center] md:object-[35%_center] lg:object-[40%_center]"
+          className="absolute inset-0 size-full object-cover object-[75%_center] lg:object-[50%_center] xl:object-center"
         />
         <div className="absolute inset-0 bg-linear-to-b from-slate-900/50 via-slate-900/30 to-slate-900" />
 
@@ -147,9 +147,7 @@ export function HomeContent() {
                 </p>
               </MotionCard>
               <MotionCard variants={scaleIn} className="md:w-[30%] xl:w-[20%]">
-                <p className="pb-1 text-center text-3xl whitespace-nowrap">
-                  7
-                </p>
+                <p className="pb-1 text-center text-3xl whitespace-nowrap">7</p>
                 <p className="w-full text-sm text-white/90">
                   {t('home.hero.stats.country_footprints')}
                 </p>
