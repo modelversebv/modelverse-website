@@ -137,12 +137,22 @@ export function Footer({ onManagePrivacy }: FooterProps) {
             build - (<BuildNumber />)
           </p>
 
-          <p
-            className="cursor-pointer hover:text-white"
-            onClick={() => onManagePrivacy(true)}
-          >
-            {t('footer.privacy')}
-          </p>
+          <div className="flex flex-col text-right">
+            <p
+              className="cursor-pointer hover:text-white"
+              onClick={() => onManagePrivacy(true)}
+            >
+              {t('footer.privacy')}
+            </p>
+            <Link
+              href="https://modelverse-1.statuspage.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white"
+            >
+              {t('footer.status')}
+            </Link>
+          </div>
         </div>
       </div>
     </div>
