@@ -86,6 +86,7 @@ export function AboutContent() {
           Lili: '/images/team/lili.jpg',
           Maria: '/images/team/maria.jpg',
           Mariona: '/images/team/mariona.jpg',
+          Michel: '/images/team/michel.jpg',
           Matei: '/images/team/matei.jpg',
           Reshma: '/images/team/reshma.jpg',
           Sjors: '/images/team/sjors.jpg',
@@ -265,6 +266,7 @@ export function AboutContent() {
               </p>
             </motion.div>
 
+            {/* Old version */}
             <motion.div
               variants={staggerContainer}
               className="grid max-w-7xl grid-cols-1 gap-4 self-center md:grid-cols-3 lg:grid-cols-10"
@@ -308,6 +310,47 @@ export function AboutContent() {
                 </motion.div>
               ))}
             </motion.div>
+
+            {/* New version */}
+            {/* <motion.div
+              variants={staggerContainer}
+              className="mx-auto flex max-w-6xl flex-wrap justify-center gap-4"
+            >
+              {teamMembers.map((member, index) => (
+                <motion.div variants={scaleIn} key={index} className="max-w-64">
+                  <Card className="size-full bg-white/5 p-0 hover:border-lime-500/50 hover:bg-white/10">
+                    <img
+                      src={member.image}
+                      className="rounded-t-xl"
+                      alt={member.name}
+                    />
+                    <div className="flex grow flex-col p-4">
+                      <h3 className="mb-2 text-lg">{member.name}</h3>
+                      <p className="mb-4 bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text font-semibold text-transparent">
+                        {member.role}
+                      </p>
+                      <p className="mb-4 text-left text-white/70">
+                        {member.bio}
+                      </p>
+                      <div className="flex grow flex-row items-end gap-2">
+                        <a
+                          href={member.linkedin}
+                          className="flex w-fit items-center justify-center rounded-xl border border-white/20 bg-white/10 p-2 transition-colors duration-300 hover:bg-white/20"
+                        >
+                          <LinkedinIcon className="size-6" />
+                        </a>
+                        <a
+                          href={member.mail}
+                          className="flex w-fit items-center justify-center rounded-xl border border-white/20 bg-white/10 p-2 transition-colors duration-300 hover:bg-white/20"
+                        >
+                          <Mail className="size-6" />
+                        </a>
+                      </div>
+                    </div>
+                  </Card>
+                </motion.div>
+              ))}
+            </motion.div> */}
           </motion.div>
 
           {/* Ambassadors */}
