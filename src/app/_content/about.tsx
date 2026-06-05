@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { Fragment, useRef } from 'react'
 
 import { Card } from '@/components/common/card'
 import { Hero } from '@/components/common/hero'
@@ -96,38 +96,45 @@ export function AboutContent() {
 
   const ambassadors = [
     {
+      name: 'Reshma Pandohi Mishre',
+      role: 'Co-Founder of Modelverse & Independent Security Executive',
+      linkedin: 'https://www.linkedin.com/in/reshmapandohi/',
+      bio: t('about.ambassadors.items.0.bio'),
+      image: '/images/ambassadors/reshma.jpg',
+    },
+    {
       name: 'Jan-Willem Klerkx',
       role: 'Co-Founder & CEO, BonCode',
       linkedin: 'https://www.linkedin.com/in/jwklerkx/',
-      bio: t('about.ambassadors.items.0.bio'),
+      bio: t('about.ambassadors.items.1.bio'),
       image: '/images/ambassadors/jan-willem.jpg',
     },
     {
       name: 'Gordon Muehl',
       role: 'Founder & Managing Director, MuehlCyberConsulting',
       linkedin: 'https://www.linkedin.com/in/gordonmuehl/',
-      bio: t('about.ambassadors.items.1.bio'),
+      bio: t('about.ambassadors.items.2.bio'),
       image: '/images/ambassadors/gordon.png',
     },
     {
       name: 'Dennis Mulder',
       role: 'Co-Founder & CTO, Full Circle IT NL',
       linkedin: 'https://www.linkedin.com/in/dennismulder/',
-      bio: t('about.ambassadors.items.2.bio'),
+      bio: t('about.ambassadors.items.3.bio'),
       image: '/images/ambassadors/dennis.jpg',
     },
     {
       name: 'Oskar Brink',
       role: 'Independent Cyber Security and Risk Manager',
       linkedin: 'https://www.linkedin.com/in/oskarbrink/',
-      bio: t('about.ambassadors.items.3.bio'),
+      bio: t('about.ambassadors.items.4.bio'),
       image: '/images/ambassadors/oskar.jpg',
     },
     {
       name: 'Robert Bals',
       role: 'Lead Auditor ISO 27001 & Data Protection Officer, IsoSecure',
       linkedin: 'https://www.linkedin.com/in/rbals/',
-      bio: t('about.ambassadors.items.4.bio'),
+      bio: t('about.ambassadors.items.5.bio'),
       image: '/images/ambassadors/robert.jpg',
     },
     // { // This text will need to be updated before it goes live again
@@ -195,7 +202,7 @@ export function AboutContent() {
             >
               <Card className="flex p-2 hover:bg-white/10">
                 <img
-                  src="/images/team/team.jpg"
+                  src="/images/team/new-team.jpg"
                   alt="Modelverse team of eight members, photographed together in their bright, modern office headquarters."
                   className="aspect-video rounded-lg object-cover"
                 />
@@ -267,7 +274,7 @@ export function AboutContent() {
             </motion.div>
 
             {/* Old version */}
-            <motion.div
+            {/* <motion.div
               variants={staggerContainer}
               className="grid max-w-7xl grid-cols-1 gap-4 self-center md:grid-cols-3 lg:grid-cols-10"
             >
@@ -309,48 +316,52 @@ export function AboutContent() {
                   </Card>
                 </motion.div>
               ))}
-            </motion.div>
+            </motion.div> */}
 
             {/* New version */}
-            {/* <motion.div
+            <motion.div
               variants={staggerContainer}
-              className="mx-auto flex max-w-6xl flex-wrap justify-center gap-4"
+              className="max-w-8xl mx-auto flex flex-wrap justify-center gap-4"
             >
               {teamMembers.map((member, index) => (
-                <motion.div variants={scaleIn} key={index} className="max-w-64">
-                  <Card className="size-full bg-white/5 p-0 hover:border-lime-500/50 hover:bg-white/10">
-                    <img
-                      src={member.image}
-                      className="rounded-t-xl"
-                      alt={member.name}
-                    />
-                    <div className="flex grow flex-col p-4">
-                      <h3 className="mb-2 text-lg">{member.name}</h3>
-                      <p className="mb-4 bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text font-semibold text-transparent">
-                        {member.role}
-                      </p>
-                      <p className="mb-4 text-left text-white/70">
-                        {member.bio}
-                      </p>
-                      <div className="flex grow flex-row items-end gap-2">
-                        <a
-                          href={member.linkedin}
-                          className="flex w-fit items-center justify-center rounded-xl border border-white/20 bg-white/10 p-2 transition-colors duration-300 hover:bg-white/20"
-                        >
-                          <LinkedinIcon className="size-6" />
-                        </a>
-                        <a
-                          href={member.mail}
-                          className="flex w-fit items-center justify-center rounded-xl border border-white/20 bg-white/10 p-2 transition-colors duration-300 hover:bg-white/20"
-                        >
-                          <Mail className="size-6" />
-                        </a>
+                <Fragment key={index}>
+                  <motion.div variants={scaleIn} className="max-w-64">
+                    <Card className="size-full bg-white/5 p-0 hover:border-lime-500/50 hover:bg-white/10">
+                      <img
+                        src={member.image}
+                        className="rounded-t-xl"
+                        alt={member.name}
+                      />
+                      <div className="flex grow flex-col p-4">
+                        <h3 className="mb-2 text-lg">{member.name}</h3>
+                        <p className="mb-4 bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text font-semibold text-transparent">
+                          {member.role}
+                        </p>
+                        <p className="mb-4 text-left text-white/70">
+                          {member.bio}
+                        </p>
+                        <div className="flex grow flex-row items-end gap-2">
+                          <a
+                            href={member.linkedin}
+                            className="flex w-fit items-center justify-center rounded-xl border border-white/20 bg-white/10 p-2 transition-colors duration-300 hover:bg-white/20"
+                          >
+                            <LinkedinIcon className="size-6" />
+                          </a>
+                          <a
+                            href={member.mail}
+                            className="flex w-fit items-center justify-center rounded-xl border border-white/20 bg-white/10 p-2 transition-colors duration-300 hover:bg-white/20"
+                          >
+                            <Mail className="size-6" />
+                          </a>
+                        </div>
                       </div>
-                    </div>
-                  </Card>
-                </motion.div>
+                    </Card>
+                  </motion.div>
+
+                  {index === 2 && <div className="hidden w-full lg:block" />}
+                </Fragment>
               ))}
-            </motion.div> */}
+            </motion.div>
           </motion.div>
 
           {/* Ambassadors */}
@@ -381,7 +392,7 @@ export function AboutContent() {
                 <motion.div
                   variants={index % 2 === 0 ? slideInLeft : slideInRight}
                   key={index}
-                  className="lg:col-span-2 lg:last:col-start-2"
+                  className="lg:col-span-2"
                 >
                   <Card className="size-full gap-4 overflow-hidden bg-white/5 p-0 text-left hover:border-lime-500/50 hover:bg-white/10">
                     <div className="flex flex-col gap-4 px-4 pt-4 sm:flex-row sm:items-center-safe">
