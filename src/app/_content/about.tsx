@@ -15,7 +15,6 @@ import {
 } from '@/lib/animation-variants'
 import {
   Book,
-  Divide,
   Eye,
   LinkedinIcon,
   Mail,
