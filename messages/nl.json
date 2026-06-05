@@ -549,13 +549,6 @@
           "mail": "mailto:ben@modelverse.online"
         },
         {
-          "name": "Reshma Pandohi Mishre",
-          "role": "Partner | Co-Founder",
-          "bio": "Reshma brengt diepgaande expertise in strategisch informatiebeheer en cybersecurity met een duidelijke, gestructureerde aanpak voor complexe uitdagingen. Reshma bekleedde diverse IT-leiderschap- en security-functies bij internationale bedrijven en in de energiesector. Ze heeft een MSc in Toegepaste Natuurkunde en een executive MSc in Cybersecurity.",
-          "linkedin": "https://www.linkedin.com/in/reshmapandohi/",
-          "mail": "mailto:reshma@modelverse.online"
-        },
-        {
           "name": "Daan Loyens",
           "role": "CFO & COO | Co-Founder",
           "bio": "Daan is een ervaren ondernemer en IT-leider die gepassioneerd is over het gebruik van moderne technologie om organisaties te helpen echte uitdagingen aan te pakken. Daan brengt brede inzichten als strateeg, investeerder en vertrouwde cybersecurity-adviseur. Hij heeft een PhD in Informatica, evenals een executive MSc in Cybersecurity.",
@@ -610,6 +603,9 @@
       "title": "Onze Ambassadeurs",
       "subtitle": "Vertrouwde stemmen op het gebied van cybersecurity-risico en compliance die geloven in Modelverse.",
       "items": [
+        {
+          "bio": "Medeoprichter van Modelverse. Reshma is een cybersecurity-expert met een achtergrond in IT-leiderschap bij internationale bedrijven en in de energiesector. Ze heeft een MSc in Toegepaste Natuurkunde en een executive MSc in Cybersecurity."
+        },
         {
           "bio": "Jan-Willem Klerkx is gepassioneerd over softwarekwaliteit en bedrijfsbehendigheid. Zijn aanpak combineert diepgaand technisch inzicht met strategisch denken, waarmee hij organisaties helpt risico's te verkleinen, onderhoudbaarheid te verbeteren en innovatie te ontsluiten via objectieve broncode- en architectuuranalyse."
         },
