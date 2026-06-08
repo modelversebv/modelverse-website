@@ -108,13 +108,6 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
         ref={scrollRef}
         className="scrollbar-hide relative h-dvh w-dvw overflow-x-hidden overflow-y-scroll scroll-smooth bg-slate-900 font-sans pointer-fine:overflow-hidden"
       >
-        <CookieBanner
-          preferences={showConsentPreferences}
-          setPreferences={setShowConsentPreferences}
-          onOpen={() => setPauseScroll(true)}
-          onClose={() => setPauseScroll(false)}
-        />
-
         <NavBar
           home={home}
           about={about}
@@ -129,6 +122,12 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
           <div className="flex grow flex-col">{children}</div>
           <Footer onManagePrivacy={setShowConsentPreferences} />
         </div>
+        <CookieBanner
+          preferences={showConsentPreferences}
+          setPreferences={setShowConsentPreferences}
+          onOpen={() => setPauseScroll(true)}
+          onClose={() => setPauseScroll(false)}
+        />
       </div>
     )
   }
