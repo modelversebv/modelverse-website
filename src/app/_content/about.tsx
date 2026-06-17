@@ -137,6 +137,13 @@ export function AboutContent() {
       bio: t('about.ambassadors.items.5.bio'),
       image: '/images/ambassadors/robert.jpg',
     },
+    {
+      name: 'Lars de Jong',
+      role: 'Cybersecurity Director, PLTFRM',
+      linkedin: 'https://www.linkedin.com/in/lars-dejong/',
+      bio: t('about.ambassadors.items.6.bio'),
+      image: '/images/ambassadors/lars.jpg',
+    },
     // { // This text will need to be updated before it goes live again
     //   name: 'Alexandra Roger-Machart',
     //   role: 'Independent Communications & Media Relations Advisor',
@@ -321,12 +328,17 @@ export function AboutContent() {
             {/* New version */}
             <motion.div
               variants={staggerContainer}
-              className="max-w-8xl mx-auto flex flex-wrap justify-center gap-4"
+              className="max-w-8xl mx-auto grid grid-cols-1 justify-center gap-4 md:grid-cols-2 lg:grid-cols-3"
             >
               {teamMembers.map((member, index) => (
                 <Fragment key={index}>
-                  <motion.div variants={scaleIn} className="max-w-64">
+                  <motion.div variants={scaleIn} className="max-w-xs">
                     <Card className="size-full bg-white/5 p-0 hover:border-lime-500/50 hover:bg-white/10">
+                      {index === teamMembers.length - 1 && (
+                        <div className="absolute -top-2 -right-2 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 text-xs font-semibold">
+                          {t('about.team.externally_hired')}
+                        </div>
+                      )}
                       <img
                         src={member.image}
                         className="rounded-t-xl"
@@ -358,7 +370,8 @@ export function AboutContent() {
                     </Card>
                   </motion.div>
 
-                  {index === 2 && <div className="hidden w-full lg:block" />}
+                  {/* // Overwrites top row col length without changing other row(s) */}
+                  {/* {index === 2 && <div className="hidden w-full lg:block" />} */}
                 </Fragment>
               ))}
             </motion.div>
@@ -392,7 +405,7 @@ export function AboutContent() {
                 <motion.div
                   variants={index % 2 === 0 ? slideInLeft : slideInRight}
                   key={index}
-                  className="lg:col-span-2"
+                  className="lg:col-span-2 lg:nth-7:col-start-2"
                 >
                   <Card className="size-full gap-4 overflow-hidden bg-white/5 p-0 text-left hover:border-lime-500/50 hover:bg-white/10">
                     <div className="flex flex-col gap-4 px-4 pt-4 sm:flex-row sm:items-center-safe">

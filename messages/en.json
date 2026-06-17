@@ -540,11 +540,12 @@
     "team": {
       "title": "Meet the Team",
       "subtitle": "The passionate people behind Modelverse.",
+      "externally_hired": "Associate Partner",
       "members": [
         {
           "name": "Ben Krutzen",
           "role": "CEO & CTO | Co-Founder",
-          "bio": "Ben is the creator of Modelverse, driven by a passion for turning strategy into action. With over 25 years at Shell and later as a partner at KPMG, Ben helped organisations navigate complex challenges across transformation, risk, and technology. He holds a PhD in theoretical physics and once explored black holes at Imperial College London — before diving into the world of business.",
+          "bio": "Ben is the creator of Modelverse, driven by a passion for turning strategy into action. With over 25 years at Shell and later as a partner at KPMG, Ben helped organisations navigate complex challenges across transformation, risk, and technology. He holds a PhD in theoretical physics and once explored black holes at Imperial College London before diving into the world of business.",
           "linkedin": "https://www.linkedin.com/in/benkrutzen/",
           "mail": "mailto:ben@modelverse.online"
         },
@@ -596,6 +597,13 @@
           "bio": "Maria aids in the delivery of cybersecurity projects for multiple clients. She holds a BSc in Security Studies and a Cum Laude MSc in Countering Organised Crime and Terrorism.",
           "linkedin": "https://www.linkedin.com/in/maria-litvinova-370063317/",
           "mail": "mailto:maria@modelverse.online"
+        },
+        {
+          "name": "Michel Veldkamp",
+          "role": "Partnership & Ecosystem Lead",
+          "bio": "Michel is an energetic, genuine and people-oriented connector who brings people, ideas and opportunities together. With his natural curiosity, empathy and commercial experience, he quickly builds trust and creates meaningful connections. By connecting the right people at the right time, he helps create opportunities that drive growth, innovation and long-term collaboration. At Modelverse, Michel supports business development, partner growth and the strengthening of its ecosystem.",
+          "linkedin": "https://www.linkedin.com/in/michelveldkamp/",
+          "mail": "mailto:michel@modelverse.online"
         }
       ]
     },
@@ -620,6 +628,9 @@
         },
         {
           "bio": "Robert Bals stands out for combining deep technical expertise with a pragmatic, jargon-free, and practical mindset. He provides tailored ISMS implementations, audits for ISO 27001 and TUV Nord certification, and GDPR solutions. Through delivering scalable, client-focused results, he helps ICT, software, and healthcare organisations strengthen information security and compliance."
+        },
+        {
+          "bio": "Lars de Jong believes that cybersecurity is more than technology; it is an organisation's ability to stay in control, whatever happens. As Cybersecurity Director, he guides organisations in building an effective cyber resilience strategy and achieving certifications such as ISO 27001 and NEN 7510. Drawing on an ecosystem of specialised partners, he connects governance, strategy, and human behaviour. His mission: to create trust between people, systems, and processes — because true cyber resilience starts with clarity and a story that everyone can understand."
         },
         {
           "bio": "Alexandra Roger-Machart is passionate about Tech and AI-driven transformation, she advises start-ups and scale-ups to strengthen their external profile, engage with stakeholders and enhance their corporate reporting through an interdisciplinary perspective of strategic storytelling and regulatory expertise."
