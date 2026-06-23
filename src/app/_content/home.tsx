@@ -298,10 +298,14 @@ export function HomeContent() {
             </motion.div>
             <motion.div
               variants={staggerContainer}
-              className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2"
+              className="mx-auto grid max-w-6xl grid-cols-1 gap-8 lg:grid-cols-4"
             >
               {testimonials.map((testimonial, index) => (
-                <motion.div variants={scaleIn} key={index}>
+                <motion.div
+                  variants={scaleIn}
+                  key={index}
+                  className="lg:col-span-2 lg:last:col-start-2"
+                >
                   <Card className="size-full bg-white/5 p-0 transition-all duration-300 hover:border-lime-500/50 hover:bg-white/10">
                     <YoutubeEmbed
                       videoId={testimonial.video}
