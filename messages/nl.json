@@ -93,6 +93,13 @@
       "subtitle": "Ontdek hoe toonaangevende organisaties zichzelf transformeren met Modelverse.",
       "items": [
         {
+          "quote": "Modelverse maakt cybersecurity content behapbaar voor zowel management als security teams.",
+          "name": "Gordon Muehl",
+          "role": "Founder & Managing Director",
+          "company": "MuehlCyberConsulting",
+          "video": "-JSF0BxZFXM"
+        },
+        {
           "quote": "Modelverse heeft onze aanpak van cybersecurity-risicobeheer getransformeerd.",
           "name": "David Warnink",
           "role": "CIO",
@@ -544,7 +551,7 @@
         {
           "name": "Ben Krutzen",
           "role": "CEO & CTO | Co-Founder",
-          "bio": "Ben is de oprichter van Modelverse en wordt gedreven door een passie voor het omzetten van strategie in actie. Met meer dan 25 jaar bij Shell en later als partner bij KPMG heeft Ben organisaties geholpen complexe uitdagingen op het gebied van transformatie, risico en technologie te navigeren. Hij heeft een PhD in Theoretische Natuurkunde en onderzocht ooit zwarte gaten aan het Imperial College London — voordat hij de wereld van het bedrijfsleven in dook.",
+          "bio": "Ben is de oprichter van Modelverse en wordt gedreven door een passie voor het omzetten van strategie in actie. Met meer dan 25 jaar bij Shell en later als partner bij KPMG heeft Ben organisaties geholpen complexe uitdagingen op het gebied van transformatie, risico en technologie te navigeren. Hij heeft een PhD in Theoretische Natuurkunde en onderzocht ooit zwarte gaten aan het Imperial College London voordat hij de wereld van het bedrijfsleven in dook.",
           "linkedin": "https://www.linkedin.com/in/benkrutzen/",
           "mail": "mailto:ben@modelverse.online"
         },
@@ -596,6 +603,13 @@
           "bio": "Maria ondersteunt de uitvoering van cybersecurity-projecten voor meerdere klanten. Ze heeft een BSc in Security Studies en een MSc cum laude in Countering Organised Crime and Terrorism.",
           "linkedin": "https://www.linkedin.com/in/maria-litvinova-370063317/",
           "mail": "mailto:maria@modelverse.online"
+        },
+        {
+          "name": "Michel Veldkamp",
+          "role": "Partnership & Ecosystem Lead",
+          "bio": "Michel is een energieke, oprechte en mensgerichte relatiebouwer die mensen, ideeën en kansen samenbrengt. Met zijn natuurlijke nieuwsgierigheid, empathisch vermogen en commerciële ervaring weet hij snel vertrouwen op te bouwen en deuren te openen die anders gesloten blijven.  Door kansen te herkennen en bruggen te slaan tussen organisaties, partners en professionals, draagt hij bij aan groei, innovatie en duurzame samenwerking. Vanuit zijn rol bij Modelverse ondersteunt Michel business development, partnerontwikkeling en de verdere groei van het ecosystem.",
+          "linkedin": "https://www.linkedin.com/in/michelveldkamp/",
+          "mail": "mailto:michel@modelverse.online"
         }
       ]
     },
@@ -620,6 +634,9 @@
         },
         {
           "bio": "Robert Bals onderscheidt zich door het combineren van diepgaande technische expertise met een pragmatische, jargonvrije en praktische mindset. Hij biedt op maat gemaakte ISMS-implementaties, audits voor ISO 27001- en TUV Nord-certificering en GDPR-oplossingen. Door schaalbare, klantgerichte resultaten te leveren helpt hij ICT-, software- en zorgorganisaties hun informatiebeveiliging en compliance te versterken."
+        },
+        {
+          "bio": "Lars de Jong gelooft dat cybersecurity meer is dan techniek, het is het vermogen van een organisatie om in controle te blijven, wat er ook gebeurt. Als Regisseur Cybersecurity begeleidt hij organisaties bij het opzetten van een effectieve cyberweerbaarheid strategie en het behalen van certificeringen zoals ISO27001 en NEN7510. Vanuit een ecosysteem van gespecialiseerde partners verbindt hij governance, strategie en menselijk gedrag. Zijn missie: vertrouwen tussen mensen, systemen en processen creëren want echte cyberweerbaarheid begint bij helderheid en een verhaal dat voor iedereen begrijpelijk is."
         },
         {
           "bio": "Alexandra Roger-Machart is gepassioneerd over technologie en AI-gedreven transformatie; zij adviseert start-ups en scale-ups bij het versterken van hun externe profiel, het betrekken van stakeholders en het verbeteren van hun corporate reporting via een interdisciplinair perspectief van strategisch storytelling en regelgevingsexpertise."
