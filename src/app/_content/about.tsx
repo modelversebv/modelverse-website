@@ -334,11 +334,11 @@ export function AboutContent() {
                 <Fragment key={index}>
                   <motion.div variants={scaleIn} className="max-w-xs">
                     <Card className="size-full bg-white/5 p-0 hover:border-lime-500/50 hover:bg-white/10">
-                      {index === teamMembers.length - 1 && (
+                      {/* {index === teamMembers.length - 1 && (
                         <div className="absolute -top-2 -right-2 rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 text-xs font-semibold">
                           {t('about.team.externally_hired')}
                         </div>
-                      )}
+                      )} */}
                       <img
                         src={member.image}
                         className="rounded-t-xl"
