@@ -1,10 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import { usePathname, useRouter } from 'next/navigation'
-import { useTranslations } from 'next-intl'
 
 import { useLocale } from '@/providers/IntlProvider'
+import { useTranslations } from 'next-intl'
+import { usePathname, useRouter } from 'next/navigation'
+
 import { Dropdown } from './dropdown'
 import { DropdownLink } from './dropdown-link'
 import { NavLink } from './nav-link'
@@ -22,6 +23,7 @@ type NavBarProps = {
 const LANGUAGES = [
   { code: 'nl', label: 'Dutch', short: 'NL', flagCode: 'nl' },
   { code: 'en', label: 'English', short: 'EN', flagCode: 'gb' },
+  { code: 'es', label: 'Spanish', short: 'ES', flagCode: 'es' },
 ] as const
 
 export function NavBar({
@@ -57,12 +59,11 @@ export function NavBar({
   }
 
   const changeLanguage = (lang: (typeof LANGUAGES)[number]['code']) => {
-    if (lang === 'en') {
-      const newPath = pathname.replace(/^\/nl/, '') || '/'
-      router.push(newPath)
-    } else {
-      router.push(pathname.startsWith('/nl') ? pathname : `/nl${pathname}`)
-    }
+    const nonEnCodes = LANGUAGES.map((l) => l.code).filter((c) => c !== 'en')
+    const localePrefix = new RegExp(`^/(${nonEnCodes.join('|')})(?=/|$)`)
+    const basePath = pathname.replace(localePrefix, '') || '/'
+
+    router.push(lang === 'en' ? basePath : `/${lang}${basePath}`)
   }
 
   const currentLang = LANGUAGES.find((lang) => lang.code === locale)
@@ -96,18 +97,22 @@ export function NavBar({
           </NavLink>
           <Dropdown
             childrenClassname="w-57 left-0 pt-2"
-            title="Solutions"
+            title={t('navbar.solutions')}
             active={platform || services}
           >
-            <DropdownLink href={`${prefix}/platform`} title="Platform" active={platform}>
-              Risk & Compliance Management
+            <DropdownLink
+              href={`${prefix}/platform`}
+              title={t('navbar.dropdown.platform.title')}
+              active={platform}
+            >
+              {t('navbar.dropdown.platform.description')}
             </DropdownLink>
             <DropdownLink
               href={`${prefix}/services`}
-              title="Consultancy Services"
+              title={t('navbar.dropdown.services.title')}
               active={services}
             >
-              Service Packages
+              {t('navbar.dropdown.services.description')}
             </DropdownLink>
           </Dropdown>
           <NavLink active={cases} href={`${prefix}/cases`}>
@@ -162,12 +167,20 @@ export function NavBar({
           <NavLink active={home} href={prefix || '/'}>
             {t('navbar.home')}
           </NavLink>
-          <Dropdown title="Solutions" active={platform || services}>
-            <DropdownLink href={`${prefix}/platform`} title="Platform" active={platform}>
-              Risk & Compliance Management
+          <Dropdown title={t('navbar.solutions')} active={platform || services}>
+            <DropdownLink
+              href={`${prefix}/platform`}
+              title={t('navbar.dropdown.platform.title')}
+              active={platform}
+            >
+              {t('navbar.dropdown.platform.description')}
             </DropdownLink>
-            <DropdownLink href={`${prefix}/services`} title="Services" active={services}>
-              Service Packages
+            <DropdownLink
+              href={`${prefix}/services`}
+              title={t('navbar.dropdown.services.title_mobile')}
+              active={services}
+            >
+              {t('navbar.dropdown.services.description')}
             </DropdownLink>
           </Dropdown>
           <NavLink active={cases} href={`${prefix}/cases`}>

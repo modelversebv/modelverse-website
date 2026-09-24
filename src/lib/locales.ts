@@ -1,3 +1,3 @@
-export type Locale = 'en' | 'nl'
+export type Locale = 'en' | 'nl' | 'es'
 
-export const SUPPORTED_LOCALES: Locale[] = ['en', 'nl']
+export const SUPPORTED_LOCALES: Locale[] = ['en', 'nl', 'es']

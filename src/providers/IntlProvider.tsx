@@ -7,6 +7,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { useGaTracker } from '@/lib/analytics/use-ga-tracker'
 import type { Locale } from '@/lib/locales'
 import enMessages from '../../messages/en.json'
+import esMessages from '../../messages/es.json'
 import nlMessages from '../../messages/nl.json'
 
 export type { Locale } from '@/lib/locales'
@@ -15,6 +16,7 @@ export { SUPPORTED_LOCALES } from '@/lib/locales'
 const messages: Record<Locale, typeof enMessages> = {
   en: enMessages,
   nl: nlMessages,
+  es: esMessages,
 }
 
 type LocaleContextValue = {

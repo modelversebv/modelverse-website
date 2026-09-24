@@ -5,7 +5,18 @@
     "cases": "Cases",
     "news": "News",
     "about": "About",
-    "contact": "Contact Us"
+    "contact": "Contact Us",
+    "dropdown": {
+      "platform": {
+        "title": "Platform",
+        "description": "Risk & Compliance Management"
+      },
+      "services": {
+        "title": "Consultancy Services",
+        "title_mobile": "Services",
+        "description": "Service Packages"
+      }
+    }
   },
   "footer": {
     "tagline": "We secure. You succeed!",

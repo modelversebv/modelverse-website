@@ -1,11 +1,22 @@
 {
   "navbar": {
     "home": "Home",
-    "solutions": "Oplossingen",
+    "solutions": "Solutions",
     "cases": "Cases",
     "news": "Nieuws",
     "about": "Over ons",
-    "contact": "Contact"
+    "contact": "Contact",
+    "dropdown": {
+      "platform": {
+        "title": "Platform",
+        "description": "Risk & Compliance Management"
+      },
+      "services": {
+        "title": "Consultancy Services",
+        "title_mobile": "Services",
+        "description": "Service Packages"
+      }
+    }
   },
   "footer": {
     "tagline": "We secure. You succeed!",
