@@ -1,0 +1,68 @@
+export const metadata = {
+  featured: true,
+  title:
+    'LinkedIn Browser Extension Scanner, What User Data is Collected in the Background? ',
+  subtitle: '',
+  summary:
+    'A report by Fairlinked e.V. revealed that LinkedIn runs a script in Chromium-based browsers that detects installed extensions and collects device fingerprint data. The findings were independently confirmed by BleepingComputer in April 2026. In our latest Incident Journal Club write-up, we examine the technical details, the categories of data involved, and the steps users can take in response.',
+  seoDescription:
+    "LinkedIn runs a hidden script scanning thousands of Chrome extensions. We break down BrowserGate's technical methods, what data is collected, and how to protect yourself.",
+  image:
+    'https://images.unsplash.com/photo-1616469829581-73993eb86b02?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  publishedAt: '2026-06-29',
+  locale: 'en',
+  author: 'Matei Avram',
+  portrait: '/images/blog_authors/matei.jpg',
+}
+
+As part of our internal Incident Journal Club, a recurring session where the Modelverse team discusses notable cybersecurity cases and emerging threats, we recently examined a story that caught our attention.
+
+In March 2026, [Fairlinked e.V.](https://fairlinked.eu/), a European association of commercial LinkedIn users and third-party toolmakers published a report, detailing how LinkedIn has been running a silent script, every time a user opens the website in a Chromium-based browser.
+
+## What is BrowserGate?
+
+BrowserGate is the nickname Fairlinked e.V. gave to this script, which scans for Chrome extensions installed on users’ browsers. Its existence was traced back to 2017, when it was scanning for just 38 extensions. The list has grown substantially since then: approximately 461 extensions by 2024, over 1,000 by May 2025, 5,459 by December 2025, and over 6,200 by early 2026.
+
+A recent response from LinkedIn mentions the script exists to scan for extensions that violate Terms of Service (TOS), even though no such mention is made in their Privacy Policy. Excluding the discussion about the legal grounds for doing so, the technical findings were independently confirmed by [BleepingComputer](https://BleepingComputer), an independent cybersecurity news outlet, in April 2026.
+
+## How does it work?
+
+There are two primary detection methods. Active Extension Detection (AED) and Passive DOM Scanning ("Spectroscopy"). The first method works immediately when you access the website through a Chromium-based browser (i.e. Chrome, Edge, Brave, etc.) by loading a JavaScript bundle (~2.7MB). This bundle contains a predefined list of extension IDs, and for each one of them, it attempts to load a known static file that the extension uses through the _fetch()_ API, effectively brute-force scanning. If an extension is installed, it will return a 200 OK http response thus confirming its existence. AED is achieved in two different ways. Either all requests are done in parallel or in a slower staggered sequence. The latter is harder to spot as the script attempts these requests when the user is not interacting with the platform in any meaningful way, thus no drop in performance is observed.
+
+ Independently of AED, Passive DOM Scanning works by walking the entire page DOM (Document Object Model, essentially a structured representation of everything on a webpage) and looks for ‘chrome-extension://’ references. These references are traces left in the DOM when extensions inject elements into the page. This means it can also detect extensions that are not even on the known list.
+
+Once both methods have finished registering the existing extensions combined with device fingerprint data points (i.e. CPU count, memory, screen resolution, time zone, etc.), the information is RSA-encrypted and sent to LinkedIn's tracking endpoint where they are attached to the user's session and linked to their identifiable profile.
+
+Several script design choices suggest it was designed with the intention of not being noticed:
+
+- Idle execution: runs when the browser is not busy
+- Staggered probing: spreads requests over time to avoid detection in the network log
+- Hidden iframe: the script runs on a hidden element placed outside of the visible page
+- Silent error handling: failed requests (404 http responses) produce no visible errors
+- RSA encryption: results are encrypted before transmission, making them harder to intercept and analyze.
+
+## What Data is Collected?
+
+The extensions being scanned can reveal sensitive information across five categories: 1) politics, 2) religious beliefs, 3) disabilities, 4) employment status, and 5) trade secrets. The reason these categories are sensitive is not because LinkedIn reads the extensions directly, but because the mere presence of certain extensions is enough to draw conclusions. An extension built for Muslim prayer times indicates religious belief. An extension for a specific political news outlet indicates political orientation. An extension designed for neurodivergent users indicates a disability. An extension for a job search platform like Indeed or Glassdoor indicates that the user may be actively looking for work - on the very platform where their current employer can see their profile.
+
+Beyond extensions, the script also collects approximately 48 device fingerprint data points including CPU core count, available memory, screen resolution, battery status, and time zone, building a detailed hardware and software profile of the user's device.
+
+## Who is Affected?
+
+BrowserGate targets Chrome extensions specifically, meaning it affects only Chromium-based browsers. Approximately 405 million users out of 1 billion total users registered on LinkedIn are affected. Safari and Firefox are largely unaffected due to their different extension architectures and browser security models.
+
+## Why does this matter for you and your privacy?
+
+LinkedIn is one of the few platforms where users are often verified with their real identity (i.e. name, job title, employer, etc.). Moreover, this is sometimes also backed by a government issued ID, thus extensions that give insights into the previously mentioned sensitive information categories can be matched to an identifiable individual.
+
+Plus, this data can be aggregated into profiles for companies, institutions, and government agencies, giving insights such as which software tools an organization uses, which employees are actively looking for a new job, and which competitor products their workforce has installed.
+
+## What can you do?
+
+There are 3 primary steps you can take in order to understand what data has been collected so far, how to immediately stop this from happening and how to protect yourself in the future:
+
+1. Request your data from LinkedIn: under GDPR you have the right to know what data has been collected so far.
+2. Switch browsers for LinkedIn: using Safari and Firefox for LinkedIn largely prevents the scanning.
+3. Check if your extensions are on the list: you can do so at [https://browsergate.eu/extensions/](https://browsergate.eu/extensions/)
+
+For those who want to explore further, more information and resources can be found at [https://browsergate.eu/](https://browsergate.eu/)

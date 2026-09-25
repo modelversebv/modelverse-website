@@ -1,0 +1,29 @@
+name: Task
+description: A general engineering or operational task.
+title: '[Task]: '
+type: task
+projects: ['modelversebv/2']
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for one-off tasks, maintenance, chores, and operational work.
+
+  - type: checkboxes
+    id: dupe_check
+    attributes:
+      label: Is there an existing issue targeting the same task?
+      description: Please search open issues before filing a new one.
+      options:
+        - label: I have searched existing issues
+          required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Task description
+      description: What needs to be done?
+      placeholder: 'Explain the steps, context, and desired outcome.'
+    validations:
+      required: true

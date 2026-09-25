@@ -1,0 +1,223 @@
+# Modelverse
+
+> Modelverse is a cybersecurity risk management platform and consultancy based in The Hague, Netherlands. It helps organisations of all sizes improve their security posture through intelligent automation, compliance management, and expert guidance. Founded in 2023 and operating across 7 countries, Modelverse combines enterprise-grade software with hands-on consultancy services.
+
+Modelverse B.V. is registered in the Netherlands (CoC: 89447476, VAT: NL864985800B01) and is ISO 27001 certified. It is a Microsoft for Startups partner and is headquartered at the HSD Campus in The Hague — the national innovation hub for the Dutch security sector.
+
+---
+
+## Platform
+
+The Modelverse platform is a unified SaaS solution for managing cybersecurity risk, compliance, and security governance. It replaces fragmented spreadsheets and siloed tools with a single centralised source of truth, designed for both small teams and large enterprises.
+
+### Modules (9 integrated)
+
+**Risks** — Manage risks across organisation, assets, and findings. Capability-driven roadmaps give a clear understanding of where to invest. Say goodbye to bloated risk registers with hundreds of vague entries.
+
+**Capabilities** — Track security capability development over time. Identify different gaps and opportunities for improvement to reach goals as efficiently as possible.
+
+**Roadmap** — Capability-driven investment and improvement planning. Develop a prioritised roadmap for implementing recommended improvements, ensuring cybersecurity efforts are focused on the most impactful areas.
+
+**Landscape** — Map cybersecurity infrastructure and applications. Map the full cybersecurity infrastructure, tools, and applications to gain a comprehensive view of the organisation's security posture.
+
+**Compliance** — Automate compliance workflows across frameworks. Streamline compliance management with automated workflows so that even small teams can manage compliance effectively.
+
+**Privacy** — GDPR and privacy information management. Supports data privacy processes and ensures alignment with GDPR and related privacy regulations.
+
+**Audits** — Centralised audit evidence and readiness. Everything is organised and easily accessible in one centralised location, ensuring the organisation is always audit-ready.
+
+**Assurance** — Supply chain and third-party risk management. Autonomous AI-driven supply chain management to assess and monitor vendor risk.
+
+**ISMS** — Single source of truth for all compliance information. From policies and procedures to controls and evidence, everything is organised in one centralised location across all compliance frameworks.
+
+### Supported Frameworks (30+)
+
+**ISO 27001/27002** — International standard defining best practice requirements for managing information security systems.
+
+**GDPR** — EU regulation governing personal data protection and privacy rights for all individuals.
+
+**NIS2 Directive** — EU directive mandating cybersecurity measures for critical and important sector organizations.
+
+**BIO2** — Dutch government baseline for information security across all public sector organizations.
+
+**NEN 7510** — Dutch standard protecting patient and medical data in healthcare organizations.
+
+**DORA** — EU act ensuring digital operational resilience for financial sector institutions and ICT providers.
+
+**ISO 27701** — Privacy information management extension to ISO 27001 for GDPR-aligned data protection.
+
+**NIST CSF** — US framework providing structured guidance to improve and manage organizational cybersecurity risk.
+
+**PCI DSS** — Global security standard for organizations that process, store, or transmit payment card data.
+
+And more. Frameworks are continuously updated with the latest regulatory requirements, covering EU, US, and global standards.
+
+### Key Capabilities
+
+- Autonomous AI-driven supply chain management
+- AI-powered risk and compliance recommendations
+- Role-based task management and accountability
+- Custom template document generation
+- Comprehensive dashboards and real-time reporting
+- Seamless integrations with Microsoft services, LeanIX, Ultimo, SoSafe, and others
+
+### Platform Implementation Process
+
+Modelverse follows a structured 6-step guided implementation methodology:
+
+**1. Initial Assessment & Strategy Alignment** — Gain a comprehensive understanding of the current cybersecurity posture, challenges, and goals. A timeline is set out, and the cybersecurity team gets to know the platform and the consultants who will be supporting them throughout the implementation process.
+
+**2. Landscape Assessment & Risk Impact Analysis** — Map the cybersecurity infrastructure, tools, and applications. Analyse the potential impact of the most critical risks. Understanding the landscape and risk impact is crucial for making informed decisions about where to invest resources with maximum effectiveness.
+
+**3. Security Capabilities & Maturity Level** — Evaluate existing security capabilities and maturity level across key cybersecurity domains. Identifying different gaps and opportunities for improvement allows reaching goals as efficiently as possible.
+
+**4. Risk Likelihood Assessment** — Assess the likelihood of the most critical risks based on the current threat landscape, the organisation's specific vulnerabilities, and previously identified security capabilities. This gives a clear picture of the organisation's risk exposure.
+
+**5. Improvement Backlog** — Construct a backlog of recommended improvements. This backlog serves as a repository for potential improvements, continuously guiding efforts as the organisation evolves.
+
+**6. Prioritised Roadmap, Handover & Support** — Develop a prioritised roadmap aligned with current goals and resources. After the roadmap is set, ongoing support and guidance is provided to ensure continuous progress towards cybersecurity objectives.
+
+---
+
+## Consultancy Services
+
+Independent of the platform, Modelverse offers modular security packages delivered by experienced consultants. Packages follow a logical maturity progression and can be selected based on the organisation's current needs.
+
+### Security Packages
+
+**Strategy (SecStrat)** — Build a solid foundation for a security program. Assess current posture, understand risks, and identify investment opportunities.
+- Understanding your cyber risks
+- Assess your current security posture
+- Articulate your investment opportunities
+
+**Certification (SecCert)** — Achieve and maintain compliance certifications (ISO 27001, NIS2, GDPR, etc.).
+- Get a head start with quality libraries
+- Support for all certification frameworks
+- Benefit from innovative automation
+
+**Governance (SecGov)** — Establish clear accountability and risk ownership. Define roles, responsibilities, and decision-making processes.
+- Define roles and responsibilities
+- Implement effective decision-making processes
+- Align security with business objectives
+
+**Programme (SecProg)** — Drive organisation-wide security adoption and culture.
+- Leverage executive support
+- Embed security practices
+- Promote a strong security culture
+
+**Operations (SecOps)** — Real-time threat monitoring, anomaly detection, incident response. Proactively prevent and detect security incidents.
+- Monitor threats in real-time
+- Detect anomalies and potential breaches
+- Respond to incidents quickly and effectively
+
+**Resilience (SecRes)** — Incident preparedness, business continuity, minimising attack fallout.
+- Prepare for potential incidents
+- Minimise fallout from attacks
+- Maintain business continuity
+
+---
+
+## Client Cases
+
+**Fellowmind** — One of the largest Microsoft integrators in western Europe, active in the Netherlands, Poland, Denmark, Sweden, and Finland. Modelverse supports the security strategy and manages all information risks across Fellowmind's different regions. Data privacy processes are supported, and a continuous improvement programme executes the security strategy.
+
+**Provincie Flevoland** — The governing authority for the region's critical infrastructure, environment, spatial planning and public management. Modelverse improves risk management, increasing the effectiveness of cybersecurity measures and saving time for IT, OT and data privacy teams, as well as the CISO.
+
+**Escola Andersen** — A Spanish educational center with over 50 years of experience, approved by the Generalitat de Catalunya. Modelverse supports strengthening cybersecurity and privacy, ensuring compliance with GDPR and Spanish national security laws specific to educational centers.
+
+**Nedato** — The largest Dutch cooperative of potato farmers. Uses Modelverse for digital risk management.
+
+**NewForrest Fingerfood** — A Dutch company specialising in frozen finger foods, mini snacks, and appetisers for retail and food service markets. Uses Modelverse for digital risk management.
+
+**1801** — Advises schools and ROCs on learning, teaching, and organising education. Modelverse manages information security, saving the CISO and IT team substantial time and effort.
+
+**PharmaPartners** — A leading provider of integrated healthcare systems in the Netherlands. Modelverse supports a strategic cybersecurity plan and a plan ensuring patient safety.
+
+**Thebe** — Provides district nursing, specialist care, home support and day care across 19 municipalities in Western and central Brabant. Modelverse is being piloted for digital risk management.
+
+**NPi** — The Dutch training provider for physiotherapists. Uses Modelverse to manage all information security, including compliance through security policies easily maintained and published to staff.
+
+**LeydenJar Technology** — A scale-up that developed a high-performing pure silicon anode for batteries, boosting energy capacity by 50%. Modelverse is used to protect the intellectual property of their core technology.
+
+### Customer Testimonials
+
+"Modelverse has transformed our approach to cybersecurity risk management." — David Warnink, CIO, Fellowmind
+
+"Reshma and the team have helped us close our security gaps." — Christiaan Rood, CEO, LeydenJar Technologies
+
+---
+
+## About
+
+Modelverse was founded in 2023 by Ben Krutzen (CEO/CTO), Reshma Pandohi Mishre (Partner), and Daan Loyens (CFO/COO) — all experienced risk management and cybersecurity professionals. The founding mission is to democratise enterprise-grade information risk management, making it accessible and affordable for organisations of all sizes.
+
+### Our Story
+
+Modelverse was founded by a team of experienced risk managers who witnessed first-hand the challenges organisations face when implementing effective cybersecurity programs. Companies struggled with complex compliance requirements, limited resources, and a shortage of talent, while enterprise risk management solutions were either too expensive or too complex. Modelverse was built to change that — making enterprise risk and compliance management accessible to organisations of all sizes, paired with expert consultants to support every step of the way.
+
+### Core Values
+
+**Customer First** — Products and services that solve real problems. Our customers are our first priority — their success is our success.
+
+**Security by Design** — Security built into code, culture, and process. Security shouldn't be an afterthought; it is a priority in any situation.
+
+**Transparency** — Open communication with customers and partners. Honesty and integrity are core values for the team.
+
+**Continuous Learning** — Staying ahead of an evolving threat landscape. Continuous innovation and education keep Modelverse and its clients current.
+
+### Team
+
+**Ben Krutzen — CEO & CTO | Co-Founder**: Creator of Modelverse, driven by a passion for turning strategy into action. Over 25 years at Shell and later as a partner at KPMG, navigating complex challenges across transformation, risk, and technology. Holds a PhD in theoretical physics.
+
+**Reshma Pandohi Mishre — Partner | Co-Founder**: Deep expertise in strategic information management and cybersecurity. Held a variety of IT leadership and security roles across international corporations and the energy sector. Holds an MSc in Applied Physics and an executive MSc in cybersecurity.
+
+**Daan Loyens — CFO & COO | Co-Founder**: Experienced entrepreneur and IT leader, bringing broad insight as a strategist, investor, and trusted cybersecurity advisor. Holds a PhD in Computing Science and an executive MSc in cybersecurity.
+
+**Lili Guo — Partner | CISO**: Governance expert with deep experience in health, cybersecurity and patient safety. Spent 12 years at the Dutch Ministry of Health. Holds a Cum Laude BSc in Biomedical Science, a Cum Laude MSc in Neuroscience, and a Summa Cum Laude MSc in Cybersecurity Governance.
+
+**Bozhena Kovtun — Office Manager**: Runs the backoffice at the HSD Campus in The Hague.
+
+**Mariona Fortuny Jané — Risk Consultant**: Researches, interprets, structures, and creates cybersecurity risk models and ESG models for enterprise clients. Holds a Bachelor's in International Relations and an MSc in Cybersecurity Governance.
+
+**Sjors de Natris — Risk Consultant | Security Engineer**: Generalist focused on consultancy, risk management, and DevOps. Holds a BSc in International Relations and Organisations, working towards an MSc in Cybersecurity Governance.
+
+**Matei Avram — Software Engineer**: Develops and maintains the Modelverse platform and website, implements DevOps practices, and manages cloud infrastructure. Holds a BSc in Computer Science and an MSc in Software Engineering.
+
+**Maria Litvinova — Risk Consultant**: Aids in the delivery of cybersecurity projects for multiple clients. Holds a BSc in Security Studies and a Cum Laude MSc in Countering Organised Crime and Terrorism.
+
+### Ambassadors
+
+**Jan-Willem Klerkx** — Passionate about software quality and business agility, combining deep technical insight with strategic thinking to help organisations reduce risk and improve maintainability.
+
+**Gordon Muehl** — Led innovation for Fortune 500 companies and embedded security culture into a 100,000 employee R&D organisation. Specialises in secure SDLC, technical due diligence, and governance.
+
+**Dennis Mulder** — Specialises in IT strategy, AI, and digital transformation. Certified Distinguished IT Architect (CITA-D), president of Iasa Global NL, and chairs the Chief Architect Forum.
+
+**Oskar Brink** — Aligns security and risk strategies with business objectives. International experience in Malaysia and India. Brings clarity and structure to complex IT environments.
+
+**Robert Bals** — Provides tailored ISMS implementations, audits for ISO 27001 and TUV Nord certification, and GDPR solutions for ICT, software, and healthcare organisations.
+
+---
+
+## Frequently Asked Questions
+
+**Who is Modelverse for?** — Organisations of all sizes and industries, from small businesses to large enterprises and public sector organisations. Built to be operated by a small team without a large cybersecurity department. Clients are predominantly European, with continuously expanding global coverage.
+
+**Which compliance frameworks does Modelverse support?** — Any framework relevant to the organisation. Widely used frameworks include ISO 27001/27002, GDPR, NIS2, BIO2, NEN 7510, DORA, ISO 27701, NIST CSF, and PCI DSS — as well as local variations and custom frameworks. Libraries are continuously updated. Modelverse is built to make re-certification cycles significantly less painful by keeping evidence, controls, and documentation centralised and current.
+
+**What is included in a cybersecurity risk assessment?** — A comprehensive evaluation of the organisation's security posture: analysis of current security capabilities, assessment of the likelihood and impact of potential risks, and a prioritised roadmap for improvement. Findings feed directly into Modelverse as a living improvement backlog so the organisation can track progress as the environment evolves.
+
+**How is Modelverse different from traditional security consultancy?** — Traditional consultants deliver a report or certification and leave. Modelverse combines the platform and consultancy into a continuously live programme — a single source of truth for all risk and compliance information, supporting initial implementation, re-certification cycles, and ongoing programme management. Cybersecurity becomes something the organisation owns continuously, rather than an expensive one-off exercise.
+
+**Do you offer personalised demos?** — Yes. Customised demos are available, tailored to the organisation's needs. Contact the team at https://modelverse.online/contact.
+
+---
+
+## Contact
+
+**Email**: info@modelverse.online | support@modelverse.online
+**Phone**: +31 6 27612498 (Mon–Fri, 9:00–18:00 CET)
+**Office**: Wilhelmina van Pruisenweg 104, 2595 AN The Hague, Netherlands (HSD Campus)
+**Website**: https://modelverse.online
+**LinkedIn**: https://www.linkedin.com/company/modelverse/
+**GitHub**: https://github.com/modelversebv

@@ -1,0 +1,42 @@
+name: User story
+description: Capture a product slice with clear acceptance criteria.
+title: '[Story]: '
+type: story
+projects: ['modelversebv/2']
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Provide the story format, acceptance criteria, and constraints.
+
+  - type: checkboxes
+    id: dupe_check
+    attributes:
+      label: Is there an existing issue targeting the same story?
+      description: Please search open issues before filing a new one.
+      options:
+        - label: I have searched existing issues
+          required: true
+
+  - type: textarea
+    id: story
+    attributes:
+      label: Story
+      description: What should the user be able to do and why?
+      placeholder: |
+        As a <role/persona>,
+        I want <capability>,
+        So that <benefit/outcome>.
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Link to any related issues, features, or external factors.
+      placeholder: |
+      - Depends on #789,
+      - Depends on API 29c34b7 v2,
+      - Depends on XYZ team delivering ABC.

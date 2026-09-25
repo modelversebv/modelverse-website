@@ -1,0 +1,42 @@
+name: Feature request
+description: Propose a new capability or improvement for the website/platform.
+title: '[Feature]: '
+type: feature
+projects: ['modelversebv/2']
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing a feature! Help us understand the value, scope, and acceptance criteria.
+
+  - type: checkboxes
+    id: dupe_check
+    attributes:
+      label: Is there an existing issue targeting the same feature?
+      description: Please search open issues before filing a new one.
+      options:
+        - label: I have searched existing issues
+          required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What do you suggest we build? Include scope and approach. Be elsaborate!
+      placeholder: 'Explain the functional behavior, interactions, and any design notes.'
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      placeholder: 'List other options and why this approach was chosen.'
+
+  - type: textarea
+    id: mockups
+    attributes:
+      label: Designs / mockups / references
+      description: Link Figma, screenshots, docs, etc.
+      placeholder: 'Include any relevant design files or references.'
