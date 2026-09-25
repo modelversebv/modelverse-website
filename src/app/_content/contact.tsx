@@ -8,7 +8,7 @@ import { Hero } from '@/components/common/hero'
 import { GoogleMapEmbed } from '@/components/embed/google-map-embed'
 import { Layout } from '@/components/layout/page-layout'
 import { fadeInUp, scaleIn, staggerContainer } from '@/lib/animation-variants'
-import { ArrowRight, Clock, Mail, MapPin, Phone, Shield } from 'lucide-react'
+import { ArrowRight, Clock, Mail, MapPin, Shield } from 'lucide-react'
 import { motion, useInView } from 'motion/react'
 import { useTranslations } from 'next-intl'
 
