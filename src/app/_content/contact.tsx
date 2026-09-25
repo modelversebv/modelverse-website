@@ -8,7 +8,7 @@ import { Hero } from '@/components/common/hero'
 import { GoogleMapEmbed } from '@/components/embed/google-map-embed'
 import { Layout } from '@/components/layout/page-layout'
 import { fadeInUp, scaleIn, staggerContainer } from '@/lib/animation-variants'
-import { ArrowRight, Clock, Mail, MapPin, Phone, Shield } from 'lucide-react'
+import { ArrowRight, Clock, Mail, MapPin, Shield } from 'lucide-react'
 import { motion, useInView } from 'motion/react'
 import { useTranslations } from 'next-intl'
 
@@ -52,12 +52,13 @@ export function ContactContent() {
       primary: t('contact.info.email.primary'),
       secondary: t('contact.info.email.secondary'),
     },
-    {
-      icon: Phone,
-      title: t('contact.info.phone.title'),
-      primary: t('contact.info.phone.primary'),
-      secondary: t('contact.info.phone.secondary'),
-    },
+    // VERY temporary, had Lili's phone number here and we haven't decided whose number to put here yet (25/09)
+    // {
+    //   icon: Phone,
+    //   title: t('contact.info.phone.title'),
+    //   primary: t('contact.info.phone.primary'),
+    //   secondary: t('contact.info.phone.secondary'),
+    // },
     {
       icon: MapPin,
       title: t('contact.info.office.title'),
