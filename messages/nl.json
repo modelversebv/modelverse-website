@@ -59,7 +59,7 @@
       }
     },
     "features": {
-      "title": "Alles wat je nodig hebt om Risico's en Compliance te beheren",
+      "title": "Alles wat je Nodig Hebt om Risico's en Compliance te Beheren",
       "items": {
         "card1": {
           "title": "Strategisch Risicobeheer",
@@ -100,7 +100,7 @@
       ]
     },
     "testimonials": {
-      "title": "Wat onze Klanten zeggen",
+      "title": "Wat onze Klanten Zeggen",
       "subtitle": "Ontdek hoe toonaangevende organisaties zichzelf transformeren met Modelverse.",
       "items": [
         {
@@ -247,8 +247,8 @@
       ]
     },
     "comparison": {
-      "title_line1": "Alles wat je nodig hebt.",
-      "title_line2": "Niets meer, niets minder.",
+      "title_line1": "Alles wat je Nodig Hebt.",
+      "title_line2": "Niets Meer, Niets Minder.",
       "subtitle": "In tegenstelling tot de vele omslachtige cybersecurity platforms bevat Modelverse alleen de functies die je organisatie daadwerkelijk nodig heeft en gebruikt. Hier zijn enkele functies die wij bieden en die je niet terugvindt in andere platforms.",
       "points": [
         "Autonome AI-gedreven supply chain management",
@@ -267,7 +267,7 @@
       "subtitle": "Elke functie is ontworpen om je tijd te besparen, risico's te verminderen en compliancebeheer te vereenvoudigen. Hier is een overzicht van enkele functies die we bieden om je cybersecurity-risico's en compliance met vertrouwen te beheren.",
       "items": [
         {
-          "title": "Zie je Security Capabilities groeien over Tijd",
+          "title": "Zie je Security Capabilities Groeien over Tijd",
           "description": "Volg de ontwikkeling van je security capabilities met onze intuïtieve tijdlijnweergave. Identificeer trends, monitor vooruitgang en neem geïnformeerde beslissingen om je cybersecurity-houding voortdurend te verbeteren.",
           "improvement": "Volg je vooruitgang"
         },
@@ -330,8 +330,8 @@
     },
     "hero": {
       "badge": "We secure. You succeed!",
-      "title_line1": "Jouw organisatie, ",
-      "title_line2": "onze expertise",
+      "title_line1": "Jouw Organisatie, ",
+      "title_line2": "Onze Expertise",
       "description": "Onafhankelijk van ons platform bieden wij een reeks uitgebreide security-pakketten aan die zijn ontworpen om de cybersecurity-houding van je organisatie te versterken. Selecteer de pakketten die je nodig hebt en benut de expertise van onze consultants om je doelen op jouw tempo te bereiken."
     },
     "journey": {
@@ -413,8 +413,8 @@
     },
     "hero": {
       "badge": "We secure. You succeed!",
-      "title_line1": "Echte resultaten van",
-      "title_line2": "echte klanten",
+      "title_line1": "Echte Resultaten van",
+      "title_line2": "Echte Klanten",
       "description": "Ontdek hoe onze klanten hun cybersecurity-praktijken transformeren met Modelverse."
     },
     "labels": {
@@ -497,7 +497,7 @@
     "hero": {
       "badge": "We secure. You succeed!",
       "title_line1": "Inzichten in",
-      "title_line2": "Cybersecurity-risico's",
+      "title_line2": "Cybersecurity-Risico's",
       "title_line3": "& Compliance",
       "description": "De nieuwste inzichten over cybersecurity regelgeving, trends en best practices."
     },
@@ -515,13 +515,13 @@
   },
   "about": {
     "metadata": {
-      "title": "Over ons | Modelverse",
+      "title": "Over Ons | Modelverse",
       "description": "Lees meer over de missie, waarden, het team en de ambassadeurs van Modelverse die de toekomst van cybersecurity-risicobeheer vormgeven."
     },
     "hero": {
       "badge": "We secure. You succeed!",
-      "title_line1": "Wij zijn op een missie om",
-      "title_line2": "Risicobeheer te democratiseren",
+      "title_line1": "Wij zijn op een Missie om",
+      "title_line2": "Risicobeheer te Democratiseren",
       "description": "Enterprise-grade cybersecurity risicobeheer, toegankelijk voor organisaties van alle formaten."
     },
     "story": {
@@ -550,13 +550,13 @@
           "description": "Wij geloven in open communicatie met onze klanten, partners en elkaar. Eerlijkheid en integriteit zijn kernwaarden voor ons team."
         },
         "continuous_learning": {
-          "title": "Continu leren",
+          "title": "Continu Leren",
           "description": "Het dreigingslandschap evolueert voortdurend. Wij blijven up-to-date door continue innovatie en educatie."
         }
       }
     },
     "team": {
-      "title": "Maak kennis met het Team",
+      "title": "Maak Kennis met het Team",
       "subtitle": "De gedreven mensen achter Modelverse.",
       "members": [
         {
@@ -689,7 +689,7 @@
       }
     },
     "faq": {
-      "title": "Veelgestelde vragen",
+      "title": "Veelgestelde Vragen",
       "items": [
         {
           "question": "Voor wie is Modelverse?",
@@ -729,7 +729,7 @@
       "article": "Artikel"
     },
     "error": {
-      "title": "Artikel niet gevonden",
+      "title": "Artikel Niet Gevonden",
       "description": "Sorry, het artikel dat je zoekt bestaat niet of is verwijderd.",
       "button": "Terug naar nieuws"
     },
@@ -739,7 +739,7 @@
     "metadata": {
       "description_line1": "Het officiële",
       "description_line2": "document van Modelverse B.V.",
-      "title_loading": "Juridische pagina laden... | Modelverse",
+      "title_loading": "Juridische Pagina Laden... | Modelverse",
       "loading": "Juridische en regelgevende documentatie laden..."
     },
     "breadcrumb": {
@@ -749,7 +749,7 @@
     "last_updated": "Laatst bijgewerkt",
     "effective_date": "Ingangsdatum",
     "error": {
-      "title": "Pagina niet gevonden",
+      "title": "Pagina Niet Gevonden",
       "description": "Sorry, de pagina die je zoekt bestaat niet of is verwijderd.",
       "button": "Terug naar home"
     },

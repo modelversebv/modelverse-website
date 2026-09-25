@@ -59,30 +59,30 @@
       }
     },
     "features": {
-      "title": "Todo lo que necesitas para gestionar riesgos y cumplimiento",
+      "title": "Todo lo que Necesitas para Gestionar Riesgos y Cumplimiento",
       "items": {
         "card1": {
-          "title": "Gestión estratégica de riesgos",
+          "title": "Gestión Estratégica de Riesgos",
           "description": "Te ayudamos a gestionar los riesgos en tres niveles: organización, activos y hallazgos. Las hojas de ruta basadas en capacidades te ofrecen una comprensión clara de dónde invertir. Di adiós a los registros de riesgos sobrecargados con cientos de entradas vagas."
         },
         "card2": {
-          "title": "Cumplimiento simplificado",
+          "title": "Cumplimiento Simplificado",
           "description": "Continuamos sin problemas desde el progreso que ya has alcanzado en los marcos de certificación para garantizar una mínima interrupción de tus operaciones. Ya sea que quieras certificarte en ISO 27001, cumplir con los requisitos del RGPD o alinearte con NIS2, nosotros nos encargamos."
         },
         "card3": {
-          "title": "Automatización inteligente",
+          "title": "Automatización Inteligente",
           "description": "Nuestro enfoque se basa en la automatización inteligente, diseñada para ahorrarte tiempo y reducir riesgos. Desde la recopilación de evidencias hasta las recomendaciones inteligentes, te ayudamos a mantenerte a la vanguardia y a centrarte en lo que más importa."
         },
         "card4": {
-          "title": "Preparación continua para auditorías",
+          "title": "Preparación Continua para Auditorías",
           "description": "Creamos políticas, procedimientos y controles a medida con bibliotecas basadas en experiencia real. Gracias a nuestra plataforma, los consultores automatizan la mayoría de los controles y crean una única fuente de verdad, para que estés siempre preparado para auditorías."
         },
         "card5": {
-          "title": "Integraciones sin fisuras",
+          "title": "Integraciones sin Fisuras",
           "description": "Conecta tus herramientas y sistemas existentes a nuestra plataforma sin esfuerzo. Ya sean servicios de Microsoft, LeanIX, Ultimo, sosafe u otros, podemos integrarlos y centralizar tu gestión de riesgos y cumplimiento."
         },
         "card6": {
-          "title": "Asesoramiento profesional",
+          "title": "Asesoramiento Profesional",
           "description": "Nuestro equipo de expertos ofrece un apoyo personalizado para ayudarte a afrontar las complejidades de la ciberseguridad. Desde el asesoramiento estratégico hasta la implementación práctica, estamos aquí para garantizar tu éxito en cada paso del camino."
         }
       }
@@ -100,7 +100,7 @@
       ]
     },
     "testimonials": {
-      "title": "Lo que dicen nuestros clientes",
+      "title": "Lo que Dicen nuestros Clientes",
       "subtitle": "Descubre cómo los líderes del sector están transformando sus organizaciones con Modelverse.",
       "items": [
         {
@@ -128,7 +128,7 @@
     },
     "cta": {
       "badge": "Inicia tu viaje hacia la seguridad",
-      "title": "¿Listo para proteger tu futuro?",
+      "title": "¿Listo para Proteger tu Futuro?",
       "subtitle": "Únete a las organizaciones que confían en Modelverse para gestionar tus riesgos hoy.",
       "button": "Comenzar"
     }
@@ -145,29 +145,29 @@
       "description": "Empieza a utilizar una plataforma unificada para gestionar los riesgos de ciberseguridad, el cumplimiento normativo y la gobernanza de la seguridad en toda tu organización. Obtén una visibilidad completa de tu postura de ciberseguridad mientras simplificas el cumplimiento normativo y la resiliencia operativa mediante la automatización inteligente."
     },
     "problems": {
-      "title_line1": "Resuelve tus problemas con",
+      "title_line1": "Resuelve tus Problemas con",
       "title_line2": "Modelverse",
       "subtitle": "Los profesionales en ciberseguridad se enfrentan a diario a numerosos retos. Modelverse está diseñado para abordar estos retos y ofrecerte una solución integral para gestionar de forma inteligente tus riesgos de ciberseguridad y tu cumplimiento normativo.",
       "items": [
         {
-          "title": "Adiós a las interminables hojas de Excel",
+          "title": "Adiós a las Interminables Hojas de Excel",
           "description": "Los profesionales de la gestión de riesgos suelen depender de hojas de cálculo y documentos con entradas vagas y datos inconsistentes, lo que genera ineficiencia y errores. Modelverse automatiza y simplifica estos procesos, ahorrándote muchísimo tiempo y esfuerzo."
         },
         {
-          "title": "Se acabó el cumplimiento manual",
+          "title": "Se Acabó el Cumplimiento Manual",
           "description": "La gestión manual del cumplimiento normativo consume mucho tiempo y es difícil de mantener, especialmente a medida que las organizaciones crecen. Modelverse simplifica este proceso con flujos de trabajo automatizados, de modo que incluso los equipos pequeños puedan gestionar el cumplimiento de forma eficaz."
         },
         {
-          "title": "Los sistemas aislados son cosa del pasado",
+          "title": "Los Sistemas Aislados son Cosa del Pasado",
           "description": "Los sistemas aislados dificultan obtener una visión integral de la postura de seguridad de tu organización. Recupera el control de tus activos y procesos con Modelverse, y ten toda tu información en un solo lugar."
         }
       ]
     },
     "fingertips": {
-      "title_line1": "Módulos de grado empresarial",
-      "title_line2": "al alcance de tu mano",
+      "title_line1": "Módulos de Grado Empresarial",
+      "title_line2": "al Alcance de tu Mano",
       "subtitle": "Modelverse cuenta con todas las funciones que necesitas para gestionar tus riesgos de ciberseguridad y tu cumplimiento, organizadas en 9 módulos integrados que funcionan conjuntamente para ofrecerte una solución completa para tus necesidades de ciberseguridad.",
-      "modules": "9 módulos integrados",
+      "modules": "9 Módulos Integrados",
       "module_items": [
         { "title": "Risks" },
         { "title": "Capabilities" },
@@ -181,8 +181,8 @@
       ]
     },
     "frameworks": {
-      "title_line1": "Una plataforma para ",
-      "title_line2": "todos los marcos normativos",
+      "title_line1": "Una Plataforma para ",
+      "title_line2": "Todos los Marcos Normativos",
       "subtitle": "La plataforma Modelverse admite el cumplimiento de cualquier marco normativo. Nuestras bibliotecas se actualizan continuamente con los últimos requisitos y mejores prácticas, para que puedas estar seguro de que siempre estás al día con los marcos más relevantes para tu organización.",
       "items": [
         {
@@ -241,14 +241,14 @@
           "subtitle": "Cobertura en la UE, EE. UU. y a nivel mundial"
         },
         {
-          "title": "Actualización automática",
+          "title": "Actualización Automática",
           "subtitle": "Últimos cambios normativos"
         }
       ]
     },
     "comparison": {
-      "title_line1": "Todo lo que necesitas.",
-      "title_line2": "Nada que sea irrelevante.",
+      "title_line1": "Todo lo que Necesitas.",
+      "title_line2": "Nada que sea Irrelevante.",
       "subtitle": "A diferencia de las muchas plataformas de ciberseguridad sobrecargadas, Modelverse incluye únicamente las funciones que tu organización realmente necesita y utiliza. Estas son algunas de las funciones que ofrecemos y que no encontrarás en otras plataformas.",
       "points": [
         "Gestión autónoma de la cadena de suministro impulsada por IA",
@@ -263,21 +263,21 @@
     },
     "feature_showcase": {
       "title_line1": "Diseñado para el",
-      "title_line2": "futuro del cumplimiento normativo",
+      "title_line2": "Futuro del Cumplimiento Normativo",
       "subtitle": "Cada función está diseñada para ahorrarte tiempo, reducir riesgos y simplificar la gestión del cumplimiento normativo. A continuación, presentamos algunas de las funciones que ofrecemos para ayudarte a gestionar tus riesgos de ciberseguridad y tu cumplimiento con confianza.",
       "items": [
         {
-          "title": "Ve crecer tus capacidades de seguridad con el tiempo",
+          "title": "Ve Crecer tus Capacidades de Seguridad con el Tiempo",
           "description": "Realiza un seguimiento del desarrollo de tus capacidades de seguridad a lo largo del tiempo con nuestra intuitiva vista de línea temporal. Identifica tendencias, supervisa el progreso y toma decisiones informadas para mejorar continuamente tu postura de ciberseguridad.",
           "improvement": "Realiza un seguimiento de tus mejoras"
         },
         {
-          "title": "Un lugar centralizado para toda tu información de cumplimiento normativo",
+          "title": "Un Único Lugar para tu Información de Cumplimiento",
           "description": "Nuestro módulo SGSI actúa como fuente única de verdad para toda tu información. Desde políticas y procedimientos hasta controles y evidencias, todo está organizado y fácilmente accesible en un único lugar centralizado. Esto garantiza que estés siempre preparado para auditorías y puedas responder rápidamente a cualquier consulta o auditoría de cumplimiento.",
           "improvement": "Una única fuente de verdad"
         },
         {
-          "title": "Informes y supervisión simplificados",
+          "title": "Informes y Supervisión Simplificados",
           "description": "Nuestras completas funciones de informes y supervisión te proporcionan información en tiempo real sobre tu postura de ciberseguridad. Los paneles de control, los informes automatizados y la supervisión continua garantizan que dispongas de la información que necesitas para tomar decisiones informadas y anticiparte a posibles amenazas.",
           "improvement": "Información en tiempo real"
         }
@@ -285,40 +285,40 @@
     },
     "implementation": {
       "title_line1": "Implementación",
-      "title_line2": "guiada",
+      "title_line2": "Guiada",
       "subtitle": "Nuestros consultores expertos te guiarán a través de un proceso de implementación sin contratiempos, garantizando que te pongas en marcha de forma rápida y eficaz. Trabajamos estrechamente con tu equipo para comprender tus necesidades específicas y adaptar la plataforma a los requisitos concretos de tu organización."
     },
     "implementation_track": {
       "step": [
         {
-          "title": "Evaluación inicial y alineación estratégica",
+          "title": "Evaluación Inicial y Alineación Estratégica",
           "description": "El primer paso consiste en obtener una comprensión integral de tu postura de ciberseguridad actual, tus retos y tus objetivos. Esto nos ayuda a comprender tus necesidades específicas y garantiza que la implementación esté alineada con los objetivos de tu organización. Se establecerá un cronograma, y tu equipo de ciberseguridad conocerá la plataforma y a los consultores que te acompañarán durante todo el proceso de implementación."
         },
         {
-          "title": "Evaluación del panorama y análisis del impacto de riesgos",
+          "title": "Evaluación del Panorama y Análisis del Impacto de Riesgos",
           "description": "Juntos, cartografiamos tu infraestructura, herramientas y aplicaciones de ciberseguridad. A continuación, analizamos el impacto potencial de los riesgos más críticos para tu organización. Comprender el panorama y el impacto de los riesgos es fundamental para guiar tu trayectoria en ciberseguridad y tomar decisiones informadas sobre dónde invertir los recursos con la máxima eficacia."
         },
         {
-          "title": "Capacidades de seguridad y nivel de madurez",
+          "title": "Capacidades de Seguridad y Nivel de Madurez",
           "description": "Evaluamos tus capacidades de seguridad existentes y tu nivel de madurez en los principales ámbitos de la ciberseguridad. La identificación de las distintas carencias y oportunidades de mejora nos permite alcanzar tus objetivos con la mayor eficacia posible. Con la experiencia de nuestros consultores y la información de la plataforma, podemos ayudarte a mejorar tu postura de ciberseguridad y a lograr los resultados deseados con facilidad."
         },
         {
-          "title": "Evaluación de la probabilidad de riesgos",
+          "title": "Evaluación de la Probabilidad de Riesgos",
           "description": "Evaluamos la probabilidad de los riesgos más críticos a los que se enfrenta tu organización a partir de una combinación de factores, entre ellos el panorama de amenazas actual, las vulnerabilidades específicas de tu organización y las capacidades de seguridad identificadas previamente. Este es el último paso de nuestro proceso integral de evaluación de riesgos y te ofrece una imagen clara de la exposición al riesgo de tu organización."
         },
         {
-          "title": "Backlog de mejoras",
+          "title": "Backlog de Mejoras",
           "description": "Pero tu historia no termina ahí. A partir de los pasos anteriores, elaboramos un backlog de mejoras recomendadas. Este backlog actúa como un repositorio de posibles mejoras, guiando continuamente tus esfuerzos a medida que tu organización evoluciona. Proporciona la base para planes claros y prácticos que mejoran aún más tu madurez en ciberseguridad."
         },
         {
-          "title": "Hoja de ruta priorizada, transición y soporte",
+          "title": "Hoja de Ruta Priorizada, Transición y Soporte",
           "description": "Trabajamos contigo para desarrollar una hoja de ruta priorizada que permita implementar un subconjunto de las mejoras recomendaciones, garantizando que tus esfuerzos de ciberseguridad se centren en las áreas de mayor impacto y estén alineados con los objetivos y recursos actuales de tu organización. Una vez establecida la hoja de ruta, entregamos las riendas a tu equipo, ofreciendo soporte y orientación continuos según sea necesario para garantizar un progreso constante hacia tus objetivos de ciberseguridad."
         }
       ]
     },
     "cta": {
-      "title_line1": "¿Listo para transformar",
-      "title_line2": "la gestión de riesgos?",
+      "title_line1": "¿Listo para Transformar",
+      "title_line2": "la Gestión de Riesgos?",
       "subtitle": "Únete a las organizaciones exitosas que gestionan tu ciberseguridad con Modelverse, obtén información detallada sobre tu postura de seguridad y benefíciate de la automatización más inteligente del sector.",
       "button": "Comenzar"
     }
@@ -330,12 +330,12 @@
     },
     "hero": {
       "badge": "We secure. You succeed!",
-      "title_line1": "Tu organización, ",
-      "title_line2": "nuestra experiencia",
+      "title_line1": "Tu Organización, ",
+      "title_line2": "Nuestra Experiencia",
       "description": "Independientemente de nuestra plataforma, ofrecemos una gama de paquetes de seguridad integrales diseñados para madurar la postura de ciberseguridad de tu organización. Selecciona los paquetes que necesitas y aprovecha la experiencia de nuestros consultores para alcanzar tus objetivos a tu propio ritmo."
     },
     "journey": {
-      "title": "Paquetes de seguridad",
+      "title": "Paquetes de Seguridad",
       "subtitle": "Nuestros paquetes siguen una progresión lógica hacia la construcción de una infraestructura de ciberseguridad resiliente para tu organización. Elige los paquetes que se adapten a tus necesidades y auméntalos a medida que tu organización madure, o contáctanos para hablar de tu situación."
     },
     "items": {
@@ -401,7 +401,7 @@
       }
     },
     "cta": {
-      "title": "¿Listo para dar el siguiente paso?",
+      "title": "¿Listo para Dar el Siguiente Paso?",
       "subtitle": "Nuestro equipo te ayudará a seleccionar los paquetes adecuados según las necesidades específicas y el nivel de madurez de tu organización.",
       "button": "Programar una consulta"
     }
@@ -413,8 +413,8 @@
     },
     "hero": {
       "badge": "We secure. You succeed!",
-      "title_line1": "Resultados reales de",
-      "title_line2": "clientes reales",
+      "title_line1": "Resultados Reales de",
+      "title_line2": "Clientes Reales",
       "description": "Descubre cómo nuestros clientes están transformando sus prácticas de ciberseguridad con Modelverse."
     },
     "labels": {
@@ -484,7 +484,7 @@
       }
     ],
     "cta": {
-      "title": "¿Listo para escribir tu historia de éxito?",
+      "title": "¿Listo para Escribir tu Historia de Éxito?",
       "subtitle": "Únete a estas organizaciones líderes en la transformación de tus prácticas de ciberseguridad.",
       "button": "Solicitar una demostración"
     }
@@ -497,8 +497,8 @@
     "hero": {
       "badge": "We secure. You succeed!",
       "title_line1": "Perspectivas sobre",
-      "title_line2": "riesgos de ciberseguridad",
-      "title_line3": "y cumplimiento",
+      "title_line2": "Riesgos de Ciberseguridad",
+      "title_line3": "Y Cumplimiento",
       "description": "Consejos de expertos, tendencias del sector y guías prácticas para ayudarte a gestionar tu ciberseguridad."
     },
     "featured": "Destacado",
@@ -520,12 +520,12 @@
     },
     "hero": {
       "badge": "We secure. You succeed!",
-      "title_line1": "Nuestra misión es",
-      "title_line2": "democratizar la gestión de riesgos",
+      "title_line1": "Nuestra Misión es Democratizar",
+      "title_line2": "la Gestión de Riesgos",
       "description": "Hacemos accesible la gestión de riesgos de la información de nivel empresarial a organizaciones de todos los tamaños."
     },
     "story": {
-      "title": "Nuestra historia",
+      "title": "Nuestra Historia",
       "paragraphs": [
         "Modelverse fue fundada en 2023 por un equipo de experimentados gestores de riesgos que fueron testigos de primera mano de los retos a los que se enfrentan las organizaciones al intentar implementar programas de ciberseguridad eficaces.",
         "Vimos empresas luchando con requisitos de cumplimiento complejos, recursos limitados y escasez de talento. Mientras tanto, las soluciones empresariales de gestión de riesgos eran demasiado caras o demasiado complejas.",
@@ -534,15 +534,15 @@
       ]
     },
     "values": {
-      "title": "Nuestros valores",
+      "title": "Nuestros Valores",
       "subtitle": "Los principios que guían todo lo que hacemos en Modelverse.",
       "items": {
         "customer_first": {
-          "title": "El cliente primero",
+          "title": "El Cliente Primero",
           "description": "Creamos productos y ofrecemos servicios que resuelven problemas reales. Nuestros clientes son nuestra primera prioridad: su éxito es nuestro éxito."
         },
         "security_by_design": {
-          "title": "Seguridad por diseño",
+          "title": "Seguridad por Diseño",
           "description": "La seguridad no debería ser una idea de último momento. Está integrada en todo lo que hacemos, desde el código hasta la cultura, y es una prioridad en cualquier situación."
         },
         "transparency": {
@@ -550,13 +550,13 @@
           "description": "Creemos en la comunicación abierta con nuestros clientes, socios y entre nosotros mismos. La honestidad y la integridad son valores fundamentales para nuestro equipo."
         },
         "continuous_learning": {
-          "title": "Aprendizaje continuo",
+          "title": "Aprendizaje Continuo",
           "description": "El panorama de amenazas evoluciona constantemente. Nos mantenemos al día mediante la innovación y la formación continuas."
         }
       }
     },
     "team": {
-      "title": "Conoce al equipo",
+      "title": "Conoce al Equipo",
       "subtitle": "Las personas apasionadas detrás de Modelverse.",
       "members": [
         {
@@ -625,7 +625,7 @@
       ]
     },
     "ambassadors": {
-      "title": "Nuestros embajadores",
+      "title": "Nuestros Embajadores",
       "subtitle": "Voces de confianza en las comunidades de riesgo y cumplimiento de ciberseguridad que creen en Modelverse.",
       "items": [
         {
@@ -663,12 +663,12 @@
     "hero": {
       "badge": "We secure. You succeed!",
       "title_line1": "Ponte en",
-      "title_line2": "contacto",
+      "title_line2": "Contacto",
       "description": "¿Tienes preguntas sobre Modelverse? Nuestro equipo está aquí para ayudarte. Ponte en contacto con nosotros y te responderemos en un día."
     },
     "info": {
       "email": {
-        "title": "Correo electrónico",
+        "title": "Correo Electrónico",
         "primary": "info@modelverse.online",
         "secondary": "support@modelverse.online"
       },
@@ -714,10 +714,10 @@
       ]
     },
     "directions": {
-      "title": "Cómo llegar"
+      "title": "Cómo Llegar"
     },
     "cta": {
-      "title": "¿Listo para conectar?",
+      "title": "¿Listo para Conectar?",
       "subtitle": "Descubre cómo Modelverse puede ayudar a tu organización a gestionar los riesgos de ciberseguridad y el cumplimiento normativo con confianza.",
       "button": "Reservar una demostración"
     }
@@ -729,7 +729,7 @@
       "article": "Artículo"
     },
     "error": {
-      "title": "Artículo no encontrado",
+      "title": "Artículo No Encontrado",
       "description": "Lo sentimos, el artículo que buscas no existe o ha sido eliminado.",
       "button": "Volver a Noticias"
     },
@@ -739,7 +739,7 @@
     "metadata": {
       "description_line1": "El documento",
       "description_line2": "oficial de Modelverse B.V.",
-      "title_loading": "Cargando página legal... | Modelverse",
+      "title_loading": "Cargando Página Legal... | Modelverse",
       "loading": "Cargando documentación legal y normativa..."
     },
     "breadcrumb": {
@@ -749,7 +749,7 @@
     "last_updated": "Última actualización",
     "effective_date": "Fecha de vigencia",
     "error": {
-      "title": "Página no encontrada",
+      "title": "Página No Encontrada",
       "description": "Lo sentimos, la página que buscas no existe o ha sido eliminada.",
       "button": "Volver al inicio"
     },
