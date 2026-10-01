@@ -79,7 +79,7 @@
         },
         "card5": {
           "title": "Naadloze Integraties",
-          "description": "Verbind je bestaande tools en systemen moeiteloos met ons platform. Of het nu gaat om Microsoft-diensten, LeanIX, Ultimo, sosafe of iets anders — wij integreren het en centraliseren je risico- en compliancebeheer."
+          "description": "Verbind je bestaande tools en systemen moeiteloos met ons platform. Of het nu gaat om Microsoft-diensten, LeanIX, Ultimo, SoSafe of iets anders — wij integreren het en centraliseren je risico- en compliancebeheer."
         },
         "card6": {
           "title": "Professionele Begeleiding",
@@ -629,27 +629,35 @@
       "subtitle": "Vertrouwde stemmen op het gebied van cybersecurity-risico en compliance die geloven in Modelverse.",
       "items": [
         {
+          "role": "Co-Founder of Modelverse & Independent Security Executive",
           "bio": "Medeoprichter van Modelverse. Reshma is een cybersecurity-expert met een achtergrond in IT-leiderschap bij internationale bedrijven en in de energiesector. Ze heeft een MSc in Toegepaste Natuurkunde en een executive MSc in Cybersecurity."
         },
         {
+          "role": "Co-Founder & CEO, BonCode",
           "bio": "Jan-Willem Klerkx is gepassioneerd over softwarekwaliteit en bedrijfsbehendigheid. Zijn aanpak combineert diepgaand technisch inzicht met strategisch denken, waarmee hij organisaties helpt risico's te verkleinen, onderhoudbaarheid te verbeteren en innovatie te ontsluiten via objectieve broncode- en architectuuranalyse."
         },
         {
+          "role": "Founder & Managing Director, MuehlCyberConsulting",
           "bio": "Gordon Muehl heeft innovatie geleid voor Fortune 500-bedrijven, internationaal goed presterende teams opgebouwd en een security-cultuur ingebed in een R&D-organisatie van 100.000 medewerkers. Gespecialiseerd in secure software development lifecycle, technische due diligence en niet-functionele vereisten van governance — Gordon overbrugt zakelijke en technische domeinen van CxO's tot ontwikkelaars."
         },
         {
+          "role": "Co-Founder & CTO, Full Circle IT NL",
           "bio": "Dennis Mulder is gespecialiseerd in IT-strategie, AI en digitale transformatie en richt zich op het overbruggen van bedrijven en technologie van de bestuurskamer tot uitvoering voor organisaties. Hij is een Certified Distinguished IT Architect (CITA-D), president van Iasa Global NL en voorzitter van het Chief Architect Forum. Dennis zet zich in voor talentontwikkeling, altijd met oog voor praktische impact."
         },
         {
+          "role": "Independent Cyber Security and Risk Manager",
           "bio": "Oskar Brink blinkt uit in het afstemmen van security- en risicostrategieën op bedrijfsdoelstellingen, het stimuleren van duurzame transformatie en het bevorderen van continue verbetering door middel van coaching — met internationale ervaring in Maleisië en India. Hij is gespecialiseerd in het brengen van helderheid en structuur in complexe IT-omgevingen om organisaties te transformeren naar meer wendbaarheid, security en weerbaarheid."
         },
         {
+          "role": "Lead Auditor ISO 27001 & Data Protection Officer, IsoSecure",
           "bio": "Robert Bals onderscheidt zich door het combineren van diepgaande technische expertise met een pragmatische, jargonvrije en praktische mindset. Hij biedt op maat gemaakte ISMS-implementaties, audits voor ISO 27001- en TUV Nord-certificering en GDPR-oplossingen. Door schaalbare, klantgerichte resultaten te leveren helpt hij ICT-, software- en zorgorganisaties hun informatiebeveiliging en compliance te versterken."
         },
         {
+          "role": "Cybersecurity Director, PLTFRM",
           "bio": "Lars de Jong gelooft dat cybersecurity meer is dan techniek, het is het vermogen van een organisatie om in controle te blijven, wat er ook gebeurt. Als Regisseur Cybersecurity begeleidt hij organisaties bij het opzetten van een effectieve cyberweerbaarheid strategie en het behalen van certificeringen zoals ISO27001 en NEN7510. Vanuit een ecosysteem van gespecialiseerde partners verbindt hij governance, strategie en menselijk gedrag. Zijn missie: vertrouwen tussen mensen, systemen en processen creëren want echte cyberweerbaarheid begint bij helderheid en een verhaal dat voor iedereen begrijpelijk is."
         },
         {
+          "role": "Independent Communications & Media Relations Advisor",
           "bio": "Alexandra Roger-Machart is gepassioneerd over technologie en AI-gedreven transformatie; zij adviseert start-ups en scale-ups bij het versterken van hun externe profiel, het betrekken van stakeholders en het verbeteren van hun corporate reporting via een interdisciplinair perspectief van strategisch storytelling en regelgevingsexpertise."
         }
       ]
