@@ -11,12 +11,15 @@ import {
   grantAnalyticsConsent,
 } from '@/lib/analytics/ga4'
 import { Cookie, Settings, Shield, X } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import { getCookie, setCookie } from 'typescript-cookie'
 
 type CookieOption = {
-  title: string
-  desc: string
+  /** Stored in the consent cookie and read by analytics and the embeds; never translate or rename it. */
+  key: string
+  /** Section under `cookies.types` in the translation files. */
+  messageKey: 'functional' | 'analytical'
 }
 
 type CookieBannerProps = {
@@ -27,14 +30,8 @@ type CookieBannerProps = {
 }
 
 const cookies: CookieOption[] = [
-  {
-    title: 'Functional Cookies',
-    desc: 'These cookies allow external content, such as YouTube and GoogleMaps, to be displayed on our website. Without them, certain components will not be available.',
-  },
-  {
-    title: 'Analytical Cookies',
-    desc: 'These cookies help us understand how visitors use the website. They collect anonymous data to improve site performance and content.',
-  },
+  { key: 'functional-cookies', messageKey: 'functional' },
+  { key: 'analytical-cookies', messageKey: 'analytical' },
 ]
 
 const COOKIE_CONSENT = 'user-preferences'
@@ -60,6 +57,7 @@ export function CookieBanner({
   onClose,
 }: CookieBannerProps) {
   const router = useRouter()
+  const t = useTranslations('cookies')
   const { locale } = useLocale()
   const prefix = locale === 'en' ? '' : `/${locale}`
 
@@ -91,13 +89,7 @@ export function CookieBanner({
     const consentCookie = preferences ? getCookie(COOKIE_CONSENT) : undefined
     if (consentCookie) {
       const userPreferences = JSON.parse(consentCookie)
-      setChoices(
-        cookies.map(
-          (cookie) =>
-            userPreferences[cookie.title.toLowerCase().replace(' ', '-')] ??
-            false
-        )
-      )
+      setChoices(cookies.map((cookie) => userPreferences[cookie.key] ?? false))
       setShowPreferences(true)
     }
   }
@@ -113,7 +105,7 @@ export function CookieBanner({
   const saveConsent = (accepted: boolean[]) => {
     const consent = cookies.reduce(
       (acc: Record<string, boolean>, cookie: CookieOption, index: number) => {
-        acc[cookie.title.toLowerCase().replace(' ', '-')] = accepted[index]
+        acc[cookie.key] = accepted[index]
         return acc
       },
       {}
@@ -163,36 +155,33 @@ export function CookieBanner({
                   <Cookie className="size-6 text-white" />
                 </div>
                 <div className="flex grow flex-col gap-4">
-                  <p className="text-xl">We Value Your Privacy</p>
+                  <p className="text-xl">{t('banner.title')}</p>
                   <ScrollArea className="max-h-48 md:max-h-none">
                     <p className="text-white/70">
-                      We use two third-party services: Google Maps and YouTube
-                      to enhance your browser experience. These services may set
-                      cookies and process your data. By clicking 'Accept All',
-                      you consent to our use of cookies; otherwise, content from
-                      these two services will not be accessible unless you later
-                      decide to modify your preferences. You can customize your
-                      preferences or learn more in our{' '}
-                      <button
-                        className="cursor-pointer font-semibold text-lime-500 hover:underline"
-                        onClick={() => {
-                          handleReject()
-                          router.push(`${prefix}/legal/cookie_policy`)
-                        }}
-                      >
-                        Cookie Policy
-                      </button>
-                      . For further reference, you can also consult our{' '}
-                      <button
-                        className="cursor-pointer font-semibold text-lime-500 hover:underline"
-                        onClick={() => {
-                          handleReject()
-                          router.push(`${prefix}/legal/privacy_policy`)
-                        }}
-                      >
-                        Privacy Policy
-                      </button>
-                      .
+                      {t.rich('banner.description', {
+                        cookiePolicy: (chunks) => (
+                          <button
+                            className="cursor-pointer font-semibold text-lime-500 hover:underline"
+                            onClick={() => {
+                              handleReject()
+                              router.push(`${prefix}/legal/cookie_policy`)
+                            }}
+                          >
+                            {chunks}
+                          </button>
+                        ),
+                        privacyPolicy: (chunks) => (
+                          <button
+                            className="cursor-pointer font-semibold text-lime-500 hover:underline"
+                            onClick={() => {
+                              handleReject()
+                              router.push(`${prefix}/legal/privacy_policy`)
+                            }}
+                          >
+                            {chunks}
+                          </button>
+                        ),
+                      })}
                     </p>
                   </ScrollArea>
                 </div>
@@ -208,20 +197,20 @@ export function CookieBanner({
                   className="cursor-pointer rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:w-fit"
                   onClick={handleAccept}
                 >
-                  Accept All
+                  {t('actions.accept_all')}
                 </button>
                 <button
                   className="cursor-pointer rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:w-fit"
                   onClick={handleReject}
                 >
-                  Reject All
+                  {t('actions.reject_all')}
                 </button>
                 <button
                   className="group flex cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full border border-white/20 px-4 py-2 font-semibold transition-all duration-300 hover:bg-white/20 md:w-fit"
                   onClick={() => setShowPreferences(true)}
                 >
                   <Settings className="size-4 transition-all duration-300 group-hover:rotate-45" />
-                  Customize
+                  {t('actions.customize')}
                 </button>
               </div>
             </>
@@ -233,10 +222,9 @@ export function CookieBanner({
                     <Settings className="size-6 text-white" />
                   </div>
                   <div className="flex grow flex-col gap-4">
-                    <p className="text-xl">Cookie Preferences</p>
+                    <p className="text-xl">{t('preferences.title')}</p>
                     <p className="text-white/70">
-                      Manage your cookie settings. You can enable or disable
-                      different types of cookies below.
+                      {t('preferences.description')}
                     </p>
                   </div>
                   <button
@@ -250,7 +238,9 @@ export function CookieBanner({
                   <Card className="gap-4 p-4 hover:bg-white/10">
                     <div className="flex flex-row items-center-safe gap-2">
                       <Shield className="size-5 text-lime-500" />
-                      <span className="font-semibold">Essential Cookies</span>
+                      <span className="font-semibold">
+                        {t('types.essential.title')}
+                      </span>
                       <Switch
                         className="tran ml-auto data-[state=checked]:bg-lime-500 data-[state=unchecked]:bg-gray-300"
                         checked
@@ -258,21 +248,24 @@ export function CookieBanner({
                       />
                     </div>
                     <p className="text-white/70">
-                      Required for the website to function. These cannot be
-                      disabled.
+                      {t('types.essential.description')}
                     </p>
                   </Card>
                   {cookies.map((cookie: CookieOption, index: number) => (
                     <Card className="gap-4 p-4" key={index}>
                       <div className="flex flex-row items-center-safe gap-2">
-                        <span className="font-semibold">{cookie.title}</span>
+                        <span className="font-semibold">
+                          {t(`types.${cookie.messageKey}.title`)}
+                        </span>
                         <Switch
                           className="ml-auto data-[state=checked]:bg-lime-500 data-[state=unchecked]:bg-gray-300"
                           onCheckedChange={() => setChoiceAt(index)}
                           checked={choices[index]}
                         />
                       </div>
-                      <p className="text-white/70">{cookie.desc}</p>
+                      <p className="text-white/70">
+                        {t(`types.${cookie.messageKey}.description`)}
+                      </p>
                     </Card>
                   ))}
                 </div>
@@ -281,25 +274,25 @@ export function CookieBanner({
                     className="cursor-pointer rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:w-fit"
                     onClick={handleAccept}
                   >
-                    Accept All
+                    {t('actions.accept_all')}
                   </button>
                   <button
                     className="cursor-pointer rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:w-fit"
                     onClick={handleReject}
                   >
-                    Reject All
+                    {t('actions.reject_all')}
                   </button>
                   <button
                     className="cursor-pointer rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lime-500/50 md:ml-auto md:w-fit"
                     onClick={handleSave}
                   >
-                    Save
+                    {t('actions.save')}
                   </button>
                   <button
                     className="group flex cursor-pointer flex-row items-center-safe justify-center-safe gap-2 rounded-full border border-white/20 px-4 py-2 font-semibold transition-all duration-300 hover:bg-white/20 md:w-fit"
                     onClick={() => setShowPreferences(false)}
                   >
-                    Back
+                    {t('actions.back')}
                   </button>
                 </div>
               </div>

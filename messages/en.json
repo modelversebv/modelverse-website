@@ -762,5 +762,41 @@
       "button": "Back to Home"
     },
     "back": "Back to Home"
+  },
+  "cookies": {
+    "banner": {
+      "title": "We Value Your Privacy",
+      "description": "We use two third-party services: Google Maps and YouTube to enhance your browser experience. These services may set cookies and process your data. By clicking 'Accept All', you consent to our use of cookies; otherwise, content from these two services will not be accessible unless you later decide to modify your preferences. You can customize your preferences or learn more in our <cookiePolicy>Cookie Policy</cookiePolicy>. For further reference, you can also consult our <privacyPolicy>Privacy Policy</privacyPolicy>."
+    },
+    "preferences": {
+      "title": "Cookie Preferences",
+      "description": "Manage your cookie settings. You can enable or disable different types of cookies below."
+    },
+    "actions": {
+      "accept_all": "Accept All",
+      "reject_all": "Reject All",
+      "customize": "Customize",
+      "save": "Save",
+      "back": "Back"
+    },
+    "types": {
+      "essential": {
+        "title": "Essential Cookies",
+        "description": "Required for the website to function. These cannot be disabled."
+      },
+      "functional": {
+        "title": "Functional Cookies",
+        "description": "These cookies allow external content, such as YouTube and GoogleMaps, to be displayed on our website. Without them, certain components will not be available."
+      },
+      "analytical": {
+        "title": "Analytical Cookies",
+        "description": "These cookies help us understand how visitors use the website. They collect anonymous data to improve site performance and content."
+      }
+    },
+    "embed": {
+      "blocked": "{service} content blocked",
+      "consent_required": "This content is provided by {service} and requires your consent",
+      "accept": "Accept"
+    }
   }
 }

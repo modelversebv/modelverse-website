@@ -762,5 +762,41 @@
       "button": "Terug naar home"
     },
     "back": "Terug naar home"
+  },
+  "cookies": {
+    "banner": {
+      "title": "Wij hechten waarde aan je privacy",
+      "description": "We gebruiken twee diensten van derden, Google Maps en YouTube, om je browserervaring te verbeteren. Deze diensten kunnen cookies plaatsen en je gegevens verwerken. Door op 'Alles accepteren' te klikken, ga je akkoord met ons gebruik van cookies; anders is de inhoud van deze twee diensten niet beschikbaar, tenzij je later je voorkeuren aanpast. Je kunt je voorkeuren aanpassen of meer lezen in ons <cookiePolicy>Cookiebeleid</cookiePolicy>. Voor meer informatie kun je ook onze <privacyPolicy>Privacyverklaring</privacyPolicy> raadplegen."
+    },
+    "preferences": {
+      "title": "Cookievoorkeuren",
+      "description": "Beheer je cookie-instellingen. Hieronder kun je verschillende soorten cookies in- of uitschakelen."
+    },
+    "actions": {
+      "accept_all": "Alles accepteren",
+      "reject_all": "Alles weigeren",
+      "customize": "Aanpassen",
+      "save": "Opslaan",
+      "back": "Terug"
+    },
+    "types": {
+      "essential": {
+        "title": "Essentiële cookies",
+        "description": "Nodig om de website te laten werken. Deze kunnen niet worden uitgeschakeld."
+      },
+      "functional": {
+        "title": "Functionele cookies",
+        "description": "Met deze cookies kan externe inhoud, zoals YouTube en Google Maps, op onze website worden getoond. Zonder deze cookies zijn bepaalde onderdelen niet beschikbaar."
+      },
+      "analytical": {
+        "title": "Analytische cookies",
+        "description": "Deze cookies helpen ons te begrijpen hoe bezoekers de website gebruiken. Ze verzamelen anonieme gegevens om de prestaties en inhoud van de website te verbeteren."
+      }
+    },
+    "embed": {
+      "blocked": "Inhoud van {service} geblokkeerd",
+      "consent_required": "Deze inhoud wordt aangeboden door {service} en vereist je toestemming",
+      "accept": "Accepteren"
+    }
   }
 }

@@ -762,5 +762,41 @@
       "button": "Vuelve al inicio"
     },
     "back": "Vuelve al inicio"
+  },
+  "cookies": {
+    "banner": {
+      "title": "Valoramos tu privacidad",
+      "description": "Utilizamos dos servicios de terceros, Google Maps y YouTube, para mejorar tu experiencia de navegación. Estos servicios pueden instalar cookies y tratar tus datos. Al hacer clic en 'Aceptar todo', aceptas nuestro uso de cookies; de lo contrario, el contenido de estos dos servicios no estará disponible, a menos que más adelante cambies tus preferencias. Puedes personalizar tus preferencias o saber más en nuestra <cookiePolicy>Política de cookies</cookiePolicy>. Para más información, también puedes consultar nuestra <privacyPolicy>Política de privacidad</privacyPolicy>."
+    },
+    "preferences": {
+      "title": "Preferencias de cookies",
+      "description": "Gestiona tu configuración de cookies. A continuación puedes activar o desactivar los distintos tipos de cookies."
+    },
+    "actions": {
+      "accept_all": "Aceptar todo",
+      "reject_all": "Rechazar todo",
+      "customize": "Personalizar",
+      "save": "Guardar",
+      "back": "Volver"
+    },
+    "types": {
+      "essential": {
+        "title": "Cookies esenciales",
+        "description": "Necesarias para que el sitio web funcione. No se pueden desactivar."
+      },
+      "functional": {
+        "title": "Cookies funcionales",
+        "description": "Estas cookies permiten mostrar contenido externo, como YouTube y Google Maps, en nuestro sitio web. Sin ellas, algunos componentes no estarán disponibles."
+      },
+      "analytical": {
+        "title": "Cookies analíticas",
+        "description": "Estas cookies nos ayudan a entender cómo los visitantes usan el sitio web. Recopilan datos anónimos para mejorar el rendimiento y el contenido del sitio."
+      }
+    },
+    "embed": {
+      "blocked": "Contenido de {service} bloqueado",
+      "consent_required": "Este contenido lo proporciona {service} y requiere tu consentimiento",
+      "accept": "Aceptar"
+    }
   }
 }
