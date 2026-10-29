@@ -6,15 +6,12 @@ import PrivacyPolicy, {
 import TermsOfService, {
   metadata as termsMeta,
 } from '@/legal/terms_of_service.mdx'
+import type { Locale } from '@/lib/locales'
+import { messages } from '@/lib/messages'
 import { buildAlternates } from '@/lib/metadata'
 import type { MDXContent } from 'mdx/types'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-
-import enMessages from '../../../../../messages/en.json'
-import nlMessages from '../../../../../messages/nl.json'
-
-const messages = { en: enMessages, nl: nlMessages }
 
 type LegalMeta = {
   title: string
@@ -40,7 +37,7 @@ export async function generateMetadata({
   const { locale, slug } = await params
   const page = pages[slug]
   if (!page) return {}
-  const t = messages[locale as keyof typeof messages] ?? enMessages
+  const t = messages[locale as Locale] ?? messages.en
   const lm = t.legal.metadata
   return {
     title: `${page.meta.title} | Modelverse`,
