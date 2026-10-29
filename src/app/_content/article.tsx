@@ -1,9 +1,6 @@
 'use client'
 
 import { useRef } from 'react'
-import { useTranslations } from 'next-intl'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 
 import { Layout } from '@/components/layout/page-layout'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
@@ -14,11 +11,13 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
-import { ArrowLeft, BookOpen, Calendar, User } from 'lucide-react'
-
+import { useLocale } from '@/context/locale-context'
 import type { MetaData } from '@/lib/articles'
 import { formatDate } from '@/lib/format-date'
-import { useLocale } from '@/providers/IntlProvider'
+import { ArrowLeft, BookOpen, Calendar, User } from 'lucide-react'
+import { useTranslations } from 'next-intl'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 type ArticleContentProps = {
   metadata: MetaData
@@ -26,7 +25,11 @@ type ArticleContentProps = {
   children: React.ReactNode
 }
 
-export function ArticleContent({ metadata, wordCount, children }: ArticleContentProps) {
+export function ArticleContent({
+  metadata,
+  wordCount,
+  children,
+}: ArticleContentProps) {
   const layoutRef = useRef<HTMLDivElement>(null)
   const router = useRouter()
   const t = useTranslations()
@@ -66,7 +69,11 @@ export function ArticleContent({ metadata, wordCount, children }: ArticleContent
       </div>
 
       <div className="relative h-[500px] w-full overflow-hidden bg-black">
-        <img src={metadata.image} alt={metadata.title} className="size-full object-cover" />
+        <img
+          src={metadata.image}
+          alt={metadata.title}
+          className="size-full object-cover"
+        />
         <div className="absolute inset-0 size-full bg-linear-to-t from-gray-900 via-gray-900/50 to-gray-900">
           <div className="flex size-full items-end-safe justify-center-safe px-4 py-16 md:container md:mx-auto">
             <div className="mx-auto flex w-full max-w-4xl flex-col gap-4 md:gap-8">

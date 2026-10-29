@@ -33,7 +33,7 @@ export function YouTubeEmbed({
   const grantConsent = () => {
     const consentCookie = getCookie(COOKIE_CONSENT)
     if (!consentCookie) return false
-    let userPreferences = JSON.parse(consentCookie)
+    const userPreferences = JSON.parse(consentCookie)
     userPreferences['functional-cookies'] = true
     setCookie(COOKIE_CONSENT, JSON.stringify(userPreferences), { expires: 365 })
     window.dispatchEvent(new CustomEvent(CONSENT_UPDATE_EVENT))

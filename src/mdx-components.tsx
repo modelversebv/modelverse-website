@@ -9,15 +9,10 @@ const slugify = (text: string) =>
     .replace(/[^\w]+/g, '-')
     .replace(/(^-|-$)/g, '')
 
+/** Builds a heading component that gets an `id` from its text, so articles can link to sections. */
 const Heading =
-  (Tag: keyof React.JSX.IntrinsicElements) =>
-  ({
-    children,
-    ...props
-  }: {
-    children?: React.ReactNode
-    [key: string]: any
-  }) => {
+  (Tag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6') =>
+  ({ children, ...props }: React.ComponentPropsWithoutRef<'h1'>) => {
     const text = typeof children === 'string' ? children : ''
     const id = slugify(text)
     return (
@@ -27,6 +22,7 @@ const Heading =
     )
   }
 
+/** Next.js MDX hook: the components MDX content renders with (anchored headings, YouTube embeds). */
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     YouTubeEmbed,

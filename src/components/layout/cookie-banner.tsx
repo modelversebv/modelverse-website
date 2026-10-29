@@ -1,10 +1,11 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useSyncExternalStore } from 'react'
 
 import { Card } from '@/components/common/card'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Switch } from '@/components/ui/switch'
+import { useLocale } from '@/context/locale-context'
 import {
   denyAnalyticsConsent,
   grantAnalyticsConsent,
@@ -12,8 +13,6 @@ import {
 import { Cookie, Settings, Shield, X } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { getCookie, setCookie } from 'typescript-cookie'
-
-import { useLocale } from '@/providers/IntlProvider'
 
 type CookieOption = {
   title: string
@@ -27,6 +26,33 @@ type CookieBannerProps = {
   onClose?: () => void
 }
 
+const cookies: CookieOption[] = [
+  {
+    title: 'Functional Cookies',
+    desc: 'These cookies allow external content, such as YouTube and GoogleMaps, to be displayed on our website. Without them, certain components will not be available.',
+  },
+  {
+    title: 'Analytical Cookies',
+    desc: 'These cookies help us understand how visitors use the website. They collect anonymous data to improve site performance and content.',
+  },
+]
+
+const COOKIE_CONSENT = 'user-preferences'
+const ANALYTICAL_COOKIE_KEY = 'analytical-cookies'
+const CONSENT_UPDATE_EVENT = 'consentUpdate'
+
+/** Subscribes to consent changes, which `saveConsent` announces with a window event. */
+function subscribeToConsent(onChange: () => void) {
+  window.addEventListener(CONSENT_UPDATE_EVENT, onChange)
+  return () => window.removeEventListener(CONSENT_UPDATE_EVENT, onChange)
+}
+
+/** Whether the visitor has saved a consent choice in the consent cookie. */
+function hasConsentCookie() {
+  return Boolean(getCookie(COOKIE_CONSENT))
+}
+
+/** Consent banner and preferences dialog; shown until the visitor saves a choice, or when reopened from the footer. */
 export function CookieBanner({
   preferences,
   setPreferences,
@@ -37,27 +63,13 @@ export function CookieBanner({
   const { locale } = useLocale()
   const prefix = locale === 'en' ? '' : `/${locale}`
 
-  const cookies: CookieOption[] = [
-    {
-      title: 'Functional Cookies',
-      desc: 'These cookies allow external content, such as YouTube and GoogleMaps, to be displayed on our website. Without them, certain components will not be available.',
-    },
-    {
-      title: 'Analytical Cookies',
-      desc: 'These cookies help us understand how visitors use the website. They collect anonymous data to improve site performance and content.',
-    },
-  ]
-
-  const COOKIE_CONSENT = 'user-preferences'
-  const ANALYTICAL_COOKIE_KEY = 'analytical-cookies'
-  const CONSENT_UPDATE_EVENT = 'consentUpdate'
-
-  const [showBanner, setShowBanner] = useState(false)
-
-  useEffect(() => {
-    const consentCookie = getCookie(COOKIE_CONSENT)
-    setShowBanner(!consentCookie)
-  }, [])
+  // Treated as consented in the static HTML, so the banner only appears after hydration
+  const hasConsent = useSyncExternalStore(
+    subscribeToConsent,
+    hasConsentCookie,
+    () => true
+  )
+  const showBanner = !hasConsent || preferences
 
   const [showPreferences, setShowPreferences] = useState(preferences)
 
@@ -70,6 +82,24 @@ export function CookieBanner({
       next[index] = typeof value === 'boolean' ? value : !next[index]
       return next
     })
+  }
+
+  const [prevPreferences, setPrevPreferences] = useState(preferences)
+  if (preferences !== prevPreferences) {
+    setPrevPreferences(preferences)
+    // Reopened from the footer: start from the visitor's saved choices
+    const consentCookie = preferences ? getCookie(COOKIE_CONSENT) : undefined
+    if (consentCookie) {
+      const userPreferences = JSON.parse(consentCookie)
+      setChoices(
+        cookies.map(
+          (cookie) =>
+            userPreferences[cookie.title.toLowerCase().replace(' ', '-')] ??
+            false
+        )
+      )
+      setShowPreferences(true)
+    }
   }
 
   useEffect(() => {
@@ -89,7 +119,6 @@ export function CookieBanner({
       {}
     )
     setCookie(COOKIE_CONSENT, JSON.stringify(consent), { expires: 365 })
-    setShowBanner(false)
     window.dispatchEvent(new CustomEvent(CONSENT_UPDATE_EVENT))
     setPreferences(false)
     return consent
@@ -117,20 +146,6 @@ export function CookieBanner({
     saveConsent(newChoices)
     denyAnalyticsConsent()
   }
-
-  useEffect(() => {
-    if (!preferences) return
-    const consentCookie = getCookie(COOKIE_CONSENT)
-    if (!consentCookie) return
-    const userPreferences = JSON.parse(consentCookie)
-    const newChoices = cookies.map((cookie: CookieOption) => {
-      const key = cookie.title.toLowerCase().replace(' ', '-')
-      return userPreferences[key] ?? false
-    })
-    setChoices(newChoices)
-    setShowBanner(true)
-    setShowPreferences(true)
-  }, [preferences])
 
   return (
     <div

@@ -11,11 +11,11 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
+import { useLocale } from '@/context/locale-context'
 import { ArrowLeft, FileText } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { useLocale } from '@/providers/IntlProvider'
 
 type LegalMeta = {
   title: string

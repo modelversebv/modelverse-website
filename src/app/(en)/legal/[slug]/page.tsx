@@ -1,10 +1,16 @@
 import { LegalContent } from '@/app/_content/legal'
 import CookiePolicy, { metadata as cookieMeta } from '@/legal/cookie_policy.mdx'
-import PrivacyPolicy, { metadata as privacyMeta } from '@/legal/privacy_policy.mdx'
-import TermsOfService, { metadata as termsMeta } from '@/legal/terms_of_service.mdx'
+import PrivacyPolicy, {
+  metadata as privacyMeta,
+} from '@/legal/privacy_policy.mdx'
+import TermsOfService, {
+  metadata as termsMeta,
+} from '@/legal/terms_of_service.mdx'
 import { buildAlternates } from '@/lib/metadata'
+import type { MDXContent } from 'mdx/types'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+
 import en from '../../../../../messages/en.json'
 
 type LegalMeta = {
@@ -13,10 +19,7 @@ type LegalMeta = {
   effective_date: string
 }
 
-const pages: Record<
-  string,
-  { Component: React.ComponentType<any>; meta: LegalMeta }
-> = {
+const pages: Record<string, { Component: MDXContent; meta: LegalMeta }> = {
   cookie_policy: { Component: CookiePolicy, meta: cookieMeta as LegalMeta },
   privacy_policy: { Component: PrivacyPolicy, meta: privacyMeta as LegalMeta },
   terms_of_service: { Component: TermsOfService, meta: termsMeta as LegalMeta },

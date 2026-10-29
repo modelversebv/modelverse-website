@@ -20,6 +20,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Lint
+        run: npm run lint
+
       - name: Set Build ENV variable
         run: echo "NEXT_PUBLIC_BUILD_SHA=$(git rev-parse --short=7 HEAD)" >> $GITHUB_ENV
 

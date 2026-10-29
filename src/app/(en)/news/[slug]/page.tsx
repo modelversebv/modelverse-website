@@ -1,6 +1,6 @@
 import { ArticleContent } from '@/app/_content/article'
 import { computeWordCount, getArticleSlugs } from '@/lib/articles'
-import type { MetaData } from '@/lib/articles'
+import type { ArticleModule, MetaData } from '@/lib/articles'
 import { buildAlternates, localeUrl } from '@/lib/metadata'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
@@ -38,7 +38,7 @@ export default async function Page({
 }) {
   const { slug } = await params
 
-  let mod: any
+  let mod: ArticleModule
   try {
     mod = await import(`@/articles/${slug}.mdx`)
   } catch {
@@ -71,9 +71,24 @@ export default async function Page({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: localeUrl('en', '') },
-      { '@type': 'ListItem', position: 2, name: 'News', item: localeUrl('en', '/news') },
-      { '@type': 'ListItem', position: 3, name: meta.title, item: localeUrl('en', `/news/${slug}`) },
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: localeUrl('en', ''),
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'News',
+        item: localeUrl('en', '/news'),
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: meta.title,
+        item: localeUrl('en', `/news/${slug}`),
+      },
     ],
   }
 

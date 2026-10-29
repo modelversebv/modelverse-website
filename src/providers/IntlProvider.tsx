@@ -1,11 +1,10 @@
 'use client'
 
-import { createContext, useContext } from 'react'
-
-import { NextIntlClientProvider } from 'next-intl'
-
+import { LocaleContext } from '@/context/locale-context'
 import { useGaTracker } from '@/lib/analytics/use-ga-tracker'
 import type { Locale } from '@/lib/locales'
+import { NextIntlClientProvider } from 'next-intl'
+
 import enMessages from '../../messages/en.json'
 import nlMessages from '../../messages/nl.json'
 
@@ -17,14 +16,7 @@ const messages: Record<Locale, typeof enMessages> = {
   nl: nlMessages,
 }
 
-type LocaleContextValue = {
-  locale: Locale
-}
-
-const LocaleContext = createContext<LocaleContextValue>({ locale: 'en' })
-
-export const useLocale = () => useContext(LocaleContext)
-
+/** Provides the locale and its translated messages to the client components of a route. */
 export function IntlProvider({
   locale,
   children,
