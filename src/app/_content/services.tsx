@@ -150,6 +150,7 @@ function ServicesHero() {
       </div>
       <h1 className="text-5xl sm:text-6xl">
         {t('services.hero.title_line1')}
+        <br />
         <span className="bg-linear-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
           {t('services.hero.title_line2')}
         </span>

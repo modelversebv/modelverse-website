@@ -6,6 +6,7 @@ import type { Locale } from '@/lib/locales'
 import { NextIntlClientProvider } from 'next-intl'
 
 import enMessages from '../../messages/en.json'
+import esMessages from '../../messages/es.json'
 import nlMessages from '../../messages/nl.json'
 
 export type { Locale } from '@/lib/locales'
@@ -14,6 +15,7 @@ export { SUPPORTED_LOCALES } from '@/lib/locales'
 const messages: Record<Locale, typeof enMessages> = {
   en: enMessages,
   nl: nlMessages,
+  es: esMessages,
 }
 
 /** Provides the locale and its translated messages to the client components of a route. */
