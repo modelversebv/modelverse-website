@@ -1,7 +1,8 @@
 'use client'
 
+import { GithubIcon, LinkedinIcon } from '@/components/common/brand-icons'
 import { useLocale } from '@/providers/IntlProvider'
-import { Github, Linkedin, Mail } from 'lucide-react'
+import { Mail } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 
@@ -57,7 +58,7 @@ export function Footer({ onManagePrivacy }: FooterProps) {
                 href="https://www.linkedin.com/company/modelverse/"
                 className="flex w-fit items-center justify-center rounded-xl bg-slate-800 p-2 transition-colors duration-300 hover:bg-slate-700"
               >
-                <Linkedin className="size-6" />
+                <LinkedinIcon className="size-6" />
               </a>
               <Link
                 href={`${prefix}/contact`}
@@ -69,7 +70,7 @@ export function Footer({ onManagePrivacy }: FooterProps) {
                 href="https://github.com/modelversebv/modelverse-website/?tab=readme-ov-file#readme"
                 className="flex w-fit items-center justify-center rounded-xl bg-slate-800 p-2 transition-colors duration-300 hover:bg-slate-700"
               >
-                <Github className="size-6" />
+                <GithubIcon className="size-6" />
               </a>
             </div>
           </div>

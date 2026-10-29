@@ -2,6 +2,7 @@
 
 import { Fragment, useRef } from 'react'
 
+import { LinkedinIcon } from '@/components/common/brand-icons'
 import { Card } from '@/components/common/card'
 import { Hero } from '@/components/common/hero'
 import { Layout } from '@/components/layout/page-layout'
@@ -13,15 +14,7 @@ import {
   slideInRight,
   staggerContainer,
 } from '@/lib/animation-variants'
-import {
-  Book,
-  Eye,
-  LinkedinIcon,
-  Mail,
-  PencilLine,
-  Shield,
-  User,
-} from 'lucide-react'
+import { Book, Eye, Mail, PencilLine, Shield, User } from 'lucide-react'
 import { motion, useInView } from 'motion/react'
 import { useTranslations } from 'next-intl'
 
