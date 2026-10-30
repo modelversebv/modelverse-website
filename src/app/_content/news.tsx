@@ -1,11 +1,12 @@
 'use client'
 
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useMemo, useRef, useState, useSyncExternalStore } from 'react'
 
 import { Card } from '@/components/common/card'
 import { Hero } from '@/components/common/hero'
 import { Layout } from '@/components/layout/page-layout'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { useLocale } from '@/context/locale-context'
 import {
   fadeInUp,
   scaleIn,
@@ -27,7 +28,6 @@ import { AnimatePresence, motion, useInView } from 'motion/react'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { useLocale } from '@/providers/IntlProvider'
 
 // --- Sub-components ---
 
@@ -187,6 +187,22 @@ function RecentPostItem({ post }: { post: BlogPost }) {
   )
 }
 
+// --- Articles per page ---
+
+/** Subscribes to window resizes, so the articles-per-page value follows the viewport. */
+function subscribeToResize(onChange: () => void) {
+  window.addEventListener('resize', onChange)
+  return () => window.removeEventListener('resize', onChange)
+}
+
+/** Number of recent articles per page for the current viewport width. */
+function getArticlesPerPage() {
+  const width = window.innerWidth
+  if (width >= 1280) return 4
+  if (width >= 1024) return 3
+  return 2
+}
+
 // --- Page ---
 
 export function NewsContent({ blogPosts }: { blogPosts: BlogPost[] }) {
@@ -196,8 +212,20 @@ export function NewsContent({ blogPosts }: { blogPosts: BlogPost[] }) {
   const featuredBlogPosts = blogPosts.filter((p) => p.metadata.featured)
   const recentBlogPosts = blogPosts.filter((p) => !p.metadata.featured)
 
+  // 3 in the static HTML; follows the viewport width once hydrated
+  const articlesPerPage = useSyncExternalStore(
+    subscribeToResize,
+    getArticlesPerPage,
+    () => 3
+  )
+
   const [currentPage, setCurrentPage] = useState(0)
-  const [articlesPerPage, setArticlesPerPage] = useState(3)
+  const [pagedBy, setPagedBy] = useState(articlesPerPage)
+  if (pagedBy !== articlesPerPage) {
+    // Back to the first page when the page size changes
+    setPagedBy(articlesPerPage)
+    setCurrentPage(0)
+  }
 
   const blogPostPages = useMemo(() => {
     const pages: BlogPost[][] = []
@@ -216,35 +244,13 @@ export function NewsContent({ blogPosts }: { blogPosts: BlogPost[] }) {
     const totalPages = blogPostPages.length
     if (totalPages <= 1) return [0]
 
-    let range = [0]
+    const range = [0]
     for (let i = 1; i < totalPages - 1; i++) {
       range.push(i < currentPage - 1 || i > currentPage + 1 ? -1 : i)
     }
     range.push(totalPages - 1)
     return [...new Set(range)]
   }
-
-  useEffect(() => {
-    const updateCount = () => {
-      const width = window.innerWidth
-      if (width >= 1280) setArticlesPerPage(4)
-      else if (width >= 1024) setArticlesPerPage(3)
-      else setArticlesPerPage(2)
-    }
-    updateCount()
-    window.addEventListener('resize', updateCount)
-    return () => window.removeEventListener('resize', updateCount)
-  }, [])
-
-  useEffect(() => {
-    setCurrentPage(0)
-  }, [articlesPerPage])
-
-  useEffect(() => {
-    if (currentPage >= blogPostPages.length && blogPostPages.length > 0) {
-      setCurrentPage(blogPostPages.length - 1)
-    }
-  }, [currentPage, blogPostPages.length])
 
   const recentArticlesRef = useRef<HTMLDivElement>(null)
   const recentArticlesInView = useInView(recentArticlesRef, {
@@ -256,8 +262,8 @@ export function NewsContent({ blogPosts }: { blogPosts: BlogPost[] }) {
     const target = recentArticlesRef.current
     if (!target) return
     const offset = -96
-    if ((window as any).lenis) {
-      ;(window as any).lenis.scrollTo(target, { offset, immediate: false })
+    if (window.lenisInstance) {
+      window.lenisInstance.scrollTo(target, { offset, immediate: false })
       return
     }
     const container = layoutRef.current

@@ -1,8 +1,8 @@
-import { getAllArticles } from '@/lib/articles'
-import { SUPPORTED_LOCALES } from '@/lib/locales'
 import { metadata as cookieMeta } from '@/legal/cookie_policy.mdx'
 import { metadata as privacyMeta } from '@/legal/privacy_policy.mdx'
 import { metadata as termsMeta } from '@/legal/terms_of_service.mdx'
+import { getAllArticles } from '@/lib/articles'
+import { SUPPORTED_LOCALES } from '@/lib/locales'
 import type { MetadataRoute } from 'next'
 
 export const dynamic = 'force-static'
@@ -20,9 +20,9 @@ const STATIC_PAGES = [
 ]
 
 const LEGAL_PAGES: { slug: string; last_updated: string }[] = [
-  { slug: 'privacy_policy', last_updated: (privacyMeta as any).last_updated },
-  { slug: 'terms_of_service', last_updated: (termsMeta as any).last_updated },
-  { slug: 'cookie_policy', last_updated: (cookieMeta as any).last_updated },
+  { slug: 'privacy_policy', last_updated: privacyMeta.last_updated as string },
+  { slug: 'terms_of_service', last_updated: termsMeta.last_updated as string },
+  { slug: 'cookie_policy', last_updated: cookieMeta.last_updated as string },
 ]
 
 function localeUrl(locale: string, path: string) {

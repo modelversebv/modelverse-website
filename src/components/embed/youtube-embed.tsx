@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 
 import { cn } from '@/lib/utils'
+import { useTranslations } from 'next-intl'
 import { getCookie, setCookie } from 'typescript-cookie'
 
 type YouTubeEmbedProps = {
@@ -18,6 +19,7 @@ export function YouTubeEmbed({
   className,
   blog,
 }: YouTubeEmbedProps) {
+  const t = useTranslations('cookies.embed')
   const COOKIE_CONSENT = 'user-preferences'
   const CONSENT_UPDATE_EVENT = 'consentUpdate'
 
@@ -33,7 +35,7 @@ export function YouTubeEmbed({
   const grantConsent = () => {
     const consentCookie = getCookie(COOKIE_CONSENT)
     if (!consentCookie) return false
-    let userPreferences = JSON.parse(consentCookie)
+    const userPreferences = JSON.parse(consentCookie)
     userPreferences['functional-cookies'] = true
     setCookie(COOKIE_CONSENT, JSON.stringify(userPreferences), { expires: 365 })
     window.dispatchEvent(new CustomEvent(CONSENT_UPDATE_EVENT))
@@ -84,16 +86,16 @@ export function YouTubeEmbed({
             />
           </svg>
           <p className="text-center text-base md:text-lg lg:text-xl 2xl:text-2xl">
-            YouTube content blocked
+            {t('blocked', { service: 'YouTube' })}
           </p>
           <p className="text-center text-xs text-white/70 md:text-sm lg:text-base 2xl:text-lg">
-            This content is provided by YouTube and requires your consent
+            {t('consent_required', { service: 'YouTube' })}
           </p>
           <button
             className="cursor-pointer rounded-full bg-linear-to-r from-lime-500 to-teal-500 px-4 py-2 font-semibold text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-lime-500/50"
             onClick={grantConsent}
           >
-            Accept
+            {t('accept')}
           </button>
         </div>
       )}

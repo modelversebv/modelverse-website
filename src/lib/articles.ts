@@ -1,4 +1,5 @@
 import fs from 'fs'
+import type { MDXContent } from 'mdx/types'
 import path from 'path'
 
 export type MetaData = {
@@ -12,6 +13,12 @@ export type MetaData = {
   locale: string
   author: string
   portrait: string
+}
+
+/** An article's `.mdx` module as returned by a dynamic import. */
+export type ArticleModule = {
+  default: MDXContent
+  metadata: MetaData
 }
 
 export type BlogPost = {

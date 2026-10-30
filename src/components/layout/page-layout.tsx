@@ -2,11 +2,11 @@
 
 import { forwardRef, useEffect, useRef, useState } from 'react'
 
+import { Footer } from '@/components/footer/footer'
+import { NavBar } from '@/components/navigation/navbar'
 import Lenis from 'lenis'
 
 import { CookieBanner } from './cookie-banner'
-import { Footer } from '@/components/footer/footer'
-import { NavBar } from '@/components/navigation/navbar'
 
 type LayoutProps = {
   home?: boolean
@@ -58,7 +58,7 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
       lenisRef.current = lenis
 
       if (scrollRef && typeof scrollRef !== 'function') {
-        ;(window as any).lenis = lenis
+        window.lenisInstance = lenis
       }
 
       const handleAnchorClick = (e: MouseEvent) => {
@@ -92,7 +92,7 @@ export const Layout = forwardRef<HTMLDivElement, LayoutProps>(
         window.removeEventListener('click', handleAnchorClick)
         lenis.destroy()
       }
-    }, [])
+    }, [containerRef, scrollRef])
 
     useEffect(() => {
       if (!lenisRef.current) return

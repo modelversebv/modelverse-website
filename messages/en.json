@@ -5,7 +5,18 @@
     "cases": "Cases",
     "news": "News",
     "about": "About",
-    "contact": "Contact Us"
+    "contact": "Contact Us",
+    "dropdown": {
+      "platform": {
+        "title": "Platform",
+        "description": "Risk & Compliance Management"
+      },
+      "services": {
+        "title": "Consultancy Services",
+        "title_mobile": "Services",
+        "description": "Service Packages"
+      }
+    }
   },
   "footer": {
     "tagline": "We secure. You succeed!",
@@ -68,7 +79,7 @@
         },
         "card5": {
           "title": "Seamless Integrations",
-          "description": "Connect your existing tools and systems to our platform effortlessly. Whether it's Microsoft services, LeanIX, Ultimo, sosafe, or others; we can integrate them and centralise your risk and compliance management."
+          "description": "Connect your existing tools and systems to our platform effortlessly. Whether it's Microsoft services, LeanIX, Ultimo, SoSafe, or others; we can integrate them and centralise your risk and compliance management."
         },
         "card6": {
           "title": "Professional Guidance",
@@ -618,27 +629,35 @@
       "subtitle": "Trusted voices in the cybersecurity risk and compliance communities who believe in Modelverse.",
       "items": [
         {
+          "role": "Co-Founder of Modelverse & Independent Security Executive",
           "bio": "Co-Founder of Modelverse. Reshma is a cybersecurity expert with a background in IT leadership across international corporations and the energy sector. She holds an MSc in Applied Physics and an executive MSc in cybersecurity."
         },
         {
+          "role": "Co-Founder & CEO, BonCode",
           "bio": "Jan-Willem Klerkx is passionate about software quality and business agility. His approach combines deep technical insight with strategic thinking, helping organisations reduce risk, improve maintainability, and unlock innovation through objective source code and architecture analysis."
         },
         {
+          "role": "Founder & Managing Director, MuehlCyberConsulting",
           "bio": "Gordon Muehl has led innovation for Fortune 500 companies, built high-performing international teams, and embedded security culture into a 100.000 employee R&D organisation. Specialising in secure software development lifecycle, technical due diligence, and non-functional requirements of governance, Gordon bridges business and technical domains from CxOs to developers."
         },
         {
+          "role": "Co-Founder & CTO, Full Circle IT NL",
           "bio": "Dennis Mulder specialises in IT strategy, AI, and digital transformation, and focuses on bridging businesses and tech from boardroom to execution for organisations. He is a Certified Distinguished IT Architect (CITA-D), president of Iasa Global NL, and chairs the Chief Architect Forum. Dennis is committed to developing talent always with an eye for practical impact."
         },
         {
+          "role": "Independent Cyber Security and Risk Manager",
           "bio": "Oskar Brink excels at aligning security and risk strategies with business objectives, driving sustainable transformation, and fostering continuous improvement through coaching - with international experience in Malaysia and India. He specialises in bringing clarity and structure to complex IT environments to transform organisations into more agile, secure, and resilient."
         },
         {
+          "role": "Lead Auditor ISO 27001 & Data Protection Officer, IsoSecure",
           "bio": "Robert Bals stands out for combining deep technical expertise with a pragmatic, jargon-free, and practical mindset. He provides tailored ISMS implementations, audits for ISO 27001 and TUV Nord certification, and GDPR solutions. Through delivering scalable, client-focused results, he helps ICT, software, and healthcare organisations strengthen information security and compliance."
         },
         {
+          "role": "Cybersecurity Director, PLTFRM",
           "bio": "Lars de Jong believes that cybersecurity is more than technology; it is an organisation's ability to stay in control, whatever happens. As Cybersecurity Director, he guides organisations in building an effective cyber resilience strategy and achieving certifications such as ISO 27001 and NEN 7510. Drawing on an ecosystem of specialised partners, he connects governance, strategy, and human behaviour. His mission: to create trust between people, systems, and processes — because true cyber resilience starts with clarity and a story that everyone can understand."
         },
         {
+          "role": "Independent Communications & Media Relations Advisor",
           "bio": "Alexandra Roger-Machart is passionate about Tech and AI-driven transformation, she advises start-ups and scale-ups to strengthen their external profile, engage with stakeholders and enhance their corporate reporting through an interdisciplinary perspective of strategic storytelling and regulatory expertise."
         }
       ]
@@ -743,5 +762,41 @@
       "button": "Back to Home"
     },
     "back": "Back to Home"
+  },
+  "cookies": {
+    "banner": {
+      "title": "We Value Your Privacy",
+      "description": "We use two third-party services: Google Maps and YouTube to enhance your browser experience. These services may set cookies and process your data. By clicking 'Accept All', you consent to our use of cookies; otherwise, content from these two services will not be accessible unless you later decide to modify your preferences. You can customize your preferences or learn more in our <cookiePolicy>Cookie Policy</cookiePolicy>. For further reference, you can also consult our <privacyPolicy>Privacy Policy</privacyPolicy>."
+    },
+    "preferences": {
+      "title": "Cookie Preferences",
+      "description": "Manage your cookie settings. You can enable or disable different types of cookies below."
+    },
+    "actions": {
+      "accept_all": "Accept All",
+      "reject_all": "Reject All",
+      "customize": "Customize",
+      "save": "Save",
+      "back": "Back"
+    },
+    "types": {
+      "essential": {
+        "title": "Essential Cookies",
+        "description": "Required for the website to function. These cannot be disabled."
+      },
+      "functional": {
+        "title": "Functional Cookies",
+        "description": "These cookies allow external content, such as YouTube and GoogleMaps, to be displayed on our website. Without them, certain components will not be available."
+      },
+      "analytical": {
+        "title": "Analytical Cookies",
+        "description": "These cookies help us understand how visitors use the website. They collect anonymous data to improve site performance and content."
+      }
+    },
+    "embed": {
+      "blocked": "{service} content blocked",
+      "consent_required": "This content is provided by {service} and requires your consent",
+      "accept": "Accept"
+    }
   }
 }

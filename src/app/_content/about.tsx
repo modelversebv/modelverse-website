@@ -2,6 +2,7 @@
 
 import { Fragment, useRef } from 'react'
 
+import { LinkedinIcon } from '@/components/common/brand-icons'
 import { Card } from '@/components/common/card'
 import { Hero } from '@/components/common/hero'
 import { Layout } from '@/components/layout/page-layout'
@@ -13,15 +14,7 @@ import {
   slideInRight,
   staggerContainer,
 } from '@/lib/animation-variants'
-import {
-  Book,
-  Eye,
-  LinkedinIcon,
-  Mail,
-  PencilLine,
-  Shield,
-  User,
-} from 'lucide-react'
+import { Book, Eye, Mail, PencilLine, Shield, User } from 'lucide-react'
 import { motion, useInView } from 'motion/react'
 import { useTranslations } from 'next-intl'
 
@@ -97,49 +90,49 @@ export function AboutContent() {
   const ambassadors = [
     {
       name: 'Reshma Pandohi Mishre',
-      role: 'Co-Founder of Modelverse & Independent Security Executive',
+      role: t('about.ambassadors.items.0.role'),
       linkedin: 'https://www.linkedin.com/in/reshmapandohi/',
       bio: t('about.ambassadors.items.0.bio'),
       image: '/images/ambassadors/reshma.jpg',
     },
     {
       name: 'Jan-Willem Klerkx',
-      role: 'Co-Founder & CEO, BonCode',
+      role: t('about.ambassadors.items.1.role'),
       linkedin: 'https://www.linkedin.com/in/jwklerkx/',
       bio: t('about.ambassadors.items.1.bio'),
       image: '/images/ambassadors/jan-willem.jpg',
     },
     {
       name: 'Gordon Muehl',
-      role: 'Founder & Managing Director, MuehlCyberConsulting',
+      role: t('about.ambassadors.items.2.role'),
       linkedin: 'https://www.linkedin.com/in/gordonmuehl/',
       bio: t('about.ambassadors.items.2.bio'),
       image: '/images/ambassadors/gordon.png',
     },
     {
       name: 'Dennis Mulder',
-      role: 'Co-Founder & CTO, Full Circle IT NL',
+      role: t('about.ambassadors.items.3.role'),
       linkedin: 'https://www.linkedin.com/in/dennismulder/',
       bio: t('about.ambassadors.items.3.bio'),
       image: '/images/ambassadors/dennis.jpg',
     },
     {
       name: 'Oskar Brink',
-      role: 'Independent Cyber Security and Risk Manager',
+      role: t('about.ambassadors.items.4.role'),
       linkedin: 'https://www.linkedin.com/in/oskarbrink/',
       bio: t('about.ambassadors.items.4.bio'),
       image: '/images/ambassadors/oskar.jpg',
     },
     {
       name: 'Robert Bals',
-      role: 'Lead Auditor ISO 27001 & Data Protection Officer, IsoSecure',
+      role: t('about.ambassadors.items.5.role'),
       linkedin: 'https://www.linkedin.com/in/rbals/',
       bio: t('about.ambassadors.items.5.bio'),
       image: '/images/ambassadors/robert.jpg',
     },
     {
       name: 'Lars de Jong',
-      role: 'Cybersecurity Director, PLTFRM',
+      role: t('about.ambassadors.items.6.role'),
       linkedin: 'https://www.linkedin.com/in/lars-dejong/',
       bio: t('about.ambassadors.items.6.bio'),
       image: '/images/ambassadors/lars.jpg',

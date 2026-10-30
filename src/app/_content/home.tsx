@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useSyncExternalStore } from 'react'
 
 import { Card, MotionCard } from '@/components/common/card'
 import YoutubeEmbed from '@/components/embed/youtube-embed'
@@ -27,6 +27,9 @@ import {
 } from 'lucide-react'
 import { motion, useInView, useScroll, useTransform } from 'motion/react'
 import { useTranslations } from 'next-intl'
+
+// Nothing to subscribe to: only the server/client difference matters
+const subscribeToNothing = () => () => {}
 
 const features = [
   { icon: Compass, key: 'card1' },
@@ -72,8 +75,12 @@ export function HomeContent() {
   const heroOpacity = useTransform(heroScrollProgress, [0, 0.7], [1, 0])
   const heroScale = useTransform(heroScrollProgress, [0, 0.7], [1, 0.95])
 
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => setMounted(true), [])
+  // false in the static HTML and during hydration, true afterwards
+  const mounted = useSyncExternalStore(
+    subscribeToNothing,
+    () => true,
+    () => false
+  )
 
   return (
     <Layout home={true} ref={layoutRef}>
