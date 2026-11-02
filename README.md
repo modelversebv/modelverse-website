@@ -125,6 +125,13 @@ npx serve dist
   firebase deploy
   ```
 
+### 4. Dependency updates
+
+Workflow actions are pinned to a commit SHA with the version as a comment
+(`@<sha> # v7.0.1`). `.github/dependabot.yml` opens one grouped pull request into `dev`
+each month for npm and one for the actions, with minor and patch updates only; versions
+younger than 7 days are skipped and major versions are updated by hand.
+
 ## Contributing
 
 Please see [**CONTRIBUTING.md**](./CONTRIBUTING.md) for detailed instructions on setting up your environment, branching strategy, and code standards.
