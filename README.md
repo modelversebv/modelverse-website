@@ -132,6 +132,11 @@ Workflow actions are pinned to a commit SHA with the version as a comment
 each month for npm and one for the actions, with minor and patch updates only; versions
 younger than 7 days are skipped and major versions are updated by hand.
 
+npm blocks the install scripts of dependencies unless `allowScripts` in `package.json`
+approves them. `@parcel/watcher` and `@swc/core` (both via `next-intl`) are denied: their
+prebuilt binaries work without the scripts. When npm warns about a new package, review it
+with `npm install-scripts ls` and approve or deny it explicitly.
+
 Every pull request runs `check-pull-request.yml`: job `check` (lint, tests if present,
 build with the TypeScript check) and job `secrets` (gitleaks on the pull request's
 commits). The job names are the required checks in the organisation ruleset "Require
