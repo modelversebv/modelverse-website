@@ -125,12 +125,17 @@ npx serve dist
   firebase deploy
   ```
 
-### 4. Dependency updates
+### 4. Dependency updates and pull request checks
 
 Workflow actions are pinned to a commit SHA with the version as a comment
 (`@<sha> # v7.0.1`). `.github/dependabot.yml` opens one grouped pull request into `dev`
 each month for npm and one for the actions, with minor and patch updates only; versions
 younger than 7 days are skipped and major versions are updated by hand.
+
+Every pull request runs `check-pull-request.yml`: job `check` (lint, tests if present,
+build with the TypeScript check) and job `secrets` (gitleaks on the pull request's
+commits). The job names are the required checks in the organisation ruleset "Protect
+main"; rename them only together with the ruleset.
 
 ## Contributing
 

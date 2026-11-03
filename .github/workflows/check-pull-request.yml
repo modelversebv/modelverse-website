@@ -1,0 +1,72 @@
+name: Check pull request
+
+# Job names `check` and `secrets` are the required status checks in the organisation ruleset
+# "Protect main"; renaming a job means updating the ruleset too
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: check-pull-request-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - name: Setup Node
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: 24.x
+          check-latest: true
+          cache: 'npm'
+
+      # ::group:: makes each command a collapsible section in the log; the step stops at the
+      # first failing command, so the error is in the last section shown.
+      # next build runs the TypeScript check, so there is no separate type check
+      - name: Website
+        run: |
+          echo "::group::Install"
+          npm ci
+          echo "::endgroup::"
+          echo "::group::Lint"
+          npx eslint .
+          echo "::endgroup::"
+          echo "::group::Test"
+          npm test --if-present
+          echo "::endgroup::"
+          echo "::group::Build"
+          npm run build
+          echo "::endgroup::"
+
+  secrets:
+    runs-on: ubuntu-latest
+    env:
+      GITLEAKS_VERSION: '8.30.1'
+      GITLEAKS_SHA256: '551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          fetch-depth: 0
+
+      # Official release binary, verified against the checksum from the release page
+      - name: Install gitleaks
+        run: |
+          ARCHIVE="gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          curl -sSfL -o "$ARCHIVE" "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/${ARCHIVE}"
+          echo "${GITLEAKS_SHA256}  ${ARCHIVE}" | sha256sum --check
+          tar -xzf "$ARCHIVE" -C "$RUNNER_TEMP" gitleaks
+
+      # Only the commits this pull request adds; findings are redacted in the log
+      - name: Scan pull request commits
+        run: |
+          "$RUNNER_TEMP/gitleaks" git --redact --verbose \
+            --log-opts="${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}"
