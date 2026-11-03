@@ -133,7 +133,7 @@ Once ready, push your branch and open a Pull Request on GitHub.
 
 A designated reviewer will check the PR. **Merging is contingent upon:**
 
-- **Passing Checks:** The `check` and `secrets` jobs must pass. If `secrets` fails, the log names the file, line and rule: a real secret must be rotated, not only removed, since it stays in the branch history; a false positive goes into `.gitleaksignore` by the fingerprint the log prints.
+- **Passing Checks:** The `check` and `secrets` jobs must pass, and CodeQL code scanning must report no security alert of High or higher (see **Security → Code scanning**). If `secrets` fails, the log names the file, line and rule: a real secret must be rotated, not only removed, since it stays in the branch history; a false positive goes into `.gitleaksignore` by the fingerprint the log prints.
 - **Code Review:** The reviewer must approve the code quality, functionality, and adherence to standards.
 
 Once approved, the code will be merged into the parent branch.

@@ -1,7 +1,7 @@
 name: Check pull request
 
 # Job names `check` and `secrets` are the required status checks in the organisation ruleset
-# "Protect main"; renaming a job means updating the ruleset too
+# "Require pull request checks"; renaming a job means updating the ruleset too
 on:
   pull_request:
 
