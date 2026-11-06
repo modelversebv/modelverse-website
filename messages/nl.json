@@ -568,17 +568,17 @@
         },
         {
           "name": "Daan Loyens",
-          "role": "CFO & COO | Co-Founder",
+          "role": "CFO, COO & CISO | Co-Founder",
           "bio": "Daan is een ervaren ondernemer en IT-leider die gepassioneerd is over het gebruik van moderne technologie om organisaties te helpen echte uitdagingen aan te pakken. Daan brengt brede inzichten als strateeg, investeerder en vertrouwde cybersecurity-adviseur. Hij heeft een PhD in Informatica, evenals een executive MSc in Cybersecurity.",
           "linkedin": "https://www.linkedin.com/in/dl11235813213456/",
           "mail": "mailto:daan@modelverse.online"
         },
         {
-          "name": "Lili Guo",
-          "role": "Partner | CISO",
-          "bio": "Lili is een governance-expert met diepgaande ervaring in gezondheid, cybersecurity en patiëntveiligheid. Voordat ze partner werd, werkte Lili 12 jaar bij het Nederlandse Ministerie van Volksgezondheid aan orgaandonatie, e-health en cybersecurity. Ze heeft een BSc cum laude in Biomedische Wetenschappen, een MSc cum laude in Neurowetenschappen en een MSc summa cum laude in Cybersecurity Governance.",
-          "linkedin": "https://www.linkedin.com/in/lili-guo-3941b126/",
-          "mail": "mailto:Lili@modelverse.online"
+          "name": "David Warnink",
+          "role": "Partner",
+          "bio": "David brengt meer dan 25 jaar ervaring mee op het snijvlak van business, technologie en governance. Als Partner bij Modelverse richt David zich op strategie, propositieontwikkeling, partnerships en marktgroei. Hij helpt organisaties om strategische prioriteiten van bestuursniveau te vertalen naar concrete uitvoering op het gebied van cybersecurity, risico en governance. Daarmee draagt hij bij aan de ambitie van Modelverse om cyber governance te verankeren als een integraal onderdeel van professioneel management.",
+          "linkedin": "https://www.linkedin.com/in/warnink/",
+          "mail": "mailto:david@modelverse.online"
         },
         {
           "name": "Bozhena Kovtun",
@@ -682,7 +682,7 @@
       },
       "phone": {
         "title": "Telefoon",
-        "primary": "+31 6 27612498",
+        "primary": "TODO",
         "secondary": "Ma-vr, 9:00-18:00 CET"
       },
       "office": {

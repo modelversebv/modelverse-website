@@ -568,17 +568,17 @@
         },
         {
           "name": "Daan Loyens",
-          "role": "CFO & COO | Co-Founder",
+          "role": "CFO, COO & CISO | Co-Founder",
           "bio": "Daan is an experienced entrepreneur and IT leader who's passionate about using modern technology to help organisations tackle real-world challenges. Daan brings broad insight as a strategist, investor, and trusted cybersecurity advisor. He holds a PhD in Computing Science, along with an executive MSc in cybersecurity.",
           "linkedin": "https://www.linkedin.com/in/dl11235813213456/",
           "mail": "mailto:daan@modelverse.online"
         },
         {
-          "name": "Lili Guo",
-          "role": "Partner | CISO",
-          "bio": "Lili is a governance expert with deep experience in health, cybersecurity and patient safety. Before becoming a partner, Lili spent 12 years at the Dutch Ministry of Health, working on organ donation, e-health, and cybersecurity. She holds a Cum Laude BSc in Biomedical Science, a Cum Laude MSc in Neuroscience, and a Summa Cum Laude MSc in cybersecurity Governance.",
-          "linkedin": "https://www.linkedin.com/in/lili-guo-3941b126/",
-          "mail": "mailto:Lili@modelverse.online"
+          "name": "David Warnick",
+          "role": "Partner",
+          "bio": "David brings over 25 years of experience in the intersection of business, technology and governance. As Partner at Modelverse, David focuses on strategy, proposition development, partnerships and market growth. He helps organisations connect board-level priorities around cybersecurity, risk and governance with practical execution, strengthening Modelverse’s ambition to make cyber governance a management discipline.",
+          "linkedin": "https://www.linkedin.com/in/warnink/",
+          "mail": "mailto:david@modelverse.online"
         },
         {
           "name": "Bozhena Kovtun",
@@ -682,7 +682,7 @@
       },
       "phone": {
         "title": "Phone",
-        "primary": "+31 6 27612498",
+        "primary": "TODO",
         "secondary": "Mon-Fri, 9:00-18:00 CET"
       },
       "office": {
