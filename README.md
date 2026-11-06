@@ -125,12 +125,28 @@ npx serve dist
   firebase deploy
   ```
 
-### 4. Dependency updates
+### 4. Dependency updates and pull request checks
 
 Workflow actions are pinned to a commit SHA with the version as a comment
 (`@<sha> # v7.0.1`). `.github/dependabot.yml` opens one grouped pull request into `dev`
 each month for npm and one for the actions, with minor and patch updates only; versions
 younger than 7 days are skipped and major versions are updated by hand.
+
+npm blocks the install scripts of dependencies unless `allowScripts` in `package.json`
+approves them. `@parcel/watcher` and `@swc/core` (both via `next-intl`) are denied: their
+prebuilt binaries work without the scripts. When npm warns about a new package, review it
+with `npm install-scripts ls` and approve or deny it explicitly.
+
+Every pull request runs `check-pull-request.yml`: job `check` (lint, tests if present,
+build with the TypeScript check) and job `secrets` (gitleaks on the pull request's
+commits). The job names are the required checks in the organisation ruleset "Require
+pull request checks"; rename them only together with the ruleset.
+
+Code scanning with CodeQL is set up for the organisation, not in this repository (there is
+no workflow file): it scans `main`, every pull request to `main` and weekly, with the
+extended security queries. Findings appear under **Security → Code scanning**. A security
+alert of High or higher blocks the pull request (same ruleset); fix it in the code, or
+dismiss a false positive there with a reason.
 
 ## Contributing
 

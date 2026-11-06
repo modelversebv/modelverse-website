@@ -52,7 +52,6 @@ export function ContactContent() {
       primary: t('contact.info.email.primary'),
       secondary: t('contact.info.email.secondary'),
     },
-    // VERY temporary, had Lili's phone number here and we haven't decided whose number to put here yet (25/09)
     // {
     //   icon: Phone,
     //   title: t('contact.info.phone.title'),

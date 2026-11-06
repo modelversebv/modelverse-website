@@ -133,7 +133,7 @@ Once ready, push your branch and open a Pull Request on GitHub.
 
 A designated reviewer will check the PR. **Merging is contingent upon:**
 
-- **Passing Checks:** The automated GitHub Actions workflow must build successfully.
+- **Passing Checks:** The `check` and `secrets` jobs must pass, and CodeQL code scanning must report no security alert of High or higher (see **Security → Code scanning**). If `secrets` fails, the log names the file, line and rule: a real secret must be rotated, not only removed, since it stays in the branch history; a false positive goes into `.gitleaksignore` by the fingerprint the log prints.
 - **Code Review:** The reviewer must approve the code quality, functionality, and adherence to standards.
 
 Once approved, the code will be merged into the parent branch.
@@ -144,7 +144,7 @@ The repository uses GitHub Actions to automate quality assurance and deployment.
 
 | Workflow Name                    | Trigger                       | Action Performed                                                                                                                                               |
 | -------------------------------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Verify build**                 | On **Pull Request**           | Runs `npm run build` to ensure the build succeeds before merging.                                                                                              |
+| **Check pull request**           | On **Pull Request**           | Job `check`: `npm ci`, ESLint, tests if present, `npm run build` (includes the TypeScript check). Job `secrets`: gitleaks scans the commits the PR adds.       |
 | **Build & Deploy to Dev**        | On **Push** to `dev` branch   | 1. **Build:** Creates optimized static build.<br>2. **Deploy:** Deploys the `dist/` directory to the Firebase Hosting **Beta** channel for review.             |
 | **Build & Deploy to Test**       | On **Push** to `test` branch  | 1. **Build:** Creates optimized static build.<br>2. **Deploy:** Deploys the `dist/` directory to the Firebase Hosting **Charlie** channel for testing.          |
 | **Build & Deploy to Production** | On **Push** to `main` branch  | 1. **Build:** Creates optimized static build.<br>2. **Deploy:** Deploys the `dist/` directory to the Firebase Hosting **Live** channel (production).            |

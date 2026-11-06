@@ -561,24 +561,24 @@
       "members": [
         {
           "name": "Ben Krutzen",
-          "role": "Director General y de Tecnología | Cofundador",
+          "role": "CEO & CTO | Cofundador",
           "bio": "Ben es el creador de Modelverse, impulsado por la pasión de convertir la estrategia en acción. Con más de 25 años en Shell y, posteriormente, como socio en KPMG, Ben ayudó a organizaciones a afrontar retos complejos en transformación, riesgo y tecnología. Tiene un doctorado en física teórica y en su día exploró los agujeros negros en el Imperial College de Londres antes de sumergirse en el mundo empresarial.",
           "linkedin": "https://www.linkedin.com/in/benkrutzen/",
           "mail": "mailto:ben@modelverse.online"
         },
         {
           "name": "Daan Loyens",
-          "role": "Director Financiero y de Operaciones | Cofundador",
+          "role": "CFO, COO & CISO | Cofundador",
           "bio": "Daan es un emprendedor y líder de TI experimentado, apasionado por utilizar la tecnología moderna para ayudar a las organizaciones a afrontar retos reales. Daan aporta una amplia visión como estratega, inversor y asesor de confianza en ciberseguridad. Tiene un doctorado en Ciencias de la Computación, junto con un máster ejecutivo en ciberseguridad.",
           "linkedin": "https://www.linkedin.com/in/dl11235813213456/",
           "mail": "mailto:daan@modelverse.online"
         },
         {
-          "name": "Lili Guo",
-          "role": "Socia | Directora de Seguridad de la Información",
-          "bio": "Lili es experta en gobernanza con una amplia experiencia en salud, ciberseguridad y seguridad del paciente. Antes de convertirse en socia, Lili pasó 12 años en el Ministerio de Salud neerlandés, trabajando en donación de órganos, salud digital y ciberseguridad. Tiene una licenciatura Cum Laude en Ciencias Biomédicas, un máster Cum Laude en Neurociencia y un máster Summa Cum Laude en Gobernanza de la Ciberseguridad.",
-          "linkedin": "https://www.linkedin.com/in/lili-guo-3941b126/",
-          "mail": "mailto:Lili@modelverse.online"
+          "name": "David Warnink",
+          "role": "Socio de Modelverse",
+          "bio": "David aporta más de 25 años de experiencia en la intersección entre negocio, tecnología y gobernanza. Como socio de Modelverse, David se centra en la estrategia, el desarrollo de la propuesta de valor, las alianzas y el crecimiento de mercado. Ayuda a las organizaciones a conectar las prioridades de sus consejos de administración en materia de ciberseguridad, riesgo y gobernanza con su ejecución práctica, reforzando así la ambición de Modelverse de convertir la gobernanza de la ciberseguridad en una disciplina de gestión.",
+          "linkedin": "https://www.linkedin.com/in/warnink/",
+          "mail": "mailto:david@modelverse.online"
         },
         {
           "name": "Bozhena Kovtun",
@@ -682,7 +682,7 @@
       },
       "phone": {
         "title": "Teléfono",
-        "primary": "+31 6 27612498",
+        "primary": "TODO",
         "secondary": "Lun-Vie, 9:00-18:00 CET"
       },
       "office": {

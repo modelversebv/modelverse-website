@@ -247,7 +247,7 @@ export function HomeContent() {
             >
               <Card className="hidden p-2 hover:bg-white/10 lg:flex">
                 <img
-                  src="/images/team/new-team.jpg"
+                  src="/images/team/new-team-photo.jpg"
                   alt="Modelverse Team"
                   className="rounded-lg"
                 />

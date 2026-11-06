@@ -76,7 +76,7 @@ export function AboutContent() {
           Ben: '/images/team/ben.jpg',
           Bozhena: '/images/team/bozhena.jpg',
           Daan: '/images/team/daan.jpg',
-          Lili: '/images/team/lili.jpg',
+          David: '/images/team/david.jpg',
           Maria: '/images/team/maria.jpg',
           Mariona: '/images/team/mariona.jpg',
           Michel: '/images/team/michel.jpg',
@@ -202,7 +202,7 @@ export function AboutContent() {
             >
               <Card className="flex p-2 hover:bg-white/10">
                 <img
-                  src="/images/team/new-team.jpg"
+                  src="/images/team/new-team-photo.jpg"
                   alt="Modelverse team of eight members, photographed together in their bright, modern office headquarters."
                   className="aspect-video rounded-lg object-cover"
                 />
