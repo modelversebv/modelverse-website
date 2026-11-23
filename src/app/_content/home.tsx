@@ -2,16 +2,6 @@
 
 import { useRef, useSyncExternalStore } from 'react'
 
-import { Card, MotionCard } from '@/components/common/card'
-import YoutubeEmbed from '@/components/embed/youtube-embed'
-import { Layout } from '@/components/layout/page-layout'
-import {
-  fadeInUp,
-  scaleIn,
-  slideInLeft,
-  slideInRight,
-  staggerContainer,
-} from '@/lib/animation-variants'
 import {
   ArrowRight,
   Brain,
@@ -27,6 +17,17 @@ import {
 } from 'lucide-react'
 import { motion, useInView, useScroll, useTransform } from 'motion/react'
 import { useTranslations } from 'next-intl'
+
+import { Card, MotionCard } from '@/components/common/card'
+import YoutubeEmbed from '@/components/embed/youtube-embed'
+import { Layout } from '@/components/layout/page-layout'
+import {
+  fadeInUp,
+  scaleIn,
+  slideInLeft,
+  slideInRight,
+  staggerContainer,
+} from '@/lib/animation-variants'
 
 // Nothing to subscribe to: only the server/client difference matters
 const subscribeToNothing = () => () => {}

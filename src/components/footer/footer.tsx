@@ -1,10 +1,11 @@
 'use client'
 
-import { GithubIcon, LinkedinIcon } from '@/components/common/brand-icons'
-import { useLocale } from '@/context/locale-context'
 import { Mail } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
+
+import { GithubIcon, LinkedinIcon } from '@/components/common/brand-icons'
+import { useLocale } from '@/context/locale-context'
 
 import { BuildNumber } from './build-number'
 

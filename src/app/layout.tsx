@@ -1,6 +1,8 @@
 import 'flag-icons/css/flag-icons.min.css'
-import type { Metadata } from 'next'
+
 import { preload } from 'react-dom'
+
+import type { Metadata } from 'next'
 
 import '../index.css'
 
@@ -62,16 +64,30 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  heroImages.forEach((src) => preload(src, { as: 'image', fetchPriority: 'high' }))
+  heroImages.forEach((src) =>
+    preload(src, { as: 'image', fetchPriority: 'high' })
+  )
 
   return (
     <html lang="en">
       <head>
-        <link rel="alternate" type="text/plain" title="LLMs.txt" href="/llms.txt" />
-        <link rel="alternate" type="text/plain" title="LLMs-full.txt" href="/llms-full.txt" />
+        <link
+          rel="alternate"
+          type="text/plain"
+          title="LLMs.txt"
+          href="/llms.txt"
+        />
+        <link
+          rel="alternate"
+          type="text/plain"
+          title="LLMs-full.txt"
+          href="/llms-full.txt"
+        />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
         />
         <script
           type="application/ld+json"

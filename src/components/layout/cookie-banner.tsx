@@ -2,6 +2,11 @@
 
 import { useEffect, useState, useSyncExternalStore } from 'react'
 
+import { Cookie, Settings, Shield, X } from 'lucide-react'
+import { useTranslations } from 'next-intl'
+import { useRouter } from 'next/navigation'
+import { getCookie, setCookie } from 'typescript-cookie'
+
 import { Card } from '@/components/common/card'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Switch } from '@/components/ui/switch'
@@ -10,10 +15,6 @@ import {
   denyAnalyticsConsent,
   grantAnalyticsConsent,
 } from '@/lib/analytics/ga4'
-import { Cookie, Settings, Shield, X } from 'lucide-react'
-import { useTranslations } from 'next-intl'
-import { useRouter } from 'next/navigation'
-import { getCookie, setCookie } from 'typescript-cookie'
 
 type CookieOption = {
   /** Stored in the consent cookie and read by analytics and the embeds; never translate or rename it. */

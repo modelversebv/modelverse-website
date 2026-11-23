@@ -1,3 +1,7 @@
+import type { MDXContent } from 'mdx/types'
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+
 import { LegalContent } from '@/app/_content/legal'
 import CookiePolicy, { metadata as cookieMeta } from '@/legal/cookie_policy.mdx'
 import PrivacyPolicy, {
@@ -9,9 +13,6 @@ import TermsOfService, {
 import type { Locale } from '@/lib/locales'
 import { messages } from '@/lib/messages'
 import { buildAlternates } from '@/lib/metadata'
-import type { MDXContent } from 'mdx/types'
-import type { Metadata } from 'next'
-import { notFound } from 'next/navigation'
 
 type LegalMeta = {
   title: string

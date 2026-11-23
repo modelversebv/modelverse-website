@@ -1,9 +1,10 @@
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+
 import { ArticleContent } from '@/app/_content/article'
 import { computeWordCount, getArticleSlugs } from '@/lib/articles'
 import type { ArticleModule, MetaData } from '@/lib/articles'
 import { buildAlternates, localeUrl } from '@/lib/metadata'
-import type { Metadata } from 'next'
-import { notFound } from 'next/navigation'
 
 export function generateStaticParams() {
   return getArticleSlugs().map((slug) => ({ slug }))

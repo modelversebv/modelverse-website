@@ -1,9 +1,10 @@
+import type { Metadata } from 'next'
+
 import { NewsContent } from '@/app/_content/news'
 import { getAllArticles } from '@/lib/articles'
 import type { Locale } from '@/lib/locales'
 import { messages } from '@/lib/messages'
 import { buildAlternates } from '@/lib/metadata'
-import type { Metadata } from 'next'
 
 export async function generateMetadata({
   params,

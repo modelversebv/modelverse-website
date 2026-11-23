@@ -2,6 +2,11 @@
 
 import { useRef } from 'react'
 
+import { ArrowLeft, BookOpen, Calendar, User } from 'lucide-react'
+import { useTranslations } from 'next-intl'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+
 import { Layout } from '@/components/layout/page-layout'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import {
@@ -14,10 +19,6 @@ import {
 import { useLocale } from '@/context/locale-context'
 import type { MetaData } from '@/lib/articles'
 import { formatDate } from '@/lib/format-date'
-import { ArrowLeft, BookOpen, Calendar, User } from 'lucide-react'
-import { useTranslations } from 'next-intl'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 
 type ArticleContentProps = {
   metadata: MetaData

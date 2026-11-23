@@ -2,10 +2,6 @@
 
 import { useRef } from 'react'
 
-import { Card } from '@/components/common/card'
-import { Hero } from '@/components/common/hero'
-import { Layout } from '@/components/layout/page-layout'
-import { fadeInUp, scaleIn, staggerContainer } from '@/lib/animation-variants'
 import {
   ArrowRight,
   Award,
@@ -18,6 +14,11 @@ import {
 } from 'lucide-react'
 import { motion, useInView } from 'motion/react'
 import { useTranslations } from 'next-intl'
+
+import { Card } from '@/components/common/card'
+import { Hero } from '@/components/common/hero'
+import { Layout } from '@/components/layout/page-layout'
+import { fadeInUp, scaleIn, staggerContainer } from '@/lib/animation-variants'
 
 // --- Schema ---
 

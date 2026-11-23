@@ -1,8 +1,9 @@
+import type { Metadata } from 'next'
+
 import { ContactContent } from '@/app/_content/contact'
 import type { Locale } from '@/lib/locales'
 import { messages } from '@/lib/messages'
 import { buildAlternates } from '@/lib/metadata'
-import type { Metadata } from 'next'
 
 export async function generateMetadata({
   params,

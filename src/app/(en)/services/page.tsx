@@ -1,6 +1,8 @@
+import type { Metadata } from 'next'
+
 import { ServicesContent } from '@/app/_content/services'
 import { buildAlternates } from '@/lib/metadata'
-import type { Metadata } from 'next'
+
 import en from '../../../../messages/en.json'
 
 export const metadata: Metadata = {

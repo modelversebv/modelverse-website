@@ -1,6 +1,7 @@
+import { notFound } from 'next/navigation'
+
 import { SUPPORTED_LOCALES, type Locale } from '@/lib/locales'
 import { IntlProvider } from '@/providers/IntlProvider'
-import { notFound } from 'next/navigation'
 
 export function generateStaticParams() {
   return SUPPORTED_LOCALES.filter((l) => l !== 'en').map((locale) => ({

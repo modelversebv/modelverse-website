@@ -2,6 +2,11 @@
 
 import { useEffect, useRef, useState } from 'react'
 
+import { ArrowLeft, FileText } from 'lucide-react'
+import { useTranslations } from 'next-intl'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+
 import { Card } from '@/components/common/card'
 import { Layout } from '@/components/layout/page-layout'
 import {
@@ -12,10 +17,6 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
 import { useLocale } from '@/context/locale-context'
-import { ArrowLeft, FileText } from 'lucide-react'
-import { useTranslations } from 'next-intl'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 
 type LegalMeta = {
   title: string

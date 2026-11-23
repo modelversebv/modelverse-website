@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+
 import { usePathname } from 'next/navigation'
 
 import { trackPageView } from './ga4'
