@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from 'react'
 
-import { cn } from '@/lib/utils'
 import { useTranslations } from 'next-intl'
 import { getCookie, setCookie } from 'typescript-cookie'
+
+import { cn } from '@/lib/utils'
 
 type YouTubeEmbedProps = {
   videoId: string

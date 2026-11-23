@@ -2,15 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react'
 
-import { Card } from '@/components/common/card'
-import { Hero } from '@/components/common/hero'
-import { Layout } from '@/components/layout/page-layout'
-import {
-  fadeInUp,
-  scaleIn,
-  slideInLeft,
-  staggerContainer,
-} from '@/lib/animation-variants'
 import {
   ArrowRight,
   BookOpen,
@@ -28,7 +19,6 @@ import {
   ListCheck,
   ListRestart,
   Lock,
-  type LucideIcon,
   Map,
   Rocket,
   Scale,
@@ -42,9 +32,20 @@ import {
   Ungroup,
   Users,
   Wrench,
+  type LucideIcon,
 } from 'lucide-react'
 import { motion, useInView } from 'motion/react'
 import { useTranslations } from 'next-intl'
+
+import { Card } from '@/components/common/card'
+import { Hero } from '@/components/common/hero'
+import { Layout } from '@/components/layout/page-layout'
+import {
+  fadeInUp,
+  scaleIn,
+  slideInLeft,
+  staggerContainer,
+} from '@/lib/animation-variants'
 
 // --- Schema ---
 

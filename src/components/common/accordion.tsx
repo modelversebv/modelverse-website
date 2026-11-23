@@ -2,10 +2,11 @@
 
 import { useState } from 'react'
 
-import { slideInLeft } from '@/lib/animation-variants'
-import { cn } from '@/lib/utils'
 import { Plus } from 'lucide-react'
 import { motion } from 'motion/react'
+
+import { slideInLeft } from '@/lib/animation-variants'
+import { cn } from '@/lib/utils'
 
 type AccordionItem = {
   question: string

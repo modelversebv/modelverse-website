@@ -1,9 +1,10 @@
+import type { MetadataRoute } from 'next'
+
 import { metadata as cookieMeta } from '@/legal/cookie_policy.mdx'
 import { metadata as privacyMeta } from '@/legal/privacy_policy.mdx'
 import { metadata as termsMeta } from '@/legal/terms_of_service.mdx'
 import { getAllArticles } from '@/lib/articles'
 import { SUPPORTED_LOCALES } from '@/lib/locales'
-import type { MetadataRoute } from 'next'
 
 export const dynamic = 'force-static'
 

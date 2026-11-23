@@ -2,9 +2,10 @@
 
 import { useState } from 'react'
 
-import { useLocale } from '@/context/locale-context'
 import { useTranslations } from 'next-intl'
 import { usePathname, useRouter } from 'next/navigation'
+
+import { useLocale } from '@/context/locale-context'
 
 import { Dropdown } from './dropdown'
 import { DropdownLink } from './dropdown-link'

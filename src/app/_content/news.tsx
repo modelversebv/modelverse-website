@@ -2,19 +2,6 @@
 
 import { useMemo, useRef, useState, useSyncExternalStore } from 'react'
 
-import { Card } from '@/components/common/card'
-import { Hero } from '@/components/common/hero'
-import { Layout } from '@/components/layout/page-layout'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { useLocale } from '@/context/locale-context'
-import {
-  fadeInUp,
-  scaleIn,
-  slideInLeft,
-  staggerContainer,
-} from '@/lib/animation-variants'
-import type { BlogPost } from '@/lib/articles'
-import { formatDate } from '@/lib/format-date'
 import {
   ArrowRight,
   Calendar,
@@ -28,6 +15,20 @@ import { AnimatePresence, motion, useInView } from 'motion/react'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+
+import { Card } from '@/components/common/card'
+import { Hero } from '@/components/common/hero'
+import { Layout } from '@/components/layout/page-layout'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { useLocale } from '@/context/locale-context'
+import {
+  fadeInUp,
+  scaleIn,
+  slideInLeft,
+  staggerContainer,
+} from '@/lib/animation-variants'
+import type { BlogPost } from '@/lib/articles'
+import { formatDate } from '@/lib/format-date'
 
 // --- Sub-components ---
 

@@ -1,8 +1,9 @@
+import type { Metadata } from 'next'
+
 import { ServicesContent } from '@/app/_content/services'
 import type { Locale } from '@/lib/locales'
 import { messages } from '@/lib/messages'
 import { buildAlternates } from '@/lib/metadata'
-import type { Metadata } from 'next'
 
 export async function generateMetadata({
   params,

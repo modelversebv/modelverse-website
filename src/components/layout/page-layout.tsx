@@ -2,9 +2,10 @@
 
 import { forwardRef, useEffect, useRef, useState } from 'react'
 
+import Lenis from 'lenis'
+
 import { Footer } from '@/components/footer/footer'
 import { NavBar } from '@/components/navigation/navbar'
-import Lenis from 'lenis'
 
 import { CookieBanner } from './cookie-banner'
 

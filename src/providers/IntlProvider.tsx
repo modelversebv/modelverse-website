@@ -1,10 +1,11 @@
 'use client'
 
+import { NextIntlClientProvider } from 'next-intl'
+
 import { LocaleContext } from '@/context/locale-context'
 import { useGaTracker } from '@/lib/analytics/use-ga-tracker'
 import type { Locale } from '@/lib/locales'
 import { messages } from '@/lib/messages'
-import { NextIntlClientProvider } from 'next-intl'
 
 export type { Locale } from '@/lib/locales'
 export { SUPPORTED_LOCALES } from '@/lib/locales'

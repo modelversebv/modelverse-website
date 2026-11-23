@@ -1,6 +1,7 @@
 import fs from 'fs'
-import type { MDXContent } from 'mdx/types'
 import path from 'path'
+
+import type { MDXContent } from 'mdx/types'
 
 export type MetaData = {
   featured: boolean

@@ -1,7 +1,9 @@
+import type { Metadata } from 'next'
+
 import { NewsContent } from '@/app/_content/news'
 import { getAllArticles } from '@/lib/articles'
 import { buildAlternates } from '@/lib/metadata'
-import type { Metadata } from 'next'
+
 import en from '../../../../messages/en.json'
 
 export const metadata: Metadata = {
